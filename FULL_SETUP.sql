@@ -341,10 +341,6 @@ CREATE TRIGGER trigger_check_reservation_overlap
 BEFORE INSERT OR UPDATE ON internal_reservations
 FOR EACH ROW
 EXECUTE FUNCTION check_reservation_overlap();
-
--- ========================================
--- SAMPLE DATA
--- ========================================
 -- SAMPLE_DATA.sql
 -- Sample yacht data to demonstrate the design
 -- Run this after DATABASE_SCHEMA.sql to see the site with real content
@@ -467,7 +463,7 @@ INSERT INTO public_vessels (
   ARRAY['Paddleboards', 'Snorkel Gear'],
   ARRAY['Sound System', 'Galley', 'Cabin'],
   'https://images.unsplash.com/photo-1606845465243-b5be7202025e?w=1200&q=80',
-  ARRAY[],
+  ARRAY[]::text[],
   'Classic sailing yacht perfect for relaxed day cruises along the coast. Comfortable cockpit and smooth sailing experience.',
   true
 );
