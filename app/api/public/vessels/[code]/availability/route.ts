@@ -6,10 +6,10 @@ import { addHours, parse, format, isAfter, isBefore, startOfDay, endOfDay } from
 // Query params: date (YYYY-MM-DD), duration_hours
 export async function GET(
   request: NextRequest,
-  { params }: { params: { code: string } }
+  { params }: { params: Promise<{ code: string }> }
 ) {
   try {
-    const { code } = params;
+    const { code } = await params;
     const searchParams = request.nextUrl.searchParams;
     const dateStr = searchParams.get('date');
     const durationStr = searchParams.get('duration_hours');

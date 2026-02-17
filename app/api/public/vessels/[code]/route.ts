@@ -4,10 +4,10 @@ import { supabase } from '@/lib/supabase';
 // GET /api/public/vessels/:code - Get single vessel by public_code
 export async function GET(
   request: NextRequest,
-  { params }: { params: { code: string } }
+  { params }: { params: Promise<{ code: string }> }
 ) {
   try {
-    const { code } = params;
+    const { code } = await params;
 
     const { data: vessel, error } = await supabase
       .from('public_vessels')
