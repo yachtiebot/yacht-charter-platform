@@ -33,154 +33,120 @@ function FleetContent() {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-16">
+    <div className="min-h-screen bg-white pt-24">
       {/* Hero */}
-      <section className="py-24 px-6 bg-slate-50 border-b border-slate-200">
+      <section className="py-24 px-6 border-b border-slate-100">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-sm tracking-widest text-slate-500 mb-4">CURATED COLLECTION</p>
-          <h1 className="text-5xl md:text-6xl font-light mb-6 text-slate-900">
+          <p className="text-xs tracking-[0.2em] text-slate-400 mb-8 uppercase">Curated Collection</p>
+          <h1 className="text-6xl md:text-7xl mb-8 text-slate-900">
             Our Fleet
           </h1>
-          <p className="text-lg text-slate-600 font-light max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Hand selected vessels, privately owned, backed by outstanding guest reviews
           </p>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-6 py-20">
         {/* Filters */}
-        <div className="mb-16 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        <div className="mb-20 flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
           {/* Location Filter */}
-          <div>
-            <label className="block text-xs tracking-wider text-slate-500 mb-2 uppercase">
-              Location
-            </label>
-            <select
-              value={filters.location_tag}
-              onChange={(e) => setFilters({ ...filters, location_tag: e.target.value })}
-              className="w-full px-4 py-3 border border-slate-300 bg-white text-slate-900 font-light focus:outline-none focus:border-slate-900 transition-colors"
-            >
-              <option value="">All Locations</option>
-              <option value="Miami">Miami</option>
-              <option value="Miami Beach">Miami Beach</option>
-              <option value="Key Biscayne">Key Biscayne</option>
-              <option value="Coconut Grove">Coconut Grove</option>
-              <option value="Hollywood">Hollywood</option>
-              <option value="Fort Lauderdale">Fort Lauderdale</option>
-            </select>
-          </div>
+          <select
+            value={filters.location_tag}
+            onChange={(e) => setFilters({ ...filters, location_tag: e.target.value })}
+            className="px-6 py-3 border border-slate-200 bg-white text-slate-900 text-sm uppercase tracking-wider focus:outline-none focus:border-slate-900 transition-colors appearance-none cursor-pointer"
+          >
+            <option value="">All Locations</option>
+            <option value="Miami">Miami</option>
+            <option value="Miami Beach">Miami Beach</option>
+            <option value="Key Biscayne">Key Biscayne</option>
+            <option value="Coconut Grove">Coconut Grove</option>
+            <option value="Hollywood">Hollywood</option>
+            <option value="Fort Lauderdale">Fort Lauderdale</option>
+          </select>
 
           {/* Length Filter */}
-          <div>
-            <label className="block text-xs tracking-wider text-slate-500 mb-2 uppercase">
-              Length
-            </label>
-            <select
-              value={filters.length_bucket}
-              onChange={(e) => setFilters({ ...filters, length_bucket: e.target.value })}
-              className="w-full px-4 py-3 border border-slate-300 bg-white text-slate-900 font-light focus:outline-none focus:border-slate-900 transition-colors"
-            >
-              <option value="">All Sizes</option>
-              <option value="20-40 ft">20-40 ft</option>
-              <option value="40-60 ft">40-60 ft</option>
-              <option value="60-80 ft">60-80 ft</option>
-              <option value="80-100 ft">80-100 ft</option>
-              <option value="100+ ft">100+ ft</option>
-            </select>
-          </div>
+          <select
+            value={filters.length_bucket}
+            onChange={(e) => setFilters({ ...filters, length_bucket: e.target.value })}
+            className="px-6 py-3 border border-slate-200 bg-white text-slate-900 text-sm uppercase tracking-wider focus:outline-none focus:border-slate-900 transition-colors appearance-none cursor-pointer"
+          >
+            <option value="">All Sizes</option>
+            <option value="20-40 ft">20-40 ft</option>
+            <option value="40-60 ft">40-60 ft</option>
+            <option value="60-80 ft">60-80 ft</option>
+            <option value="80-100 ft">80-100 ft</option>
+            <option value="100+ ft">100+ ft</option>
+          </select>
 
           {/* Category Filter */}
-          <div>
-            <label className="block text-xs tracking-wider text-slate-500 mb-2 uppercase">
-              Category
-            </label>
-            <select
-              value={filters.category}
-              onChange={(e) => setFilters({ ...filters, category: e.target.value })}
-              className="w-full px-4 py-3 border border-slate-300 bg-white text-slate-900 font-light focus:outline-none focus:border-slate-900 transition-colors"
-            >
-              <option value="">All Categories</option>
-              <option value="day boat">Day Boat</option>
-              <option value="luxury yacht">Luxury Yacht</option>
-              <option value="super yacht">Super Yacht</option>
-              <option value="event vessels">Event Vessels</option>
-            </select>
-          </div>
+          <select
+            value={filters.category}
+            onChange={(e) => setFilters({ ...filters, category: e.target.value })}
+            className="px-6 py-3 border border-slate-200 bg-white text-slate-900 text-sm uppercase tracking-wider focus:outline-none focus:border-slate-900 transition-colors appearance-none cursor-pointer"
+          >
+            <option value="">All Categories</option>
+            <option value="day boat">Day Boat</option>
+            <option value="luxury yacht">Luxury Yacht</option>
+            <option value="super yacht">Super Yacht</option>
+            <option value="event vessels">Event Vessels</option>
+          </select>
         </div>
 
         {/* Vessels Grid */}
         {loading ? (
-          <div className="text-center py-20 text-slate-400 font-light">Loading vessels...</div>
+          <div className="text-center py-32 text-slate-400">Loading...</div>
         ) : vessels.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-slate-600 font-light text-lg mb-4">
+          <div className="text-center py-32">
+            <p className="text-slate-600 text-lg mb-6">
               No vessels found matching your criteria.
             </p>
             <button
               onClick={() => setFilters({ location_tag: '', length_bucket: '', category: '' })}
-              className="text-slate-900 underline font-light"
+              className="text-slate-900 underline text-sm uppercase tracking-wider"
             >
               Clear filters
             </button>
           </div>
         ) : (
           <>
-            <div className="text-center mb-12 text-slate-600 font-light">
+            <div className="text-center mb-16 text-slate-500 text-sm uppercase tracking-wider">
               {vessels.length} vessel{vessels.length !== 1 ? 's' : ''} available
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {vessels.map((vessel) => (
                 <Link
                   key={vessel.id}
                   href={`/fleet/${vessel.public_code}`}
                   className="group"
                 >
-                  <div className="bg-white overflow-hidden hover:shadow-xl transition-all duration-300">
+                  <div className="bg-white overflow-hidden">
                     {/* Image */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
+                    <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative overflow-hidden mb-6">
                       {vessel.hero_image_url ? (
                         <img
                           src={vessel.hero_image_url}
                           alt={`${vessel.length_ft}ft ${vessel.make}`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-slate-400 font-light">
+                        <div className="w-full h-full flex items-center justify-center text-slate-300 text-sm">
                           Image coming soon
                         </div>
                       )}
                     </div>
 
                     {/* Content */}
-                    <div className="p-6 bg-white">
-                      <h3 className="text-2xl font-light mb-3 text-slate-900 group-hover:text-slate-700 transition-colors">
+                    <div>
+                      <h3 className="text-3xl mb-3 text-slate-900 group-hover:text-slate-600 transition-colors">
                         {vessel.length_ft}ft {vessel.make}
                       </h3>
-                      <p className="text-sm text-slate-500 mb-4 font-light uppercase tracking-wide">
-                        {vessel.category} • {vessel.location_tag}
+                      <p className="text-xs text-slate-400 mb-6 uppercase tracking-wider">
+                        {vessel.category} · {vessel.location_tag}
                       </p>
 
-                      {/* Toys/Features */}
-                      {vessel.toys.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {vessel.toys.slice(0, 3).map((toy) => (
-                            <span
-                              key={toy}
-                              className="text-xs px-3 py-1 border border-slate-200 text-slate-600 font-light"
-                            >
-                              {toy}
-                            </span>
-                          ))}
-                          {vessel.toys.length > 3 && (
-                            <span className="text-xs px-3 py-1 border border-slate-200 text-slate-600 font-light">
-                              +{vessel.toys.length - 3}
-                            </span>
-                          )}
-                        </div>
-                      )}
-
                       {vessel.capacity_guests && (
-                        <div className="text-sm text-slate-600 font-light">
+                        <div className="text-sm text-slate-600">
                           Up to {vessel.capacity_guests} guests
                         </div>
                       )}
@@ -198,7 +164,7 @@ function FleetContent() {
 
 export default function FleetPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-white pt-16 flex items-center justify-center"><div className="text-slate-400 font-light">Loading...</div></div>}>
+    <Suspense fallback={<div className="min-h-screen bg-white pt-16 flex items-center justify-center"><div className="text-slate-400">Loading...</div></div>}>
       <FleetContent />
     </Suspense>
   );
