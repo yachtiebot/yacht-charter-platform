@@ -8,8 +8,8 @@ export default function HomePage() {
         {/* Background Yacht Photo */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=2400&q=90"
-            alt="Luxury yacht"
+            src="https://drive.google.com/uc?export=view&id=1YM9nHM8WZ-w9GVag2N4Ryu96tncJjXUA"
+            alt="60ft Azimut Bravo"
             className="w-full h-full object-cover"
           />
         </div>
