@@ -33,138 +33,180 @@ function FleetContent() {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-24">
-      {/* Hero */}
-      <section className="py-24 px-6 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-xs tracking-[0.2em] text-slate-400 mb-8 uppercase">Curated Collection</p>
-          <h1 className="text-6xl md:text-7xl mb-8 text-slate-900">
-            Our Fleet
-          </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Hand selected vessels, privately owned, backed by outstanding guest reviews
-          </p>
+    <div className="bg-[#faf9f7] min-h-screen">
+      {/* Hero Section */}
+      <section className="h-screen min-h-[700px] relative flex items-end pt-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900">
+          {/* TODO: Fleet hero image */}
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/30 to-transparent" />
+        
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-20">
+          <div className="max-w-3xl">
+            <div className="rule-gold mb-6" />
+            <h1 className="editorial-display text-5xl md:text-7xl lg:text-[5.5rem] text-white mb-6">
+              Our <em className="not-italic text-[#c4a265]">Fleet</em>
+            </h1>
+            <p className="text-white/70 text-lg">
+              Hand selected vessels, privately owned, backed by outstanding guest reviews. Each yacht personally vetted for quality and comfort.
+            </p>
+          </div>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        {/* Filters */}
-        <div className="mb-20 flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-          {/* Location Filter */}
-          <select
-            value={filters.location_tag}
-            onChange={(e) => setFilters({ ...filters, location_tag: e.target.value })}
-            className="px-6 py-3 border border-slate-200 bg-white text-slate-900 text-sm uppercase tracking-wider focus:outline-none focus:border-slate-900 transition-colors appearance-none cursor-pointer"
-          >
-            <option value="">All Locations</option>
-            <option value="Miami">Miami</option>
-            <option value="Miami Beach">Miami Beach</option>
-            <option value="Key Biscayne">Key Biscayne</option>
-            <option value="Coconut Grove">Coconut Grove</option>
-            <option value="Hollywood">Hollywood</option>
-            <option value="Fort Lauderdale">Fort Lauderdale</option>
-          </select>
-
-          {/* Length Filter */}
-          <select
-            value={filters.length_bucket}
-            onChange={(e) => setFilters({ ...filters, length_bucket: e.target.value })}
-            className="px-6 py-3 border border-slate-200 bg-white text-slate-900 text-sm uppercase tracking-wider focus:outline-none focus:border-slate-900 transition-colors appearance-none cursor-pointer"
-          >
-            <option value="">All Sizes</option>
-            <option value="20-40 ft">20-40 ft</option>
-            <option value="40-60 ft">40-60 ft</option>
-            <option value="60-80 ft">60-80 ft</option>
-            <option value="80-100 ft">80-100 ft</option>
-            <option value="100+ ft">100+ ft</option>
-          </select>
-
-          {/* Category Filter */}
-          <select
-            value={filters.category}
-            onChange={(e) => setFilters({ ...filters, category: e.target.value })}
-            className="px-6 py-3 border border-slate-200 bg-white text-slate-900 text-sm uppercase tracking-wider focus:outline-none focus:border-slate-900 transition-colors appearance-none cursor-pointer"
-          >
-            <option value="">All Categories</option>
-            <option value="day boat">Day Boat</option>
-            <option value="luxury yacht">Luxury Yacht</option>
-            <option value="super yacht">Super Yacht</option>
-            <option value="event vessels">Event Vessels</option>
-          </select>
-        </div>
-
-        {/* Vessels Grid */}
-        {loading ? (
-          <div className="text-center py-32 text-slate-400">Loading...</div>
-        ) : vessels.length === 0 ? (
-          <div className="text-center py-32">
-            <p className="text-slate-600 text-lg mb-6">
-              No vessels found matching your criteria.
-            </p>
-            <button
-              onClick={() => setFilters({ location_tag: '', length_bucket: '', category: '' })}
-              className="text-slate-900 underline text-sm uppercase tracking-wider"
+      {/* Filters & Fleet */}
+      <section className="py-28 md:py-36">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          {/* Filters */}
+          <div className="flex flex-wrap gap-4 mb-20">
+            <select
+              value={filters.location_tag}
+              onChange={(e) => setFilters({ ...filters, location_tag: e.target.value })}
+              className="editorial-label px-6 py-3 border border-black/10 bg-white text-[#0f0f0f] focus:border-[#4e7483] focus:outline-none transition-colors appearance-none cursor-pointer"
             >
-              Clear filters
-            </button>
+              <option value="">All Locations</option>
+              <option value="Miami">Miami</option>
+              <option value="Miami Beach">Miami Beach</option>
+              <option value="Key Biscayne">Key Biscayne</option>
+              <option value="Coconut Grove">Coconut Grove</option>
+              <option value="Hollywood">Hollywood</option>
+              <option value="Fort Lauderdale">Fort Lauderdale</option>
+            </select>
+
+            <select
+              value={filters.length_bucket}
+              onChange={(e) => setFilters({ ...filters, length_bucket: e.target.value })}
+              className="editorial-label px-6 py-3 border border-black/10 bg-white text-[#0f0f0f] focus:border-[#4e7483] focus:outline-none transition-colors appearance-none cursor-pointer"
+            >
+              <option value="">All Sizes</option>
+              <option value="20-40 ft">20-40 ft</option>
+              <option value="40-60 ft">40-60 ft</option>
+              <option value="60-80 ft">60-80 ft</option>
+              <option value="80-100 ft">80-100 ft</option>
+              <option value="100+ ft">100+ ft</option>
+            </select>
+
+            <select
+              value={filters.category}
+              onChange={(e) => setFilters({ ...filters, category: e.target.value })}
+              className="editorial-label px-6 py-3 border border-black/10 bg-white text-[#0f0f0f] focus:border-[#4e7483] focus:outline-none transition-colors appearance-none cursor-pointer"
+            >
+              <option value="">All Categories</option>
+              <option value="day boat">Day Boat</option>
+              <option value="luxury yacht">Luxury Yacht</option>
+              <option value="super yacht">Super Yacht</option>
+              <option value="event vessels">Event Vessels</option>
+            </select>
           </div>
-        ) : (
-          <>
-            <div className="text-center mb-16 text-slate-500 text-sm uppercase tracking-wider">
-              {vessels.length} vessel{vessels.length !== 1 ? 's' : ''} available
+
+          {/* Vessels Grid */}
+          {loading ? (
+            <div className="text-center py-32 text-[#6b6b6b]">Loading vessels...</div>
+          ) : vessels.length === 0 ? (
+            <div className="text-center py-32">
+              <div className="rule-gold mx-auto mb-6" />
+              <p className="editorial-display text-3xl text-[#0f0f0f] mb-6">
+                No vessels found
+              </p>
+              <p className="text-[#6b6b6b] mb-8">
+                Try adjusting your filters or browse all vessels.
+              </p>
+              <button
+                onClick={() => setFilters({ location_tag: '', length_bucket: '', category: '' })}
+                className="editorial-label text-[#c4a265] hover:text-[#4e7483] transition-colors"
+              >
+                Clear All Filters
+              </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-              {vessels.map((vessel) => (
-                <Link
-                  key={vessel.id}
-                  href={`/fleet/${vessel.public_code}`}
-                  className="group"
-                >
-                  <div className="bg-white overflow-hidden">
-                    {/* Image */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 relative overflow-hidden mb-6">
+          ) : (
+            <>
+              <div className="editorial-label text-[#6b6b6b] mb-12 text-center">
+                {vessels.length} Vessel{vessels.length !== 1 ? 's' : ''} Available
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                {vessels.map((vessel) => (
+                  <Link
+                    key={vessel.id}
+                    href={`/fleet/${vessel.public_code}`}
+                    className="group"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden mb-6">
+                      {/* Image */}
                       {vessel.hero_image_url ? (
                         <img
                           src={vessel.hero_image_url}
                           alt={`${vessel.length_ft}ft ${vessel.make}`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="img-editorial w-full h-full object-cover"
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-slate-300 text-sm">
+                        <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center text-[#6b6b6b]">
                           Image coming soon
                         </div>
                       )}
-                    </div>
-
-                    {/* Content */}
-                    <div>
-                      <h3 className="text-3xl mb-3 text-slate-900 group-hover:text-slate-600 transition-colors">
-                        {vessel.length_ft}ft {vessel.make}
-                      </h3>
-                      <p className="text-xs text-slate-400 mb-6 uppercase tracking-wider">
-                        {vessel.category} · {vessel.location_tag}
-                      </p>
-
-                      {vessel.capacity_guests && (
-                        <div className="text-sm text-slate-600">
-                          Up to {vessel.capacity_guests} guests
+                      
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/20 to-transparent" />
+                      
+                      {/* Content on Image */}
+                      <div className="absolute bottom-0 left-0 right-0 p-8">
+                        <div className="editorial-label text-[#c4a265] mb-3">
+                          {vessel.category} · {vessel.capacity_guests && `${vessel.capacity_guests} Guests`}
                         </div>
-                      )}
+                        <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">
+                          {vessel.length_ft}ft {vessel.make}
+                        </h3>
+                        {vessel.public_description && (
+                          <p className="text-white/60 text-sm mb-4 line-clamp-2">
+                            {vessel.public_description}
+                          </p>
+                        )}
+                        <div className="flex items-center gap-2 editorial-label text-white/50">
+                          <span>Inquire Now</span>
+                          <span className="group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </>
-        )}
-      </div>
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-28 md:py-36">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900" />
+        <div className="absolute inset-0 bg-[#0f0f0f]/75" />
+        
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
+          <div className="rule-gold mx-auto mb-6" />
+          <h2 className="editorial-display text-4xl md:text-6xl text-white mb-6 max-w-3xl mx-auto">
+            Can't Find What You're <em className="not-italic text-[#c4a265]">Looking For?</em>
+          </h2>
+          <p className="text-white/50 text-lg mb-12 max-w-2xl mx-auto">
+            Our team can help match you with the perfect vessel for your occasion.
+          </p>
+          <Link
+            href="/contact"
+            className="editorial-label bg-white text-[#0f0f0f] px-10 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
+          >
+            Contact Us
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
 
 export default function FleetPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-white pt-16 flex items-center justify-center"><div className="text-slate-400">Loading...</div></div>}>
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#faf9f7] flex items-center justify-center">
+        <div className="text-[#6b6b6b]">Loading...</div>
+      </div>
+    }>
       <FleetContent />
     </Suspense>
   );

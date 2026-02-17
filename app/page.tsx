@@ -2,177 +2,279 @@ import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <div className="bg-white">
+    <div className="bg-[#faf9f7]">
       {/* Hero Section */}
-      <section className="relative min-h-[95vh] flex items-center justify-center px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
+      <section className="h-screen min-h-[700px] relative flex items-end">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900">
+          {/* TODO: Replace with actual yacht hero image */}
+        </div>
         
-        <div className="relative z-10 text-center max-w-5xl mx-auto">
-          <h1 className="text-[min(15vw,110px)] leading-[0.95] mb-8 text-slate-900">
-            Private Yacht<br />Charters in<br />Miami
-          </h1>
-          <p className="text-[min(4vw,22px)] text-slate-600 mb-16 max-w-3xl mx-auto leading-relaxed">
-            A curated fleet of privately owned vessels, hand selected for comfort,<br className="hidden md:block" /> 
-            style, and exceptional guest experiences.
-          </p>
-          <Link
-            href="/fleet"
-            className="inline-block px-12 py-4 bg-slate-900 text-white text-sm tracking-[0.1em] uppercase hover:bg-slate-800 transition-all"
-          >
-            Explore Fleet
-          </Link>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-24 border-y border-slate-200">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-          <div>
-            <div className="text-6xl md:text-7xl mb-3 text-slate-900">4.9</div>
-            <div className="text-sm text-slate-500 uppercase tracking-wider">Google Stars</div>
-          </div>
-          <div>
-            <div className="text-6xl md:text-7xl mb-3 text-slate-900">1,400+</div>
-            <div className="text-sm text-slate-500 uppercase tracking-wider">Verified Reviews</div>
-          </div>
-          <div>
-            <div className="text-6xl md:text-7xl mb-3 text-slate-900">30+</div>
-            <div className="text-sm text-slate-500 uppercase tracking-wider">Years Experience</div>
-          </div>
-          <div>
-            <div className="text-6xl md:text-7xl mb-3 text-slate-900">2012</div>
-            <div className="text-sm text-slate-500 uppercase tracking-wider">Established</div>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy */}
-      <section className="py-32 md:py-48 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-24">
-            <p className="text-xs tracking-[0.2em] text-slate-400 mb-8 uppercase">Our Philosophy</p>
-            <h2 className="text-5xl md:text-7xl mb-12 text-slate-900 leading-tight">
-              Not a Crowded<br />Marketplace.<br />A Curated Collection.
-            </h2>
-            <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              We don't list every boat in Miami. We hand select each vessel based on condition, 
-              presentation, guest feedback, and operational reliability.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-16 mt-24">
-            <div className="text-center space-y-4">
-              <div className="text-slate-900 text-base">Every yacht personally vetted</div>
-              <p className="text-sm text-slate-500 leading-relaxed">
-                Hand selected for quality and guest satisfaction
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/30 to-transparent" />
+        
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+            {/* Left: Headline */}
+            <div className="lg:col-span-7">
+              <div className="rule-gold mb-6" />
+              <h1 className="editorial-display text-5xl md:text-7xl lg:text-[5.5rem] text-white mb-6">
+                Private Yacht<br />Charters in <em className="not-italic text-[#c4a265]">Miami</em>
+              </h1>
+              <p className="text-white/70 text-lg max-w-xl">
+                A curated fleet of privately owned vessels, hand selected for comfort, style, and exceptional guest experiences.
               </p>
             </div>
-            <div className="text-center space-y-4">
-              <div className="text-slate-900 text-base">Transparent pricing, no hidden fees</div>
-              <p className="text-sm text-slate-500 leading-relaxed">
-                Clear communication from start to finish
-              </p>
+            
+            {/* Right: Stats & CTAs */}
+            <div className="lg:col-span-5 space-y-8">
+              <div className="flex gap-12">
+                <div>
+                  <div className="editorial-display text-4xl md:text-5xl text-white mb-2">4.9</div>
+                  <div className="editorial-label text-white/50">Google Stars</div>
+                </div>
+                <div>
+                  <div className="editorial-display text-4xl md:text-5xl text-white mb-2">1,400+</div>
+                  <div className="editorial-label text-white/50">Reviews</div>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/fleet"
+                  className="editorial-label bg-white text-[#0f0f0f] px-10 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
+                >
+                  View Fleet
+                </Link>
+                <Link
+                  href="/contact"
+                  className="editorial-label border border-white/30 text-white px-10 py-4 hover:bg-white/10 transition-all duration-500"
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
-            <div className="text-center space-y-4">
-              <div className="text-slate-900 text-base">Booking support & charter coordination</div>
-              <p className="text-sm text-slate-500 leading-relaxed">
-                Expert guidance every step of the way
-              </p>
+          </div>
+        </div>
+        
+        {/* Bottom Editorial Bar */}
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-4 flex flex-wrap justify-between items-center gap-4">
+            <div className="editorial-label text-white/40 flex flex-wrap gap-4">
+              <span className="hidden md:inline">Miami</span>
+              <span className="hidden md:inline">·</span>
+              <span>Miami Beach</span>
+              <span>·</span>
+              <span className="hidden md:inline">Key Biscayne</span>
+              <span className="hidden md:inline">·</span>
+              <span className="hidden md:inline">Coconut Grove</span>
+              <span className="hidden md:inline">·</span>
+              <span className="hidden md:inline">Fort Lauderdale</span>
+            </div>
+            <div className="editorial-label text-[#c4a265]">
+              Best Boat Charter · Readers' Choice Award
             </div>
           </div>
         </div>
       </section>
 
-      {/* Locations */}
-      <section className="py-32 px-6 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <p className="text-xs tracking-[0.2em] text-slate-400 mb-8 uppercase">Departure Locations</p>
-            <h2 className="text-5xl md:text-6xl text-slate-900 mb-8">
-              Five Locations Across<br />South Florida
-            </h2>
+      {/* Fleet Overview Section */}
+      <section className="py-28 md:py-36">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          {/* Intro */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+            <div className="lg:col-span-5">
+              <div className="rule-gold mb-6" />
+              <h2 className="editorial-display text-4xl md:text-5xl">
+                Every vessel is privately owned, hand-picked for quality.
+              </h2>
+            </div>
+            <div className="lg:col-span-5 lg:col-start-7 flex items-end">
+              <p className="text-[#6b6b6b]">
+                With 30+ years of collective South Florida yachting experience, we know which yachts deliver and which don't. Every charter is backed by outstanding guest reviews.
+              </p>
+            </div>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {[
-              'Miami Beach',
-              'Key Biscayne',
-              'Fort Lauderdale',
-              'Coconut Grove',
-              'Hollywood',
-            ].map((location) => (
-              <Link
-                key={location}
-                href={`/fleet?location=${encodeURIComponent(location)}`}
-                className="group"
-              >
-                <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/40 transition-all flex items-center justify-center">
-                    <span className="text-white text-xl text-center px-4">{location}</span>
+
+          {/* Fleet Cards - Placeholder for when vessels exist */}
+          <div className="text-center py-20">
+            <p className="text-[#6b6b6b] mb-6">Fleet vessels will appear here once added to the database.</p>
+            <Link href="/fleet" className="editorial-label text-[#c4a265] hover:text-[#4e7483] transition-colors">
+              View All Vessels
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section - Dark */}
+      <section className="bg-[#0d0d0d] py-28 md:py-36">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Photo */}
+            <div className="lg:col-span-7">
+              <div className="aspect-[4/3] bg-gradient-to-br from-slate-700 to-slate-800 overflow-hidden">
+                {/* TODO: Replace with actual yacht photo */}
+              </div>
+            </div>
+            
+            {/* Text */}
+            <div className="lg:col-span-4">
+              <div className="rule-gold mb-6" />
+              <div className="editorial-label text-[#c4a265] mb-6">Our Philosophy</div>
+              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-8">
+                Not a Crowded <span className="italic">Marketplace</span>. A Curated Collection.
+              </h2>
+              <p className="text-white/60 mb-6">
+                We don't list every boat in Miami. We hand select each vessel based on condition, presentation, guest feedback, and operational reliability.
+              </p>
+              <ul className="space-y-4 text-white/50 text-sm">
+                <li>• Every yacht personally vetted</li>
+                <li>• Transparent pricing, no hidden fees</li>
+                <li>• Booking support & charter coordination</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Award Section - Dark */}
+      <section className="bg-[#0d0d0d] py-28 md:py-36 border-t border-white/5">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Award Card */}
+            <div className="lg:col-span-5">
+              <div className="border border-white/10 p-12 md:p-16 text-center">
+                <div className="rule-gold mx-auto mb-6" />
+                <div className="editorial-label text-[#c4a265] mb-4">Miami New Times</div>
+                <h3 className="editorial-display text-4xl text-white mb-2">Best Boat Charter</h3>
+                <div className="editorial-label text-white/40 mb-8">Readers' Choice Award</div>
+                
+                <div className="flex justify-center items-center gap-8">
+                  <div>
+                    <div className="editorial-display text-5xl text-[#c4a265] mb-2">2024</div>
+                    <div className="editorial-label text-white/30">Winner</div>
+                  </div>
+                  <div className="h-16 w-px bg-white/10" />
+                  <div>
+                    <div className="editorial-display text-5xl text-[#c4a265] mb-2">2025</div>
+                    <div className="editorial-label text-white/30">Winner</div>
                   </div>
                 </div>
-              </Link>
-            ))}
+              </div>
+            </div>
+            
+            {/* Text */}
+            <div className="lg:col-span-6 lg:col-start-7">
+              <div className="rule-gold mb-6" />
+              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-8">
+                Recognized by Miami's Most <em className="not-italic text-[#c4a265]">Trusted Voice</em>
+              </h2>
+              <p className="text-white/60 mb-12">
+                Voted Best Boat Charter in Miami two years running by the readers of Miami New Times. This recognition reflects our commitment to curating exceptional yacht experiences: every vessel hand selected, every detail considered.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-8">
+                <div>
+                  <div className="editorial-display text-4xl text-white mb-2">4.9</div>
+                  <div className="editorial-label text-white/40">Google Stars</div>
+                </div>
+                <div>
+                  <div className="editorial-display text-4xl text-white mb-2">1,400+</div>
+                  <div className="editorial-label text-white/40">Verified Reviews</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Award */}
-      <section className="py-32 px-6 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block px-8 py-3 border border-slate-300 mb-12">
-            <span className="text-xs tracking-[0.2em] text-slate-600 uppercase">Miami New Times</span>
-          </div>
-          
-          <h2 className="text-5xl md:text-6xl mb-12 text-slate-900">
-            Best Boat Charter<br />
-            <span className="text-3xl text-slate-500">Readers' Choice Award</span>
-          </h2>
-          
-          <div className="flex justify-center gap-16 mb-12">
-            <div>
-              <div className="text-5xl mb-3 text-slate-900">2024</div>
-              <div className="text-sm text-slate-500 uppercase tracking-wider">Winner</div>
-            </div>
-            <div>
-              <div className="text-5xl mb-3 text-slate-900">2025</div>
-              <div className="text-sm text-slate-500 uppercase tracking-wider">Winner</div>
-            </div>
-          </div>
-
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Voted Best Boat Charter in Miami two years running. This recognition reflects our 
-            commitment to curating exceptional yacht experiences.
-          </p>
+      {/* CTA Section */}
+      <section className="relative py-28 md:py-36">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800">
+          {/* TODO: Replace with actual yacht photo */}
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-32 md:py-48 px-6 bg-slate-900 text-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl mb-12 leading-tight">
-            Ready to Get<br />on the Water?
+        <div className="absolute inset-0 bg-[#0f0f0f]/75" />
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
+          <div className="rule-gold mx-auto mb-6" />
+          <h2 className="editorial-display text-4xl md:text-6xl text-white mb-6 max-w-3xl mx-auto">
+            Ready to Get on the <em className="not-italic text-[#c4a265]">Water?</em>
           </h2>
-          <p className="text-xl text-white/80 mb-16 leading-relaxed max-w-xl mx-auto">
-            Tell us about your ideal day and we'll match you with the perfect yacht.
+          <p className="text-white/50 text-lg mb-12 max-w-2xl mx-auto">
+            Tell us about your ideal day and we'll match you with the perfect yacht. No obligation, no hidden fees. Just honest recommendations.
           </p>
-          <Link
-            href="/fleet"
-            className="inline-block px-12 py-4 bg-white text-slate-900 text-sm tracking-[0.1em] uppercase hover:bg-slate-100 transition-all"
-          >
-            Explore Fleet
-          </Link>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/fleet"
+              className="editorial-label bg-white text-[#0f0f0f] px-10 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
+            >
+              View Fleet
+            </Link>
+            <Link
+              href="/contact"
+              className="editorial-label border border-white/30 text-white px-10 py-4 hover:bg-white/10 transition-all duration-500"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-black text-center">
-        <p className="text-slate-400 text-sm">
-          © 2012–2026 Miami Yachting Company®
-        </p>
-        <p className="text-slate-600 text-xs mt-2">
-          Best of Miami 2024 & 2025 · 4.9★ Google
-        </p>
+      <footer className="bg-[#0f0f0f] py-20">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+            {/* Logo & Description */}
+            <div className="md:col-span-4">
+              <div className="text-white text-lg mb-4">Miami Yachting Company</div>
+              <p className="text-white/40 text-sm mb-6">
+                Curating exceptional yacht charter experiences across South Florida since 2012.
+              </p>
+            </div>
+            
+            {/* Charter Links */}
+            <div className="md:col-span-2">
+              <div className="editorial-label text-[#c4a265] mb-4">Charter</div>
+              <ul className="space-y-3 text-sm">
+                <li><Link href="/fleet" className="text-white/40 hover:text-white transition-colors">View Fleet</Link></li>
+                <li><Link href="/locations" className="text-white/40 hover:text-white transition-colors">Locations</Link></li>
+                <li><Link href="/contact" className="text-white/40 hover:text-white transition-colors">Book Now</Link></li>
+              </ul>
+            </div>
+            
+            {/* Company Links */}
+            <div className="md:col-span-2">
+              <div className="editorial-label text-[#c4a265] mb-4">Company</div>
+              <ul className="space-y-3 text-sm">
+                <li><Link href="/about" className="text-white/40 hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/contact" className="text-white/40 hover:text-white transition-colors">Contact</Link></li>
+              </ul>
+            </div>
+            
+            {/* Contact */}
+            <div className="md:col-span-3">
+              <div className="editorial-label text-[#c4a265] mb-4">Contact</div>
+              <div className="text-white/40 text-sm space-y-2">
+                <div>1 800 747 9585</div>
+                <div>info@miamiyachtingcompany.com</div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Bottom Bar */}
+          <div className="border-t border-white/5 pt-8 flex flex-wrap justify-between items-center gap-4">
+            <div className="editorial-label text-white/30">
+              © 2012–2026 Miami Yachting Company®
+            </div>
+            <div className="editorial-label text-white/30">
+              Best of Miami 2024 & 2025 · 4.9★ Google
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );

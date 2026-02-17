@@ -2,51 +2,109 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 export default function Navigation() {
   const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
   
-  const isActive = (path: string) => pathname === path;
-
+  // Pages with dark hero images that need transparent nav
+  const darkHeroPages = ['/', '/fleet', '/about', '/contact'];
+  const hasDarkHero = darkHeroPages.includes(pathname);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 60);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  const isTransparent = hasDarkHero && !isScrolled;
+  
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-sm border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-        <Link href="/" className="text-base tracking-tight text-slate-900 hover:text-slate-600 transition-colors">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        isTransparent 
+          ? 'bg-transparent' 
+          : 'bg-[#faf9f7] border-b border-black/10'
+      }`}
+    >
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-20 md:h-24 flex items-center justify-between">
+        {/* Logo */}
+        <Link 
+          href="/" 
+          className={`text-base transition-colors duration-700 ${
+            isTransparent ? 'text-white' : 'text-[#0f0f0f]'
+          }`}
+        >
           Miami Yachting Company
         </Link>
         
-        <div className="hidden md:flex items-center gap-12">
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-10">
           <Link
             href="/fleet"
-            className={`text-sm tracking-wider uppercase transition-colors ${
-              isActive('/fleet') ? 'text-slate-900' : 'text-slate-500 hover:text-slate-900'
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
             Fleet
           </Link>
           <Link
             href="/locations"
-            className={`text-sm tracking-wider uppercase transition-colors ${
-              isActive('/locations') ? 'text-slate-900' : 'text-slate-500 hover:text-slate-900'
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
             Locations
           </Link>
           <Link
             href="/about"
-            className={`text-sm tracking-wider uppercase transition-colors ${
-              isActive('/about') ? 'text-slate-900' : 'text-slate-500 hover:text-slate-900'
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
             About
           </Link>
+          
+          <div className={`editorial-label hidden xl:block transition-colors duration-700 ${
+            isTransparent ? 'text-white/60' : 'text-[#6b6b6b]'
+          }`}>
+            1 800 747 9585
+          </div>
+          
           <Link
             href="/contact"
-            className="px-8 py-3 bg-slate-900 text-white text-xs tracking-[0.1em] uppercase hover:bg-slate-800 transition-colors"
+            className={`editorial-label px-10 py-4 transition-all duration-500 ${
+              isTransparent
+                ? 'bg-white text-[#0f0f0f] hover:bg-[#c4a265] hover:text-white'
+                : 'bg-[#0f0f0f] text-white hover:bg-[#4e7483]'
+            }`}
           >
-            Contact
+            Book Now
           </Link>
         </div>
+        
+        {/* Mobile Menu Button */}
+        <button 
+          className={`lg:hidden flex flex-col gap-1.5 transition-colors duration-700`}
+          aria-label="Menu"
+        >
+          <span className={`w-6 h-[1.5px] transition-colors duration-700 ${
+            isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'
+          }`} />
+          <span className={`w-6 h-[1.5px] transition-colors duration-700 ${
+            isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'
+          }`} />
+        </button>
       </div>
     </nav>
   );

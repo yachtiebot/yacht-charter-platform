@@ -1,21 +1,73 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@200;300;400;500;600&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-inter: 'Inter', sans-serif;
+  
+  --ink: #0f0f0f;
+  --pearl: #faf9f7;
+  --sand: #f0ece6;
+  --gold: #c4a265;
+  --teal: #4e7483;
+  --slate: #6b6b6b;
+  --dark: #0d0d0d;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--pearl);
+  color: var(--ink);
+  font-family: var(--font-inter);
   font-weight: 300;
-  line-height: 1.6;
-  letter-spacing: -0.01em;
+  line-height: 1.75;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
+/* Editorial Typography Classes */
+.editorial-display {
+  font-family: var(--font-cormorant);
+  font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.08;
+}
+
+.editorial-body {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.editorial-label {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Gold Rule Line */
+.rule-gold {
+  height: 1px;
+  width: 60px;
+  background-color: var(--gold);
+}
+
+/* Image Editorial Treatment */
+.img-editorial {
+  transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.img-editorial:hover {
+  transform: scale(1.04);
+}
+
+/* Text Selection */
+::selection {
+  background-color: var(--teal);
+  color: white;
+}
+
+/* Remove border radius globally */
+* {
+  border-radius: 0 !important;
 }
