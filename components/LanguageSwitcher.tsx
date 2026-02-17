@@ -19,46 +19,50 @@ const languages = [
 export default function LanguageSwitcher({ isTransparent }: { isTransparent: boolean }) {
   const [currentLang, setCurrentLang] = useState('en');
   const [isOpen, setIsOpen] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     // Load saved language preference
     const saved = localStorage.getItem('language') || 'en';
     setCurrentLang(saved);
     
-    // Apply Google Translate
-    applyGoogleTranslate(saved);
+    // Initialize Google Translate
+    initGoogleTranslate(saved);
   }, []);
 
-  const applyGoogleTranslate = (langCode: string) => {
-    // Initialize Google Translate widget
-    if (typeof window !== 'undefined') {
+  const initGoogleTranslate = (langCode: string) => {
+    if (typeof window === 'undefined') return;
+
+    // Add Google Translate script
+    (window as any).googleTranslateElementInit = function() {
+      new (window as any).google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: languages.map(l => l.code).join(','),
+        layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+      
+      setIsReady(true);
+      
+      // Auto-apply saved language
+      if (langCode !== 'en') {
+        setTimeout(() => triggerTranslation(langCode), 1500);
+      }
+    };
+    
+    if (!document.querySelector('script[src*="translate.google.com"]')) {
       const script = document.createElement('script');
       script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
       script.async = true;
-      
-      (window as any).googleTranslateElementInit = function() {
-        new (window as any).google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: languages.map(l => l.code).join(','),
-          layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false
-        }, 'google_translate_element');
-        
-        // Auto-trigger translation
-        if (langCode !== 'en') {
-          setTimeout(() => {
-            const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-            if (select) {
-              select.value = langCode;
-              select.dispatchEvent(new Event('change'));
-            }
-          }, 1000);
-        }
-      };
-      
-      if (!document.querySelector('script[src*="translate.google.com"]')) {
-        document.head.appendChild(script);
-      }
+      document.head.appendChild(script);
+    }
+  };
+
+  const triggerTranslation = (langCode: string) => {
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+    if (select) {
+      select.value = langCode;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
     }
   };
 
@@ -67,14 +71,21 @@ export default function LanguageSwitcher({ isTransparent }: { isTransparent: boo
     localStorage.setItem('language', langCode);
     setIsOpen(false);
     
-    // Trigger Google Translate
-    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-    if (select) {
-      select.value = langCode;
-      select.dispatchEvent(new Event('change'));
+    if (langCode === 'en') {
+      // Reset to English
+      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (select) {
+        select.value = '';
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+      }
     } else {
-      // Reload if widget not ready
-      window.location.reload();
+      // Translate to selected language
+      if (isReady) {
+        triggerTranslation(langCode);
+      } else {
+        // Wait for widget to load
+        setTimeout(() => triggerTranslation(langCode), 2000);
+      }
     }
   };
 
@@ -110,7 +121,7 @@ export default function LanguageSwitcher({ isTransparent }: { isTransparent: boo
               <button
                 key={lang.code}
                 onClick={() => handleLanguageChange(lang.code)}
-                className={`w-full px-4 py-3 flex items-center gap-3 hover:bg-[#f0ece6] transition-colors text-left ${
+                className={`w-full px-4 py-3 flex items-center gap-3 hover:bg-[#f0ece6] transition-colors text-left font-light ${
                   lang.code === currentLang ? 'bg-[#faf9f7]' : ''
                 }`}
               >
