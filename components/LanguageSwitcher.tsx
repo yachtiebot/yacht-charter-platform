@@ -11,7 +11,7 @@ const languages = [
   { code: 'it', name: 'Italiano', flag: '🇮🇹' },
   { code: 'pt', name: 'Português', flag: '🇵🇹' },
   { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' },
+  { code: 'zh-CN', name: '中文', flag: '🇨🇳' },
   { code: 'ja', name: '日本語', flag: '🇯🇵' },
   { code: 'ar', name: 'العربية', flag: '🇸🇦' },
 ];
@@ -19,83 +19,36 @@ const languages = [
 export default function LanguageSwitcher({ isTransparent }: { isTransparent: boolean }) {
   const [currentLang, setCurrentLang] = useState('en');
   const [isOpen, setIsOpen] = useState(false);
-  const [isReady, setIsReady] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Load saved language preference
+    setMounted(true);
     const saved = localStorage.getItem('language') || 'en';
     setCurrentLang(saved);
-    
-    // Initialize Google Translate
-    initGoogleTranslate(saved);
   }, []);
 
-  const initGoogleTranslate = (langCode: string) => {
-    if (typeof window === 'undefined') return;
-
-    // Add Google Translate script
-    (window as any).googleTranslateElementInit = function() {
-      new (window as any).google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: languages.map(l => l.code).join(','),
-        layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-      
-      setIsReady(true);
-      
-      // Auto-apply saved language
-      if (langCode !== 'en') {
-        setTimeout(() => triggerTranslation(langCode), 1500);
-      }
-    };
-    
-    if (!document.querySelector('script[src*="translate.google.com"]')) {
-      const script = document.createElement('script');
-      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      script.async = true;
-      document.head.appendChild(script);
-    }
-  };
-
-  const triggerTranslation = (langCode: string) => {
-    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-    if (select) {
-      select.value = langCode;
-      select.dispatchEvent(new Event('change', { bubbles: true }));
-    }
-  };
-
   const handleLanguageChange = (langCode: string) => {
-    setCurrentLang(langCode);
     localStorage.setItem('language', langCode);
+    setCurrentLang(langCode);
     setIsOpen(false);
     
     if (langCode === 'en') {
-      // Reset to English
-      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-      if (select) {
-        select.value = '';
-        select.dispatchEvent(new Event('change', { bubbles: true }));
-      }
+      // Return to original site
+      window.location.href = window.location.origin + window.location.pathname;
     } else {
-      // Translate to selected language
-      if (isReady) {
-        triggerTranslation(langCode);
-      } else {
-        // Wait for widget to load
-        setTimeout(() => triggerTranslation(langCode), 2000);
-      }
+      // Redirect to Google Translate URL
+      const currentUrl = window.location.origin + window.location.pathname;
+      const translateUrl = `https://translate.google.com/translate?sl=en&tl=${langCode}&u=${encodeURIComponent(currentUrl)}`;
+      window.location.href = translateUrl;
     }
   };
+
+  if (!mounted) return null;
 
   const currentLanguage = languages.find(l => l.code === currentLang) || languages[0];
 
   return (
     <div className="relative">
-      {/* Hidden Google Translate Element */}
-      <div id="google_translate_element" className="hidden" />
-      
       {/* Custom Language Selector */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -104,9 +57,10 @@ export default function LanguageSwitcher({ isTransparent }: { isTransparent: boo
             ? 'text-white hover:text-[#c4a265]'
             : 'text-[#0f0f0f] hover:text-[#4e7483]'
         }`}
+        aria-label="Select language"
       >
         <span>{currentLanguage.flag}</span>
-        <span className="hidden md:inline">{currentLanguage.code.toUpperCase()}</span>
+        <span className="hidden md:inline">{currentLanguage.code.split('-')[0].toUpperCase()}</span>
       </button>
 
       {/* Dropdown */}
@@ -116,7 +70,7 @@ export default function LanguageSwitcher({ isTransparent }: { isTransparent: boo
             className="fixed inset-0 z-40" 
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 top-full mt-2 bg-white border border-black/10 shadow-lg z-50 min-w-[200px]">
+          <div className="absolute right-0 top-full mt-2 bg-white border border-black/10 shadow-lg z-50 min-w-[200px] max-h-[400px] overflow-y-auto">
             {languages.map((lang) => (
               <button
                 key={lang.code}
