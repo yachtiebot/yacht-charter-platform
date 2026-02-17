@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <div className="bg-[#faf9f7]">
-      {/* Hero Section - Full Screen with Photo */}
+    <div>
+      {/* Hero Section */}
       <section className="h-screen min-h-[700px] relative flex flex-col">
-        {/* Background Yacht Photo - Full Bleed */}
+        {/* Background Yacht Photo */}
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=2400&q=90"
@@ -14,16 +14,16 @@ export default function HomePage() {
           />
         </div>
         
-        {/* Gradient Overlay - Solid dark at bottom, transparent at top */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/30 to-transparent" />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/30 to-transparent" />
         
         {/* Content - Anchored to Bottom */}
         <div className="relative z-10 flex-1 flex flex-col justify-end">
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full pb-20">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-              {/* Left Column - Headline (60% width) */}
+              {/* Left Column - 60% */}
               <div className="lg:col-span-7">
-                <div className="w-[60px] h-[1px] bg-[#c4a265] mb-6" />
+                <div className="rule-gold" />
                 <h1 className="editorial-display text-5xl md:text-7xl lg:text-[5.5rem] text-white mb-6">
                   Private Yacht<br />
                   Charters in<br />
@@ -34,21 +34,21 @@ export default function HomePage() {
                 </p>
               </div>
               
-              {/* Right Column - Stats & Buttons (40% width) */}
+              {/* Right Column - 40% */}
               <div className="lg:col-span-5">
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-8 mb-8">
                   <div>
-                    <div className="editorial-display text-5xl md:text-6xl text-white mb-2">4.9</div>
+                    <div className="editorial-display text-5xl md:text-[3.5rem] text-white mb-2">4.9</div>
                     <div className="editorial-label text-white/50">Google Stars</div>
                   </div>
                   <div>
-                    <div className="editorial-display text-5xl md:text-6xl text-white mb-2">1,400+</div>
+                    <div className="editorial-display text-5xl md:text-[3.5rem] text-white mb-2">1,400+</div>
                     <div className="editorial-label text-white/50">Reviews</div>
                   </div>
                 </div>
                 
-                {/* Buttons - Solid white, sharp corners, generous padding */}
+                {/* Buttons */}
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/fleet"
@@ -68,14 +68,14 @@ export default function HomePage() {
           </div>
         </div>
         
-        {/* Bottom Editorial Bar - With top border */}
+        {/* Bottom Editorial Bar */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-4 flex flex-wrap justify-between items-center gap-4">
             <div className="editorial-label text-white/40 flex flex-wrap gap-2 items-center">
-              <span className="hidden md:inline">Miami</span>
-              <span className="hidden md:inline">·</span>
-              <span>Miami Beach</span>
+              <span>Miami</span>
               <span>·</span>
+              <span>Miami Beach</span>
+              <span className="hidden md:inline">·</span>
               <span className="hidden md:inline">Key Biscayne</span>
               <span className="hidden md:inline">·</span>
               <span className="hidden md:inline">Coconut Grove</span>
@@ -89,109 +89,151 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Fleet Overview Section */}
-      <section className="py-28 md:py-36">
+      {/* Section 1: Fleet Overview */}
+      <section className="bg-[#faf9f7] py-28 md:py-36">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          {/* Intro */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-            <div className="lg:col-span-5">
-              <div className="rule-gold mb-6" />
-              <h2 className="editorial-display text-4xl md:text-5xl">
-                Every vessel is privately owned, hand-picked for quality.
+          {/* Header */}
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-20">
+            <div className="lg:max-w-md">
+              <div className="rule-gold" />
+              <h2 className="editorial-display text-4xl md:text-5xl text-[#0f0f0f]">
+                The Fleet
               </h2>
             </div>
-            <div className="lg:col-span-5 lg:col-start-7 flex items-end">
-              <p className="text-[#6b6b6b]">
-                With 30+ years of collective South Florida yachting experience, we know which yachts deliver and which don't. Every charter is backed by outstanding guest reviews.
-              </p>
-            </div>
+            <p className="text-[#6b6b6b] lg:max-w-lg">
+              Three categories of vessels to match your vision — from casual sandbar days to milestone celebrations and corporate charters.
+            </p>
           </div>
 
-          {/* Fleet Cards - Placeholder for when vessels exist */}
-          <div className="text-center py-20">
-            <p className="text-[#6b6b6b] mb-6">Fleet vessels will appear here once added to the database.</p>
-            <Link href="/fleet" className="editorial-label text-[#c4a265] hover:text-[#4e7483] transition-colors">
-              View All Vessels
+          {/* 3 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Day Boats */}
+            <Link href="/fleet" className="group relative aspect-[3/4] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=90"
+                alt="Day Boats"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <div className="editorial-label text-[#c4a265] mb-3">20–40 FT</div>
+                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">Day Boats</h3>
+                <p className="text-white/60 text-sm mb-3">Casual elegance for sandbar days and sunset cruises.</p>
+                <div className="editorial-label text-white/50">From $700</div>
+              </div>
+            </Link>
+
+            {/* Luxury Yachts */}
+            <Link href="/fleet" className="group relative aspect-[3/4] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=800&q=90"
+                alt="Luxury Yachts"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <div className="editorial-label text-[#c4a265] mb-3">40–80 FT</div>
+                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">Luxury Yachts</h3>
+                <p className="text-white/60 text-sm mb-3">Premium amenities for celebrations and corporate occasions.</p>
+                <div className="editorial-label text-white/50">From $1,250</div>
+              </div>
+            </Link>
+
+            {/* Superyachts */}
+            <Link href="/fleet" className="group relative aspect-[3/4] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=90"
+                alt="Superyachts"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <div className="editorial-label text-[#c4a265] mb-3">80 FT+</div>
+                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">Superyachts</h3>
+                <p className="text-white/60 text-sm mb-3">The pinnacle of yachting. Unmatched space and premium amenities.</p>
+                <div className="editorial-label text-white/50">From $3,200</div>
+              </div>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Section - Dark */}
+      {/* Section 2: Our Philosophy */}
       <section className="bg-[#0d0d0d] py-28 md:py-36">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Photo */}
-            <div className="lg:col-span-7">
-              <div className="aspect-[4/3] bg-gradient-to-br from-slate-700 to-slate-800 overflow-hidden">
-                {/* TODO: Replace with actual yacht photo */}
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Photo */}
+            <div className="relative aspect-[4/3] overflow-hidden group">
+              <img
+                src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=1200&q=90"
+                alt="Our Philosophy"
+                className="img-zoom w-full h-full object-cover"
+              />
             </div>
-            
-            {/* Text */}
-            <div className="lg:col-span-4">
-              <div className="rule-gold mb-6" />
+
+            {/* Right: Text */}
+            <div>
+              <div className="rule-gold" />
               <div className="editorial-label text-[#c4a265] mb-6">Our Philosophy</div>
-              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-8">
-                Not a Crowded <span className="italic">Marketplace</span>. A Curated Collection.
+              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-4">
+                Not a Crowded Marketplace.
               </h2>
-              <p className="text-white/60 mb-6">
+              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-8 italic">
+                A Curated Collection.
+              </h2>
+              <p className="text-white/60 text-lg leading-relaxed">
                 We don't list every boat in Miami. We hand select each vessel based on condition, presentation, guest feedback, and operational reliability.
               </p>
-              <ul className="space-y-4 text-white/50 text-sm">
-                <li>• Every yacht personally vetted</li>
-                <li>• Transparent pricing, no hidden fees</li>
-                <li>• Booking support & charter coordination</li>
-              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Award Section - Dark */}
+      {/* Section 3: Award Section */}
       <section className="bg-[#0d0d0d] py-28 md:py-36 border-t border-white/5">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Award Card */}
-            <div className="lg:col-span-5">
-              <div className="border border-white/10 p-12 md:p-16 text-center">
-                <div className="rule-gold mx-auto mb-6" />
-                <div className="editorial-label text-[#c4a265] mb-4">Miami New Times</div>
-                <h3 className="editorial-display text-4xl text-white mb-2">Best Boat Charter</h3>
-                <div className="editorial-label text-white/40 mb-8">Readers' Choice Award</div>
-                
-                <div className="flex justify-center items-center gap-8">
-                  <div>
-                    <div className="editorial-display text-5xl text-[#c4a265] mb-2">2024</div>
-                    <div className="editorial-label text-white/30">Winner</div>
-                  </div>
-                  <div className="h-16 w-px bg-white/10" />
-                  <div>
-                    <div className="editorial-display text-5xl text-[#c4a265] mb-2">2025</div>
-                    <div className="editorial-label text-white/30">Winner</div>
-                  </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left: Award Box */}
+            <div className="border border-white/10 p-12 flex flex-col items-center text-center">
+              <div className="rule-gold mx-auto" />
+              <div className="editorial-label text-[#c4a265] mb-6">Miami New Times</div>
+              <h3 className="editorial-display text-4xl md:text-5xl text-white mb-4">
+                Best Boat Charter
+              </h3>
+              <div className="editorial-label text-white/40 mb-12">Readers' Choice Award</div>
+              
+              <div className="flex items-center gap-8">
+                <div>
+                  <div className="editorial-display text-5xl text-[#c4a265] mb-2">2024</div>
+                  <div className="editorial-label text-white/50">Winner</div>
+                </div>
+                <div className="w-[1px] h-16 bg-white/10" />
+                <div>
+                  <div className="editorial-display text-5xl text-[#c4a265] mb-2">2025</div>
+                  <div className="editorial-label text-white/50">Winner</div>
                 </div>
               </div>
             </div>
-            
-            {/* Text */}
-            <div className="lg:col-span-6 lg:col-start-7">
-              <div className="rule-gold mb-6" />
-              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-8">
-                Recognized by Miami's Most <em className="not-italic text-[#c4a265]">Trusted Voice</em>
-              </h2>
-              <p className="text-white/60 mb-12">
-                Voted Best Boat Charter in Miami two years running by the readers of Miami New Times. This recognition reflects our commitment to curating exceptional yacht experiences: every vessel hand selected, every detail considered.
+
+            {/* Right: Text */}
+            <div className="flex flex-col justify-center">
+              <div className="rule-gold" />
+              <h3 className="editorial-display text-4xl md:text-5xl text-white mb-4">
+                Recognized by Miami's<br />
+                <span className="italic">Most Trusted Voice</span>
+              </h3>
+              <p className="text-white/60 mb-8 text-lg leading-relaxed">
+                Back-to-back wins from Miami New Times readers — the city's most discerning voices on where to eat, drink, and play.
               </p>
               
               <div className="grid grid-cols-2 gap-8">
                 <div>
                   <div className="editorial-display text-4xl text-white mb-2">4.9</div>
-                  <div className="editorial-label text-white/40">Google Stars</div>
+                  <div className="editorial-label text-white/50">Google Stars</div>
                 </div>
                 <div>
                   <div className="editorial-display text-4xl text-white mb-2">1,400+</div>
-                  <div className="editorial-label text-white/40">Verified Reviews</div>
+                  <div className="editorial-label text-white/50">Verified Reviews</div>
                 </div>
               </div>
             </div>
@@ -199,89 +241,97 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Section 4: CTA */}
       <section className="relative py-28 md:py-36">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800">
-          {/* TODO: Replace with actual yacht photo */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=2400&q=90"
+            alt="Get on the water"
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="absolute inset-0 bg-[#0f0f0f]/75" />
         
-        {/* Content */}
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
-          <div className="rule-gold mx-auto mb-6" />
+          <div className="rule-gold mx-auto" />
           <h2 className="editorial-display text-4xl md:text-6xl text-white mb-6 max-w-3xl mx-auto">
-            Ready to Get on the <em className="not-italic text-[#c4a265]">Water?</em>
+            Ready to Get on the Water?
           </h2>
           <p className="text-white/50 text-lg mb-12 max-w-2xl mx-auto">
-            Tell us about your ideal day and we'll match you with the perfect yacht. No obligation, no hidden fees. Just honest recommendations.
+            Our team can help match you with the perfect vessel for your occasion.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/fleet"
-              className="editorial-label bg-white text-[#0f0f0f] px-10 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
+            <a
+              href="tel:18007479585"
+              className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
             >
-              View Fleet
-            </Link>
+              Call 1 800 747 9585
+            </a>
             <Link
               href="/contact"
-              className="editorial-label border border-white/30 text-white px-10 py-4 hover:bg-white/10 transition-all duration-500"
+              className="editorial-label border border-white/30 text-white px-8 py-4 hover:bg-white/10 transition-all duration-500"
             >
-              Contact Us
+              Send an Inquiry
             </Link>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0f0f0f] py-20">
+      <footer className="bg-[#0f0f0f] py-20 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
-            {/* Logo & Description */}
-            <div className="md:col-span-4">
-              <div className="text-white text-lg mb-4">Miami Yachting Company</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            {/* Brand */}
+            <div>
+              <div className="text-white mb-4">Miami Yachting Company</div>
               <p className="text-white/40 text-sm mb-6">
-                Curating exceptional yacht charter experiences across South Florida since 2012.
+                A curated fleet of privately owned vessels for Miami yacht charters.
               </p>
+              <div className="flex gap-4">
+                <a href="#" className="text-white/40 hover:text-white transition-colors text-sm">Instagram</a>
+                <a href="#" className="text-white/40 hover:text-white transition-colors text-sm">Facebook</a>
+              </div>
             </div>
-            
-            {/* Charter Links */}
-            <div className="md:col-span-2">
-              <div className="editorial-label text-[#c4a265] mb-4">Charter</div>
-              <ul className="space-y-3 text-sm">
-                <li><Link href="/fleet" className="text-white/40 hover:text-white transition-colors">View Fleet</Link></li>
-                <li><Link href="/locations" className="text-white/40 hover:text-white transition-colors">Locations</Link></li>
-                <li><Link href="/contact" className="text-white/40 hover:text-white transition-colors">Book Now</Link></li>
-              </ul>
+
+            {/* Charter */}
+            <div>
+              <div className="editorial-label text-[#c4a265] mb-6">Charter</div>
+              <div className="space-y-3">
+                <Link href="/fleet" className="block text-white/40 hover:text-white transition-colors text-sm">Day Boats</Link>
+                <Link href="/fleet" className="block text-white/40 hover:text-white transition-colors text-sm">Luxury Yachts</Link>
+                <Link href="/fleet" className="block text-white/40 hover:text-white transition-colors text-sm">Superyachts</Link>
+              </div>
             </div>
-            
-            {/* Company Links */}
-            <div className="md:col-span-2">
-              <div className="editorial-label text-[#c4a265] mb-4">Company</div>
-              <ul className="space-y-3 text-sm">
-                <li><Link href="/about" className="text-white/40 hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/contact" className="text-white/40 hover:text-white transition-colors">Contact</Link></li>
-              </ul>
+
+            {/* Company */}
+            <div>
+              <div className="editorial-label text-[#c4a265] mb-6">Company</div>
+              <div className="space-y-3">
+                <Link href="/about" className="block text-white/40 hover:text-white transition-colors text-sm">About</Link>
+                <Link href="/locations" className="block text-white/40 hover:text-white transition-colors text-sm">Locations</Link>
+                <Link href="/contact" className="block text-white/40 hover:text-white transition-colors text-sm">Contact</Link>
+              </div>
             </div>
-            
+
             {/* Contact */}
-            <div className="md:col-span-3">
-              <div className="editorial-label text-[#c4a265] mb-4">Contact</div>
-              <div className="text-white/40 text-sm space-y-2">
-                <div>1 800 747 9585</div>
-                <div>info@miamiyachtingcompany.com</div>
+            <div>
+              <div className="editorial-label text-[#c4a265] mb-6">Contact</div>
+              <div className="space-y-3">
+                <a href="tel:18007479585" className="block text-white/40 hover:text-white transition-colors text-sm">1 800 747 9585</a>
+                <a href="mailto:team@miamiyachting.com" className="block text-white/40 hover:text-white transition-colors text-sm">team@miamiyachting.com</a>
+                <div className="text-white/40 text-sm">Miami, Florida</div>
               </div>
             </div>
           </div>
-          
+
           {/* Bottom Bar */}
           <div className="border-t border-white/5 pt-8 flex flex-wrap justify-between items-center gap-4">
-            <div className="editorial-label text-white/30">
-              © 2012–2026 Miami Yachting Company®
+            <div className="text-white/40 text-sm">
+              © 2025 Miami Yachting Company. All rights reserved.
             </div>
-            <div className="editorial-label text-white/30">
-              Best of Miami 2024 & 2025 · 4.9★ Google
+            <div className="editorial-label text-[#c4a265] text-[10px]">
+              Best Boat Charter · Readers' Choice Award
             </div>
           </div>
         </div>

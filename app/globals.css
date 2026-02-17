@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap');
 
 :root {
   --font-cormorant: 'Cormorant Garamond', serif;
@@ -11,64 +11,59 @@
   --gold: #c4a265;
   --teal: #4e7483;
   --slate: #6b6b6b;
-  --dark: #0d0d0d;
+  --dark-bg: #0d0d0d;
+}
+
+* {
+  border-radius: 0 !important;
 }
 
 body {
   background: var(--pearl);
   color: var(--ink);
   font-family: var(--font-inter);
-  font-weight: 300;
-  line-height: 1.6;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  line-height: 1.75;
 }
 
-/* Modern Typography Classes */
+/* Editorial Display - Headlines */
 .editorial-display {
   font-family: var(--font-cormorant);
-  font-weight: 300;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
+/* Editorial Body - Paragraphs */
 .editorial-body {
   font-family: var(--font-inter);
-  font-weight: 300;
-  line-height: 1.6;
+  font-weight: 400;
+  line-height: 1.75;
   font-size: 1rem;
 }
 
+/* Editorial Label - All uppercase small text */
 .editorial-label {
   font-family: var(--font-inter);
-  font-weight: 400;
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
 /* Gold Rule Line */
 .rule-gold {
-  height: 1px;
   width: 60px;
-  background-color: var(--gold);
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 24px;
 }
 
-/* Image Editorial Treatment */
-.img-editorial {
+/* Image Hover Zoom */
+.img-zoom {
   transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.img-editorial:hover {
+.group:hover .img-zoom {
   transform: scale(1.04);
-}
-
-/* Text Selection */
-::selection {
-  background-color: var(--teal);
-  color: white;
-}
-
-/* Remove border radius globally */
-* {
-  border-radius: 0 !important;
 }
