@@ -1,8 +1,7 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap');
 
 :root {
-  --font-cormorant: 'Cormorant Garamond', serif;
   --font-inter: 'Inter', sans-serif;
   
   --ink: #0f0f0f;
@@ -18,30 +17,31 @@ body {
   background: var(--pearl);
   color: var(--ink);
   font-family: var(--font-inter);
-  font-weight: 300;
-  line-height: 1.75;
+  font-weight: 200;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
 }
 
-/* Editorial Typography Classes */
+/* Modern Typography Classes */
 .editorial-display {
-  font-family: var(--font-cormorant);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.08;
+  font-family: var(--font-inter);
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
 }
 
 .editorial-body {
   font-family: var(--font-inter);
-  font-weight: 400;
-  line-height: 1.75;
+  font-weight: 300;
+  line-height: 1.6;
   font-size: 1rem;
 }
 
 .editorial-label {
   font-family: var(--font-inter);
-  font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-weight: 400;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 

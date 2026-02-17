@@ -19,12 +19,12 @@ export default function HomePage() {
             {/* Left Column - Headline */}
             <div className="lg:col-span-7">
               <div className="w-[60px] h-[1px] bg-[#c4a265] mb-6" />
-              <h1 className="editorial-display text-5xl md:text-7xl lg:text-[5.5rem] text-white mb-6">
+              <h1 className="editorial-display text-5xl md:text-7xl lg:text-[6rem] text-white mb-6 font-extralight">
                 Private Yacht<br />
                 Charters in<br />
                 <span className="text-[#c4a265]">Miami</span>
               </h1>
-              <p className="text-white/70 text-base md:text-lg max-w-lg mt-6">
+              <p className="text-white/60 text-base md:text-lg max-w-lg mt-6 font-light">
                 A curated fleet of privately owned vessels, hand selected for comfort, style, and exceptional guest experiences.
               </p>
             </div>
@@ -34,12 +34,12 @@ export default function HomePage() {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-8 mb-8">
                 <div>
-                  <div className="editorial-display text-4xl md:text-5xl text-white mb-2">4.9</div>
-                  <div className="editorial-label text-white/50">Google Stars</div>
+                  <div className="text-5xl md:text-6xl text-white mb-2 font-extralight tracking-tight">4.9</div>
+                  <div className="editorial-label text-white/40">Google Stars</div>
                 </div>
                 <div>
-                  <div className="editorial-display text-4xl md:text-5xl text-white mb-2">1,400+</div>
-                  <div className="editorial-label text-white/50">Reviews</div>
+                  <div className="text-5xl md:text-6xl text-white mb-2 font-extralight tracking-tight">1,400+</div>
+                  <div className="editorial-label text-white/40">Reviews</div>
                 </div>
               </div>
               

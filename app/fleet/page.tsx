@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { PublicVessel } from '@/lib/types';
 import { formatCurrency } from '@/lib/utils';
+import FilterToggle from '@/components/FilterToggle';
 
 function FleetContent() {
   const searchParams = useSearchParams();
@@ -67,7 +68,7 @@ function FleetContent() {
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-20">
           <div className="max-w-3xl">
             <div className="w-[60px] h-[1px] bg-[#c4a265] mb-6" />
-            <h1 className="editorial-display text-5xl md:text-7xl lg:text-[5.5rem] text-white mb-6">
+            <h1 className="text-5xl md:text-7xl lg:text-[6rem] text-white mb-6 font-extralight tracking-tight">
               Our <span className="text-[#c4a265]">Fleet</span>
             </h1>
             <p className="text-white/70 text-lg">
@@ -84,7 +85,7 @@ function FleetContent() {
           <div className="mb-20">
             <div className="w-[60px] h-[1px] bg-[#c4a265] mb-6" />
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-              <h2 className="editorial-display text-4xl md:text-5xl text-[#0f0f0f]">
+              <h2 className="text-4xl md:text-5xl text-[#0f0f0f] font-extralight tracking-tight">
                 The Fleet
               </h2>
               <p className="text-[#6b6b6b] max-w-2xl">
@@ -94,46 +95,28 @@ function FleetContent() {
             </div>
           </div>
 
-          {/* Filters */}
-          <div className="flex flex-wrap gap-4 mb-16">
-            <select
-              value={filters.location_tag}
-              onChange={(e) => setFilters({ ...filters, location_tag: e.target.value })}
-              className="editorial-label px-6 py-3 border border-black/10 bg-white text-[#0f0f0f] focus:border-[#4e7483] focus:outline-none transition-colors appearance-none cursor-pointer"
-            >
-              <option value="">All Locations</option>
-              <option value="Miami">Miami</option>
-              <option value="Miami Beach">Miami Beach</option>
-              <option value="Key Biscayne">Key Biscayne</option>
-              <option value="Coconut Grove">Coconut Grove</option>
-              <option value="Hollywood">Hollywood</option>
-              <option value="Fort Lauderdale">Fort Lauderdale</option>
-            </select>
-
-            <select
-              value={filters.length_bucket}
-              onChange={(e) => setFilters({ ...filters, length_bucket: e.target.value })}
-              className="editorial-label px-6 py-3 border border-black/10 bg-white text-[#0f0f0f] focus:border-[#4e7483] focus:outline-none transition-colors appearance-none cursor-pointer"
-            >
-              <option value="">All Sizes</option>
-              <option value="20-40 ft">20-40 ft</option>
-              <option value="40-60 ft">40-60 ft</option>
-              <option value="60-80 ft">60-80 ft</option>
-              <option value="80-100 ft">80-100 ft</option>
-              <option value="100+ ft">100+ ft</option>
-            </select>
-
-            <select
-              value={filters.category}
-              onChange={(e) => setFilters({ ...filters, category: e.target.value })}
-              className="editorial-label px-6 py-3 border border-black/10 bg-white text-[#0f0f0f] focus:border-[#4e7483] focus:outline-none transition-colors appearance-none cursor-pointer"
-            >
-              <option value="">All Categories</option>
-              <option value="day boat">Day Boat</option>
-              <option value="luxury yacht">Luxury Yacht</option>
-              <option value="super yacht">Super Yacht</option>
-              <option value="event vessels">Event Vessels</option>
-            </select>
+          {/* Modern Toggle Filters */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <FilterToggle
+              label="Location"
+              options={['Miami', 'Miami Beach', 'Key Biscayne', 'Coconut Grove', 'Hollywood', 'Fort Lauderdale']}
+              selected={filters.location_tag}
+              onChange={(val) => setFilters({ ...filters, location_tag: val })}
+            />
+            
+            <FilterToggle
+              label="Size"
+              options={['20-40 ft', '40-60 ft', '60-80 ft', '80-100 ft', '100+ ft']}
+              selected={filters.length_bucket}
+              onChange={(val) => setFilters({ ...filters, length_bucket: val })}
+            />
+            
+            <FilterToggle
+              label="Type"
+              options={['day boat', 'luxury yacht', 'super yacht', 'event vessels']}
+              selected={filters.category}
+              onChange={(val) => setFilters({ ...filters, category: val })}
+            />
           </div>
 
           {/* Vessels Grid */}
@@ -196,8 +179,8 @@ function FleetContent() {
                         {vessel.category} · Up to {vessel.capacity_guests || 0} Guests
                       </div>
                       
-                      {/* Yacht Name - Large Serif */}
-                      <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">
+                      {/* Yacht Name - Large Clean */}
+                      <h3 className="text-3xl md:text-4xl text-white mb-3 font-extralight tracking-tight">
                         {vessel.length_ft}ft {vessel.make}
                       </h3>
                       
