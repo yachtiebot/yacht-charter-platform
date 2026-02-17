@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { formatCurrency } from '@/lib/utils';
 
@@ -40,9 +39,12 @@ interface VesselDetail {
   } | null;
 }
 
-export default function VesselDetailPage() {
-  const params = useParams();
-  const code = params.code as string;
+export default function VesselDetailPage({
+  params,
+}: {
+  params: { code: string };
+}) {
+  const code = params.code;
   const [data, setData] = useState<VesselDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
