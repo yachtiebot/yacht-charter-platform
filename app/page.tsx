@@ -39,11 +39,11 @@ export default function HomePage() {
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-8 mb-8">
                   <div>
-                    <div className="editorial-display text-5xl md:text-[3.5rem] text-white mb-2">4.9</div>
+                    <div className="text-4xl md:text-5xl text-white mb-2 font-light tracking-tight">4.9</div>
                     <div className="editorial-label text-white/50">Google Stars</div>
                   </div>
                   <div>
-                    <div className="editorial-display text-5xl md:text-[3.5rem] text-white mb-2">1,400+</div>
+                    <div className="text-4xl md:text-5xl text-white mb-2 font-light tracking-tight">1,400+</div>
                     <div className="editorial-label text-white/50">Reviews</div>
                   </div>
                 </div>
@@ -204,12 +204,12 @@ export default function HomePage() {
               
               <div className="flex items-center gap-8">
                 <div>
-                  <div className="editorial-display text-5xl text-[#c4a265] mb-2">2024</div>
+                  <div className="text-5xl text-[#c4a265] mb-2 font-light tracking-tight">2024</div>
                   <div className="editorial-label text-white/50">Winner</div>
                 </div>
                 <div className="w-[1px] h-16 bg-white/10" />
                 <div>
-                  <div className="editorial-display text-5xl text-[#c4a265] mb-2">2025</div>
+                  <div className="text-5xl text-[#c4a265] mb-2 font-light tracking-tight">2025</div>
                   <div className="editorial-label text-white/50">Winner</div>
                 </div>
               </div>
@@ -228,11 +228,11 @@ export default function HomePage() {
               
               <div className="grid grid-cols-2 gap-8">
                 <div>
-                  <div className="editorial-display text-4xl text-white mb-2">4.9</div>
+                  <div className="text-4xl text-white mb-2 font-light tracking-tight">4.9</div>
                   <div className="editorial-label text-white/50">Google Stars</div>
                 </div>
                 <div>
-                  <div className="editorial-display text-4xl text-white mb-2">1,400+</div>
+                  <div className="text-4xl text-white mb-2 font-light tracking-tight">1,400+</div>
                   <div className="editorial-label text-white/50">Verified Reviews</div>
                 </div>
               </div>
