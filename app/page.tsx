@@ -3,66 +3,72 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <div className="bg-[#faf9f7]">
-      {/* Hero Section - Full Screen */}
-      <section className="h-screen min-h-[700px] relative flex items-end">
-        {/* Background Image - Dark moody yacht photo */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900">
-          {/* TODO: Replace with actual dark yacht hero image */}
+      {/* Hero Section - Full Screen with Photo */}
+      <section className="h-screen min-h-[700px] relative flex flex-col">
+        {/* Background Yacht Photo - Full Bleed */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=2400&q=90"
+            alt="Luxury yacht"
+            className="w-full h-full object-cover"
+          />
         </div>
         
-        {/* Gradient Overlay - Dark at bottom, transparent at top */}
+        {/* Gradient Overlay - Solid dark at bottom, transparent at top */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/30 to-transparent" />
         
-        {/* Content - Bottom Aligned */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-0">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end pb-16">
-            {/* Left Column - Headline */}
-            <div className="lg:col-span-7">
-              <div className="w-[60px] h-[1px] bg-[#c4a265] mb-6" />
-              <h1 className="editorial-display text-5xl md:text-7xl lg:text-[6rem] text-white mb-6 font-extralight">
-                Private Yacht<br />
-                Charters in<br />
-                <span className="text-[#c4a265]">Miami</span>
-              </h1>
-              <p className="text-white/60 text-base md:text-lg max-w-lg mt-6 font-light">
-                A curated fleet of privately owned vessels, hand selected for comfort, style, and exceptional guest experiences.
-              </p>
-            </div>
-            
-            {/* Right Column - Stats & Buttons */}
-            <div className="lg:col-span-5">
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-8 mb-8">
-                <div>
-                  <div className="text-5xl md:text-6xl text-white mb-2 font-extralight tracking-tight">4.9</div>
-                  <div className="editorial-label text-white/40">Google Stars</div>
-                </div>
-                <div>
-                  <div className="text-5xl md:text-6xl text-white mb-2 font-extralight tracking-tight">1,400+</div>
-                  <div className="editorial-label text-white/40">Reviews</div>
-                </div>
+        {/* Content - Anchored to Bottom */}
+        <div className="relative z-10 flex-1 flex flex-col justify-end">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full pb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+              {/* Left Column - Headline (60% width) */}
+              <div className="lg:col-span-7">
+                <div className="w-[60px] h-[1px] bg-[#c4a265] mb-6" />
+                <h1 className="editorial-display text-5xl md:text-7xl lg:text-[5.5rem] text-white mb-6">
+                  Private Yacht<br />
+                  Charters in<br />
+                  <span className="text-[#c4a265]">Miami</span>
+                </h1>
+                <p className="text-white/70 text-base md:text-lg max-w-lg">
+                  A curated fleet of privately owned vessels, hand selected for comfort, style, and exceptional guest experiences.
+                </p>
               </div>
               
-              {/* Both buttons solid white */}
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/fleet"
-                  className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
-                >
-                  View Fleet
-                </Link>
-                <Link
-                  href="/contact"
-                  className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
-                >
-                  Contact Us
-                </Link>
+              {/* Right Column - Stats & Buttons (40% width) */}
+              <div className="lg:col-span-5">
+                {/* Stats */}
+                <div className="grid grid-cols-2 gap-8 mb-8">
+                  <div>
+                    <div className="editorial-display text-5xl md:text-6xl text-white mb-2">4.9</div>
+                    <div className="editorial-label text-white/50">Google Stars</div>
+                  </div>
+                  <div>
+                    <div className="editorial-display text-5xl md:text-6xl text-white mb-2">1,400+</div>
+                    <div className="editorial-label text-white/50">Reviews</div>
+                  </div>
+                </div>
+                
+                {/* Buttons - Solid white, sharp corners, generous padding */}
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/fleet"
+                    className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
+                  >
+                    View Fleet
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
+                  >
+                    Contact Us
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Bottom Editorial Bar */}
+        {/* Bottom Editorial Bar - With top border */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-4 flex flex-wrap justify-between items-center gap-4">
             <div className="editorial-label text-white/40 flex flex-wrap gap-2 items-center">
