@@ -88,7 +88,7 @@ function FleetContent() {
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-20">
           <div className="max-w-3xl">
             <div className="rule-gold" />
-            <h1 className="editorial-display text-5xl md:text-7xl lg:text-[5.5rem] text-white mb-6">
+            <h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl text-white mb-6 font-light">
               Our <span className="text-[#c4a265]">Fleet</span>
             </h1>
             <p className="text-white/70 text-lg">
@@ -105,7 +105,7 @@ function FleetContent() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-20">
             <div>
               <div className="rule-gold" />
-              <h2 className="editorial-display text-4xl md:text-5xl text-[#0f0f0f]">
+              <h2 className="editorial-display text-4xl md:text-5xl text-[#0f0f0f] font-light">
                 The Fleet
               </h2>
             </div>
@@ -147,7 +147,7 @@ function FleetContent() {
                   </div>
                   
                   {/* Yacht Name */}
-                  <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">
+                  <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3 font-light">
                     {yacht.name}
                   </h3>
                   
@@ -181,7 +181,7 @@ function FleetContent() {
         
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
           <div className="rule-gold mx-auto" />
-          <h2 className="editorial-display text-4xl md:text-6xl text-white mb-6 max-w-3xl mx-auto">
+          <h2 className="editorial-display text-4xl md:text-6xl text-white mb-6 max-w-3xl mx-auto font-light">
             Can't Find What You're <span className="text-[#c4a265]">Looking For?</span>
           </h2>
           <p className="text-white/50 text-lg mb-12 max-w-2xl mx-auto">

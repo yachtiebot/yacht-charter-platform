@@ -96,7 +96,7 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-20">
             <div className="lg:max-w-md">
               <div className="rule-gold" />
-              <h2 className="editorial-display text-4xl md:text-5xl text-[#0f0f0f]">
+              <h2 className="editorial-display text-4xl md:text-5xl text-[#0f0f0f] font-light">
                 The Fleet
               </h2>
             </div>
@@ -117,7 +117,7 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-3">20–40 FT</div>
-                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">Day Boats</h3>
+                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3 font-light">Day Boats</h3>
                 <p className="text-white/60 text-sm mb-3">Casual elegance for sandbar days and sunset cruises.</p>
                 <div className="editorial-label text-white/50">From $700</div>
               </div>
@@ -133,7 +133,7 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-3">40–80 FT</div>
-                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">Luxury Yachts</h3>
+                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3 font-light">Luxury Yachts</h3>
                 <p className="text-white/60 text-sm mb-3">Premium amenities for celebrations and corporate occasions.</p>
                 <div className="editorial-label text-white/50">From $1,250</div>
               </div>
@@ -149,7 +149,7 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-3">80 FT+</div>
-                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">Superyachts</h3>
+                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3 font-light">Superyachts</h3>
                 <p className="text-white/60 text-sm mb-3">The pinnacle of yachting. Unmatched space and premium amenities.</p>
                 <div className="editorial-label text-white/50">From $3,200</div>
               </div>
@@ -175,10 +175,10 @@ export default function HomePage() {
             <div>
               <div className="rule-gold" />
               <div className="editorial-label text-[#c4a265] mb-6">Our Philosophy</div>
-              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-4">
+              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-4 font-light">
                 Not a Crowded Marketplace.
               </h2>
-              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-8 italic">
+              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-8 italic font-light">
                 A Curated Collection.
               </h2>
               <p className="text-white/60 text-lg leading-relaxed">
@@ -197,7 +197,7 @@ export default function HomePage() {
             <div className="border border-white/10 p-12 flex flex-col items-center text-center">
               <div className="rule-gold mx-auto" />
               <div className="editorial-label text-[#c4a265] mb-6">Miami New Times</div>
-              <h3 className="editorial-display text-4xl md:text-5xl text-white mb-4">
+              <h3 className="editorial-display text-4xl md:text-5xl text-white mb-4 font-light">
                 Best Boat Charter
               </h3>
               <div className="editorial-label text-white/40 mb-12">Readers' Choice Award</div>
@@ -218,7 +218,7 @@ export default function HomePage() {
             {/* Right: Text */}
             <div className="flex flex-col justify-center">
               <div className="rule-gold" />
-              <h3 className="editorial-display text-4xl md:text-5xl text-white mb-4">
+              <h3 className="editorial-display text-4xl md:text-5xl text-white mb-4 font-light">
                 Recognized by Miami's<br />
                 <span className="italic">Most Trusted Voice</span>
               </h3>
@@ -254,7 +254,7 @@ export default function HomePage() {
         
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
           <div className="rule-gold mx-auto" />
-          <h2 className="editorial-display text-4xl md:text-6xl text-white mb-6 max-w-3xl mx-auto">
+          <h2 className="editorial-display text-4xl md:text-6xl text-white mb-6 max-w-3xl mx-auto font-light">
             Ready to Get on the Water?
           </h2>
           <p className="text-white/50 text-lg mb-12 max-w-2xl mx-auto">
