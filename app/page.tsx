@@ -3,33 +3,36 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <div className="bg-[#faf9f7]">
-      {/* Hero Section */}
+      {/* Hero Section - Full Screen */}
       <section className="h-screen min-h-[700px] relative flex items-end">
-        {/* Background Image */}
+        {/* Background Image - Dark moody yacht photo */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900">
-          {/* TODO: Replace with actual yacht hero image */}
+          {/* TODO: Replace with actual dark yacht hero image */}
         </div>
         
-        {/* Gradient Overlay */}
+        {/* Gradient Overlay - Dark at bottom, transparent at top */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/30 to-transparent" />
         
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-            {/* Left: Headline */}
+        {/* Content - Bottom Aligned */}
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-0">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end pb-16">
+            {/* Left Column - Headline */}
             <div className="lg:col-span-7">
-              <div className="rule-gold mb-6" />
+              <div className="w-[60px] h-[1px] bg-[#c4a265] mb-6" />
               <h1 className="editorial-display text-5xl md:text-7xl lg:text-[5.5rem] text-white mb-6">
-                Private Yacht<br />Charters in <em className="not-italic text-[#c4a265]">Miami</em>
+                Private Yacht<br />
+                Charters in<br />
+                <span className="text-[#c4a265]">Miami</span>
               </h1>
-              <p className="text-white/70 text-lg max-w-xl">
+              <p className="text-white/70 text-base md:text-lg max-w-lg mt-6">
                 A curated fleet of privately owned vessels, hand selected for comfort, style, and exceptional guest experiences.
               </p>
             </div>
             
-            {/* Right: Stats & CTAs */}
-            <div className="lg:col-span-5 space-y-8">
-              <div className="flex gap-12">
+            {/* Right Column - Stats & Buttons */}
+            <div className="lg:col-span-5">
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-8 mb-8">
                 <div>
                   <div className="editorial-display text-4xl md:text-5xl text-white mb-2">4.9</div>
                   <div className="editorial-label text-white/50">Google Stars</div>
@@ -40,16 +43,17 @@ export default function HomePage() {
                 </div>
               </div>
               
+              {/* Both buttons solid white */}
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/fleet"
-                  className="editorial-label bg-white text-[#0f0f0f] px-10 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
+                  className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
                 >
                   View Fleet
                 </Link>
                 <Link
                   href="/contact"
-                  className="editorial-label border border-white/30 text-white px-10 py-4 hover:bg-white/10 transition-all duration-500"
+                  className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
                 >
                   Contact Us
                 </Link>
@@ -61,7 +65,7 @@ export default function HomePage() {
         {/* Bottom Editorial Bar */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-4 flex flex-wrap justify-between items-center gap-4">
-            <div className="editorial-label text-white/40 flex flex-wrap gap-4">
+            <div className="editorial-label text-white/40 flex flex-wrap gap-2 items-center">
               <span className="hidden md:inline">Miami</span>
               <span className="hidden md:inline">·</span>
               <span>Miami Beach</span>
