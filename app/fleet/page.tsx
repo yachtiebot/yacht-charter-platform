@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { PublicVessel } from '@/lib/types';
 
-export default function FleetPage() {
+function FleetContent() {
   const searchParams = useSearchParams();
   const [vessels, setVessels] = useState<PublicVessel[]>([]);
   const [loading, setLoading] = useState(true);
@@ -193,5 +193,13 @@ export default function FleetPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function FleetPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white pt-16 flex items-center justify-center"><div className="text-slate-400 font-light">Loading...</div></div>}>
+      <FleetContent />
+    </Suspense>
   );
 }
