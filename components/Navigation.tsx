@@ -34,16 +34,14 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-20 md:h-24 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - Text */}
         <Link 
           href="/" 
-          className="flex items-center"
+          className={`logo-text transition-colors duration-700 ${
+            isTransparent ? 'text-white' : 'text-[#0f0f0f]'
+          }`}
         >
-          <img 
-            src="/images/myc-logo-circle.png" 
-            alt="Miami Yachting Company"
-            className="h-14 md:h-16 w-auto"
-          />
+          Miami Yachting Company
         </Link>
         
         {/* Desktop Navigation - Single Row */}
@@ -79,14 +77,14 @@ export default function Navigation() {
             Experiences
           </Link>
           <Link
-            href="/premium-add-ons"
+            href="/add-ons"
             className={`editorial-label transition-colors duration-700 ${
               isTransparent 
                 ? 'text-white hover:text-[#c4a265]' 
                 : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
-            Premium Add-Ons
+            Add-Ons
           </Link>
           <Link
             href="/catering"
@@ -96,7 +94,7 @@ export default function Navigation() {
                 : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
-            Catering Menu
+            Catering
           </Link>
           <Link
             href="/offers"
@@ -116,7 +114,7 @@ export default function Navigation() {
                 : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
-            Testimonials
+            Reviews
           </Link>
           <Link
             href="/contact"
@@ -222,12 +220,12 @@ export default function Navigation() {
             Experiences
           </Link>
           <Link
-            href="/premium-add-ons"
+            href="/add-ons"
             onClick={() => setIsMobileMenuOpen(false)}
             className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Premium Add-Ons
+            Add-Ons
           </Link>
           <Link
             href="/catering"
@@ -235,7 +233,7 @@ export default function Navigation() {
             className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Catering Menu
+            Catering
           </Link>
           <Link
             href="/offers"
@@ -251,7 +249,7 @@ export default function Navigation() {
             className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Testimonials
+            Reviews
           </Link>
           <Link
             href="/contact"
