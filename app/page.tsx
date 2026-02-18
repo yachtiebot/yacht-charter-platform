@@ -49,7 +49,7 @@ export default function HomePage() {
                 </div>
                 
                 {/* Buttons */}
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 mb-12">
                   <Link
                     href="/yacht-rental-miami"
                     className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
@@ -63,24 +63,13 @@ export default function HomePage() {
                     Contact Us
                   </Link>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Scroll Indicator - Positioned between buttons */}
-        <div className="absolute bottom-24 w-full">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-              <div className="lg:col-span-7"></div>
-              <div className="lg:col-span-5">
-                <div className="flex flex-wrap gap-4">
-                  <div className="flex-1"></div>
+                
+                {/* Scroll Indicator */}
+                <div className="flex justify-center">
                   <div className="flex flex-col items-center gap-2 animate-bounce">
                     <div className="text-white/50 text-[10px] font-medium tracking-wider uppercase">Scroll</div>
                     <div className="w-[1px] h-6 bg-white/30" />
                   </div>
-                  <div className="flex-1"></div>
                 </div>
               </div>
             </div>
