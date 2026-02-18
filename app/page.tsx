@@ -211,9 +211,14 @@ export default function HomePage() {
 
             {/* Celebrations */}
             <Link href="/experiences/celebrations" className="group relative aspect-square overflow-hidden">
-              <div className="absolute inset-0 bg-[#c4a265]/20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Celebrations</h3>
+              <img
+                src="/images/experiences/celebrations.jpg"
+                alt="Celebrations"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-center">
+                <h3 className="editorial-card-name text-white text-center">Celebrations</h3>
               </div>
             </Link>
 
@@ -235,9 +240,14 @@ export default function HomePage() {
 
             {/* Bachelorette Party */}
             <Link href="/experiences/bachelorette" className="group relative aspect-square overflow-hidden">
-              <div className="absolute inset-0 bg-[#c4a265]/20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Bachelorette Party</h3>
+              <img
+                src="/images/experiences/bachelorette-party.jpg"
+                alt="Bachelorette Party"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-center">
+                <h3 className="editorial-card-name text-white text-center">Bachelorette Party</h3>
               </div>
             </Link>
 
