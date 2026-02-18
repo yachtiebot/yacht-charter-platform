@@ -185,9 +185,8 @@ export default function HomePage() {
       {/* Trust/Reviews Section - Clean Logos Only */}
       <section className="bg-white" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="border border-[#0f0f0f]/10 py-10 px-6 md:px-12">
-            {/* Logos Row */}
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-8">
+          {/* Logos Row */}
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-8">
               {/* Yelp Reviews */}
               <a 
                 href="https://www.yelp.com/biz/miami-yachting-company-miami-beach" 
@@ -249,27 +248,27 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Testimonial Quote */}
-            <div className="text-center mb-6">
-              <p className="editorial-body text-[#0f0f0f] italic mb-2">
-                "From the moment we stepped on the boat our expectations were exceeded!!!"
-              </p>
-              <p className="editorial-small text-[#6b6b6b]">
-                - Nicole N. - TripAdvisor
-              </p>
-            </div>
+          {/* Testimonial Quote */}
+          <div className="text-center mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-[#d4d4d4] mb-6" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, lineHeight: 1.6 }}>
+              "From the moment we stepped on the boat our expectations were exceeded!!!"
+            </p>
+            <p className="text-base text-[#b8b8b8]" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+              — Nicole N. from TripAdvisor
+            </p>
+          </div>
 
-            {/* CTA Button */}
-            <div className="text-center">
-              <a 
-                href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#0f0f0f] text-white editorial-button px-8 py-3 hover:bg-[#c4a265] transition-colors duration-300"
-              >
-                View Customer Reviews
-              </a>
-            </div>
+          {/* CTA Button */}
+          <div className="text-center">
+            <a 
+              href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block border border-[#e5e5e5] text-[#9ca3af] px-8 py-3 hover:border-[#c4a265] hover:text-[#c4a265] transition-all duration-300"
+              style={{ fontFamily: 'var(--font-roboto-mono), monospace', fontSize: '11px', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}
+            >
+              View Customer Reviews
+            </a>
           </div>
         </div>
       </section>
