@@ -238,12 +238,12 @@ export default function HomePage() {
       {/* Experiences Section */}
       <section className="bg-[#faf9f7]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="text-center mb-12">
-            <div className="rule-gold mx-auto" />
+          <div className="mb-12">
+            <div className="rule-gold" />
             <h2 className="editorial-headline text-[#0f0f0f] mb-4">
               Experiences
             </h2>
-            <p className="editorial-body text-[#6b6b6b] max-w-2xl mx-auto">
+            <p className="editorial-body text-[#6b6b6b] max-w-2xl">
               Every charter is tailored to the occasion. Tell us what you're celebrating and we'll match you with the perfect vessel and itinerary.
             </p>
           </div>
@@ -314,13 +314,13 @@ export default function HomePage() {
       {/* Departure Points Section */}
       <section className="bg-[#0d0d0d]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="text-center mb-12">
-            <div className="rule-gold mx-auto" />
+          <div className="mb-12">
+            <div className="rule-gold" />
             <h2 className="editorial-headline text-white mb-4">
               Departure Points
             </h2>
-            <p className="editorial-body text-white/60 max-w-2xl mx-auto">
-              Charter from five locations across South Florida. Each offers unique access to Miami's most iconic waterways and destinations.
+            <p className="editorial-body text-white/60 max-w-2xl">
+              Charter from six locations across South Florida. Each offers unique access to Miami's most iconic waterways and destinations.
             </p>
           </div>
 
