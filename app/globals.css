@@ -200,6 +200,14 @@ body {
   transform: scale(1.04);
 }
 
+/* Bright cards - white text with shadow, no dark overlays */
+.bright-card-text h3,
+.bright-card-text p,
+.bright-card-text div,
+.bright-card-text span {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
 /* Hide Google Translate UI */
 .goog-te-banner-frame,
 .goog-te-balloon-frame,
