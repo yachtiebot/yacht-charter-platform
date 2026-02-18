@@ -34,14 +34,16 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-20 md:h-24 flex items-center justify-between">
-        {/* Logo - Text */}
+        {/* Logo */}
         <Link 
           href="/" 
-          className={`logo-text transition-colors duration-700 ${
-            isTransparent ? 'text-white' : 'text-[#0f0f0f]'
-          }`}
+          className="flex items-center"
         >
-          Miami Yachting Company
+          <img 
+            src="/images/myc-logo-circle.png" 
+            alt="Miami Yachting Company"
+            className="h-14 md:h-16 w-auto"
+          />
         </Link>
         
         {/* Desktop Navigation - Single Row */}

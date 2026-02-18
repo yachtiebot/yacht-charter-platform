@@ -704,7 +704,11 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             {/* Brand */}
             <div>
-              <div className="text-white mb-4">Miami Yachting Company</div>
+              <img 
+                src="/images/myc-logo-circle.png" 
+                alt="Miami Yachting Company"
+                className="h-20 w-20 mb-4"
+              />
               <p className="text-white/40 text-sm mb-6">
                 A curated fleet of privately owned vessels for Miami yacht charters.
               </p>
