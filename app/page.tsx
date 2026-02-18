@@ -450,17 +450,17 @@ export default function HomePage() {
               </div>
             </Link>
 
-            {/* Fort Lauderdale */}
-            <Link href="/locations/fort-lauderdale" className="group relative aspect-[4/3] overflow-hidden">
+            {/* Coconut Grove */}
+            <Link href="/locations/coconut-grove" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/departures/fort-lauderdale.jpg"
-                alt="Fort Lauderdale"
+                src="/images/departures/coconut-grove.jpg"
+                alt="Coconut Grove"
                 className="img-zoom w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="editorial-card-name text-white mb-2">Fort Lauderdale</h3>
-                <p className="editorial-small text-white/60">The yachting capital of the world. Access to Intracoastal waterways and open ocean.</p>
+                <h3 className="editorial-card-name text-white mb-2">Coconut Grove</h3>
+                <p className="editorial-small text-white/60">A relaxed tropical departure point with easy access to Biscayne Bay.</p>
               </div>
             </Link>
 
@@ -478,17 +478,17 @@ export default function HomePage() {
               </div>
             </Link>
 
-            {/* Coconut Grove */}
-            <Link href="/locations/coconut-grove" className="group relative aspect-[4/3] overflow-hidden">
+            {/* Fort Lauderdale */}
+            <Link href="/locations/fort-lauderdale" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/departures/coconut-grove.jpg"
-                alt="Coconut Grove"
+                src="/images/departures/fort-lauderdale.jpg"
+                alt="Fort Lauderdale"
                 className="img-zoom w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="editorial-card-name text-white mb-2">Coconut Grove</h3>
-                <p className="editorial-small text-white/60">A relaxed tropical departure point with easy access to Biscayne Bay.</p>
+                <h3 className="editorial-card-name text-white mb-2">Fort Lauderdale</h3>
+                <p className="editorial-small text-white/60">The yachting capital of the world. Access to Intracoastal waterways and open ocean.</p>
               </div>
             </Link>
           </div>
