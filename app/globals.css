@@ -1,8 +1,7 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap');
 
 :root {
-  --font-display: 'Cormorant Garamond', serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
   --font-inter: 'Inter', sans-serif;
   
   --ink: #0f0f0f;
@@ -21,53 +20,175 @@
 body {
   background: var(--pearl);
   color: var(--ink);
-  font-family: var(--font-inter);
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 1.75;
-}
-
-/* Editorial Display - Headlines (Cormorant Garamond 300, 45px) */
-.editorial-display {
-  font-family: var(--font-display) !important;
-  font-weight: 300 !important;
-  font-size: 45px !important;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-/* Force 300 weight on all headlines */
-h1.editorial-display,
-h2.editorial-display,
-h3.editorial-display,
-h1, h2, h3 {
-  font-weight: 300 !important;
-  font-family: var(--font-display) !important;
-}
-
-/* Editorial Body - Paragraphs (Inter 400) */
-.editorial-body {
-  font-family: var(--font-inter);
+  font-family: var(--font-inter), 'Inter', sans-serif;
   font-weight: 400;
+  font-size: 16px;
   line-height: 1.75;
-  font-size: 1rem;
 }
 
-/* Editorial Label - All uppercase small text (Inter 500, 12px, 0.2em tracking) */
+/* ========================================
+   CORMORANT GARAMOND - Headlines & Large Numbers Only
+   ======================================== */
+
+/* Hero headline - 88px desktop / 48px mobile */
+.editorial-display {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  font-style: normal;
+  font-size: 5.5rem; /* 88px */
+}
+
+@media (max-width: 768px) {
+  .editorial-display {
+    font-size: 3rem; /* 48px */
+  }
+}
+
+/* Section headlines - 60px desktop / 36px mobile */
+.editorial-headline {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  font-style: normal;
+  font-size: 3.75rem; /* 60px */
+}
+
+@media (max-width: 768px) {
+  .editorial-headline {
+    font-size: 2.25rem; /* 36px */
+  }
+}
+
+/* Sub-section headlines - 44-48px desktop / 30px mobile */
+.editorial-subhead {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  font-style: normal;
+  font-size: 2.75rem; /* 44px */
+}
+
+@media (max-width: 768px) {
+  .editorial-subhead {
+    font-size: 1.875rem; /* 30px */
+  }
+}
+
+/* Italic variant */
+.editorial-subhead-italic {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  font-style: italic;
+  font-size: 2.75rem; /* 44px */
+}
+
+@media (max-width: 768px) {
+  .editorial-subhead-italic {
+    font-size: 1.875rem; /* 30px */
+  }
+}
+
+/* Large stat numbers - 52px desktop / 40px mobile */
+.editorial-stat {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: normal;
+  line-height: 1.08;
+  font-style: normal;
+  font-size: 3.25rem; /* 52px */
+}
+
+@media (max-width: 768px) {
+  .editorial-stat {
+    font-size: 2.5rem; /* 40px */
+  }
+}
+
+/* Award years - 38px */
+.editorial-year {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: normal;
+  line-height: 1.08;
+  font-style: normal;
+  font-size: 2.375rem; /* 38px */
+}
+
+/* Yacht card names - 34px desktop / 24px mobile */
+.editorial-card-name {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  font-style: normal;
+  font-size: 2.125rem; /* 34px */
+}
+
+@media (max-width: 768px) {
+  .editorial-card-name {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+/* ========================================
+   INTER - Everything Else
+   ======================================== */
+
+/* EDITORIAL LABEL - All uppercase small text (12px, weight 500, 0.2em tracking) */
 .editorial-label {
-  font-family: var(--font-inter);
+  font-family: var(--font-inter), 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 0.75rem;
+  font-size: 0.75rem; /* 12px */
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  line-height: normal;
 }
+
+/* EDITORIAL BODY - Paragraphs (16px, weight 400) */
+.editorial-body {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  letter-spacing: normal;
+  text-transform: none;
+  line-height: 1.75;
+}
+
+/* SMALL BODY - Card descriptions, footer links (14px, weight 400) */
+.editorial-small {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem; /* 14px */
+  letter-spacing: normal;
+  text-transform: none;
+  line-height: 1.6;
+}
+
+/* LOGO TEXT - Inter 400, 15px, normal case */
+.logo-text {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem; /* 15px */
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
 
 /* Gold Rule Line */
 .rule-gold {
   width: 60px;
   height: 1px;
   background: var(--gold);
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem; /* 24px */
 }
 
 /* Image Hover Zoom */
@@ -99,23 +220,4 @@ iframe.skiptranslate {
 .translated-ltr,
 .translated-rtl {
   margin-top: 0 !important;
-}
-
-/* Hide Google Translate UI elements */
-.goog-te-banner-frame,
-.goog-te-balloon-frame {
-  display: none !important;
-}
-
-body {
-  top: 0 !important;
-}
-
-.skiptranslate {
-  display: none !important;
-}
-
-iframe.skiptranslate {
-  visibility: hidden !important;
-  height: 0 !important;
 }
