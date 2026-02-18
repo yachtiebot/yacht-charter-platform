@@ -189,8 +189,9 @@ export default function HomePage() {
       {/* Trust/Reviews Section - Clean Logos Only */}
       <section className="bg-white" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="border border-[#0f0f0f]/10 py-8 px-6 md:px-12">
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          <div className="border border-[#0f0f0f]/10 py-10 px-6 md:px-12">
+            {/* Logos Row */}
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-8">
               {/* Yelp Reviews */}
               <a 
                 href="https://www.yelp.com/biz/miami-yachting-company-miami-beach" 
@@ -201,7 +202,7 @@ export default function HomePage() {
                 <img 
                   src="/images/reviews/yelp-5star.jpg" 
                   alt="Yelp Reviews" 
-                  className="h-16 w-auto"
+                  className="h-14 w-auto object-contain"
                 />
               </a>
 
@@ -215,7 +216,7 @@ export default function HomePage() {
                 <img 
                   src="/images/reviews/tripadvisor-5.jpg" 
                   alt="TripAdvisor Reviews" 
-                  className="h-16 w-auto"
+                  className="h-14 w-auto object-contain"
                 />
               </a>
 
@@ -229,7 +230,7 @@ export default function HomePage() {
                 <img 
                   src="/images/reviews/google-reviews.jpg" 
                   alt="Google Reviews" 
-                  className="h-16 w-auto"
+                  className="h-14 w-auto object-contain"
                 />
               </a>
 
@@ -238,7 +239,7 @@ export default function HomePage() {
                 <img 
                   src="/images/reviews/iyba.jpg" 
                   alt="IYBA Member" 
-                  className="h-16 w-auto"
+                  className="h-14 w-auto object-contain"
                 />
               </div>
 
@@ -247,9 +248,31 @@ export default function HomePage() {
                 <img 
                   src="/images/reviews/best-of-miami-2025.jpg" 
                   alt="Best of Miami 2025 Winner" 
-                  className="h-16 w-auto"
+                  className="h-14 w-auto object-contain"
                 />
               </div>
+            </div>
+
+            {/* Testimonial Quote */}
+            <div className="text-center mb-6">
+              <p className="editorial-body text-[#0f0f0f] italic mb-2">
+                "From the moment we stepped on the boat our expectations were exceeded!!!"
+              </p>
+              <p className="editorial-small text-[#6b6b6b]">
+                - Nicole N. - TripAdvisor
+              </p>
+            </div>
+
+            {/* CTA Button */}
+            <div className="text-center">
+              <a 
+                href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#0f0f0f] text-white editorial-button px-8 py-3 hover:bg-[#c4a265] transition-colors duration-300"
+              >
+                View Customer Reviews
+              </a>
             </div>
           </div>
         </div>
