@@ -8,8 +8,8 @@ export default function HomePage() {
         {/* Background Yacht Photo */}
         <div className="absolute inset-0">
           <img
-            src="https://lh3.googleusercontent.com/d/1YM9nHM8WZ-w9GVag2N4Ryu96tncJjXUA"
-            alt="60ft Azimut Bravo"
+            src="/images/hero/hero-yacht-sunset.jpg"
+            alt="Luxury yacht charter Miami"
             className="w-full h-full object-cover"
           />
         </div>
@@ -131,7 +131,7 @@ export default function HomePage() {
             {/* Day Boats */}
             <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=90"
+                src="/images/fleet/performance-yacht-day.jpg"
                 alt="Day Boats"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -153,7 +153,7 @@ export default function HomePage() {
             {/* Luxury Yachts */}
             <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=800&q=90"
+                src="/images/fleet/luxury-yacht-bow-night.jpg"
                 alt="Luxury Yachts"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -175,7 +175,7 @@ export default function HomePage() {
             {/* Superyachts */}
             <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=90"
+                src="/images/fleet/dual-yachts-miami.jpg"
                 alt="Superyachts"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -324,7 +324,7 @@ export default function HomePage() {
             {/* Left: Photo */}
             <div className="relative aspect-[4/3] overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=1200&q=90"
+                src="/images/fleet/fleet-formation.jpg"
                 alt="Our Philosophy"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -419,7 +419,7 @@ export default function HomePage() {
       <section className="relative" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=2400&q=90"
+            src="/images/locations/miami-beach-aerial.jpg"
             alt="Get on the water"
             className="w-full h-full object-cover"
           />
