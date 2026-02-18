@@ -220,7 +220,7 @@ export default function HomePage() {
             {/* Right: Text */}
             <div className="flex flex-col justify-center">
               <div className="rule-gold" />
-              <h3 className="editorial-display text-4xl md:text-5xl text-white mb-4" style={{ fontWeight: 400 }>
+              <h3 className="editorial-display text-4xl md:text-5xl text-white mb-4" style={{ fontWeight: 400 }}>
                 Recognized by Miami's<br />
                 <span className="italic">Most Trusted Voice</span>
               </h3>
