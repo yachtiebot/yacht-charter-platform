@@ -415,6 +415,48 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Corporate Sponsors Carousel */}
+      <section className="bg-white overflow-hidden" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 mb-12">
+          <div className="rule-gold" />
+          <h2 className="editorial-headline text-[#0f0f0f] mb-4">
+            Proud Service Providers
+          </h2>
+          <p className="editorial-body text-[#6b6b6b]">
+            Trusted by industry leaders for exclusive events and corporate experiences.
+          </p>
+        </div>
+        
+        {/* Infinite Scroll Carousel */}
+        <div className="relative">
+          <div className="flex gap-16 animate-scroll">
+            {/* First set of logos */}
+            <img src="/images/sponsors/adidas.jpg" alt="Adidas" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/chanel.jpg" alt="Chanel" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/amex.jpg" alt="American Express" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/nike.jpg" alt="Nike" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/cisco.jpg" alt="Cisco" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/redbull.jpg" alt="Red Bull" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/starbucks.jpg" alt="Starbucks" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/sony.jpg" alt="Sony" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/spotify.jpg" alt="Spotify" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/tiffany.jpg" alt="Tiffany & Co." className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            
+            {/* Duplicate set for seamless loop */}
+            <img src="/images/sponsors/adidas.jpg" alt="Adidas" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/chanel.jpg" alt="Chanel" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/amex.jpg" alt="American Express" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/nike.jpg" alt="Nike" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/cisco.jpg" alt="Cisco" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/redbull.jpg" alt="Red Bull" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/starbucks.jpg" alt="Starbucks" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/sony.jpg" alt="Sony" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/spotify.jpg" alt="Spotify" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/sponsors/tiffany.jpg" alt="Tiffany & Co." className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+          </div>
+        </div>
+      </section>
+
       {/* Section 4: CTA */}
       <section className="relative" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="absolute inset-0">

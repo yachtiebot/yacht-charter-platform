@@ -221,3 +221,24 @@ iframe.skiptranslate {
 .translated-rtl {
   margin-top: 0 !important;
 }
+
+/* ========================================
+   INFINITE SCROLL ANIMATION
+   ======================================== */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
