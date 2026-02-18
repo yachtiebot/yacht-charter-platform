@@ -40,11 +40,11 @@ export default function HomePage() {
                 <div className="grid grid-cols-2 gap-8 mb-8">
                   <div>
                     <div className="editorial-stat text-[#c4a265] mb-2">4.9</div>
-                    <div className="editorial-label text-white/50">Google Stars</div>
+                    <div className="editorial-label text-white">Google Stars</div>
                   </div>
                   <div>
                     <div className="editorial-stat text-white mb-2">1,400+</div>
-                    <div className="editorial-label text-white/50">Reviews</div>
+                    <div className="editorial-label text-white">Reviews</div>
                   </div>
                 </div>
                 
@@ -585,11 +585,11 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-8">
                 <div>
                   <div className="editorial-year text-white mb-2">4.9</div>
-                  <div className="editorial-label text-white/50">Google Stars</div>
+                  <div className="editorial-label text-white">Google Stars</div>
                 </div>
                 <div>
                   <div className="editorial-year text-white mb-2">1,400+</div>
-                  <div className="editorial-label text-white/50">Verified Reviews</div>
+                  <div className="editorial-label text-white">Verified Reviews</div>
                 </div>
               </div>
             </div>
