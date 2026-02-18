@@ -190,10 +190,18 @@ export default function HomePage() {
                 alt="Complete Fleet"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-8 text-center">
-                <h3 className="editorial-card-name text-white mb-2">View Complete Fleet</h3>
-                <p className="editorial-small text-white/70">See all the boats</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <div className="editorial-label text-[#c4a265] mb-3">ALL SIZES</div>
+                <h3 className="editorial-card-name text-white mb-3">View Complete Fleet</h3>
+                <p className="editorial-small text-white/60 mb-3">See all boats</p>
+                <div className="flex justify-between items-center">
+                  <div className="editorial-label text-white/50"></div>
+                  <div className="editorial-label text-white flex items-center gap-2">
+                    <span>View Collection</span>
+                    <span>→</span>
+                  </div>
+                </div>
               </div>
             </Link>
           </div>
