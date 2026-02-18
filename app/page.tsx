@@ -68,11 +68,18 @@ export default function HomePage() {
           </div>
         </div>
         
-        {/* Scroll Indicator - Centered between buttons on mobile */}
-        <div className="absolute bottom-24 left-0 right-0 flex justify-center lg:left-1/2 lg:-translate-x-1/2">
-          <div className="flex flex-col items-center gap-2 animate-bounce">
-            <div className="text-white/50 text-[10px] font-medium tracking-wider uppercase">Scroll</div>
-            <div className="w-[1px] h-6 bg-white/30" />
+        {/* Scroll Indicator - Positioned between buttons */}
+        <div className="absolute bottom-24 left-6 right-6 lg:left-1/2 lg:right-auto lg:-translate-x-1/2">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              <div className="lg:col-span-7"></div>
+              <div className="lg:col-span-5 flex justify-center">
+                <div className="flex flex-col items-center gap-2 animate-bounce">
+                  <div className="text-white/50 text-[10px] font-medium tracking-wider uppercase">Scroll</div>
+                  <div className="w-[1px] h-6 bg-white/30" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
