@@ -1,76 +1,104 @@
 'use client';
 
 import { useEffect, useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { PublicVessel } from '@/lib/types';
 import { formatCurrency } from '@/lib/utils';
-import FilterToggle from '@/components/FilterToggle';
+import FleetFilters from '@/components/FleetFilters';
 
-// Yacht data matching the design spec
+// Yacht data
 const yachtData = [
   {
     id: 'pershing-70',
     name: '70ft Pershing',
-    category: 'Super Yacht',
+    category: 'super yacht',
     guests: 12,
     price: 320000,
+    size: '60-80 ft',
+    location: 'Miami Beach',
+    toys: ['jacuzzi', 'jet-ski'],
     description: 'High-performance luxury yacht with sleek Italian design. Features spacious deck areas, premium amenities, and thrilling speed capabilities.',
     image: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=90'
   },
   {
     id: 'sunseeker-68',
     name: '68ft Sunseeker',
-    category: 'Luxury Yacht',
+    category: 'luxury yacht',
     guests: 12,
     price: 280000,
-    description: 'Elegant 68-foot Sunseeker featuring a spacious flybridge, luxurious accommodations, and premium water toys. Perfect for entertaining or celebrating special occasions on the water.',
+    size: '60-80 ft',
+    location: 'Miami Beach',
+    toys: ['jacuzzi', 'seabob'],
+    description: 'Elegant 68-foot Sunseeker featuring a spacious flybridge, luxurious accommodations, and premium water toys.',
     image: 'https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=1200&q=90'
   },
   {
     id: 'azimut-55',
     name: '55ft Azimut',
-    category: 'Luxury Yacht',
+    category: 'luxury yacht',
     guests: 13,
     price: 125000,
-    description: 'Refined Italian craftsmanship with generous entertaining space. Ideal for sunset cruises, celebrations, and corporate charters across Biscayne Bay.',
+    size: '40-60 ft',
+    location: 'Key Biscayne',
+    toys: ['jet-ski'],
+    description: 'Refined Italian craftsmanship with generous entertaining space. Ideal for sunset cruises and celebrations.',
     image: 'https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=1200&q=90'
   },
   {
     id: 'searay-40',
     name: '40ft Sea Ray',
-    category: 'Day Boat',
+    category: 'day boat',
     guests: 10,
     price: 90000,
-    description: 'Versatile day boat perfect for sandbar hopping, sunset cruises, and casual gatherings. Comfortable seating and reliable performance.',
+    size: '40-60 ft',
+    location: 'Coconut Grove',
+    toys: [],
+    description: 'Versatile day boat perfect for sandbar hopping, sunset cruises, and casual gatherings.',
     image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=90'
   },
   {
     id: 'azimut-66',
     name: '66ft Azimut',
-    category: 'Luxury Yacht',
+    category: 'luxury yacht',
     guests: 13,
     price: 180000,
-    description: 'Spacious luxury yacht with elegant interiors, expansive flybridge, and premium sound system. A favorite for milestone celebrations and corporate events.',
+    size: '60-80 ft',
+    location: 'Fort Lauderdale',
+    toys: ['jacuzzi', 'jet-ski', 'seabob'],
+    description: 'Spacious luxury yacht with elegant interiors, expansive flybridge, and premium sound system.',
     image: 'https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=1200&q=90'
   },
 ];
 
 function FleetContent() {
-  const searchParams = useSearchParams();
-  const [vessels, setVessels] = useState<PublicVessel[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [filters, setFilters] = useState({
-    location_tag: searchParams.get('location') || '',
-    length_bucket: searchParams.get('length_bucket') || '',
-    category: searchParams.get('category') || '',
-  });
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedSize, setSelectedSize] = useState('');
+  const [selectedLocation, setSelectedLocation] = useState('');
+  const [selectedToys, setSelectedToys] = useState<string[]>([]);
 
-  useEffect(() => {
-    // For now, use the static yacht data
-    // You can integrate with your API later
-    setLoading(false);
-  }, [filters]);
+  const handleToyToggle = (toy: string) => {
+    setSelectedToys(prev => 
+      prev.includes(toy) 
+        ? prev.filter(t => t !== toy)
+        : [...prev, toy]
+    );
+  };
+
+  // Filter yachts
+  const filteredYachts = yachtData.filter(yacht => {
+    // Category filter
+    if (selectedCategory !== 'all' && yacht.category !== selectedCategory) return false;
+    
+    // Size filter
+    if (selectedSize && yacht.size !== selectedSize) return false;
+    
+    // Location filter
+    if (selectedLocation && yacht.location !== selectedLocation) return false;
+    
+    // Water toys filter - yacht must have ALL selected toys
+    if (selectedToys.length > 0 && !selectedToys.every(toy => yacht.toys.includes(toy))) return false;
+    
+    return true;
+  });
 
   return (
     <div className="bg-[#faf9f7]">
@@ -78,7 +106,7 @@ function FleetContent() {
       <section className="h-screen min-h-[700px] relative flex items-end pt-24">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=2400&q=90"
+            src="https://lh3.googleusercontent.com/d/1YM9nHM8WZ-w9GVag2N4Ryu96tncJjXUA"
             alt="Fleet"
             className="w-full h-full object-cover"
           />
@@ -88,39 +116,46 @@ function FleetContent() {
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-20">
           <div className="max-w-3xl">
             <div className="rule-gold" />
-            <h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl text-white mb-6 font-light">
+            <h1 className="editorial-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 font-extralight">
               Our <span className="text-[#c4a265]">Fleet</span>
             </h1>
             <p className="text-white/70 text-lg">
-              Hand selected vessels, privately owned, backed by outstanding guest reviews. Each yacht personally vetted for quality and comfort.
+              Hand selected vessels, privately owned, backed by outstanding guest reviews.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Fleet Grid */}
+      {/* Filters & Fleet */}
       <section className="py-28 md:py-36">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          {/* Page Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-20">
-            <div>
-              <div className="rule-gold" />
-              <h2 className="editorial-display text-4xl md:text-5xl text-[#0f0f0f] font-light">
-                The Fleet
-              </h2>
-            </div>
-            <p className="text-[#6b6b6b] lg:max-w-2xl">
-              {yachtData.length} vessel{yachtData.length !== 1 ? 's' : ''} available · Each privately owned, hand-picked for quality, and backed by outstanding guest reviews.
-            </p>
-          </div>
+          {/* Filters */}
+          <FleetFilters
+            selectedCategory={selectedCategory}
+            selectedSize={selectedSize}
+            selectedLocation={selectedLocation}
+            selectedToys={selectedToys}
+            onCategoryChange={setSelectedCategory}
+            onSizeChange={setSelectedSize}
+            onLocationChange={setSelectedLocation}
+            onToyToggle={handleToyToggle}
+          />
 
-          {/* Yacht Cards - 2 columns */}
+          {/* Divider Line */}
+          <div className="w-full h-[1px] bg-black/10 my-8" />
+
+          {/* Result Count */}
+          <p className="text-[#6b6b6b] mb-12">
+            {filteredYachts.length} yacht{filteredYachts.length !== 1 ? 's' : ''} available
+          </p>
+
+          {/* Yacht Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {yachtData.map((yacht) => (
+            {filteredYachts.map((yacht) => (
               <Link
                 key={yacht.id}
                 href="/contact"
-                className="group relative aspect-[4/3] overflow-hidden"
+                className="group relative aspect-[4/3] overflow-hidden transition-opacity duration-300"
               >
                 {/* Photo Background */}
                 <img
@@ -147,11 +182,11 @@ function FleetContent() {
                   </div>
                   
                   {/* Yacht Name */}
-                  <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3 font-light">
+                  <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">
                     {yacht.name}
                   </h3>
                   
-                  {/* Description - 2 line clamp */}
+                  {/* Description */}
                   <p className="text-white/60 text-sm mb-4 line-clamp-2">
                     {yacht.description}
                   </p>
@@ -181,7 +216,7 @@ function FleetContent() {
         
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
           <div className="rule-gold mx-auto" />
-          <h2 className="editorial-display text-4xl md:text-6xl text-white mb-6 max-w-3xl mx-auto font-light">
+          <h2 className="editorial-display text-4xl md:text-6xl text-white mb-6 max-w-3xl mx-auto">
             Can't Find What You're <span className="text-[#c4a265]">Looking For?</span>
           </h2>
           <p className="text-white/50 text-lg mb-12 max-w-2xl mx-auto">
