@@ -203,10 +203,17 @@ function FleetContent() {
                   </p>
                   
                   {/* Book Now / Inquire Now Link */}
-                  <div className="flex items-center gap-2 editorial-label text-white/70 group-hover:text-white transition-colors">
-                    <span>{yacht.instant_booking ? 'Book Now' : 'Inquire Now'}</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                  </div>
+                  {yacht.instant_booking ? (
+                    <div className="inline-flex items-center gap-2 editorial-label bg-white/10 backdrop-blur-sm px-4 py-2 text-white group-hover:bg-white/20 transition-all duration-300">
+                      <span>Book Now</span>
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2 editorial-label text-white/70 group-hover:text-white transition-colors">
+                      <span>Inquire Now</span>
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                    </div>
+                  )}
                 </div>
               </Link>
             ))}
