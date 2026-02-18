@@ -51,7 +51,7 @@ export default function HomePage() {
                 {/* Buttons */}
                 <div className="flex flex-wrap gap-4">
                   <Link
-                    href="/fleet"
+                    href="/yacht-rental-miami"
                     className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
                     style={{ fontSize: '12px', fontWeight: 500 }}
                   >
@@ -110,7 +110,7 @@ export default function HomePage() {
           {/* 3 Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Day Boats */}
-            <Link href="/fleet" className="group relative aspect-[3/4] overflow-hidden">
+            <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=90"
                 alt="Day Boats"
@@ -126,7 +126,7 @@ export default function HomePage() {
             </Link>
 
             {/* Luxury Yachts */}
-            <Link href="/fleet" className="group relative aspect-[3/4] overflow-hidden">
+            <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=800&q=90"
                 alt="Luxury Yachts"
@@ -142,7 +142,7 @@ export default function HomePage() {
             </Link>
 
             {/* Superyachts */}
-            <Link href="/fleet" className="group relative aspect-[3/4] overflow-hidden">
+            <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=90"
                 alt="Superyachts"
@@ -300,9 +300,9 @@ export default function HomePage() {
             <div>
               <div className="editorial-label text-[#c4a265] mb-6">Charter</div>
               <div className="space-y-3">
-                <Link href="/fleet" className="block text-white/40 hover:text-white transition-colors text-sm">Day Boats</Link>
-                <Link href="/fleet" className="block text-white/40 hover:text-white transition-colors text-sm">Luxury Yachts</Link>
-                <Link href="/fleet" className="block text-white/40 hover:text-white transition-colors text-sm">Superyachts</Link>
+                <Link href="/yacht-rental-miami" className="block text-white/40 hover:text-white transition-colors text-sm">Day Boats</Link>
+                <Link href="/yacht-rental-miami" className="block text-white/40 hover:text-white transition-colors text-sm">Luxury Yachts</Link>
+                <Link href="/yacht-rental-miami" className="block text-white/40 hover:text-white transition-colors text-sm">Superyachts</Link>
               </div>
             </div>
 

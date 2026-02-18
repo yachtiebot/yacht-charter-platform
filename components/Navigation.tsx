@@ -10,7 +10,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   
   // Pages with dark hero images that need transparent nav
-  const darkHeroPages = ['/', '/fleet', '/about', '/contact'];
+  const darkHeroPages = ['/', '/yacht-rental-miami', '/about', '/contact'];
   const hasDarkHero = darkHeroPages.includes(pathname);
   
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function Navigation() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-10">
           <Link
-            href="/fleet"
+            href="/yacht-rental-miami"
             className={`editorial-label transition-colors duration-700 ${
               isTransparent 
                 ? 'text-white hover:text-[#c4a265]' 
