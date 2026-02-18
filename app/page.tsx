@@ -274,11 +274,11 @@ export default function HomePage() {
 
           {/* Testimonial Quote */}
           <div className="text-center mb-8 max-w-3xl mx-auto">
-            <p className="text-2xl md:text-3xl text-[#d4d4d4] mb-4" style={{ fontFamily: 'var(--font-cormorant), serif', fontStyle: 'italic', fontWeight: 400, lineHeight: 1.4 }}>
-              "From the moment we stepped on the boat our expectations were exceeded!!!"
+            <p className="text-xl md:text-2xl text-[#9ca3af] mb-6" style={{ fontFamily: 'var(--font-cormorant), serif', fontStyle: 'italic', fontWeight: 400, lineHeight: 1.6, letterSpacing: '0.01em' }}>
+              "From the moment we stepped on the boat, our expectations were exceeded!!!"
             </p>
-            <p className="editorial-label text-[#b8b8b8]">
-              — Nicole N., TripAdvisor
+            <p className="text-base md:text-lg text-[#9ca3af]" style={{ fontFamily: 'var(--font-cormorant), serif', fontStyle: 'italic', fontWeight: 400 }}>
+              — Nicole N. from TripAdvisor
             </p>
           </div>
 
