@@ -27,10 +27,10 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Editorial Display - Headlines */
+/* Editorial Display - Headlines and Stats Numbers */
 .editorial-display {
   font-family: var(--font-playfair);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.01em;
   line-height: 1.15;
 }
@@ -47,8 +47,8 @@ body {
 .editorial-label {
   font-family: var(--font-montserrat);
   font-weight: 500;
-  font-size: 0.6875rem;
-  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
