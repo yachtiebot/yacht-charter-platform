@@ -187,50 +187,61 @@ export default function HomePage() {
       </section>
 
       {/* Trust/Reviews Section - Clean Logos Only */}
-      <section className="bg-[#faf9f7] border-t border-[#0f0f0f]/5" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
+      <section className="bg-white" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            {/* Yelp Reviews */}
-            <a 
-              href="https://www.yelp.com/biz/miami-yachting-company-miami-beach" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity duration-300"
-            >
-              <img 
-                src="/images/reviews/yelp-5star.jpg" 
-                alt="Yelp Reviews" 
-                className="h-16 w-auto"
-              />
-            </a>
+          <div className="border border-[#0f0f0f]/10 py-8 px-6 md:px-12">
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              {/* Yelp Reviews */}
+              <a 
+                href="https://www.yelp.com/biz/miami-yachting-company-miami-beach" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity duration-300"
+              >
+                <img 
+                  src="/images/reviews/yelp-5star.jpg" 
+                  alt="Yelp Reviews" 
+                  className="h-16 w-auto"
+                />
+              </a>
 
-            {/* TripAdvisor Reviews */}
-            <a 
-              href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity duration-300"
-            >
-              <img 
-                src="/images/reviews/tripadvisor-5.jpg" 
-                alt="TripAdvisor Reviews" 
-                className="h-16 w-auto"
-              />
-            </a>
+              {/* TripAdvisor Reviews */}
+              <a 
+                href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity duration-300"
+              >
+                <img 
+                  src="/images/reviews/tripadvisor-5.jpg" 
+                  alt="TripAdvisor Reviews" 
+                  className="h-16 w-auto"
+                />
+              </a>
 
-            {/* Google Reviews */}
-            <a 
-              href="https://maps.app.goo.gl/53k76h5DT28dVFUs9" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity duration-300"
-            >
-              <img 
-                src="/images/reviews/google-reviews.jpg" 
-                alt="Google Reviews" 
-                className="h-16 w-auto"
-              />
-            </a>
+              {/* Google Reviews */}
+              <a 
+                href="https://maps.app.goo.gl/53k76h5DT28dVFUs9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity duration-300"
+              >
+                <img 
+                  src="/images/reviews/google-reviews.jpg" 
+                  alt="Google Reviews" 
+                  className="h-16 w-auto"
+                />
+              </a>
+
+              {/* IYBA Member */}
+              <div className="hover:opacity-80 transition-opacity duration-300">
+                <img 
+                  src="/images/reviews/iyba.jpg" 
+                  alt="IYBA Member" 
+                  className="h-16 w-auto"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
