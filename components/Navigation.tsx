@@ -33,7 +33,7 @@ export default function Navigation() {
           : 'bg-[#faf9f7] border-b border-black/10'
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-20 md:h-32 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-20 md:h-24 flex items-center justify-between">
         {/* Logo - Text */}
         <Link 
           href="/" 
@@ -44,117 +44,100 @@ export default function Navigation() {
           Miami Yachting Company
         </Link>
         
-        {/* Desktop Navigation - Two Rows */}
-        <div className="hidden lg:flex flex-col items-end gap-1">
-          {/* First Row */}
-          <div className="flex items-center gap-6">
-            <Link
-              href="/yacht-rental-miami"
-              className={`editorial-label transition-colors duration-700 ${
-                isTransparent 
-                  ? 'text-white hover:text-[#c4a265]' 
-                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
-              }`}
-            >
-              Fleet
-            </Link>
-            <Link
-              href="/locations"
-              className={`editorial-label transition-colors duration-700 ${
-                isTransparent 
-                  ? 'text-white hover:text-[#c4a265]' 
-                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
-              }`}
-            >
-              Locations
-            </Link>
-            <Link
-              href="/toys"
-              className={`editorial-label transition-colors duration-700 ${
-                isTransparent 
-                  ? 'text-white hover:text-[#c4a265]' 
-                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
-              }`}
-            >
-              Toys
-            </Link>
-            <Link
-              href="/premium-add-ons"
-              className={`editorial-label transition-colors duration-700 ${
-                isTransparent 
-                  ? 'text-white hover:text-[#c4a265]' 
-                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
-              }`}
-            >
-              Premium Add-Ons
-            </Link>
-            <Link
-              href="/catering"
-              className={`editorial-label transition-colors duration-700 ${
-                isTransparent 
-                  ? 'text-white hover:text-[#c4a265]' 
-                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
-              }`}
-            >
-              Catering Menu
-            </Link>
-          </div>
+        {/* Desktop Navigation - Single Row */}
+        <div className="hidden lg:flex items-center gap-6">
+          <Link
+            href="/yacht-rental-miami"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Fleet
+          </Link>
+          <Link
+            href="/locations"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Locations
+          </Link>
+          <Link
+            href="/#experiences"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Experiences
+          </Link>
+          <Link
+            href="/premium-add-ons"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Premium Add-Ons
+          </Link>
+          <Link
+            href="/catering"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Catering Menu
+          </Link>
+          <Link
+            href="/offers"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Offers
+          </Link>
+          <Link
+            href="/testimonials"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Testimonials
+          </Link>
+          <Link
+            href="/contact"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Contact
+          </Link>
+          <Link
+            href="/about"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            About
+          </Link>
           
-          {/* Second Row */}
-          <div className="flex items-center gap-6">
-            <Link
-              href="/offers"
-              className={`editorial-label transition-colors duration-700 ${
-                isTransparent 
-                  ? 'text-white hover:text-[#c4a265]' 
-                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
-              }`}
-            >
-              Offers
-            </Link>
-            <Link
-              href="/large-groups"
-              className={`editorial-label transition-colors duration-700 ${
-                isTransparent 
-                  ? 'text-white hover:text-[#c4a265]' 
-                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
-              }`}
-            >
-              Large Group Charters
-            </Link>
-            <Link
-              href="/testimonials"
-              className={`editorial-label transition-colors duration-700 ${
-                isTransparent 
-                  ? 'text-white hover:text-[#c4a265]' 
-                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
-              }`}
-            >
-              Client Testimonials
-            </Link>
-            <Link
-              href="/contact"
-              className={`editorial-label transition-colors duration-700 ${
-                isTransparent 
-                  ? 'text-white hover:text-[#c4a265]' 
-                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
-              }`}
-            >
-              Contact Us
-            </Link>
-            <Link
-              href="/about"
-              className={`editorial-label transition-colors duration-700 ${
-                isTransparent 
-                  ? 'text-white hover:text-[#c4a265]' 
-                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
-              }`}
-            >
-              About
-            </Link>
-            
-            <LanguageSwitcher isTransparent={isTransparent} />
-          </div>
+          <LanguageSwitcher isTransparent={isTransparent} />
           
           <div className="hidden xl:flex items-center gap-6">
             <a
@@ -229,12 +212,12 @@ export default function Navigation() {
             Locations
           </Link>
           <Link
-            href="/toys"
+            href="/#experiences"
             onClick={() => setIsMobileMenuOpen(false)}
             className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Toys
+            Experiences
           </Link>
           <Link
             href="/premium-add-ons"
@@ -261,20 +244,12 @@ export default function Navigation() {
             Offers
           </Link>
           <Link
-            href="/large-groups"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
-            style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
-          >
-            Large Group Charters
-          </Link>
-          <Link
             href="/testimonials"
             onClick={() => setIsMobileMenuOpen(false)}
             className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Client Testimonials
+            Testimonials
           </Link>
           <Link
             href="/contact"
@@ -282,7 +257,7 @@ export default function Navigation() {
             className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Contact Us
+            Contact
           </Link>
           <Link
             href="/about"
