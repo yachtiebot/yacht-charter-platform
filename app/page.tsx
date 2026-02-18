@@ -191,7 +191,12 @@ export default function HomePage() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {/* Yelp Reviews */}
-            <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
+            <a 
+              href="https://www.yelp.com/biz/miami-yachting-company-miami-beach" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500"
+            >
               <img 
                 src="/images/reviews/yelp-5star.jpg" 
                 alt="Yelp 5 Stars" 
@@ -201,7 +206,7 @@ export default function HomePage() {
                 <div className="editorial-stat text-[#0f0f0f] text-3xl">5.0</div>
                 <div className="editorial-label text-[#6b6b6b] text-[10px]">Yelp Rating</div>
               </div>
-            </div>
+            </a>
 
             {/* TripAdvisor Reviews */}
             <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
