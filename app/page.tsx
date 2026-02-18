@@ -229,6 +229,19 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* IYBA Member */}
+            <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
+              <img 
+                src="/images/reviews/iyba.jpg" 
+                alt="IYBA Member" 
+                className="h-12 w-auto grayscale contrast-75 brightness-90"
+              />
+              <div className="flex flex-col">
+                <div className="editorial-label text-[#0f0f0f] text-[11px] font-semibold">IYBA</div>
+                <div className="editorial-label text-[#6b6b6b] text-[9px]">Member</div>
+              </div>
+            </div>
+
             {/* Total Reviews Count */}
             <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
               <div className="editorial-stat text-[#0f0f0f] text-3xl">1,400+</div>
