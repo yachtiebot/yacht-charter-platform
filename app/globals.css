@@ -208,10 +208,12 @@ html {
 /* Darker gradient for text readability */
 .card-gradient-subtle {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 50%, transparent 70%);
+  z-index: 1;
 }
 
 .bright-card-text {
   position: relative;
+  z-index: 2;
 }
 
 .bright-card-text h3,
