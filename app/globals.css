@@ -29,9 +29,16 @@ body {
 /* Editorial Display - Headlines (Cormorant Garamond 300) */
 .editorial-display {
   font-family: var(--font-cormorant);
-  font-weight: 300;
+  font-weight: 300 !important;
   letter-spacing: -0.02em;
   line-height: 1.08;
+}
+
+/* Force light weight */
+h1.editorial-display,
+h2.editorial-display,
+h3.editorial-display {
+  font-weight: 300 !important;
 }
 
 /* Editorial Body - Paragraphs (Inter 400) */
