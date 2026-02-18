@@ -138,3 +138,4 @@ export default function LanguageSwitcher({ isTransparent }: { isTransparent: boo
     </>
   );
 }
+# Language switcher enabled
