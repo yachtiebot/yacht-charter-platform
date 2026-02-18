@@ -24,10 +24,8 @@ export default function HomePage() {
               {/* Left Column - 60% */}
               <div className="lg:col-span-7">
                 <div className="rule-gold" />
-                <h1 className="editorial-display text-white mb-6" style={{ fontWeight: 300, fontSize: '40px' }}>
-                  Private Yacht<br />
-                  Charters in<br />
-                  <span className="text-[#c4a265]">Miami</span>
+                <h1 className="editorial-display text-white mb-6 whitespace-nowrap" style={{ fontWeight: 300, fontSize: '45px' }}>
+                  Private Yacht Charters in <span className="text-[#c4a265]">Miami</span>
                 </h1>
                 <p className="text-white/70 text-base md:text-lg max-w-lg">
                   A curated fleet of privately owned vessels, hand selected for comfort, style, and exceptional guest experiences.
@@ -276,6 +274,14 @@ export default function HomePage() {
             >
               Call 1 800 747 9585
             </a>
+            <a
+              href="https://wa.me/message/T7LESNSS34RWJ1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="editorial-label border border-white/30 text-white px-8 py-4 hover:bg-white/10 transition-all duration-500"
+            >
+              WhatsApp Us
+            </a>
             <Link
               href="/contact"
               className="editorial-label border border-white/30 text-white px-8 py-4 hover:bg-white/10 transition-all duration-500"
@@ -299,6 +305,7 @@ export default function HomePage() {
               <div className="flex gap-4">
                 <a href="#" className="text-white/40 hover:text-white transition-colors text-sm">Instagram</a>
                 <a href="#" className="text-white/40 hover:text-white transition-colors text-sm">Facebook</a>
+                <a href="https://wa.me/message/T7LESNSS34RWJ1" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#25D366] transition-colors text-sm">WhatsApp</a>
               </div>
             </div>
 

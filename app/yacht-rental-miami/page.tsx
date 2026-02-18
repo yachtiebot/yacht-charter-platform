@@ -121,7 +121,7 @@ function FleetContent() {
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-20">
           <div className="max-w-3xl">
             <div className="rule-gold" />
-            <h1 className="editorial-display text-white mb-6" style={{ fontWeight: 300, fontSize: '40px' }}>
+            <h1 className="editorial-display text-white mb-6" style={{ fontWeight: 300, fontSize: '45px' }}>
               The <span className="text-[#c4a265]">Fleet</span>
             </h1>
             <p className="text-white/70 text-lg">
@@ -248,6 +248,14 @@ function FleetContent() {
             >
               Get a Recommendation
             </Link>
+            <a
+              href="https://wa.me/message/T7LESNSS34RWJ1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="editorial-label border border-white/30 text-white px-8 py-4 hover:bg-white/10 transition-all duration-500"
+            >
+              WhatsApp Us
+            </a>
             <a
               href="tel:18007479585"
               className="editorial-label border border-white/30 text-white px-8 py-4 hover:bg-white/10 transition-all duration-500"
