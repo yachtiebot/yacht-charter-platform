@@ -251,60 +251,88 @@ export default function HomePage() {
           {/* Experience Cards Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {/* Sightseeing */}
-            <Link href="/experiences/sightseeing" className="group relative aspect-square overflow-hidden">
+            <Link href="/experiences/sightseeing" className="group relative aspect-[4/3] overflow-hidden">
               <div className="absolute inset-0 bg-[#c4a265]/20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Sightseeing</h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Sightseeing</h3>
+                <p className="editorial-small text-white/60 mb-2">Star Island, Venetian Islands, Miami River. The classic cruise past celebrity estates and iconic skyline views.</p>
+                <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
+                  4+ Hours
+                </div>
               </div>
             </Link>
 
             {/* Celebrations */}
-            <Link href="/experiences/celebrations" className="group relative aspect-square overflow-hidden">
+            <Link href="/experiences/celebrations" className="group relative aspect-[4/3] overflow-hidden">
               <img
                 src="/images/experiences/celebrations.jpg"
                 alt="Celebrations"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-center">
-                <h3 className="editorial-card-name text-white text-center">Celebrations</h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Celebrations</h3>
+                <p className="editorial-small text-white/60 mb-2">Birthday parties, engagements, anniversaries. Custom-tailored experiences for your most important moments.</p>
+                <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
+                  4 to 8 Hours
+                </div>
               </div>
             </Link>
 
             {/* Corporate */}
-            <Link href="/experiences/corporate" className="group relative aspect-square overflow-hidden">
+            <Link href="/experiences/corporate" className="group relative aspect-[4/3] overflow-hidden">
               <div className="absolute inset-0 bg-[#c4a265]/20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Corporate</h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Corporate</h3>
+                <p className="editorial-small text-white/60 mb-2">Executive retreats, client entertainment, team building. Professional experiences that impress and inspire.</p>
+                <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
+                  4 to 8 Hours
+                </div>
               </div>
             </Link>
 
             {/* Sandbars & Beyond */}
-            <Link href="/experiences/sandbars" className="group relative aspect-square overflow-hidden">
+            <Link href="/experiences/sandbars" className="group relative aspect-[4/3] overflow-hidden">
               <div className="absolute inset-0 bg-[#c4a265]/20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Sandbars & Beyond</h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Sandbars & Beyond</h3>
+                <p className="editorial-small text-white/60 mb-2">Anchor at Miami's most famous sandbars or explore farther in South Florida's warm tropical waters.</p>
+                <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
+                  6+ Hours
+                </div>
               </div>
             </Link>
 
             {/* Bachelorette Party */}
-            <Link href="/experiences/bachelorette" className="group relative aspect-square overflow-hidden">
+            <Link href="/experiences/bachelorette" className="group relative aspect-[4/3] overflow-hidden">
               <img
                 src="/images/experiences/bachelorette-party.jpg"
                 alt="Bachelorette Party"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-center">
-                <h3 className="editorial-card-name text-white text-center">Bachelorette Party</h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Bachelorette Party</h3>
+                <p className="editorial-small text-white/60 mb-2">Celebrate your last sail before the veil. Unforgettable experiences on Miami's most beautiful waters.</p>
+                <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
+                  4 to 8 Hours
+                </div>
               </div>
             </Link>
 
             {/* Large Group Charters */}
-            <Link href="/experiences/large-groups" className="group relative aspect-square overflow-hidden">
+            <Link href="/experiences/large-groups" className="group relative aspect-[4/3] overflow-hidden">
               <div className="absolute inset-0 bg-[#c4a265]/20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Large Group Charters</h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Large Group Charters</h3>
+                <p className="editorial-small text-white/60 mb-2">Impress clients and reward teams. Premium vessels with full charter and administrative support.</p>
+                <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
+                  Up to 140 Guests
+                </div>
               </div>
             </Link>
           </div>
