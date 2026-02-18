@@ -96,10 +96,10 @@ export default function HomePage() {
       </section>
 
       {/* Section 1: Fleet Overview */}
-      <section className="bg-[#faf9f7]" style={{ paddingTop: '32px', paddingBottom: '32px' }}>
+      <section className="bg-[#faf9f7]" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           {/* Header */}
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-8" style={{ marginBottom: '32px' }}>
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-8" style={{ marginBottom: '24px' }}>
             <div className="lg:max-w-md">
               <div className="rule-gold" />
               <h2 className="editorial-headline text-[#0f0f0f]">
@@ -165,7 +165,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 2: Our Philosophy */}
-      <section className="bg-[#0d0d0d]" style={{ paddingTop: '32px', paddingBottom: '32px' }}>
+      <section className="bg-[#0d0d0d]" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Photo */}
@@ -211,7 +211,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 3: Award Section */}
-      <section className="bg-[#0d0d0d] border-t border-white/5" style={{ paddingTop: '32px', paddingBottom: '32px' }}>
+      <section className="bg-[#0d0d0d] border-t border-white/5" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left: Award Box */}
@@ -263,7 +263,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 4: CTA */}
-      <section className="relative" style={{ paddingTop: '32px', paddingBottom: '32px' }}>
+      <section className="relative" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=2400&q=90"
@@ -308,7 +308,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0f0f0f]" style={{ paddingTop: '32px', paddingBottom: '24px' }}>
+      <footer className="bg-[#0f0f0f]" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             {/* Brand */}
