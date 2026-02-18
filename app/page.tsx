@@ -18,8 +18,8 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/30 to-transparent" />
         
         {/* Content - Anchored to Bottom */}
-        <div className="relative z-10 flex-1 flex flex-col justify-end">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full pb-32 md:pb-20">
+        <div className="relative z-10 flex-1 flex flex-col justify-center pb-24">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
               {/* Left Column - 60% */}
               <div className="lg:col-span-7">
