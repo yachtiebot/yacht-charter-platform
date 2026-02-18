@@ -274,7 +274,7 @@ export default function HomePage() {
       </section>
 
       {/* Experiences Section */}
-      <section className="bg-[#faf9f7]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
+      <section id="experiences" className="bg-[#faf9f7]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="mb-12">
             <div className="rule-gold" />
@@ -394,7 +394,7 @@ export default function HomePage() {
       </section>
 
       {/* Departure Points Section */}
-      <section className="bg-[#0d0d0d]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
+      <section id="departure-points" className="bg-[#0d0d0d]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="mb-12">
             <div className="rule-gold" />
