@@ -146,7 +146,7 @@ export default function Navigation() {
                 : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
-            About Us
+            About
           </Link>
           
           <LanguageSwitcher isTransparent={isTransparent} />
@@ -285,7 +285,7 @@ export default function Navigation() {
             className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            About Us
+            About
           </Link>
           
           <div className="pt-6 space-y-4">
