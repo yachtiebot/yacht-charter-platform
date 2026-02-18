@@ -24,8 +24,10 @@ export default function HomePage() {
               {/* Left Column - 60% */}
               <div className="lg:col-span-7">
                 <div className="rule-gold" />
-                <h1 className="editorial-display text-white mb-6 whitespace-nowrap" style={{ fontWeight: 300, fontSize: '45px' }}>
-                  Private Yacht Charters in <span className="text-[#c4a265]">Miami</span>
+                <h1 className="editorial-display text-white mb-6" style={{ fontWeight: 300, fontSize: '45px' }}>
+                  Private Yacht<br />
+                  Charters in<br />
+                  <span className="text-[#c4a265]">Miami</span>
                 </h1>
                 <p className="text-white/70 text-base md:text-lg max-w-lg">
                   A curated fleet of privately owned vessels, hand selected for comfort, style, and exceptional guest experiences.

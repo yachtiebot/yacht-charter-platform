@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 
-const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"] });
+const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
+const cormorant = Cormorant_Garamond({ subsets: ["latin"], weight: ["300", "400"], style: ["normal", "italic"] });
 
 export const metadata: Metadata = {
   title: "Miami Yachting Company | Private Yacht Charters & Boat Rentals",
