@@ -197,12 +197,12 @@ export default function HomePage() {
                 href="https://www.yelp.com/biz/miami-yachting-company-miami-beach" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity duration-300"
+                className="hover:opacity-100 transition-opacity duration-300"
               >
                 <img 
                   src="/images/reviews/yelp-5star.jpg" 
                   alt="Yelp Reviews" 
-                  className="h-14 w-auto object-contain"
+                  className="h-14 w-auto object-contain opacity-60"
                 />
               </a>
 
@@ -211,12 +211,12 @@ export default function HomePage() {
                 href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity duration-300"
+                className="hover:opacity-100 transition-opacity duration-300"
               >
                 <img 
                   src="/images/reviews/tripadvisor-5.jpg" 
                   alt="TripAdvisor Reviews" 
-                  className="h-14 w-auto object-contain"
+                  className="h-14 w-auto object-contain opacity-60"
                 />
               </a>
 
@@ -225,30 +225,30 @@ export default function HomePage() {
                 href="https://maps.app.goo.gl/53k76h5DT28dVFUs9" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity duration-300"
+                className="hover:opacity-100 transition-opacity duration-300"
               >
                 <img 
                   src="/images/reviews/google-reviews.jpg" 
                   alt="Google Reviews" 
-                  className="h-14 w-auto object-contain"
+                  className="h-14 w-auto object-contain opacity-60"
                 />
               </a>
 
               {/* IYBA Member */}
-              <div className="hover:opacity-80 transition-opacity duration-300">
+              <div className="hover:opacity-100 transition-opacity duration-300">
                 <img 
                   src="/images/reviews/iyba.jpg" 
                   alt="IYBA Member" 
-                  className="h-14 w-auto object-contain"
+                  className="h-14 w-auto object-contain opacity-60"
                 />
               </div>
 
               {/* Best of Miami 2025 */}
-              <div className="hover:opacity-80 transition-opacity duration-300">
+              <div className="hover:opacity-100 transition-opacity duration-300">
                 <img 
                   src="/images/reviews/best-of-miami-2025.jpg" 
                   alt="Best of Miami 2025 Winner" 
-                  className="h-14 w-auto object-contain"
+                  className="h-14 w-auto object-contain opacity-60"
                 />
               </div>
             </div>
