@@ -8,7 +8,7 @@ export default function HomePage() {
         {/* Background Yacht Photo */}
         <div className="absolute inset-0">
           <img
-            src="/images/hero/hero-yacht-sunset.jpg"
+            src="/images/hero/hero-biscayne-bay.jpg"
             alt="Luxury yacht charter Miami"
             className="w-full h-full object-cover"
           />
@@ -131,7 +131,7 @@ export default function HomePage() {
             {/* Day Boats */}
             <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
-                src="/images/fleet/performance-yacht-day.jpg"
+                src="/images/fleet/dayboats-vandutch40.jpg"
                 alt="Day Boats"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -153,7 +153,7 @@ export default function HomePage() {
             {/* Luxury Yachts */}
             <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
-                src="/images/fleet/luxury-yacht-bow-night.jpg"
+                src="/images/fleet/luxury-azimut55.jpg"
                 alt="Luxury Yachts"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -175,7 +175,7 @@ export default function HomePage() {
             {/* Superyachts */}
             <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
-                src="/images/fleet/dual-yachts-miami.jpg"
+                src="/images/fleet/superyacht.jpg"
                 alt="Superyachts"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -279,39 +279,87 @@ export default function HomePage() {
           {/* Location Cards Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {/* Miami */}
-            <Link href="/locations/miami" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
-              <h3 className="editorial-card-name text-white mb-2">Miami</h3>
-              <p className="editorial-small text-white/50">Downtown & Brickell</p>
+            <Link href="/locations/miami" className="group relative aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/departures/miami.jpg"
+                alt="Miami"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Miami</h3>
+                <p className="editorial-small text-white/60">Depart from the heart of downtown Miami with skyline views from the start.</p>
+              </div>
             </Link>
 
             {/* Miami Beach */}
-            <Link href="/locations/miami-beach" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
-              <h3 className="editorial-card-name text-white mb-2">Miami Beach</h3>
-              <p className="editorial-small text-white/50">South Beach Marina</p>
+            <Link href="/locations/miami-beach" className="group relative aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/departures/miami-beach.jpg"
+                alt="Miami Beach"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Miami Beach</h3>
+                <p className="editorial-small text-white/60">Step aboard in iconic Miami Beach. Art Deco luxury glamour. The gateway to warm waters and Miami's most celebrated departure point.</p>
+              </div>
             </Link>
 
             {/* Key Biscayne */}
-            <Link href="/locations/key-biscayne" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
-              <h3 className="editorial-card-name text-white mb-2">Key Biscayne</h3>
-              <p className="editorial-small text-white/50">Crandon Marina</p>
-            </Link>
-
-            {/* Coconut Grove */}
-            <Link href="/locations/coconut-grove" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
-              <h3 className="editorial-card-name text-white mb-2">Coconut Grove</h3>
-              <p className="editorial-small text-white/50">Grove Marina</p>
-            </Link>
-
-            {/* Hollywood */}
-            <Link href="/locations/hollywood" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
-              <h3 className="editorial-card-name text-white mb-2">Hollywood</h3>
-              <p className="editorial-small text-white/50">Hollywood Marina</p>
+            <Link href="/locations/key-biscayne" className="group relative aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/departures/key-biscayne.jpg"
+                alt="Key Biscayne"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Key Biscayne</h3>
+                <p className="editorial-small text-white/60">Tropical warm waters, small islands and sandbars. Miami's best kept secrets.</p>
+              </div>
             </Link>
 
             {/* Fort Lauderdale */}
-            <Link href="/locations/fort-lauderdale" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
-              <h3 className="editorial-card-name text-white mb-2">Fort Lauderdale</h3>
-              <p className="editorial-small text-white/50">Bahia Mar</p>
+            <Link href="/locations/fort-lauderdale" className="group relative aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/departures/fort-lauderdale.jpg"
+                alt="Fort Lauderdale"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Fort Lauderdale</h3>
+                <p className="editorial-small text-white/60">The yachting capital of the world. Access to Intracoastal waterways and open ocean.</p>
+              </div>
+            </Link>
+
+            {/* Hollywood */}
+            <Link href="/locations/hollywood" className="group relative aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/departures/hollywood.jpg"
+                alt="Hollywood"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Hollywood</h3>
+                <p className="editorial-small text-white/60">A convenient South Florida departure between Miami and Fort Lauderdale.</p>
+              </div>
+            </Link>
+
+            {/* Coconut Grove */}
+            <Link href="/locations/coconut-grove" className="group relative aspect-[4/3] overflow-hidden">
+              <img
+                src="/images/departures/coconut-grove.jpg"
+                alt="Coconut Grove"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="editorial-card-name text-white mb-2">Coconut Grove</h3>
+                <p className="editorial-small text-white/60">A relaxed tropical departure point with easy access to Biscayne Bay.</p>
+              </div>
             </Link>
           </div>
         </div>
@@ -416,7 +464,7 @@ export default function HomePage() {
       </section>
 
       {/* Corporate Sponsors Carousel */}
-      <section className="bg-white overflow-hidden" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
+      <section className="bg-white overflow-x-hidden" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 mb-12">
           <div className="rule-gold" />
           <h2 className="editorial-headline text-[#0f0f0f] mb-4">
@@ -428,8 +476,8 @@ export default function HomePage() {
         </div>
         
         {/* Infinite Scroll Carousel */}
-        <div className="relative">
-          <div className="flex gap-16 animate-scroll">
+        <div className="relative overflow-hidden">
+          <div className="flex gap-12 md:gap-16 animate-scroll whitespace-nowrap">
             {/* First set of logos */}
             <img src="/images/sponsors/adidas.jpg" alt="Adidas" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
             <img src="/images/sponsors/chanel.jpg" alt="Chanel" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
