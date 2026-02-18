@@ -78,8 +78,8 @@ export default function HomePage() {
 
         {/* Bottom Editorial Bar */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-4 flex flex-wrap justify-between items-center gap-4">
-            <div className="editorial-label text-white/40 flex flex-wrap gap-1 md:gap-2 items-center text-[8px] md:text-[11px]">
+          <div className="max-w-[1400px] mx-auto px-4 md:px-10 py-3 flex flex-wrap justify-between items-center gap-2">
+            <div className="editorial-label text-white/40 flex flex-wrap gap-1 md:gap-2 items-center text-[7px] md:text-[11px] leading-tight">
               <span>Miami</span>
               <span>·</span>
               <span>Miami Beach</span>
@@ -88,7 +88,7 @@ export default function HomePage() {
               <span>·</span>
               <span>Fort Lauderdale</span>
             </div>
-            <div className="editorial-label text-[#c4a265] text-[7px] md:text-[10px]">
+            <div className="editorial-label text-[#c4a265] text-[6px] md:text-[10px] leading-tight whitespace-nowrap">
               Best Boat Charter · Readers' Choice Award
             </div>
           </div>
