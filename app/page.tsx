@@ -209,91 +209,90 @@ export default function HomePage() {
       {/* Trust/Reviews Section - Clean Logos Only */}
       <section className="bg-white" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="border border-[#0f0f0f]/10 py-10 px-6 md:px-12">
-            {/* Logos Row */}
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-8">
-              {/* Yelp Reviews */}
-              <a 
-                href="https://www.yelp.com/biz/miami-yachting-company-miami-beach" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:opacity-100 transition-opacity duration-300"
-              >
-                <img 
-                  src="/images/reviews/yelp-5star.jpg" 
-                  alt="Yelp Reviews" 
-                  className="h-14 w-auto object-contain opacity-60"
-                />
-              </a>
+          {/* Logos Row */}
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-8">
+            {/* Yelp Reviews */}
+            <a 
+              href="https://www.yelp.com/biz/miami-yachting-company-miami-beach" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-100 transition-opacity duration-300"
+            >
+              <img 
+                src="/images/reviews/yelp-5star.jpg" 
+                alt="Yelp Reviews" 
+                className="h-14 w-auto object-contain opacity-60"
+              />
+            </a>
 
-              {/* TripAdvisor Reviews */}
-              <a 
-                href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:opacity-100 transition-opacity duration-300"
-              >
-                <img 
-                  src="/images/reviews/tripadvisor-5.jpg" 
-                  alt="TripAdvisor Reviews" 
-                  className="h-14 w-auto object-contain opacity-60"
-                />
-              </a>
+            {/* TripAdvisor Reviews */}
+            <a 
+              href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-100 transition-opacity duration-300"
+            >
+              <img 
+                src="/images/reviews/tripadvisor-5.jpg" 
+                alt="TripAdvisor Reviews" 
+                className="h-14 w-auto object-contain opacity-60"
+              />
+            </a>
 
-              {/* Google Reviews */}
-              <a 
-                href="https://maps.app.goo.gl/53k76h5DT28dVFUs9" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:opacity-100 transition-opacity duration-300"
-              >
-                <img 
-                  src="/images/reviews/google-reviews.jpg" 
-                  alt="Google Reviews" 
-                  className="h-14 w-auto object-contain opacity-60"
-                />
-              </a>
+            {/* Google Reviews */}
+            <a 
+              href="https://maps.app.goo.gl/53k76h5DT28dVFUs9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-100 transition-opacity duration-300"
+            >
+              <img 
+                src="/images/reviews/google-reviews.jpg" 
+                alt="Google Reviews" 
+                className="h-14 w-auto object-contain opacity-60"
+              />
+            </a>
 
-              {/* IYBA Member */}
-              <div className="hover:opacity-100 transition-opacity duration-300">
-                <img 
-                  src="/images/reviews/iyba.jpg" 
-                  alt="IYBA Member" 
-                  className="h-14 w-auto object-contain opacity-60"
-                />
-              </div>
-
-              {/* Best of Miami 2025 */}
-              <div className="hover:opacity-100 transition-opacity duration-300">
-                <img 
-                  src="/images/reviews/best-of-miami-2025.jpg" 
-                  alt="Best of Miami 2025 Winner" 
-                  className="h-14 w-auto object-contain opacity-60"
-                />
-              </div>
+            {/* IYBA Member */}
+            <div className="hover:opacity-100 transition-opacity duration-300">
+              <img 
+                src="/images/reviews/iyba.jpg" 
+                alt="IYBA Member" 
+                className="h-14 w-auto object-contain opacity-60"
+              />
             </div>
 
-            {/* Testimonial Quote */}
-            <div className="text-center mb-6">
-              <p className="editorial-body text-[#0f0f0f] italic mb-2">
-                "From the moment we stepped on the boat our expectations were exceeded!!!"
-              </p>
-              <p className="editorial-small text-[#6b6b6b]">
-                - Nicole N. - TripAdvisor
-              </p>
+            {/* Best of Miami 2025 */}
+            <div className="hover:opacity-100 transition-opacity duration-300">
+              <img 
+                src="/images/reviews/best-of-miami-2025.jpg" 
+                alt="Best of Miami 2025 Winner" 
+                className="h-14 w-auto object-contain opacity-60"
+              />
             </div>
+          </div>
 
-            {/* CTA Button */}
-            <div className="text-center">
-              <a 
-                href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#0f0f0f] text-white editorial-button px-8 py-3 hover:bg-[#c4a265] transition-colors duration-300"
-              >
-                View Customer Reviews
-              </a>
-            </div>
+          {/* Testimonial Quote */}
+          <div className="text-center mb-8 max-w-3xl mx-auto">
+            <p className="text-2xl md:text-3xl text-[#0f0f0f] mb-4" style={{ fontFamily: 'var(--font-cormorant), serif', fontStyle: 'italic', fontWeight: 400, lineHeight: 1.4 }}>
+              "From the moment we stepped on the boat our expectations were exceeded!!!"
+            </p>
+            <p className="editorial-label text-[#6b6b6b]">
+              — Nicole N., TripAdvisor
+            </p>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center">
+            <a 
+              href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block border border-[#0f0f0f] text-[#0f0f0f] px-8 py-3 hover:bg-[#0f0f0f] hover:text-white transition-all duration-300"
+              style={{ fontFamily: 'var(--font-roboto-mono), monospace', fontSize: '11px', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}
+            >
+              View Customer Reviews
+            </a>
           </div>
         </div>
       </section>
