@@ -106,8 +106,8 @@ function FleetContent() {
       <section className="h-screen min-h-[700px] relative flex items-end pt-24">
         <div className="absolute inset-0">
           <img
-            src="https://lh3.googleusercontent.com/d/1YM9nHM8WZ-w9GVag2N4Ryu96tncJjXUA"
-            alt="Fleet"
+            src="https://lh3.googleusercontent.com/d/14h_cYc3LmM7w4E2j7i8JVZ-dA32UPzUe"
+            alt="The Fleet"
             className="w-full h-full object-cover"
           />
         </div>
@@ -117,10 +117,10 @@ function FleetContent() {
           <div className="max-w-3xl">
             <div className="rule-gold" />
             <h1 className="editorial-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 font-extralight">
-              Our <span className="text-[#c4a265]">Fleet</span>
+              The <span className="text-[#c4a265]">Fleet</span>
             </h1>
             <p className="text-white/70 text-lg">
-              Hand selected vessels, privately owned, backed by outstanding guest reviews.
+              Miami Yachting Company specializes in curated yacht rentals and luxury charters. Every vessel is privately owned, hand-picked for quality, and backed by outstanding guest reviews.
             </p>
           </div>
         </div>
