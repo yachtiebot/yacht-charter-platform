@@ -407,7 +407,7 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row justify-center gap-4 w-full max-w-2xl mx-auto">
             <a
               href="tel:18007479585"
-              className="editorial-label bg-white/20 backdrop-blur-sm text-white px-8 py-4 hover:bg-white/30 transition-all duration-500 flex-1 text-center"
+              className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500 flex-1 text-center"
             >
               Call 1 800 747 9585
             </a>
@@ -415,13 +415,13 @@ export default function HomePage() {
               href="https://wa.me/message/T7LESNSS34RWJ1"
               target="_blank"
               rel="noopener noreferrer"
-              className="editorial-label bg-white/20 backdrop-blur-sm text-white px-8 py-4 hover:bg-white/30 transition-all duration-500 flex-1 text-center"
+              className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500 flex-1 text-center"
             >
               WhatsApp Us
             </a>
             <Link
               href="/contact"
-              className="editorial-label bg-white/20 backdrop-blur-sm text-white px-8 py-4 hover:bg-white/30 transition-all duration-500 flex-1 text-center"
+              className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500 flex-1 text-center"
             >
               Send an Inquiry
             </Link>
