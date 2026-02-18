@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="overflow-x-hidden w-full">
       {/* Hero Section */}
       <section className="h-screen min-h-[700px] relative flex flex-col">
         {/* Background Yacht Photo */}
@@ -19,7 +19,7 @@ export default function HomePage() {
         
         {/* Content - Anchored to Bottom */}
         <div className="relative z-10 flex-1 flex flex-col justify-end">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full pb-20">
+          <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10 w-full pb-20">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
               {/* Left Column - 60% */}
               <div className="lg:col-span-7">
@@ -78,7 +78,7 @@ export default function HomePage() {
 
         {/* Bottom Editorial Bar */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-4 flex flex-wrap justify-between items-center gap-4">
+          <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10 py-4 flex flex-wrap justify-between items-center gap-4">
             <div className="editorial-label text-white/40 flex flex-wrap gap-2 items-center text-[10px] md:text-[12px]">
               <span>Miami</span>
               <span>·</span>
@@ -101,7 +101,7 @@ export default function HomePage() {
 
       {/* Section 1: Fleet Overview */}
       <section className="bg-[#faf9f7]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
           {/* Header */}
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8" style={{ marginBottom: '48px' }}>
             <div className="lg:max-w-md">
@@ -204,7 +204,7 @@ export default function HomePage() {
 
       {/* Trust/Reviews Section - Clean Logos Only */}
       <section className="bg-white" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
           {/* Logos Row */}
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-8">
             {/* Yelp Reviews */}
@@ -295,7 +295,7 @@ export default function HomePage() {
 
       {/* Experiences Section */}
       <section className="bg-[#faf9f7]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
           <div className="mb-12">
             <div className="rule-gold" />
             <h2 className="editorial-headline text-[#0f0f0f] mb-4">
@@ -409,7 +409,7 @@ export default function HomePage() {
 
       {/* Departure Points Section */}
       <section className="bg-[#0d0d0d]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
           <div className="mb-12">
             <div className="rule-gold" />
             <h2 className="editorial-headline text-white mb-4">
@@ -505,7 +505,7 @@ export default function HomePage() {
 
       {/* Section 2: Our Philosophy */}
       <section className="bg-[#0d0d0d]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Photo */}
             <div className="relative aspect-[4/3] overflow-hidden group">
@@ -551,7 +551,7 @@ export default function HomePage() {
 
       {/* Section 3: Award Section */}
       <section className="bg-[#0d0d0d] border-t border-white/5" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left: Award Box */}
             <div className="border border-white/10 p-12 flex flex-col items-center text-center">
@@ -603,7 +603,7 @@ export default function HomePage() {
 
       {/* Corporate Sponsors Carousel */}
       <section className="bg-white overflow-x-hidden" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 mb-12 text-center">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10 mb-12 text-center">
           <div className="rule-gold mx-auto" />
           <h2 className="editorial-headline text-[#0f0f0f] mb-4">
             Proud Service Providers To:
@@ -654,7 +654,7 @@ export default function HomePage() {
         </div>
         <div className="absolute inset-0 bg-[#0f0f0f]/75" />
         
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10 text-center">
           <div className="rule-gold mx-auto" />
           <h2 className="editorial-headline text-white mb-6 max-w-3xl mx-auto">
             Ready to Get on the Water?
@@ -690,7 +690,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="bg-[#0f0f0f]" style={{ paddingTop: '56px', paddingBottom: '32px' }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             {/* Brand */}
             <div>
