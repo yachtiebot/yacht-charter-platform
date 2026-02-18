@@ -67,3 +67,22 @@ body {
 .group:hover .img-zoom {
   transform: scale(1.04);
 }
+
+/* Hide Google Translate UI elements */
+.goog-te-banner-frame,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
+
+iframe.skiptranslate {
+  visibility: hidden !important;
+  height: 0 !important;
+}
