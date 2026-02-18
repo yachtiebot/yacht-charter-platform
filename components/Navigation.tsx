@@ -33,17 +33,15 @@ export default function Navigation() {
           : 'bg-[#faf9f7] border-b border-black/10'
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-20 md:h-24 flex items-center justify-between">
-        {/* Logo */}
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-20 md:h-32 flex items-center justify-between">
+        {/* Logo - Text */}
         <Link 
           href="/" 
-          className="flex items-center"
+          className={`logo-text transition-colors duration-700 ${
+            isTransparent ? 'text-white' : 'text-[#0f0f0f]'
+          }`}
         >
-          <img 
-            src="/images/myc-logo.png" 
-            alt="Miami Yachting Company"
-            className="h-12 md:h-16 w-auto"
-          />
+          Miami Yachting Company
         </Link>
         
         {/* Desktop Navigation - Two Rows */}
