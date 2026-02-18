@@ -187,9 +187,24 @@ export default function HomePage() {
               <h2 className="editorial-subhead-italic text-white mb-8">
                 A Curated Collection.
               </h2>
-              <p className="editorial-body text-white/60">
-                We don't list every boat in Miami. We hand select each vessel based on condition, presentation, guest feedback, and operational reliability.
+              <p className="editorial-body text-white/60 mb-6">
+                We don't list every boat in Miami. We hand select each vessel based on condition, presentation, guest feedback, and operational reliability. With 30+ years of collective South Florida yachting experience, we know which yachts deliver and which don't.
               </p>
+              
+              <ul className="space-y-3">
+                <li className="editorial-body text-white/60 flex items-start gap-3">
+                  <span className="text-[#c4a265] mt-1">—</span>
+                  <span>Every yacht personally vetted</span>
+                </li>
+                <li className="editorial-body text-white/60 flex items-start gap-3">
+                  <span className="text-[#c4a265] mt-1">—</span>
+                  <span>Transparent pricing, no hidden fees</span>
+                </li>
+                <li className="editorial-body text-white/60 flex items-start gap-3">
+                  <span className="text-[#c4a265] mt-1">—</span>
+                  <span>Booking support & charter coordination</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
