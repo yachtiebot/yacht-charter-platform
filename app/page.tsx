@@ -217,7 +217,12 @@ export default function HomePage() {
             </div>
 
             {/* Google Reviews */}
-            <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
+            <a 
+              href="https://maps.app.goo.gl/53k76h5DT28dVFUs9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500"
+            >
               <img 
                 src="/images/reviews/google-reviews.jpg" 
                 alt="Google Reviews 5 Stars" 
@@ -227,7 +232,7 @@ export default function HomePage() {
                 <div className="editorial-stat text-[#0f0f0f] text-3xl">4.9</div>
                 <div className="editorial-label text-[#6b6b6b] text-[10px]">Google Rating</div>
               </div>
-            </div>
+            </a>
 
             {/* IYBA Member */}
             <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
