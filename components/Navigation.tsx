@@ -47,104 +47,82 @@ export default function Navigation() {
         </Link>
         
         {/* Desktop Navigation - Single Row */}
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-4">
           <Link
             href="/yacht-rental-miami"
-            className={`editorial-label transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
               isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+                ? 'text-white/70 hover:text-white' 
+                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
           >
-            Fleet
+            RENT A YACHT IN MIAMI
           </Link>
-          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
-          <Link
-            href="/locations"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Locations
-          </Link>
-          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
-          <Link
-            href="/#experiences"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Experiences
-          </Link>
-          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
+          <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
             href="/add-ons"
-            className={`editorial-label transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
               isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+                ? 'text-white/70 hover:text-white' 
+                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
           >
-            Add-Ons
+            ADD ONS
           </Link>
-          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
-          <Link
-            href="/catering"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Catering
-          </Link>
-          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
+          <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
             href="/offers"
-            className={`editorial-label transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
               isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+                ? 'text-white/70 hover:text-white' 
+                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
           >
-            Offers
+            OFFERS
           </Link>
-          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
+          <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
+          <Link
+            href="/large-groups"
+            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white/70 hover:text-white' 
+                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
+            }`}
+          >
+            LARGE GROUP CHARTERS
+          </Link>
+          <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
             href="/testimonials"
-            className={`editorial-label transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
               isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+                ? 'text-white/70 hover:text-white' 
+                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
           >
-            Testimonials
+            CLIENT TESTIMONIALS
           </Link>
-          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
+          <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
             href="/contact"
-            className={`editorial-label transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
               isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+                ? 'text-white/70 hover:text-white' 
+                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
           >
-            Contact
+            CONTACT US
           </Link>
-          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
+          <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
             href="/about"
-            className={`editorial-label transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
               isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+                ? 'text-white/70 hover:text-white' 
+                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
           >
-            About
+            ABOUT US
           </Link>
           
           <LanguageSwitcher isTransparent={isTransparent} />
