@@ -454,12 +454,12 @@ export default function HomePage() {
 
       {/* Corporate Sponsors Carousel */}
       <section className="bg-white overflow-x-hidden" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 mb-12">
-          <div className="rule-gold" />
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 mb-12 text-center">
+          <div className="rule-gold mx-auto" />
           <h2 className="editorial-headline text-[#0f0f0f] mb-4">
             Proud Service Providers
           </h2>
-          <p className="editorial-body text-[#6b6b6b]">
+          <p className="editorial-body text-[#6b6b6b] max-w-2xl mx-auto">
             Trusted by industry leaders for exclusive events and corporate experiences.
           </p>
         </div>
