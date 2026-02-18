@@ -47,7 +47,7 @@ export default function Navigation() {
         </Link>
         
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-6">
           <Link
             href="/yacht-rental-miami"
             className={`editorial-label transition-colors duration-700 ${
@@ -56,17 +56,77 @@ export default function Navigation() {
                 : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
-            Fleet
+            Rent a Yacht in Miami
           </Link>
           <Link
-            href="/locations"
+            href="/toys"
             className={`editorial-label transition-colors duration-700 ${
               isTransparent 
                 ? 'text-white hover:text-[#c4a265]' 
                 : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
-            Locations
+            Toys
+          </Link>
+          <Link
+            href="/premium-add-ons"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Premium Add-Ons
+          </Link>
+          <Link
+            href="/catering"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Catering Menu
+          </Link>
+          <Link
+            href="/offers"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Offers
+          </Link>
+          <Link
+            href="/large-groups"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Large Group Charters
+          </Link>
+          <Link
+            href="/testimonials"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Client Testimonials
+          </Link>
+          <Link
+            href="/contact"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Contact Us
           </Link>
           <Link
             href="/about"
@@ -76,7 +136,7 @@ export default function Navigation() {
                 : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
-            About
+            About Us
           </Link>
           
           <LanguageSwitcher isTransparent={isTransparent} />
@@ -136,46 +196,78 @@ export default function Navigation() {
       <div className={`lg:hidden overflow-hidden transition-all duration-300 ${
         isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
       } bg-[#faf9f7]`}>
-        <div className="px-4 py-12 space-y-6 text-center">
+        <div className="px-4 py-8 space-y-4 text-center">
           <Link
             href="/yacht-rental-miami"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-4xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Fleet
+            Rent a Yacht in Miami
           </Link>
           <Link
-            href="/#experiences"
+            href="/toys"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-4xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Experiences
+            Toys
           </Link>
           <Link
-            href="/#departure-points"
+            href="/premium-add-ons"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-4xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Locations
+            Premium Add-Ons
           </Link>
           <Link
-            href="/about"
+            href="/catering"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-4xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            About
+            Catering Menu
+          </Link>
+          <Link
+            href="/offers"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
+          >
+            Offers
+          </Link>
+          <Link
+            href="/large-groups"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
+          >
+            Large Group Charters
+          </Link>
+          <Link
+            href="/testimonials"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
+          >
+            Client Testimonials
           </Link>
           <Link
             href="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-4xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Contact
+            Contact Us
+          </Link>
+          <Link
+            href="/about"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
+          >
+            About Us
           </Link>
           
           <div className="pt-6 space-y-4">
