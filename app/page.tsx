@@ -115,8 +115,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 3 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* 4 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Day Boats */}
             <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
@@ -177,6 +177,26 @@ export default function HomePage() {
                   <div className="editorial-label text-white/50">From $3,200</div>
                   <div className="editorial-label text-white flex items-center gap-2">
                     <span>View Collection</span>
+                    <span>→</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* View Full Fleet */}
+            <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
+              <img
+                src="/images/fleet/full-fleet-aerial.jpg"
+                alt="View the Full Fleet"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <h3 className="editorial-card-name text-white mb-3">View the Full Fleet</h3>
+                <p className="editorial-small text-white/60 mb-3">See all the boats</p>
+                <div className="flex justify-end items-center">
+                  <div className="editorial-label text-white flex items-center gap-2">
+                    <span>Explore All</span>
                     <span>→</span>
                   </div>
                 </div>
