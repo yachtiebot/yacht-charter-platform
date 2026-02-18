@@ -186,7 +186,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust/Reviews Section - Minimalist */}
+      {/* Trust/Reviews Section - Clean Logos Only */}
       <section className="bg-[#faf9f7] border-t border-[#0f0f0f]/5" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
@@ -195,17 +195,13 @@ export default function HomePage() {
               href="https://www.yelp.com/biz/miami-yachting-company-miami-beach" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500"
+              className="hover:opacity-80 transition-opacity duration-300"
             >
               <img 
                 src="/images/reviews/yelp-5star.jpg" 
-                alt="Yelp 5 Stars" 
-                className="h-12 w-auto grayscale contrast-75 brightness-90"
+                alt="Yelp Reviews" 
+                className="h-16 w-auto"
               />
-              <div className="flex flex-col">
-                <div className="editorial-stat text-[#0f0f0f] text-3xl">5.0</div>
-                <div className="editorial-label text-[#6b6b6b] text-[10px]">Yelp Rating</div>
-              </div>
             </a>
 
             {/* TripAdvisor Reviews */}
@@ -213,17 +209,13 @@ export default function HomePage() {
               href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500"
+              className="hover:opacity-80 transition-opacity duration-300"
             >
               <img 
                 src="/images/reviews/tripadvisor-5.jpg" 
-                alt="TripAdvisor 5 Bubbles" 
-                className="h-12 w-auto grayscale contrast-75 brightness-90"
+                alt="TripAdvisor Reviews" 
+                className="h-16 w-auto"
               />
-              <div className="flex flex-col">
-                <div className="editorial-stat text-[#0f0f0f] text-3xl">5.0</div>
-                <div className="editorial-label text-[#6b6b6b] text-[10px]">TripAdvisor</div>
-              </div>
             </a>
 
             {/* Google Reviews */}
@@ -231,37 +223,14 @@ export default function HomePage() {
               href="https://maps.app.goo.gl/53k76h5DT28dVFUs9" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500"
+              className="hover:opacity-80 transition-opacity duration-300"
             >
               <img 
                 src="/images/reviews/google-reviews.jpg" 
-                alt="Google Reviews 5 Stars" 
-                className="h-12 w-auto grayscale contrast-75 brightness-90"
+                alt="Google Reviews" 
+                className="h-16 w-auto"
               />
-              <div className="flex flex-col">
-                <div className="editorial-stat text-[#0f0f0f] text-3xl">4.9</div>
-                <div className="editorial-label text-[#6b6b6b] text-[10px]">Google Rating</div>
-              </div>
             </a>
-
-            {/* IYBA Member */}
-            <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
-              <img 
-                src="/images/reviews/iyba.jpg" 
-                alt="IYBA Member" 
-                className="h-12 w-auto grayscale contrast-75 brightness-90"
-              />
-              <div className="flex flex-col">
-                <div className="editorial-label text-[#0f0f0f] text-[11px] font-semibold">IYBA</div>
-                <div className="editorial-label text-[#6b6b6b] text-[9px]">Member</div>
-              </div>
-            </div>
-
-            {/* Total Reviews Count */}
-            <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
-              <div className="editorial-stat text-[#0f0f0f] text-3xl">1,400+</div>
-              <div className="editorial-label text-[#6b6b6b] text-[10px]">Verified Reviews</div>
-            </div>
           </div>
         </div>
       </section>
