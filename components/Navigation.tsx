@@ -116,7 +116,7 @@ export default function Navigation() {
                 : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
-            Reviews
+            Testimonials
           </Link>
           <Link
             href="/contact"
@@ -251,7 +251,7 @@ export default function Navigation() {
             className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Reviews
+            Testimonials
           </Link>
           <Link
             href="/contact"
