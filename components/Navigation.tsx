@@ -47,7 +47,7 @@ export default function Navigation() {
         </Link>
         
         {/* Desktop Navigation - Single Row */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-6">
           <Link
             href="/yacht-rental-miami"
             className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
