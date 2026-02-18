@@ -713,7 +713,7 @@ export default function HomePage() {
             {/* Brand */}
             <div>
               <img 
-                src="/images/myc-logo-circle.png" 
+                src="/images/myc-logo.png" 
                 alt="Miami Yachting Company"
                 className="h-20 w-20 mb-4"
               />
