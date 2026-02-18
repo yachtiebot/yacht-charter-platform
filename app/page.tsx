@@ -166,6 +166,126 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Experiences Section */}
+      <section className="bg-[#faf9f7]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <div className="text-center mb-12">
+            <div className="rule-gold mx-auto" />
+            <h2 className="editorial-headline text-[#0f0f0f] mb-4">
+              Experiences
+            </h2>
+            <p className="editorial-body text-[#6b6b6b] max-w-2xl mx-auto">
+              Every charter is tailored to the occasion. Tell us what you're celebrating and we'll match you with the perfect vessel and itinerary.
+            </p>
+          </div>
+
+          {/* Experience Cards Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {/* Sightseeing */}
+            <Link href="/experiences/sightseeing" className="group relative aspect-square overflow-hidden">
+              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Sightseeing</h3>
+              </div>
+            </Link>
+
+            {/* Celebrations */}
+            <Link href="/experiences/celebrations" className="group relative aspect-square overflow-hidden">
+              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Celebrations</h3>
+              </div>
+            </Link>
+
+            {/* Corporate */}
+            <Link href="/experiences/corporate" className="group relative aspect-square overflow-hidden">
+              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Corporate</h3>
+              </div>
+            </Link>
+
+            {/* Sandbars & Beyond */}
+            <Link href="/experiences/sandbars" className="group relative aspect-square overflow-hidden">
+              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Sandbars & Beyond</h3>
+              </div>
+            </Link>
+
+            {/* Bachelorette Party */}
+            <Link href="/experiences/bachelorette" className="group relative aspect-square overflow-hidden">
+              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Bachelorette Party</h3>
+              </div>
+            </Link>
+
+            {/* Large Group Charters */}
+            <Link href="/experiences/large-groups" className="group relative aspect-square overflow-hidden">
+              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="editorial-card-name text-[#0f0f0f] text-center px-4">Large Group Charters</h3>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Departure Points Section */}
+      <section className="bg-[#0d0d0d]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <div className="text-center mb-12">
+            <div className="rule-gold mx-auto" />
+            <h2 className="editorial-headline text-white mb-4">
+              Departure Points
+            </h2>
+            <p className="editorial-body text-white/60 max-w-2xl mx-auto">
+              Charter from five locations across South Florida. Each offers unique access to Miami's most iconic waterways and destinations.
+            </p>
+          </div>
+
+          {/* Location Cards Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {/* Miami */}
+            <Link href="/locations/miami" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
+              <h3 className="editorial-card-name text-white mb-2">Miami</h3>
+              <p className="editorial-small text-white/50">Downtown & Brickell</p>
+            </Link>
+
+            {/* Miami Beach */}
+            <Link href="/locations/miami-beach" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
+              <h3 className="editorial-card-name text-white mb-2">Miami Beach</h3>
+              <p className="editorial-small text-white/50">South Beach Marina</p>
+            </Link>
+
+            {/* Key Biscayne */}
+            <Link href="/locations/key-biscayne" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
+              <h3 className="editorial-card-name text-white mb-2">Key Biscayne</h3>
+              <p className="editorial-small text-white/50">Crandon Marina</p>
+            </Link>
+
+            {/* Coconut Grove */}
+            <Link href="/locations/coconut-grove" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
+              <h3 className="editorial-card-name text-white mb-2">Coconut Grove</h3>
+              <p className="editorial-small text-white/50">Grove Marina</p>
+            </Link>
+
+            {/* Hollywood */}
+            <Link href="/locations/hollywood" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
+              <h3 className="editorial-card-name text-white mb-2">Hollywood</h3>
+              <p className="editorial-small text-white/50">Hollywood Marina</p>
+            </Link>
+
+            {/* Fort Lauderdale */}
+            <Link href="/locations/fort-lauderdale" className="border border-white/10 p-6 hover:border-[#c4a265] transition-colors group">
+              <h3 className="editorial-card-name text-white mb-2">Fort Lauderdale</h3>
+              <p className="editorial-small text-white/50">Bahia Mar</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Section 2: Our Philosophy */}
       <section className="bg-[#0d0d0d]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
