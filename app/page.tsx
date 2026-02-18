@@ -77,19 +77,19 @@ export default function HomePage() {
         </div>
 
         {/* Bottom Editorial Bar */}
-        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
-          <div className="max-w-[1400px] mx-auto px-3 md:px-10 py-2 flex flex-wrap justify-between items-center gap-1">
-            <div className="editorial-label text-white/40 flex flex-wrap gap-1 items-center text-[6px] md:text-[11px] leading-none">
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 overflow-hidden">
+          <div className="max-w-[1400px] mx-auto px-2 md:px-10 py-1.5 flex justify-between items-center gap-1.5">
+            <div className="editorial-label text-white/40 flex flex-nowrap gap-0.5 items-center text-[5px] md:text-[11px] leading-none whitespace-nowrap overflow-hidden">
               <span>Miami</span>
-              <span>·</span>
-              <span>Miami Beach</span>
-              <span>·</span>
-              <span>Key Biscayne</span>
-              <span>·</span>
-              <span>Fort Lauderdale</span>
+              <span className="hidden sm:inline">·</span>
+              <span className="hidden sm:inline">Miami Beach</span>
+              <span className="hidden sm:inline">·</span>
+              <span className="hidden sm:inline">Key Biscayne</span>
+              <span className="hidden md:inline">·</span>
+              <span className="hidden md:inline">Fort Lauderdale</span>
             </div>
-            <div className="editorial-label text-[#c4a265] text-[5px] md:text-[10px] leading-none whitespace-nowrap">
-              Best Boat Charter · Readers' Choice Award
+            <div className="editorial-label text-[#c4a265] text-[5px] md:text-[10px] leading-none whitespace-nowrap flex-shrink-0">
+              Best Boat Charter
             </div>
           </div>
         </div>
