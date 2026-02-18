@@ -345,7 +345,11 @@ export default function HomePage() {
 
             {/* Corporate */}
             <Link href="/experiences/corporate" className="group relative aspect-[4/3] overflow-hidden">
-              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <img
+                src="/images/experiences/corporate.jpg"
+                alt="Corporate"
+                className="img-zoom w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Corporate</h3>
@@ -392,7 +396,11 @@ export default function HomePage() {
 
             {/* Large Group Charters */}
             <Link href="/experiences/large-groups" className="group relative aspect-[4/3] overflow-hidden">
-              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <img
+                src="/images/experiences/large-groups.jpg"
+                alt="Large Group Charters"
+                className="img-zoom w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Large Group Charters</h3>
