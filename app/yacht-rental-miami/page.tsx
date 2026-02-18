@@ -129,6 +129,12 @@ function FleetContent() {
             </p>
           </div>
         </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-bounce">
+          <div className="editorial-label text-white/50 text-[10px]">Scroll</div>
+          <div className="w-[1px] h-8 bg-white/30" />
+        </div>
       </section>
 
       {/* Filters & Fleet */}

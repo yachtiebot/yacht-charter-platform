@@ -70,6 +70,12 @@ export default function HomePage() {
           </div>
         </div>
         
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-bounce">
+          <div className="editorial-label text-white/50 text-[10px]">Scroll</div>
+          <div className="w-[1px] h-8 bg-white/30" />
+        </div>
+
         {/* Bottom Editorial Bar */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-4 flex flex-wrap justify-between items-center gap-4">
