@@ -24,7 +24,7 @@ export default function HomePage() {
               {/* Left Column - 60% */}
               <div className="lg:col-span-7">
                 <div className="rule-gold" />
-                <h1 className="editorial-display text-4xl md:text-6xl lg:text-7xl text-white mb-6" style={{ fontWeight: 300 }}>
+                <h1 className="editorial-display text-4xl md:text-6xl lg:text-7xl text-white mb-6" style={{ fontWeight: 400 }}>
                   Private Yacht<br />
                   Charters in<br />
                   <span className="text-[#c4a265]">Miami</span>
