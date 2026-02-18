@@ -288,7 +288,7 @@ export default function HomePage() {
           </div>
 
           {/* Experience Cards Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Sightseeing */}
             <Link href="/experiences/sightseeing" className="group relative aspect-[4/3] overflow-hidden">
               <div className="absolute inset-0 bg-[#c4a265]/20" />
@@ -392,7 +392,7 @@ export default function HomePage() {
           </div>
 
           {/* Location Cards Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Miami */}
             <Link href="/locations/miami" className="group relative aspect-[4/3] overflow-hidden">
               <img
