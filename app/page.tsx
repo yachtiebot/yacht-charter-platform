@@ -773,7 +773,7 @@ export default function HomePage() {
           {/* Bottom Bar */}
           <div className="border-t border-white/5 pt-8 flex flex-wrap justify-between items-center gap-4">
             <div className="text-white/40 text-sm">
-              © 2025 Miami Yachting Company. All rights reserved.
+              © 2026 Miami Yachting Company®. All rights reserved.
             </div>
             <div className="editorial-label text-[#c4a265] text-[10px]">
               Best Boat Charter · Readers' Choice Award
