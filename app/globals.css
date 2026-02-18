@@ -1,8 +1,8 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap');
 
 :root {
-  --font-display: 'Crimson Text', serif;
+  --font-display: 'Cormorant Garamond', serif;
   --font-inter: 'Inter', sans-serif;
   
   --ink: #0f0f0f;
@@ -26,20 +26,21 @@ body {
   line-height: 1.75;
 }
 
-/* Editorial Display - Headlines (Crimson Text 400 - naturally lighter) */
+/* Editorial Display - Headlines (Cormorant Garamond 300, 40px) */
 .editorial-display {
   font-family: var(--font-display) !important;
-  font-weight: 400 !important;
-  letter-spacing: -0.01em;
+  font-weight: 300 !important;
+  font-size: 40px !important;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
-/* Force regular weight (Crimson Text 400 is naturally thin) */
+/* Force 300 weight on all headlines */
 h1.editorial-display,
 h2.editorial-display,
 h3.editorial-display,
 h1, h2, h3 {
-  font-weight: 400 !important;
+  font-weight: 300 !important;
   font-family: var(--font-display) !important;
 }
 

@@ -121,7 +121,7 @@ function FleetContent() {
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-20">
           <div className="max-w-3xl">
             <div className="rule-gold" />
-            <h1 className="editorial-display text-4xl md:text-6xl lg:text-7xl text-white mb-6" style={{ fontWeight: 400 }}>
+            <h1 className="editorial-display text-white mb-6" style={{ fontWeight: 300, fontSize: '40px' }}>
               The <span className="text-[#c4a265]">Fleet</span>
             </h1>
             <p className="text-white/70 text-lg">
