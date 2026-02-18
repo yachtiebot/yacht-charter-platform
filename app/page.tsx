@@ -186,6 +186,45 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Trust/Reviews Section - Minimalist */}
+      <section className="bg-[#faf9f7] border-t border-[#0f0f0f]/5" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
+            {/* Yelp Reviews */}
+            <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
+              <img 
+                src="/images/reviews/yelp-5star.jpg" 
+                alt="Yelp 5 Stars" 
+                className="h-12 w-auto grayscale contrast-75 brightness-90"
+              />
+              <div className="flex flex-col">
+                <div className="editorial-stat text-[#0f0f0f] text-3xl">5.0</div>
+                <div className="editorial-label text-[#6b6b6b] text-[10px]">Yelp Rating</div>
+              </div>
+            </div>
+
+            {/* Google Reviews */}
+            <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
+              <div className="flex flex-col items-center">
+                <svg className="w-12 h-12 grayscale opacity-70" viewBox="0 0 48 48" fill="none">
+                  <path d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#6b6b6b"/>
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <div className="editorial-stat text-[#0f0f0f] text-3xl">4.9</div>
+                <div className="editorial-label text-[#6b6b6b] text-[10px]">Google Rating</div>
+              </div>
+            </div>
+
+            {/* Total Reviews Count */}
+            <div className="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
+              <div className="editorial-stat text-[#0f0f0f] text-3xl">1,400+</div>
+              <div className="editorial-label text-[#6b6b6b] text-[10px]">Verified Reviews</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Experiences Section */}
       <section className="bg-[#faf9f7]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
