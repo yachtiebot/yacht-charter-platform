@@ -498,7 +498,7 @@ export default function HomePage() {
       <section className="relative" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="absolute inset-0">
           <img
-            src="/images/locations/miami-beach-aerial.jpg"
+            src="/images/cta-background.jpg"
             alt="Get on the water"
             className="w-full h-full object-cover"
           />
@@ -519,7 +519,7 @@ export default function HomePage() {
               href="tel:18007479585"
               className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500 flex-1 text-center"
             >
-              Call 1 800 747 9585
+              1 800 747 9585
             </a>
             <a
               href="https://wa.me/message/T7LESNSS34RWJ1"
