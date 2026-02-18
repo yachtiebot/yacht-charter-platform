@@ -26,6 +26,7 @@ CREATE TABLE public_vessels (
     hero_image_url TEXT,
     gallery_image_urls TEXT[] NOT NULL DEFAULT '{}',
     public_description TEXT,
+    instant_booking BOOLEAN NOT NULL DEFAULT FALSE,
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     updated_at TIMESTAMPTZ DEFAULT NOW()

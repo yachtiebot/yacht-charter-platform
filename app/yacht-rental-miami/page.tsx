@@ -16,6 +16,7 @@ const yachtData = [
     size: '60-80 ft',
     location: 'Miami Beach',
     toys: ['jacuzzi', 'jet-ski'],
+    instant_booking: false,
     description: 'High-performance luxury yacht with sleek Italian design. Features spacious deck areas, premium amenities, and thrilling speed capabilities.',
     image: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=90'
   },
@@ -28,6 +29,7 @@ const yachtData = [
     size: '60-80 ft',
     location: 'Miami Beach',
     toys: ['jacuzzi', 'seabob'],
+    instant_booking: false,
     description: 'Elegant 68-foot Sunseeker featuring a spacious flybridge, luxurious accommodations, and premium water toys.',
     image: 'https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=1200&q=90'
   },
@@ -40,6 +42,7 @@ const yachtData = [
     size: '40-60 ft',
     location: 'Key Biscayne',
     toys: ['jet-ski'],
+    instant_booking: true,
     description: 'Refined Italian craftsmanship with generous entertaining space. Ideal for sunset cruises and celebrations.',
     image: 'https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=1200&q=90'
   },
@@ -52,6 +55,7 @@ const yachtData = [
     size: '40-60 ft',
     location: 'Coconut Grove',
     toys: [],
+    instant_booking: true,
     description: 'Versatile day boat perfect for sandbar hopping, sunset cruises, and casual gatherings.',
     image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=90'
   },
@@ -64,6 +68,7 @@ const yachtData = [
     size: '60-80 ft',
     location: 'Fort Lauderdale',
     toys: ['jacuzzi', 'jet-ski', 'seabob'],
+    instant_booking: false,
     description: 'Spacious luxury yacht with elegant interiors, expansive flybridge, and premium sound system.',
     image: 'https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=1200&q=90'
   },
@@ -191,9 +196,9 @@ function FleetContent() {
                     {yacht.description}
                   </p>
                   
-                  {/* Inquire Now Link */}
+                  {/* Book Now / Inquire Now Link */}
                   <div className="flex items-center gap-2 editorial-label text-white/70 group-hover:text-white transition-colors">
-                    <span>Inquire Now</span>
+                    <span>{yacht.instant_booking ? 'Book Now' : 'Inquire Now'}</span>
                     <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </div>
                 </div>
