@@ -33,7 +33,7 @@ export default function Navigation() {
           : 'bg-[#faf9f7] border-b border-black/10'
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-20 md:h-24 flex items-center justify-between">
+      <div className="max-w-[1600px] mx-auto px-4 md:px-6 h-20 md:h-24 flex items-center justify-between">
         {/* Logo */}
         <Link 
           href="/" 
