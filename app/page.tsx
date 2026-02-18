@@ -67,7 +67,7 @@ export default function HomePage() {
                 {/* Scroll Indicator */}
                 <div className="flex justify-center">
                   <div className="flex flex-col items-center gap-2 animate-bounce">
-                    <div className="text-white/50 text-[10px] font-medium tracking-wider uppercase">Scroll</div>
+                    <div className="text-white/50 text-xs font-medium tracking-wider uppercase">Scroll</div>
                     <div className="w-[1px] h-6 bg-white/30" />
                   </div>
                 </div>
