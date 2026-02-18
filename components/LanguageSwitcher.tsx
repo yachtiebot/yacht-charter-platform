@@ -27,86 +27,55 @@ export default function LanguageSwitcher({ isTransparent }: { isTransparent: boo
   const [currentLang, setCurrentLang] = useState('en');
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [widgetReady, setWidgetReady] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem('language') || 'en';
-    setCurrentLang(saved);
     
-    // Initialize Google Translate
+    // Check for saved language or current translation
+    const saved = localStorage.getItem('googtrans') || '/en/en';
+    const langCode = saved.split('/')[2] || 'en';
+    setCurrentLang(langCode);
+    
+    // Load Google Translate script
     if (!document.getElementById('google-translate-script')) {
-      const script = document.createElement('script');
-      script.id = 'google-translate-script';
-      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      
       window.googleTranslateElementInit = () => {
         if (window.google?.translate) {
           new window.google.translate.TranslateElement(
             {
               pageLanguage: 'en',
-              includedLanguages: 'en,es,fr,de,it,pt,ru,zh-CN,ja,ar',
-              layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+              includedLanguages: languages.map(l => l.code).join(','),
+              autoDisplay: false,
             },
             'google_translate_element'
           );
-          setWidgetReady(true);
-          
-          // Auto-apply saved language
-          if (saved !== 'en') {
-            setTimeout(() => changeLanguage(saved), 1000);
-          }
         }
       };
-      
+
+      const script = document.createElement('script');
+      script.id = 'google-translate-script';
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
       document.body.appendChild(script);
     }
   }, []);
 
-  const changeLanguage = (langCode: string) => {
-    // Try to find and trigger the Google Translate select
-    const frame = document.querySelector('.goog-te-menu-frame') as HTMLIFrameElement;
-    if (frame) {
-      try {
-        const doc = frame.contentDocument || frame.contentWindow?.document;
-        if (doc) {
-          const links = doc.querySelectorAll('.goog-te-menu2-item span.text');
-          links.forEach((link: any) => {
-            if (link.textContent && languages.find(l => l.name === link.textContent && l.code === langCode)) {
-              link.click();
-            }
-          });
-        }
-      } catch (e) {
-        console.log('Could not access iframe:', e);
-      }
-    }
-    
-    // Fallback: manipulate the select element
-    setTimeout(() => {
-      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-      if (select) {
-        select.value = langCode;
-        select.dispatchEvent(new Event('change'));
-      }
-    }, 100);
-  };
-
   const handleLanguageChange = (langCode: string) => {
     setCurrentLang(langCode);
-    localStorage.setItem('language', langCode);
     setIsOpen(false);
+
+    // Set Google Translate cookies
+    const domain = window.location.hostname;
+    const cookieValue = langCode === 'en' ? '' : `/en/${langCode}`;
     
-    if (langCode === 'en') {
-      // Reset to English
-      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-      if (select) {
-        select.value = '';
-        select.dispatchEvent(new Event('change'));
-      }
-    } else {
-      changeLanguage(langCode);
-    }
+    // Set cookies for Google Translate
+    document.cookie = `googtrans=${cookieValue}; path=/; domain=${domain}`;
+    document.cookie = `googtrans=${cookieValue}; path=/`;
+    
+    // Store in localStorage
+    localStorage.setItem('googtrans', cookieValue || '/en/en');
+    
+    // Reload page to apply translation
+    window.location.reload();
   };
 
   if (!mounted) return null;
@@ -116,10 +85,19 @@ export default function LanguageSwitcher({ isTransparent }: { isTransparent: boo
   return (
     <>
       {/* Hidden Google Translate Element */}
-      <div id="google_translate_element" style={{ position: 'absolute', left: '-9999px', top: '-9999px' }} />
+      <div 
+        id="google_translate_element" 
+        style={{ 
+          position: 'absolute', 
+          left: '-9999px',
+          visibility: 'hidden',
+          width: 0,
+          height: 0
+        }} 
+      />
       
       <div className="relative">
-        {/* Custom Language Selector */}
+        {/* Language Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={`editorial-label flex items-center gap-2 transition-colors duration-700 ${

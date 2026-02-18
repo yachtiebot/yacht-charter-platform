@@ -68,6 +68,28 @@ body {
   transform: scale(1.04);
 }
 
+/* Hide Google Translate UI */
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.goog-te-gadget {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.skiptranslate,
+iframe.skiptranslate {
+  display: none !important;
+}
+
+/* Fix layout when translated */
+.translated-ltr,
+.translated-rtl {
+  margin-top: 0 !important;
+}
+
 /* Hide Google Translate UI elements */
 .goog-te-banner-frame,
 .goog-te-balloon-frame {
