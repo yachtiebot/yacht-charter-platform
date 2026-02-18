@@ -140,13 +140,7 @@ export default function HomePage() {
                 <div className="editorial-label text-[#c4a265] mb-3">20–40 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Day Boats</h3>
                 <p className="editorial-small text-white/60 mb-3">Casual elegance for sandbar days and sunset cruises.</p>
-                <div className="flex justify-between items-center">
-                  <div className="editorial-label text-white/50">From $700</div>
-                  <div className="editorial-label text-white flex items-center gap-2">
-                    <span>View Collection</span>
-                    <span>→</span>
-                  </div>
-                </div>
+                <div className="editorial-label text-white/50">From $700</div>
               </div>
             </Link>
 
@@ -162,13 +156,7 @@ export default function HomePage() {
                 <div className="editorial-label text-[#c4a265] mb-3">40–80 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Luxury Yachts</h3>
                 <p className="editorial-small text-white/60 mb-3">Premium amenities for celebrations and corporate occasions.</p>
-                <div className="flex justify-between items-center">
-                  <div className="editorial-label text-white/50">From $1,250</div>
-                  <div className="editorial-label text-white flex items-center gap-2">
-                    <span>View Collection</span>
-                    <span>→</span>
-                  </div>
-                </div>
+                <div className="editorial-label text-white/50">From $1,250</div>
               </div>
             </Link>
 
@@ -184,13 +172,7 @@ export default function HomePage() {
                 <div className="editorial-label text-[#c4a265] mb-3">80 FT+</div>
                 <h3 className="editorial-card-name text-white mb-3">Superyachts</h3>
                 <p className="editorial-small text-white/60 mb-3">The pinnacle of yachting. Unmatched space and premium amenities.</p>
-                <div className="flex justify-between items-center">
-                  <div className="editorial-label text-white/50">From $3,200</div>
-                  <div className="editorial-label text-white flex items-center gap-2">
-                    <span>View Collection</span>
-                    <span>→</span>
-                  </div>
-                </div>
+                <div className="editorial-label text-white/50">From $3,200</div>
               </div>
             </Link>
           </div>
