@@ -77,19 +77,23 @@ export default function HomePage() {
         </div>
 
         {/* Bottom Editorial Bar */}
-        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-2 md:px-10 py-1.5 flex justify-between items-center gap-1.5">
-            <div className="editorial-label text-white/40 flex flex-nowrap gap-0.5 items-center text-[5px] md:text-[11px] leading-none whitespace-nowrap overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
+          <div className="max-w-[1400px] mx-auto px-2 md:px-10 py-1.5 md:py-3 flex flex-col md:flex-row justify-between md:items-center gap-0.5 md:gap-2">
+            <div className="editorial-label text-white/40 flex flex-wrap gap-0.5 md:gap-2 items-center text-[7px] md:text-[11px] leading-tight">
               <span>Miami</span>
-              <span className="hidden sm:inline">·</span>
-              <span className="hidden sm:inline">Miami Beach</span>
-              <span className="hidden sm:inline">·</span>
-              <span className="hidden sm:inline">Key Biscayne</span>
-              <span className="hidden md:inline">·</span>
-              <span className="hidden md:inline">Fort Lauderdale</span>
+              <span>·</span>
+              <span>Miami Beach</span>
+              <span>·</span>
+              <span>Key Biscayne</span>
+              <span>·</span>
+              <span>Coconut Grove</span>
+              <span>·</span>
+              <span>Hollywood</span>
+              <span>·</span>
+              <span>Fort Lauderdale</span>
             </div>
-            <div className="editorial-label text-[#c4a265] text-[5px] md:text-[10px] leading-none whitespace-nowrap flex-shrink-0">
-              Best Boat Charter
+            <div className="editorial-label text-[#c4a265] text-[7px] md:text-[10px] leading-tight whitespace-nowrap">
+              Best Boat Charter · Readers' Choice Award
             </div>
           </div>
         </div>
