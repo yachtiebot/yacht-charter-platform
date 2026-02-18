@@ -68,10 +68,12 @@ export default function HomePage() {
           </div>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <div className="text-white/50 text-[10px] font-medium tracking-wider uppercase">Scroll</div>
-          <div className="w-[1px] h-6 bg-white/30" />
+        {/* Scroll Indicator - Centered between buttons on mobile */}
+        <div className="absolute bottom-24 left-0 right-0 flex justify-center lg:left-1/2 lg:-translate-x-1/2">
+          <div className="flex flex-col items-center gap-2 animate-bounce">
+            <div className="text-white/50 text-[10px] font-medium tracking-wider uppercase">Scroll</div>
+            <div className="w-[1px] h-6 bg-white/30" />
+          </div>
         </div>
 
         {/* Bottom Editorial Bar */}
