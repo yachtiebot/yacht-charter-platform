@@ -1,9 +1,9 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap');
 
 :root {
-  --font-playfair: 'Playfair Display', serif;
-  --font-montserrat: 'Montserrat', sans-serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-inter: 'Inter', sans-serif;
   
   --ink: #0f0f0f;
   --pearl: #faf9f7;
@@ -21,31 +21,30 @@
 body {
   background: var(--pearl);
   color: var(--ink);
-  font-family: var(--font-montserrat);
-  font-weight: 300;
-  line-height: 1.7;
-  letter-spacing: -0.01em;
-}
-
-/* Editorial Display - Headlines and Stats Numbers */
-.editorial-display {
-  font-family: var(--font-playfair);
+  font-family: var(--font-inter);
   font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.15;
+  line-height: 1.75;
 }
 
-/* Editorial Body - Paragraphs */
+/* Editorial Display - Headlines (Cormorant Garamond 400) */
+.editorial-display {
+  font-family: var(--font-cormorant);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+/* Editorial Body - Paragraphs (Inter 400) */
 .editorial-body {
-  font-family: var(--font-montserrat);
-  font-weight: 300;
-  line-height: 1.7;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  line-height: 1.75;
   font-size: 1rem;
 }
 
-/* Editorial Label - All uppercase small text */
+/* Editorial Label - All uppercase small text (Inter 500, 12px, 0.2em tracking) */
 .editorial-label {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-inter);
   font-weight: 500;
   font-size: 0.75rem;
   letter-spacing: 0.2em;
