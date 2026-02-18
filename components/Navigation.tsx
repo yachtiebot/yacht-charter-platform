@@ -153,10 +153,10 @@ export default function Navigation() {
           
           <Link
             href="/contact"
-            className={`editorial-label border px-6 py-2.5 transition-all duration-500 ${
+            className={`editorial-label px-6 py-2.5 transition-all duration-500 ${
               isTransparent
-                ? 'border-white text-white bg-transparent hover:bg-white hover:text-[#0f0f0f]'
-                : 'border-[#0f0f0f] text-[#0f0f0f] bg-transparent hover:bg-[#0f0f0f] hover:text-white'
+                ? 'bg-white text-[#0f0f0f] hover:bg-[#c4a265] hover:text-white'
+                : 'bg-white text-[#0f0f0f] hover:bg-[#c4a265] hover:text-white'
             }`}
           >
             Book Now
