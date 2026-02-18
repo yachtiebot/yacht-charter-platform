@@ -29,7 +29,7 @@ export default function HomePage() {
                   Charters in<br />
                   <span className="text-[#c4a265]">Miami</span>
                 </h1>
-                <p className="text-white/70 text-base md:text-lg max-w-lg">
+                <p className="text-white/70 text-lg md:text-xl max-w-lg">
                   A curated fleet of privately owned vessels, hand selected for comfort, style, and exceptional guest experiences.
                 </p>
               </div>
@@ -39,11 +39,11 @@ export default function HomePage() {
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-8 mb-8">
                   <div>
-                    <div className="editorial-display text-[3rem] text-white mb-2">4.9</div>
+                    <div className="editorial-display text-[3rem] text-[#c4a265] mb-2">4.9</div>
                     <div className="editorial-label text-white/50" style={{ fontSize: '12px', fontWeight: 500 }}>Google Stars</div>
                   </div>
                   <div>
-                    <div className="editorial-display text-[3rem] text-white mb-2">1,400+</div>
+                    <div className="editorial-display text-[3rem] text-[#c4a265] mb-2">1,400+</div>
                     <div className="editorial-label text-white/50" style={{ fontSize: '12px', fontWeight: 500 }}>Reviews</div>
                   </div>
                 </div>
