@@ -241,6 +241,15 @@ export default function HomePage() {
                   className="h-16 w-auto"
                 />
               </div>
+
+              {/* Best of Miami 2025 */}
+              <div className="hover:opacity-80 transition-opacity duration-300">
+                <img 
+                  src="/images/reviews/best-of-miami-2025.jpg" 
+                  alt="Best of Miami 2025 Winner" 
+                  className="h-16 w-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
