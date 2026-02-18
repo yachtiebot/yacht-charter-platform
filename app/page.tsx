@@ -361,7 +361,7 @@ export default function HomePage() {
             {/* Left: Photo */}
             <div className="relative aspect-[4/3] overflow-hidden group">
               <img
-                src="/images/fleet/fleet-formation.jpg"
+                src="/images/philosophy-yacht.jpg"
                 alt="Our Philosophy"
                 className="img-zoom w-full h-full object-cover"
               />
