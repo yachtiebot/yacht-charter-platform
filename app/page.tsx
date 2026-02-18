@@ -115,8 +115,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 3 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* 4 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Day Boats */}
             <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
@@ -180,6 +180,20 @@ export default function HomePage() {
                     <span>→</span>
                   </div>
                 </div>
+              </div>
+            </Link>
+
+            {/* View Complete Fleet */}
+            <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
+              <img
+                src="/images/fleet/complete-fleet.jpg"
+                alt="Complete Fleet"
+                className="img-zoom w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-8 text-center">
+                <h3 className="editorial-card-name text-white mb-2">View Complete Fleet</h3>
+                <p className="editorial-small text-white/70">See all the boats</p>
               </div>
             </Link>
           </div>
