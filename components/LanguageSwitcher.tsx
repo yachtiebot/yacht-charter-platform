@@ -59,8 +59,8 @@ export default function LanguageSwitcher({ isTransparent }: { isTransparent: boo
         }`}
         aria-label="Select language"
       >
-        <span>{currentLanguage.flag}</span>
-        <span className="hidden md:inline">{currentLanguage.code.split('-')[0].toUpperCase()}</span>
+        <span className="text-base">{currentLanguage.flag}</span>
+        <span className="hidden lg:inline">{currentLanguage.code.split('-')[0].toUpperCase()}</span>
       </button>
 
       {/* Dropdown */}

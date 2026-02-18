@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -74,6 +75,8 @@ export default function Navigation() {
           >
             About
           </Link>
+          
+          <LanguageSwitcher isTransparent={isTransparent} />
           
           <div className={`editorial-label hidden xl:block transition-colors duration-700 ${
             isTransparent ? 'text-white' : 'text-[#6b6b6b]'
