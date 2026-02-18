@@ -46,110 +46,117 @@ export default function Navigation() {
           />
         </Link>
         
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-6">
-          <Link
-            href="/yacht-rental-miami"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Fleet
-          </Link>
-          <Link
-            href="/locations"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Locations
-          </Link>
-          <Link
-            href="/toys"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Toys
-          </Link>
-          <Link
-            href="/premium-add-ons"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Premium Add-Ons
-          </Link>
-          <Link
-            href="/catering"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Catering Menu
-          </Link>
-          <Link
-            href="/offers"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Offers
-          </Link>
-          <Link
-            href="/large-groups"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Large Group Charters
-          </Link>
-          <Link
-            href="/testimonials"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Client Testimonials
-          </Link>
-          <Link
-            href="/contact"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            Contact Us
-          </Link>
-          <Link
-            href="/about"
-            className={`editorial-label transition-colors duration-700 ${
-              isTransparent 
-                ? 'text-white hover:text-[#c4a265]' 
-                : 'text-[#0f0f0f] hover:text-[#4e7483]'
-            }`}
-          >
-            About
-          </Link>
+        {/* Desktop Navigation - Two Rows */}
+        <div className="hidden lg:flex flex-col items-end gap-1">
+          {/* First Row */}
+          <div className="flex items-center gap-6">
+            <Link
+              href="/yacht-rental-miami"
+              className={`editorial-label transition-colors duration-700 ${
+                isTransparent 
+                  ? 'text-white hover:text-[#c4a265]' 
+                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
+              }`}
+            >
+              Fleet
+            </Link>
+            <Link
+              href="/locations"
+              className={`editorial-label transition-colors duration-700 ${
+                isTransparent 
+                  ? 'text-white hover:text-[#c4a265]' 
+                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
+              }`}
+            >
+              Locations
+            </Link>
+            <Link
+              href="/toys"
+              className={`editorial-label transition-colors duration-700 ${
+                isTransparent 
+                  ? 'text-white hover:text-[#c4a265]' 
+                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
+              }`}
+            >
+              Toys
+            </Link>
+            <Link
+              href="/premium-add-ons"
+              className={`editorial-label transition-colors duration-700 ${
+                isTransparent 
+                  ? 'text-white hover:text-[#c4a265]' 
+                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
+              }`}
+            >
+              Premium Add-Ons
+            </Link>
+            <Link
+              href="/catering"
+              className={`editorial-label transition-colors duration-700 ${
+                isTransparent 
+                  ? 'text-white hover:text-[#c4a265]' 
+                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
+              }`}
+            >
+              Catering Menu
+            </Link>
+          </div>
           
-          <LanguageSwitcher isTransparent={isTransparent} />
+          {/* Second Row */}
+          <div className="flex items-center gap-6">
+            <Link
+              href="/offers"
+              className={`editorial-label transition-colors duration-700 ${
+                isTransparent 
+                  ? 'text-white hover:text-[#c4a265]' 
+                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
+              }`}
+            >
+              Offers
+            </Link>
+            <Link
+              href="/large-groups"
+              className={`editorial-label transition-colors duration-700 ${
+                isTransparent 
+                  ? 'text-white hover:text-[#c4a265]' 
+                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
+              }`}
+            >
+              Large Group Charters
+            </Link>
+            <Link
+              href="/testimonials"
+              className={`editorial-label transition-colors duration-700 ${
+                isTransparent 
+                  ? 'text-white hover:text-[#c4a265]' 
+                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
+              }`}
+            >
+              Client Testimonials
+            </Link>
+            <Link
+              href="/contact"
+              className={`editorial-label transition-colors duration-700 ${
+                isTransparent 
+                  ? 'text-white hover:text-[#c4a265]' 
+                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
+              }`}
+            >
+              Contact Us
+            </Link>
+            <Link
+              href="/about"
+              className={`editorial-label transition-colors duration-700 ${
+                isTransparent 
+                  ? 'text-white hover:text-[#c4a265]' 
+                  : 'text-[#0f0f0f] hover:text-[#4e7483]'
+              }`}
+            >
+              About
+            </Link>
+            
+            <LanguageSwitcher isTransparent={isTransparent} />
+          </div>
           
           <div className="hidden xl:flex items-center gap-6">
             <a
