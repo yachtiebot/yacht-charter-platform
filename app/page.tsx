@@ -54,13 +54,13 @@ export default function HomePage() {
                     href="/fleet"
                     className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
                   >
-                    View Fleet
+                    Explore Fleet
                   </Link>
                   <Link
                     href="/contact"
                     className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
                   >
-                    Contact Us
+                    Inquire
                   </Link>
                 </div>
               </div>
