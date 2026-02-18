@@ -189,7 +189,7 @@ export default function HomePage() {
       {/* Trust/Reviews Section - Minimalist */}
       <section className="bg-[#faf9f7] border-t border-[#0f0f0f]/5" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {/* Yelp Reviews */}
             <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
               <img 
@@ -200,6 +200,19 @@ export default function HomePage() {
               <div className="flex flex-col">
                 <div className="editorial-stat text-[#0f0f0f] text-3xl">5.0</div>
                 <div className="editorial-label text-[#6b6b6b] text-[10px]">Yelp Rating</div>
+              </div>
+            </div>
+
+            {/* TripAdvisor Reviews */}
+            <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
+              <img 
+                src="/images/reviews/tripadvisor-5.jpg" 
+                alt="TripAdvisor 5 Bubbles" 
+                className="h-12 w-auto grayscale contrast-75 brightness-90"
+              />
+              <div className="flex flex-col">
+                <div className="editorial-stat text-[#0f0f0f] text-3xl">5.0</div>
+                <div className="editorial-label text-[#6b6b6b] text-[10px]">TripAdvisor</div>
               </div>
             </div>
 
