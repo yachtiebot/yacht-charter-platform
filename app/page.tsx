@@ -124,7 +124,8 @@ export default function HomePage() {
                 alt="Day Boats"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
                 <div className="editorial-label text-[#c4a265] mb-3">20–40 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Day Boats</h3>
                 <p className="editorial-small text-white/80 mb-3">Casual elegance for sandbar days and sunset cruises.</p>
@@ -145,7 +146,8 @@ export default function HomePage() {
                 alt="Luxury Yachts"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
                 <div className="editorial-label text-[#c4a265] mb-3">40–80 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Luxury Yachts</h3>
                 <p className="editorial-small text-white/60 mb-3">Premium amenities for celebrations and corporate occasions.</p>
@@ -166,7 +168,8 @@ export default function HomePage() {
                 alt="Superyachts"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
                 <div className="editorial-label text-[#c4a265] mb-3">80 FT+</div>
                 <h3 className="editorial-card-name text-white mb-3">Superyachts</h3>
                 <p className="editorial-small text-white/60 mb-3">The pinnacle of yachting. Unmatched space and premium amenities.</p>
@@ -187,7 +190,8 @@ export default function HomePage() {
                 alt="View the Full Fleet"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-3">View the Full Fleet</h3>
                 <p className="editorial-small text-white/60 mb-3">See all the boats</p>
                 <div className="flex justify-end items-center">
@@ -315,7 +319,8 @@ export default function HomePage() {
                 alt="Sightseeing"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Sightseeing</h3>
                 <p className="editorial-small text-white/60 mb-2">Star Island, Venetian Islands, Miami River. The classic cruise past celebrity estates and iconic skyline views.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -331,7 +336,8 @@ export default function HomePage() {
                 alt="Celebrations"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Celebrations</h3>
                 <p className="editorial-small text-white/60 mb-2">Birthday parties, engagements, anniversaries. Custom-tailored experiences for your most important moments.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -347,7 +353,8 @@ export default function HomePage() {
                 alt="Corporate"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Corporate</h3>
                 <p className="editorial-small text-white/60 mb-2">Executive retreats, client entertainment, team building. Professional experiences that impress and inspire.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -363,7 +370,8 @@ export default function HomePage() {
                 alt="Sandbars & Beyond"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Sandbars & Beyond</h3>
                 <p className="editorial-small text-white/60 mb-2">Anchor at Miami's most famous sandbars or explore farther in South Florida's warm tropical waters.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -379,7 +387,8 @@ export default function HomePage() {
                 alt="Bachelorette Party"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Bachelorette Party</h3>
                 <p className="editorial-small text-white/60 mb-2">Celebrate your last sail before the veil. Unforgettable experiences on Miami's most beautiful waters.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -395,7 +404,8 @@ export default function HomePage() {
                 alt="Large Group Charters"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Large Group Charters</h3>
                 <p className="editorial-small text-white/60 mb-2">Impress clients and reward teams. Premium vessels with full charter and administrative support.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -429,7 +439,8 @@ export default function HomePage() {
                 alt="Miami"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Miami</h3>
                 <p className="editorial-small text-white/60">Depart from the heart of downtown Miami with skyline views from the start.</p>
               </div>
@@ -442,7 +453,8 @@ export default function HomePage() {
                 alt="Miami Beach"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Miami Beach</h3>
                 <p className="editorial-small text-white/60">Step aboard in iconic Miami Beach. Art Deco luxury glamour. The gateway to warm waters and Miami's most celebrated departure point.</p>
               </div>
@@ -455,7 +467,8 @@ export default function HomePage() {
                 alt="Key Biscayne"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Key Biscayne</h3>
                 <p className="editorial-small text-white/60">Tropical warm waters, small islands and sandbars. Miami's best kept secrets.</p>
               </div>
@@ -468,7 +481,8 @@ export default function HomePage() {
                 alt="Fort Lauderdale"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Fort Lauderdale</h3>
                 <p className="editorial-small text-white/60">The yachting capital of the world. Access to Intracoastal waterways and open ocean.</p>
               </div>
@@ -481,7 +495,8 @@ export default function HomePage() {
                 alt="Hollywood"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Hollywood</h3>
                 <p className="editorial-small text-white/60">A convenient South Florida departure between Miami and Fort Lauderdale.</p>
               </div>
@@ -494,7 +509,8 @@ export default function HomePage() {
                 alt="Coconut Grove"
                 className="img-zoom w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              
+              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
                 <h3 className="editorial-card-name text-white mb-2">Coconut Grove</h3>
                 <p className="editorial-small text-white/60">A relaxed tropical departure point with easy access to Biscayne Bay.</p>
               </div>
@@ -514,7 +530,8 @@ export default function HomePage() {
                 alt="Our Philosophy"
                 className="img-zoom w-full h-full object-cover"
               />
-            </div>
+            
+              <div className="absolute inset-0 card-gradient-subtle" /></div>
 
             {/* Right: Text */}
             <div>

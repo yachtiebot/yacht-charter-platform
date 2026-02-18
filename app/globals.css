@@ -205,7 +205,11 @@ html {
   transform: scale(1.04);
 }
 
-/* Bright cards - white text with shadow, no dark overlays */
+/* Subtle gradient for readability - light gray, not dark black */
+.card-gradient-subtle {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.25), transparent 60%);
+}
+
 .bright-card-text h3,
 .bright-card-text p,
 .bright-card-text div,
