@@ -358,7 +358,11 @@ export default function HomePage() {
 
             {/* Sandbars & Beyond */}
             <Link href="/experiences/sandbars" className="group relative aspect-[4/3] overflow-hidden">
-              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <img
+                src="/images/experiences/sandbars-beyond.jpg"
+                alt="Sandbars & Beyond"
+                className="img-zoom w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Sandbars & Beyond</h3>
