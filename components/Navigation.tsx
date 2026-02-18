@@ -47,7 +47,7 @@ export default function Navigation() {
         </Link>
         
         {/* Desktop Navigation - Single Row */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3">
           <Link
             href="/yacht-rental-miami"
             className={`editorial-label transition-colors duration-700 ${
@@ -58,6 +58,7 @@ export default function Navigation() {
           >
             Fleet
           </Link>
+          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
           <Link
             href="/locations"
             className={`editorial-label transition-colors duration-700 ${
@@ -68,6 +69,7 @@ export default function Navigation() {
           >
             Locations
           </Link>
+          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
           <Link
             href="/#experiences"
             className={`editorial-label transition-colors duration-700 ${
@@ -78,6 +80,7 @@ export default function Navigation() {
           >
             Experiences
           </Link>
+          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
           <Link
             href="/add-ons"
             className={`editorial-label transition-colors duration-700 ${
@@ -88,6 +91,7 @@ export default function Navigation() {
           >
             Add-Ons
           </Link>
+          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
           <Link
             href="/catering"
             className={`editorial-label transition-colors duration-700 ${
@@ -98,6 +102,7 @@ export default function Navigation() {
           >
             Catering
           </Link>
+          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
           <Link
             href="/offers"
             className={`editorial-label transition-colors duration-700 ${
@@ -108,6 +113,7 @@ export default function Navigation() {
           >
             Offers
           </Link>
+          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
           <Link
             href="/testimonials"
             className={`editorial-label transition-colors duration-700 ${
@@ -118,6 +124,7 @@ export default function Navigation() {
           >
             Testimonials
           </Link>
+          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
           <Link
             href="/contact"
             className={`editorial-label transition-colors duration-700 ${
@@ -128,6 +135,7 @@ export default function Navigation() {
           >
             Contact
           </Link>
+          <span className={isTransparent ? 'text-white/30' : 'text-[#0f0f0f]/30'}>·</span>
           <Link
             href="/about"
             className={`editorial-label transition-colors duration-700 ${
