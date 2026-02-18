@@ -24,7 +24,7 @@ export default function HomePage() {
               {/* Left Column - 60% */}
               <div className="lg:col-span-7">
                 <div className="rule-gold" />
-                <h1 className="editorial-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 font-light">
+                <h1 className="editorial-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 font-extralight">
                   Private Yacht<br />
                   Charters in<br />
                   <span className="text-[#c4a265]">Miami</span>

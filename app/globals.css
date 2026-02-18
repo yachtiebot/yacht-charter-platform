@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap');
 
 :root {
   --font-cormorant: 'Cormorant Garamond', serif;
@@ -22,23 +22,23 @@ body {
   background: var(--pearl);
   color: var(--ink);
   font-family: var(--font-inter);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.75;
 }
 
-/* Editorial Display - Headlines (Cormorant Garamond 300) */
+/* Editorial Display - Headlines (Cormorant Garamond 200) */
 .editorial-display {
   font-family: var(--font-cormorant);
-  font-weight: 300 !important;
+  font-weight: 200 !important;
   letter-spacing: -0.02em;
   line-height: 1.08;
 }
 
-/* Force light weight */
+/* Force extra-light weight */
 h1.editorial-display,
 h2.editorial-display,
 h3.editorial-display {
-  font-weight: 300 !important;
+  font-weight: 200 !important;
 }
 
 /* Editorial Body - Paragraphs (Inter 400) */
