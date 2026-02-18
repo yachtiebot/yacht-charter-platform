@@ -56,7 +56,17 @@ export default function Navigation() {
                 : 'text-[#0f0f0f] hover:text-[#4e7483]'
             }`}
           >
-            Rent a Yacht in Miami
+            Fleet
+          </Link>
+          <Link
+            href="/locations"
+            className={`editorial-label transition-colors duration-700 ${
+              isTransparent 
+                ? 'text-white hover:text-[#c4a265]' 
+                : 'text-[#0f0f0f] hover:text-[#4e7483]'
+            }`}
+          >
+            Locations
           </Link>
           <Link
             href="/toys"
@@ -203,7 +213,15 @@ export default function Navigation() {
             className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Rent a Yacht in Miami
+            Fleet
+          </Link>
+          <Link
+            href="/locations"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
+          >
+            Locations
           </Link>
           <Link
             href="/toys"
