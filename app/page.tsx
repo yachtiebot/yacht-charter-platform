@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <div className="overflow-x-hidden w-full">
+    <div>
       {/* Hero Section */}
       <section className="h-screen min-h-[700px] relative flex flex-col">
         {/* Background Yacht Photo */}
@@ -19,7 +19,7 @@ export default function HomePage() {
         
         {/* Content - Anchored to Bottom */}
         <div className="relative z-10 flex-1 flex flex-col justify-end">
-          <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10 w-full pb-20">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full pb-20">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
               {/* Left Column - 60% */}
               <div className="lg:col-span-7">
@@ -78,7 +78,7 @@ export default function HomePage() {
 
         {/* Bottom Editorial Bar */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
-          <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10 py-4 flex flex-wrap justify-between items-center gap-4">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-4 flex flex-wrap justify-between items-center gap-4">
             <div className="editorial-label text-white/40 flex flex-wrap gap-1 md:gap-2 items-center text-[8px] md:text-[11px]">
               <span>Miami</span>
               <span>·</span>
@@ -97,7 +97,7 @@ export default function HomePage() {
 
       {/* Section 1: Fleet Overview */}
       <section className="bg-[#faf9f7]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           {/* Header */}
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8" style={{ marginBottom: '48px' }}>
             <div className="lg:max-w-md">
@@ -111,8 +111,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 4 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* 3 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Day Boats */}
             <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
               <img
@@ -120,13 +120,13 @@ export default function HomePage() {
                 alt="Day Boats"
                 className="img-zoom w-full h-full object-cover"
               />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-3">20–40 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Day Boats</h3>
-                <p className="editorial-small text-white/80 mb-3">Casual elegance for sandbar days and sunset cruises.</p>
+                <p className="editorial-small text-white/60 mb-3">Casual elegance for sandbar days and sunset cruises.</p>
                 <div className="flex justify-between items-center">
-                  <div className="editorial-label text-white/70">From $700</div>
+                  <div className="editorial-label text-white/50">From $700</div>
                   <div className="editorial-label text-white flex items-center gap-2">
                     <span>View Collection</span>
                     <span>→</span>
@@ -142,8 +142,8 @@ export default function HomePage() {
                 alt="Luxury Yachts"
                 className="img-zoom w-full h-full object-cover"
               />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-3">40–80 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Luxury Yachts</h3>
                 <p className="editorial-small text-white/60 mb-3">Premium amenities for celebrations and corporate occasions.</p>
@@ -164,8 +164,8 @@ export default function HomePage() {
                 alt="Superyachts"
                 className="img-zoom w-full h-full object-cover"
               />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-3">80 FT+</div>
                 <h3 className="editorial-card-name text-white mb-3">Superyachts</h3>
                 <p className="editorial-small text-white/60 mb-3">The pinnacle of yachting. Unmatched space and premium amenities.</p>
@@ -178,124 +178,105 @@ export default function HomePage() {
                 </div>
               </div>
             </Link>
-
-            {/* View Full Fleet */}
-            <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
-              <img
-                src="/images/fleet/full-fleet-aerial.jpg"
-                alt="View the Full Fleet"
-                className="img-zoom w-full h-full object-cover"
-              />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bright-card-text">
-                <h3 className="editorial-card-name text-white mb-3">View the Full Fleet</h3>
-                <p className="editorial-small text-white/60 mb-3">See all the boats</p>
-                <div className="flex justify-end items-center">
-                  <div className="editorial-label text-white flex items-center gap-2">
-                    <span>Explore All</span>
-                    <span>→</span>
-                  </div>
-                </div>
-              </div>
-            </Link>
           </div>
         </div>
       </section>
 
       {/* Trust/Reviews Section - Clean Logos Only */}
       <section className="bg-white" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
-        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
-          {/* Logos Row */}
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-8">
-            {/* Yelp Reviews */}
-            <a 
-              href="https://www.yelp.com/biz/miami-yachting-company-miami-beach" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-100 transition-opacity duration-300"
-            >
-              <img 
-                src="/images/reviews/yelp-5star.jpg" 
-                alt="Yelp Reviews" 
-                className="h-14 w-auto object-contain opacity-60"
-              />
-            </a>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <div className="border border-[#0f0f0f]/10 py-10 px-6 md:px-12">
+            {/* Logos Row */}
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-8">
+              {/* Yelp Reviews */}
+              <a 
+                href="https://www.yelp.com/biz/miami-yachting-company-miami-beach" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-100 transition-opacity duration-300"
+              >
+                <img 
+                  src="/images/reviews/yelp-5star.jpg" 
+                  alt="Yelp Reviews" 
+                  className="h-14 w-auto object-contain opacity-60"
+                />
+              </a>
 
-            {/* TripAdvisor Reviews */}
-            <a 
-              href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-100 transition-opacity duration-300"
-            >
-              <img 
-                src="/images/reviews/tripadvisor-5.jpg" 
-                alt="TripAdvisor Reviews" 
-                className="h-14 w-auto object-contain opacity-60"
-              />
-            </a>
+              {/* TripAdvisor Reviews */}
+              <a 
+                href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-100 transition-opacity duration-300"
+              >
+                <img 
+                  src="/images/reviews/tripadvisor-5.jpg" 
+                  alt="TripAdvisor Reviews" 
+                  className="h-14 w-auto object-contain opacity-60"
+                />
+              </a>
 
-            {/* Google Reviews */}
-            <a 
-              href="https://maps.app.goo.gl/53k76h5DT28dVFUs9" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-100 transition-opacity duration-300"
-            >
-              <img 
-                src="/images/reviews/google-reviews.jpg" 
-                alt="Google Reviews" 
-                className="h-14 w-auto object-contain opacity-60"
-              />
-            </a>
+              {/* Google Reviews */}
+              <a 
+                href="https://maps.app.goo.gl/53k76h5DT28dVFUs9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-100 transition-opacity duration-300"
+              >
+                <img 
+                  src="/images/reviews/google-reviews.jpg" 
+                  alt="Google Reviews" 
+                  className="h-14 w-auto object-contain opacity-60"
+                />
+              </a>
 
-            {/* IYBA Member */}
-            <div className="hover:opacity-100 transition-opacity duration-300">
-              <img 
-                src="/images/reviews/iyba.jpg" 
-                alt="IYBA Member" 
-                className="h-14 w-auto object-contain opacity-60"
-              />
+              {/* IYBA Member */}
+              <div className="hover:opacity-100 transition-opacity duration-300">
+                <img 
+                  src="/images/reviews/iyba.jpg" 
+                  alt="IYBA Member" 
+                  className="h-14 w-auto object-contain opacity-60"
+                />
+              </div>
+
+              {/* Best of Miami 2025 */}
+              <div className="hover:opacity-100 transition-opacity duration-300">
+                <img 
+                  src="/images/reviews/best-of-miami-2025.jpg" 
+                  alt="Best of Miami 2025 Winner" 
+                  className="h-14 w-auto object-contain opacity-60"
+                />
+              </div>
             </div>
 
-            {/* Best of Miami 2025 */}
-            <div className="hover:opacity-100 transition-opacity duration-300">
-              <img 
-                src="/images/reviews/best-of-miami-2025.jpg" 
-                alt="Best of Miami 2025 Winner" 
-                className="h-14 w-auto object-contain opacity-60"
-              />
+            {/* Testimonial Quote */}
+            <div className="text-center mb-6">
+              <p className="editorial-body text-[#0f0f0f] italic mb-2">
+                "From the moment we stepped on the boat our expectations were exceeded!!!"
+              </p>
+              <p className="editorial-small text-[#6b6b6b]">
+                - Nicole N. - TripAdvisor
+              </p>
             </div>
-          </div>
 
-          {/* Testimonial Quote */}
-          <div className="text-center mb-8 max-w-3xl mx-auto">
-            <p className="text-xl md:text-2xl text-[#9ca3af] mb-6" style={{ fontFamily: 'var(--font-cormorant), serif', fontStyle: 'italic', fontWeight: 400, lineHeight: 1.6, letterSpacing: '0.01em' }}>
-              "From the moment we stepped on the boat, our expectations were exceeded!!!"
-            </p>
-            <p className="text-base md:text-lg text-[#9ca3af]" style={{ fontFamily: 'var(--font-cormorant), serif', fontStyle: 'italic', fontWeight: 400 }}>
-              — Nicole N. from TripAdvisor
-            </p>
-          </div>
-
-          {/* CTA Button */}
-          <div className="text-center">
-            <a 
-              href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block border border-[#0f0f0f] text-[#0f0f0f] px-8 py-3 hover:bg-[#0f0f0f] hover:text-white transition-all duration-300"
-              style={{ fontFamily: 'var(--font-roboto-mono), monospace', fontSize: '11px', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}
-            >
-              View Customer Reviews
-            </a>
+            {/* CTA Button */}
+            <div className="text-center">
+              <a 
+                href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#0f0f0f] text-white editorial-button px-8 py-3 hover:bg-[#c4a265] transition-colors duration-300"
+              >
+                View Customer Reviews
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Experiences Section */}
       <section className="bg-[#faf9f7]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="mb-12">
             <div className="rule-gold" />
             <h2 className="editorial-headline text-[#0f0f0f] mb-4">
@@ -307,16 +288,12 @@ export default function HomePage() {
           </div>
 
           {/* Experience Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {/* Sightseeing */}
             <Link href="/experiences/sightseeing" className="group relative aspect-[4/3] overflow-hidden">
-              <img
-                src="/images/experiences/sightseeing.jpg"
-                alt="Sightseeing"
-                className="img-zoom w-full h-full object-cover"
-              />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Sightseeing</h3>
                 <p className="editorial-small text-white/60 mb-2">Star Island, Venetian Islands, Miami River. The classic cruise past celebrity estates and iconic skyline views.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -332,8 +309,8 @@ export default function HomePage() {
                 alt="Celebrations"
                 className="img-zoom w-full h-full object-cover"
               />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Celebrations</h3>
                 <p className="editorial-small text-white/60 mb-2">Birthday parties, engagements, anniversaries. Custom-tailored experiences for your most important moments.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -344,13 +321,9 @@ export default function HomePage() {
 
             {/* Corporate */}
             <Link href="/experiences/corporate" className="group relative aspect-[4/3] overflow-hidden">
-              <img
-                src="/images/experiences/corporate.jpg"
-                alt="Corporate"
-                className="img-zoom w-full h-full object-cover"
-              />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Corporate</h3>
                 <p className="editorial-small text-white/60 mb-2">Executive retreats, client entertainment, team building. Professional experiences that impress and inspire.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -361,13 +334,9 @@ export default function HomePage() {
 
             {/* Sandbars & Beyond */}
             <Link href="/experiences/sandbars" className="group relative aspect-[4/3] overflow-hidden">
-              <img
-                src="/images/experiences/sandbars-beyond.jpg"
-                alt="Sandbars & Beyond"
-                className="img-zoom w-full h-full object-cover"
-              />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Sandbars & Beyond</h3>
                 <p className="editorial-small text-white/60 mb-2">Anchor at Miami's most famous sandbars or explore farther in South Florida's warm tropical waters.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -383,8 +352,8 @@ export default function HomePage() {
                 alt="Bachelorette Party"
                 className="img-zoom w-full h-full object-cover"
               />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Bachelorette Party</h3>
                 <p className="editorial-small text-white/60 mb-2">Celebrate your last sail before the veil. Unforgettable experiences on Miami's most beautiful waters.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -395,13 +364,9 @@ export default function HomePage() {
 
             {/* Large Group Charters */}
             <Link href="/experiences/large-groups" className="group relative aspect-[4/3] overflow-hidden">
-              <img
-                src="/images/experiences/large-groups.jpg"
-                alt="Large Group Charters"
-                className="img-zoom w-full h-full object-cover"
-              />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-[#c4a265]/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Large Group Charters</h3>
                 <p className="editorial-small text-white/60 mb-2">Impress clients and reward teams. Premium vessels with full charter and administrative support.</p>
                 <div className="inline-block editorial-label text-white/70 text-[10px] border border-white/30 px-3 py-1">
@@ -415,7 +380,7 @@ export default function HomePage() {
 
       {/* Departure Points Section */}
       <section className="bg-[#0d0d0d]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="mb-12">
             <div className="rule-gold" />
             <h2 className="editorial-headline text-white mb-4">
@@ -435,8 +400,8 @@ export default function HomePage() {
                 alt="Miami"
                 className="img-zoom w-full h-full object-cover"
               />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Miami</h3>
                 <p className="editorial-small text-white/60">Depart from the heart of downtown Miami with skyline views from the start.</p>
               </div>
@@ -449,8 +414,8 @@ export default function HomePage() {
                 alt="Miami Beach"
                 className="img-zoom w-full h-full object-cover"
               />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Miami Beach</h3>
                 <p className="editorial-small text-white/60">Step aboard in iconic Miami Beach. Art Deco luxury glamour. The gateway to warm waters and Miami's most celebrated departure point.</p>
               </div>
@@ -463,8 +428,8 @@ export default function HomePage() {
                 alt="Key Biscayne"
                 className="img-zoom w-full h-full object-cover"
               />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Key Biscayne</h3>
                 <p className="editorial-small text-white/60">Tropical warm waters, small islands and sandbars. Miami's best kept secrets.</p>
               </div>
@@ -477,8 +442,8 @@ export default function HomePage() {
                 alt="Fort Lauderdale"
                 className="img-zoom w-full h-full object-cover"
               />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Fort Lauderdale</h3>
                 <p className="editorial-small text-white/60">The yachting capital of the world. Access to Intracoastal waterways and open ocean.</p>
               </div>
@@ -491,8 +456,8 @@ export default function HomePage() {
                 alt="Hollywood"
                 className="img-zoom w-full h-full object-cover"
               />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Hollywood</h3>
                 <p className="editorial-small text-white/60">A convenient South Florida departure between Miami and Fort Lauderdale.</p>
               </div>
@@ -505,8 +470,8 @@ export default function HomePage() {
                 alt="Coconut Grove"
                 className="img-zoom w-full h-full object-cover"
               />
-              
-              <div className="absolute inset-0 card-gradient-subtle" /><div className="absolute bottom-0 left-0 right-0 p-6 bright-card-text">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="editorial-card-name text-white mb-2">Coconut Grove</h3>
                 <p className="editorial-small text-white/60">A relaxed tropical departure point with easy access to Biscayne Bay.</p>
               </div>
@@ -517,7 +482,7 @@ export default function HomePage() {
 
       {/* Section 2: Our Philosophy */}
       <section className="bg-[#0d0d0d]" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Photo */}
             <div className="relative aspect-[4/3] overflow-hidden group">
@@ -526,8 +491,7 @@ export default function HomePage() {
                 alt="Our Philosophy"
                 className="img-zoom w-full h-full object-cover"
               />
-            
-              <div className="absolute inset-0 card-gradient-subtle" /></div>
+            </div>
 
             {/* Right: Text */}
             <div>
@@ -564,7 +528,7 @@ export default function HomePage() {
 
       {/* Section 3: Award Section */}
       <section className="bg-[#0d0d0d] border-t border-white/5" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left: Award Box */}
             <div className="border border-white/10 p-12 flex flex-col items-center text-center">
@@ -616,7 +580,7 @@ export default function HomePage() {
 
       {/* Corporate Sponsors Carousel */}
       <section className="bg-white overflow-x-hidden" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
-        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10 mb-12 text-center">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 mb-12 text-center">
           <div className="rule-gold mx-auto" />
           <h2 className="editorial-headline text-[#0f0f0f] mb-4">
             Proud Service Providers To:
@@ -667,7 +631,7 @@ export default function HomePage() {
         </div>
         <div className="absolute inset-0 bg-[#0f0f0f]/75" />
         
-        <div className="relative z-10 max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10 text-center">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
           <div className="rule-gold mx-auto" />
           <h2 className="editorial-headline text-white mb-6 max-w-3xl mx-auto">
             Ready to Get on the Water?
@@ -703,7 +667,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="bg-[#0f0f0f]" style={{ paddingTop: '56px', paddingBottom: '32px' }}>
-        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             {/* Brand */}
             <div>

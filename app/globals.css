@@ -24,11 +24,6 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.75;
-  overflow-x: hidden;
-}
-
-html {
-  overflow-x: hidden;
 }
 
 /* ========================================
@@ -203,24 +198,6 @@ html {
 
 .group:hover .img-zoom {
   transform: scale(1.04);
-}
-
-/* Darker gradient for text readability */
-.card-gradient-subtle {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 50%, transparent 70%);
-  z-index: 1;
-}
-
-.bright-card-text {
-  position: relative;
-  z-index: 2;
-}
-
-.bright-card-text h3,
-.bright-card-text p,
-.bright-card-text div,
-.bright-card-text span {
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Hide Google Translate UI */
