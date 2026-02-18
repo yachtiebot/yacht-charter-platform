@@ -69,14 +69,18 @@ export default function HomePage() {
         </div>
         
         {/* Scroll Indicator - Positioned between buttons */}
-        <div className="absolute bottom-24 left-6 right-6 lg:left-1/2 lg:right-auto lg:-translate-x-1/2">
+        <div className="absolute bottom-24 w-full">
           <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               <div className="lg:col-span-7"></div>
-              <div className="lg:col-span-5 flex justify-center">
-                <div className="flex flex-col items-center gap-2 animate-bounce">
-                  <div className="text-white/50 text-[10px] font-medium tracking-wider uppercase">Scroll</div>
-                  <div className="w-[1px] h-6 bg-white/30" />
+              <div className="lg:col-span-5">
+                <div className="flex flex-wrap gap-4">
+                  <div className="flex-1"></div>
+                  <div className="flex flex-col items-center gap-2 animate-bounce">
+                    <div className="text-white/50 text-[10px] font-medium tracking-wider uppercase">Scroll</div>
+                    <div className="w-[1px] h-6 bg-white/30" />
+                  </div>
+                  <div className="flex-1"></div>
                 </div>
               </div>
             </div>
@@ -86,18 +90,20 @@ export default function HomePage() {
         {/* Bottom Editorial Bar */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/10">
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-4 flex flex-wrap justify-between items-center gap-4">
-            <div className="editorial-label text-white/40 flex flex-wrap gap-2 items-center">
+            <div className="editorial-label text-white/40 flex flex-wrap gap-2 items-center text-[10px] md:text-[12px]">
               <span>Miami</span>
               <span>·</span>
               <span>Miami Beach</span>
-              <span className="hidden md:inline">·</span>
-              <span className="hidden md:inline">Key Biscayne</span>
+              <span>·</span>
+              <span>Key Biscayne</span>
               <span className="hidden md:inline">·</span>
               <span className="hidden md:inline">Coconut Grove</span>
+              <span>·</span>
+              <span>Fort Lauderdale</span>
               <span className="hidden md:inline">·</span>
-              <span className="hidden md:inline">Fort Lauderdale</span>
+              <span className="hidden md:inline">Hollywood</span>
             </div>
-            <div className="editorial-label text-[#c4a265]">
+            <div className="editorial-label text-[#c4a265] text-[9px] md:text-[12px] whitespace-nowrap">
               Best Boat Charter · Readers' Choice Award
             </div>
           </div>
