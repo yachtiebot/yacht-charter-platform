@@ -235,25 +235,25 @@ function FleetContent() {
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
           <div className="rule-gold mx-auto" />
           <h2 className="editorial-display text-4xl md:text-6xl text-white mb-6 max-w-3xl mx-auto">
-            Can't Find What You're <span className="text-[#c4a265]">Looking For?</span>
+            Not Sure Which <span className="text-[#c4a265]">Yacht?</span>
           </h2>
-          <p className="text-white/50 text-lg mb-12 max-w-2xl mx-auto">
-            Our team can help match you with the perfect vessel for your occasion.
+          <p className="text-white/60 text-lg mb-12 max-w-2xl mx-auto">
+            Tell us about your group size, occasion, and preferred date. We'll recommend the perfect vessel.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="tel:18007479585"
-              className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
-            >
-              Call 1 800 747 9585
-            </a>
             <Link
               href="/contact"
+              className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
+            >
+              Get a Recommendation
+            </Link>
+            <a
+              href="tel:18007479585"
               className="editorial-label border border-white/30 text-white px-8 py-4 hover:bg-white/10 transition-all duration-500"
             >
-              Send an Inquiry
-            </Link>
+              Call 1-800-747-9585
+            </a>
           </div>
         </div>
       </section>
