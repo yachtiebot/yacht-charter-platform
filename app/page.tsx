@@ -263,7 +263,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 4: CTA */}
-      <section className="relative" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
+      <section className="relative" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=2400&q=90"
