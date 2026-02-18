@@ -40,7 +40,7 @@ export default function Navigation() {
           className="flex items-center"
         >
           <img 
-            src="/images/myc-logo.png" 
+            src="/images/myc-logo-v2.png" 
             alt="Miami Yachting Company"
             className="h-12 md:h-16 w-auto"
           />
