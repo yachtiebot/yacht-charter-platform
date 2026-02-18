@@ -191,14 +191,13 @@ body {
   margin-bottom: 1.5rem; /* 24px */
 }
 
-/* Image Hover Zoom - zoomed out by default to show more of the image */
+/* Image Hover Zoom */
 .img-zoom {
-  transform: scale(0.85);
   transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .group:hover .img-zoom {
-  transform: scale(0.92);
+  transform: scale(1.04);
 }
 
 /* Hide Google Translate UI */
