@@ -36,7 +36,7 @@ export default function Navigation() {
         {/* Logo - Plain Text */}
         <Link 
           href="/" 
-          className={`text-sm md:text-base font-normal transition-colors duration-700 ${
+          className={`logo-text transition-colors duration-700 ${
             isTransparent ? 'text-white' : 'text-[#0f0f0f]'
           }`}
         >

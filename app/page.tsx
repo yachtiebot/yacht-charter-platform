@@ -24,12 +24,12 @@ export default function HomePage() {
               {/* Left Column - 60% */}
               <div className="lg:col-span-7">
                 <div className="rule-gold" />
-                <h1 className="editorial-display text-white mb-6" style={{ fontWeight: 300, fontSize: '45px' }}>
+                <h1 className="editorial-display text-white mb-6">
                   Private Yacht<br />
                   Charters in<br />
                   <span className="text-[#c4a265]">Miami</span>
                 </h1>
-                <p className="text-white/70 text-lg md:text-xl max-w-lg">
+                <p className="editorial-body text-white/70 max-w-lg">
                   A curated fleet of privately owned vessels, hand selected for comfort, style, and exceptional guest experiences.
                 </p>
               </div>
@@ -39,12 +39,12 @@ export default function HomePage() {
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-8 mb-8">
                   <div>
-                    <div className="editorial-display text-[3rem] text-[#c4a265] mb-2">4.9</div>
-                    <div className="editorial-label text-white/50" style={{ fontSize: '12px', fontWeight: 500 }}>Google Stars</div>
+                    <div className="editorial-stat text-[#c4a265] mb-2">4.9</div>
+                    <div className="editorial-label text-white/50">Google Stars</div>
                   </div>
                   <div>
-                    <div className="editorial-display text-[3rem] text-[#c4a265] mb-2">1,400+</div>
-                    <div className="editorial-label text-white/50" style={{ fontSize: '12px', fontWeight: 500 }}>Reviews</div>
+                    <div className="editorial-stat text-[#c4a265] mb-2">1,400+</div>
+                    <div className="editorial-label text-white/50">Reviews</div>
                   </div>
                 </div>
                 
@@ -53,14 +53,12 @@ export default function HomePage() {
                   <Link
                     href="/yacht-rental-miami"
                     className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
-                    style={{ fontSize: '12px', fontWeight: 500 }}
                   >
                     View Fleet
                   </Link>
                   <Link
                     href="/contact"
                     className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500"
-                    style={{ fontSize: '12px', fontWeight: 500 }}
                   >
                     Contact Us
                   </Link>
@@ -72,7 +70,7 @@ export default function HomePage() {
         
         {/* Scroll Indicator */}
         <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-bounce">
-          <div className="editorial-label text-white/50 text-[10px]">Scroll</div>
+          <div className="editorial-label text-white/50">Scroll</div>
           <div className="w-[1px] h-8 bg-white/30" />
         </div>
 
@@ -104,11 +102,11 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-16">
             <div className="lg:max-w-md">
               <div className="rule-gold" />
-              <h2 className="editorial-display text-4xl md:text-5xl text-[#0f0f0f]">
+              <h2 className="editorial-headline text-[#0f0f0f]">
                 The Fleet
               </h2>
             </div>
-            <p className="text-[#6b6b6b] lg:max-w-lg">
+            <p className="editorial-body text-[#6b6b6b] lg:max-w-lg">
               Every vessel is privately owned, hand-picked for quality, and backed by outstanding guest reviews.
             </p>
           </div>
@@ -125,8 +123,8 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-3">20–40 FT</div>
-                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">Day Boats</h3>
-                <p className="text-white/60 text-sm mb-3">Casual elegance for sandbar days and sunset cruises.</p>
+                <h3 className="editorial-card-name text-white mb-3">Day Boats</h3>
+                <p className="editorial-small text-white/60 mb-3">Casual elegance for sandbar days and sunset cruises.</p>
                 <div className="editorial-label text-white/50">From $700</div>
               </div>
             </Link>
@@ -141,8 +139,8 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-3">40–80 FT</div>
-                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">Luxury Yachts</h3>
-                <p className="text-white/60 text-sm mb-3">Premium amenities for celebrations and corporate occasions.</p>
+                <h3 className="editorial-card-name text-white mb-3">Luxury Yachts</h3>
+                <p className="editorial-small text-white/60 mb-3">Premium amenities for celebrations and corporate occasions.</p>
                 <div className="editorial-label text-white/50">From $1,250</div>
               </div>
             </Link>
@@ -157,8 +155,8 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-3">80 FT+</div>
-                <h3 className="editorial-display text-3xl md:text-4xl text-white mb-3">Superyachts</h3>
-                <p className="text-white/60 text-sm mb-3">The pinnacle of yachting. Unmatched space and premium amenities.</p>
+                <h3 className="editorial-card-name text-white mb-3">Superyachts</h3>
+                <p className="editorial-small text-white/60 mb-3">The pinnacle of yachting. Unmatched space and premium amenities.</p>
                 <div className="editorial-label text-white/50">From $3,200</div>
               </div>
             </Link>
@@ -183,13 +181,13 @@ export default function HomePage() {
             <div>
               <div className="rule-gold" />
               <div className="editorial-label text-[#c4a265] mb-6">Our Philosophy</div>
-              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-4">
+              <h2 className="editorial-subhead text-white mb-4">
                 Not a Crowded Marketplace.
               </h2>
-              <h2 className="editorial-display text-4xl md:text-5xl text-white mb-8 italic">
+              <h2 className="editorial-subhead-italic text-white mb-8">
                 A Curated Collection.
               </h2>
-              <p className="text-white/60 text-lg leading-relaxed">
+              <p className="editorial-body text-white/60">
                 We don't list every boat in Miami. We hand select each vessel based on condition, presentation, guest feedback, and operational reliability.
               </p>
             </div>
@@ -205,19 +203,19 @@ export default function HomePage() {
             <div className="border border-white/10 p-12 flex flex-col items-center text-center">
               <div className="rule-gold mx-auto" />
               <div className="editorial-label text-[#c4a265] mb-6">Miami New Times</div>
-              <h3 className="editorial-display text-4xl md:text-5xl text-white mb-4">
+              <h3 className="editorial-subhead text-white mb-4">
                 Best Boat Charter
               </h3>
               <div className="editorial-label text-white/40 mb-12">Readers' Choice Award</div>
               
               <div className="flex items-center gap-8">
                 <div>
-                  <div className="editorial-display text-[3rem] text-[#c4a265] mb-2">2024</div>
+                  <div className="editorial-year text-[#c4a265] mb-2">2024</div>
                   <div className="editorial-label text-white/50">Winner</div>
                 </div>
                 <div className="w-[1px] h-16 bg-white/10" />
                 <div>
-                  <div className="editorial-display text-[3rem] text-[#c4a265] mb-2">2025</div>
+                  <div className="editorial-year text-[#c4a265] mb-2">2025</div>
                   <div className="editorial-label text-white/50">Winner</div>
                 </div>
               </div>
@@ -226,22 +224,22 @@ export default function HomePage() {
             {/* Right: Text */}
             <div className="flex flex-col justify-center">
               <div className="rule-gold" />
-              <h3 className="editorial-display text-4xl md:text-5xl text-white mb-4">
+              <h3 className="editorial-subhead text-white mb-4">
                 Recognized by Miami's<br />
-                <span className="italic">Most Trusted Voice</span>
+                <span className="editorial-subhead-italic">Most Trusted Voice</span>
               </h3>
-              <p className="text-white/60 mb-8 text-lg leading-relaxed">
+              <p className="editorial-body text-white/60 mb-8">
                 Back-to-back wins from Miami New Times readers — the city's most discerning voices on where to eat, drink, and play.
               </p>
               
               <div className="grid grid-cols-2 gap-8">
                 <div>
-                  <div className="editorial-display text-[3rem] text-white mb-2">4.9</div>
-                  <div className="editorial-label text-white/50" style={{ fontSize: '12px', fontWeight: 500 }}>Google Stars</div>
+                  <div className="editorial-year text-white mb-2">4.9</div>
+                  <div className="editorial-label text-white/50">Google Stars</div>
                 </div>
                 <div>
-                  <div className="editorial-display text-[3rem] text-white mb-2">1,400+</div>
-                  <div className="editorial-label text-white/50" style={{ fontSize: '12px', fontWeight: 500 }}>Verified Reviews</div>
+                  <div className="editorial-year text-white mb-2">1,400+</div>
+                  <div className="editorial-label text-white/50">Verified Reviews</div>
                 </div>
               </div>
             </div>
@@ -262,10 +260,10 @@ export default function HomePage() {
         
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
           <div className="rule-gold mx-auto" />
-          <h2 className="editorial-display text-4xl md:text-6xl text-white mb-6 max-w-3xl mx-auto">
+          <h2 className="editorial-headline text-white mb-6 max-w-3xl mx-auto">
             Ready to Get on the Water?
           </h2>
-          <p className="text-white/50 text-lg mb-10 max-w-2xl mx-auto">
+          <p className="editorial-body text-white/50 mb-10 max-w-2xl mx-auto">
             Our team can help match you with the perfect vessel for your occasion.
           </p>
           
