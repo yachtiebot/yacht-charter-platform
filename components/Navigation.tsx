@@ -8,6 +8,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 export default function Navigation() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   // Pages with dark hero images that need transparent nav
   const darkHeroPages = ['/', '/yacht-rental-miami', '/about', '/contact'];
@@ -116,16 +117,59 @@ export default function Navigation() {
         
         {/* Mobile Menu Button */}
         <button 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={`lg:hidden flex flex-col gap-1.5 transition-colors duration-700`}
           aria-label="Menu"
         >
-          <span className={`w-6 h-[1.5px] transition-colors duration-700 ${
-            isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'
-          }`} />
-          <span className={`w-6 h-[1.5px] transition-colors duration-700 ${
-            isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'
-          }`} />
+          <span className={`w-6 h-[1.5px] transition-all duration-300 ${
+            isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+          } ${isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'}`} />
+          <span className={`w-6 h-[1.5px] transition-all duration-300 ${
+            isMobileMenuOpen ? '-rotate-45' : ''
+          } ${isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'}`} />
         </button>
+      </div>
+      
+      {/* Mobile Menu Dropdown */}
+      <div className={`lg:hidden overflow-hidden transition-all duration-300 ${
+        isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
+      } bg-[#faf9f7] border-b border-black/10`}>
+        <div className="px-4 py-6 space-y-4">
+          <Link
+            href="/yacht-rental-miami"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block editorial-label text-[#0f0f0f] hover:text-[#4e7483] py-2"
+          >
+            Fleet
+          </Link>
+          <Link
+            href="/locations"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block editorial-label text-[#0f0f0f] hover:text-[#4e7483] py-2"
+          >
+            Locations
+          </Link>
+          <Link
+            href="/about"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block editorial-label text-[#0f0f0f] hover:text-[#4e7483] py-2"
+          >
+            About
+          </Link>
+          <a
+            href="tel:+18007479585"
+            className="block editorial-label text-[#6b6b6b] hover:text-[#c4a265] py-2"
+          >
+            1 800 747 9585
+          </a>
+          <Link
+            href="/contact"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block editorial-label border border-[#0f0f0f] text-[#0f0f0f] bg-transparent hover:bg-[#0f0f0f] hover:text-white px-6 py-2.5 text-center transition-all duration-500"
+          >
+            Book Now
+          </Link>
+        </div>
       </div>
     </nav>
   );
