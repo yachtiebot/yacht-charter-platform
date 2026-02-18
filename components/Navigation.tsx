@@ -182,11 +182,11 @@ export default function Navigation() {
       <div className={`lg:hidden overflow-hidden transition-all duration-300 ${
         isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
       } bg-[#faf9f7]`}>
-        <div className="px-4 py-8 space-y-4 text-center">
+        <div className="px-4 py-6 space-y-3 text-center">
           <Link
             href="/yacht-rental-miami"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
             Fleet
@@ -194,7 +194,7 @@ export default function Navigation() {
           <Link
             href="/locations"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
             Locations
@@ -202,7 +202,7 @@ export default function Navigation() {
           <Link
             href="/#experiences"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
             Experiences
@@ -210,7 +210,7 @@ export default function Navigation() {
           <Link
             href="/add-ons"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
             Add-Ons
@@ -218,7 +218,7 @@ export default function Navigation() {
           <Link
             href="/catering"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
             Catering
@@ -226,7 +226,7 @@ export default function Navigation() {
           <Link
             href="/offers"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
             Offers
@@ -234,7 +234,7 @@ export default function Navigation() {
           <Link
             href="/testimonials"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
             Testimonials
@@ -242,7 +242,7 @@ export default function Navigation() {
           <Link
             href="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
             Contact
@@ -250,7 +250,7 @@ export default function Navigation() {
           <Link
             href="/about"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-3xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
+            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
             About
