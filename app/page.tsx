@@ -209,7 +209,12 @@ export default function HomePage() {
             </a>
 
             {/* TripAdvisor Reviews */}
-            <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
+            <a 
+              href="https://www.tripadvisor.com/Attraction_Review-g34439-d6721470-Reviews-Miami_Yachting_Company-Miami_Beach_Florida.html" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity duration-500"
+            >
               <img 
                 src="/images/reviews/tripadvisor-5.jpg" 
                 alt="TripAdvisor 5 Bubbles" 
@@ -219,7 +224,7 @@ export default function HomePage() {
                 <div className="editorial-stat text-[#0f0f0f] text-3xl">5.0</div>
                 <div className="editorial-label text-[#6b6b6b] text-[10px]">TripAdvisor</div>
               </div>
-            </div>
+            </a>
 
             {/* Google Reviews */}
             <a 
