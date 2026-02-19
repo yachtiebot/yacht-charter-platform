@@ -153,11 +153,7 @@ export default function Navigation() {
           
           <Link
             href="/contact"
-            className={`editorial-label px-6 py-2.5 transition-all duration-500 ${
-              isTransparent
-                ? 'bg-white text-[#0f0f0f] hover:bg-[#c4a265] hover:text-white'
-                : 'bg-white text-[#0f0f0f] hover:bg-[#c4a265] hover:text-white'
-            }`}
+            className={`editorial-label px-6 py-2.5 bg-white text-[#0f0f0f] transition-all duration-500 hover:bg-white hover:text-[#0f0f0f]`}
           >
             Book Now
           </Link>
