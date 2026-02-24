@@ -1,266 +1,138 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { formatCurrency } from '@/lib/utils';
+import Image from 'next/image';
+import { useState } from 'react';
 
-interface VesselDetail {
-  vessel: {
-    id: string;
-    public_code: string;
-    make: string;
-    model: string | null;
-    length_ft: number;
-    length_bucket: string;
-    category: string;
-    location_tag: string;
-    capacity_guests: number | null;
-    min_hours: number;
-    max_hours: number;
-    allowed_durations: number[];
-    toys: string[];
-    amenities: string[];
-    hero_image_url: string | null;
-    gallery_image_urls: string[];
-    public_description: string | null;
-  };
-  pricing: {
-    currency: string;
-    base_rates: Record<string, number>;
-    extra_hour_cents: number | null;
-    deposit_policy: any;
-  } | null;
-  schedule: {
-    timezone: string;
-    earliest_departure: string;
-    latest_return: string;
-    slot_increment_minutes: number;
-    fixed_start_times: string[] | null;
-  } | null;
-}
+// Static yacht data with Supabase Storage URLs
+const yachts = {
+  '37-axopar': {
+    name: '37 ft Axopar',
+    make: 'Axopar',
+    model: '37 Sun-Top',
+    guests: 13,
+    images: Array.from({length: 13}, (_, i) => 
+      `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-images/yachts/37-axopar/Miami_Yachting_Company_37_Axopar_${String(i+1).padStart(2, '0')}.webp`
+    )
+  },
+  '27-regal': {
+    name: '27 ft Regal',
+    make: 'Regal',
+    model: '27 Bowrider',
+    guests: 10,
+    images: Array.from({length: 18}, (_, i) => 
+      `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-images/yachts/27-regal/Miami_Yachting_Company_27_Regal_${String(i+1).padStart(2, '0')}.webp`
+    )
+  },
+  '116-pershing': {
+    name: '116 ft Pershing',
+    make: 'Pershing',
+    model: '116',
+    guests: 12,
+    images: Array.from({length: 49}, (_, i) => 
+      `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-images/yachts/116-pershing/Miami_Yachting_Company_116_Pershing_${String(i+1).padStart(2, '0')}.webp`
+    )
+  }
+};
 
-export default function VesselDetailPage({
-  params,
-}: {
-  params: { code: string };
-}) {
-  const code = params.code;
-  const [data, setData] = useState<VesselDetail | null>(null);
-  const [loading, setLoading] = useState(true);
+export default function YachtPage() {
+  const params = useParams();
+  const code = params.code as string;
+  const yacht = yachts[code as keyof typeof yachts];
   const [selectedImage, setSelectedImage] = useState(0);
 
-  useEffect(() => {
-    fetchVessel();
-  }, [code]);
-
-  const fetchVessel = async () => {
-    setLoading(true);
-    const response = await fetch(`/api/public/vessels/${code}`);
-    const vesselData = await response.json();
-    setData(vesselData);
-    setLoading(false);
-  };
-
-  if (loading) {
+  if (!yacht) {
     return (
-      <div className="min-h-screen bg-white pt-16 flex items-center justify-center">
-        <div className="text-slate-400 font-light">Loading...</div>
-      </div>
-    );
-  }
-
-  if (!data) {
-    return (
-      <div className="min-h-screen bg-white pt-16 flex items-center justify-center">
+      <div className="min-h-screen bg-[#faf9f7] pt-24 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-light text-slate-900 mb-4">Vessel not found</h1>
-          <Link href="/fleet" className="text-slate-600 underline font-light">
-            Back to fleet
+          <h1 className="editorial-headline mb-4">Yacht not found</h1>
+          <Link href="/yacht-rental-miami" className="editorial-label hover:text-[#c4a265]">
+            ← Back to Fleet
           </Link>
         </div>
       </div>
     );
   }
-
-  const { vessel, pricing, schedule } = data;
-  const allImages = vessel.hero_image_url
-    ? [vessel.hero_image_url, ...vessel.gallery_image_urls]
-    : vessel.gallery_image_urls;
 
   return (
-    <div className="min-h-screen bg-white pt-16">
-      {/* Gallery */}
-      <section className="relative">
-        {allImages.length > 0 ? (
-          <>
-            <div className="aspect-[16/9] bg-gradient-to-br from-slate-200 to-slate-300 relative">
-              <img
-                src={allImages[selectedImage]}
-                alt={`${vessel.length_ft}ft ${vessel.make}`}
-                className="w-full h-full object-cover"
-              />
+    <div className="min-h-screen bg-[#faf9f7] pt-24">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-12">
+        {/* Back Link */}
+        <Link href="/yacht-rental-miami" className="editorial-label text-[#6b6b6b] hover:text-[#c4a265] inline-block mb-8">
+          ← BACK TO FLEET
+        </Link>
+
+        {/* Yacht Name */}
+        <h1 className="editorial-headline mb-12">{yacht.name}</h1>
+
+        {/* Image Gallery */}
+        <div className="mb-12">
+          {/* Main Image */}
+          <div className="mb-4 bg-[#f0ece6] aspect-[16/9] relative overflow-hidden">
+            <img 
+              src={yacht.images[selectedImage]}
+              alt={`${yacht.name} - Image ${selectedImage + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Thumbnails */}
+          <div className="grid grid-cols-4 md:grid-cols-8 gap-2">
+            {yacht.images.map((img, idx) => (
+              <button
+                key={idx}
+                onClick={() => setSelectedImage(idx)}
+                className={`aspect-square bg-[#f0ece6] overflow-hidden ${
+                  selectedImage === idx ? 'ring-2 ring-[#c4a265]' : ''
+                }`}
+              >
+                <img 
+                  src={img}
+                  alt={`${yacht.name} thumbnail ${idx + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Yacht Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="lg:col-span-2">
+            <div className="mb-8">
+              <div className="editorial-label text-[#6b6b6b] mb-2">CAPACITY</div>
+              <div className="editorial-spec-value">{yacht.guests} Guests</div>
             </div>
             
-            {allImages.length > 1 && (
-              <div className="max-w-7xl mx-auto px-6 py-6">
-                <div className="flex gap-4 overflow-x-auto">
-                  {allImages.map((img, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setSelectedImage(idx)}
-                      className={`flex-shrink-0 w-24 h-24 bg-gradient-to-br from-slate-200 to-slate-300 border-2 transition-all ${
-                        selectedImage === idx ? 'border-slate-900' : 'border-transparent opacity-60 hover:opacity-100'
-                      }`}
-                    >
-                      <img src={img} alt="" className="w-full h-full object-cover" />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-          </>
-        ) : (
-          <div className="aspect-[16/9] bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-            <span className="text-slate-400 font-light">Images coming soon</span>
-          </div>
-        )}
-      </section>
-
-      {/* Content */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-3 gap-16">
-          {/* Main Content */}
-          <div className="lg:col-span-2">
-            <div className="mb-6">
-              <p className="text-xs tracking-widest text-slate-500 mb-2 uppercase">
-                {vessel.category} • {vessel.location_tag}
-              </p>
-              <h1 className="text-5xl font-light mb-4 text-slate-900">
-                {vessel.length_ft}ft {vessel.make}
-                {vessel.model && ` ${vessel.model}`}
-              </h1>
-              {vessel.capacity_guests && (
-                <p className="text-lg text-slate-600 font-light">
-                  Up to {vessel.capacity_guests} guests
-                </p>
-              )}
+            <div className="mb-8">
+              <div className="editorial-label text-[#6b6b6b] mb-2">VESSEL</div>
+              <div className="editorial-spec-value">{yacht.make} {yacht.model}</div>
             </div>
 
-            {vessel.public_description && (
-              <div className="prose prose-slate max-w-none mb-12">
-                <p className="text-lg font-light leading-relaxed text-slate-600">
-                  {vessel.public_description}
-                </p>
-              </div>
-            )}
-
-            {/* Features & Amenities */}
-            <div className="grid md:grid-cols-2 gap-12 mb-12">
-              {vessel.toys.length > 0 && (
-                <div>
-                  <h3 className="text-lg font-light mb-4 text-slate-900 uppercase tracking-wide">
-                    Water Toys & Features
-                  </h3>
-                  <ul className="space-y-2">
-                    {vessel.toys.map((toy) => (
-                      <li key={toy} className="flex items-start gap-3 text-slate-600 font-light">
-                        <svg className="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {toy}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {vessel.amenities.length > 0 && (
-                <div>
-                  <h3 className="text-lg font-light mb-4 text-slate-900 uppercase tracking-wide">
-                    Amenities
-                  </h3>
-                  <ul className="space-y-2">
-                    {vessel.amenities.map((amenity) => (
-                      <li key={amenity} className="flex items-start gap-3 text-slate-600 font-light">
-                        <svg className="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {amenity}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+            <div className="editorial-body text-[#6b6b6b]">
+              <p>This {yacht.name} is available for charter in Miami. Contact us for pricing and availability.</p>
             </div>
-
-            {/* Operating Hours */}
-            {schedule && (
-              <div className="border-t border-slate-200 pt-8">
-                <h3 className="text-lg font-light mb-4 text-slate-900 uppercase tracking-wide">
-                  Operating Hours
-                </h3>
-                <div className="text-slate-600 font-light space-y-2">
-                  <p>Departure: {schedule.earliest_departure}</p>
-                  <p>Return by: {schedule.latest_return}</p>
-                  <p>Minimum charter: {vessel.min_hours} hours</p>
-                </div>
-              </div>
-            )}
           </div>
 
-          {/* Booking Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 bg-slate-50 p-8 border border-slate-200">
-              <h2 className="text-2xl font-light mb-6 text-slate-900">Pricing</h2>
-              
-              {pricing && (
-                <div className="space-y-4 mb-8">
-                  {vessel.allowed_durations.map((duration) => {
-                    const price = pricing.base_rates[duration.toString()];
-                    return price ? (
-                      <div key={duration} className="flex justify-between items-center border-b border-slate-200 pb-3">
-                        <span className="text-slate-700 font-light">{duration} hours</span>
-                        <span className="text-lg font-light text-slate-900">
-                          {formatCurrency(price, pricing.currency)}
-                        </span>
-                      </div>
-                    ) : null;
-                  })}
-                </div>
-              )}
-
-              <Link
-                href={`/booking/${vessel.public_code}`}
-                className="block w-full px-8 py-4 bg-slate-900 text-white text-center hover:bg-slate-800 transition-colors font-light tracking-wide"
+            <div className="bg-white p-8 border border-[#0f0f0f]/10">
+              <h3 className="editorial-subhead mb-6">Book This Yacht</h3>
+              <Link 
+                href="/contact"
+                className="block w-full editorial-label text-center py-3 bg-[#0f0f0f] text-white hover:bg-[#c4a265] transition-colors"
               >
-                CHECK AVAILABILITY
+                CONTACT US
               </Link>
-
-              <div className="mt-6 text-xs text-slate-500 font-light text-center">
-                Transparent pricing, no hidden fees
+              <div className="mt-6 text-center">
+                <a href="tel:+18007479585" className="editorial-label text-[#6b6b6b] hover:text-[#c4a265]">
+                  1 800 747 9585
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-light mb-4 text-slate-900">
-            Questions About This Yacht?
-          </h2>
-          <p className="text-lg text-slate-600 font-light mb-8">
-            Our team is here to help match you with the perfect charter experience.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-3 border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white transition-all font-light tracking-wide"
-          >
-            CONTACT US
-          </Link>
-        </div>
-      </section>
+      </div>
     </div>
   );
 }
