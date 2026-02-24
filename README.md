@@ -218,3 +218,4 @@ stripe listen --forward-to localhost:3000/api/webhooks/stripe
 ## 📞 Support
 
 Built by YachtieBot ⚓ for Miami Yachting Company
+# Trigger redeploy with Supabase
