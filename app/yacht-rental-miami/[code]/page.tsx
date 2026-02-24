@@ -2,7 +2,6 @@
 
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
 
 // Static yacht data with Supabase Storage URLs
