@@ -49,6 +49,7 @@ interface YachtData {
     'Short Description': string;
     'Full Description': string;
     'Photo Attachments': Array<{ url: string }>;
+    'Supabase Gallery URLs'?: string[];
   };
 }
 
@@ -210,18 +211,8 @@ export default function VesselDetailPage({
   // Optional upgrades from existing field
   const optionalUpgrades: string[] = fields['Optional Experience Upgrades'] || [];
   
-  // Generate gallery images (yacht-specific photo counts)
-  // For staging: try local first, fallback to production for yachts without photos yet
-  const galleryImages = [];
-  const isStaging = typeof window !== 'undefined' && window.location.hostname.includes('staging');
-  const baseUrl = (isStaging && code !== '37-axopar') ? 'https://yacht-charter-platform-mu.vercel.app' : '';
-  
-  // Set photo count per yacht (most have 18, Axopar has 12)
-  const photoCount = code === '37-axopar' ? 12 : 18;
-  
-  for (let i = 1; i <= photoCount; i++) {
-    galleryImages.push(`${baseUrl}/images/yachts/${code}/photo-${String(i).padStart(2, '0')}.webp`);
-  }
+  // Use Supabase gallery URLs from API, fallback to local images
+  const galleryImages = fields['Supabase Gallery URLs'] || [];
 
   // Swipe gesture handlers
   const minSwipeDistance = 50;
@@ -350,9 +341,7 @@ export default function VesselDetailPage({
       <div className="bg-[#faf9f7] pt-24 pb-4">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="editorial-label text-[#6b6b6b] uppercase tracking-wider">
-            <Link href="/yacht-rental-miami" className="hover:text-[#c4a265] transition-colors">FLEET</Link>
-            {' · '}
-            {fields['Boat Name'].toUpperCase()}
+            <Link href="/yacht-rental-miami" className="hover:text-[#c4a265] transition-colors">← BACK TO FLEET</Link>
           </div>
         </div>
       </div>
@@ -894,10 +883,10 @@ export default function VesselDetailPage({
               </h2>
             </div>
 
-            {/* Close Button */}
+            {/* Close Button - Minimalist white X */}
             <button
               onClick={() => setShowLightbox(false)}
-              className="absolute -top-10 right-0 md:-top-14 md:-right-14 bg-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-[#0f0f0f] text-2xl md:text-3xl hover:bg-[#c4a265] hover:text-white transition-colors shadow-lg z-10"
+              className="absolute -top-10 right-0 md:-top-14 md:-right-14 text-white text-4xl md:text-5xl hover:text-[#c4a265] transition-colors z-10"
             >
               ×
             </button>
@@ -906,7 +895,7 @@ export default function VesselDetailPage({
             {selectedImage > 0 && (
               <button
                 onClick={() => setSelectedImage(selectedImage - 1)}
-                className="hidden md:flex absolute -left-14 top-1/2 -translate-y-1/2 bg-white/95 rounded-full w-12 h-12 items-center justify-center text-[#0f0f0f] text-2xl hover:bg-[#c4a265] hover:text-white transition-colors shadow-lg"
+                className="hidden md:flex absolute -left-14 top-1/2 -translate-y-1/2 text-white text-5xl hover:text-[#c4a265] transition-colors"
               >
                 ‹
               </button>
@@ -916,7 +905,7 @@ export default function VesselDetailPage({
             {selectedImage < galleryImages.length - 1 && (
               <button
                 onClick={() => setSelectedImage(selectedImage + 1)}
-                className="hidden md:flex absolute -right-14 top-1/2 -translate-y-1/2 bg-white/95 rounded-full w-12 h-12 items-center justify-center text-[#0f0f0f] text-2xl hover:bg-[#c4a265] hover:text-white transition-colors shadow-lg"
+                className="hidden md:flex absolute -right-14 top-1/2 -translate-y-1/2 text-white text-5xl hover:text-[#c4a265] transition-colors"
               >
                 ›
               </button>
@@ -936,8 +925,8 @@ export default function VesselDetailPage({
               </div>
             </div>
             
-            {/* Counter */}
-            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white/95 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[#0f0f0f] text-sm" style={{fontWeight: 400}}>
+            {/* Counter - Minimalist white text */}
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm" style={{fontWeight: 400}}>
               {selectedImage + 1} / {galleryImages.length}
             </div>
           </div>
