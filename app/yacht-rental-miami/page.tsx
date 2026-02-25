@@ -3,7 +3,7 @@
 import { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
 import { formatCurrency } from '@/lib/utils';
-import FleetFilters from '@/components/FleetFilters';
+import CollapsibleFleetFilters from '@/components/CollapsibleFleetFilters';
 
 interface YachtData {
   id: string;
@@ -225,15 +225,28 @@ function FleetContent() {
       <section className="py-12 md:py-16">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           {/* Collapsible Filters */}
-          <FleetFilters
+          <CollapsibleFleetFilters
             selectedCategory={selectedCategory}
             selectedSize={selectedSize}
             selectedLocation={selectedLocation}
             selectedToys={selectedToys}
+            selectedAmenities={selectedAmenities}
+            selectedYachtType={selectedYachtType}
+            selectedPriceRange={selectedPriceRange}
+            instantBookableOnly={instantBookableOnly}
+            weekdayDiscountOnly={weekdayDiscountOnly}
+            minPrice={minPrice}
+            maxPrice={maxPrice}
             onCategoryChange={setSelectedCategory}
             onSizeChange={setSelectedSize}
             onLocationChange={setSelectedLocation}
             onToyToggle={handleToyToggle}
+            onAmenityToggle={handleAmenityToggle}
+            onYachtTypeChange={setSelectedYachtType}
+            onPriceRangeChange={setSelectedPriceRange}
+            onInstantBookableToggle={() => setInstantBookableOnly(!instantBookableOnly)}
+            onWeekdayDiscountToggle={() => setWeekdayDiscountOnly(!weekdayDiscountOnly)}
+            onClearAll={handleClearAll}
           />
 
           {/* Result Count */}
