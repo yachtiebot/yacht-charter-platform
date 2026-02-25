@@ -385,9 +385,11 @@ export default function HomePage() {
             {/* Bachelorette Party */}
             <Link href="/experiences/bachelorette" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/experiences/Miami_Yachting_Company_bachelorette_party_yacht_charter_miami.jpg"
+                src="/images/Miami_Yachting_Company_bachelorette.jpg"
                 alt="Miami Yachting Company bachelorette party yacht charter in Miami"
                 className="img-zoom w-full h-full object-cover"
+                width="1200"
+                height="900"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">

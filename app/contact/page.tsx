@@ -63,19 +63,13 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="h-screen min-h-[700px] relative flex items-end pt-24">
         <div className="absolute inset-0">
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcSet="/images/contact/Miami_Yachting_Company_contact_hero_yacht-mobile.jpg"
-            />
-            <img
-              src="/images/contact/Miami_Yachting_Company_contact_hero_yacht.jpg"
-              alt="Miami Yachting Company luxury yacht charter at Fowey Rocks Lighthouse"
-              className="w-full h-full object-cover"
-              width="2000"
-              height="1342"
-            />
-          </picture>
+          <img
+            src="/images/Miami_Yachting_Company_contact.jpeg"
+            alt="Miami Yachting Company contact - luxury yacht charter"
+            className="w-full h-full object-cover"
+            width="2400"
+            height="1600"
+          />
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/40" />
         </div>
