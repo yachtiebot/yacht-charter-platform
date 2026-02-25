@@ -100,11 +100,12 @@ export default function LanguageSwitcher({ isTransparent }: { isTransparent: boo
         {/* Language Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`editorial-label flex items-center gap-2 transition-colors duration-700 ${
+          className={`editorial-label flex items-center gap-2 transition-all duration-700 ${
             isTransparent
               ? 'text-white hover:text-[#c4a265]'
               : 'text-[#0f0f0f] hover:text-[#4e7483]'
           }`}
+          style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           aria-label="Select language"
         >
           <span className="text-base">{currentLanguage.flag}</span>

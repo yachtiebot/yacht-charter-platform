@@ -50,77 +50,84 @@ export default function Navigation() {
         <div className="hidden lg:flex items-center gap-6">
           <Link
             href="/yacht-rental-miami"
-            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/70 hover:text-white' 
                 : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
+            style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
             RENT A YACHT IN MIAMI
           </Link>
           <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
             href="/add-ons"
-            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/70 hover:text-white' 
                 : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
+            style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
             ADD ONS
           </Link>
           <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
             href="/offers"
-            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/70 hover:text-white' 
                 : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
+            style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
             OFFERS
           </Link>
           <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
             href="/large-groups"
-            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/70 hover:text-white' 
                 : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
+            style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
             LARGE GROUP CHARTERS
           </Link>
           <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
             href="/testimonials"
-            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/70 hover:text-white' 
                 : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
+            style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
             CLIENT TESTIMONIALS
           </Link>
           <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
             href="/contact"
-            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/70 hover:text-white' 
                 : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
+            style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
             CONTACT US
           </Link>
           <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
             href="/about"
-            className={`text-xs font-medium tracking-wider uppercase transition-colors duration-700 ${
+            className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/70 hover:text-white' 
                 : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
             }`}
+            style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
             ABOUT US
           </Link>
@@ -132,9 +139,10 @@ export default function Navigation() {
               href="https://wa.me/message/T7LESNSS34RWJ1"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-xl transition-colors duration-700 ${
+              className={`text-xl transition-all duration-700 ${
                 isTransparent ? 'text-white hover:text-[#c4a265]' : 'text-[#0f0f0f] hover:text-[#25D366]'
               }`}
+              style={isTransparent ? { filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.6)) drop-shadow(0 1px 3px rgba(0,0,0,0.5))' } : {}}
               aria-label="WhatsApp"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -143,9 +151,10 @@ export default function Navigation() {
             </a>
             <a
               href="tel:+18007479585"
-              className={`editorial-label transition-colors duration-700 hover:text-[#c4a265] ${
+              className={`editorial-label transition-all duration-700 hover:text-[#c4a265] ${
                 isTransparent ? 'text-white' : 'text-[#6b6b6b]'
               }`}
+              style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
             >
               1 800 747 9585
             </a>
@@ -153,10 +162,10 @@ export default function Navigation() {
           
           <Link
             href="/contact"
-            className={`editorial-label px-6 py-2.5 transition-all duration-500 ${
+            className={`editorial-label px-6 py-2.5 border transition-all duration-500 ${
               isTransparent
-                ? 'bg-white text-[#0f0f0f] hover:bg-[#c4a265] hover:text-white'
-                : 'bg-white text-[#0f0f0f] hover:bg-[#c4a265] hover:text-white'
+                ? 'bg-white text-[#0f0f0f] border-[#0f0f0f]/20 hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265]'
+                : 'bg-white text-[#0f0f0f] border-[#0f0f0f]/20 hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265]'
             }`}
           >
             Book Now

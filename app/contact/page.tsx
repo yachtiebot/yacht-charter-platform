@@ -77,11 +77,11 @@ export default function ContactPage() {
         {/* Hero Content */}
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-32">
           <div className="rule-gold mb-6" />
-          <h1 className="text-5xl md:text-6xl lg:text-7xl mb-6">
-            <div className="text-white" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 300, fontStyle: 'italic' }}>
+          <h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl mb-6" style={{ fontWeight: 300 }}>
+            <div className="text-white" style={{ fontStyle: 'italic' }}>
               Get in
             </div>
-            <div className="text-[#c4a265]" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 400 }}>
+            <div className="text-[#c4a265]">
               Touch
             </div>
           </h1>

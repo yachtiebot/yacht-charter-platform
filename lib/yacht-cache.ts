@@ -147,7 +147,7 @@ function enhanceWithPhotos(yachts: any[]) {
   const photoMapping: { [key: string]: number } = {
     '116-Pershing': 46,
     '37-Axopar': 13,
-    '27-Regal': 0  // Not yet processed
+    '27-Regal': 15
   };
   
   return yachts.map((yacht: any) => {

@@ -1,9 +1,9 @@
 # OKLAHOMA.md - Project Restore Point & Documentation
 
 **Date:** 2026-02-25  
-**Time:** 21:57 UTC  
-**Status:** ✅ STABLE RESTORE POINT  
-**Commit:** Ready for GitHub backup
+**Time:** 22:46 UTC  
+**Status:** ✅ STABLE RESTORE POINT (PHASE 1 COMPLETE)
+**Commit:** [PENDING - TO BE ADDED AFTER COMMIT]
 
 ---
 
@@ -11,11 +11,11 @@
 
 ### Working Production Website
 - **Live URL:** https://yacht-charter-platform-ten.vercel.app
-- **Status:** Fully functional with 2 yachts showing photos
+- **Status:** ✅ Fully functional with ALL 3 yachts showing photos
 - **GitHub:** https://github.com/yachtiebot/yacht-charter-platform
 - **Vercel Project:** yacht-charter-platform (production)
 
-### Features Implemented
+### Features Implemented ✅
 ✅ Yacht rental Miami page with fleet listing  
 ✅ Individual yacht detail pages (photo grid + lightbox)  
 ✅ Minimalist lightbox design (white text/icons, no boxes)  
@@ -23,6 +23,10 @@
 ✅ Airtable integration (source of truth for yacht data)  
 ✅ 15-minute caching with fallback (handles 500-700 daily visitors)  
 ✅ Supabase CDN for yacht photos  
+✅ **NEW: Drop shadow navigation when transparent**
+✅ **NEW: Standardized typography across all pages**
+✅ **NEW: 3-column yacht grid on desktop**
+✅ **NEW: Automatic size-based yacht sorting**
 
 ---
 
@@ -49,10 +53,10 @@
 ### Core Application Code
 ```
 /root/clawd/yacht-charter-platform/app/
-  ├── page.tsx                              # Homepage
-  ├── contact/page.tsx                      # Contact page
+  ├── page.tsx                              # Homepage (3.5rem hero)
+  ├── contact/page.tsx                      # Contact page (standardized header)
   ├── yacht-rental-miami/
-  │   ├── page.tsx                          # Fleet listing page
+  │   ├── page.tsx                          # Fleet listing (3-col grid, size sort)
   │   └── [code]/
   │       └── page.tsx                      # Dynamic yacht detail pages
   │
@@ -70,12 +74,21 @@
   - 15-minute cache implementation
   - Fallback handling for Airtable downtime
   - Photo URL mapping for Supabase
+  - ⚠️ CRITICAL: photoMapping object (line ~154)
+```
+
+### Components
+```
+/root/clawd/yacht-charter-platform/components/
+  ├── Navigation.tsx                        # Nav with drop shadows
+  └── LanguageSwitcher.tsx                  # Language switcher with shadow
 ```
 
 ### Photo Processing Scripts
 ```
 /root/clawd/yacht-charter-platform/scripts/
   ├── process-yacht-photos.js               # Master photo processor
+  ├── upload-regal-sharp.js                 # 27-Regal workaround (SUCCESSFUL)
   ├── setup-supabase-storage.js             # Supabase bucket setup
   └── README.md                             # Script documentation
 ```
@@ -83,7 +96,9 @@
 ### Documentation
 ```
 /root/clawd/yacht-charter-platform/
+  ├── DESIGN_STANDARDS.md                   # ⭐ Typography standards
   ├── CACHING_STRATEGY.md                   # Caching architecture docs
+  ├── SAVE_POINT_2026-02-25.md              # ⭐ Detailed restore point
   ├── AIRTABLE_SETUP.md                     # Airtable configuration
   ├── DEPLOY.md                             # Deployment instructions
   └── CLS_RULES.md                          # Cumulative Layout Shift rules
@@ -98,13 +113,16 @@
 |----------|--------|--------|---------------|
 | 116-Pershing | 46 | ✅ Complete | `yacht-photos/116-Pershing/` |
 | 37-Axopar | 13 | ✅ Complete | `yacht-photos/37-Axopar/` |
-| 27-Regal | 0 | ❌ Pending | Not processed yet |
+| 27-Regal | 15 | ✅ Complete | `yacht-photos/27-Regal/` |
+
+### Photo Processing Complete! 🎉
+All three yachts now have full photo galleries with hero images.
 
 ### Airtable Integration
 - **Base ID:** appl6AD4Ej23efTIO
 - **Table:** Yacht Brain (tblbnJKFeq5g57X9x)
 - **Hero Images:** Stored in "Photo Attachments" field
-- **Gallery URLs:** Generated from Supabase, added via yacht-cache.ts
+- **Gallery URLs:** Generated from Supabase via yacht-cache.ts
 
 ---
 
@@ -119,6 +137,12 @@ node scripts/process-yacht-photos.js "/Yacht Photos/[folder]" "[yacht-id]"
 node scripts/process-yacht-photos.js "/Yacht Photos/116-Pershing" "116-Pershing"
 ```
 
+### 27-Regal Workaround (if needed)
+```bash
+# Used Sharp-based script due to header encoding issues:
+node scripts/upload-regal-sharp.js
+```
+
 ### What It Does
 1. Downloads photos from Dropbox (using refresh token)
 2. Optimizes to 500KB max (Sharp + WebP)
@@ -127,30 +151,58 @@ node scripts/process-yacht-photos.js "/Yacht Photos/116-Pershing" "116-Pershing"
 5. Uploads to Supabase Storage
 6. Cleans up temp files
 
-### After Processing
-1. Update `lib/yacht-cache.ts` photoMapping with photo count
+### After Processing NEW YACHT PHOTOS
+1. **CRITICAL:** Update `lib/yacht-cache.ts` photoMapping with photo count
 2. Update Airtable "Photo Attachments" field with hero URL
-3. Deploy to production
+3. Build and deploy to production
+4. Wait up to 15 minutes for cache refresh
 
 ---
 
-## 🎨 DESIGN IMPLEMENTATION
+## 🎨 DESIGN STANDARDS (Feb 25, 2026)
 
-### Yacht Detail Page Features
-- 4×2 photo grid (desktop) / 3-column (mobile)
-- Full-screen lightbox with swipe navigation
-- Minimalist controls (white text/icons, no boxes)
-- Specifications, pricing, amenities sections
-- WhatsApp + Email + Phone CTAs
-- Booking inquiry modal
-- Google review snippets
+### Typography - Page Headers
+**Standard for ALL pages:**
+```tsx
+<h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl mb-6" 
+    style={{ fontWeight: 300 }}>
+  Your Title Here
+</h1>
+```
+- Mobile: 48px → Tablet: 60px → Desktop: 72px
+- Font: Cormorant Garamond (editorial-display)
+- Weight: 300 (light)
 
-### Typography & Colors
-- **Background:** #faf9f7 (light cream)
-- **Primary:** #0f0f0f (near black)
-- **Accent:** #c4a265 (gold)
-- **Secondary:** #6b6b6b (gray)
-- **Fonts:** Cormorant Garamond (serif) + Inter (sans-serif)
+**Exception - Homepage Hero:**
+```tsx
+<h1 className="editorial-display text-white mb-6" 
+    style={{fontSize: '3.5rem'}}>
+```
+- Fixed at 56px for visual balance
+
+### Navigation Drop Shadows
+All transparent nav elements get drop shadow:
+```tsx
+style={isTransparent ? { 
+  textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' 
+} : {}}
+```
+Applies to:
+- Menu links
+- Language switcher
+- Phone number
+- WhatsApp icon (use `filter: drop-shadow()` for SVG)
+
+### Yacht Grid Layout
+- **Desktop:** 3 columns (`md:grid-cols-3`)
+- **Mobile:** 1 column
+- **Sorting:** Always smallest to largest by "Length in Feet"
+
+### Colors
+- Gold accent: `#c4a265`
+- Dark text: `#0f0f0f`
+- Light text: `#6b6b6b`
+- Background: `#faf9f7`
 
 ---
 
@@ -160,8 +212,9 @@ node scripts/process-yacht-photos.js "/Yacht Photos/116-Pershing" "116-Pershing"
 ```bash
 cd /root/clawd/yacht-charter-platform
 npm run build
-vercel --prod --token "vcp_..." --yes
+vercel --prod --token "$VERCEL_TOKEN" --yes
 ```
+Note: Vercel token stored securely outside of git
 
 ### Environment Variables (Vercel)
 ```
@@ -174,22 +227,22 @@ SUPABASE_KEY (service role)
 
 ### Current Production
 - **Domain:** yacht-charter-platform-ten.vercel.app
-- **Last Deploy:** 2026-02-25 21:56 UTC
-- **Commit:** jipc8wvox
+- **Last Deploy:** 2026-02-25 22:35 UTC
+- **Status:** All 3 yachts with photos
 
 ---
 
 ## 📦 DEPENDENCIES
 
 ### Core
-- Next.js 16.1.6
-- React 19
+- Next.js 15.1.4
+- React 19.0.0
 - TypeScript 5
-- Tailwind CSS 4
+- Tailwind CSS 3.4.1
 
 ### Photo Processing
-- Sharp (image optimization)
-- Supabase JS client
+- Sharp 0.33.5 (image optimization)
+- @supabase/supabase-js 2.49.2
 - Dropbox OAuth2
 
 ### Data
@@ -198,31 +251,36 @@ SUPABASE_KEY (service role)
 
 ---
 
-## 🚨 KNOWN ISSUES & TODO
+## 🚨 TODO & FUTURE PHASES
 
-### Pending Work
-- [ ] Process 27-Regal photos (18 photos in Dropbox)
-- [ ] Add remaining yachts from Airtable
-- [ ] Set up booking inquiry email API
-- [ ] Add FAQ page
-- [ ] Implement instant booking flow
-- [ ] Add testimonials page
+### Phase 2 - Booking System (Next)
+- [ ] Email inquiry API endpoint
+- [ ] Booking confirmation flow
+- [ ] Stripe payment integration
+- [ ] Digital waiver system
 
-### Known Limitations
-- 27-Regal has no photos yet
-- Email inquiry endpoint not connected
-- WhatsApp links go to generic number
-- No real-time availability checking
+### Phase 3 - Content Pages
+- [ ] Add-ons page
+- [ ] Offers page
+- [ ] Large groups page
+- [ ] Testimonials page
+- [ ] About Us page
+
+### Phase 4 - Advanced Features
+- [ ] Real-time availability checking
+- [ ] AI yacht concierge (24/7)
+- [ ] Multi-language support (beyond Google Translate)
+- [ ] Central yacht/crew database (Notion integration)
 
 ---
 
 ## 💾 BACKUP & RESTORE
 
-### Create Backup
+### Create Backup (DO THIS NOW)
 ```bash
 cd /root/clawd/yacht-charter-platform
 git add -A
-git commit -m "Restore point: [description]"
+git commit -m "Save Point: Phase 1 Complete - All 3 yachts with photos, design standards"
 git push origin main
 ```
 
@@ -233,15 +291,17 @@ rm -rf yacht-charter-platform
 git clone https://github.com/yachtiebot/yacht-charter-platform.git
 cd yacht-charter-platform
 npm install
+# Copy .env.local from backup
 # Set up environment variables in Vercel
 vercel --prod
 ```
 
 ### Critical Files to Preserve
-1. `lib/yacht-cache.ts` - Photo mappings
+1. `lib/yacht-cache.ts` - Photo mappings (photoMapping object)
 2. `app/yacht-rental-miami/[code]/page.tsx` - Detail page design
-3. `scripts/process-yacht-photos.js` - Photo processor
-4. `.env.production` - Credentials (NOT in git)
+3. `components/Navigation.tsx` - Nav with drop shadows
+4. `scripts/upload-regal-sharp.js` - Workaround for problem photos
+5. `.env.production` - Credentials (NOT in git, backup separately)
 
 ---
 
@@ -270,6 +330,7 @@ vercel --prod
 ### Stored in Scripts
 - Dropbox refresh token (in process-yacht-photos.js)
 - Dropbox client ID/secret (in process-yacht-photos.js)
+- Vercel token (in deploy commands)
 
 ### NOT in Git
 - `.env.local`
@@ -287,5 +348,10 @@ vercel --prod
 
 ---
 
-**Last Updated:** 2026-02-25 21:57 UTC  
-**Next Review:** After 27-Regal photo processing
+## 🎉 PHASE 1 COMPLETE
+
+All core website features, photo system, and design standards are complete and documented.
+Ready to commit to GitHub as a restore point before Phase 2 begins.
+
+**Last Updated:** 2026-02-25 22:46 UTC  
+**Next Phase:** Booking system integration

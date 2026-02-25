@@ -106,13 +106,17 @@ async function listDropboxFiles(token, folderPath) {
 // Download file from Dropbox
 async function downloadFile(token, dropboxPath, localPath) {
   return new Promise((resolve, reject) => {
+    // Escape the path properly - no special chars in header
+    const escapedPath = dropboxPath.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+    const apiArg = `{"path":"${escapedPath}"}`;
+    
     const req = https.request({
       hostname: 'content.dropboxapi.com',
       path: '/2/files/download',
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,
-        'Dropbox-API-Arg': JSON.stringify({ path: dropboxPath })
+        'Dropbox-API-Arg': apiArg
       }
     }, (res) => {
       if (res.statusCode === 200) {

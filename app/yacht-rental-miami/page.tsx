@@ -173,6 +173,13 @@ function FleetContent() {
     return true;
   });
 
+  // Sort yachts by size (smallest to largest) - natural order
+  const sortedYachts = [...filteredYachts].sort((a, b) => {
+    const sizeA = a.fields['Length in Feet'] || 0;
+    const sizeB = b.fields['Length in Feet'] || 0;
+    return sizeA - sizeB;
+  });
+
   if (loading) {
     return (
       <div className="min-h-screen bg-[#faf9f7] flex items-center justify-center pt-24">
@@ -199,7 +206,7 @@ function FleetContent() {
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-32">
           <div className="max-w-3xl">
             <div className="rule-gold" />
-            <h1 className="editorial-display text-white mb-6" style={{ fontWeight: 300, fontSize: '45px' }}>
+            <h1 className="editorial-display text-white mb-6 text-5xl md:text-6xl lg:text-7xl" style={{ fontWeight: 300 }}>
               The <span className="text-[#c4a265]" style={{textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)'}}>Fleet</span>
             </h1>
             <p className="text-white/70 text-lg" style={{ fontWeight: 300 }}>
@@ -245,12 +252,12 @@ function FleetContent() {
 
           {/* Result Count */}
           <p className="text-[#6b6b6b] mt-8 mb-12">
-            {filteredYachts.length} yacht{filteredYachts.length !== 1 ? 's' : ''} available
+            {sortedYachts.length} yacht{sortedYachts.length !== 1 ? 's' : ''} available
           </p>
 
           {/* Yacht Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {filteredYachts.map((yacht) => {
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {sortedYachts.map((yacht) => {
               const yachtSlug = yacht.fields['Yacht ID'].toLowerCase();
               const heroImage = yacht.fields['Photo Attachments']?.[0]?.url || `https://yacht-charter-platform-mu.vercel.app/images/yachts/${yachtSlug}/photo-01.webp`;
               const lowestPrice = yacht.fields['2-Hour Price'];
