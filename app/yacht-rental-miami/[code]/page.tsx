@@ -29,15 +29,16 @@ async function getYacht(code: string) {
   }
 }
 
-export default async function YachtDetailPage({ params }: { params: { code: string } }) {
-  const yacht = await getYacht(params.code);
+export default async function YachtDetailPage({ params }: { params: Promise<{ code: string }> }) {
+  const { code } = await params;
+  const yacht = await getYacht(code);
 
   if (!yacht) {
     return (
       <div className="min-h-screen bg-[#faf9f7] pt-24 flex items-center justify-center">
         <div className="text-center">
           <h1 className="editorial-headline mb-4">Yacht not found</h1>
-          <p className="text-[#6b6b6b] mb-4">Code: {params.code}</p>
+          <p className="text-[#6b6b6b] mb-4">Code: {code}</p>
           <Link href="/yacht-rental-miami" className="editorial-label hover:text-[#c4a265]">
             ← BACK TO FLEET
           </Link>
