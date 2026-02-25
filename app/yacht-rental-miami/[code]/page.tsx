@@ -9,7 +9,7 @@ const AIRTABLE_TABLE_ID = process.env.AIRTABLE_TABLE_ID!;
 async function getYacht(code: string) {
   try {
     const response = await fetch(
-      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_ID}?filterByFormula={Show on Website?}=TRUE()`,
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_ID}`,
       {
         headers: {
           'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
@@ -25,6 +25,11 @@ async function getYacht(code: string) {
     
     const data = await response.json();
     
+    // Filter to only show yachts with "Show on Website?" = true
+    const activeYachts = data.records.filter((record: any) => 
+      record.fields['Show on Website?'] === true
+    );
+    
     // Enhance with Supabase photo URLs
     const supabaseBaseUrl = 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos';
     const photoMapping: { [key: string]: number } = {
@@ -33,7 +38,7 @@ async function getYacht(code: string) {
       '27-Regal': 18
     };
     
-    const enhancedYachts = data.records.map((yacht: any) => {
+    const enhancedYachts = activeYachts.map((yacht: any) => {
       const yachtId = yacht.fields['Yacht ID'];
       const photoCount = photoMapping[yachtId] || 0;
       
@@ -49,9 +54,19 @@ async function getYacht(code: string) {
     });
     
     // Find yacht by code (case-insensitive)
-    const found = enhancedYachts.find((y: any) => 
-      y.fields['Yacht ID'].toLowerCase() === code.toLowerCase()
-    );
+    const found = enhancedYachts.find((y: any) => {
+      const yachtId = y.fields['Yacht ID'];
+      if (!yachtId) {
+        console.error('Yacht missing Yacht ID field:', y.fields['Boat Name']);
+        return false;
+      }
+      return yachtId.toLowerCase() === code.toLowerCase();
+    });
+    
+    if (!found) {
+      console.log(`Available yacht IDs:`, enhancedYachts.map((y: any) => y.fields['Yacht ID']));
+      console.log(`Looking for code: ${code}`);
+    }
     
     return found || null;
   } catch (error) {
