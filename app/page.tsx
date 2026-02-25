@@ -120,7 +120,7 @@ export default function HomePage() {
             {/* Day Boats */}
             <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
-                src="/images/fleet/dayboats-vandutch40.jpg"
+                src="/images/Miami_Yachting_Company_fleet-dayboats-vandutch40.jpg"
                 alt="Day Boats"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -142,7 +142,7 @@ export default function HomePage() {
             {/* Luxury Yachts */}
             <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
-                src="/images/fleet/luxury-azimut55.jpg"
+                src="/images/Miami_Yachting_Company_fleet-luxury-azimut55.jpg"
                 alt="Luxury Yachts"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -164,7 +164,7 @@ export default function HomePage() {
             {/* Superyachts */}
             <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
-                src="/images/fleet/superyacht.jpg"
+                src="/images/Miami_Yachting_Company_fleet-superyacht.jpg"
                 alt="Superyachts"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -186,7 +186,7 @@ export default function HomePage() {
             {/* View Complete Fleet */}
             <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
-                src="/images/fleet/complete-fleet.jpg"
+                src="/images/Miami_Yachting_Company_fleet-complete-fleet.jpg"
                 alt="Complete Fleet"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -221,7 +221,7 @@ export default function HomePage() {
                 className="hover:opacity-100 transition-opacity duration-300"
               >
                 <img 
-                  src="/images/reviews/yelp-5star.jpg" 
+                  src="/images/Miami_Yachting_Company_reviews-yelp-5star.jpg" 
                   alt="Yelp Reviews" 
                   className="h-14 w-auto object-contain opacity-60"
                 />
@@ -235,7 +235,7 @@ export default function HomePage() {
                 className="hover:opacity-100 transition-opacity duration-300"
               >
                 <img 
-                  src="/images/reviews/tripadvisor-5.jpg" 
+                  src="/images/Miami_Yachting_Company_reviews-tripadvisor-5.jpg" 
                   alt="TripAdvisor Reviews" 
                   className="h-14 w-auto object-contain opacity-60"
                 />
@@ -249,7 +249,7 @@ export default function HomePage() {
                 className="hover:opacity-100 transition-opacity duration-300"
               >
                 <img 
-                  src="/images/reviews/google-reviews.jpg" 
+                  src="/images/Miami_Yachting_Company_reviews-google-reviews.jpg" 
                   alt="Google Reviews" 
                   className="h-14 w-auto object-contain opacity-60"
                 />
@@ -258,7 +258,7 @@ export default function HomePage() {
               {/* IYBA Member */}
               <div className="hover:opacity-100 transition-opacity duration-300">
                 <img 
-                  src="/images/reviews/iyba.jpg" 
+                  src="/images/Miami_Yachting_Company_reviews-iyba.jpg" 
                   alt="IYBA Member" 
                   className="h-14 w-auto object-contain opacity-60"
                 />
@@ -267,7 +267,7 @@ export default function HomePage() {
               {/* Best of Miami 2025 */}
               <div className="hover:opacity-100 transition-opacity duration-300">
                 <img 
-                  src="/images/reviews/best-of-miami-2025.jpg" 
+                  src="/images/Miami_Yachting_Company_reviews-best-of-miami-2025.jpg" 
                   alt="Best of Miami 2025 Winner" 
                   className="h-14 w-auto object-contain opacity-60"
                 />
@@ -317,7 +317,7 @@ export default function HomePage() {
             {/* Sightseeing */}
             <Link href="/experiences/sightseeing" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/experiences/sightseeing.jpg"
+                src="/images/Miami_Yachting_Company_experiences-sightseeing.jpg"
                 alt="Sightseeing"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -334,7 +334,7 @@ export default function HomePage() {
             {/* Celebrations */}
             <Link href="/experiences/celebrations" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/experiences/celebrations.jpg"
+                src="/images/Miami_Yachting_Company_experiences-celebrations.jpg"
                 alt="Celebrations"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -351,7 +351,7 @@ export default function HomePage() {
             {/* Corporate */}
             <Link href="/experiences/corporate" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/experiences/corporate.jpg"
+                src="/images/Miami_Yachting_Company_experiences-corporate.jpg"
                 alt="Corporate"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -368,7 +368,7 @@ export default function HomePage() {
             {/* Sandbars & Beyond */}
             <Link href="/experiences/sandbars" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/experiences/sandbars-beyond.jpg"
+                src="/images/Miami_Yachting_Company_experiences-sandbars-beyond.jpg"
                 alt="Sandbars & Beyond"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -404,7 +404,7 @@ export default function HomePage() {
             {/* Large Group Charters */}
             <Link href="/experiences/large-groups" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/experiences/large-groups.jpg"
+                src="/images/Miami_Yachting_Company_experiences-large-groups.jpg"
                 alt="Large Group Charters"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -439,7 +439,7 @@ export default function HomePage() {
             {/* Miami */}
             <Link href="/locations/miami" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/departures/miami.jpg"
+                src="/images/Miami_Yachting_Company_departures-miami.jpg"
                 alt="Miami"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -453,7 +453,7 @@ export default function HomePage() {
             {/* Miami Beach */}
             <Link href="/locations/miami-beach" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/departures/miami-beach.jpg"
+                src="/images/Miami_Yachting_Company_departures-miami-beach.jpg"
                 alt="Miami Beach"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -467,7 +467,7 @@ export default function HomePage() {
             {/* Key Biscayne */}
             <Link href="/locations/key-biscayne" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/departures/key-biscayne.jpg"
+                src="/images/Miami_Yachting_Company_departures-key-biscayne.jpg"
                 alt="Key Biscayne"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -481,7 +481,7 @@ export default function HomePage() {
             {/* Coconut Grove */}
             <Link href="/locations/coconut-grove" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/departures/coconut-grove.jpg"
+                src="/images/Miami_Yachting_Company_departures-coconut-grove.jpg"
                 alt="Coconut Grove"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -495,7 +495,7 @@ export default function HomePage() {
             {/* Hollywood */}
             <Link href="/locations/hollywood" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/departures/hollywood.jpg"
+                src="/images/Miami_Yachting_Company_departures-hollywood.jpg"
                 alt="Hollywood"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -509,7 +509,7 @@ export default function HomePage() {
             {/* Fort Lauderdale */}
             <Link href="/locations/fort-lauderdale" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/departures/fort-lauderdale.jpg"
+                src="/images/Miami_Yachting_Company_departures-fort-lauderdale.jpg"
                 alt="Fort Lauderdale"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -530,7 +530,7 @@ export default function HomePage() {
             {/* Left: Photo */}
             <div className="relative aspect-[4/3] overflow-hidden group">
               <img
-                src="/images/philosophy-yacht.jpg"
+                src="/images/Miami_Yachting_Company_philosophy-yacht.jpg"
                 alt="Our Philosophy"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -637,28 +637,28 @@ export default function HomePage() {
         <div className="relative overflow-hidden">
           <div className="flex gap-12 md:gap-16 animate-scroll whitespace-nowrap">
             {/* First set of logos */}
-            <img src="/images/sponsors/adidas.jpg" alt="Adidas" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/chanel.jpg" alt="Chanel" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/amex.jpg" alt="American Express" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/nike.jpg" alt="Nike" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/cisco.jpg" alt="Cisco" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/redbull.jpg" alt="Red Bull" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/starbucks.jpg" alt="Starbucks" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/sony.jpg" alt="Sony" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/spotify.jpg" alt="Spotify" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/tiffany.jpg" alt="Tiffany & Co." className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-adidas.jpg" alt="Adidas" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-chanel.jpg" alt="Chanel" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-amex.jpg" alt="American Express" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-nike.jpg" alt="Nike" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-cisco.jpg" alt="Cisco" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-redbull.jpg" alt="Red Bull" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-starbucks.jpg" alt="Starbucks" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-sony.jpg" alt="Sony" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-spotify.jpg" alt="Spotify" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-tiffany.jpg" alt="Tiffany & Co." className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
             
             {/* Duplicate set for seamless loop */}
-            <img src="/images/sponsors/adidas.jpg" alt="Adidas" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/chanel.jpg" alt="Chanel" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/amex.jpg" alt="American Express" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/nike.jpg" alt="Nike" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/cisco.jpg" alt="Cisco" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/redbull.jpg" alt="Red Bull" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/starbucks.jpg" alt="Starbucks" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/sony.jpg" alt="Sony" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/spotify.jpg" alt="Spotify" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
-            <img src="/images/sponsors/tiffany.jpg" alt="Tiffany & Co." className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-adidas.jpg" alt="Adidas" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-chanel.jpg" alt="Chanel" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-amex.jpg" alt="American Express" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-nike.jpg" alt="Nike" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-cisco.jpg" alt="Cisco" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-redbull.jpg" alt="Red Bull" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-starbucks.jpg" alt="Starbucks" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-sony.jpg" alt="Sony" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-spotify.jpg" alt="Spotify" className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/Miami_Yachting_Company_sponsors-tiffany.jpg" alt="Tiffany & Co." className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
           </div>
         </div>
       </section>
@@ -667,7 +667,7 @@ export default function HomePage() {
       <section className="relative h-screen min-h-[600px] flex items-center">
         <div className="absolute inset-0">
           <img
-            src="/images/cta-background.jpg"
+            src="/images/Miami_Yachting_Company_cta-background.jpg"
             alt="Get on the water"
             className="w-full h-full object-cover"
           />
@@ -718,7 +718,7 @@ export default function HomePage() {
             {/* Brand */}
             <div>
               <img 
-                src="/images/myc-logo.png" 
+                src="/images/Miami_Yachting_Company_myc-logo.png" 
                 alt="Miami Yachting Company"
                 className="h-20 w-20 mb-4"
               />
