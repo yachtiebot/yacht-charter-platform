@@ -7,11 +7,19 @@ export default function HomePage() {
       <section className="h-screen min-h-[700px] relative flex flex-col">
         {/* Background Yacht Photo */}
         <div className="absolute inset-0">
-          <img
-            src="/images/hero/hero-biscayne-bay.jpg"
-            alt="Luxury yacht charter Miami"
-            className="w-full h-full object-cover"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/hero/Miami_Yachting_Company_luxury_yacht_charter_miami_biscayne_bay_hero-mobile.jpg"
+            />
+            <img
+              src="/images/hero/Miami_Yachting_Company_luxury_yacht_charter_miami_biscayne_bay_hero.jpg"
+              alt="Miami Yachting Company luxury yacht charter in Biscayne Bay"
+              className="w-full h-full object-cover"
+              width="2400"
+              height="1797"
+            />
+          </picture>
         </div>
         
         {/* Gradient Overlay */}
@@ -27,9 +35,9 @@ export default function HomePage() {
                 <h1 className="editorial-display text-white mb-6">
                   Private Yacht<br />
                   Charters in<br />
-                  <span className="text-[#c4a265]">Miami</span>
+                  <span className="text-[#c4a265]" style={{textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)'}}>Miami</span>
                 </h1>
-                <p className="editorial-body text-white/70 max-w-lg">
+                <p className="text-white/70 text-lg max-w-lg" style={{ fontWeight: 300 }}>
                   A curated fleet of privately owned vessels, hand selected for comfort, style, and exceptional guest experiences.
                 </p>
               </div>
@@ -63,17 +71,15 @@ export default function HomePage() {
                     Contact Us
                   </Link>
                 </div>
-                
-                {/* Scroll Indicator */}
-                <div className="flex justify-center">
-                  <div className="flex flex-col items-center gap-2 animate-bounce">
-                    <div className="text-white/50 text-xs font-medium tracking-wider uppercase">Scroll</div>
-                    <div className="w-[1px] h-6 bg-white/30" />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce z-20">
+          <div className="text-white/50 text-xs font-medium tracking-wider uppercase">Scroll</div>
+          <div className="w-[1px] h-6 bg-white/30" />
         </div>
 
         {/* Bottom Editorial Bar */}
@@ -118,7 +124,7 @@ export default function HomePage() {
           {/* 4 Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Day Boats */}
-            <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
+            <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
                 src="/images/fleet/dayboats-vandutch40.jpg"
                 alt="Day Boats"
@@ -126,7 +132,7 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <div className="editorial-label text-[#c4a265] mb-3">20–40 FT</div>
+                <div className="editorial-label text-[#c4a265] mb-3" style={{textShadow: '0 3px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>20–40 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Day Boats</h3>
                 <p className="editorial-small text-white/60 mb-3">Casual elegance for sandbar days and sunset cruises.</p>
                 <div className="flex justify-between items-center">
@@ -140,7 +146,7 @@ export default function HomePage() {
             </Link>
 
             {/* Luxury Yachts */}
-            <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
+            <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
                 src="/images/fleet/luxury-azimut55.jpg"
                 alt="Luxury Yachts"
@@ -148,7 +154,7 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <div className="editorial-label text-[#c4a265] mb-3">40–80 FT</div>
+                <div className="editorial-label text-[#c4a265] mb-3" style={{textShadow: '0 3px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>40–80 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Luxury Yachts</h3>
                 <p className="editorial-small text-white/60 mb-3">Premium amenities for celebrations and corporate occasions.</p>
                 <div className="flex justify-between items-center">
@@ -162,7 +168,7 @@ export default function HomePage() {
             </Link>
 
             {/* Superyachts */}
-            <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
+            <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
                 src="/images/fleet/superyacht.jpg"
                 alt="Superyachts"
@@ -170,7 +176,7 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <div className="editorial-label text-[#c4a265] mb-3">80 FT+</div>
+                <div className="editorial-label text-[#c4a265] mb-3" style={{textShadow: '0 3px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>80 FT+</div>
                 <h3 className="editorial-card-name text-white mb-3">Superyachts</h3>
                 <p className="editorial-small text-white/60 mb-3">The pinnacle of yachting. Unmatched space and premium amenities.</p>
                 <div className="flex justify-between items-center">
@@ -184,7 +190,7 @@ export default function HomePage() {
             </Link>
 
             {/* View Complete Fleet */}
-            <Link href="/yacht-rental-miami" className="group relative aspect-[3/4] overflow-hidden">
+            <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
                 src="/images/fleet/complete-fleet.jpg"
                 alt="Complete Fleet"
@@ -192,7 +198,7 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <div className="editorial-label text-[#c4a265] mb-3">ALL SIZES</div>
+                <div className="editorial-label text-[#c4a265] mb-3" style={{textShadow: '0 3px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>ALL SIZES</div>
                 <h3 className="editorial-card-name text-white mb-3">View Complete Fleet</h3>
                 <p className="editorial-small text-white/60 mb-3">See all boats</p>
                 <div className="flex justify-between items-center">
@@ -385,8 +391,8 @@ export default function HomePage() {
             {/* Bachelorette Party */}
             <Link href="/experiences/bachelorette" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/experiences/bachelorette-party.jpg"
-                alt="Bachelorette Party"
+                src="/images/experiences/Miami_Yachting_Company_bachelorette_party_yacht_charter_miami.jpg"
+                alt="Miami Yachting Company bachelorette party yacht charter in Miami"
                 className="img-zoom w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/40 to-transparent" />
@@ -623,7 +629,7 @@ export default function HomePage() {
       <section className="bg-white overflow-x-hidden" style={{ paddingTop: '56px', paddingBottom: '56px' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 mb-12 text-center">
           <div className="rule-gold mx-auto" />
-          <h2 className="editorial-headline text-[#0f0f0f] mb-4">
+          <h2 className="text-[#0f0f0f] mb-4 text-[26px] md:text-[45px] font-normal" style={{ fontFamily: 'var(--font-cormorant), serif' }}>
             Proud Service Providers To:
           </h2>
           <p className="editorial-body text-[#6b6b6b] max-w-2xl mx-auto">
@@ -662,7 +668,7 @@ export default function HomePage() {
       </section>
 
       {/* Section 4: CTA */}
-      <section className="relative" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+      <section className="relative h-screen min-h-[600px] flex items-center">
         <div className="absolute inset-0">
           <img
             src="/images/cta-background.jpg"
@@ -670,21 +676,21 @@ export default function HomePage() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-[#0f0f0f]/75" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/30 to-transparent" />
         
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center w-full">
           <div className="rule-gold mx-auto" />
           <h2 className="editorial-headline text-white mb-6 max-w-3xl mx-auto">
             Ready to Get on the Water?
           </h2>
-          <p className="editorial-body text-white/50 mb-10 max-w-2xl mx-auto">
+          <p className="editorial-body text-white/90 mb-10 max-w-2xl mx-auto" style={{fontWeight: 400}}>
             Our team can help match you with the perfect vessel for your occasion.
           </p>
           
           <div className="flex flex-col md:flex-row justify-center gap-4 w-full max-w-2xl mx-auto">
             <a
               href="tel:18007479585"
-              className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500 flex-1 text-center"
+              className="editorial-label bg-white/25 backdrop-blur-lg text-white px-8 py-4 hover:bg-[#c4a265] transition-all duration-500 flex-1 text-center border border-white/30"
             >
               1 800 747 9585
             </a>
@@ -692,13 +698,16 @@ export default function HomePage() {
               href="https://wa.me/message/T7LESNSS34RWJ1"
               target="_blank"
               rel="noopener noreferrer"
-              className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500 flex-1 text-center"
+              className="editorial-label bg-white/25 backdrop-blur-lg text-white px-8 py-4 hover:bg-[#c4a265] transition-all duration-500 flex-1 text-center flex items-center justify-center gap-2 border border-white/30"
             >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
               WhatsApp Us
             </a>
             <Link
               href="/contact"
-              className="editorial-label bg-white text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:text-white transition-all duration-500 flex-1 text-center"
+              className="editorial-label bg-white/25 backdrop-blur-lg text-white px-8 py-4 hover:bg-[#c4a265] transition-all duration-500 flex-1 text-center border border-white/30"
             >
               Send an Inquiry
             </Link>
