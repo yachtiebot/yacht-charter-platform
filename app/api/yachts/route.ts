@@ -34,7 +34,34 @@ export async function GET(request: NextRequest) {
       record.fields['Show on Website?'] === true
     );
     
-    return NextResponse.json({ yachts: activeYachts });
+    // Enhance with Supabase photo URLs
+    const enhancedYachts = activeYachts.map((yacht: any) => {
+      const yachtId = yacht.fields['Yacht ID'];
+      
+      // Add Supabase photo URLs if yacht has photos in Supabase Storage
+      const supabaseBaseUrl = 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos';
+      
+      // Known yachts with photos in Supabase
+      const photoMapping: { [key: string]: number } = {
+        '116-Pershing': 46,
+        '37-axopar': 13,
+        '27-regal': 18
+      };
+      
+      const photoCount = photoMapping[yachtId] || 0;
+      
+      if (photoCount > 0) {
+        yacht.fields['Supabase Hero URL'] = `${supabaseBaseUrl}/${yachtId}/Miami_Yachting_Company_${yachtId}_hero.webp`;
+        yacht.fields['Supabase Gallery URLs'] = Array.from(
+          { length: photoCount },
+          (_, i) => `${supabaseBaseUrl}/${yachtId}/Miami_Yachting_Company_${yachtId}_${String(i + 1).padStart(2, '0')}.webp`
+        );
+      }
+      
+      return yacht;
+    });
+    
+    return NextResponse.json({ yachts: enhancedYachts });
   } catch (error) {
     console.error('Error fetching from Airtable:', error);
     return NextResponse.json(
