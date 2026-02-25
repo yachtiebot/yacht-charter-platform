@@ -1,22 +1,55 @@
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import YachtDetailClient from './YachtDetailClient';
 
-// Server component - fetch data here
+const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY!;
+const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID!;
+const AIRTABLE_TABLE_ID = process.env.AIRTABLE_TABLE_ID!;
+
+// Server component - fetch data directly from Airtable
 async function getYacht(code: string) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yacht-charter-platform-ten.vercel.app';
-    const response = await fetch(`${baseUrl}/api/yachts`, {
-      next: { revalidate: 60 } // Cache for 60 seconds
-    });
+    const response = await fetch(
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_ID}?filterByFormula={Show on Website?}=TRUE()`,
+      {
+        headers: {
+          'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
+        },
+        next: { revalidate: 60 }
+      }
+    );
     
     if (!response.ok) {
-      console.error('Failed to fetch yachts:', response.status);
+      console.error('Failed to fetch from Airtable:', response.status);
       return null;
     }
     
     const data = await response.json();
-    const found = data.yachts.find((y: any) => 
+    
+    // Enhance with Supabase photo URLs
+    const supabaseBaseUrl = 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos';
+    const photoMapping: { [key: string]: number } = {
+      '116-Pershing': 46,
+      '37-Axopar': 13,
+      '27-Regal': 18
+    };
+    
+    const enhancedYachts = data.records.map((yacht: any) => {
+      const yachtId = yacht.fields['Yacht ID'];
+      const photoCount = photoMapping[yachtId] || 0;
+      
+      if (photoCount > 0) {
+        yacht.fields['Supabase Hero URL'] = `${supabaseBaseUrl}/${yachtId}/Miami_Yachting_Company_${yachtId}_hero.webp`;
+        yacht.fields['Supabase Gallery URLs'] = Array.from(
+          { length: photoCount },
+          (_, i) => `${supabaseBaseUrl}/${yachtId}/Miami_Yachting_Company_${yachtId}_${String(i + 1).padStart(2, '0')}.webp`
+        );
+      }
+      
+      return yacht;
+    });
+    
+    // Find yacht by code (case-insensitive)
+    const found = enhancedYachts.find((y: any) => 
       y.fields['Yacht ID'].toLowerCase() === code.toLowerCase()
     );
     
@@ -35,6 +68,7 @@ export default async function YachtDetailPage({ params }: { params: { code: stri
       <div className="min-h-screen bg-[#faf9f7] pt-24 flex items-center justify-center">
         <div className="text-center">
           <h1 className="editorial-headline mb-4">Yacht not found</h1>
+          <p className="text-[#6b6b6b] mb-4">Code: {params.code}</p>
           <Link href="/yacht-rental-miami" className="editorial-label hover:text-[#c4a265]">
             ← BACK TO FLEET
           </Link>
