@@ -186,19 +186,13 @@ function FleetContent() {
       {/* Hero Section */}
       <section className="h-screen min-h-[700px] relative flex items-end pt-24">
         <div className="absolute inset-0">
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcSet="/images/fleet/Miami_Yachting_Company_fleet_hero_luxury_superyacht-mobile.jpg"
-            />
-            <img
-              src="/images/fleet/Miami_Yachting_Company_fleet_hero_luxury_superyacht.jpg"
-              alt="Miami Yachting Company luxury superyacht fleet in Miami"
-              className="w-full h-full object-cover"
-              width="2000"
-              height="1498"
-            />
-          </picture>
+          <img
+            src="/images/Miami_Yachting_Company_yacht-rental-miami.jpg"
+            alt="Miami Yachting Company yacht rentals in Miami"
+            className="w-full h-full object-cover"
+            width="2400"
+            height="1600"
+          />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-[#0f0f0f]/30 to-transparent" />
         

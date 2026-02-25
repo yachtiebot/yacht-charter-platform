@@ -7,19 +7,13 @@ export default function HomePage() {
       <section className="h-screen min-h-[700px] relative flex flex-col">
         {/* Background Yacht Photo */}
         <div className="absolute inset-0">
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcSet="/images/hero/Miami_Yachting_Company_luxury_yacht_charter_miami_biscayne_bay_hero-mobile.jpg"
-            />
-            <img
-              src="/images/hero/Miami_Yachting_Company_luxury_yacht_charter_miami_biscayne_bay_hero.jpg"
-              alt="Miami Yachting Company luxury yacht charter in Biscayne Bay"
-              className="w-full h-full object-cover"
-              width="2400"
-              height="1797"
-            />
-          </picture>
+          <img
+            src="/images/Miami_Yachting_Company_header-yacht-image.jpg"
+            alt="Miami Yachting Company luxury yacht charter in Miami"
+            className="w-full h-full object-cover"
+            width="2158"
+            height="1440"
+          />
         </div>
         
         {/* Gradient Overlay */}
