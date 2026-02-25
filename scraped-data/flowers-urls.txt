@@ -1,0 +1,11 @@
+/flower-add-ons/blooming-garden
+/flower-add-ons/bloomingorchid
+/flower-add-ons/dancing-roses
+/flower-add-ons/floating-orchid
+/flower-add-ons/modernsimple
+/flower-add-ons/pretty-in-white
+/flower-add-ons/rosepave
+/flower-add-ons/tropical-orchid
+/flower-add-ons/tropical-paradise
+/flower-add-ons/tropical-rose
+/flower-add-ons/victoria-london

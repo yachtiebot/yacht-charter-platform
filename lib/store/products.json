@@ -1,0 +1,117 @@
+{
+  "waterToys": [
+    {
+      "id": "seabob",
+      "name": "Seabob",
+      "slug": "seabob",
+      "price": 499,
+      "depositPrice": 99,
+      "description": "Ride on the surface or emerge under water with these luxury under water jet skis (SEABOBs). Easy to ride for young and old. Recommended age is 12+. Comes fully charged for usage, batteries last for approximately 1-2 hours depending on riders style. Charger also included.",
+      "details": "48 hours notice required. Vendor collects remaining balance of $400 per Seabob prior to rental date. Rental duration is for the length of your entire charter.",
+      "minQuantity": 1,
+      "maxQuantity": 2,
+      "options": [
+        { "label": "1 Seabob Reservation", "value": 1, "price": 499 },
+        { "label": "2 Seabob Reservations", "value": 2, "price": 998 }
+      ],
+      "category": "water-toys",
+      "requiresWaiver": true,
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/seabob-placeholder.jpg"
+    },
+    {
+      "id": "flitescooter",
+      "name": "Flitescooter",
+      "slug": "flitescooter",
+      "price": 499,
+      "depositPrice": 99,
+      "description": "Elevate your yacht charter experience and add a Flitescooter board! Instructor available upon request for an additional charge. Comes fully charged for usage, batteries last for approximately 1-2 hours depending on riders style. Charger also included. Max load 225lbs.",
+      "details": "48 hours notice required. Vendor collects remaining balance of $400 per board prior to rental date. Rental duration is for the length of your entire charter.",
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "category": "water-toys",
+      "requiresWaiver": true,
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/flitescooter-placeholder.jpg"
+    },
+    {
+      "id": "water-sports-boat",
+      "name": "Water Sports Boat",
+      "slug": "watersports-boat-rental-miami",
+      "price": 600,
+      "pricePerHour": 300,
+      "description": "A dedicated watersports boat may be arranged to meet the yacht during your charter for additional on water activities. The watersports boat is operated independently and accommodates up to six guests, with activities that may include wakeboarding, water skiing, and tubing.",
+      "details": "Water sports boat is $300 per hour to add on with a 2 hour minimum. Provided by an independent vendor.",
+      "minQuantity": 2,
+      "maxQuantity": 8,
+      "options": [
+        { "label": "2 Hours", "value": 2, "price": 600 },
+        { "label": "3 Hours", "value": 3, "price": 900 },
+        { "label": "4 Hours", "value": 4, "price": 1200 },
+        { "label": "5 Hours", "value": 5, "price": 1500 },
+        { "label": "6 Hours", "value": 6, "price": 1800 },
+        { "label": "7 Hours", "value": 7, "price": 2100 },
+        { "label": "8 Hours", "value": 8, "price": 2400 }
+      ],
+      "category": "water-toys",
+      "requiresWaiver": true,
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/watersports-placeholder.jpg"
+    },
+    {
+      "id": "floating-cabana",
+      "name": "Floating Cabana",
+      "slug": "floating-cabana",
+      "price": 349,
+      "description": "A floating Cabana, the perfect add-on for unforgettable relaxation and luxury. This spacious and stable floating oasis offers plush seating and ample space for sunbathing, sipping refreshing drinks, or enjoying a gourmet picnic with friends and family.",
+      "details": "48 hours notice required. Rental starts at $349 per cabana for delivery and setup. Rental duration is for the length of your entire charter.",
+      "minQuantity": 1,
+      "maxQuantity": 10,
+      "options": [
+        { "label": "1 Cabana", "value": 1, "price": 349 },
+        { "label": "2 Cabanas", "value": 2, "price": 698 }
+      ],
+      "category": "water-toys",
+      "requiresWaiver": false,
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/cabana-placeholder.jpg"
+    },
+    {
+      "id": "floating-lounge-chair",
+      "name": "Floating Lounge Chair",
+      "slug": "lounge-chairs",
+      "price": 198,
+      "pricePerChair": 99,
+      "description": "Add on a Floating Lounge Chair, the perfect addition for ultimate relaxation. The floating lounge chairs are designed for comfort and style, providing an ideal spot for sunbathing, enjoying a refreshing drink, or sharing a conversation with friends and family.",
+      "details": "48 hours notice required. Each chair is $99 and there is a two chair minimum to rent for delivery and setup.",
+      "minQuantity": 2,
+      "maxQuantity": 10,
+      "options": [
+        { "label": "2 Chairs", "value": 2, "price": 198 },
+        { "label": "3 Chairs", "value": 3, "price": 297 },
+        { "label": "4 Chairs", "value": 4, "price": 396 }
+      ],
+      "category": "water-toys",
+      "requiresWaiver": false,
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/lounge-chair-placeholder.jpg"
+    }
+  ],
+  "catering": [
+    {
+      "id": "gourmet-wraps",
+      "name": "Gourmet Wraps Platter",
+      "slug": "gourmet-wraps",
+      "price": 69.99,
+      "description": "Made fresh to order, includes lettuce and tomato. Customize your platter options.",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 69.99 },
+        { "label": "Serves 10", "value": 10, "price": 79.99 },
+        { "label": "Serves 15", "value": 15, "price": 99.99 },
+        { "label": "Serves 20", "value": 20, "price": 129.99 },
+        { "label": "Serves 25", "value": 25, "price": 159.99 }
+      ],
+      "category": "catering",
+      "customizable": true,
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/wraps-placeholder.jpg"
+    }
+  ],
+  "flowers": [],
+  "bachelorette": []
+}

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
+import CartIcon from './CartIcon';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -133,6 +134,8 @@ export default function Navigation() {
           </Link>
           
           <LanguageSwitcher isTransparent={isTransparent} />
+          
+          <CartIcon />
           
           <div className="hidden xl:flex items-center gap-6">
             <a
