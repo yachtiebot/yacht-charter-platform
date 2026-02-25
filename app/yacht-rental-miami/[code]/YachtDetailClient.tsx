@@ -49,173 +49,212 @@ export default function YachtDetailClient({ yacht }: { yacht: YachtData }) {
   ].filter(p => p.price);
 
   return (
-    <div className="bg-[#faf9f7] min-h-screen">
-      {/* Header Spacer */}
-      <div className="h-24" />
+    <div className="bg-white min-h-screen">
+      {/* Hero Image - Full bleed, immersive */}
+      <section className="relative h-screen min-h-[600px] max-h-[900px]">
+        {gallery[selectedImage] && (
+          <img 
+            src={gallery[selectedImage]}
+            alt={`${yacht.fields['Boat Name']}`}
+            className="w-full h-full object-cover"
+          />
+        )}
+        
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        
+        {/* Back button - top left */}
+        <div className="absolute top-8 left-8 z-10">
+          <Link 
+            href="/yacht-rental-miami" 
+            className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            <span className="editorial-label text-sm tracking-wider">BACK TO FLEET</span>
+          </Link>
+        </div>
+        
+        {/* Yacht info overlay - bottom */}
+        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
+          <div className="max-w-[1600px] mx-auto">
+            <div className="rule-gold w-16 mb-6" />
+            <h1 className="editorial-display text-white mb-4" style={{ fontSize: '64px', fontWeight: 300, lineHeight: 1.1 }}>
+              {yacht.fields['Boat Name']}
+            </h1>
+            <p className="text-white/80 text-lg tracking-wide">
+              {yacht.fields['Brand']} {yacht.fields['Model']} • {yacht.fields['Length in Feet']} Feet • {yacht.fields['Boat Type']}
+            </p>
+          </div>
+        </div>
+      </section>
 
-      {/* Back Link */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-6">
-        <Link 
-          href="/yacht-rental-miami" 
-          className="editorial-label text-[#6b6b6b] hover:text-[#c4a265] transition-colors"
-        >
-          ← BACK TO FLEET
-        </Link>
-      </div>
-
-      {/* Hero Section with Gallery */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-10 pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Main Image */}
-          <div className="lg:col-span-2">
-            <div className="aspect-[16/10] bg-[#f0ece6] overflow-hidden">
-              {gallery[selectedImage] && (
-                <img 
-                  src={gallery[selectedImage]}
-                  alt={`${yacht.fields['Boat Name']} - ${selectedImage + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              )}
+      {/* Gallery Thumbnails - Full width stripe */}
+      {gallery.length > 1 && (
+        <section className="bg-[#0f0f0f] py-6">
+          <div className="max-w-[1600px] mx-auto px-8">
+            <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+              {gallery.map((img, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setSelectedImage(idx)}
+                  className={`flex-shrink-0 w-24 h-24 overflow-hidden transition-all ${
+                    selectedImage === idx 
+                      ? 'ring-2 ring-[#c4a265] opacity-100 scale-105' 
+                      : 'opacity-40 hover:opacity-70'
+                  }`}
+                >
+                  <img 
+                    src={img}
+                    alt={`View ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+              ))}
             </div>
           </div>
+        </section>
+      )}
 
-          {/* Yacht Info Card */}
-          <div className="bg-white p-8">
-            <h1 className="editorial-headline text-3xl mb-4">{yacht.fields['Boat Name']}</h1>
-            <p className="text-[#6b6b6b] mb-6">{yacht.fields['Brand']} {yacht.fields['Model']}</p>
+      {/* Main Content */}
+      <section className="max-w-[1600px] mx-auto px-8 md:px-16 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          {/* Left Column - Description */}
+          <div className="lg:col-span-7">
+            {yacht.fields['Full Description'] && (
+              <>
+                <div className="rule-gold w-12 mb-8" />
+                <h2 className="editorial-headline text-4xl mb-8" style={{ fontWeight: 300 }}>
+                  Experience
+                </h2>
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-[#4a4a4a] leading-relaxed text-lg whitespace-pre-wrap font-light">
+                    {yacht.fields['Full Description']}
+                  </p>
+                </div>
+              </>
+            )}
 
-            <div className="space-y-4 mb-8">
-              <div className="flex justify-between border-b border-[#e5e5e5] pb-3">
-                <span className="text-[#6b6b6b]">Length</span>
-                <span className="font-medium">{yacht.fields['Length in Feet']} ft</span>
+            {/* Features Grid */}
+            {(yacht.fields['Sound System Type'] || (yacht.fields['Toys Available On Request']?.length || 0) > 0) && (
+              <div className="mt-16 grid grid-cols-2 gap-12">
+                {yacht.fields['Sound System Type'] && (
+                  <div>
+                    <h3 className="editorial-label text-xs mb-4 text-[#c4a265]">SOUND SYSTEM</h3>
+                    <p className="text-[#4a4a4a] font-light">{yacht.fields['Sound System Type']}</p>
+                  </div>
+                )}
+                {(yacht.fields['Toys Available On Request']?.length || 0) > 0 && (
+                  <div>
+                    <h3 className="editorial-label text-xs mb-4 text-[#c4a265]">WATER TOYS</h3>
+                    <ul className="space-y-2">
+                      {yacht.fields['Toys Available On Request']!.map((toy, idx) => (
+                        <li key={idx} className="text-[#4a4a4a] font-light flex items-start">
+                          <span className="text-[#c4a265] mr-2">—</span>
+                          {toy}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
-              <div className="flex justify-between border-b border-[#e5e5e5] pb-3">
-                <span className="text-[#6b6b6b]">Capacity</span>
-                <span className="font-medium">{yacht.fields['Maximum Passengers']} guests</span>
-              </div>
-              <div className="flex justify-between border-b border-[#e5e5e5] pb-3">
-                <span className="text-[#6b6b6b]">Type</span>
-                <span className="font-medium">{yacht.fields['Boat Type']}</span>
-              </div>
-              <div className="flex justify-between border-b border-[#e5e5e5] pb-3">
-                <span className="text-[#6b6b6b]">Location</span>
-                <span className="font-medium">{yacht.fields['Main Departure Location']}</span>
-              </div>
-              {(yacht.fields['Features: Number of Staterooms'] || 0) > 0 && (
-                <div className="flex justify-between border-b border-[#e5e5e5] pb-3">
-                  <span className="text-[#6b6b6b]">Staterooms</span>
-                  <span className="font-medium">{yacht.fields['Features: Number of Staterooms']}</span>
+            )}
+          </div>
+
+          {/* Right Column - Specs & Pricing */}
+          <div className="lg:col-span-5">
+            
+            {/* Specifications Card */}
+            <div className="bg-[#faf9f7] p-10 mb-8">
+              <h3 className="editorial-label text-xs mb-8 text-[#c4a265]">SPECIFICATIONS</h3>
+              <div className="space-y-5">
+                <div className="flex justify-between items-baseline pb-4 border-b border-[#e5e5e5]">
+                  <span className="text-[#6b6b6b] text-sm tracking-wide">Length</span>
+                  <span className="editorial-headline text-xl font-light">{yacht.fields['Length in Feet']} ft</span>
                 </div>
-              )}
-              {(yacht.fields['Features: Number of Bathrooms'] || 0) > 0 && (
-                <div className="flex justify-between border-b border-[#e5e5e5] pb-3">
-                  <span className="text-[#6b6b6b]">Bathrooms</span>
-                  <span className="font-medium">{yacht.fields['Features: Number of Bathrooms']}</span>
+                <div className="flex justify-between items-baseline pb-4 border-b border-[#e5e5e5]">
+                  <span className="text-[#6b6b6b] text-sm tracking-wide">Capacity</span>
+                  <span className="editorial-headline text-xl font-light">{yacht.fields['Maximum Passengers']} guests</span>
                 </div>
-              )}
+                <div className="flex justify-between items-baseline pb-4 border-b border-[#e5e5e5]">
+                  <span className="text-[#6b6b6b] text-sm tracking-wide">Type</span>
+                  <span className="editorial-headline text-xl font-light">{yacht.fields['Boat Type']}</span>
+                </div>
+                <div className="flex justify-between items-baseline pb-4 border-b border-[#e5e5e5]">
+                  <span className="text-[#6b6b6b] text-sm tracking-wide">Location</span>
+                  <span className="editorial-headline text-xl font-light">{yacht.fields['Main Departure Location']}</span>
+                </div>
+                {(yacht.fields['Features: Number of Staterooms'] || 0) > 0 && (
+                  <div className="flex justify-between items-baseline pb-4 border-b border-[#e5e5e5]">
+                    <span className="text-[#6b6b6b] text-sm tracking-wide">Staterooms</span>
+                    <span className="editorial-headline text-xl font-light">{yacht.fields['Features: Number of Staterooms']}</span>
+                  </div>
+                )}
+                {(yacht.fields['Features: Number of Bathrooms'] || 0) > 0 && (
+                  <div className="flex justify-between items-baseline pb-4 border-b border-[#e5e5e5]">
+                    <span className="text-[#6b6b6b] text-sm tracking-wide">Bathrooms</span>
+                    <span className="editorial-headline text-xl font-light">{yacht.fields['Features: Number of Bathrooms']}</span>
+                  </div>
+                )}
+              </div>
             </div>
 
+            {/* Pricing Card */}
+            {prices.length > 0 && (
+              <div className="bg-[#0f0f0f] p-10 text-white">
+                <h3 className="editorial-label text-xs mb-8 text-[#c4a265]">CHARTER RATES</h3>
+                <div className="space-y-5">
+                  {prices.map((p) => (
+                    <div key={p.hours} className="flex justify-between items-baseline pb-5 border-b border-white/10">
+                      <span className="text-white/70 text-sm tracking-wide">{p.hours} Hours</span>
+                      <span className="editorial-headline text-2xl font-light">{formatCurrency(p.price!)}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-white/50 mt-6 leading-relaxed">
+                  Rates exclude captain fee, fuel, and gratuity. Sales tax applies. Prices subject to availability.
+                </p>
+              </div>
+            )}
+
+            {/* CTA Button */}
             <Link 
               href="/contact"
-              className="block w-full text-center py-4 bg-[#0f0f0f] text-white hover:bg-[#c4a265] transition-colors editorial-label"
+              className="block w-full text-center py-5 mt-8 bg-[#c4a265] text-white hover:bg-[#d4b275] transition-all duration-300 editorial-label text-sm tracking-widest"
             >
-              REQUEST QUOTE
+              REQUEST AVAILABILITY
             </Link>
           </div>
         </div>
-
-        {/* Gallery Thumbnails */}
-        {gallery.length > 1 && (
-          <div className="mt-6 grid grid-cols-6 md:grid-cols-12 gap-3">
-            {gallery.slice(0, 12).map((img, idx) => (
-              <button
-                key={idx}
-                onClick={() => setSelectedImage(idx)}
-                className={`aspect-square overflow-hidden transition-opacity ${
-                  selectedImage === idx ? 'ring-2 ring-[#c4a265]' : 'opacity-60 hover:opacity-100'
-                }`}
-              >
-                <img 
-                  src={img}
-                  alt={`Thumbnail ${idx + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </button>
-            ))}
-          </div>
-        )}
       </section>
 
-      {/* Description */}
-      {yacht.fields['Full Description'] && (
-        <section className="max-w-[1400px] mx-auto px-6 md:px-10 py-12">
-          <div className="max-w-3xl">
-            <h2 className="editorial-headline text-2xl mb-6">About This Yacht</h2>
-            <p className="text-[#6b6b6b] leading-relaxed whitespace-pre-wrap">
-              {yacht.fields['Full Description']}
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* Pricing Table */}
-      {prices.length > 0 && (
-        <section className="max-w-[1400px] mx-auto px-6 md:px-10 py-12">
-          <h2 className="editorial-headline text-2xl mb-8">Charter Rates</h2>
-          <div className="bg-white p-8 max-w-2xl">
-            <div className="space-y-4">
-              {prices.map((p) => (
-                <div key={p.hours} className="flex justify-between items-center border-b border-[#e5e5e5] pb-4">
-                  <span className="editorial-label text-[#6b6b6b]">{p.hours} HOURS</span>
-                  <span className="editorial-headline text-xl">{formatCurrency(p.price!)}</span>
-                </div>
-              ))}
-            </div>
-            <p className="text-sm text-[#6b6b6b] mt-6">
-              Rates do not include captain fee, fuel, or gratuity. Sales tax applies.
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* Features & Amenities */}
-      {(yacht.fields['Sound System Type'] || (yacht.fields['Toys Available On Request']?.length || 0) > 0) && (
-        <section className="max-w-[1400px] mx-auto px-6 md:px-10 py-12">
-          <h2 className="editorial-headline text-2xl mb-8">Features & Amenities</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
-            {yacht.fields['Sound System Type'] && (
-              <div>
-                <h3 className="editorial-label mb-3">SOUND SYSTEM</h3>
-                <p className="text-[#6b6b6b]">{yacht.fields['Sound System Type']}</p>
-              </div>
-            )}
-            {(yacht.fields['Toys Available On Request']?.length || 0) > 0 && (
-              <div>
-                <h3 className="editorial-label mb-3">WATER TOYS</h3>
-                <ul className="space-y-2">
-                  {yacht.fields['Toys Available On Request']!.map((toy, idx) => (
-                    <li key={idx} className="text-[#6b6b6b]">• {toy}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-
-      {/* CTA Section */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-10 py-16">
-        <div className="bg-[#0f0f0f] p-12 text-center">
-          <h2 className="editorial-headline text-white text-3xl mb-4">Ready to Book?</h2>
-          <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-            Contact us to check availability and reserve {yacht.fields['Boat Name']} for your charter.
+      {/* Final CTA Section */}
+      <section className="bg-[#faf9f7] py-32">
+        <div className="max-w-[800px] mx-auto text-center px-8">
+          <div className="rule-gold w-16 mx-auto mb-8" />
+          <h2 className="editorial-headline text-4xl mb-6" style={{ fontWeight: 300 }}>
+            Ready to Charter?
+          </h2>
+          <p className="text-[#6b6b6b] text-lg mb-12 font-light leading-relaxed">
+            Our charter specialists are available to discuss availability, 
+            customize your experience, and answer any questions.
           </p>
-          <Link 
-            href="/contact"
-            className="inline-block px-12 py-4 bg-[#c4a265] text-white hover:bg-[#d4b275] transition-colors editorial-label"
-          >
-            REQUEST QUOTE
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/contact"
+              className="inline-block px-12 py-4 bg-[#0f0f0f] text-white hover:bg-[#c4a265] transition-all duration-300 editorial-label text-sm tracking-widest"
+            >
+              CONTACT US
+            </Link>
+            <Link 
+              href="tel:+18007479585"
+              className="inline-block px-12 py-4 border-2 border-[#0f0f0f] text-[#0f0f0f] hover:bg-[#0f0f0f] hover:text-white transition-all duration-300 editorial-label text-sm tracking-widest"
+            >
+              1 800 747 9585
+            </Link>
+          </div>
         </div>
       </section>
     </div>
