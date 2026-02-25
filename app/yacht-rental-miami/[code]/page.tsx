@@ -1,60 +1,14 @@
 import Link from 'next/link';
 import YachtDetailClient from './YachtDetailClient';
+import { getYachtsWithCache } from '@/lib/yacht-cache';
 
-const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY!;
-const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID!;
-const AIRTABLE_TABLE_ID = process.env.AIRTABLE_TABLE_ID!;
-
-// Server component - fetch data directly from Airtable
+// Server component - fetch data with caching
 async function getYacht(code: string) {
   try {
-    const response = await fetch(
-      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_ID}`,
-      {
-        headers: {
-          'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
-        },
-        next: { revalidate: 60 }
-      }
-    );
-    
-    if (!response.ok) {
-      console.error('Failed to fetch from Airtable:', response.status);
-      return null;
-    }
-    
-    const data = await response.json();
-    
-    // Filter to only show yachts with "Show on Website?" = true
-    const activeYachts = data.records.filter((record: any) => 
-      record.fields['Show on Website?'] === true
-    );
-    
-    // Enhance with Supabase photo URLs
-    const supabaseBaseUrl = 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos';
-    const photoMapping: { [key: string]: number } = {
-      '116-Pershing': 46,
-      '37-Axopar': 13,
-      '27-Regal': 18
-    };
-    
-    const enhancedYachts = activeYachts.map((yacht: any) => {
-      const yachtId = yacht.fields['Yacht ID'];
-      const photoCount = photoMapping[yachtId] || 0;
-      
-      if (photoCount > 0) {
-        yacht.fields['Supabase Hero URL'] = `${supabaseBaseUrl}/${yachtId}/Miami_Yachting_Company_${yachtId}_hero.webp`;
-        yacht.fields['Supabase Gallery URLs'] = Array.from(
-          { length: photoCount },
-          (_, i) => `${supabaseBaseUrl}/${yachtId}/Miami_Yachting_Company_${yachtId}_${String(i + 1).padStart(2, '0')}.webp`
-        );
-      }
-      
-      return yacht;
-    });
+    const data = await getYachtsWithCache();
     
     // Find yacht by code (case-insensitive)
-    const found = enhancedYachts.find((y: any) => {
+    const found = data.yachts.find((y: any) => {
       const yachtId = y.fields['Yacht ID'];
       if (!yachtId) {
         console.error('Yacht missing Yacht ID field:', y.fields['Boat Name']);
@@ -64,8 +18,8 @@ async function getYacht(code: string) {
     });
     
     if (!found) {
-      console.log(`Available yacht IDs:`, enhancedYachts.map((y: any) => y.fields['Yacht ID']));
-      console.log(`Looking for code: ${code}`);
+      console.log(`Yacht not found: ${code}`);
+      console.log(`Available IDs:`, data.yachts.map((y: any) => y.fields['Yacht ID']));
     }
     
     return found || null;
@@ -103,3 +57,6 @@ export async function generateStaticParams() {
     { code: '116-pershing' },
   ];
 }
+
+// Revalidate every 15 minutes
+export const revalidate = 900;
