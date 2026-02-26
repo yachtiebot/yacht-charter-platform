@@ -48,7 +48,7 @@ interface YachtData {
     '8-Hour Price': number;
     'Short Description': string;
     'Full Description': string;
-    'Photo Attachments': Array<{ url: string }>;
+    'Supabase Hero URL'?: string;
     'Supabase Gallery URLs'?: string[];
   };
 }

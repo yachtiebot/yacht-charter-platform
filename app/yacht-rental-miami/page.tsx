@@ -26,11 +26,8 @@ interface YachtData {
     'Offers Weekday Discount'?: boolean;
     'Instant Booking Enabled'?: boolean;
     'Has Inflatable Toys'?: boolean;  // Legacy field
-    'Photo Attachments'?: Array<{
-      url: string;
-      width: number;
-      height: number;
-    }>;
+    'Supabase Hero URL'?: string;
+    'Supabase Gallery URLs'?: string[];
   };
 }
 
@@ -259,7 +256,7 @@ function FleetContent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {sortedYachts.map((yacht) => {
               const yachtSlug = yacht.fields['Yacht ID'].toLowerCase();
-              const heroImage = yacht.fields['Photo Attachments']?.[0]?.url || `https://yacht-charter-platform-mu.vercel.app/images/yachts/${yachtSlug}/photo-01.webp`;
+              const heroImage = yacht.fields['Supabase Hero URL'] || yacht.fields['Supabase Gallery URLs']?.[0] || '/images/placeholder-yacht.jpg';
               const lowestPrice = yacht.fields['2-Hour Price'];
               const isNew = yacht.fields['New To Fleet Badge'];
               const hasWeekdayDeal = yacht.fields['Offers Weekday Discount'];

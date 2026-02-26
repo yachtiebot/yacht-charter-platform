@@ -24,7 +24,7 @@ interface YachtData {
     '6-Hour Price'?: number;
     '7-Hour Price'?: number;
     '8-Hour Price'?: number;
-    'Photo Attachments'?: Array<{ url: string }>;
+    'Supabase Hero URL'?: string;
     'Supabase Gallery URLs'?: string[];
     'Features: Number of Staterooms'?: number;
     'Features: Number of Bathrooms'?: number;
