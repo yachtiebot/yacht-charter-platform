@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import DarkFooter from '@/components/DarkFooter';
 
 export default function AddOnsPage() {
   const categories = [
@@ -238,6 +239,8 @@ export default function AddOnsPage() {
           </div>
         </div>
       </section>
+
+      <DarkFooter />
     </main>
   );
 }

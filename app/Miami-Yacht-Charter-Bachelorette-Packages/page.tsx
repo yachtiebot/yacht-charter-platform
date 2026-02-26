@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
+import ProductImageGallery from '@/components/ProductImageGallery';
+import DarkFooter from '@/components/DarkFooter';
 
 // Bachelorette packages from scraped data
 const packages = [
@@ -19,7 +21,13 @@ const packages = [
       'Engagement ring float',
       'Team bride bracelets'
     ],
-    image: '/images/products/bachelorette/lasttoastonthecoast.jpg',
+    images: [
+      '/images/products/bachelorette/lasttoastonthecoast.jpg',
+      '/images/products/bachelorette/Last+toast+on+the+coast.jpeg',
+      '/images/products/bachelorette/bride+cups.jpg',
+      '/images/products/bachelorette/bride+straws.jpg',
+      '/images/products/bachelorette/bride+crown+and+veil.jpg'
+    ],
     featured: true
   },
   {
@@ -36,7 +44,11 @@ const packages = [
       'Photo props collection',
       'Keepsake photo album'
     ],
-    image: '/images/products/bachelorette/last_sail_before_the_veil.jpeg'
+    images: [
+      '/images/products/bachelorette/last_sail_before_the_veil.jpeg',
+      '/images/products/bachelorette/bride+captain+hat.jpg',
+      '/images/products/bachelorette/bride+veil.jpg'
+    ]
   },
   {
     id: 'something-blue',
@@ -52,7 +64,10 @@ const packages = [
       'Professional photographer (1 hour)',
       'Champagne toast setup'
     ],
-    image: '/images/products/bachelorette/somethingbluebeforeido.jpg',
+    images: [
+      '/images/products/bachelorette/somethingbluebeforeido.jpg',
+      '/images/products/bachelorette/bachelorette+cupcakes.jpg'
+    ],
     premium: true
   },
   {
@@ -69,7 +84,7 @@ const packages = [
       'Cinematic music soundtrack',
       'Digital download delivery'
     ],
-    image: '/images/products/bachelorette/drone-video.jpg',
+    images: ['/images/products/bachelorette/drone-video.jpg'],
     addon: true
   }
 ];
@@ -120,33 +135,32 @@ export default function BachelorettePackagesPage() {
               }`}>
                 {/* Image Side */}
                 <div className={`lg:col-span-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="aspect-[4/3] lg:aspect-auto lg:h-full bg-[#f0ece6] overflow-hidden relative">
-                    <img
-                      src={pkg.image}
-                      alt={pkg.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      onError={(e) => {
-                        e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect fill="%23f0ece6" width="400" height="300"/%3E%3C/svg%3E';
-                      }}
-                    />
+                  <div className="aspect-[4/3] lg:aspect-auto lg:h-full relative">
+                    <div className="h-full">
+                      <ProductImageGallery 
+                        images={pkg.images} 
+                        productName={pkg.name}
+                        aspectRatio="wide"
+                      />
+                    </div>
                     
                     {/* Badge */}
                     {pkg.featured && (
-                      <div className="absolute top-6 left-6">
+                      <div className="absolute top-6 left-6 z-10">
                         <span className="bg-[#c4a265] text-white px-4 py-2 text-xs uppercase tracking-[0.3em]">
                           Most Popular
                         </span>
                       </div>
                     )}
                     {pkg.premium && (
-                      <div className="absolute top-6 left-6">
+                      <div className="absolute top-6 left-6 z-10">
                         <span className="bg-[#0f0f0f] text-white px-4 py-2 text-xs uppercase tracking-[0.3em]">
                           Premium
                         </span>
                       </div>
                     )}
                     {pkg.addon && (
-                      <div className="absolute top-6 left-6">
+                      <div className="absolute top-6 left-6 z-10">
                         <span className="bg-[#6b6b6b] text-white px-4 py-2 text-xs uppercase tracking-[0.3em]">
                           Add-On
                         </span>
@@ -197,7 +211,7 @@ export default function BachelorettePackagesPage() {
                   </div>
 
                   {/* Price & CTA */}
-                  <div className="flex items-center gap-6 pt-6 border-t border-[#0f0f0f]/10">
+                  <div className="pt-6 border-t border-[#0f0f0f]/10 space-y-4">
                     <div>
                       <div className="text-4xl text-[#0f0f0f] mb-1" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 300 }}>
                         ${pkg.price}
@@ -210,9 +224,9 @@ export default function BachelorettePackagesPage() {
                         name: pkg.name,
                         price: pkg.price,
                         category: 'bachelorette',
-                        image: pkg.image
+                        image: pkg.images[0]
                       })}
-                      className="flex-1 bg-white border border-[#0f0f0f]/20 text-[#0f0f0f] py-4 px-8 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300"
+                      className="w-full bg-white border border-[#0f0f0f]/20 text-[#0f0f0f] py-4 px-8 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300"
                     >
                       Add to Cart
                     </button>
@@ -244,6 +258,8 @@ export default function BachelorettePackagesPage() {
           </div>
         </div>
       </div>
+
+      <DarkFooter />
     </main>
   );
 }

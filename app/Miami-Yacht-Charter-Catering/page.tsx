@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
+import DarkFooter from '@/components/DarkFooter';
 
 // Import catering products from scraped data
 const cateringProducts = [
@@ -161,6 +162,8 @@ export default function CateringPage() {
           ))}
         </div>
       </div>
+
+      <DarkFooter />
     </main>
   );
 }
