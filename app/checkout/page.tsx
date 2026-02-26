@@ -170,12 +170,10 @@ export default function CheckoutPage() {
               </div>
 
               <div className="pt-6 border-t border-[#e5e5e5]/50">
-                <h3 className="editorial-label text-[#0f0f0f] mb-4">Charter Details</h3>
-                
                 <div className="space-y-6 mb-6">
                   <div>
                     <label className="block editorial-label text-[#0f0f0f] mb-2">
-                      Charter Date <span className="text-[#c4a265]">*</span>
+                      Yacht Charter Date <span className="text-[#c4a265]">*</span>
                     </label>
                     <input
                       type="date"
