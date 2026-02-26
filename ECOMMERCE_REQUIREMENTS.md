@@ -224,7 +224,7 @@
 
 **Florida Boating License Requirement (Critical):**
 - Anyone born AFTER January 1, 1988 MUST complete boating license to operate jet ski
-- Takes 10 minutes online: https://checkinmyc.com/PWCLicense
+- Quick 10-minute online course: https://checkinmyc.com/PWCLicense
 - **State law:** Anyone else in group who drives jet ski MUST also meet birthday requirement or have license
 - Booking NOT complete until license requirement addressed
 
@@ -274,7 +274,7 @@
 9. **NEW SCREEN APPEARS** (blocking):
    - "⚠️ Your booking is not complete!"
    - "Florida state law requires a boating license to operate a jet ski if you were born after January 1, 1988."
-   - "Complete your FREE online course now (takes 10 minutes):"
+   - "Complete your online boating course now (takes just 10 minutes):"
    - **LINK:** https://checkinmyc.com/PWCLicense
    - **IMPORTANT:** If anyone else in your group will drive the jet ski, they must also:
      - Be born before Jan 1, 1988, OR
