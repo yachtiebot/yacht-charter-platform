@@ -45,7 +45,7 @@ export default function HomePage() {
                     <div className="editorial-label text-white">Google Stars</div>
                   </div>
                   <div>
-                    <div className="editorial-stat text-white mb-2">1,400+</div>
+                    <div className="editorial-stat text-white mb-2">1,500+</div>
                     <div className="editorial-label text-white">Reviews</div>
                   </div>
                 </div>
@@ -172,7 +172,7 @@ export default function HomePage() {
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-1.5 backdrop-blur-sm bg-black/20 px-2 py-0.5 rounded inline-block" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>80 FT+</div>
                 <h3 className="editorial-card-name text-white mb-3">Superyachts</h3>
-                <p className="editorial-small text-white/60 mb-3">Unmatched space and amenities.</p>
+                <p className="editorial-small text-white/60 mb-3">Expansive layouts with private staterooms and luxury features.</p>
                 <div className="flex justify-between items-center">
                   <div className="editorial-label text-white/50">From $3,200</div>
                   <div className="editorial-label text-white flex items-center gap-2">
@@ -612,7 +612,7 @@ export default function HomePage() {
                   <div className="editorial-label text-white">Google Stars</div>
                 </div>
                 <div>
-                  <div className="editorial-year text-white mb-2">1,400+</div>
+                  <div className="editorial-year text-white mb-2">1,500+</div>
                   <div className="editorial-label text-white">Verified Reviews</div>
                 </div>
               </div>
