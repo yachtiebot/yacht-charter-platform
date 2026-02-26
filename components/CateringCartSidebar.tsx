@@ -136,11 +136,12 @@ export default function CateringCartSidebar() {
                 ${totalPrice.toFixed(2)}
               </span>
             </div>
-            <button
-              className="w-full bg-[#0f0f0f] text-white py-4 text-sm uppercase tracking-wider hover:bg-[#c4a265] transition-all duration-300"
+            <a
+              href="/checkout"
+              className="block w-full bg-[#0f0f0f] text-white py-4 text-sm uppercase tracking-wider hover:bg-[#c4a265] transition-all duration-300 text-center"
             >
               Proceed to Checkout
-            </button>
+            </a>
           </div>
         )}
       </div>
