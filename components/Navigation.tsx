@@ -74,18 +74,6 @@ export default function Navigation() {
           </Link>
           <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
-            href="/offers"
-            className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
-              isTransparent 
-                ? 'text-white/70 hover:text-white' 
-                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
-            }`}
-            style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
-          >
-            OFFERS
-          </Link>
-          <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
-          <Link
             href="/large-groups"
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
