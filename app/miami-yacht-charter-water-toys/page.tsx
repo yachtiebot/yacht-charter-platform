@@ -14,11 +14,11 @@ const waterToysProducts = [
     price: 499,
     depositPrice: 99,
     description: 'Ride on the surface or emerge under water with these luxury underwater jet skis. Easy to ride for young and old. Recommended age is 12+.',
-    details: 'Comes fully charged, batteries last 1-2 hours. Charger included. Rental good for duration of your charter.',
+    details: 'Comes fully charged, batteries last 1-2 hours. Charger included. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_seabob.jpg'],
     maxQuantity: 2,
     features: ['Age 12+', 'Fully charged', '1-2 hour battery', 'Max 2 per charter'],
-    rentalNote: 'Rental good for duration of your charter'
+    rentalNote: 'Yours for the duration of your charter'
   },
   {
     id: 'flitescooter',
@@ -26,11 +26,11 @@ const waterToysProducts = [
     price: 499,
     depositPrice: 99,
     description: 'Enhance your yacht charter experience with a Flitescooter board! Electric hydrofoil surfboard for an unforgettable water experience.',
-    details: 'Instructor available upon request for additional charge. Comes fully charged, batteries last 1-2 hours. Max load 225lbs. Rental good for duration of your charter.',
+    details: 'Instructor available upon request for additional charge. Comes fully charged, batteries last 1-2 hours. Max load 225lbs. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_flitescooter.jpg'],
     maxQuantity: 1,
     features: ['Max load 225lbs', 'Instructor available', '1-2 hour battery', 'Max 1 per charter'],
-    rentalNote: 'Rental good for duration of your charter'
+    rentalNote: 'Yours for the duration of your charter'
   },
   {
     id: 'water-sports-boat',
@@ -51,10 +51,10 @@ const waterToysProducts = [
     name: 'Floating Cabana',
     price: 349,
     description: 'Spacious floating oasis with plush seating and ample space for sunbathing, drinks, and dining.',
-    details: 'Perfect for groups. Anchored behind your yacht. Stable and safe design. Rental good for duration of your charter.',
+    details: 'Perfect for groups. Anchored behind your yacht. Stable and safe design. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_floating_cabana.jpg'],
     features: ['Plush seating', 'Sunbathing space', 'Stable design', 'Multiple available'],
-    rentalNote: 'Rental good for duration of your charter'
+    rentalNote: 'Yours for the duration of your charter'
   },
   {
     id: 'floating-lounge-chair',
@@ -62,11 +62,11 @@ const waterToysProducts = [
     price: 199,
     pricePerChair: 99,
     description: 'Luxurious floating lounge chairs designed for ultimate relaxation on the water.',
-    details: 'Each chair is $99. Two chair minimum for delivery and setup. Rental good for duration of your charter.',
+    details: 'Each chair is $99. Two chair minimum for delivery and setup. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_floating_lounge_chair.jpg'],
     minQuantity: 2,
     features: ['$99 per chair', '2 chair minimum', 'Premium comfort', 'Perfect for groups'],
-    rentalNote: 'Rental good for duration of your charter'
+    rentalNote: 'Yours for the duration of your charter'
   },
   {
     id: 'jet-ski',
@@ -286,7 +286,7 @@ export default function WaterToysPage() {
                   {/* Rental Note */}
                   {product.rentalNote && (
                     <div className="bg-[#c4a265]/5 border border-[#c4a265]/20 px-4 py-3">
-                      <p className="text-xs text-[#6b6b6b] italic">
+                      <p className="text-xs text-[#6b6b6b]">
                         {product.rentalNote}
                       </p>
                     </div>
