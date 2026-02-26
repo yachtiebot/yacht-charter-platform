@@ -5,48 +5,62 @@ import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import DarkFooter from '@/components/DarkFooter';
 
+// Available platter images (rotating through these 10 images for all products)
+const platterImages = [
+  '/images/products/catering/MYC+platter.jpg',
+  '/images/products/catering/large_platter.jpg',
+  '/images/products/catering/chef+salad+platter1.jpg',
+  '/images/products/catering/chef+salad+platter2.jpg',
+  '/images/products/catering/relish_platter.jpg',
+  '/images/products/catering/wheel+platter.jpg',
+  '/images/products/catering/cubesplatter.jpg',
+  '/images/products/catering/MYC_small_platter.jpg',
+  '/images/products/catering/miami_yachting_company_muffin_platter.jpg',
+  '/images/products/catering/cookieplatter.jpeg'
+];
+
 // Import catering products from scraped data
 const cateringProducts = [
   // SANDWICHES & WRAPS
-  { id: 'gourmet-wraps', name: 'Gourmet Wraps Platter', category: 'sandwiches', price: 69.99, serves: [8, 10, 15, 20, 25], description: 'Made fresh to order, includes lettuce and tomato', image: '/images/products/catering/gourmet-wraps.jpg' },
-  { id: 'gourmet-spirals', name: 'Gourmet Spirals', category: 'sandwiches', price: 69.99, serves: [8, 10, 15, 20, 25], description: 'Assorted gourmet spiral wraps', image: '/images/products/catering/gourmet-spirals.jpg' },
-  { id: 'slider-trio', name: 'Slider Trio', category: 'sandwiches', price: 89.99, serves: [8, 10, 15, 20], description: 'Three varieties of gourmet sliders', image: '/images/products/catering/slider-trio.jpg' },
-  { id: 'cuban-platter', name: 'Cuban Platter', category: 'sandwiches', price: 79.99, serves: [8, 10, 15, 20], description: 'Authentic Cuban sandwiches', image: '/images/products/catering/cuban-platter.jpg' },
+  { id: 'gourmet-wraps', name: 'Gourmet Wraps Platter', category: 'sandwiches', price: 69.99, serves: [8, 10, 15, 20, 25], description: 'Made fresh to order, includes lettuce and tomato', image: platterImages[0] },
+  { id: 'gourmet-spirals', name: 'Gourmet Spirals', category: 'sandwiches', price: 69.99, serves: [8, 10, 15, 20, 25], description: 'Assorted gourmet spiral wraps', image: platterImages[1] },
+  { id: 'slider-trio', name: 'Slider Trio', category: 'sandwiches', price: 89.99, serves: [8, 10, 15, 20], description: 'Three varieties of gourmet sliders', image: platterImages[2] },
+  { id: 'cuban-platter', name: 'Cuban Platter', category: 'sandwiches', price: 79.99, serves: [8, 10, 15, 20], description: 'Authentic Cuban sandwiches', image: platterImages[3] },
   
   // PLATTERS
-  { id: 'shrimp-platter', name: 'Shrimp Platter', category: 'platters', price: 129.99, serves: [8, 10, 15, 20], description: 'Fresh jumbo shrimp with cocktail sauce', image: '/images/products/catering/shrimp-platter.jpg' },
-  { id: 'chicken-tenders', name: 'Chicken Tenders', category: 'platters', price: 79.99, serves: [10, 15, 20, 25], description: 'Crispy chicken tenders', image: '/images/products/catering/chicken-tenders.jpg' },
-  { id: 'chicken-wings', name: 'Chicken Wings', category: 'platters', price: 89.99, serves: [10, 15, 20, 25], description: 'Buffalo or BBQ chicken wings', image: '/images/products/catering/chicken-wings.jpg' },
-  { id: 'large-charcuterie', name: 'Large Charcuterie Platter', category: 'platters', price: 149.99, serves: [15, 20, 25], description: 'Premium meats, cheeses, fruits, and nuts', image: '/images/products/catering/large-charcuterie.jpg' },
-  { id: 'med-charcuterie', name: 'Medium Charcuterie Box', category: 'platters', price: 99.99, serves: [8, 10, 12], description: 'Curated selection of meats and cheeses', image: '/images/products/catering/med-charcuterie.jpg' },
-  { id: 'antipasti', name: 'Antipasti Platter', category: 'platters', price: 89.99, serves: [8, 10, 15], description: 'Italian cured meats, cheeses, olives, and vegetables', image: '/images/products/catering/antipasti.jpg' },
-  { id: 'cheese-taster', name: 'Cheese Taster Platter', category: 'platters', price: 79.99, serves: [8, 10, 12], description: 'Artisan cheese selection with accompaniments', image: '/images/products/catering/cheese-taster.jpg' },
-  { id: 'pretzel-bagel', name: 'Pretzel & Bagel Bite Platter', category: 'platters', price: 69.99, serves: [10, 15, 20], description: 'Soft pretzels and mini bagels with dips', image: '/images/products/catering/pretzel-bagel.jpg' },
+  { id: 'shrimp-platter', name: 'Shrimp Platter', category: 'platters', price: 129.99, serves: [8, 10, 15, 20], description: 'Fresh jumbo shrimp with cocktail sauce', image: platterImages[4] },
+  { id: 'chicken-tenders', name: 'Chicken Tenders', category: 'platters', price: 79.99, serves: [10, 15, 20, 25], description: 'Crispy chicken tenders', image: platterImages[5] },
+  { id: 'chicken-wings', name: 'Chicken Wings', category: 'platters', price: 89.99, serves: [10, 15, 20, 25], description: 'Buffalo or BBQ chicken wings', image: platterImages[6] },
+  { id: 'large-charcuterie', name: 'Large Charcuterie Platter', category: 'platters', price: 149.99, serves: [15, 20, 25], description: 'Premium meats, cheeses, fruits, and nuts', image: platterImages[7] },
+  { id: 'med-charcuterie', name: 'Medium Charcuterie Box', category: 'platters', price: 99.99, serves: [8, 10, 12], description: 'Curated selection of meats and cheeses', image: platterImages[8] },
+  { id: 'antipasti', name: 'Antipasti Platter', category: 'platters', price: 89.99, serves: [8, 10, 15], description: 'Italian cured meats, cheeses, olives, and vegetables', image: platterImages[9] },
+  { id: 'cheese-taster', name: 'Cheese Taster Platter', category: 'platters', price: 79.99, serves: [8, 10, 12], description: 'Artisan cheese selection with accompaniments', image: platterImages[0] },
+  { id: 'pretzel-bagel', name: 'Pretzel & Bagel Bite Platter', category: 'platters', price: 69.99, serves: [10, 15, 20], description: 'Soft pretzels and mini bagels with dips', image: platterImages[1] },
   
   // BOWLS & SALADS
-  { id: 'caesar-salad', name: 'Caesar Salad Platter', category: 'bowls', price: 79.99, serves: [8, 10, 15, 20], description: 'Classic Caesar with parmesan and croutons', image: '/images/products/catering/caesar-salad.jpg' },
-  { id: 'greek-salad', name: 'Greek Salad', category: 'bowls', price: 79.99, serves: [8, 10, 15, 20], description: 'Fresh Greek salad with feta and olives', image: '/images/products/catering/greek-salad.jpg' },
-  { id: 'chef-salad', name: 'Chef Salad', category: 'bowls', price: 89.99, serves: [8, 10, 15, 20], description: 'Garden salad with turkey, ham, and cheese', image: '/images/products/catering/chef-salad.jpg' },
-  { id: 'wild-salmon-salad', name: 'Wild Salmon Salad', category: 'bowls', price: 119.99, serves: [8, 10, 15], description: 'Grilled wild salmon over mixed greens', image: '/images/products/catering/wild-salmon.jpg' },
-  { id: 'caesar-pasta', name: 'Caesar Pasta Bowl', category: 'bowls', price: 89.99, serves: [8, 10, 15, 20], description: 'Pasta with Caesar dressing and parmesan', image: '/images/products/catering/caesar-pasta.jpg' },
-  { id: 'greek-pasta', name: 'Greek Style Pasta Salad', category: 'bowls', price: 79.99, serves: [8, 10, 15, 20], description: 'Mediterranean pasta salad', image: '/images/products/catering/greek-pasta.jpg' },
-  { id: 'italian-caprese', name: 'Italian Caprese Pasta', category: 'bowls', price: 89.99, serves: [8, 10, 15], description: 'Fresh mozzarella, tomatoes, and basil', image: '/images/products/catering/italian-caprese.jpg' },
-  { id: 'tabouli', name: 'Tabouli Salad', category: 'bowls', price: 69.99, serves: [8, 10, 15], description: 'Traditional Lebanese tabouli', image: '/images/products/catering/tabouli.jpg' },
+  { id: 'caesar-salad', name: 'Caesar Salad Platter', category: 'bowls', price: 79.99, serves: [8, 10, 15, 20], description: 'Classic Caesar with parmesan and croutons', image: platterImages[2] },
+  { id: 'greek-salad', name: 'Greek Salad', category: 'bowls', price: 79.99, serves: [8, 10, 15, 20], description: 'Fresh Greek salad with feta and olives', image: platterImages[3] },
+  { id: 'chef-salad', name: 'Chef Salad', category: 'bowls', price: 89.99, serves: [8, 10, 15, 20], description: 'Garden salad with turkey, ham, and cheese', image: platterImages[4] },
+  { id: 'wild-salmon-salad', name: 'Wild Salmon Salad', category: 'bowls', price: 119.99, serves: [8, 10, 15], description: 'Grilled wild salmon over mixed greens', image: platterImages[5] },
+  { id: 'caesar-pasta', name: 'Caesar Pasta Bowl', category: 'bowls', price: 89.99, serves: [8, 10, 15, 20], description: 'Pasta with Caesar dressing and parmesan', image: platterImages[6] },
+  { id: 'greek-pasta', name: 'Greek Style Pasta Salad', category: 'bowls', price: 79.99, serves: [8, 10, 15, 20], description: 'Mediterranean pasta salad', image: platterImages[7] },
+  { id: 'italian-caprese', name: 'Italian Caprese Pasta', category: 'bowls', price: 89.99, serves: [8, 10, 15], description: 'Fresh mozzarella, tomatoes, and basil', image: platterImages[8] },
+  { id: 'tabouli', name: 'Tabouli Salad', category: 'bowls', price: 69.99, serves: [8, 10, 15], description: 'Traditional Lebanese tabouli', image: platterImages[9] },
   
   // VEGETARIAN
-  { id: 'fresh-fruit', name: 'Fresh Fruit Platter', category: 'vegetarian', price: 79.99, serves: [8, 10, 15, 20], description: 'Seasonal fresh fruit selection', image: '/images/products/catering/fresh-fruit.jpg' },
-  { id: 'garden-vegetable', name: 'Garden Vegetable Platter', category: 'vegetarian', price: 69.99, serves: [8, 10, 15, 20], description: 'Fresh vegetables with dips', image: '/images/products/catering/garden-vegetable.jpg' },
-  { id: 'hummus-platter', name: 'Greek Style Hummus Platter', category: 'vegetarian', price: 59.99, serves: [8, 10, 15], description: 'Assorted hummus with pita and vegetables', image: '/images/products/catering/hummus-platter.jpg' },
-  { id: 'med-naan', name: 'Mediterranean Naan Platter', category: 'vegetarian', price: 69.99, serves: [8, 10, 15], description: 'Warm naan with Mediterranean spreads', image: '/images/products/catering/med-naan.jpg' },
-  { id: 'savory-naan', name: 'Savory Naan', category: 'vegetarian', price: 64.99, serves: [8, 10, 15], description: 'Assorted savory naan breads', image: '/images/products/catering/savory-naan.jpg' },
+  { id: 'fresh-fruit', name: 'Fresh Fruit Platter', category: 'vegetarian', price: 79.99, serves: [8, 10, 15, 20], description: 'Seasonal fresh fruit selection', image: platterImages[0] },
+  { id: 'garden-vegetable', name: 'Garden Vegetable Platter', category: 'vegetarian', price: 69.99, serves: [8, 10, 15, 20], description: 'Fresh vegetables with dips', image: platterImages[1] },
+  { id: 'hummus-platter', name: 'Greek Style Hummus Platter', category: 'vegetarian', price: 59.99, serves: [8, 10, 15], description: 'Assorted hummus with pita and vegetables', image: platterImages[2] },
+  { id: 'med-naan', name: 'Mediterranean Naan Platter', category: 'vegetarian', price: 69.99, serves: [8, 10, 15], description: 'Warm naan with Mediterranean spreads', image: platterImages[3] },
+  { id: 'savory-naan', name: 'Savory Naan', category: 'vegetarian', price: 64.99, serves: [8, 10, 15], description: 'Assorted savory naan breads', image: platterImages[4] },
   
   // DESSERTS
-  { id: 'gourmet-brownies', name: 'Gourmet Brownies Platter', category: 'desserts', price: 69.99, serves: [10, 15, 20, 25], description: 'Assorted gourmet brownies', image: '/images/products/catering/gourmet-brownies.jpg' },
-  { id: 'gourmet-cookies', name: 'Gourmet Cookie Platter', category: 'desserts', price: 64.99, serves: [10, 15, 20, 25], description: 'Freshly baked artisan cookies', image: '/images/products/catering/gourmet-cookies.jpg' },
-  { id: 'dessert-tarts', name: 'Dessert Tart Platter', category: 'desserts', price: 89.99, serves: [8, 10, 15], description: 'Assorted French-style tarts', image: '/images/products/catering/dessert-tarts.jpg' },
-  { id: 'macarons', name: 'Macaron & Strawberry Platter', category: 'desserts', price: 79.99, serves: [10, 15, 20], description: 'French macarons with chocolate-covered strawberries', image: '/images/products/catering/macarons.jpg' },
-  { id: 'muffin-platter', name: 'Muffin Platter', category: 'desserts', price: 59.99, serves: [10, 15, 20], description: 'Assorted fresh-baked muffins', image: '/images/products/catering/muffins.jpg' },
-  { id: 'croissant-platter', name: 'Croissant Platter', category: 'desserts', price: 64.99, serves: [10, 15, 20], description: 'Butter croissants and pastries', image: '/images/products/catering/croissants.jpg' },
+  { id: 'gourmet-brownies', name: 'Gourmet Brownies Platter', category: 'desserts', price: 69.99, serves: [10, 15, 20, 25], description: 'Assorted gourmet brownies', image: platterImages[5] },
+  { id: 'gourmet-cookies', name: 'Gourmet Cookie Platter', category: 'desserts', price: 64.99, serves: [10, 15, 20, 25], description: 'Freshly baked artisan cookies', image: platterImages[6] },
+  { id: 'dessert-tarts', name: 'Dessert Tart Platter', category: 'desserts', price: 89.99, serves: [8, 10, 15], description: 'Assorted French-style tarts', image: platterImages[7] },
+  { id: 'macarons', name: 'Macaron & Strawberry Platter', category: 'desserts', price: 79.99, serves: [10, 15, 20], description: 'French macarons with chocolate-covered strawberries', image: platterImages[8] },
+  { id: 'muffin-platter', name: 'Muffin Platter', category: 'desserts', price: 59.99, serves: [10, 15, 20], description: 'Assorted fresh-baked muffins', image: platterImages[9] },
+  { id: 'croissant-platter', name: 'Croissant Platter', category: 'desserts', price: 64.99, serves: [10, 15, 20], description: 'Butter croissants and pastries', image: platterImages[0] },
 ];
 
 const categories = [
