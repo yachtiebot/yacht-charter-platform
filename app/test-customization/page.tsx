@@ -28,24 +28,32 @@ export default function TestCustomizationPage() {
         <h1 className="font-serif text-5xl font-light italic text-[#0f0f0f] mb-6" style={{ fontFamily: 'var(--font-cormorant)' }}>
           Build Your Charcuterie
         </h1>
-        <div className="flex items-center justify-center gap-6 mb-10 text-sm text-[#6b6b6b]">
-          <div className="flex items-center gap-2">
-            <span className="text-[#c4a265]">✓</span>
-            <span>2 meats</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-[#c4a265]">✓</span>
-            <span>2 cheeses</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-[#c4a265]">✓</span>
-            <span>2 fruits</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-[#c4a265]">✓</span>
-            <span>2 accompaniments</span>
-          </div>
-        </div>
+        <ul className="inline-flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-10">
+          <li className="flex items-start gap-2 text-sm text-[#6b6b6b]">
+            <svg className="w-4 h-4 text-[#c4a265] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            <span style={{ fontWeight: 300 }}>2 meats</span>
+          </li>
+          <li className="flex items-start gap-2 text-sm text-[#6b6b6b]">
+            <svg className="w-4 h-4 text-[#c4a265] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            <span style={{ fontWeight: 300 }}>2 cheeses</span>
+          </li>
+          <li className="flex items-start gap-2 text-sm text-[#6b6b6b]">
+            <svg className="w-4 h-4 text-[#c4a265] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            <span style={{ fontWeight: 300 }}>2 fruits</span>
+          </li>
+          <li className="flex items-start gap-2 text-sm text-[#6b6b6b]">
+            <svg className="w-4 h-4 text-[#c4a265] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            <span style={{ fontWeight: 300 }}>2 accompaniments</span>
+          </li>
+        </ul>
         
         <button
           onClick={() => setIsModalOpen(true)}
