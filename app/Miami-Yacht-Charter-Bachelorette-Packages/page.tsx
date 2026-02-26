@@ -67,8 +67,9 @@ const packages = [
       'Bachelorette boat day accessories for entire group (travel case, sunglasses, scrunchie, keepsake bracelet, hair clip)'
     ],
     images: [
-      '/images/products/bachelorette/somethingbluebeforeido.jpg',
-      '/images/products/bachelorette/bachelorette+cupcakes.jpg'
+      '/images/products/bachelorette/bride+crown+and+veil.jpg',
+      '/images/products/bachelorette/bachelorette+cupcakes.jpg',
+      '/images/products/bachelorette/bride+cups.jpg'
     ],
     premium: true
   },
@@ -86,7 +87,10 @@ const packages = [
       'Cinematic music soundtrack',
       'Digital download delivery'
     ],
-    images: ['/images/products/bachelorette/drone-video.jpg'],
+    images: [
+      '/images/Miami_Yachting_Company_yacht-rental-miami.jpg',
+      '/images/Miami_Yachting_Company_philosophy-yacht.jpg'
+    ],
     addon: true
   }
 ];
@@ -188,7 +192,8 @@ export default function BachelorettePackagesPage() {
                   <h2 className="text-3xl md:text-4xl text-[#0f0f0f] mb-4" style={{ 
                     fontFamily: 'var(--font-cormorant)', 
                     fontWeight: 300,
-                    lineHeight: 1.2
+                    lineHeight: 1.2,
+                    textWrap: 'balance'
                   }}>
                     {pkg.name}
                   </h2>

@@ -76,6 +76,13 @@ export default function ProductImageGallery({
             e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"%3E%3Crect fill="%23f0ece6" width="400" height="400"/%3E%3C/svg%3E';
           }}
         />
+        
+        {/* Swipe hint on mobile - only if multiple images */}
+        {hasMultipleImages && (
+          <div className="md:hidden absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-xs animate-pulse pointer-events-none bg-black/40 px-3 py-1 rounded">
+            ← Swipe →
+          </div>
+        )}
       </div>
 
       {/* Navigation Arrows - Only show if multiple images */}
