@@ -1,9 +1,9 @@
 # OKLAHOMA.md - Project Restore Point & Documentation
 
-**Date:** 2026-02-25  
-**Time:** 22:46 UTC  
-**Status:** ✅ STABLE RESTORE POINT (PHASE 1 COMPLETE)
-**Commit:** 4e148d4
+**Date:** 2026-02-26  
+**Time:** 03:07 UTC  
+**Status:** ✅ STABLE CHECKPOINT - MAGAZINE EDITORIAL STYLING COMPLETE
+**Commit:** 514594c
 
 ---
 
@@ -11,22 +11,24 @@
 
 ### Working Production Website
 - **Live URL:** https://yacht-charter-platform-ten.vercel.app
-- **Status:** ✅ Fully functional with ALL 3 yachts showing photos
+- **Status:** ✅ Fully functional with refined magazine editorial aesthetic
 - **GitHub:** https://github.com/yachtiebot/yacht-charter-platform
 - **Vercel Project:** yacht-charter-platform (production)
 
 ### Features Implemented ✅
 ✅ Yacht rental Miami page with fleet listing  
-✅ Individual yacht detail pages (photo grid + lightbox)  
-✅ Minimalist lightbox design (white text/icons, no boxes)  
+✅ Individual yacht detail pages (refined booking banners)  
+✅ Full-screen mobile swiper for product images  
+✅ Magazine editorial styling (thin borders, light typography)  
+✅ Navigation synced across mobile/desktop with drop shadows  
+✅ Google Review quote styled as pull-quote  
 ✅ Photo processing pipeline (Dropbox → Sharp → Supabase)  
 ✅ Airtable integration (source of truth for yacht data)  
-✅ 15-minute caching with fallback (handles 500-700 daily visitors)  
+✅ 15-minute caching with fallback  
 ✅ Supabase CDN for yacht photos  
-✅ **NEW: Drop shadow navigation when transparent**
-✅ **NEW: Standardized typography across all pages**
-✅ **NEW: 3-column yacht grid on desktop**
-✅ **NEW: Automatic size-based yacht sorting**
+✅ **NEW: ProductImageGallery with full-screen lightbox**
+✅ **NEW: Refined yacht detail booking banners (1px borders, elegant)**
+✅ **NEW: Editorial pull-quote styling (faded, centered, no border)**
 
 ---
 
@@ -53,19 +55,34 @@
 ### Core Application Code
 ```
 /root/clawd/yacht-charter-platform/app/
-  ├── page.tsx                              # Homepage (3.5rem hero)
-  ├── contact/page.tsx                      # Contact page (standardized header)
+  ├── page.tsx                              # Homepage
+  ├── contact/page.tsx                      # Contact page
   ├── yacht-rental-miami/
-  │   ├── page.tsx                          # Fleet listing (3-col grid, size sort)
+  │   ├── page.tsx                          # Fleet listing
   │   └── [code]/
-  │       └── page.tsx                      # Dynamic yacht detail pages
+  │       └── page.tsx                      # Yacht detail (REFINED 2026-02-26)
   │
+  ├── Miami-Yacht-Charter-Add-Ons/page.tsx # Add-ons (magazine style)
+  ├── Miami-Yacht-Charter-Catering/page.tsx
+  ├── Miami-Yacht-Charter-Flowers/page.tsx
+  ├── Miami-Yacht-Charter-Water-Toys/page.tsx
+  └── Miami-Yacht-Charter-Bachelorette-Packages/page.tsx
+  
   └── api/
       ├── yachts/
       │   ├── route.ts                      # All yachts endpoint
       │   └── [code]/route.ts               # Single yacht endpoint
       └── cron/
           └── sync-vessels/route.ts         # Airtable sync cron
+```
+
+### Components (RECENTLY UPDATED)
+```
+/root/clawd/yacht-charter-platform/components/
+  ├── Navigation.tsx                        # Synced mobile/desktop menus + cart shadow
+  ├── ProductImageGallery.tsx               # ⭐ Full-screen mobile swiper (2026-02-26)
+  ├── LanguageSwitcher.tsx
+  └── CartIcon.tsx
 ```
 
 ### Caching & Data Layer
@@ -77,18 +94,11 @@
   - ⚠️ CRITICAL: photoMapping object (line ~154)
 ```
 
-### Components
-```
-/root/clawd/yacht-charter-platform/components/
-  ├── Navigation.tsx                        # Nav with drop shadows
-  └── LanguageSwitcher.tsx                  # Language switcher with shadow
-```
-
 ### Photo Processing Scripts
 ```
 /root/clawd/yacht-charter-platform/scripts/
   ├── process-yacht-photos.js               # Master photo processor
-  ├── upload-regal-sharp.js                 # 27-Regal workaround (SUCCESSFUL)
+  ├── upload-regal-sharp.js                 # 27-Regal workaround
   ├── setup-supabase-storage.js             # Supabase bucket setup
   └── README.md                             # Script documentation
 ```
@@ -96,13 +106,106 @@
 ### Documentation
 ```
 /root/clawd/yacht-charter-platform/
-  ├── DESIGN_STANDARDS.md                   # ⭐ Typography standards
-  ├── CACHING_STRATEGY.md                   # Caching architecture docs
-  ├── SAVE_POINT_2026-02-25.md              # ⭐ Detailed restore point
+  ├── DESIGN_STANDARDS.md                   # Typography standards
+  ├── OKLAHOMA.md                           # ⭐ THIS FILE (restore point)
+  ├── WRITING_RULES.md                      # Content generation guidelines
+  ├── MISSING_IMAGES.md                     # Image tracking
+  ├── CACHING_STRATEGY.md                   # Caching architecture
   ├── AIRTABLE_SETUP.md                     # Airtable configuration
-  ├── DEPLOY.md                             # Deployment instructions
-  └── CLS_RULES.md                          # Cumulative Layout Shift rules
+  └── DEPLOY.md                             # Deployment instructions
 ```
+
+---
+
+## 🎨 DESIGN SYSTEM (Updated 2026-02-26)
+
+### Magazine Editorial Aesthetic
+
+**Philosophy:**
+- Thin borders (1px with opacity) over thick borders
+- Light font weights (300) for elegance
+- Generous white space and breathing room
+- Subtle opacity for fade-in effects
+- Cormorant Garamond for editorial/quote text
+- Refined hover transitions with border color changes
+- Clean, minimal UI without heavy outlines
+
+**Button Styling (Current Standard):**
+```tsx
+className="inline-flex items-center justify-center gap-3 
+  bg-white border border-[#0f0f0f]/20 
+  text-[#0f0f0f] px-8 py-4 
+  text-sm uppercase tracking-[0.2em] font-medium 
+  hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] 
+  transition-all duration-300"
+```
+
+**Quote Styling (Pull-Quote):**
+```tsx
+// Container
+<div className="mb-12 py-8 -ml-1">
+
+// Stars (faded)
+<div className="flex items-center gap-1 mb-6 justify-center opacity-60">
+
+// Quote text (larger, lighter, faded)
+<p className="text-center text-[#0f0f0f]/70 mb-6 italic 
+   leading-relaxed text-xl md:text-2xl" 
+   style={{fontFamily: 'Cormorant Garamond, serif', fontWeight: 300}}>
+
+// Attribution (faded, small)
+<p className="text-center text-[#6b6b6b] text-sm opacity-60">
+```
+
+### Typography - Page Headers
+**Standard for ALL pages:**
+```tsx
+<h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl mb-6" 
+    style={{ fontWeight: 300 }}>
+```
+
+### Navigation Drop Shadows
+```tsx
+// For text elements when transparent
+style={isTransparent ? { 
+  textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' 
+} : {}}
+
+// For SVG/icons when transparent (wrap in div)
+<div style={isTransparent ? { 
+  filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.6)) drop-shadow(0 1px 3px rgba(0,0,0,0.5))' 
+} : {}}>
+  <CartIcon />
+</div>
+```
+
+### Colors
+- Gold accent: `#c4a265`
+- Dark text: `#0f0f0f`
+- Light text: `#6b6b6b`
+- Background: `#faf9f7`
+
+---
+
+## 🖼️ PRODUCT IMAGE GALLERY
+
+### Full-Screen Lightbox Features
+1. **Click thumbnail** → Opens full-screen lightbox
+2. **Black background** (`bg-black/95`)
+3. **Product name** at top in white
+4. **Image counter** at bottom (e.g., "7 / 15")
+5. **Mobile:** Swipe gestures with "Swipe to navigate →" hint
+6. **Desktop:** Large arrow buttons on sides
+7. **Keyboard:** Arrow keys + Escape
+8. **No page scroll** when open (app-like experience)
+
+### Consistency
+Same lightbox experience across:
+- Yacht detail pages
+- Add-ons store pages
+- Catering store pages
+- Flowers store pages
+- Water toys pages
 
 ---
 
@@ -115,94 +218,25 @@
 | 37-Axopar | 13 | ✅ Complete | `yacht-photos/37-Axopar/` |
 | 27-Regal | 15 | ✅ Complete | `yacht-photos/27-Regal/` |
 
-### Photo Processing Complete! 🎉
-All three yachts now have full photo galleries with hero images.
-
-### Airtable Integration
-- **Base ID:** appl6AD4Ej23efTIO
-- **Table:** Yacht Brain (tblbnJKFeq5g57X9x)
-- **Hero Images:** Stored in "Photo Attachments" field
-- **Gallery URLs:** Generated from Supabase via yacht-cache.ts
-
 ---
 
-## 🔧 PHOTO PROCESSING PIPELINE
+## 🚧 KNOWN ISSUES & TODO
 
-### Standard Operating Procedure
-```bash
-# From yacht-charter-platform directory:
-node scripts/process-yacht-photos.js "/Yacht Photos/[folder]" "[yacht-id]"
+### High Priority
+- [ ] **Catering data re-scraping** - Current `products-complete.json` has hallucinated serving sizes
+  - Sub-agent crashed during re-scrape (503 error)
+  - Need manual scraping with rate limiting
+  - Website currently works fine, just need accurate data
+  - URL ready: https://www.miamiyachtingcompany.com/catering
 
-# Example:
-node scripts/process-yacht-photos.js "/Yacht Photos/116-Pershing" "116-Pershing"
-```
+### Medium Priority
+- [ ] Apply magazine editorial styling to other yacht detail pages (if requested)
+- [ ] Booking system integration (Phase 2)
+- [ ] Digital waiver system
 
-### 27-Regal Workaround (if needed)
-```bash
-# Used Sharp-based script due to header encoding issues:
-node scripts/upload-regal-sharp.js
-```
-
-### What It Does
-1. Downloads photos from Dropbox (using refresh token)
-2. Optimizes to 500KB max (Sharp + WebP)
-3. Creates 200KB hero for Airtable
-4. Auto-names: `Miami_Yachting_Company_[yacht-id]_##.webp`
-5. Uploads to Supabase Storage
-6. Cleans up temp files
-
-### After Processing NEW YACHT PHOTOS
-1. **CRITICAL:** Update `lib/yacht-cache.ts` photoMapping with photo count
-2. Update Airtable "Photo Attachments" field with hero URL
-3. Build and deploy to production
-4. Wait up to 15 minutes for cache refresh
-
----
-
-## 🎨 DESIGN STANDARDS (Feb 25, 2026)
-
-### Typography - Page Headers
-**Standard for ALL pages:**
-```tsx
-<h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl mb-6" 
-    style={{ fontWeight: 300 }}>
-  Your Title Here
-</h1>
-```
-- Mobile: 48px → Tablet: 60px → Desktop: 72px
-- Font: Cormorant Garamond (editorial-display)
-- Weight: 300 (light)
-
-**Exception - Homepage Hero:**
-```tsx
-<h1 className="editorial-display text-white mb-6" 
-    style={{fontSize: '3.5rem'}}>
-```
-- Fixed at 56px for visual balance
-
-### Navigation Drop Shadows
-All transparent nav elements get drop shadow:
-```tsx
-style={isTransparent ? { 
-  textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' 
-} : {}}
-```
-Applies to:
-- Menu links
-- Language switcher
-- Phone number
-- WhatsApp icon (use `filter: drop-shadow()` for SVG)
-
-### Yacht Grid Layout
-- **Desktop:** 3 columns (`md:grid-cols-3`)
-- **Mobile:** 1 column
-- **Sorting:** Always smallest to largest by "Length in Feet"
-
-### Colors
-- Gold accent: `#c4a265`
-- Dark text: `#0f0f0f`
-- Light text: `#6b6b6b`
-- Background: `#faf9f7`
+### Low Priority
+- [ ] Multi-language support beyond Google Translate
+- [ ] AI yacht concierge (24/7)
 
 ---
 
@@ -211,24 +245,17 @@ Applies to:
 ### Standard Deploy
 ```bash
 cd /root/clawd/yacht-charter-platform
-npm run build
-vercel --prod --token "$VERCEL_TOKEN" --yes
-```
-Note: Vercel token stored securely outside of git
-
-### Environment Variables (Vercel)
-```
-AIRTABLE_API_KEY
-AIRTABLE_BASE_ID
-AIRTABLE_TABLE_ID
-SUPABASE_URL (public)
-SUPABASE_KEY (service role)
+git add -A
+git commit -m "Description"
+git push origin main
+# Vercel auto-deploys from main branch
 ```
 
 ### Current Production
 - **Domain:** yacht-charter-platform-ten.vercel.app
-- **Last Deploy:** 2026-02-25 22:35 UTC
-- **Status:** All 3 yachts with photos
+- **Last Deploy:** 2026-02-26 03:07 UTC
+- **Commit:** 514594c
+- **Status:** Magazine editorial styling complete
 
 ---
 
@@ -251,91 +278,51 @@ SUPABASE_KEY (service role)
 
 ---
 
-## 🚨 TODO & FUTURE PHASES
-
-### Phase 2 - Booking System (Next)
-- [ ] Email inquiry API endpoint
-- [ ] Booking confirmation flow
-- [ ] Stripe payment integration
-- [ ] Digital waiver system
-
-### Phase 3 - Content Pages
-- [ ] Add-ons page
-- [ ] Offers page
-- [ ] Large groups page
-- [ ] Testimonials page
-- [ ] About Us page
-
-### Phase 4 - Advanced Features
-- [ ] Real-time availability checking
-- [ ] AI yacht concierge (24/7)
-- [ ] Multi-language support (beyond Google Translate)
-- [ ] Central yacht/crew database (Notion integration)
-
----
-
 ## 💾 BACKUP & RESTORE
 
-### Create Backup (DO THIS NOW)
-```bash
-cd /root/clawd/yacht-charter-platform
-git add -A
-git commit -m "Save Point: Phase 1 Complete - All 3 yachts with photos, design standards"
-git push origin main
-```
-
-### Restore from This Point
+### Current Checkpoint (2026-02-26 03:07 UTC)
 ```bash
 cd /root/clawd
-rm -rf yacht-charter-platform
 git clone https://github.com/yachtiebot/yacht-charter-platform.git
 cd yacht-charter-platform
 npm install
 # Copy .env.local from backup
-# Set up environment variables in Vercel
-vercel --prod
+# Environment variables already set in Vercel
 ```
 
 ### Critical Files to Preserve
-1. `lib/yacht-cache.ts` - Photo mappings (photoMapping object)
-2. `app/yacht-rental-miami/[code]/page.tsx` - Detail page design
-3. `components/Navigation.tsx` - Nav with drop shadows
-4. `scripts/upload-regal-sharp.js` - Workaround for problem photos
-5. `.env.production` - Credentials (NOT in git, backup separately)
+1. `components/ProductImageGallery.tsx` - Full-screen lightbox
+2. `components/Navigation.tsx` - Synced menus with shadows
+3. `app/yacht-rental-miami/[code]/page.tsx` - Refined booking banner
+4. `lib/yacht-cache.ts` - Photo mappings
+5. `.env.production` - Credentials (NOT in git)
 
 ---
 
-## 📊 PERFORMANCE METRICS
+## 📊 SESSION SUMMARY (2026-02-26)
 
-### Caching Efficiency
-- **API calls/day:** ~96 (vs 500-700 without caching)
-- **Reduction:** 85-90%
-- **Cache duration:** 15 minutes
-- **Stale-while-revalidate:** 30 minutes
+### Work Completed Tonight
+1. ✅ ProductImageGallery - Full-screen mobile swiper
+2. ✅ Navigation menu sync (mobile/desktop)
+3. ✅ Cart icon drop shadow fix
+4. ✅ Yacht detail booking banner refinement (1px borders, elegant styling)
+5. ✅ Google Review quote styled as pull-quote (no border, faded, centered)
+6. ✅ Footer logo path fix
 
-### Page Speed
-- **LCP:** <2.5s (target)
-- **FID:** <100ms
-- **CLS:** <0.1 (critical - see CLS_RULES.md)
+### Time Investment
+~3 hours of focused design refinement
+
+### Result
+Magazine editorial aesthetic successfully applied. Website feels luxurious, refined, and consistent.
 
 ---
 
-## 🔐 CREDENTIALS REFERENCE
+## 🎉 PHASE STATUS
 
-### Stored in Vercel Environment Variables
-- Airtable API key (service account)
-- Supabase service role key
-- Stripe keys (for future booking)
-
-### Stored in Scripts
-- Dropbox refresh token (in process-yacht-photos.js)
-- Dropbox client ID/secret (in process-yacht-photos.js)
-- Vercel token (in deploy commands)
-
-### NOT in Git
-- `.env.local`
-- `.env.production` (regenerate from .env.example)
-- `node_modules/`
+**Phase 1:** Complete - Core website + photo system ✅  
+**Phase 1.5:** Complete - Magazine editorial styling ✅  
+**Phase 2:** Pending - Booking system integration  
+**Phase 3:** Pending - Content pages expansion  
 
 ---
 
@@ -348,10 +335,20 @@ vercel --prod
 
 ---
 
-## 🎉 PHASE 1 COMPLETE
+## 🔐 CREDENTIALS REFERENCE
 
-All core website features, photo system, and design standards are complete and documented.
-Ready to commit to GitHub as a restore point before Phase 2 begins.
+### Stored in Vercel Environment Variables
+- Airtable API key (service account)
+- Supabase service role key
+- Stripe keys (for future booking)
 
-**Last Updated:** 2026-02-25 22:46 UTC  
-**Next Phase:** Booking system integration
+### NOT in Git
+- `.env.local`
+- `.env.production`
+- `node_modules/`
+
+---
+
+**Last Updated:** 2026-02-26 03:07 UTC  
+**Next Session:** Catering data re-scraping + continue refinements as needed  
+**Status:** 💾 STABLE CHECKPOINT - Safe to resume from here
