@@ -274,10 +274,10 @@ export default function CharcuterieCustomizationModal({
               {errors.fruit2 && <p className="editorial-small text-[#c4a265] mt-2">{errors.fruit2}</p>}
             </div>
 
-            {/* Accompaniments */}
+            {/* Extras */}
             <div>
               <label className="block editorial-label text-[#0f0f0f] mb-2">
-                Accompaniment #1 <span className="text-[#c4a265]">*</span>
+                Extra #1 <span className="text-[#c4a265]">*</span>
               </label>
               <select
                 value={accompaniment1}
@@ -294,7 +294,7 @@ export default function CharcuterieCustomizationModal({
 
             <div>
               <label className="block editorial-label text-[#0f0f0f] mb-2">
-                Accompaniment #2 <span className="text-[#c4a265]">*</span>
+                Extra #2 <span className="text-[#c4a265]">*</span>
               </label>
               <select
                 value={accompaniment2}
