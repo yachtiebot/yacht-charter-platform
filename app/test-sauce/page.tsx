@@ -10,9 +10,9 @@ export default function TestSaucePage() {
 
   const handleCustomizationSubmit = (customization: DippingSauceCustomization) => {
     addItem({
-      id: 'dipping-sauce',
-      name: 'Dipping Sauce',
-      price: 2.99,
+      id: 'wings-with-sauce',
+      name: 'Chicken Wings with Sauce',
+      price: 75.00,
       category: 'catering',
       customization: customization,
     });
@@ -25,10 +25,10 @@ export default function TestSaucePage() {
       <div className="text-center max-w-xl">
         <p className="editorial-label text-[#c4a265] mb-3">CUSTOMIZATION TEST</p>
         <h1 className="font-serif text-3xl md:text-5xl font-light italic text-[#0f0f0f] mb-6 px-4" style={{ fontFamily: 'var(--font-cormorant)' }}>
-          Choose Your Sauce
+          Select Your Sauce
         </h1>
         <p className="text-sm text-[#6b6b6b] mb-10 px-4" style={{ fontWeight: 300 }}>
-          Six signature flavors
+          Complimentary with wings & tenders
         </p>
         
         <button
@@ -47,8 +47,8 @@ export default function TestSaucePage() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onSubmit={handleCustomizationSubmit}
-        productName="Dipping Sauce"
-        productPrice={2.99}
+        productName="Chicken Wings"
+        productPrice={75.00}
       />
     </div>
   );
