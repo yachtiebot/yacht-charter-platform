@@ -66,7 +66,7 @@ export default function AddOnsPage() {
       id: 'alcohol-delivery',
       title: 'Rare Vintage & Premium Alcohol',
       subtitle: 'Spirits & Engraving',
-      description: 'Exclusive high-end alcohol delivery with custom bottle engraving. Savor the finest spirits, each bottle personalized with your message.',
+      description: 'Exclusive premium alcohol delivery with custom bottle engraving. Savor the finest spirits, each bottle personalized with your message.',
       image: '/images/premium-addons/Miami_Yachting_Company_premium_alcohol.jpg',
       accent: 'Inquire',
       number: '05'
@@ -75,7 +75,7 @@ export default function AddOnsPage() {
       id: 'luxury-transportation',
       title: 'Luxury Transportation',
       subtitle: 'Arrive in Style',
-      description: 'High-end vehicles including luxury sedans and limo buses. Every detail arranged for a seamless, stress-free travel experience.',
+      description: 'Premium vehicles including luxury sedans and limo buses. Every detail arranged for a seamless, stress free travel experience.',
       image: '/images/premium-addons/Miami_Yachting_Company_luxury_transport.jpg',
       accent: 'Inquire',
       number: '06'
@@ -84,7 +84,7 @@ export default function AddOnsPage() {
       id: 'chef-services',
       title: 'Private Chef Services',
       subtitle: 'Culinary Artistry',
-      description: 'Elite chefs crafting custom menus tailored to your preferences. From multi-course dinners to delightful brunches aboard your yacht.',
+      description: 'Elite chefs crafting custom menus tailored to your preferences. From multicourse dinners to delightful brunches aboard your yacht.',
       image: '/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg',
       accent: 'Inquire',
       number: '07'
@@ -100,7 +100,7 @@ export default function AddOnsPage() {
     },
     {
       id: 'sushi-delivery',
-      title: 'High-End Sushi Delivery',
+      title: 'Premium Sushi Delivery',
       subtitle: 'Japanese Excellence',
       description: 'Meticulously crafted rolls and sashimi from the freshest ingredients. The art of Japanese cuisine delivered to open seas.',
       image: '/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg',
