@@ -44,10 +44,11 @@
       "/images/products/catering-complete/bachelorettecupcakes_2.png",
       "/images/products/catering-complete/bachelorettecupcakes_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/bachelorettecupcakes",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "manual_webfetch",
+    "price": 99.99
   },
   {
     "id": "bread-bowl-platter",
@@ -121,10 +122,11 @@
       "/images/products/catering-complete/caesarpasta_2.png",
       "/images/products/catering-complete/caesarpasta_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/caesarpasta",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "manual_webfetch",
+    "price": 79.99
   },
   {
     "id": "caesarsaladplatter",
@@ -235,29 +237,29 @@
     "id": "chicken-wings",
     "name": "Chicken Wings",
     "slug": "chicken-wings",
-    "price": 89.99,
+    "price": 69.99,
     "description": "Buffalo or BBQ chicken wings",
     "minQuantity": 2,
     "options": [
       {
+        "label": "Serves 8",
+        "value": 8,
+        "price": 69.99
+      },
+      {
         "label": "Serves 10",
         "value": 10,
-        "price": 89.99
+        "price": 87.49
       },
       {
-        "label": "Serves 15",
-        "value": 15,
-        "price": 109.99
+        "label": "Serves 18",
+        "value": 18,
+        "price": 157.48
       },
       {
-        "label": "Serves 20",
-        "value": 20,
-        "price": 139.99
-      },
-      {
-        "label": "Serves 25",
-        "value": 25,
-        "price": 169.99
+        "label": "Serves 28",
+        "value": 28,
+        "price": 244.96
       }
     ],
     "category": "platters",
@@ -269,8 +271,8 @@
       "/images/products/catering-complete/chicken-wings_5.jpg"
     ],
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "needsPricing": true,
-    "priceSource": "manual_required"
+    "needsPricing": false,
+    "priceSource": "manual_webfetch"
   },
   {
     "id": "chickenlettucewraps",
@@ -282,10 +284,11 @@
       "/images/products/catering-complete/chickenlettucewraps_2.png",
       "/images/products/catering-complete/chickenlettucewraps_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/chickenlettucewraps",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "manual_webfetch",
+    "price": 49.99
   },
   {
     "id": "chickentenders",
@@ -377,10 +380,11 @@
       "/images/products/catering-complete/choc-red-velvet_2.png",
       "/images/products/catering-complete/choc-red-velvet_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/choc-red-velvet",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 69.99
   },
   {
     "id": "chocolatehummusplatter",
@@ -466,10 +470,11 @@
       "/images/products/catering-complete/croissantplatter_2.png",
       "/images/products/catering-complete/croissantplatter_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/croissantplatter",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 59.99
   },
   {
     "id": "cubanplatter",
@@ -552,10 +557,11 @@
       "/images/products/catering-complete/customizable-cookies-and-cream-cake-6n3m8_2.png",
       "/images/products/catering-complete/customizable-cookies-and-cream-cake-6n3m8_3.png"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/customizable-cookies-and-cream-cake-6n3m8",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 89.99
   },
   {
     "id": "customizable-floral-cake",
@@ -567,10 +573,11 @@
       "/images/products/catering-complete/customizable-floral-cake_2.png",
       "/images/products/catering-complete/customizable-floral-cake_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/customizable-floral-cake",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 89.99
   },
   {
     "id": "customizable-party-balloon-cake-aar5e",
@@ -582,10 +589,11 @@
       "/images/products/catering-complete/customizable-party-balloon-cake-aar5e_2.png",
       "/images/products/catering-complete/customizable-party-balloon-cake-aar5e_3.png"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/customizable-party-balloon-cake-aar5e",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 89.99
   },
   {
     "id": "decadent-desert-platter",
@@ -702,10 +710,18 @@
       "/images/products/catering-complete/desert-tart-6mpcy_2.png",
       "/images/products/catering-complete/desert-tart-6mpcy_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/desert-tart-6mpcy",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 49.99,
+    "options": [
+      {
+        "label": "Serves 4",
+        "value": 4,
+        "price": 49.99
+      }
+    ]
   },
   {
     "id": "desert-tart-platter-9hdg4",
@@ -816,10 +832,11 @@
       "/images/products/catering-complete/german-choc-cake_2.png",
       "/images/products/catering-complete/german-choc-cake_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/german-choc-cake",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 69.99
   },
   {
     "id": "gourmet-meat-and-cheese-platter",
@@ -870,22 +887,22 @@
       {
         "label": "Serves 10",
         "value": 10,
-        "price": 79.99
+        "price": 87.49
       },
       {
         "label": "Serves 15",
         "value": 15,
-        "price": 99.99
+        "price": 131.23
       },
       {
         "label": "Serves 20",
         "value": 20,
-        "price": 129.99
+        "price": 174.98
       },
       {
         "label": "Serves 25",
         "value": 25,
-        "price": 159.99
+        "price": 218.72
       }
     ],
     "category": "sandwiches",
@@ -895,8 +912,8 @@
       "/images/products/catering-complete/gourmet-wraps_3.jpg"
     ],
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "needsPricing": true,
-    "priceSource": "manual_required"
+    "needsPricing": false,
+    "priceSource": "manual_webfetch"
   },
   {
     "id": "gourmetbrowniesplatter",
@@ -1072,10 +1089,18 @@
       "/images/products/catering-complete/greek-style-pasta-salad-etjrx_2.png",
       "/images/products/catering-complete/greek-style-pasta-salad-etjrx_3.png"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/greek-style-pasta-salad-etjrx",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 79.99,
+    "options": [
+      {
+        "label": "Serves 10",
+        "value": 10,
+        "price": 79.99
+      }
+    ]
   },
   {
     "id": "greeksalad",
@@ -1148,10 +1173,18 @@
       "/images/products/catering-complete/grilled-chicken-pasta-bowl-5cg2c_2.png",
       "/images/products/catering-complete/grilled-chicken-pasta-bowl-5cg2c_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/grilled-chicken-pasta-bowl-5cg2c",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 79.99,
+    "options": [
+      {
+        "label": "Serves 10",
+        "value": 10,
+        "price": 79.99
+      }
+    ]
   },
   {
     "id": "italiancapresepasta",
@@ -1196,10 +1229,11 @@
       "/images/products/catering-complete/large-charcuterie-platter_2.png",
       "/images/products/catering-complete/large-charcuterie-platter_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/large-charcuterie-platter",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 239.99
   },
   {
     "id": "largebrunchplatter",
@@ -1211,10 +1245,11 @@
       "/images/products/catering-complete/largebrunchplatter_2.png",
       "/images/products/catering-complete/largebrunchplatter_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/largebrunchplatter",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 89.99
   },
   {
     "id": "lettucewraps",
@@ -1270,10 +1305,11 @@
       "/images/products/catering-complete/macaronchocolatestrawberry_2.png",
       "/images/products/catering-complete/macaronchocolatestrawberry_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/macaronchocolatestrawberry",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 89.99
   },
   {
     "id": "med-charcuterie-box",
@@ -1560,10 +1596,11 @@
       "/images/products/catering-complete/pudding-cake_2.png",
       "/images/products/catering-complete/pudding-cake_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/pudding-cake",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 69.99
   },
   {
     "id": "savorynaan",
@@ -1602,29 +1639,24 @@
     "id": "shrimp-platter",
     "name": "Shrimp Platter",
     "slug": "shrimp-platter",
-    "price": 129.99,
+    "price": 79.99,
     "description": "Fresh jumbo shrimp with cocktail sauce",
     "minQuantity": 2,
     "options": [
       {
-        "label": "Serves 8",
+        "label": "Serves 8 (32 oz)",
         "value": 8,
-        "price": 129.99
+        "price": 79.99
       },
       {
-        "label": "Serves 10",
-        "value": 10,
-        "price": 149.99
+        "label": "Serves 16 (56 oz)",
+        "value": 16,
+        "price": 159.98
       },
       {
-        "label": "Serves 15",
-        "value": 15,
-        "price": 189.99
-      },
-      {
-        "label": "Serves 20",
+        "label": "Serves 20 (88 oz)",
         "value": 20,
-        "price": 239.99
+        "price": 199.98
       }
     ],
     "category": "platters",
@@ -1636,8 +1668,8 @@
       "/images/products/catering-complete/shrimp-platter_5.jpg"
     ],
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "needsPricing": true,
-    "priceSource": "manual_required"
+    "needsPricing": false,
+    "priceSource": "manual_webfetch"
   },
   {
     "id": "shrimp-surimi",
@@ -1673,14 +1705,14 @@
     "id": "slider-trio",
     "name": "Slider Trio",
     "slug": "slider-trio",
-    "price": 89.99,
+    "price": 79.99,
     "description": "Three varieties of gourmet sliders",
     "minQuantity": 2,
     "options": [
       {
         "label": "Serves 8",
         "value": 8,
-        "price": 89.99
+        "price": 79.99
       },
       {
         "label": "Serves 10",
@@ -1688,14 +1720,9 @@
         "price": 99.99
       },
       {
-        "label": "Serves 15",
-        "value": 15,
-        "price": 119.99
-      },
-      {
-        "label": "Serves 20",
-        "value": 20,
-        "price": 149.99
+        "label": "Serves 13",
+        "value": 13,
+        "price": 129.98
       }
     ],
     "category": "sandwiches",
@@ -1705,8 +1732,8 @@
       "/images/products/catering-complete/slider-trio_3.png"
     ],
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "needsPricing": true,
-    "priceSource": "manual_required"
+    "needsPricing": false,
+    "priceSource": "manual_webfetch"
   },
   {
     "id": "straw-almond-cream-cake",
@@ -1718,10 +1745,11 @@
       "/images/products/catering-complete/straw-almond-cream-cake_2.png",
       "/images/products/catering-complete/straw-almond-cream-cake_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/straw-almond-cream-cake",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 69.99
   },
   {
     "id": "straw-leche-cake",
@@ -1733,10 +1761,11 @@
       "/images/products/catering-complete/straw-leche-cake_2.png",
       "/images/products/catering-complete/straw-leche-cake_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/straw-leche-cake",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 69.99
   },
   {
     "id": "strawberryandmacaron",
@@ -1764,10 +1793,11 @@
       "/images/products/catering-complete/taboulisalad_2.png",
       "/images/products/catering-complete/taboulisalad_3.jpg"
     ],
-    "needsPricing": true,
+    "needsPricing": false,
     "sourceUrl": "https://www.miamiyachtingcompany.com/catering/taboulisalad",
     "scrapedAt": "2026-02-26T20:57:01.445Z",
-    "priceSource": "manual_required"
+    "priceSource": "batch_webfetch",
+    "price": 79.99
   },
   {
     "id": "turkeysaladplatter",
