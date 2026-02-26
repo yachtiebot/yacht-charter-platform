@@ -223,3 +223,4 @@ Built by YachtieBot ⚓ for Miami Yachting Company
 # Deploy with correct Supabase anon key
 # Final deployment with correct service role key
 # Force clean deployment
+# Trigger Vercel rebuild
