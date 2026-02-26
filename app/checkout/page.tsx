@@ -294,7 +294,7 @@ export default function CheckoutPage() {
               ))}
 
               {/* Total */}
-              <div className="pt-4 border-t border-[#e5e5e5]">
+              <div className="pt-4">
                 <div className="flex justify-between items-center mb-2">
                   <span className="editorial-label text-[#0f0f0f]">Total ({platterCount} platter{platterCount !== 1 ? 's' : ''})</span>
                   <span className="font-serif text-2xl font-light text-[#c4a265]" style={{ fontFamily: 'var(--font-cormorant)' }}>
@@ -302,7 +302,10 @@ export default function CheckoutPage() {
                   </span>
                 </div>
                 <p className="text-xs text-[#6b6b6b] font-light leading-relaxed">
-                  Delivery to yacht included • 36 hour advance notice required
+                  Delivery to yacht included
+                </p>
+                <p className="text-xs text-[#6b6b6b] font-light leading-relaxed">
+                  36 hour advance notice required
                 </p>
               </div>
             </div>
