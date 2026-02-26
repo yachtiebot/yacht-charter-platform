@@ -35,7 +35,7 @@ export default function AddOnsPage() {
       subtitle: 'Aquatic Adventures',
       description: 'Premium water sports equipment and floating luxury for the ultimate ocean experience',
       href: '/miami-yacht-charter-water-toys',
-      image: '/images/products/water-toys/hero.jpg',
+      image: '/images/products/water-toys/Miami_Yachting_Company_water_toys_hero.jpg',
       accent: 'Explore',
       number: '02'
     },

@@ -15,7 +15,7 @@ const waterToysProducts = [
     depositPrice: 99,
     description: 'Ride on the surface or emerge under water with these luxury underwater jet skis. Easy to ride for young and old. Recommended age is 12+.',
     details: 'Comes fully charged, batteries last 1-2 hours. Charger included. Rental good for duration of your charter.',
-    images: ['/images/products/water-toys/seabob.jpg'],
+    images: ['/images/products/water-toys/Miami_Yachting_Company_seabob.jpg'],
     maxQuantity: 2,
     features: ['Age 12+', 'Fully charged', '1-2 hour battery', 'Max 2 per charter'],
     rentalNote: 'Rental good for duration of your charter'
@@ -27,7 +27,7 @@ const waterToysProducts = [
     depositPrice: 99,
     description: 'Enhance your yacht charter experience with a Flitescooter board! Electric hydrofoil surfboard for an unforgettable water experience.',
     details: 'Instructor available upon request for additional charge. Comes fully charged, batteries last 1-2 hours. Max load 225lbs. Rental good for duration of your charter.',
-    images: ['/images/products/water-toys/flitescooter.jpg'],
+    images: ['/images/products/water-toys/Miami_Yachting_Company_flitescooter.jpg'],
     maxQuantity: 1,
     features: ['Max load 225lbs', 'Instructor available', '1-2 hour battery', 'Max 1 per charter'],
     rentalNote: 'Rental good for duration of your charter'
@@ -37,7 +37,7 @@ const waterToysProducts = [
     name: 'Water Sports Boat',
     description: 'Dedicated watersports boat with wakeboarding, water skiing, and tubing. Accommodates up to six guests.',
     details: '$300 per hour. Operated independently by professional vendor. Activities subject to provider requirements.',
-    images: ['/images/products/water-toys/watersports-boat.jpg'],
+    images: ['/images/products/water-toys/Miami_Yachting_Company_watersports_boat.jpg'],
     requiresWaiver: true,
     features: ['Up to 6 guests', 'Wakeboarding', 'Water skiing', 'Tubing'],
     sizes: {
@@ -52,7 +52,7 @@ const waterToysProducts = [
     price: 349,
     description: 'Spacious floating oasis with plush seating and ample space for sunbathing, drinks, and dining.',
     details: 'Perfect for groups. Anchored behind your yacht. Stable and safe design. Rental good for duration of your charter.',
-    images: ['/images/products/water-toys/floating-cabana.jpg'],
+    images: ['/images/products/water-toys/Miami_Yachting_Company_floating_cabana.jpg'],
     features: ['Plush seating', 'Sunbathing space', 'Stable design', 'Multiple available'],
     rentalNote: 'Rental good for duration of your charter'
   },
@@ -63,7 +63,7 @@ const waterToysProducts = [
     pricePerChair: 99,
     description: 'Luxurious floating lounge chairs designed for ultimate relaxation on the water.',
     details: 'Each chair is $99. Two chair minimum for delivery and setup. Rental good for duration of your charter.',
-    images: ['/images/products/water-toys/lounge-chair.jpg'],
+    images: ['/images/products/water-toys/Miami_Yachting_Company_floating_lounge_chair.jpg'],
     minQuantity: 2,
     features: ['$99 per chair', '2 chair minimum', 'Premium comfort', 'Perfect for groups'],
     rentalNote: 'Rental good for duration of your charter'
@@ -73,7 +73,7 @@ const waterToysProducts = [
     name: 'Jet Ski',
     description: 'Premium jet ski rental for thrilling water exploration.',
     details: 'Must be born on or after January 1, 1988. Must have successfully completed a National Association of State Boating Law Administrators approved boating safety course. Valid ID required. Instruction available. 48 hours notice required.',
-    images: ['/images/products/water-toys/jet-ski.jpg'],
+    images: ['/images/products/water-toys/Miami_Yachting_Company_jet_ski.jpg'],
     features: ['Born on/after 1/1/88', 'Boating safety course required', 'Valid ID required'],
     licenseLink: 'https://checkinmyc.com/PWCLicense',
     sizes: {
