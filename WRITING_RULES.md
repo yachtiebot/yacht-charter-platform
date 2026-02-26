@@ -100,3 +100,148 @@ Instead of "take it to the next level":
 **We sound like:** Vogue meets Ocean Drive - editorial, sophisticated, understated luxury.
 
 **We don't sound like:** Generic luxury marketing copy, corporate brochures, or sales pitches.
+
+---
+
+## 🚨 LEGAL & COMPLIANCE REQUIREMENTS
+
+### Bareboat Charter Compliance (USCG & FWC)
+
+**NEVER mention or imply:**
+- ❌ Crew is included
+- ❌ Captain is provided
+- ❌ Staff comes with the yacht
+- ❌ "Crewed charter"
+- ❌ "Fully staffed"
+- ❌ Any services included in the charter
+
+**ALWAYS:**
+- ✅ Describe only the vessel itself
+- ✅ Use manufacturer specifications
+- ✅ Describe features and amenities of the boat
+- ✅ Be vague about what comes with the charter
+- ✅ Let customers inquire for details
+
+**Safe Language:**
+- "This vessel features..."
+- "The yacht is equipped with..."
+- "Manufacturer specifications include..."
+- "Available for charter in Miami"
+- "Contact us to customize your experience"
+
+### Use Case Restrictions
+
+**NEVER assume or suggest use cases unless explicitly marked in Airtable:**
+
+❌ **Don't say:** "Perfect for corporate events, birthdays, and weddings"
+✅ **Do say:** "Contact us to discuss your charter needs" (if no use cases marked)
+
+**Only mention specific use cases if that checkbox is TRUE in Airtable:**
+- Corporate Events (checkbox)
+- Birthday Celebrations (checkbox)
+- Bachelorette Parties (checkbox)
+- Proposals (checkbox)
+- Anniversaries (checkbox)
+- Family Outings (checkbox)
+
+**If checkbox is checked, you may say:**
+- "Ideal for corporate events"
+- "Popular choice for birthday celebrations"
+
+---
+
+## 📝 AUTO-GENERATED DESCRIPTIONS
+
+### Yacht Descriptions (Short & Long)
+
+**Source Material:**
+1. Manufacturer description (if available)
+2. Airtable specifications (length, capacity, features)
+3. Marketable language (compliant)
+
+**Short Description (Fleet Listing - 1-2 sentences):**
+- Focus: Key specs + one standout feature
+- Length: 120-180 characters
+- SEO: Include yacht type, location, capacity
+
+**Example:**
+"A 37-foot Axopar day boat featuring a sun top, spacious layout, and seating for up to 12 guests. Available for charter in Miami Beach."
+
+**Long Description (Detail Page - 2-4 paragraphs):**
+- Para 1: Manufacturer specs + vessel features
+- Para 2: Onboard amenities and layout
+- Para 3: Technical details (sound system, toys, features)
+- Para 4 (optional): Use cases IF selected in Airtable
+- Length: 250-400 words MAX (SEO best practice)
+- Keywords: Include "Miami yacht charter", vessel type, location, region-specific terms
+
+**Example:**
+"The 37-foot Axopar Sun Top is a modern Scandinavian day boat designed for comfort and performance. This vessel features a spacious open layout with comfortable seating, a retractable sun top for shade, and a swim platform for easy water access. The yacht accommodates up to 12 guests and is available for charter departing from Miami Beach.
+
+Onboard, guests will find premium sound system, comfortable cushioned seating throughout, and ample storage. The vessel is equipped with modern navigation and safety equipment, ensuring a smooth experience on Biscayne Bay and surrounding waters.
+
+Available for 2 to 8 hour charters in the Miami area. Contact us to discuss availability and customize your charter experience."
+
+### Product Descriptions (Catering, Flowers, Water Toys)
+
+**Auto-Generated Based on Category:**
+
+**Catering - Short (2-3 sentences):**
+- What it is + serves how many + one quality note
+
+**Example:**
+"Made fresh to order with premium ingredients. Serves 8 to 25 guests depending on platter size. A popular choice for yacht charters and celebrations."
+
+**Flowers - Short (2-3 sentences):**
+- Arrangement style + flowers included + occasion note
+
+**Example:**
+"An elegant tropical arrangement featuring orchids, roses, and seasonal blooms. Hand selected for beauty and lasting freshness. Perfect for special occasions aboard your charter."
+
+**Water Toys - Short (2-3 sentences):**
+- What it is + key feature + usage note + lead time if applicable
+
+**Example:**
+"Luxury underwater jet ski allowing riders to glide on the surface or dive below. Batteries last 1 to 2 hours. Requires 48 hours advance notice."
+
+**Team Can Edit:** All auto-generated descriptions can be manually edited in Airtable if needed.
+
+---
+
+## 🎯 SEO KEYWORDS (Miami Yacht Charter)
+
+**Primary Keywords to Include:**
+- Miami yacht charter
+- Miami boat rental
+- [Boat type] charter Miami (e.g., "Axopar charter Miami")
+- Biscayne Bay yacht rental
+- Miami Beach boat charter
+- Private yacht rental Miami
+- Luxury boat charter Miami
+
+**Regional Keywords:**
+- Miami Beach, Biscayne Bay, Key Biscayne, Coconut Grove, Miami River, Star Island, Fisher Island, Haulover Sandbar
+
+**Vessel-Specific Keywords:**
+- Day boat, luxury yacht, superyacht, motor yacht
+- [Brand] charter (e.g., "Pershing charter", "Axopar rental")
+- [Length] ft yacht (e.g., "116 ft yacht charter")
+
+**Use Natural Language:**
+Don't stuff keywords. Mention location/type naturally in descriptions.
+
+---
+
+## ✅ COMPLIANCE CHECKLIST
+
+Before publishing any yacht description:
+
+- [ ] No mention of crew/captain/staff
+- [ ] Only manufacturer/vessel details included
+- [ ] No promises about what's "included"
+- [ ] Use cases only if marked in Airtable
+- [ ] No banned words (elevate, pinnacle, epitome, new level)
+- [ ] No dashes in customer-facing text
+- [ ] No balloons mentioned or shown
+- [ ] SEO keywords naturally included
+- [ ] Compliant with bareboat charter regulations
