@@ -151,8 +151,8 @@ export default function CharcuterieCustomizationModal({
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div className="bg-[#faf9f7] w-full max-w-3xl shadow-2xl max-h-[90vh] overflow-y-auto relative">
           {/* Scroll Indicator */}
-          <div className="fixed right-4 top-1/2 -translate-y-1/2 text-[#c4a265] opacity-40 pointer-events-none z-20">
-            <div className="text-[10px] uppercase tracking-[0.2em] font-light" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+          <div className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-[#c4a265] opacity-50 pointer-events-none z-20">
+            <div className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-light" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
               SCROLL
             </div>
           </div>
