@@ -8,7 +8,7 @@ export default function AddOnsPage() {
       id: 'catering',
       title: 'Catering',
       description: 'Gourmet platters and fresh cuisine delivered to your yacht',
-      href: '/add-ons/catering',
+      href: '/Miami-Yacht-Charter-Catering',
       image: '/images/products/catering/hero.jpg',
       bgColor: 'from-amber-50 to-orange-50'
     },
@@ -16,7 +16,7 @@ export default function AddOnsPage() {
       id: 'water-toys',
       title: 'Water Toys',
       description: 'Seabobs, jet skis, floating lounges and water sports',
-      href: '/add-ons/water-toys',
+      href: '/Miami-Yacht-Charter-Water-Toys',
       image: '/images/products/water-toys/hero.jpg',
       bgColor: 'from-blue-50 to-cyan-50'
     },
@@ -24,7 +24,7 @@ export default function AddOnsPage() {
       id: 'flowers',
       title: 'Flowers',
       description: 'Elegant floral arrangements for your yacht',
-      href: '/add-ons/flowers',
+      href: '/Miami-Yacht-Charter-Flowers',
       image: '/images/products/flowers/rose-pave.png',
       bgColor: 'from-pink-50 to-rose-50'
     },
@@ -32,7 +32,7 @@ export default function AddOnsPage() {
       id: 'bachelorette',
       title: 'Bachelorette Packages',
       description: 'Complete party packages for unforgettable celebrations',
-      href: '/add-ons/bachelorette-packages',
+      href: '/Miami-Yacht-Charter-Bachelorette-Packages',
       image: '/images/products/bachelorette/hero.jpg',
       bgColor: 'from-purple-50 to-pink-50'
     }

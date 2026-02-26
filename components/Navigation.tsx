@@ -62,7 +62,7 @@ export default function Navigation() {
           </Link>
           <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
-            href="/add-ons"
+            href="/Miami-Yacht-Charter-Add-Ons"
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/70 hover:text-white' 
