@@ -29,15 +29,15 @@ export default function CheckoutSuccessPage() {
         </h1>
 
         {/* Message */}
-        <div className="space-y-4 text-[#6b6b6b] mb-12">
-          <p className="text-base font-light leading-relaxed">
+        <div className="space-y-4 mb-12">
+          <p className="text-sm font-light leading-relaxed text-[#6b6b6b]">
             Your catering order has been received and will be prepared fresh for your yacht charter.
           </p>
-          <p className="text-base font-light leading-relaxed">
+          <p className="text-sm font-light leading-relaxed text-[#6b6b6b]">
             A confirmation email has been sent to you with order details. 
             Our team will only reach out if there's an issue with your order. Otherwise, it will be on your yacht at the time of departure.
           </p>
-          <p className="text-sm font-light leading-relaxed">
+          <p className="text-sm font-light leading-relaxed text-[#6b6b6b]">
             All orders require a minimum of 36 hours advance notice and must be linked to a valid yacht charter reservation.
           </p>
         </div>
@@ -79,12 +79,12 @@ export default function CheckoutSuccessPage() {
           <div className="text-sm text-[#6b6b6b] font-light space-y-2">
             <p>Need help? Contact us:</p>
             <div className="flex items-center justify-center gap-2">
-              <a href="tel:+13059494774" className="text-[#c4a265] hover:underline">
-                +1 (305) 949-4774
+              <a href="tel:18007479585" className="text-[#c4a265] hover:underline">
+                1-800-747-9585
               </a>
               <span>•</span>
               <a 
-                href="https://wa.me/13059494774" 
+                href="https://wa.me/18007479585" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 text-[#c4a265] hover:underline"
