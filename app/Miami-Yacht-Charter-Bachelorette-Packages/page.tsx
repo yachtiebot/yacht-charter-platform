@@ -143,6 +143,7 @@ export default function BachelorettePackagesPage() {
                         images={pkg.images} 
                         productName={pkg.name}
                         aspectRatio="wide"
+                        objectFit="contain"
                       />
                     </div>
                     
