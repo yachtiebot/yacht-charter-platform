@@ -131,6 +131,14 @@
 
 **Important:** This waiver must be completed BEFORE payment is processed.
 
+**Florida Boating License Requirement:**
+- Anyone born AFTER January 1, 1988 needs a boating license to operate a jet ski in Florida
+- Link to provide: https://checkinmyc.com/PWCLicense
+- Show this link:
+  - In order confirmation email
+  - On order confirmation page
+  - Highlighted prominently for jet ski orders
+
 **Fields (all checkboxes, all required):**
 
 1. **Florida jet ski laws acknowledgement**
@@ -165,6 +173,10 @@
 4. Customer types name (electronic signature)
 5. THEN item adds to cart
 6. At checkout, waiver data is emailed to support@miamiyachting.com
+7. **After payment, show boating license link prominently:**
+   - "⚠️ IMPORTANT: Born after Jan 1, 1988? You need a boating license!"
+   - "Complete your required course here: https://checkinmyc.com/PWCLicense"
+8. Include same message in confirmation email
 
 ---
 
@@ -201,6 +213,13 @@
 
 4. **Delivery/Special Instructions:**
    - Any notes from customer
+
+5. **Jet Ski License Reminder (if jet ski ordered):**
+   - ⚠️ **IMPORTANT FOR JET SKI RENTERS:**
+   - Born after January 1, 1988? You need a boating license!
+   - Complete your required Florida Boater Safety Course:
+   - **https://checkinmyc.com/PWCLicense**
+   - Must complete BEFORE rental date
 
 **Format:** Clean, readable HTML email
 
