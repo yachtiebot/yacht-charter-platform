@@ -167,7 +167,40 @@
 
 ---
 
-### **2. Jet Ski Acknowledgements**
+### **2. 3rd Party Vendor Toy Add-On**
+**Products:** Floating Cabana, Floating Lounge Chairs (only these two)
+
+**Important:** This waiver must be completed BEFORE payment is processed.
+
+**Fields:**
+
+**No name fields required** - Checkboxes only
+
+**All checkboxes (required):**
+
+1. **Cancellation Policy**
+   - "I understand this item is special ordered and delivered to my rental yacht, because of the custom nature of this delivery, 48 hours cancellation notice prior to my rental date is required for a refund. If I cancel less than 48 hours from my rental date, the rental vendor may charge a $100.00 cancelation fee per item."
+
+2. **Damage Deposit**
+   - "I understand this rental item is provided by a 3rd party independent vendor who may charge a damage security deposit to rent this item. Damage security deposits are refunded at the end of the rental if myself or my guests do not damage the rental item. Normal wear and minor scratches do not constitute damage. Refusal to pay the vendor's required damage security deposit prior to usage may result in forfeiture of rental time and cancellation of the rental without refund."
+
+3. **Liability Acknowledgement**
+   - "I understand that if myself or one of my guests cause damage to the rental item, I will be charged for the repairs to the item. Furthermore, I understand that the yacht crew is not responsible for the safekeeping of this item or for the instructions on how to use the item. I am renting this item from a 3rd party vendor that is unrelated to my charter vessel or its crew."
+
+4. **Card and Charge Authorization**
+   - "I authorize Miami Yachting Group LLC to charge my credit/debit card in the amount shown for this booking. I will bring this card with me in person the day of my rental for verification as well as my matching ID. I understand that if I do not bring this card with me in person and my matching ID for verification purposes, my rental may be canceled by the vendor. I authorize Miami Yachting Group LLC to charge my credit/debit card in the amount shown for this booking. I will bring this card with me in person the day of my rental for verification as well as my matching ID. I understand that if I do not bring this card with me in person and my matching ID for verification purposes, my rental may be canceled by the vendor."
+
+**Flow:**
+1. Customer clicks "Add to Cart" on Floating Cabana or Floating Lounge Chairs
+2. Waiver modal opens (MUST complete before adding to cart)
+3. Customer checks all 4 boxes
+4. NO name fields required (simpler than other waivers)
+5. THEN item adds to cart
+6. At checkout, waiver data is emailed to support@miamiyachting.com
+
+---
+
+### **3. Jet Ski Acknowledgements**
 **Products:** All jet ski rentals
 
 **Important:** This waiver must be completed BEFORE payment is processed.
