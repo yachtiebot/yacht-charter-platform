@@ -5,6 +5,10 @@ import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import DarkFooter from '@/components/DarkFooter';
 import productsData from '@/lib/store/products-complete.json';
+import CharcuterieCustomizationModal, { CharcuterieCustomization } from '@/components/modals/CharcuterieCustomizationModal';
+import WrapCustomizationModal, { WrapCustomization } from '@/components/modals/WrapCustomizationModal';
+import SpiralCustomizationModal, { SpiralCustomization } from '@/components/modals/SpiralCustomizationModal';
+import DippingSauceModal, { DippingSauceCustomization } from '@/components/modals/DippingSauceModal';
 
 // Available platter images (rotating through these 10 images for all products)
 const platterImages = [
@@ -84,6 +88,10 @@ export default function CateringPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: number}>({});
   const { addItem } = useCart();
+  
+  // Modal states
+  const [activeModal, setActiveModal] = useState<string | null>(null);
+  const [pendingProduct, setPendingProduct] = useState<any>(null);
 
   const filteredProducts = selectedCategory === 'all' 
     ? cateringProducts 
@@ -91,6 +99,101 @@ export default function CateringPage() {
 
   const handleSizeSelect = (productId: string, sizeIndex: number) => {
     setSelectedSizes(prev => ({ ...prev, [productId]: sizeIndex }));
+  };
+
+  // Check if product needs customization
+  const needsCustomization = (productId: string) => {
+    return ['gourmet-wraps', 'gourmet-spirals', 'large-charcuterie', 'med-charcuterie', 'chicken-wings', 'chicken-tenders'].includes(productId);
+  };
+
+  // Handle add to cart - open modal if needed
+  const handleAddToCart = (product: any, selectedOption: any) => {
+    const productBase = product.id.split('-')[0]; // e.g., 'gourmet' from 'gourmet-wraps'
+    
+    if (productBase === 'gourmet' && product.id === 'gourmet-wraps') {
+      setPendingProduct({ ...product, selectedOption });
+      setActiveModal('wraps');
+    } else if (productBase === 'gourmet' && product.id === 'gourmet-spirals') {
+      setPendingProduct({ ...product, selectedOption });
+      setActiveModal('spirals');
+    } else if (product.id.includes('charcuterie')) {
+      setPendingProduct({ ...product, selectedOption });
+      setActiveModal('charcuterie');
+    } else if (product.id === 'chicken-wings' || product.id === 'chicken-tenders') {
+      setPendingProduct({ ...product, selectedOption });
+      setActiveModal('sauce');
+    } else {
+      // No customization needed - add directly
+      addItem({
+        id: `${product.id}-${selectedOption.value}`,
+        name: `${product.name} (${selectedOption.label})`,
+        price: selectedOption.price,
+        category: 'catering',
+        minQuantity: product.minQuantity || 1,
+        image: product.image
+      });
+    }
+  };
+
+  // Modal submit handlers
+  const handleCharcuterieSubmit = (customization: CharcuterieCustomization) => {
+    if (!pendingProduct) return;
+    addItem({
+      id: `${pendingProduct.id}-${pendingProduct.selectedOption.value}`,
+      name: `${pendingProduct.name} (${pendingProduct.selectedOption.label})`,
+      price: pendingProduct.selectedOption.price,
+      category: 'catering',
+      minQuantity: pendingProduct.minQuantity || 1,
+      image: pendingProduct.image,
+      customization
+    });
+    setActiveModal(null);
+    setPendingProduct(null);
+  };
+
+  const handleWrapSubmit = (customization: WrapCustomization) => {
+    if (!pendingProduct) return;
+    addItem({
+      id: `${pendingProduct.id}-${pendingProduct.selectedOption.value}`,
+      name: `${pendingProduct.name} (${pendingProduct.selectedOption.label})`,
+      price: pendingProduct.selectedOption.price,
+      category: 'catering',
+      minQuantity: pendingProduct.minQuantity || 1,
+      image: pendingProduct.image,
+      customization
+    });
+    setActiveModal(null);
+    setPendingProduct(null);
+  };
+
+  const handleSpiralSubmit = (customization: SpiralCustomization) => {
+    if (!pendingProduct) return;
+    addItem({
+      id: `${pendingProduct.id}-${pendingProduct.selectedOption.value}`,
+      name: `${pendingProduct.name} (${pendingProduct.selectedOption.label})`,
+      price: pendingProduct.selectedOption.price,
+      category: 'catering',
+      minQuantity: pendingProduct.minQuantity || 1,
+      image: pendingProduct.image,
+      customization
+    });
+    setActiveModal(null);
+    setPendingProduct(null);
+  };
+
+  const handleSauceSubmit = (customization: DippingSauceCustomization) => {
+    if (!pendingProduct) return;
+    addItem({
+      id: `${pendingProduct.id}-${pendingProduct.selectedOption.value}`,
+      name: `${pendingProduct.name} (${pendingProduct.selectedOption.label})`,
+      price: pendingProduct.selectedOption.price,
+      category: 'catering',
+      minQuantity: pendingProduct.minQuantity || 1,
+      image: pendingProduct.image,
+      customization
+    });
+    setActiveModal(null);
+    setPendingProduct(null);
   };
 
   return (
@@ -208,17 +311,10 @@ export default function CateringPage() {
 
                   {/* Add to Cart Button */}
                   <button
-                    onClick={() => addItem({
-                      id: `${product.id}-${selectedOption.value}`,
-                      name: `${product.name} (${selectedOption.label})`,
-                      price: selectedOption.price,
-                      category: 'catering',
-                      minQuantity: product.minQuantity || 1,
-                      image: product.image
-                    })}
+                    onClick={() => handleAddToCart(product, selectedOption)}
                     className="w-full bg-white border border-[#0f0f0f] text-[#0f0f0f] py-3 text-sm uppercase tracking-wider hover:bg-[#c4a265] hover:border-[#c4a265] hover:text-white transition-all duration-300"
                   >
-                    Add to Cart
+                    {needsCustomization(product.id) ? 'Customize & Add' : 'Add to Cart'}
                   </button>
                 </div>
               </div>
@@ -249,6 +345,43 @@ export default function CateringPage() {
       </div>
 
       <DarkFooter />
+
+      {/* Customization Modals */}
+      {pendingProduct && (
+        <>
+          <CharcuterieCustomizationModal
+            isOpen={activeModal === 'charcuterie'}
+            onClose={() => { setActiveModal(null); setPendingProduct(null); }}
+            onSubmit={handleCharcuterieSubmit}
+            productName={pendingProduct.name}
+            productPrice={pendingProduct.selectedOption?.price || 0}
+          />
+          
+          <WrapCustomizationModal
+            isOpen={activeModal === 'wraps'}
+            onClose={() => { setActiveModal(null); setPendingProduct(null); }}
+            onSubmit={handleWrapSubmit}
+            productName={pendingProduct.name}
+            productPrice={pendingProduct.selectedOption?.price || 0}
+          />
+          
+          <SpiralCustomizationModal
+            isOpen={activeModal === 'spirals'}
+            onClose={() => { setActiveModal(null); setPendingProduct(null); }}
+            onSubmit={handleSpiralSubmit}
+            productName={pendingProduct.name}
+            productPrice={pendingProduct.selectedOption?.price || 0}
+          />
+          
+          <DippingSauceModal
+            isOpen={activeModal === 'sauce'}
+            onClose={() => { setActiveModal(null); setPendingProduct(null); }}
+            onSubmit={handleSauceSubmit}
+            productName={pendingProduct.name}
+            productPrice={pendingProduct.selectedOption?.price || 0}
+          />
+        </>
+      )}
     </main>
   );
 }
