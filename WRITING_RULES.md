@@ -8,8 +8,9 @@
 - Epitome
 - New level / Next level
 - Take it to the next level
+- **Balloons** (illegal on boats in Miami marinas - never mention or show in yacht/boat context)
 
-These words are corporate clichés that undermine authentic luxury messaging.
+These words are corporate clichés that undermine authentic luxury messaging. Balloons are banned for legal/environmental reasons.
 
 ## ✅ ALTERNATIVE APPROACHES
 

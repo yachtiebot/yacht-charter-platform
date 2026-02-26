@@ -33,16 +33,18 @@ const packages = [
   {
     id: 'last-sail',
     name: 'Last Sail Before The Veil',
-    subtitle: 'The Classic Package',
+    subtitle: 'The Fun Package',
     price: 249.99,
     description: 'A comprehensive celebration suite with everything needed for an unforgettable send-off. Includes premium decorations, coordinated accessories, and keepsake items.',
     includes: [
-      'Everything from Vibe Package',
-      'Premium banner collection',
-      'Decorative balloons',
-      'Champagne flutes set',
-      'Photo props collection',
-      'Keepsake photo album'
+      'Last Sail Before The Veil banner',
+      'Bride themed cups',
+      'Bride veil',
+      'Bride themed straws',
+      'Bride tribe bracelets',
+      'Bachelorette sailor hats',
+      'Engagement ring float',
+      'Bride captain hat'
     ],
     images: [
       '/images/products/bachelorette/last_sail_before_the_veil.jpeg',
@@ -53,16 +55,16 @@ const packages = [
   {
     id: 'something-blue',
     name: 'Something Blue Before I Do',
-    subtitle: 'The Premium Package',
+    subtitle: 'The Splurge Package',
     price: 299.99,
     description: 'The ultimate bachelorette experience. Curated for those seeking a truly exceptional celebration with elevated touches and memorable moments.',
     includes: [
-      'Everything from Classic Package',
-      'Luxury gift bags for guests',
-      'Premium party favors',
-      'Customized playlist consultation',
-      'Professional photographer (1 hour)',
-      'Champagne toast setup'
+      'Something Blue Before I Do banner',
+      'Bride themed cups for onboard drinks',
+      'Bride to be crown with sash and veil',
+      'Engagement ring float for water photos',
+      'Ribbon themed straws',
+      'Bachelorette boat day accessories for entire group (travel case, sunglasses, scrunchie, keepsake bracelet, hair clip)'
     ],
     images: [
       '/images/products/bachelorette/somethingbluebeforeido.jpg',
