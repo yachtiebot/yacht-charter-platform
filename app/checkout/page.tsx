@@ -69,7 +69,7 @@ export default function CheckoutPage() {
           <h1 className="font-serif text-4xl font-light italic mb-4" style={{ fontFamily: 'var(--font-cormorant)' }}>
             Your cart is empty
           </h1>
-          <Link href="/Miami-Yacht-Charter-Catering" className="text-[#c4a265] hover:underline text-sm uppercase tracking-wider">
+          <Link href="/miami-yacht-charter-catering" className="text-[#c4a265] hover:underline text-sm uppercase tracking-wider">
             Browse Catering
           </Link>
         </div>
@@ -95,7 +95,7 @@ export default function CheckoutPage() {
                 Minimum 2 platters required • You have {platterCount}
               </p>
               <Link 
-                href="/Miami-Yacht-Charter-Catering"
+                href="/miami-yacht-charter-catering"
                 className="text-[#c4a265] hover:text-[#0f0f0f] transition-colors"
                 aria-label="Add more items"
               >

@@ -24,7 +24,7 @@ export default function AddOnsPage() {
       title: 'Catering',
       subtitle: 'Culinary Excellence',
       description: 'Artisanal platters and gourmet cuisine, curated for discerning palates',
-      href: '/Miami-Yacht-Charter-Catering',
+      href: '/miami-yacht-charter-catering',
       image: '/images/products/catering/large_platter.jpg',
       accent: 'Savor',
       number: '01'
@@ -34,7 +34,7 @@ export default function AddOnsPage() {
       title: 'Water Toys',
       subtitle: 'Aquatic Adventures',
       description: 'Premium water sports equipment and floating luxury for the ultimate ocean experience',
-      href: '/Miami-Yacht-Charter-Water-Toys',
+      href: '/miami-yacht-charter-water-toys',
       image: '/images/products/water-toys/hero.jpg',
       accent: 'Explore',
       number: '02'
@@ -44,7 +44,7 @@ export default function AddOnsPage() {
       title: 'Flowers',
       subtitle: 'Botanical Elegance',
       description: 'Bespoke floral arrangements that transform your yacht into a floating garden',
-      href: '/Miami-Yacht-Charter-Flowers',
+      href: '/miami-yacht-charter-flowers',
       image: '/images/products/flowers/rose-pave.png',
       accent: 'Adorn',
       number: '03'
@@ -54,7 +54,7 @@ export default function AddOnsPage() {
       title: 'Bachelorette',
       subtitle: 'Celebration Suites',
       description: 'Curated packages for unforgettable moments before the veil',
-      href: '/Miami-Yacht-Charter-Bachelorette-Packages',
+      href: '/miami-yacht-charter-bachelorette-packages',
       image: '/images/products/bachelorette/lasttoastonthecoast.jpg',
       accent: 'Celebrate',
       number: '04'
