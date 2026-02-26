@@ -163,9 +163,7 @@ export default function AddOnsPage() {
               lineHeight: 1.6,
               letterSpacing: '0.01em'
             }}>
-              Exceptional additions for those seeking to
-              <br className="hidden md:block" />
-              upgrade their yacht charter experience.
+              Exceptional additions for those seeking to upgrade their yacht charter experience.
             </p>
 
             {/* Stats */}
