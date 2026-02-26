@@ -67,7 +67,7 @@ export default function AddOnsPage() {
       title: 'Rare Vintage & Premium Alcohol',
       subtitle: 'Spirits & Engraving',
       description: 'Exclusive high-end alcohol delivery with custom bottle engraving. Savor the finest spirits, each bottle personalized with your message.',
-      image: '/images/Miami_Yachting_Company_philosophy-yacht.jpg',
+      image: '/images/premium-addons/Miami_Yachting_Company_premium_alcohol.jpg',
       accent: 'Inquire',
       number: '05'
     },
@@ -76,7 +76,7 @@ export default function AddOnsPage() {
       title: 'Luxury Transportation',
       subtitle: 'Arrive in Style',
       description: 'High-end vehicles including luxury sedans and limo buses. Every detail arranged for a seamless, stress-free travel experience.',
-      image: '/images/Miami_Yachting_Company_experiences-corporate.jpg',
+      image: '/images/premium-addons/Miami_Yachting_Company_luxury_transport.jpg',
       accent: 'Inquire',
       number: '06'
     },
@@ -85,7 +85,7 @@ export default function AddOnsPage() {
       title: 'Private Chef Services',
       subtitle: 'Culinary Artistry',
       description: 'Elite chefs crafting custom menus tailored to your preferences. From multi-course dinners to delightful brunches aboard your yacht.',
-      image: '/images/Miami_Yachting_Company_experiences-sightseeing.jpg',
+      image: '/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg',
       accent: 'Inquire',
       number: '07'
     },
@@ -94,7 +94,7 @@ export default function AddOnsPage() {
       title: 'Bespoke Catering Delivery',
       subtitle: 'Restaurant Quality',
       description: 'Gourmet dishes from Miami\'s top restaurants, delivered fresh to your yacht. Culinary excellence without an onboard chef.',
-      image: '/images/products/catering/MYC+platter.jpg',
+      image: '/images/Miami_Yachting_Company_catering_platter.jpg',
       accent: 'Inquire',
       number: '08'
     },
@@ -103,7 +103,7 @@ export default function AddOnsPage() {
       title: 'High-End Sushi Delivery',
       subtitle: 'Japanese Excellence',
       description: 'Meticulously crafted rolls and sashimi from the freshest ingredients. The art of Japanese cuisine delivered to open seas.',
-      image: '/images/Miami_Yachting_Company_experiences-large-groups.jpg',
+      image: '/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg',
       accent: 'Inquire',
       number: '09'
     },
@@ -112,7 +112,7 @@ export default function AddOnsPage() {
       title: 'Onboard Masseuse',
       subtitle: 'Floating Spa',
       description: 'Professional massage treatments tailored to your needs. Melt away stress while drifting across Miami\'s tropical waters.',
-      image: '/images/Miami_Yachting_Company_header-yacht-image.jpg',
+      image: '/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg',
       accent: 'Inquire',
       number: '10'
     },
@@ -121,7 +121,7 @@ export default function AddOnsPage() {
       title: 'Drone Video Services',
       subtitle: 'Aerial Cinematography',
       description: 'Professional drone pilots creating cinematic masterpieces. Stunning aerial footage of your yacht surrounded by Miami\'s iconic skyline.',
-      image: '/images/Miami_Yachting_Company_yacht-rental-miami.jpg',
+      image: '/images/premium-addons/Miami_Yachting_Company_premium_watersports.jpg',
       accent: 'Inquire',
       number: '11'
     }
