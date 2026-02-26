@@ -115,11 +115,33 @@ Build standalone e-commerce for add-ons (catering, water toys, flowers, bachelor
 
 ---
 
-## 📋 Phase 1B: Jet Ski Waiver System (Days 2-3)
+## 📋 Phase 1B: Waiver Systems (Days 2-3)
 
-**Goal:** Legal waiver with e-signature required BEFORE adding jet ski to cart
+**Goal:** Legal waivers with e-signature required BEFORE adding certain products to cart
 
-### 1B.1 Waiver Modal Component
+### 1B.0 Waiver Infrastructure
+- [ ] Reusable waiver modal component
+- [ ] Checkbox validation system
+- [ ] Electronic signature capture
+- [ ] Waiver data storage format
+- [ ] Cart integration for waiver items
+
+### 1B.1 Water Sports Toy Waiver (SeaBob & Flitescooter)
+- [ ] Waiver modal for SeaBob and Flitescooter only
+- [ ] 6 checkbox acknowledgements (all required):
+  1. Cancellation Policy (48hr notice, $100 fee)
+  2. Damage Deposit (3rd party vendor)
+  3. Experience Acknowledgement (physicality required)
+  4. Liability Acknowledgement (vessel damage responsibility)
+  5. Card and Charge Authorization
+  6. Rental Price ($499.99 total, $99 initial, $400 due to vendor)
+- [ ] First Name + Last Name (e-signature)
+- [ ] Block add to cart until waiver complete
+- [ ] Store waiver with cart item
+
+### 1B.2 Jet Ski Waiver System
+
+### 1B.2a Jet Ski Waiver Modal Component
 - [ ] Full-screen or large modal (important legal content)
 - [ ] Clean, professional design
 - [ ] Scrollable content area
@@ -132,20 +154,20 @@ Build standalone e-commerce for add-ons (catering, water toys, flowers, bachelor
   6. Credit card and ID acknowledgement
   7. Third party vendor liability release
 
-### 1B.2 Electronic Signature
+### 1B.2b Electronic Signature
 - [ ] First Name input (required)
 - [ ] Last Name input (required)
 - [ ] Timestamp capture
 - [ ] "I Agree & Add to Cart" button (disabled until all complete)
 - [ ] Validation: all boxes checked + name entered
 
-### 1B.3 Florida Boating License Requirement
+### 1B.2c Florida Boating License Requirement
 - [ ] Display info in waiver: "Born after Jan 1, 1988 = license required"
 - [ ] Link to https://checkinmyc.com/PWCLicense
 - [ ] Store waiver acceptance with cart item
 - [ ] Flag item as requiring license notification
 
-### 1B.4 Cart Integration
+### 1B.3 Cart Integration (Both Waivers)
 - [ ] Waiver modal opens BEFORE adding jet ski to cart
 - [ ] Block add to cart until waiver signed
 - [ ] Store waiver data with cart item:

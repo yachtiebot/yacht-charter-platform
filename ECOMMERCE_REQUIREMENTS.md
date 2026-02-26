@@ -126,7 +126,48 @@
 
 ## 📝 **Waiver Forms Required**
 
-### **1. Jet Ski Acknowledgements**
+### **1. Water Sports Toy Acknowledgement**
+**Products:** SeaBob, Flitescooter (only these two)
+
+**Important:** This waiver must be completed BEFORE payment is processed.
+
+**Fields:**
+
+**Name (required):**
+- First Name (text input)
+- Last Name (text input)
+
+**All checkboxes (required):**
+
+1. **Cancellation Policy**
+   - "I understand this item is special ordered and delivered to my rental yacht, because of the custom nature of this delivery, 48 hours cancellation notice prior to my rental date is required for a refund. If I cancel less than 48 hours from my rental date, the rental vendor may charge a $100.00 cancelation fee per item."
+
+2. **Damage Deposit**
+   - "I understand this rental item is provided by a 3rd party independent vendor who may charge a damage security deposit to rent this item. Damage security deposits are refunded at the end of the rental if myself or my guests do not damage the rental item. Normal wear and minor scratches do not constitute damage. Refusal to pay the vendor's required damage security deposit prior to usage may result in forfeiture of rental time and cancellation of the rental without refund."
+
+3. **Experience Acknowledgement**
+   - "I understand that the usage of this item requires some limited knowledge. I understand there may be a level of physicality required on my part when using this rental item. Not being able to 'stay on' the rental item does not constitute grounds for a refund."
+
+4. **Liability Acknowledgement**
+   - "I understand that if myself or one of my guests cause damage to the charter vessel with the rental item, I will be charged for the repairs to the charter vessel. Furthermore, I understand that the yacht crew is not responsible for the safekeeping of this item or for the instructions on how to use the item. I am renting this item from a 3rd party vendor that is unrelated to my charter vessel or its crew."
+
+5. **Card and Charge Authorization**
+   - "I authorize Miami Yachting Group LLC to charge my credit/debit card in the amount shown for this booking. I will bring this card with me in person the day of my rental for verification as well as my matching ID. I understand that if I do not bring this card with me in person and my matching ID for verification purposes, my rental may be canceled by the vendor."
+
+6. **Rental Price**
+   - "I understand the price of the rental is $499.99 per item and that my initial payment of $99.00 per item will be deducted from my final balance, leaving me with a total due of $400.00 per item which is payable directly to the water toy vendor."
+
+**Flow:**
+1. Customer clicks "Add to Cart" on SeaBob or Flitescooter
+2. Waiver modal opens (MUST complete before adding to cart)
+3. Customer checks all 6 boxes
+4. Customer types full name (electronic signature)
+5. THEN item adds to cart
+6. At checkout, waiver data is emailed to support@miamiyachting.com
+
+---
+
+### **2. Jet Ski Acknowledgements**
 **Products:** All jet ski rentals
 
 **Important:** This waiver must be completed BEFORE payment is processed.
