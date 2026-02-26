@@ -123,7 +123,10 @@ export default function Navigation() {
           
           <LanguageSwitcher isTransparent={isTransparent} />
           
-          <CartIcon />
+          {/* Cart Icon with drop shadow when transparent */}
+          <div style={isTransparent ? { filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.6)) drop-shadow(0 1px 3px rgba(0,0,0,0.5))' } : {}}>
+            <CartIcon />
+          </div>
           
           <div className="hidden xl:flex items-center gap-6">
             <a
@@ -178,7 +181,7 @@ export default function Navigation() {
         </button>
       </div>
       
-      {/* Mobile Menu Dropdown - Centered Editorial Style */}
+      {/* Mobile Menu Dropdown - Synced with Desktop Menu */}
       <div className={`lg:hidden overflow-hidden transition-all duration-300 ${
         isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
       } bg-[#faf9f7]`}>
@@ -189,47 +192,23 @@ export default function Navigation() {
             className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Fleet
+            Rent a Yacht in Miami
           </Link>
           <Link
-            href="/locations"
+            href="/Miami-Yacht-Charter-Add-Ons"
             onClick={() => setIsMobileMenuOpen(false)}
             className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Locations
+            Add Ons
           </Link>
           <Link
-            href="/#experiences"
+            href="/large-groups"
             onClick={() => setIsMobileMenuOpen(false)}
             className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Experiences
-          </Link>
-          <Link
-            href="/add-ons"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
-            style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
-          >
-            Add-Ons
-          </Link>
-          <Link
-            href="/catering"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
-            style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
-          >
-            Catering
-          </Link>
-          <Link
-            href="/offers"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
-            style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
-          >
-            Offers
+            Large Group Charters
           </Link>
           <Link
             href="/testimonials"
@@ -237,7 +216,7 @@ export default function Navigation() {
             className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Testimonials
+            Client Testimonials
           </Link>
           <Link
             href="/contact"
@@ -245,7 +224,7 @@ export default function Navigation() {
             className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            Contact
+            Contact Us
           </Link>
           <Link
             href="/about"
@@ -253,7 +232,7 @@ export default function Navigation() {
             className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
           >
-            About
+            About Us
           </Link>
           
           <div className="pt-6 space-y-4">
