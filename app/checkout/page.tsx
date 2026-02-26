@@ -172,7 +172,7 @@ export default function CheckoutPage() {
               <div className="pt-6 border-t border-[#e5e5e5]/50">
                 <h3 className="editorial-label text-[#0f0f0f] mb-4">Charter Details</h3>
                 
-                <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="space-y-6 mb-6">
                   <div>
                     <label className="block editorial-label text-[#0f0f0f] mb-2">
                       Charter Date <span className="text-[#c4a265]">*</span>
@@ -194,8 +194,13 @@ export default function CheckoutPage() {
                     <input
                       type="text"
                       value={formData.bookingNumber}
-                      onChange={(e) => setFormData({...formData, bookingNumber: e.target.value})}
-                      placeholder="e.g. MYC-12345"
+                      onChange={(e) => {
+                        // Only allow numbers, max 8 digits
+                        const value = e.target.value.replace(/\D/g, '').slice(0, 8);
+                        setFormData({...formData, bookingNumber: value});
+                      }}
+                      placeholder="e.g. 12345678"
+                      maxLength={8}
                       className="w-full px-4 py-3 border border-[#e5e5e5] focus:border-[#c4a265] focus:ring-0 transition-colors"
                     />
                     {errors.bookingNumber && <p className="text-xs text-[#c4a265] mt-1">{errors.bookingNumber}</p>}
