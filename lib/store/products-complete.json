@@ -4,77 +4,27 @@
       "name": "Flyboard",
       "price": 900,
       "description": "Shoot into the sky with water jets rocketing from your boots! Includes an instructor that will come to the yacht for a flyboarding session.Flyboard activity is $450 per hour to add on with a 2 hour minimum for instruction, training and usage.Flyboard activity is provided by an independent vendor.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1616100764299-ZO67QOVYZDZ85C0BSN6N/Flyboard-2.jpg",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_flyboard_1.jpg",
       "category": "water-toys",
       "options": [
         {
-          "label": "2",
+          "label": "2 Hours",
           "value": "2",
           "price": 900
         },
         {
-          "label": "3",
+          "label": "3 Hours",
           "value": "3",
           "price": 1350
         },
         {
-          "label": "4",
+          "label": "4 Hours",
           "value": "4",
           "price": 1800
-        },
-        {
-          "label": "5",
-          "value": "5",
-          "price": 2250
-        },
-        {
-          "label": "6",
-          "value": "6",
-          "price": 2700
-        },
-        {
-          "label": "2",
-          "value": "2",
-          "price": 70
-        },
-        {
-          "label": "3",
-          "value": "3",
-          "price": 1199
-        },
-        {
-          "label": "4",
-          "value": "4",
-          "price": 1399
-        },
-        {
-          "label": "5",
-          "value": "5",
-          "price": 1599
-        },
-        {
-          "label": "6",
-          "value": "6",
-          "price": 1799
-        },
-        {
-          "label": "7",
-          "value": "7",
-          "price": 1999
-        },
-        {
-          "label": "8",
-          "value": "8",
-          "price": 2199
-        },
-        {
-          "label": "50 Prestige",
-          "value": "50 Prestige",
-          "price": 79
         }
       ],
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1616100764299-ZO67QOVYZDZ85C0BSN6N/Flyboard-2.jpg",
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_flyboard_1.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1616100764304-63RJM3E4ZBEJ1UQEYQ36/31fda75b-e087-430f-bd4a-5790901d66c7.JPG",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1661794503118-2V8D7OMUROY25JGCIJWM/flyboard-in-Miami-Florida.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1661794583929-F6X893U128WVIVMDBK27/flyboard_miami.jpeg"
@@ -84,47 +34,27 @@
       "name": "Water Sports | Water Skiing | Tubing | Wake Boarding",
       "price": 600,
       "description": "A dedicated watersports boat may be arranged to meet the yacht during your charter for additional on water activities. The watersports boat is operated independently and accommodates up to six guests, with activities that may include wakeboarding, water skiing, and tubing. Water sports boat is $300 per hour to add on with a 2 hour minimum.Water sports boat is provided by an independent vendor.Availability, activities, and participation are subject to the watersports provider’s requirements and conditions.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/9c61260a-96ff-4418-8553-5fec9e7d684d/miami_yachting_company_water_sports_toys_activities4.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_water_sports___water_skiing___tubing___wake_boarding_1.jpg",
       "category": "water-toys",
       "options": [
         {
-          "label": "2",
+          "label": "2 Hours",
           "value": "2",
           "price": 600
         },
         {
-          "label": "3",
+          "label": "3 Hours",
           "value": "3",
           "price": 900
         },
         {
-          "label": "4",
+          "label": "4 Hours",
           "value": "4",
           "price": 1200
-        },
-        {
-          "label": "5",
-          "value": "5",
-          "price": 1500
-        },
-        {
-          "label": "6",
-          "value": "6",
-          "price": 1800
-        },
-        {
-          "label": "7",
-          "value": "7",
-          "price": 2100
-        },
-        {
-          "label": "8",
-          "value": "8",
-          "price": 2300
         }
       ],
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/9c61260a-96ff-4418-8553-5fec9e7d684d/miami_yachting_company_water_sports_toys_activities4.png",
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_water_sports___water_skiing___tubing___wake_boarding_1.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/ba4c2148-499a-4794-aced-2e479128f22c/miami_yachting_company_water_sports_toys_activities1.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1616100764247-2AA498SHEROC7WY7PT39/image.png",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/74b47a04-8d93-4728-a735-effeb0ac0d37/miami_yachting_company_water_sports_toys_activities3.jpg",
@@ -138,7 +68,7 @@
       "name": "Jet Ski",
       "price": 320,
       "description": "Jet skis may be arranged to meet your yacht while anchored, offering a fun way to explore Miami’s local waterways. Access is typically from the yacht’s swim platform, subject to conditions at the time of delivery. Jet ski add ons are booked in advance and are subject to availability.Pricing is as follows:One jet ski is priced at 160 dollars per hour with a two hour minimum booking.Two jet skis are priced at 160 dollars per hour each with a one hour minimum booking.Jet skis are provided and delivered by an independent third party vendor. The vendor requires a separate refundable damage security deposit, collected at the time of delivery. A maximum of two jet skis is permitted per vessel at any time.Under Florida law, individuals born on or after January 1, 1988 must have successfully completed a National Association of State Boating Law Administrators approved boating safety course, or hold an accepted course equivalency or temporary certificate, and carry a valid boating education ID while operating a personal watercraft.Get your boating license to drive a jet ski here: PWC License",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1616100764204-85WEJ6WZ3K77C506AZNH/jetski.jpg",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_jet_ski_1.jpg",
       "category": "water-toys",
       "options": [
         {
@@ -208,14 +138,14 @@
         }
       ],
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1616100764204-85WEJ6WZ3K77C506AZNH/jetski.jpg"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_jet_ski_1.jpg"
       ]
     },
     {
       "name": "Seabob",
       "price": 99,
       "description": "Ride on the surface or emerge under water with these luxury under water jet skis (SEABOBs). Easy to ride for young and old. Recommended age is 12+. Seabob rentals start at $499.00 per Seabob, reserve yours today for $99.00 down per Seabob. Two Seabobs are recommended  for a group of 4 or more people that want to participate in this water activity. Comes fully charged for usage, batteries last for approximately 1-2 hours depending on riders style. Charger also included. The rental duration of this toy is for the length of your entire charter.Items are provided by an independent 3rd party vendor, 48 hours notice is required prior to your booking date to rent this item. Vendor will collect your remaining balance of $400.00 per Seabob prior to your rental date.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1706877116503-L38MOLV5LAAK8W0WBGGN/Miami_Yachting_Company_add_on_yacht_toys4.jpeg",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_seabob_1.jpg",
       "category": "water-toys",
       "options": [
         {
@@ -230,7 +160,7 @@
         }
       ],
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1706877116503-L38MOLV5LAAK8W0WBGGN/Miami_Yachting_Company_add_on_yacht_toys4.jpeg",
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_seabob_1.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1706877112307-XNIT7P39MKON2QILH24B/Miami_Yachting_Company_add_on_yacht_toys19.jpeg.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1706877114125-LH67AQYBIXZXMRY9WUM9/Miami_Yachting_Company_add_on_yacht_toys13.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1706877114125-WGSHU7WE5JQTEAYMV9NW/Miami_Yachting_Company_add_on_yacht_toys14.jpeg",
@@ -242,7 +172,7 @@
       "name": "Flitescooter",
       "price": 99,
       "description": "Elevate your yacht charter experience and add a Flitescooter board! Instructor available upon request for an additional charge. Flitescooter board rental starts at $499.00 per board, reserve yours today for $99.00 down per board. Comes fully charged for usage, batteries last for approximately 1-2 hours depending on riders style. Charger also included. Max load 225lbs. The rental duration of this toy is for the length of your entire charter.Items are provided by an independent 3rd party vendor, 48 hours notice is required prior to your booking date to rent this item. Vendor will collect your remaining balance of $400.00 per board prior to your rental date.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1709932412502-9F55BTG1PRJJXQGRCAA8/flitescooter2.jpeg",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_flitescooter_1.jpg",
       "category": "water-toys",
       "options": [
         {
@@ -252,7 +182,7 @@
         }
       ],
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1709932412502-9F55BTG1PRJJXQGRCAA8/flitescooter2.jpeg",
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_flitescooter_1.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1709932411877-8S96PK2VVNSJHPB5LE4B/flitescooter3.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1709932411888-TYKDBISN8M90IPI7E7KP/Flitescooter.jpeg"
       ]
@@ -261,7 +191,7 @@
       "name": "Floating Cabana",
       "price": 449,
       "description": "A floating Cabana, the perfect add-on for unforgettable relaxation and luxury. Picture yourself lounging in the sun, a gentle breeze brushing over your skin, while you float effortlessly behind your yacht. This spacious and stable floating oasis offers plush seating and ample space for sunbathing, sipping refreshing drinks, or enjoying a gourmet picnic with friends and family. Whether it's a lively gathering or an intimate moment, the Floating Cabana provides a serene and private escape right on the water, making it ideal for celebrating special occasions or simply indulging in pure bliss.Anchored just behind your yacht, the cabana lets you immerse yourself in the natural splendor of the ocean while enjoying the privacy and comfort of your own floating retreat. Designed with high-quality materials for a premium experience, the Floating Cabana ensures safety and stability, giving you peace of mind as you relax. Don’t miss out on this extraordinary add-on—reserve your Floating Cabana today and make your yacht charter an unforgettable experience. Indulge in luxury, embrace tranquility, and discover the ultimate floating lounge.Items are provided by an independent 3rd party vendor, 48 hours notice is required prior to your booking date to rent this item.Cabanas rentals start at $349.00 per cabana for delivery and setup.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721567901072-9OQYYJ7FZ1GD19Z1MPIS/Miami_Yachting_Company_floating_cabana2.jpg",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_floating_cabana_1.jpg",
       "category": "water-toys",
       "options": [
         {
@@ -276,7 +206,7 @@
         }
       ],
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721567901072-9OQYYJ7FZ1GD19Z1MPIS/Miami_Yachting_Company_floating_cabana2.jpg",
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_floating_cabana_1.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721566409673-LXZHUUSJZT84CTC2QFK4/Miami_Yachting_Company_floating_cabana3.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721566409829-ADEDHL2J4IHPZYJJB06X/Miami_Yachting_Company_floating_cabana4.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721566409239-3MGLLRWAMYXWYY4LPR53/Miami_Yachting_Company_floating_cabana1.jpg"
@@ -286,7 +216,7 @@
       "name": "Floating Lounge Chair",
       "price": 198,
       "description": "Add on a Floating Lounge Chair, the perfect addition for ultimate relaxation. Imagine yourself reclining in a luxurious lounge chair, the gentle sway of the ocean beneath you, as you float peacefully behind your yacht. The floating lounge chairs are designed for comfort and style, providing an ideal spot for sunbathing, enjoying a refreshing drink, or sharing a conversation with friends and family. Perfect for lively gatherings or tranquil escapes, they offer a unique, private sanctuary on the water, making any occasion special.Positioned just behind your yacht, the Floating Lounge Chair allows you to fully immerse yourself in the beauty of the ocean while enjoying the privacy and comfort of your own floating haven. Crafted from high-quality materials for a premium experience, these lounge chairs ensure stability and safety, letting you relax with complete peace of mind. Don’t miss out on this luxurious add-on—reserve your Floating Lounge Chair today and elevate your yacht charter to an extraordinary experience.Items are provided by an independent 3rd party vendor, 48 hours notice is required prior to your booking date to rent this item.Each chair is $99.00 and there is a two chair minimum to rent for delivery and setup.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721567332134-1KCS2MFO17DC5L7TQIXS/Miami_Yachting_Company_lounge_chairs1.jpg",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_floating_lounge_chair_1.jpg",
       "category": "water-toys",
       "options": [
         {
@@ -306,7 +236,7 @@
         }
       ],
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721567332134-1KCS2MFO17DC5L7TQIXS/Miami_Yachting_Company_lounge_chairs1.jpg",
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/water-toys/Miami_Yachting_Company_floating_lounge_chair_1.jpg",
         "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721567332418-HLVOSY5HKADEGEYP8SG7/Miami_Yachting_Company_lounge_chairs2.jpg"
       ]
     }
@@ -330,10 +260,10 @@
         }
       ],
       "description": "Enhance your yacht's ambiance with our exquisite floral arrangement featuring luxurious roses. This special package showcases a selection of premium roses artfully arranged in a vase, adding a touch of timeless beauty to your onboard experience.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721239727413-EQ6YB30LCXLHVC8HJRNL/rose+pave.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_rose_pave_1.jpg",
       "category": "flowers",
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721239727413-EQ6YB30LCXLHVC8HJRNL/rose+pave.png"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_rose_pave_1.jpg"
       ]
     },
     {
@@ -354,10 +284,10 @@
         }
       ],
       "description": "Immerse your yacht in exotic charm with a stunning array of purple tropical orchids, expertly arranged in an elegant glass vase. This exclusive floral collection brings a touch of tropical luxury to your onboard experience, allowing you to savor the vibrant beauty of purple orchids amid the lavish setting of your yacht.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721239899758-9R0MTQNI6G1M7QIM0FLB/tropical+paradise.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_tropical_paradise_1.jpg",
       "category": "flowers",
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721239899758-9R0MTQNI6G1M7QIM0FLB/tropical+paradise.png"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_tropical_paradise_1.jpg"
       ]
     },
     {
@@ -378,10 +308,10 @@
         }
       ],
       "description": "Exclusive floral arrangement featuring exotic orchids. This bespoke package includes a stunning display of fresh orchids meticulously arranged in an elegant vase, perfectly curated to complement the luxury of your yacht setting.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721240115543-WCE5TMJS3M2MIRC30TZH/bloomingorchid.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_blooming_orchid_1.jpg",
       "category": "flowers",
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721240115543-WCE5TMJS3M2MIRC30TZH/bloomingorchid.png"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_blooming_orchid_1.jpg"
       ]
     },
     {
@@ -402,10 +332,10 @@
         }
       ],
       "description": "Enliven your yacht’s spaces with a delightful assortment of garden flowers beautifully arranged in a long, captivating platter style. This unique arrangement showcases a vibrant selection of seasonal blooms, meticulously curated to create a stunning centerpiece for your tabletop.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721240366539-N8IDDK2QE102H78IAU80/bloominggarden.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_blooming_garden_1.jpg",
       "category": "flowers",
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721240366539-N8IDDK2QE102H78IAU80/bloominggarden.png"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_blooming_garden_1.jpg"
       ]
     },
     {
@@ -422,10 +352,10 @@
         }
       ],
       "description": "Enhance your yacht's atmosphere with a sleek and contemporary design inspired by white orchids. This exclusive arrangement features minimalist elegance, showcasing pristine white orchids in a stylish tabletop display. Immerse yourself in the sophisticated beauty of this modern creation within your yacht's luxurious setting.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721240562957-ELHJMGP1S7JQYN8TZQEB/modernsimplicity.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_modern_simplicity_1.jpg",
       "category": "flowers",
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721240562957-ELHJMGP1S7JQYN8TZQEB/modernsimplicity.png"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_modern_simplicity_1.jpg"
       ]
     },
     {
@@ -433,10 +363,10 @@
       "price": 285,
       "sizes": [],
       "description": "Immerse your yacht's atmosphere in elegance with a contemporary design featuring purple orchids, assorted garden flowers, and lush green foliage. This exclusive arrangement blends minimalist sophistication with natural beauty, showcasing a harmonious mix of colors and textures.Size: 20” Rectangle",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721240790480-ANPLXDVOSP67MNVJCYQ9/victoria+and+london.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_victoria___london_1.jpg",
       "category": "flowers",
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721240790480-ANPLXDVOSP67MNVJCYQ9/victoria+and+london.png"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_victoria___london_1.jpg"
       ]
     },
     {
@@ -453,10 +383,10 @@
         }
       ],
       "description": "Immerse your yacht in artistic elegance with our minimalist, floating orchid arrangement. This unique display, designed as a long tabletop centerpiece, features delicate orchids suspended in a captivating dance above a bed of mangrove inspired bedding. Experience the tranquility and artistic allure of this exclusive creation as it enhances the ambiance of your yacht.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721240945544-CPCI9SZZ99OQ61Z4REG6/floatingorchid.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_floating_orchid_1.jpg",
       "category": "flowers",
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721240945544-CPCI9SZZ99OQ61Z4REG6/floatingorchid.png"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_floating_orchid_1.jpg"
       ]
     },
     {
@@ -477,10 +407,10 @@
         }
       ],
       "description": "Transform your yacht's ambiance with a stunning tabletop arrangement of tropical roses. This artistic display features vibrant tropical rose blooms set amidst lush green foliage, evoking a sense of exotic beauty and elegance. Experience the captivating allure of this unique creation against the backdrop of your yacht and the ocean.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721241975731-60ZVDXRJ2DCOU6EW1MI5/tropical+roses.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_tropical_roses_1.jpg",
       "category": "flowers",
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721241975731-60ZVDXRJ2DCOU6EW1MI5/tropical+roses.png"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_tropical_roses_1.jpg"
       ]
     },
     {
@@ -501,10 +431,10 @@
         }
       ],
       "description": "Enhance the ambiance of your yacht with a captivating assortment of premium roses, elegantly arranged in a designer inspired vase. This exclusive floral display adds a touch of refined elegance to your onboard experience, perfect for enjoying the beauty of roses against the backdrop of the open sea.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721242215309-AJQJO9W39L0EW8DIY814/dancingroses.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_dancing_roses_1.jpg",
       "category": "flowers",
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721242215309-AJQJO9W39L0EW8DIY814/dancingroses.png"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_dancing_roses_1.jpg"
       ]
     },
     {
@@ -525,10 +455,10 @@
         }
       ],
       "description": "Immerse your yacht in elegance with a bespoke arrangement of pristine white orchids and roses, artfully displayed in a chic vase. This exclusive floral masterpiece brings a touch of serene beauty to your onboard experience, allowing you to bask in the graceful allure of white orchids amid the tranquil luxury of your yacht setting.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721242405816-S24HF5DBPC97YA2JM13U/prettyinwhite.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_pretty_in_white_1.jpg",
       "category": "flowers",
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721242405816-S24HF5DBPC97YA2JM13U/prettyinwhite.png"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_pretty_in_white_1.jpg"
       ]
     },
     {
@@ -549,10 +479,10 @@
         }
       ],
       "description": "Immerse your yacht in exotic charm with a stunning array of purple tropical orchids, expertly arranged in an elegant glass vase. This exclusive floral collection brings a touch of tropical luxury to your onboard experience, allowing you to savor the vibrant beauty of purple orchids amid the lavish setting of your yacht.",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721242664396-ZR9GPR263ZTDVEVUNGD7/tropical+Orchid.png",
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_tropical_orchid_1.jpg",
       "category": "flowers",
       "images": [
-        "https://images.squarespace-cdn.com/content/v1/6053bbf206cd5c56562321cc/1721242664396-ZR9GPR263ZTDVEVUNGD7/tropical+Orchid.png"
+        "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_tropical_orchid_1.jpg"
       ]
     }
   ],
