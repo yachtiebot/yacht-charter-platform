@@ -165,7 +165,7 @@ export default function CateringPage() {
                 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-lg font-medium text-[#0f0f0f] mb-2 group-hover:text-[#c4a265] transition-colors">
+                  <h3 className="text-lg text-[#0f0f0f] mb-2 group-hover:text-[#c4a265] transition-colors" style={{ fontWeight: 300 }}>
                     {product.name}
                   </h3>
                   <p className="text-[#6b6b6b] text-sm mb-4" style={{ fontWeight: 300 }}>
