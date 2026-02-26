@@ -178,7 +178,8 @@ export default function CharcuterieCustomizationModal({
                 <p className="editorial-small text-[#6b6b6b]">{productName}</p>
                 <p className="editorial-label text-[#0f0f0f]">${productPrice.toFixed(2)}</p>
               </div>
-              <p className="editorial-small text-[#9ca3af]">Select 2 from each category • Scroll for all options</p>
+              <p className="editorial-small text-[#6b6b6b] mb-1">Select 2 from each category</p>
+              <p className="editorial-small text-[#9ca3af]">Scroll for options</p>
             </div>
           </div>
 

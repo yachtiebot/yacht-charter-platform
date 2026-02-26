@@ -152,7 +152,8 @@ export default function WrapCustomizationModal({
                 <p className="editorial-small text-[#6b6b6b]">{productName}</p>
                 <p className="editorial-label text-[#0f0f0f]">${productPrice.toFixed(2)}</p>
               </div>
-              <p className="editorial-small text-[#9ca3af]">Select up to 3 options per category • Scroll for all</p>
+              <p className="editorial-small text-[#6b6b6b] mb-1">Select up to 3 options per category</p>
+              <p className="editorial-small text-[#9ca3af]">Scroll for options</p>
             </div>
           </div>
 

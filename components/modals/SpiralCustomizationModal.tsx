@@ -101,7 +101,8 @@ export default function SpiralCustomizationModal({
                 <p className="editorial-small text-[#6b6b6b]">{productName}</p>
                 <p className="editorial-label text-[#0f0f0f]">${productPrice.toFixed(2)}</p>
               </div>
-              <p className="editorial-small text-[#9ca3af]">Choose one combination • Scroll for all options</p>
+              <p className="editorial-small text-[#6b6b6b] mb-1">Choose one combination</p>
+              <p className="editorial-small text-[#9ca3af]">Scroll for options</p>
             </div>
           </div>
 
