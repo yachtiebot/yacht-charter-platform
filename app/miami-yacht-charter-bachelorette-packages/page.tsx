@@ -35,7 +35,7 @@ const packages = [
     name: 'Last Sail Before The Veil',
     subtitle: 'The Fun Package',
     price: 249.99,
-    description: 'A comprehensive celebration suite with everything needed for an unforgettable send-off. Includes premium decorations, coordinated accessories, and keepsake items.',
+    description: 'A comprehensive celebration suite with everything needed for an unforgettable sendoff. Includes premium decorations, coordinated accessories, and keepsake items.',
     includes: [
       'Last Sail Before The Veil banner',
       'Bride themed cups',
@@ -123,7 +123,7 @@ export default function BachelorettePackagesPage() {
           
           <p className="text-[#6b6b6b] text-lg md:text-xl max-w-3xl" style={{ fontWeight: 300, lineHeight: 1.6 }}>
             Curated celebration packages for unforgettable moments before the veil. 
-            No stress, no last-minute shopping—just pure celebration delivered to your yacht.
+            No stress, no last minute shopping—just pure celebration delivered to your yacht.
           </p>
         </div>
 

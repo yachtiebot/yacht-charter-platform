@@ -111,7 +111,7 @@ export default function HomePage() {
               </h2>
             </div>
             <p className="editorial-body text-[#6b6b6b] lg:max-w-lg">
-              Every vessel is privately owned, hand-picked for quality, and backed by outstanding guest reviews.
+              Every vessel is privately owned, handpicked for quality, and backed by outstanding guest reviews.
             </p>
           </div>
 
