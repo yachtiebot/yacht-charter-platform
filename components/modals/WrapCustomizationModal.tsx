@@ -185,7 +185,7 @@ export default function WrapCustomizationModal({
                       disabled={!meats.includes(meat) && meats.length >= 3}
                       className="w-4 h-4 text-[#c4a265] border-[#e5e5e5] focus:ring-[#c4a265] focus:ring-offset-0 disabled:opacity-50"
                     />
-                    <span className="ml-4 editorial-body text-[#0f0f0f]">{meat}</span>
+                    <span className="ml-4 editorial-label text-[#0f0f0f]">{meat}</span>
                   </label>
                 ))}
               </div>
@@ -216,7 +216,7 @@ export default function WrapCustomizationModal({
                       disabled={!wrapStyles.includes(style) && wrapStyles.length >= 3}
                       className="w-4 h-4 text-[#c4a265] border-[#e5e5e5] focus:ring-[#c4a265] focus:ring-offset-0 disabled:opacity-50"
                     />
-                    <span className="ml-4 editorial-body text-[#0f0f0f]">{style}</span>
+                    <span className="ml-4 editorial-label text-[#0f0f0f]">{style}</span>
                   </label>
                 ))}
               </div>
@@ -247,7 +247,7 @@ export default function WrapCustomizationModal({
                       disabled={!cheeses.includes(cheese) && cheeses.length >= 3}
                       className="w-4 h-4 text-[#c4a265] border-[#e5e5e5] focus:ring-[#c4a265] focus:ring-offset-0 disabled:opacity-50"
                     />
-                    <span className="ml-4 editorial-body text-[#0f0f0f]">{cheese}</span>
+                    <span className="ml-4 editorial-label text-[#0f0f0f]">{cheese}</span>
                   </label>
                 ))}
               </div>
