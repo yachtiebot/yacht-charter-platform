@@ -2,93 +2,331 @@
 
 ## 🎯 Project Overview
 
-Build a complete e-commerce system for yacht charters with:
-- Shopping cart for yachts + add-ons
+Build standalone e-commerce for add-ons (catering, water toys, flowers, bachelorette packages):
+- Shopping cart with product customizations
 - Stripe payment integration (3DS mandatory)
-- Admin dashboard for order management
-- Metadata system for QuickBooks export
-- Digital waiver system
-- Monitoring & error tracking
+- Digital waiver system (jet ski)
+- Email notifications to support@miamiyachting.com
+- Order management
+- Florida boating license compliance
+
+**Note:** Yacht reservation system is separate (see: RESERVATION_SYSTEM_ROADMAP.md)
 
 ---
 
-## 📋 Phase 1: Cart Foundation (Week 1)
+## 📅 **Timeline: 1 Week (7 Days)**
+
+**Status:** Phase 1 (Cart Foundation) ✅ COMPLETE  
+**Current:** Ready to build Phase 1A (Customization Modals)
+
+| Phase | Days | Status | Description |
+|-------|------|--------|-------------|
+| Phase 1 | Done | ✅ | Cart foundation (Zustand, UI, icon) |
+| Phase 1A | 1-2 | 🔜 | Product customization modals |
+| Phase 1B | 2-3 | ⬜ | Jet ski waiver system |
+| Phase 1C | 3 | ⬜ | Add to cart buttons on all pages |
+| Phase 1D | 3-4 | ⬜ | Checkout page & validation |
+| Phase 1E | 4 | ⬜ | Email notifications |
+| Phase 1F | 4 | ⬜ | Order confirmation page |
+| Phase 2 | 5-6 | ⬜ | Stripe integration (test → production) |
+| Phase 3 | 6-7 | ⬜ | Airtable order storage |
+| Testing | 7 | ⬜ | End-to-end testing & polish |
+
+**Launch Target:** Day 7 (soft launch with test mode)  
+**Production:** Day 8+ (after testing with real transactions)
+
+---
+
+## 📋 Phase 1: Cart Foundation ✅ COMPLETE
 
 **Goal:** Basic cart functionality working locally
 
-### 1.1 Cart State Management
-- [ ] Set up Zustand store for cart state
-- [ ] Cart actions: add, remove, update quantity
-- [ ] Persist cart to localStorage
-- [ ] Cart item interface with metadata fields
+### 1.1 Cart State Management ✅
+- [x] Set up Zustand store for cart state (yacht bookings)
+- [x] Existing React Context for add-ons
+- [x] Cart actions: add, remove, update quantity
+- [x] Persist cart to localStorage
+- [x] Cart item interface with metadata fields
 
-### 1.2 Cart UI Components
-- [ ] Cart sidebar (slide-in panel)
-- [ ] Cart item card component
-- [ ] Empty cart state
-- [ ] Cart totals calculator
-- [ ] Remove/update quantity controls
+### 1.2 Cart UI Components ✅
+- [x] Cart sidebar (slide-in panel)
+- [x] Cart item card component
+- [x] Empty cart state
+- [x] Cart totals calculator
+- [x] Remove/update quantity controls
 
-### 1.3 Add to Cart Integration
-- [ ] "Book Now" button on yacht detail pages
-- [ ] Add-ons selection interface
-- [ ] Duration/date picker integration
-- [ ] Guest count selector
-- [ ] Price calculation with add-ons
+### 1.3 Cart Icon Integration ✅
+- [x] Cart icon shows combined count (yachts + add-ons)
+- [x] Opens appropriate cart based on contents
+- [x] Integrated in navigation
 
-**Deliverable:** Working cart that adds yachts + add-ons, persists across sessions
+**Deliverable:** ✅ Working cart foundation complete
 
 ---
 
-## 📋 Phase 2: Checkout Flow (Week 1-2)
+## 📋 Phase 1A: Product Customization Modals (Days 1-2)
 
-**Goal:** Complete checkout process without payment
+**Goal:** Allow customers to customize products before adding to cart
 
-### 2.1 Checkout Page Structure
-- [ ] Multi-step checkout layout
-- [ ] Step 1: Contact information form
-- [ ] Step 2: Trip details (date, time, guests)
-- [ ] Step 3: Add-ons selection
-- [ ] Step 4: Review & payment
-- [ ] Progress indicator
+### 1A.1 Cake Customization Modal
+- [ ] Modal component with clean luxury design
+- [ ] Cake flavor selection (radio: Vanilla, Chocolate)
+- [ ] Custom message input (textarea, 50 char limit)
+- [ ] Allergy/special requests (textarea, optional)
+- [ ] Form validation
+- [ ] "Add to Cart" button in modal
+- [ ] Store customization data with cart item
+- [ ] Display customizations in cart sidebar
 
-### 2.2 Form Validation
-- [ ] Zod schema for all forms
-- [ ] React Hook Form integration
-- [ ] Field-level validation
-- [ ] Error messaging
-- [ ] Required field indicators
+### 1A.2 Custom Charcuterie Box Builder
+- [ ] Modal with multi-section form
+- [ ] Charcuterie Meat #1 & #2 (dropdowns, required)
+- [ ] Artisan Cheese #1 & #2 (dropdowns, required)
+- [ ] Fruit #1 & #2 (dropdowns, required)
+- [ ] Accompaniment #1 & #2 (dropdowns, required)
+- [ ] Visual builder interface (optional: show selections)
+- [ ] Form validation (all fields required)
+- [ ] Store selections with cart item
 
-### 2.3 Order Summary Component
-- [ ] Line items breakdown
+### 1A.3 Meat Dipping Sauces Selector
+- [ ] Simple dropdown modal
+- [ ] Sauce options: Sweet Sriracha, Spicy Gold, BBQ, Blue Cheese, Ranch, Honey Mustard
+- [ ] Applied to applicable meat items (wings, tenders, etc.)
+- [ ] Store selection with cart item
+
+### 1A.4 Deli Sandwich Builder
+- [ ] Multi-section form modal
+- [ ] Meat selection (checkboxes, 2-3 based on serving size)
+  - Options: Turkey, Roast Beef, Ham, Ultimate, Italian, Veggie Only
+- [ ] Bread selection (checkboxes, max 2)
+  - Options: White, 5 Grain Italian
+- [ ] Cheese selection (checkboxes, 2-3 based on serving size)
+  - Options: American Yellow/White, Swiss, Cheddar, Provolone, Muenster, No cheese
+- [ ] Dynamic validation based on serving size
+- [ ] Store selections with cart item
+
+### 1A.5 Cart Integration
+- [ ] Update cart context to store `customization` field
+- [ ] Display customizations clearly in cart
+- [ ] Allow editing customizations from cart
+- [ ] Format customizations for checkout display
+
+**Deliverable:** All products can be customized before adding to cart
+
+---
+
+## 📋 Phase 1B: Jet Ski Waiver System (Days 2-3)
+
+**Goal:** Legal waiver with e-signature required BEFORE adding jet ski to cart
+
+### 1B.1 Waiver Modal Component
+- [ ] Full-screen or large modal (important legal content)
+- [ ] Clean, professional design
+- [ ] Scrollable content area
+- [ ] 7 checkbox acknowledgements (all required):
+  1. Florida jet ski laws acknowledgement
+  2. Damage security deposit understanding
+  3. Vessel damage responsibility
+  4. Maximum quantity (2 jet skis max)
+  5. Appointment scheduling understanding
+  6. Credit card and ID acknowledgement
+  7. Third party vendor liability release
+
+### 1B.2 Electronic Signature
+- [ ] First Name input (required)
+- [ ] Last Name input (required)
+- [ ] Timestamp capture
+- [ ] "I Agree & Add to Cart" button (disabled until all complete)
+- [ ] Validation: all boxes checked + name entered
+
+### 1B.3 Florida Boating License Requirement
+- [ ] Display info in waiver: "Born after Jan 1, 1988 = license required"
+- [ ] Link to https://checkinmyc.com/PWCLicense
+- [ ] Store waiver acceptance with cart item
+- [ ] Flag item as requiring license notification
+
+### 1B.4 Cart Integration
+- [ ] Waiver modal opens BEFORE adding jet ski to cart
+- [ ] Block add to cart until waiver signed
+- [ ] Store waiver data with cart item:
+  ```json
+  {
+    "waiver_signed": true,
+    "waiver_date": "2026-02-26T13:39:00Z",
+    "signature_name": "John Smith",
+    "acknowledgements": { all 7 checkboxes }
+  }
+  ```
+- [ ] Display "Waiver Signed" badge in cart
+
+**Deliverable:** Legally compliant jet ski waiver system
+
+---
+
+## 📋 Phase 1C: Product Pages & Add to Cart (Day 3)
+
+**Goal:** Add "Add to Cart" buttons to all product pages
+
+### 1C.1 Catering Page Updates
+- [ ] Add "Add to Cart" buttons to all catering items
+- [ ] Trigger appropriate customization modal:
+  - Cakes → Cake customization
+  - Charcuterie → Charcuterie builder
+  - Wings/Tenders → Dipping sauce selector
+  - Sandwiches → Sandwich builder
+  - Simple items → Direct add to cart
+- [ ] Quantity selector integration
+- [ ] Price display
+
+### 1C.2 Water Toys Page Updates
+- [ ] Add "Add to Cart" buttons
+- [ ] Jet skis → Trigger waiver modal first
+- [ ] Other water toys → Direct add to cart
+- [ ] Quantity selectors
+
+### 1C.3 Flowers Page Updates
+- [ ] Add "Add to Cart" buttons
+- [ ] Direct add to cart (no customization)
+- [ ] Quantity selectors
+
+### 1C.4 Bachelorette Page Updates
+- [ ] Add "Add to Cart" buttons
+- [ ] Package selection
+- [ ] Direct add to cart
+- [ ] Quantity selectors
+
+**Deliverable:** All 4 stores fully functional with add to cart
+
+---
+
+## 📋 Phase 1D: Checkout Flow (Days 3-4)
+
+**Goal:** Complete checkout process with mock payment
+
+### 1D.1 Checkout Page Structure
+- [ ] Clean, luxury checkout design
+- [ ] Single-page checkout (not multi-step)
+- [ ] Contact information form:
+  - Full Name (required)
+  - Email (required, validated)
+  - Phone (required, formatted)
+  - Special instructions (optional textarea)
+
+### 1D.2 Order Review Section
+- [ ] Display all cart items with:
+  - Product name, quantity, price
+  - Customizations (formatted nicely)
+  - Waiver status (if jet ski)
 - [ ] Subtotal calculation
 - [ ] Tax calculation (if applicable)
-- [ ] Total with formatting
-- [ ] Editable from checkout
+- [ ] Grand total
+- [ ] Edit cart link
+### 1D.3 Form Validation
+- [ ] Zod schema for checkout form
+- [ ] React Hook Form integration
+- [ ] Field-level validation
+- [ ] Error messaging (inline)
+- [ ] Required field indicators
+- [ ] Email format validation
+- [ ] Phone number formatting
 
-**Deliverable:** Complete checkout flow with validation, ready for payment integration
+### 1D.4 Mock Payment Section
+- [ ] Mock credit card form (for testing)
+- [ ] "Place Order" button
+- [ ] Loading state
+- [ ] Mock successful payment
+- [ ] Redirect to confirmation
+
+**Deliverable:** Complete checkout flow ready for Stripe integration
 
 ---
 
-## 📋 Phase 3: Stripe Integration (Week 2)
+## 📋 Phase 1E: Email Notifications (Day 4)
 
-**Goal:** Secure payment processing with 3DS
+**Goal:** Send order details to support@miamiyachting.com
 
-### 3.1 Stripe Setup
+### 1E.1 Email Service Setup
+- [ ] Choose email provider (Resend recommended)
+- [ ] Set up API key
+- [ ] Add to Vercel environment variables
+- [ ] Test email delivery
+
+### 1E.2 Order Confirmation Email Template
+- [ ] HTML email template (clean, professional)
+- [ ] Order summary section:
+  - Order ID, date/time
+  - Customer name, email, phone
+  - Total amount
+- [ ] Items section:
+  - Each product with customizations
+  - Formatted clearly for fulfillment team
+- [ ] Waiver data section (if jet ski):
+  - All acknowledgements
+  - Signature name & timestamp
+- [ ] Jet ski license reminder (if applicable):
+  - Born after Jan 1, 1988 warning
+  - Link to https://checkinmyc.com/PWCLicense
+- [ ] Special instructions section
+
+### 1E.3 Email Trigger
+- [ ] Send email after successful payment
+- [ ] To: support@miamiyachting.com
+- [ ] Subject: "New Order #[ID] - [Customer Name]"
+- [ ] Error handling (log failures to Sentry)
+- [ ] Retry logic (3 attempts)
+
+**Deliverable:** Automated email notifications working
+
+---
+
+## 📋 Phase 1F: Order Confirmation Page (Day 4)
+
+**Goal:** Beautiful confirmation page after purchase
+
+### 1F.1 Confirmation Page Design
+- [ ] Clean, celebratory design
+- [ ] "Order Confirmed!" headline
+- [ ] Order number prominently displayed
+- [ ] Order summary with all details
+- [ ] Confirmation email sent message
+
+### 1F.2 Jet Ski License Reminder (if applicable)
+- [ ] Prominent warning box:
+  - "⚠️ IMPORTANT: Born after Jan 1, 1988?"
+  - "You need a Florida boating license!"
+  - Link to https://checkinmyc.com/PWCLicense
+  - "Must complete BEFORE rental date"
+- [ ] Only show if jet ski in order
+
+### 1F.3 Next Steps Section
+- [ ] What happens next
+- [ ] Timeline expectations
+- [ ] Contact information
+- [ ] Link to return to homepage
+
+**Deliverable:** Professional order confirmation experience
+
+---
+
+## 📋 Phase 2: Stripe Integration (Days 5-6)
+
+**Goal:** Real payment processing with 3DS
+
+### 2.1 Stripe Setup (Test Mode First)
 - [ ] Install @stripe/stripe-js and @stripe/react-stripe-js
 - [ ] Create Stripe account (or use existing)
 - [ ] Get API keys (test + production)
 - [ ] Add to Vercel environment variables
 - [ ] Webhook endpoint setup
 
-### 3.2 Payment Intent API
+### 2.2 Payment Intent API
 - [ ] `/api/stripe/create-payment-intent` endpoint
 - [ ] Calculate amount server-side (security)
 - [ ] Attach metadata (customer, yacht, add-ons)
 - [ ] Return client secret
 - [ ] Handle errors gracefully
 
-### 3.3 Payment Form
+### 2.3 Payment Form
 - [ ] Stripe Elements integration
 - [ ] Card input component
 - [ ] 3DS authentication flow (MANDATORY)
@@ -96,7 +334,7 @@ Build a complete e-commerce system for yacht charters with:
 - [ ] Success/error handling
 - [ ] Payment confirmation screen
 
-### 3.4 Metadata Structure
+### 2.4 Metadata Structure
 ```javascript
 {
   customer_name: string,
@@ -115,7 +353,7 @@ Build a complete e-commerce system for yacht charters with:
 }
 ```
 
-### 3.5 Webhook Handler
+### 2.5 Webhook Handler
 - [ ] `/api/stripe/webhook` endpoint
 - [ ] Verify webhook signature
 - [ ] Handle `payment_intent.succeeded`
@@ -127,7 +365,7 @@ Build a complete e-commerce system for yacht charters with:
 
 ---
 
-## 📋 Phase 4: Order Database (Week 2-3)
+## 📋 Phase 3: Order Database & Storage (Day 6-7)
 
 **Goal:** Store and retrieve orders
 
