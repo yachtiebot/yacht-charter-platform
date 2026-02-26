@@ -151,10 +151,16 @@ export default function CharcuterieCustomizationModal({
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 touch-none overflow-hidden">
         <div className="bg-[#faf9f7] w-full max-w-3xl shadow-2xl h-[90vh] flex flex-col relative touch-auto">
           {/* Scroll Indicator */}
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[#c4a265] opacity-60 pointer-events-none z-30">
-            <div className="text-[11px] uppercase tracking-[0.3em] font-light" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+          <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 text-[#c4a265] opacity-70 pointer-events-none z-30">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+            </svg>
+            <div className="text-[12px] uppercase tracking-[0.3em] font-medium" style={{ writingMode: 'vertical-rl' }}>
               SCROLL
             </div>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
           </div>
           {/* Header */}
           <div className="sticky top-0 bg-[#faf9f7] border-b border-[#e5e5e5]/30 px-10 py-8 z-10">
