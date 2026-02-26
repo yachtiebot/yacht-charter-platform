@@ -118,22 +118,11 @@ export default function ProductImageGallery({
             }}
           />
           
-          {/* Swipe hint on mobile - only if multiple images */}
-          {hasMultipleImages && (
-            <div className="md:hidden absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-xs animate-pulse pointer-events-none bg-black/40 px-3 py-1 rounded">
-              ← Swipe →
-            </div>
-          )}
-
-          {/* Click to view hint on desktop */}
-          <div className="hidden md:flex absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors items-center justify-center">
-            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 px-4 py-2 rounded text-sm text-[#0f0f0f]" style={{fontWeight: 400}}>
-              Click to view full size
-            </div>
-          </div>
+          {/* Hover overlay - subtle dark fade */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500 pointer-events-none" />
         </div>
 
-        {/* Navigation Arrows - Desktop only */}
+        {/* Navigation Arrows - Modern sleek style, no borders */}
         {hasMultipleImages && (
           <>
             <button
@@ -141,12 +130,11 @@ export default function ProductImageGallery({
                 e.stopPropagation();
                 goToPrevious();
               }}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10 hidden md:flex"
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl opacity-0 group-hover:opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300 z-10 hidden md:block"
               aria-label="Previous image"
+              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
             >
-              <svg className="w-4 h-4 text-[#0f0f0f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
+              ‹
             </button>
 
             <button
@@ -154,12 +142,11 @@ export default function ProductImageGallery({
                 e.stopPropagation();
                 goToNext();
               }}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10 hidden md:flex"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl opacity-0 group-hover:opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300 z-10 hidden md:block"
               aria-label="Next image"
+              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
             >
-              <svg className="w-4 h-4 text-[#0f0f0f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              ›
             </button>
 
             {/* Dot Indicators */}
