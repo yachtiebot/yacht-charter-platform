@@ -202,7 +202,7 @@
       "name": "Gourmet Wraps Platter",
       "slug": "gourmet-wraps",
       "price": 69.99,
-      "description": "Made fresh to order, includes lettuce and tomato. Customize your platter options.",
+      "description": "Made fresh to order, includes lettuce and tomato",
       "minQuantity": 2,
       "options": [
         { "label": "Serves 8", "value": 8, "price": 69.99 },
@@ -211,9 +211,443 @@
         { "label": "Serves 20", "value": 20, "price": 129.99 },
         { "label": "Serves 25", "value": 25, "price": 159.99 }
       ],
-      "category": "catering",
-      "customizable": true,
-      "imageUrl": "/images/products/catering/gourmet-wraps.jpg"
+      "category": "sandwiches"
+    },
+    {
+      "id": "gourmet-spirals",
+      "name": "Gourmet Spirals",
+      "slug": "gourmet-spirals",
+      "price": 69.99,
+      "description": "Assorted gourmet spiral wraps",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 69.99 },
+        { "label": "Serves 10", "value": 10, "price": 79.99 },
+        { "label": "Serves 15", "value": 15, "price": 99.99 },
+        { "label": "Serves 20", "value": 20, "price": 129.99 },
+        { "label": "Serves 25", "value": 25, "price": 159.99 }
+      ],
+      "category": "sandwiches"
+    },
+    {
+      "id": "slider-trio",
+      "name": "Slider Trio",
+      "slug": "slider-trio",
+      "price": 89.99,
+      "description": "Three varieties of gourmet sliders",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 89.99 },
+        { "label": "Serves 10", "value": 10, "price": 99.99 },
+        { "label": "Serves 15", "value": 15, "price": 119.99 },
+        { "label": "Serves 20", "value": 20, "price": 149.99 }
+      ],
+      "category": "sandwiches"
+    },
+    {
+      "id": "cuban-platter",
+      "name": "Cuban Platter",
+      "slug": "cuban-platter",
+      "price": 79.99,
+      "description": "Authentic Cuban sandwiches",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 79.99 },
+        { "label": "Serves 10", "value": 10, "price": 89.99 },
+        { "label": "Serves 15", "value": 15, "price": 109.99 },
+        { "label": "Serves 20", "value": 20, "price": 139.99 }
+      ],
+      "category": "sandwiches"
+    },
+    {
+      "id": "shrimp-platter",
+      "name": "Shrimp Platter",
+      "slug": "shrimp-platter",
+      "price": 129.99,
+      "description": "Fresh jumbo shrimp with cocktail sauce",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 129.99 },
+        { "label": "Serves 10", "value": 10, "price": 149.99 },
+        { "label": "Serves 15", "value": 15, "price": 189.99 },
+        { "label": "Serves 20", "value": 20, "price": 239.99 }
+      ],
+      "category": "platters"
+    },
+    {
+      "id": "chicken-tenders",
+      "name": "Chicken Tenders",
+      "slug": "chicken-tenders",
+      "price": 79.99,
+      "description": "Crispy chicken tenders",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 10", "value": 10, "price": 79.99 },
+        { "label": "Serves 15", "value": 15, "price": 99.99 },
+        { "label": "Serves 20", "value": 20, "price": 129.99 },
+        { "label": "Serves 25", "value": 25, "price": 159.99 }
+      ],
+      "category": "platters"
+    },
+    {
+      "id": "chicken-wings",
+      "name": "Chicken Wings",
+      "slug": "chicken-wings",
+      "price": 89.99,
+      "description": "Buffalo or BBQ chicken wings",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 10", "value": 10, "price": 89.99 },
+        { "label": "Serves 15", "value": 15, "price": 109.99 },
+        { "label": "Serves 20", "value": 20, "price": 139.99 },
+        { "label": "Serves 25", "value": 25, "price": 169.99 }
+      ],
+      "category": "platters"
+    },
+    {
+      "id": "large-charcuterie",
+      "name": "Large Charcuterie Platter",
+      "slug": "large-charcuterie",
+      "price": 149.99,
+      "description": "Premium meats, cheeses, fruits, and nuts",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 15", "value": 15, "price": 149.99 },
+        { "label": "Serves 20", "value": 20, "price": 189.99 },
+        { "label": "Serves 25", "value": 25, "price": 229.99 }
+      ],
+      "category": "platters"
+    },
+    {
+      "id": "med-charcuterie",
+      "name": "Medium Charcuterie Box",
+      "slug": "med-charcuterie",
+      "price": 99.99,
+      "description": "Curated selection of meats and cheeses",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 99.99 },
+        { "label": "Serves 10", "value": 10, "price": 119.99 },
+        { "label": "Serves 12", "value": 12, "price": 139.99 }
+      ],
+      "category": "platters"
+    },
+    {
+      "id": "antipasti",
+      "name": "Antipasti Platter",
+      "slug": "antipasti",
+      "price": 89.99,
+      "description": "Italian cured meats, cheeses, olives, and vegetables",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 89.99 },
+        { "label": "Serves 10", "value": 10, "price": 109.99 },
+        { "label": "Serves 15", "value": 15, "price": 139.99 }
+      ],
+      "category": "platters"
+    },
+    {
+      "id": "cheese-taster",
+      "name": "Cheese Taster Platter",
+      "slug": "cheese-taster",
+      "price": 79.99,
+      "description": "Artisan cheese selection with accompaniments",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 79.99 },
+        { "label": "Serves 10", "value": 10, "price": 99.99 },
+        { "label": "Serves 12", "value": 12, "price": 119.99 }
+      ],
+      "category": "platters"
+    },
+    {
+      "id": "pretzel-bagel",
+      "name": "Pretzel & Bagel Bite Platter",
+      "slug": "pretzel-bagel",
+      "price": 69.99,
+      "description": "Soft pretzels and mini bagels with dips",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 10", "value": 10, "price": 69.99 },
+        { "label": "Serves 15", "value": 15, "price": 89.99 },
+        { "label": "Serves 20", "value": 20, "price": 109.99 }
+      ],
+      "category": "platters"
+    },
+    {
+      "id": "caesar-salad",
+      "name": "Caesar Salad Platter",
+      "slug": "caesar-salad",
+      "price": 79.99,
+      "description": "Classic Caesar with parmesan and croutons",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 79.99 },
+        { "label": "Serves 10", "value": 10, "price": 89.99 },
+        { "label": "Serves 15", "value": 15, "price": 109.99 },
+        { "label": "Serves 20", "value": 20, "price": 139.99 }
+      ],
+      "category": "bowls"
+    },
+    {
+      "id": "greek-salad",
+      "name": "Greek Salad",
+      "slug": "greek-salad",
+      "price": 79.99,
+      "description": "Fresh Greek salad with feta and olives",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 79.99 },
+        { "label": "Serves 10", "value": 10, "price": 89.99 },
+        { "label": "Serves 15", "value": 15, "price": 109.99 },
+        { "label": "Serves 20", "value": 20, "price": 139.99 }
+      ],
+      "category": "bowls"
+    },
+    {
+      "id": "chef-salad",
+      "name": "Chef Salad",
+      "slug": "chef-salad",
+      "price": 89.99,
+      "description": "Garden salad with turkey, ham, and cheese",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 89.99 },
+        { "label": "Serves 10", "value": 10, "price": 99.99 },
+        { "label": "Serves 15", "value": 15, "price": 119.99 },
+        { "label": "Serves 20", "value": 20, "price": 149.99 }
+      ],
+      "category": "bowls"
+    },
+    {
+      "id": "wild-salmon-salad",
+      "name": "Wild Salmon Salad",
+      "slug": "wild-salmon-salad",
+      "price": 119.99,
+      "description": "Grilled wild salmon over mixed greens",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 119.99 },
+        { "label": "Serves 10", "value": 10, "price": 139.99 },
+        { "label": "Serves 15", "value": 15, "price": 179.99 }
+      ],
+      "category": "bowls"
+    },
+    {
+      "id": "caesar-pasta",
+      "name": "Caesar Pasta Bowl",
+      "slug": "caesar-pasta",
+      "price": 89.99,
+      "description": "Pasta with Caesar dressing and parmesan",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 89.99 },
+        { "label": "Serves 10", "value": 10, "price": 99.99 },
+        { "label": "Serves 15", "value": 15, "price": 119.99 },
+        { "label": "Serves 20", "value": 20, "price": 149.99 }
+      ],
+      "category": "bowls"
+    },
+    {
+      "id": "greek-pasta",
+      "name": "Greek Style Pasta Salad",
+      "slug": "greek-pasta",
+      "price": 79.99,
+      "description": "Mediterranean pasta salad",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 79.99 },
+        { "label": "Serves 10", "value": 10, "price": 89.99 },
+        { "label": "Serves 15", "value": 15, "price": 109.99 },
+        { "label": "Serves 20", "value": 20, "price": 139.99 }
+      ],
+      "category": "bowls"
+    },
+    {
+      "id": "italian-caprese",
+      "name": "Italian Caprese Pasta",
+      "slug": "italian-caprese",
+      "price": 89.99,
+      "description": "Fresh mozzarella, tomatoes, and basil",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 89.99 },
+        { "label": "Serves 10", "value": 10, "price": 99.99 },
+        { "label": "Serves 15", "value": 15, "price": 119.99 }
+      ],
+      "category": "bowls"
+    },
+    {
+      "id": "tabouli",
+      "name": "Tabouli Salad",
+      "slug": "tabouli",
+      "price": 69.99,
+      "description": "Traditional Lebanese tabouli",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 69.99 },
+        { "label": "Serves 10", "value": 10, "price": 79.99 },
+        { "label": "Serves 15", "value": 15, "price": 99.99 }
+      ],
+      "category": "bowls"
+    },
+    {
+      "id": "fresh-fruit",
+      "name": "Fresh Fruit Platter",
+      "slug": "fresh-fruit",
+      "price": 79.99,
+      "description": "Seasonal fresh fruit selection",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 79.99 },
+        { "label": "Serves 10", "value": 10, "price": 89.99 },
+        { "label": "Serves 15", "value": 15, "price": 109.99 },
+        { "label": "Serves 20", "value": 20, "price": 139.99 }
+      ],
+      "category": "vegetarian"
+    },
+    {
+      "id": "garden-vegetable",
+      "name": "Garden Vegetable Platter",
+      "slug": "garden-vegetable",
+      "price": 69.99,
+      "description": "Fresh vegetables with dips",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 69.99 },
+        { "label": "Serves 10", "value": 10, "price": 79.99 },
+        { "label": "Serves 15", "value": 15, "price": 99.99 },
+        { "label": "Serves 20", "value": 20, "price": 129.99 }
+      ],
+      "category": "vegetarian"
+    },
+    {
+      "id": "hummus-platter",
+      "name": "Greek Style Hummus Platter",
+      "slug": "hummus-platter",
+      "price": 59.99,
+      "description": "Assorted hummus with pita and vegetables",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 59.99 },
+        { "label": "Serves 10", "value": 10, "price": 69.99 },
+        { "label": "Serves 15", "value": 15, "price": 89.99 }
+      ],
+      "category": "vegetarian"
+    },
+    {
+      "id": "med-naan",
+      "name": "Mediterranean Naan Platter",
+      "slug": "med-naan",
+      "price": 69.99,
+      "description": "Warm naan with Mediterranean spreads",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 69.99 },
+        { "label": "Serves 10", "value": 10, "price": 79.99 },
+        { "label": "Serves 15", "value": 15, "price": 99.99 }
+      ],
+      "category": "vegetarian"
+    },
+    {
+      "id": "savory-naan",
+      "name": "Savory Naan",
+      "slug": "savory-naan",
+      "price": 64.99,
+      "description": "Assorted savory naan breads",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 64.99 },
+        { "label": "Serves 10", "value": 10, "price": 74.99 },
+        { "label": "Serves 15", "value": 15, "price": 94.99 }
+      ],
+      "category": "vegetarian"
+    },
+    {
+      "id": "gourmet-brownies",
+      "name": "Gourmet Brownies Platter",
+      "slug": "gourmet-brownies",
+      "price": 69.99,
+      "description": "Assorted gourmet brownies",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 10", "value": 10, "price": 69.99 },
+        { "label": "Serves 15", "value": 15, "price": 89.99 },
+        { "label": "Serves 20", "value": 20, "price": 109.99 },
+        { "label": "Serves 25", "value": 25, "price": 129.99 }
+      ],
+      "category": "desserts"
+    },
+    {
+      "id": "gourmet-cookies",
+      "name": "Gourmet Cookie Platter",
+      "slug": "gourmet-cookies",
+      "price": 64.99,
+      "description": "Freshly baked artisan cookies",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 10", "value": 10, "price": 64.99 },
+        { "label": "Serves 15", "value": 15, "price": 84.99 },
+        { "label": "Serves 20", "value": 20, "price": 104.99 },
+        { "label": "Serves 25", "value": 25, "price": 124.99 }
+      ],
+      "category": "desserts"
+    },
+    {
+      "id": "dessert-tarts",
+      "name": "Dessert Tart Platter",
+      "slug": "dessert-tarts",
+      "price": 89.99,
+      "description": "Assorted French-style tarts",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 8", "value": 8, "price": 89.99 },
+        { "label": "Serves 10", "value": 10, "price": 109.99 },
+        { "label": "Serves 15", "value": 15, "price": 139.99 }
+      ],
+      "category": "desserts"
+    },
+    {
+      "id": "macarons",
+      "name": "Macaron & Strawberry Platter",
+      "slug": "macarons",
+      "price": 79.99,
+      "description": "French macarons with chocolate-covered strawberries",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 10", "value": 10, "price": 79.99 },
+        { "label": "Serves 15", "value": 15, "price": 99.99 },
+        { "label": "Serves 20", "value": 20, "price": 119.99 }
+      ],
+      "category": "desserts"
+    },
+    {
+      "id": "muffin-platter",
+      "name": "Muffin Platter",
+      "slug": "muffin-platter",
+      "price": 59.99,
+      "description": "Assorted fresh-baked muffins",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 10", "value": 10, "price": 59.99 },
+        { "label": "Serves 15", "value": 15, "price": 79.99 },
+        { "label": "Serves 20", "value": 20, "price": 99.99 }
+      ],
+      "category": "desserts"
+    },
+    {
+      "id": "croissant-platter",
+      "name": "Croissant Platter",
+      "slug": "croissant-platter",
+      "price": 64.99,
+      "description": "Butter croissants and pastries",
+      "minQuantity": 2,
+      "options": [
+        { "label": "Serves 10", "value": 10, "price": 64.99 },
+        { "label": "Serves 15", "value": 15, "price": 84.99 },
+        { "label": "Serves 20", "value": 20, "price": 104.99 }
+      ],
+      "category": "desserts"
     }
   ]
 }

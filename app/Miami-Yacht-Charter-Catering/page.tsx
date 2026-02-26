@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import DarkFooter from '@/components/DarkFooter';
+import productsData from '@/lib/store/products-complete.json';
 
 // Available platter images (rotating through these 10 images for all products)
 const platterImages = [
@@ -19,49 +20,55 @@ const platterImages = [
   '/images/products/catering/cookieplatter.jpeg'
 ];
 
-// Import catering products from scraped data
-const cateringProducts = [
-  // SANDWICHES & WRAPS
-  { id: 'gourmet-wraps', name: 'Gourmet Wraps Platter', category: 'sandwiches', price: 69.99, serves: [8, 10, 15, 20, 25], description: 'Made fresh to order, includes lettuce and tomato', image: platterImages[0] },
-  { id: 'gourmet-spirals', name: 'Gourmet Spirals', category: 'sandwiches', price: 69.99, serves: [8, 10, 15, 20, 25], description: 'Assorted gourmet spiral wraps', image: platterImages[1] },
-  { id: 'slider-trio', name: 'Slider Trio', category: 'sandwiches', price: 89.99, serves: [8, 10, 15, 20], description: 'Three varieties of gourmet sliders', image: platterImages[2] },
-  { id: 'cuban-platter', name: 'Cuban Platter', category: 'sandwiches', price: 79.99, serves: [8, 10, 15, 20], description: 'Authentic Cuban sandwiches', image: platterImages[3] },
+// Map product images logically
+const imageMapping: { [key: string]: string } = {
+  // Sandwiches & Wraps - use early sandwich-looking images
+  'gourmet-wraps': platterImages[0],
+  'gourmet-spirals': platterImages[1],
+  'slider-trio': platterImages[2],
+  'cuban-platter': platterImages[3],
   
-  // PLATTERS
-  { id: 'shrimp-platter', name: 'Shrimp Platter', category: 'platters', price: 129.99, serves: [8, 10, 15, 20], description: 'Fresh jumbo shrimp with cocktail sauce', image: platterImages[4] },
-  { id: 'chicken-tenders', name: 'Chicken Tenders', category: 'platters', price: 79.99, serves: [10, 15, 20, 25], description: 'Crispy chicken tenders', image: platterImages[5] },
-  { id: 'chicken-wings', name: 'Chicken Wings', category: 'platters', price: 89.99, serves: [10, 15, 20, 25], description: 'Buffalo or BBQ chicken wings', image: platterImages[6] },
-  { id: 'large-charcuterie', name: 'Large Charcuterie Platter', category: 'platters', price: 149.99, serves: [15, 20, 25], description: 'Premium meats, cheeses, fruits, and nuts', image: platterImages[7] },
-  { id: 'med-charcuterie', name: 'Medium Charcuterie Box', category: 'platters', price: 99.99, serves: [8, 10, 12], description: 'Curated selection of meats and cheeses', image: platterImages[8] },
-  { id: 'antipasti', name: 'Antipasti Platter', category: 'platters', price: 89.99, serves: [8, 10, 15], description: 'Italian cured meats, cheeses, olives, and vegetables', image: platterImages[9] },
-  { id: 'cheese-taster', name: 'Cheese Taster Platter', category: 'platters', price: 79.99, serves: [8, 10, 12], description: 'Artisan cheese selection with accompaniments', image: platterImages[0] },
-  { id: 'pretzel-bagel', name: 'Pretzel & Bagel Bite Platter', category: 'platters', price: 69.99, serves: [10, 15, 20], description: 'Soft pretzels and mini bagels with dips', image: platterImages[1] },
+  // Platters - use various platter images
+  'shrimp-platter': platterImages[4],
+  'chicken-tenders': platterImages[5],
+  'chicken-wings': platterImages[6],
+  'large-charcuterie': platterImages[7],
+  'med-charcuterie': platterImages[0],
+  'antipasti': platterImages[1],
+  'cheese-taster': platterImages[2],
+  'pretzel-bagel': platterImages[3],
   
-  // BOWLS & SALADS
-  { id: 'caesar-salad', name: 'Caesar Salad Platter', category: 'bowls', price: 79.99, serves: [8, 10, 15, 20], description: 'Classic Caesar with parmesan and croutons', image: platterImages[2] },
-  { id: 'greek-salad', name: 'Greek Salad', category: 'bowls', price: 79.99, serves: [8, 10, 15, 20], description: 'Fresh Greek salad with feta and olives', image: platterImages[3] },
-  { id: 'chef-salad', name: 'Chef Salad', category: 'bowls', price: 89.99, serves: [8, 10, 15, 20], description: 'Garden salad with turkey, ham, and cheese', image: platterImages[4] },
-  { id: 'wild-salmon-salad', name: 'Wild Salmon Salad', category: 'bowls', price: 119.99, serves: [8, 10, 15], description: 'Grilled wild salmon over mixed greens', image: platterImages[5] },
-  { id: 'caesar-pasta', name: 'Caesar Pasta Bowl', category: 'bowls', price: 89.99, serves: [8, 10, 15, 20], description: 'Pasta with Caesar dressing and parmesan', image: platterImages[6] },
-  { id: 'greek-pasta', name: 'Greek Style Pasta Salad', category: 'bowls', price: 79.99, serves: [8, 10, 15, 20], description: 'Mediterranean pasta salad', image: platterImages[7] },
-  { id: 'italian-caprese', name: 'Italian Caprese Pasta', category: 'bowls', price: 89.99, serves: [8, 10, 15], description: 'Fresh mozzarella, tomatoes, and basil', image: platterImages[8] },
-  { id: 'tabouli', name: 'Tabouli Salad', category: 'bowls', price: 69.99, serves: [8, 10, 15], description: 'Traditional Lebanese tabouli', image: platterImages[9] },
+  // Bowls & Salads - use chef salad images
+  'caesar-salad': platterImages[2],
+  'greek-salad': platterImages[3],
+  'chef-salad': platterImages[2],
+  'wild-salmon-salad': platterImages[4],
+  'caesar-pasta': platterImages[5],
+  'greek-pasta': platterImages[6],
+  'italian-caprese': platterImages[7],
+  'tabouli': platterImages[0],
   
-  // VEGETARIAN
-  { id: 'fresh-fruit', name: 'Fresh Fruit Platter', category: 'vegetarian', price: 79.99, serves: [8, 10, 15, 20], description: 'Seasonal fresh fruit selection', image: platterImages[0] },
-  { id: 'garden-vegetable', name: 'Garden Vegetable Platter', category: 'vegetarian', price: 69.99, serves: [8, 10, 15, 20], description: 'Fresh vegetables with dips', image: platterImages[1] },
-  { id: 'hummus-platter', name: 'Greek Style Hummus Platter', category: 'vegetarian', price: 59.99, serves: [8, 10, 15], description: 'Assorted hummus with pita and vegetables', image: platterImages[2] },
-  { id: 'med-naan', name: 'Mediterranean Naan Platter', category: 'vegetarian', price: 69.99, serves: [8, 10, 15], description: 'Warm naan with Mediterranean spreads', image: platterImages[3] },
-  { id: 'savory-naan', name: 'Savory Naan', category: 'vegetarian', price: 64.99, serves: [8, 10, 15], description: 'Assorted savory naan breads', image: platterImages[4] },
+  // Vegetarian - use fresh/colorful images
+  'fresh-fruit': platterImages[1],
+  'garden-vegetable': platterImages[4],
+  'hummus-platter': platterImages[5],
+  'med-naan': platterImages[6],
+  'savory-naan': platterImages[7],
   
-  // DESSERTS
-  { id: 'gourmet-brownies', name: 'Gourmet Brownies Platter', category: 'desserts', price: 69.99, serves: [10, 15, 20, 25], description: 'Assorted gourmet brownies', image: platterImages[5] },
-  { id: 'gourmet-cookies', name: 'Gourmet Cookie Platter', category: 'desserts', price: 64.99, serves: [10, 15, 20, 25], description: 'Freshly baked artisan cookies', image: platterImages[6] },
-  { id: 'dessert-tarts', name: 'Dessert Tart Platter', category: 'desserts', price: 89.99, serves: [8, 10, 15], description: 'Assorted French-style tarts', image: platterImages[7] },
-  { id: 'macarons', name: 'Macaron & Strawberry Platter', category: 'desserts', price: 79.99, serves: [10, 15, 20], description: 'French macarons with chocolate-covered strawberries', image: platterImages[8] },
-  { id: 'muffin-platter', name: 'Muffin Platter', category: 'desserts', price: 59.99, serves: [10, 15, 20], description: 'Assorted fresh-baked muffins', image: platterImages[9] },
-  { id: 'croissant-platter', name: 'Croissant Platter', category: 'desserts', price: 64.99, serves: [10, 15, 20], description: 'Butter croissants and pastries', image: platterImages[0] },
-];
+  // Desserts - use dessert images
+  'gourmet-brownies': platterImages[9],
+  'gourmet-cookies': platterImages[9],
+  'dessert-tarts': platterImages[8],
+  'macarons': platterImages[8],
+  'muffin-platter': platterImages[8],
+  'croissant-platter': platterImages[9],
+};
+
+// Extract catering products from products-complete.json
+const cateringProducts = productsData.catering.map((product, index) => ({
+  ...product,
+  image: imageMapping[product.id] || platterImages[index % platterImages.length]
+}));
 
 const categories = [
   { id: 'all', name: 'All Items' },
@@ -74,11 +81,16 @@ const categories = [
 
 export default function CateringPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedSizes, setSelectedSizes] = useState<{[key: string]: number}>({});
   const { addItem } = useCart();
 
   const filteredProducts = selectedCategory === 'all' 
     ? cateringProducts 
     : cateringProducts.filter(p => p.category === selectedCategory);
+
+  const handleSizeSelect = (productId: string, sizeIndex: number) => {
+    setSelectedSizes(prev => ({ ...prev, [productId]: sizeIndex }));
+  };
 
   return (
     <main className="min-h-screen bg-[#faf9f7] pt-24">
@@ -132,48 +144,85 @@ export default function CateringPage() {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-20">
-          {filteredProducts.map((product) => (
-            <div key={product.id} className="bg-white border border-black/5 hover:border-[#c4a265]/30 transition-all duration-300 overflow-hidden group">
-              {/* Image */}
-              <div className="aspect-square bg-[#f0ece6] overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  onError={(e) => {
-                    e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"%3E%3Crect fill="%23f0ece6" width="400" height="400"/%3E%3C/svg%3E';
-                  }}
-                />
-              </div>
-              
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-lg font-medium text-[#0f0f0f] mb-2 group-hover:text-[#c4a265] transition-colors">
-                  {product.name}
-                </h3>
-                <p className="text-[#6b6b6b] text-sm mb-4" style={{ fontWeight: 300 }}>
-                  {product.description}
-                </p>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-[#0f0f0f] font-medium">from ${product.price}</span>
-                  <span className="text-xs text-[#6b6b6b]">Serves {product.serves[0]}+</span>
+          {filteredProducts.map((product) => {
+            // Get selected size or default to first option
+            const selectedIndex = selectedSizes[product.id] ?? 0;
+            const selectedOption = product.options[selectedIndex];
+            
+            return (
+              <div key={product.id} className="bg-white border border-black/5 hover:border-[#c4a265]/30 transition-all duration-300 overflow-hidden group">
+                {/* Image */}
+                <div className="aspect-square bg-[#f0ece6] overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"%3E%3Crect fill="%23f0ece6" width="400" height="400"/%3E%3C/svg%3E';
+                    }}
+                  />
                 </div>
-                <button
-                  onClick={() => addItem({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    category: 'catering',
-                    minQuantity: 2,
-                    image: product.image
-                  })}
-                  className="w-full bg-white border border-[#0f0f0f] text-[#0f0f0f] py-3 text-sm uppercase tracking-wider hover:bg-[#c4a265] hover:border-[#c4a265] hover:text-white transition-all duration-300"
-                >
-                  Add to Cart
-                </button>
+                
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-lg font-medium text-[#0f0f0f] mb-2 group-hover:text-[#c4a265] transition-colors">
+                    {product.name}
+                  </h3>
+                  <p className="text-[#6b6b6b] text-sm mb-4" style={{ fontWeight: 300 }}>
+                    {product.description}
+                  </p>
+
+                  {/* Size Selector */}
+                  <div className="space-y-3 mb-4">
+                    <label className="text-xs uppercase tracking-wider text-[#6b6b6b]">Select Serving Size</label>
+                    <div className={`grid gap-2 ${
+                      product.options.length <= 3 ? 'grid-cols-3' : 
+                      product.options.length === 4 ? 'grid-cols-4' : 
+                      'grid-cols-5'
+                    }`}>
+                      {product.options.map((option, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleSizeSelect(product.id, idx)}
+                          className={`py-3 px-2 text-xs border transition-all ${
+                            selectedIndex === idx
+                              ? 'bg-[#c4a265] text-white border-[#c4a265]'
+                              : 'bg-white text-[#6b6b6b] border-[#6b6b6b]/20 hover:border-[#c4a265]'
+                          }`}
+                        >
+                          <div className="font-medium mb-1">{option.label}</div>
+                          <div className="text-[10px] opacity-80">${option.price}</div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Price Display */}
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className="text-2xl text-[#0f0f0f] font-medium">
+                      ${selectedOption.price}
+                    </span>
+                    <span className="text-sm text-[#6b6b6b]">{selectedOption.label}</span>
+                  </div>
+
+                  {/* Add to Cart Button */}
+                  <button
+                    onClick={() => addItem({
+                      id: `${product.id}-${selectedOption.value}`,
+                      name: `${product.name} (${selectedOption.label})`,
+                      price: selectedOption.price,
+                      category: 'catering',
+                      minQuantity: product.minQuantity || 1,
+                      image: product.image
+                    })}
+                    className="w-full bg-white border border-[#0f0f0f] text-[#0f0f0f] py-3 text-sm uppercase tracking-wider hover:bg-[#c4a265] hover:border-[#c4a265] hover:text-white transition-all duration-300"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom Note */}
