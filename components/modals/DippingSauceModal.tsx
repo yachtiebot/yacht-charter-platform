@@ -66,7 +66,11 @@ export default function DippingSauceModal({
             <div className="pr-12">
               <p className="editorial-label text-[#c4a265] mb-2">CHOOSE YOUR FLAVOR</p>
               <h2 className="editorial-heading text-[#0f0f0f] mb-3">Dipping Sauce</h2>
-              <p className="editorial-small text-[#6b6b6b]">{productName} • ${productPrice.toFixed(2)}</p>
+              <div className="flex items-center justify-between mb-2">
+                <p className="editorial-small text-[#6b6b6b]">{productName}</p>
+                <p className="editorial-label text-[#0f0f0f]">${productPrice.toFixed(2)}</p>
+              </div>
+              <p className="editorial-small text-[#9ca3af]">Complimentary with order</p>
             </div>
           </div>
 
