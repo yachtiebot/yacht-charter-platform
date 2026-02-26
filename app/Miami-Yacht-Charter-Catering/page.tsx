@@ -161,6 +161,27 @@ export default function CateringPage() {
             </div>
           ))}
         </div>
+
+        {/* Bottom Note */}
+        <div className="border-t border-[#c4a265]/20 pt-16 pb-32">
+          <div className="max-w-6xl mx-auto px-6 md:px-12 text-center space-y-6">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-16 h-px bg-[#c4a265]" />
+              <span className="text-[#c4a265] text-xs uppercase tracking-[0.3em]">Delivery Details</span>
+              <div className="w-16 h-px bg-[#c4a265]" />
+            </div>
+            
+            <p className="text-[#6b6b6b] text-xs leading-relaxed" style={{ fontWeight: 300 }}>
+              All catering orders are prepared fresh and delivered directly to your yacht before departure. 
+              Each platter arrives beautifully presented and ready to serve your guests.
+            </p>
+            
+            <p className="text-[#6b6b6b]/60 text-xs leading-relaxed">
+              A valid yacht charter reservation is required. Orders must be placed a minimum of 36 hours prior to departure. 
+              Two platter minimum per charter. Special dietary accommodations available upon request.
+            </p>
+          </div>
+        </div>
       </div>
 
       <DarkFooter />

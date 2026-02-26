@@ -71,10 +71,11 @@ const waterToysProducts = [
   {
     id: 'jet-ski',
     name: 'Jet Ski',
-    description: 'Premium jet ski rental for thrilling water exploration. Must be 18+ to operate.',
-    details: 'Valid ID required. Instruction available. 48 hours notice required.',
+    description: 'Premium jet ski rental for thrilling water exploration.',
+    details: 'Must be born on or after January 1, 1988. Must have successfully completed a National Association of State Boating Law Administrators approved boating safety course. Valid ID required. Instruction available. 48 hours notice required.',
     images: ['/images/products/water-toys/jet-ski.jpg'],
-    features: ['Age 18+ to operate', 'Instruction available', 'Valid ID required'],
+    features: ['Born on/after 1/1/88', 'Boating safety course required', 'Valid ID required'],
+    licenseLink: 'https://checkinmyc.com/PWCLicense',
     sizes: {
       '1ski-2hours': { option: '1 Ski / 2 Hours', price: 320 },
       '2skis-1hour': { option: '2 Skis / 1 Hour', price: 320 },
@@ -296,6 +297,18 @@ export default function WaterToysPage() {
                     {product.details}
                   </p>
 
+                  {/* License Link for Jet Ski */}
+                  {(product as any).licenseLink && (
+                    <a 
+                      href={(product as any).licenseLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-xs text-[#c4a265] hover:text-[#0f0f0f] underline transition-colors"
+                    >
+                      Get your license to drive here →
+                    </a>
+                  )}
+
                   {/* Price & CTA */}
                   <div className="pt-4 space-y-3">
                     <div className="flex items-baseline gap-2">
@@ -329,21 +342,23 @@ export default function WaterToysPage() {
         </div>
 
         {/* Bottom Note */}
-        <div className="border-t border-[#c4a265]/20 pt-16 pb-32 text-center">
-          <p className="text-[#6b6b6b] text-sm max-w-2xl mx-auto mb-12" style={{ fontWeight: 300 }}>
-            All water toys are provided by licensed, insured third-party vendors. 
-            A valid yacht charter reservation is required for all bookings.
-          </p>
-          
-          <p className="text-[#6b6b6b]/60 text-xs max-w-4xl mx-auto leading-relaxed" style={{ fontWeight: 300 }}>
-            Yacht charter add-ons in Miami provide additional options for guests seeking water-based activities during their time on board. 
-            Available add-ons may include inflatable water toys, floating platforms, or other recreational equipment depending on the vessel and location. 
-            Listings shown on this page represent optional features offered by independent third-party providers or made available in connection with specific vessels. 
-            Availability is subject to vessel compatibility, operating conditions, and charter duration. 
-            Add-ons are selected and arranged separately and may vary by provider. 
-            This page presents add-on options associated with yacht rentals operating throughout Miami and Miami Beach. 
-            Specific details should be reviewed on each vessel listing to understand what may be available for a given charter.
-          </p>
+        <div className="border-t border-[#c4a265]/20 pt-16 pb-32">
+          <div className="max-w-6xl mx-auto px-6 md:px-12 text-center space-y-6">
+            <p className="text-[#6b6b6b] text-xs leading-relaxed" style={{ fontWeight: 300 }}>
+              All water toys are provided by licensed, insured third-party vendors. 
+              A valid yacht charter reservation is required for all bookings.
+            </p>
+            
+            <p className="text-[#6b6b6b]/60 text-xs leading-relaxed" style={{ fontWeight: 300 }}>
+              Yacht charter add-ons in Miami provide additional options for guests seeking water-based activities during their time on board. 
+              Available add-ons may include inflatable water toys, floating platforms, or other recreational equipment depending on the vessel and location. 
+              Listings shown on this page represent optional features offered by independent third-party providers or made available in connection with specific vessels. 
+              Availability is subject to vessel compatibility, operating conditions, and charter duration. 
+              Add-ons are selected and arranged separately and may vary by provider. 
+              This page presents add-on options associated with yacht rentals operating throughout Miami and Miami Beach. 
+              Specific details should be reviewed on each vessel listing to understand what may be available for a given charter.
+            </p>
+          </div>
         </div>
       </div>
 

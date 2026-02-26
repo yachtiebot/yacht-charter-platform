@@ -191,12 +191,12 @@ export default function FlowersPage() {
 
         {/* Bottom Note */}
         <div className="border-t border-[#c4a265]/20 pt-16 pb-32">
-          <div className="max-w-2xl mx-auto text-center space-y-4">
-            <p className="text-[#6b6b6b] text-sm" style={{ fontWeight: 300 }}>
+          <div className="max-w-6xl mx-auto px-6 md:px-12 text-center space-y-6">
+            <p className="text-[#6b6b6b] text-xs leading-relaxed" style={{ fontWeight: 300 }}>
               All arrangements are created fresh to order using premium blooms. 
               Delivery to your yacht is included with every order.
             </p>
-            <p className="text-xs text-[#6b6b6b]/80">
+            <p className="text-[#6b6b6b]/60 text-xs leading-relaxed" style={{ fontWeight: 300 }}>
               A valid yacht charter reservation is required. 48-hour advance notice requested for optimal selection.
             </p>
           </div>
