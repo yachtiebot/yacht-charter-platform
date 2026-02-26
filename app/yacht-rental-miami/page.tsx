@@ -210,7 +210,7 @@ function FleetContent() {
               The <span className="text-[#c4a265]" style={{textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)'}}>Fleet</span>
             </h1>
             <p className="text-white/70 text-lg" style={{ fontWeight: 300 }}>
-              Miami Yachting Company specializes in curated yacht rentals and luxury charters. Every vessel is privately owned, hand-picked for quality, and backed by outstanding guest reviews.
+              Miami Yachting Company specializes in curated yacht rentals and luxury charters. Every vessel is privately owned, hand picked for quality, and backed by outstanding guest reviews.
             </p>
           </div>
         </div>

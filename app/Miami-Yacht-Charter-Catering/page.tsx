@@ -98,7 +98,7 @@ export default function CateringPage() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         {/* Breadcrumb */}
         <div className="py-6 text-sm text-[#6b6b6b]">
-          <Link href="/Miami-Yacht-Charter-Add-Ons" className="hover:text-[#c4a265]">Add-Ons</Link>
+          <Link href="/Miami-Yacht-Charter-Add Ons" className="hover:text-[#c4a265]">Add Ons</Link>
           <span className="mx-2">/</span>
           <span>Catering</span>
         </div>

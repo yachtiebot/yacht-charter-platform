@@ -12,6 +12,31 @@
 
 These words are corporate clichés that undermine authentic luxury messaging. Balloons are banned for legal/environmental reasons.
 
+## ❌ NO DASHES OR HYPHENS IN PUBLIC-FACING TEXT
+
+**Rule:** Never use dashes (-) or hyphens in any customer-facing content.
+
+**Instead:**
+
+1. **For compound words:** Remove the dash completely
+   - ❌ "Add-Ons" → ✅ "Add Ons"
+   - ❌ "First-Class" → ✅ "First Class"
+   - ❌ "Full-Service" → ✅ "Full Service"
+   - ❌ "On-Board" → ✅ "Onboard"
+
+2. **For sentence punctuation:** Use commas instead
+   - ❌ "We offer catering - including fresh seafood - for your charter"
+   - ✅ "We offer catering, including fresh seafood, for your charter"
+   
+   - ❌ "Perfect for celebrations - birthdays, anniversaries, proposals"
+   - ✅ "Perfect for celebrations, birthdays, anniversaries, proposals"
+
+3. **For lists or breaks:** Use commas or restructure
+   - ❌ "Luxury yachts - professionally maintained - available daily"
+   - ✅ "Luxury yachts, professionally maintained, available daily"
+
+**Note:** This applies to all text users see (headings, body copy, buttons, navigation). Technical code/URLs/filenames can still use dashes.
+
 ## ✅ ALTERNATIVE APPROACHES
 
 Instead of "elevate your experience":

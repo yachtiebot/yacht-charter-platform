@@ -71,7 +71,7 @@ export default function FlowersPage() {
       <div className="max-w-[1600px] mx-auto px-6 md:px-20">
         {/* Breadcrumb */}
         <div className="py-6 text-sm text-[#6b6b6b]">
-          <Link href="/Miami-Yacht-Charter-Add-Ons" className="hover:text-[#c4a265]">Add-Ons</Link>
+          <Link href="/Miami-Yacht-Charter-Add Ons" className="hover:text-[#c4a265]">Add Ons</Link>
           <span className="mx-2">/</span>
           <span>Flowers</span>
         </div>
@@ -91,7 +91,7 @@ export default function FlowersPage() {
           
           <p className="text-[#6b6b6b] text-lg md:text-xl max-w-3xl mb-8" style={{ fontWeight: 300, lineHeight: 1.6 }}>
             Bespoke floral designs that transform your yacht into a floating garden. 
-            Each arrangement hand-selected for beauty, fragrance, and lasting elegance.
+            Each arrangement hand selected for beauty, fragrance, and lasting elegance.
           </p>
 
           {/* Info Note */}

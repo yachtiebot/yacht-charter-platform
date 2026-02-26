@@ -154,7 +154,7 @@ export default function AddOnsPage() {
             }}>
               Yacht Charter
               <br />
-              <span className="text-[#c4a265]" style={{ fontStyle: 'italic' }}>Add-Ons</span>
+              <span className="text-[#c4a265]" style={{ fontStyle: 'italic' }}>Add Ons</span>
             </h1>
             
             {/* Subheadline */}
@@ -274,7 +274,7 @@ export default function AddOnsPage() {
         </div>
       </section>
 
-      {/* Premium Add-Ons - Inquiry Only */}
+      {/* Premium Add Ons - Inquiry Only */}
       <section className="max-w-[1600px] mx-auto px-6 md:px-20 pb-32">
         <div className="mb-20">
           <div className="flex items-center gap-6 mb-8">
