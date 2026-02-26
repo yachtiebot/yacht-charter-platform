@@ -79,16 +79,10 @@ export default function SpiralCustomizationModal({
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div className="bg-[#faf9f7] w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-y-auto relative">
           {/* Scroll Indicator */}
-          <div className="fixed right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 text-[#c4a265] opacity-40 pointer-events-none z-20">
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-            </svg>
+          <div className="fixed right-4 top-1/2 -translate-y-1/2 text-[#c4a265] opacity-40 pointer-events-none z-20">
             <div className="text-[10px] uppercase tracking-[0.2em] font-light" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
               SCROLL
             </div>
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
           </div>
           <div className="sticky top-0 bg-[#faf9f7] border-b border-[#e5e5e5]/30 px-10 py-8 z-10">
             <button onClick={handleClose} className="absolute top-6 right-6 p-2 text-[#6b6b6b] hover:text-[#0f0f0f] transition-colors">
