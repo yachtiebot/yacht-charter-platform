@@ -58,9 +58,9 @@ export default function DippingSauceModal({
       <div className="fixed inset-0 bg-black/60 z-50" onClick={handleClose} />
       
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div className="bg-[#faf9f7] w-full max-w-md shadow-2xl">
-          <div className="bg-[#faf9f7] border-b border-[#e5e5e5]/30 px-10 py-8">
-            <button onClick={handleClose} className="absolute top-6 right-6 p-2 text-[#6b6b6b] hover:text-[#0f0f0f] transition-colors">
+        <div className="bg-[#faf9f7] w-full max-w-md shadow-2xl relative">
+          <div className="bg-[#faf9f7] border-b border-[#e5e5e5]/30 px-10 py-8 relative">
+            <button onClick={handleClose} className="absolute top-6 right-6 p-2 text-[#6b6b6b] hover:text-[#0f0f0f] transition-colors z-10">
               <X className="w-5 h-5" />
             </button>
             <div className="pr-12">
