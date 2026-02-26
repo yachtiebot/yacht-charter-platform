@@ -17,8 +17,7 @@ const waterToysProducts = [
     details: 'Comes fully charged, batteries last 1-2 hours. Charger included. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_seabob.jpg'],
     maxQuantity: 2,
-    features: ['Age 12+', 'Fully charged', '1-2 hour battery', 'Max 2 per charter'],
-    rentalNote: 'Yours for the duration of your charter'
+    features: ['Age 12+', 'Fully charged', '1-2 hour battery', 'Max 2 per charter', 'Yours for the duration of charter']
   },
   {
     id: 'flitescooter',
@@ -29,8 +28,7 @@ const waterToysProducts = [
     details: 'Instructor available upon request for additional charge. Comes fully charged, batteries last 1-2 hours. Max load 225lbs. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_flitescooter.jpg'],
     maxQuantity: 1,
-    features: ['Max load 225lbs', 'Instructor available', '1-2 hour battery', 'Max 1 per charter'],
-    rentalNote: 'Yours for the duration of your charter'
+    features: ['Max load 225lbs', 'Instructor available', '1-2 hour battery', 'Max 1 per charter', 'Yours for the duration of charter']
   },
   {
     id: 'water-sports-boat',
@@ -53,8 +51,7 @@ const waterToysProducts = [
     description: 'Spacious floating oasis with plush seating and ample space for sunbathing, drinks, and dining.',
     details: 'Perfect for groups. Anchored behind your yacht. Stable and safe design. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_floating_cabana.jpg'],
-    features: ['Plush seating', 'Sunbathing space', 'Stable design', 'Multiple available'],
-    rentalNote: 'Yours for the duration of your charter'
+    features: ['Plush seating', 'Sunbathing space', 'Stable design', 'Multiple available', 'Yours for the duration of charter']
   },
   {
     id: 'floating-lounge-chair',
@@ -65,8 +62,7 @@ const waterToysProducts = [
     details: 'Each chair is $99. Two chair minimum for delivery and setup. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_floating_lounge_chair.jpg'],
     minQuantity: 2,
-    features: ['$99 per chair', '2 chair minimum', 'Premium comfort', 'Perfect for groups'],
-    rentalNote: 'Yours for the duration of your charter'
+    features: ['$99 per chair', '2 chair minimum', 'Premium comfort', 'Perfect for groups', 'Yours for the duration of charter']
   },
   {
     id: 'jet-ski',
@@ -282,15 +278,6 @@ export default function WaterToysPage() {
                       </span>
                     ))}
                   </div>
-
-                  {/* Rental Note */}
-                  {product.rentalNote && (
-                    <div className="bg-[#c4a265]/5 border border-[#c4a265]/20 px-4 py-3">
-                      <p className="text-xs text-[#6b6b6b]">
-                        {product.rentalNote}
-                      </p>
-                    </div>
-                  )}
 
                   {/* Details */}
                   <p className="text-xs text-[#6b6b6b]/80" style={{ fontWeight: 300 }}>
