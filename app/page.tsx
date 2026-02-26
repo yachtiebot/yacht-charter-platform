@@ -126,7 +126,7 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <div className="editorial-label text-[#c4a265] mb-1.5" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>20–40 FT</div>
+                <div className="editorial-label text-[#c4a265] mb-1.5 backdrop-blur-sm bg-black/20 px-2 py-0.5 rounded inline-block" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>20–40 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Day Boats</h3>
                 <p className="editorial-small text-white/60 mb-3">Casual elegance for sandbar days and sunset cruises.</p>
                 <div className="flex justify-between items-center">
@@ -148,7 +148,7 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <div className="editorial-label text-[#c4a265] mb-1.5" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>40–80 FT</div>
+                <div className="editorial-label text-[#c4a265] mb-1.5 backdrop-blur-sm bg-black/20 px-2 py-0.5 rounded inline-block" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>40–80 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Luxury Yachts</h3>
                 <p className="editorial-small text-white/60 mb-3">Premium amenities for celebrations and corporate occasions.</p>
                 <div className="flex justify-between items-center">
@@ -170,9 +170,9 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <div className="editorial-label text-[#c4a265] mb-1.5" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>80 FT+</div>
+                <div className="editorial-label text-[#c4a265] mb-1.5 backdrop-blur-sm bg-black/20 px-2 py-0.5 rounded inline-block" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>80 FT+</div>
                 <h3 className="editorial-card-name text-white mb-3">Superyachts</h3>
-                <p className="editorial-small text-white/60 mb-3">The finest yachting experience. Unmatched space and premium amenities.</p>
+                <p className="editorial-small text-white/60 mb-3">Unmatched space and amenities.</p>
                 <div className="flex justify-between items-center">
                   <div className="editorial-label text-white/50">From $3,200</div>
                   <div className="editorial-label text-white flex items-center gap-2">
@@ -192,7 +192,7 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <div className="editorial-label text-[#c4a265] mb-1.5" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>ALL SIZES</div>
+                <div className="editorial-label text-[#c4a265] mb-1.5 backdrop-blur-sm bg-black/20 px-2 py-0.5 rounded inline-block" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>ALL SIZES</div>
                 <h3 className="editorial-card-name text-white mb-3">View Full Fleet</h3>
                 <p className="editorial-small text-white/60 mb-3">See all boats</p>
                 <div className="flex justify-between items-center">
