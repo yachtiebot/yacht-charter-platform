@@ -173,7 +173,7 @@
         }
       ],
       "category": "flowers",
-      "imageUrl": "/images/products/flowers/rose-pave.png"
+      "imageUrl": "/images/products/flowers/Miami_Yachting_Company_rose-pave.jpg"
     },
     {
       "id": "blooming-orchid",
@@ -199,7 +199,7 @@
         }
       ],
       "category": "flowers",
-      "imageUrl": "/images/products/flowers/blooming-orchid.png"
+      "imageUrl": "/images/products/flowers/Miami_Yachting_Company_blooming-orchid.jpg"
     },
     {
       "id": "tropical-paradise",
@@ -225,7 +225,7 @@
         }
       ],
       "category": "flowers",
-      "imageUrl": "/images/products/flowers/tropical-paradise.png"
+      "imageUrl": "/images/products/flowers/Miami_Yachting_Company_tropical-paradise.jpg"
     },
     {
       "id": "dancing-roses",
@@ -251,7 +251,7 @@
         }
       ],
       "category": "flowers",
-      "imageUrl": "/images/products/flowers/dancing-roses.png"
+      "imageUrl": "/images/products/flowers/Miami_Yachting_Company_dancing-roses.jpg"
     }
   ],
   "bachelorette": [
@@ -270,7 +270,7 @@
         "Team bride bracelets"
       ],
       "category": "bachelorette",
-      "imageUrl": "/images/products/bachelorette/last-toast.jpg"
+      "imageUrl": "/images/products/bachelorette/Miami_Yachting_Company_last-toast.jpg"
     },
     {
       "id": "last-sail-before-the-veil",
@@ -279,7 +279,7 @@
       "price": 249.99,
       "description": "Mid-tier bachelorette package with additional party essentials.",
       "category": "bachelorette",
-      "imageUrl": "/images/products/bachelorette/last-sail.jpg"
+      "imageUrl": "/images/products/bachelorette/Miami_Yachting_Company_last-sail.jpg"
     },
     {
       "id": "something-blue-before-i-do",
@@ -288,7 +288,7 @@
       "price": 299.99,
       "description": "Premium bachelorette package for an unforgettable celebration.",
       "category": "bachelorette",
-      "imageUrl": "/images/products/bachelorette/something-blue.jpg"
+      "imageUrl": "/images/products/bachelorette/Miami_Yachting_Company_something-blue.jpg"
     },
     {
       "id": "drone-video",
@@ -297,7 +297,7 @@
       "price": 399,
       "description": "Professional drone video of your bachelorette yacht experience. Perfect add-on to any package.",
       "category": "bachelorette",
-      "imageUrl": "/images/products/bachelorette/drone-video.jpg"
+      "imageUrl": "/images/products/bachelorette/Miami_Yachting_Company_drone-video.jpg"
     }
   ],
   "catering": [
