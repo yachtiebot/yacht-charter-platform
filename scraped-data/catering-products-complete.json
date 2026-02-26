@@ -1,0 +1,907 @@
+[
+  {
+    "id": "deli-sandwich-combo-platter-93wrm",
+    "name": "Deli Sandwich Combo Platter",
+    "slug": "deli-sandwich-combo-platter-93wrm",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/deli-sandwich-combo-platter-93wrm",
+    "localImages": [
+      "/images/products/catering-complete/deli-sandwich-combo-platter-93wrm_1.png",
+      "/images/products/catering-complete/deli-sandwich-combo-platter-93wrm_2.png",
+      "/images/products/catering-complete/deli-sandwich-combo-platter-93wrm_3.jpg"
+    ]
+  },
+  {
+    "id": "gourmetspirals",
+    "name": "Gourmet Spirals Platter",
+    "slug": "gourmetspirals",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/gourmetspirals",
+    "localImages": [
+      "/images/products/catering-complete/gourmetspirals_1.png",
+      "/images/products/catering-complete/gourmetspirals_2.png",
+      "/images/products/catering-complete/gourmetspirals_3.jpg"
+    ]
+  },
+  {
+    "id": "gourmet-wraps",
+    "name": "Gourmet Wraps Platter",
+    "slug": "gourmet-wraps",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/gourmet-wraps",
+    "localImages": [
+      "/images/products/catering-complete/gourmet-wraps_1.png",
+      "/images/products/catering-complete/gourmet-wraps_2.png",
+      "/images/products/catering-complete/gourmet-wraps_3.jpg"
+    ]
+  },
+  {
+    "id": "slider-trio",
+    "name": "Slider Trio Sandwich Platter",
+    "slug": "slider-trio",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/slider-trio",
+    "localImages": [
+      "/images/products/catering-complete/slider-trio_1.png",
+      "/images/products/catering-complete/slider-trio_2.png",
+      "/images/products/catering-complete/slider-trio_3.png"
+    ]
+  },
+  {
+    "id": "cubanplatter",
+    "name": "Cuban Sandwich Platter",
+    "slug": "cubanplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/cubanplatter",
+    "localImages": [
+      "/images/products/catering-complete/cubanplatter_1.png",
+      "/images/products/catering-complete/cubanplatter_2.png",
+      "/images/products/catering-complete/cubanplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "shrimp-platter",
+    "name": "Ocean Choice Shrimp Platter",
+    "slug": "shrimp-platter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/shrimp-platter",
+    "localImages": [
+      "/images/products/catering-complete/shrimp-platter_1.png",
+      "/images/products/catering-complete/shrimp-platter_2.png",
+      "/images/products/catering-complete/shrimp-platter_3.jpg",
+      "/images/products/catering-complete/shrimp-platter_4.jpg",
+      "/images/products/catering-complete/shrimp-platter_5.jpg"
+    ]
+  },
+  {
+    "id": "shrimp-surimi",
+    "name": "Shrimp & Surimi Platter",
+    "slug": "shrimp-surimi",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/shrimp-surimi",
+    "localImages": [
+      "/images/products/catering-complete/shrimp-surimi_1.png",
+      "/images/products/catering-complete/shrimp-surimi_2.png",
+      "/images/products/catering-complete/shrimp-surimi_3.jpg",
+      "/images/products/catering-complete/shrimp-surimi_4.jpg",
+      "/images/products/catering-complete/shrimp-surimi_5.jpg"
+    ]
+  },
+  {
+    "id": "chilledtenders",
+    "name": "Chilled Baked Chicken Tenders Platter",
+    "slug": "chilledtenders",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/chilledtenders",
+    "localImages": [
+      "/images/products/catering-complete/chilledtenders_1.png",
+      "/images/products/catering-complete/chilledtenders_2.png",
+      "/images/products/catering-complete/chilledtenders_3.jpg",
+      "/images/products/catering-complete/chilledtenders_4.jpg",
+      "/images/products/catering-complete/chilledtenders_5.jpg"
+    ]
+  },
+  {
+    "id": "chickentenders",
+    "name": "Chicken Tenders",
+    "slug": "chickentenders",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/chickentenders",
+    "localImages": [
+      "/images/products/catering-complete/chickentenders_1.png",
+      "/images/products/catering-complete/chickentenders_2.png",
+      "/images/products/catering-complete/chickentenders_3.jpg",
+      "/images/products/catering-complete/chickentenders_4.jpg",
+      "/images/products/catering-complete/chickentenders_5.jpg"
+    ]
+  },
+  {
+    "id": "chicken-wings",
+    "name": "Chicken Wings Sampler Platter",
+    "slug": "chicken-wings",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/chicken-wings",
+    "localImages": [
+      "/images/products/catering-complete/chicken-wings_1.png",
+      "/images/products/catering-complete/chicken-wings_2.png",
+      "/images/products/catering-complete/chicken-wings_3.jpg",
+      "/images/products/catering-complete/chicken-wings_4.jpg",
+      "/images/products/catering-complete/chicken-wings_5.jpg"
+    ]
+  },
+  {
+    "id": "popcornchicken",
+    "name": "Popcorn Chicken",
+    "slug": "popcornchicken",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/popcornchicken",
+    "localImages": [
+      "/images/products/catering-complete/popcornchicken_1.png",
+      "/images/products/catering-complete/popcornchicken_2.png",
+      "/images/products/catering-complete/popcornchicken_3.jpg",
+      "/images/products/catering-complete/popcornchicken_4.jpg",
+      "/images/products/catering-complete/popcornchicken_5.jpg"
+    ]
+  },
+  {
+    "id": "customcharcuteriebox",
+    "name": "Custom Charcuterie Box",
+    "slug": "customcharcuteriebox",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/customcharcuteriebox",
+    "localImages": [
+      "/images/products/catering-complete/customcharcuteriebox_1.png",
+      "/images/products/catering-complete/customcharcuteriebox_2.png",
+      "/images/products/catering-complete/customcharcuteriebox_3.jpg"
+    ]
+  },
+  {
+    "id": "med-charcuterie-box",
+    "name": "Mediterranean Charcuterie Box",
+    "slug": "med-charcuterie-box",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/med-charcuterie-box",
+    "localImages": [
+      "/images/products/catering-complete/med-charcuterie-box_1.png",
+      "/images/products/catering-complete/med-charcuterie-box_2.png",
+      "/images/products/catering-complete/med-charcuterie-box_3.png"
+    ]
+  },
+  {
+    "id": "large-charcuterie-platter",
+    "name": "Large Charcuterie Platter",
+    "slug": "large-charcuterie-platter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/large-charcuterie-platter",
+    "localImages": [
+      "/images/products/catering-complete/large-charcuterie-platter_1.png",
+      "/images/products/catering-complete/large-charcuterie-platter_2.png",
+      "/images/products/catering-complete/large-charcuterie-platter_3.jpg"
+    ]
+  },
+  {
+    "id": "prosciuttoskewers",
+    "name": "Prosciutto Skewers Platter",
+    "slug": "prosciuttoskewers",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/prosciuttoskewers",
+    "localImages": [
+      "/images/products/catering-complete/prosciuttoskewers_1.png",
+      "/images/products/catering-complete/prosciuttoskewers_2.png",
+      "/images/products/catering-complete/prosciuttoskewers_3.jpg",
+      "/images/products/catering-complete/prosciuttoskewers_4.jpg"
+    ]
+  },
+  {
+    "id": "bread-bowl-platter",
+    "name": "Bread Bowl Dip Platter",
+    "slug": "bread-bowl-platter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/bread-bowl-platter",
+    "localImages": [
+      "/images/products/catering-complete/bread-bowl-platter_1.png",
+      "/images/products/catering-complete/bread-bowl-platter_2.png",
+      "/images/products/catering-complete/bread-bowl-platter_3.jpg"
+    ]
+  },
+  {
+    "id": "wildsalmonsalad",
+    "name": "Wild Salmon Salad Platter",
+    "slug": "wildsalmonsalad",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/wildsalmonsalad",
+    "localImages": [
+      "/images/products/catering-complete/wildsalmonsalad_1.png",
+      "/images/products/catering-complete/wildsalmonsalad_2.png",
+      "/images/products/catering-complete/wildsalmonsalad_3.jpg"
+    ]
+  },
+  {
+    "id": "caesarsaladplatter",
+    "name": "Caesar Salad Platter",
+    "slug": "caesarsaladplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/caesarsaladplatter",
+    "localImages": [
+      "/images/products/catering-complete/caesarsaladplatter_1.png",
+      "/images/products/catering-complete/caesarsaladplatter_2.png",
+      "/images/products/catering-complete/caesarsaladplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "chickenlettucewraps",
+    "name": "Lemon Chicken Lettuce Wraps",
+    "slug": "chickenlettucewraps",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/chickenlettucewraps",
+    "localImages": [
+      "/images/products/catering-complete/chickenlettucewraps_1.png",
+      "/images/products/catering-complete/chickenlettucewraps_2.png",
+      "/images/products/catering-complete/chickenlettucewraps_3.jpg"
+    ]
+  },
+  {
+    "id": "lettucewraps",
+    "name": "Lettuce Wraps",
+    "slug": "lettucewraps",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/lettucewraps",
+    "localImages": [
+      "/images/products/catering-complete/lettucewraps_1.png",
+      "/images/products/catering-complete/lettucewraps_2.png",
+      "/images/products/catering-complete/lettucewraps_3.jpg"
+    ]
+  },
+  {
+    "id": "chefsalad",
+    "name": "Chef Salad Platter",
+    "slug": "chefsalad",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/chefsalad",
+    "localImages": [
+      "/images/products/catering-complete/chefsalad_1.png",
+      "/images/products/catering-complete/chefsalad_2.png",
+      "/images/products/catering-complete/chefsalad_3.jpg",
+      "/images/products/catering-complete/chefsalad_4.jpg"
+    ]
+  },
+  {
+    "id": "turkeysaladplatter",
+    "name": "Turkey Salad Platter",
+    "slug": "turkeysaladplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/turkeysaladplatter",
+    "localImages": [
+      "/images/products/catering-complete/turkeysaladplatter_1.png",
+      "/images/products/catering-complete/turkeysaladplatter_2.png",
+      "/images/products/catering-complete/turkeysaladplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "lettucewraps-bf5d7",
+    "name": "Southern Cobb Salad Platter",
+    "slug": "lettucewraps-bf5d7",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/lettucewraps-bf5d7",
+    "localImages": [
+      "/images/products/catering-complete/lettucewraps-bf5d7_1.png",
+      "/images/products/catering-complete/lettucewraps-bf5d7_2.png",
+      "/images/products/catering-complete/lettucewraps-bf5d7_3.jpg"
+    ]
+  },
+  {
+    "id": "greeksalad",
+    "name": "Vegetarian Greek Style Salad Platter",
+    "slug": "greeksalad",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/greeksalad",
+    "localImages": [
+      "/images/products/catering-complete/greeksalad_1.png",
+      "/images/products/catering-complete/greeksalad_2.png",
+      "/images/products/catering-complete/greeksalad_3.jpg"
+    ]
+  },
+  {
+    "id": "garden-vegetable-platter-7m7gt",
+    "name": "Garden Vegetable Platter",
+    "slug": "garden-vegetable-platter-7m7gt",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/garden-vegetable-platter-7m7gt",
+    "localImages": [
+      "/images/products/catering-complete/garden-vegetable-platter-7m7gt_1.png",
+      "/images/products/catering-complete/garden-vegetable-platter-7m7gt_2.png",
+      "/images/products/catering-complete/garden-vegetable-platter-7m7gt_3.jpg"
+    ]
+  },
+  {
+    "id": "briefruitplatter",
+    "name": "Sweet Brie Fruit Platter",
+    "slug": "briefruitplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/briefruitplatter",
+    "localImages": [
+      "/images/products/catering-complete/briefruitplatter_1.png",
+      "/images/products/catering-complete/briefruitplatter_2.png",
+      "/images/products/catering-complete/briefruitplatter_3.jpg",
+      "/images/products/catering-complete/briefruitplatter_4.jpg"
+    ]
+  },
+  {
+    "id": "fresh-fruit-platter-np56z",
+    "name": "Fresh Fruit Platter",
+    "slug": "fresh-fruit-platter-np56z",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/fresh-fruit-platter-np56z",
+    "localImages": [
+      "/images/products/catering-complete/fresh-fruit-platter-np56z_1.png",
+      "/images/products/catering-complete/fresh-fruit-platter-np56z_2.png",
+      "/images/products/catering-complete/fresh-fruit-platter-np56z_3.jpg"
+    ]
+  },
+  {
+    "id": "classicvarietydip",
+    "name": "Classic Variety Dip Platter",
+    "slug": "classicvarietydip",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/classicvarietydip",
+    "localImages": [
+      "/images/products/catering-complete/classicvarietydip_1.png",
+      "/images/products/catering-complete/classicvarietydip_2.png",
+      "/images/products/catering-complete/classicvarietydip_3.jpg",
+      "/images/products/catering-complete/classicvarietydip_4.jpg"
+    ]
+  },
+  {
+    "id": "pretzel-bagel-bite-platter",
+    "name": "Pretzel Bagel Bite Platter",
+    "slug": "pretzel-bagel-bite-platter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/pretzel-bagel-bite-platter",
+    "localImages": [
+      "/images/products/catering-complete/pretzel-bagel-bite-platter_1.png",
+      "/images/products/catering-complete/pretzel-bagel-bite-platter_2.png",
+      "/images/products/catering-complete/pretzel-bagel-bite-platter_3.jpg"
+    ]
+  },
+  {
+    "id": "gourmet-meat-and-cheese-platter",
+    "name": "Gourmet Meat and Cheese Platter",
+    "slug": "gourmet-meat-and-cheese-platter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/gourmet-meat-and-cheese-platter",
+    "localImages": [
+      "/images/products/catering-complete/gourmet-meat-and-cheese-platter_1.png",
+      "/images/products/catering-complete/gourmet-meat-and-cheese-platter_2.png",
+      "/images/products/catering-complete/gourmet-meat-and-cheese-platter_3.jpg"
+    ]
+  },
+  {
+    "id": "gourmetmeatandcheesecubeplatter",
+    "name": "Gourmet Meat and Cheese Cube Platter",
+    "slug": "gourmetmeatandcheesecubeplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/gourmetmeatandcheesecubeplatter",
+    "localImages": [
+      "/images/products/catering-complete/gourmetmeatandcheesecubeplatter_1.png",
+      "/images/products/catering-complete/gourmetmeatandcheesecubeplatter_2.png",
+      "/images/products/catering-complete/gourmetmeatandcheesecubeplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "cheese-taster-platter-j3ld4",
+    "name": "Cheese Taster Platter",
+    "slug": "cheese-taster-platter-j3ld4",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/cheese-taster-platter-j3ld4",
+    "localImages": [
+      "/images/products/catering-complete/cheese-taster-platter-j3ld4_1.png",
+      "/images/products/catering-complete/cheese-taster-platter-j3ld4_2.png",
+      "/images/products/catering-complete/cheese-taster-platter-j3ld4_3.jpg"
+    ]
+  },
+  {
+    "id": "antipasti-platter",
+    "name": "Antipasti Platter",
+    "slug": "antipasti-platter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/antipasti-platter",
+    "localImages": [
+      "/images/products/catering-complete/antipasti-platter_1.png",
+      "/images/products/catering-complete/antipasti-platter_2.png",
+      "/images/products/catering-complete/antipasti-platter_3.jpg",
+      "/images/products/catering-complete/antipasti-platter_4.jpg",
+      "/images/products/catering-complete/antipasti-platter_5.jpg"
+    ]
+  },
+  {
+    "id": "savorynaan",
+    "name": "Savory Naan Platter",
+    "slug": "savorynaan",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/savorynaan",
+    "localImages": [
+      "/images/products/catering-complete/savorynaan_1.png",
+      "/images/products/catering-complete/savorynaan_2.png",
+      "/images/products/catering-complete/savorynaan_3.jpg"
+    ]
+  },
+  {
+    "id": "mednaan",
+    "name": "Med Style Naan Platter",
+    "slug": "mednaan",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/mednaan",
+    "localImages": [
+      "/images/products/catering-complete/mednaan_1.png",
+      "/images/products/catering-complete/mednaan_2.png",
+      "/images/products/catering-complete/mednaan_3.jpg"
+    ]
+  },
+  {
+    "id": "greekstylehummusplatter",
+    "name": "Greek Style Hummus Platter",
+    "slug": "greekstylehummusplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/greekstylehummusplatter",
+    "localImages": [
+      "/images/products/catering-complete/greekstylehummusplatter_1.png",
+      "/images/products/catering-complete/greekstylehummusplatter_2.png",
+      "/images/products/catering-complete/greekstylehummusplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "deli-egg-platter",
+    "name": "Deli Egg Platter",
+    "slug": "deli-egg-platter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/deli-egg-platter",
+    "localImages": [
+      "/images/products/catering-complete/deli-egg-platter_1.png",
+      "/images/products/catering-complete/deli-egg-platter_2.png",
+      "/images/products/catering-complete/deli-egg-platter_3.png"
+    ]
+  },
+  {
+    "id": "med-style-platter",
+    "name": "Med Style Relish Platter",
+    "slug": "med-style-platter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/med-style-platter",
+    "localImages": [
+      "/images/products/catering-complete/med-style-platter_1.png",
+      "/images/products/catering-complete/med-style-platter_2.png",
+      "/images/products/catering-complete/med-style-platter_3.jpg"
+    ]
+  },
+  {
+    "id": "mini-croissant-platter",
+    "name": "Mini Croissant Platter",
+    "slug": "mini-croissant-platter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/mini-croissant-platter",
+    "localImages": [
+      "/images/products/catering-complete/mini-croissant-platter_1.png",
+      "/images/products/catering-complete/mini-croissant-platter_2.png",
+      "/images/products/catering-complete/mini-croissant-platter_3.jpg"
+    ]
+  },
+  {
+    "id": "caesarpasta",
+    "name": "Caesar Pasta Salad Bowl",
+    "slug": "caesarpasta",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/caesarpasta",
+    "localImages": [
+      "/images/products/catering-complete/caesarpasta_1.png",
+      "/images/products/catering-complete/caesarpasta_2.png",
+      "/images/products/catering-complete/caesarpasta_3.jpg"
+    ]
+  },
+  {
+    "id": "taboulisalad",
+    "name": "Tabouli Salad",
+    "slug": "taboulisalad",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/taboulisalad",
+    "localImages": [
+      "/images/products/catering-complete/taboulisalad_1.png",
+      "/images/products/catering-complete/taboulisalad_2.png",
+      "/images/products/catering-complete/taboulisalad_3.jpg"
+    ]
+  },
+  {
+    "id": "italiancapresepasta",
+    "name": "Italian Style Caprese Pasta Bowl",
+    "slug": "italiancapresepasta",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/italiancapresepasta",
+    "localImages": [
+      "/images/products/catering-complete/italiancapresepasta_1.png",
+      "/images/products/catering-complete/italiancapresepasta_2.png",
+      "/images/products/catering-complete/italiancapresepasta_3.jpg"
+    ]
+  },
+  {
+    "id": "greek-style-pasta-salad-etjrx",
+    "name": "Greek Style Pasta Salad Bowl",
+    "slug": "greek-style-pasta-salad-etjrx",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/greek-style-pasta-salad-etjrx",
+    "localImages": [
+      "/images/products/catering-complete/greek-style-pasta-salad-etjrx_1.png",
+      "/images/products/catering-complete/greek-style-pasta-salad-etjrx_2.png",
+      "/images/products/catering-complete/greek-style-pasta-salad-etjrx_3.png"
+    ]
+  },
+  {
+    "id": "grilled-chicken-pasta-bowl-5cg2c",
+    "name": "Grilled Chicken Pasta Bowl",
+    "slug": "grilled-chicken-pasta-bowl-5cg2c",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/grilled-chicken-pasta-bowl-5cg2c",
+    "localImages": [
+      "/images/products/catering-complete/grilled-chicken-pasta-bowl-5cg2c_1.png",
+      "/images/products/catering-complete/grilled-chicken-pasta-bowl-5cg2c_2.png",
+      "/images/products/catering-complete/grilled-chicken-pasta-bowl-5cg2c_3.jpg"
+    ]
+  },
+  {
+    "id": "chocolatehummusplatter",
+    "name": "Dark Chocolate Hummus Desert Platter",
+    "slug": "chocolatehummusplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/chocolatehummusplatter",
+    "localImages": [
+      "/images/products/catering-complete/chocolatehummusplatter_1.png",
+      "/images/products/catering-complete/chocolatehummusplatter_2.png",
+      "/images/products/catering-complete/chocolatehummusplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "largebrunchplatter",
+    "name": "Large Brunch Delights Platter",
+    "slug": "largebrunchplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/largebrunchplatter",
+    "localImages": [
+      "/images/products/catering-complete/largebrunchplatter_1.png",
+      "/images/products/catering-complete/largebrunchplatter_2.png",
+      "/images/products/catering-complete/largebrunchplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "croissantplatter",
+    "name": "Gourmet Croissant Platter",
+    "slug": "croissantplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/croissantplatter",
+    "localImages": [
+      "/images/products/catering-complete/croissantplatter_1.png",
+      "/images/products/catering-complete/croissantplatter_2.png",
+      "/images/products/catering-complete/croissantplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "gourmetbrowniesplatter-tnst9",
+    "name": "Gourmet Pastry Platter",
+    "slug": "gourmetbrowniesplatter-tnst9",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/gourmetbrowniesplatter-tnst9",
+    "localImages": [
+      "/images/products/catering-complete/gourmetbrowniesplatter-tnst9_1.png",
+      "/images/products/catering-complete/gourmetbrowniesplatter-tnst9_2.png",
+      "/images/products/catering-complete/gourmetbrowniesplatter-tnst9_3.jpg"
+    ]
+  },
+  {
+    "id": "strawberryandmacaron",
+    "name": "Tasty Delights Platter",
+    "slug": "strawberryandmacaron",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/strawberryandmacaron",
+    "localImages": [
+      "/images/products/catering-complete/strawberryandmacaron_1.png",
+      "/images/products/catering-complete/strawberryandmacaron_2.png",
+      "/images/products/catering-complete/strawberryandmacaron_3.jpg"
+    ]
+  },
+  {
+    "id": "muffinplatter",
+    "name": "Mini Muffin Platter",
+    "slug": "muffinplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/muffinplatter",
+    "localImages": [
+      "/images/products/catering-complete/muffinplatter_1.png",
+      "/images/products/catering-complete/muffinplatter_2.png",
+      "/images/products/catering-complete/muffinplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "gourmetcookieplatter",
+    "name": "Gourmet Cookie Platter",
+    "slug": "gourmetcookieplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/gourmetcookieplatter",
+    "localImages": [
+      "/images/products/catering-complete/gourmetcookieplatter_1.png",
+      "/images/products/catering-complete/gourmetcookieplatter_2.png",
+      "/images/products/catering-complete/gourmetcookieplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "desert-tart-platter-9hdg4",
+    "name": "Dessert Tart Platter",
+    "slug": "desert-tart-platter-9hdg4",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/desert-tart-platter-9hdg4",
+    "localImages": [
+      "/images/products/catering-complete/desert-tart-platter-9hdg4_1.png",
+      "/images/products/catering-complete/desert-tart-platter-9hdg4_2.png",
+      "/images/products/catering-complete/desert-tart-platter-9hdg4_3.jpg"
+    ]
+  },
+  {
+    "id": "desert-tart-6mpcy",
+    "name": "Large Dessert Tart",
+    "slug": "desert-tart-6mpcy",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/desert-tart-6mpcy",
+    "localImages": [
+      "/images/products/catering-complete/desert-tart-6mpcy_1.png",
+      "/images/products/catering-complete/desert-tart-6mpcy_2.png",
+      "/images/products/catering-complete/desert-tart-6mpcy_3.jpg"
+    ]
+  },
+  {
+    "id": "gourmettartplatter",
+    "name": "Gourmet Tart Platter",
+    "slug": "gourmettartplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/gourmettartplatter",
+    "localImages": [
+      "/images/products/catering-complete/gourmettartplatter_1.png",
+      "/images/products/catering-complete/gourmettartplatter_2.png",
+      "/images/products/catering-complete/gourmettartplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "macaronchocolatestrawberry",
+    "name": "Macaron and Chocolate Strawberry Platter",
+    "slug": "macaronchocolatestrawberry",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/macaronchocolatestrawberry",
+    "localImages": [
+      "/images/products/catering-complete/macaronchocolatestrawberry_1.png",
+      "/images/products/catering-complete/macaronchocolatestrawberry_2.png",
+      "/images/products/catering-complete/macaronchocolatestrawberry_3.jpg"
+    ]
+  },
+  {
+    "id": "chocstraw",
+    "name": "Chocolate Strawberry Platter",
+    "slug": "chocstraw",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/chocstraw",
+    "localImages": [
+      "/images/products/catering-complete/chocstraw_1.png",
+      "/images/products/catering-complete/chocstraw_2.png",
+      "/images/products/catering-complete/chocstraw_3.jpg",
+      "/images/products/catering-complete/chocstraw_4.jpg"
+    ]
+  },
+  {
+    "id": "decadent-desert-platter",
+    "name": "Decadent Brownie Platter",
+    "slug": "decadent-desert-platter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/decadent-desert-platter",
+    "localImages": [
+      "/images/products/catering-complete/decadent-desert-platter_1.png",
+      "/images/products/catering-complete/decadent-desert-platter_2.png",
+      "/images/products/catering-complete/decadent-desert-platter_3.jpg"
+    ]
+  },
+  {
+    "id": "delightful-desert-platter",
+    "name": "Delightful Deserts Platter",
+    "slug": "delightful-desert-platter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/delightful-desert-platter",
+    "localImages": [
+      "/images/products/catering-complete/delightful-desert-platter_1.png",
+      "/images/products/catering-complete/delightful-desert-platter_2.png",
+      "/images/products/catering-complete/delightful-desert-platter_3.jpg",
+      "/images/products/catering-complete/delightful-desert-platter_4.jpg",
+      "/images/products/catering-complete/delightful-desert-platter_5.jpg"
+    ]
+  },
+  {
+    "id": "gourmetbrowniesplatter",
+    "name": "Gourmet Brownie Bites",
+    "slug": "gourmetbrowniesplatter",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/gourmetbrowniesplatter",
+    "localImages": [
+      "/images/products/catering-complete/gourmetbrowniesplatter_1.png",
+      "/images/products/catering-complete/gourmetbrowniesplatter_2.png",
+      "/images/products/catering-complete/gourmetbrowniesplatter_3.jpg"
+    ]
+  },
+  {
+    "id": "bachelorettecupcakes",
+    "name": "Bachelorette Bridal Cupcakes",
+    "slug": "bachelorettecupcakes",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/bachelorettecupcakes",
+    "localImages": [
+      "/images/products/catering-complete/bachelorettecupcakes_1.png",
+      "/images/products/catering-complete/bachelorettecupcakes_2.png",
+      "/images/products/catering-complete/bachelorettecupcakes_3.jpg"
+    ]
+  },
+  {
+    "id": "customizable-cookies-and-cream-cake-6n3m8",
+    "name": "Customizable Cookies and Cream Cake",
+    "slug": "customizable-cookies-and-cream-cake-6n3m8",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/customizable-cookies-and-cream-cake-6n3m8",
+    "localImages": [
+      "/images/products/catering-complete/customizable-cookies-and-cream-cake-6n3m8_1.png",
+      "/images/products/catering-complete/customizable-cookies-and-cream-cake-6n3m8_2.png",
+      "/images/products/catering-complete/customizable-cookies-and-cream-cake-6n3m8_3.png"
+    ]
+  },
+  {
+    "id": "customizable-floral-cake",
+    "name": "Floral Design Cake",
+    "slug": "customizable-floral-cake",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/customizable-floral-cake",
+    "localImages": [
+      "/images/products/catering-complete/customizable-floral-cake_1.png",
+      "/images/products/catering-complete/customizable-floral-cake_2.png",
+      "/images/products/catering-complete/customizable-floral-cake_3.jpg"
+    ]
+  },
+  {
+    "id": "customizable-party-balloon-cake-aar5e",
+    "name": "Customizable Party Balloon Cake",
+    "slug": "customizable-party-balloon-cake-aar5e",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/customizable-party-balloon-cake-aar5e",
+    "localImages": [
+      "/images/products/catering-complete/customizable-party-balloon-cake-aar5e_1.png",
+      "/images/products/catering-complete/customizable-party-balloon-cake-aar5e_2.png",
+      "/images/products/catering-complete/customizable-party-balloon-cake-aar5e_3.png"
+    ]
+  },
+  {
+    "id": "choc-red-velvet",
+    "name": "Chocolate Red Velvet Cake",
+    "slug": "choc-red-velvet",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/choc-red-velvet",
+    "localImages": [
+      "/images/products/catering-complete/choc-red-velvet_1.png",
+      "/images/products/catering-complete/choc-red-velvet_2.png",
+      "/images/products/catering-complete/choc-red-velvet_3.jpg"
+    ]
+  },
+  {
+    "id": "straw-almond-cream-cake",
+    "name": "Strawberry Vanilla Almond Cream Cake",
+    "slug": "straw-almond-cream-cake",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/straw-almond-cream-cake",
+    "localImages": [
+      "/images/products/catering-complete/straw-almond-cream-cake_1.png",
+      "/images/products/catering-complete/straw-almond-cream-cake_2.png",
+      "/images/products/catering-complete/straw-almond-cream-cake_3.jpg"
+    ]
+  },
+  {
+    "id": "german-choc-cake",
+    "name": "German Chocolate Cake",
+    "slug": "german-choc-cake",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/german-choc-cake",
+    "localImages": [
+      "/images/products/catering-complete/german-choc-cake_1.png",
+      "/images/products/catering-complete/german-choc-cake_2.png",
+      "/images/products/catering-complete/german-choc-cake_3.jpg"
+    ]
+  },
+  {
+    "id": "pudding-cake",
+    "name": "Banana Pudding Cake",
+    "slug": "pudding-cake",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/pudding-cake",
+    "localImages": [
+      "/images/products/catering-complete/pudding-cake_1.png",
+      "/images/products/catering-complete/pudding-cake_2.png",
+      "/images/products/catering-complete/pudding-cake_3.jpg"
+    ]
+  },
+  {
+    "id": "straw-leche-cake",
+    "name": "Strawberry Dulce De Leche Cake",
+    "slug": "straw-leche-cake",
+    "description": "",
+    "prices": [],
+    "sourceUrl": "https://www.miamiyachtingcompany.com/catering/straw-leche-cake",
+    "localImages": [
+      "/images/products/catering-complete/straw-leche-cake_1.png",
+      "/images/products/catering-complete/straw-leche-cake_2.png",
+      "/images/products/catering-complete/straw-leche-cake_3.jpg"
+    ]
+  }
+]
