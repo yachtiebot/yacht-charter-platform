@@ -60,7 +60,7 @@ export default function AddOnsPage() {
             <div className="flex items-center gap-6 mb-8">
               <div className="rule-gold w-16" />
               <span className="text-[#c4a265] text-xs uppercase tracking-[0.3em] font-medium">
-                Elevate Your Experience
+                Enhance Your Experience
               </span>
             </div>
             
