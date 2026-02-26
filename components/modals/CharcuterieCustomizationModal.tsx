@@ -173,7 +173,9 @@ export default function CharcuterieCustomizationModal({
             </button>
             <div className="pr-12">
               <p className="editorial-label text-[#c4a265] mb-2">BUILD YOUR BOX</p>
-              <h2 className="editorial-heading text-[#0f0f0f] mb-3">Custom Charcuterie</h2>
+              <h2 className="font-serif text-2xl font-light text-[#0f0f0f] mb-3" style={{ fontFamily: 'var(--font-cormorant)' }}>
+                Custom Charcuterie
+              </h2>
               <div className="flex items-center justify-between mb-2">
                 <p className="editorial-small text-[#6b6b6b]">{productName}</p>
                 <p className="editorial-label text-[#0f0f0f]">${productPrice.toFixed(2)}</p>
