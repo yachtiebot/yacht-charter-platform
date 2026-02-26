@@ -126,10 +126,22 @@
 
 ## 📝 **Waiver Forms Required**
 
+**⚠️ IMPORTANT: All waivers now appear AFTER payment to reduce checkout friction**
+
+**New Flow:**
+1. Customer adds items to cart (with brief disclaimer about waivers)
+2. Checkout → Contact info → Payment
+3. **AFTER payment successful** → Waiver screen appears
+4. "Your booking is not complete. Please acknowledge the following to finalize your reservation."
+5. Complete waiver(s)
+6. Final confirmation: "Congratulations! Your booking has been processed."
+
+---
+
 ### **1. Water Sports Toy Acknowledgement**
 **Products:** SeaBob, Flitescooter (only these two)
 
-**Important:** This waiver must be completed BEFORE payment is processed.
+**When:** AFTER payment is processed
 
 **Fields:**
 
@@ -158,19 +170,22 @@
    - "I understand the price of the rental is $499.99 per item and that my initial payment of $99.00 per item will be deducted from my final balance, leaving me with a total due of $400.00 per item which is payable directly to the water toy vendor."
 
 **Flow:**
-1. Customer clicks "Add to Cart" on SeaBob or Flitescooter
-2. Waiver modal opens (MUST complete before adding to cart)
-3. Customer checks all 6 boxes
-4. Customer types full name (electronic signature)
-5. THEN item adds to cart
-6. At checkout, waiver data is emailed to support@miamiyachting.com
+1. Customer adds SeaBob or Flitescooter to cart
+2. Brief disclaimer shown: "This item requires waiver signature after checkout"
+3. Proceed through checkout → Payment
+4. **AFTER payment successful** → Waiver screen appears
+5. Customer checks all 6 boxes
+6. Customer types full name (electronic signature)
+7. Click "Complete Booking"
+8. Waiver data emailed to support@miamiyachting.com
+9. Show final confirmation: "Congratulations! Your booking has been processed."
 
 ---
 
 ### **2. 3rd Party Vendor Toy Add-On**
 **Products:** Floating Cabana, Floating Lounge Chairs (only these two)
 
-**Important:** This waiver must be completed BEFORE payment is processed.
+**When:** AFTER payment is processed
 
 **Fields:**
 
@@ -191,27 +206,27 @@
    - "I authorize Miami Yachting Group LLC to charge my credit/debit card in the amount shown for this booking. I will bring this card with me in person the day of my rental for verification as well as my matching ID. I understand that if I do not bring this card with me in person and my matching ID for verification purposes, my rental may be canceled by the vendor. I authorize Miami Yachting Group LLC to charge my credit/debit card in the amount shown for this booking. I will bring this card with me in person the day of my rental for verification as well as my matching ID. I understand that if I do not bring this card with me in person and my matching ID for verification purposes, my rental may be canceled by the vendor."
 
 **Flow:**
-1. Customer clicks "Add to Cart" on Floating Cabana or Floating Lounge Chairs
-2. Waiver modal opens (MUST complete before adding to cart)
-3. Customer checks all 4 boxes
-4. NO name fields required (simpler than other waivers)
-5. THEN item adds to cart
-6. At checkout, waiver data is emailed to support@miamiyachting.com
+1. Customer adds Floating Cabana or Floating Lounge Chairs to cart
+2. Brief disclaimer shown: "This item requires waiver signature after checkout"
+3. Proceed through checkout → Payment
+4. **AFTER payment successful** → Waiver screen appears
+5. Customer checks all 4 boxes (NO name required)
+6. Click "Complete Booking"
+7. Waiver data emailed to support@miamiyachting.com
+8. Show final confirmation: "Congratulations! Your booking has been processed."
 
 ---
 
 ### **3. Jet Ski Acknowledgements**
 **Products:** All jet ski rentals
 
-**Important:** This waiver must be completed BEFORE payment is processed.
+**When:** AFTER payment is processed
 
-**Florida Boating License Requirement:**
-- Anyone born AFTER January 1, 1988 needs a boating license to operate a jet ski in Florida
-- Link to provide: https://checkinmyc.com/PWCLicense
-- Show this link:
-  - In order confirmation email
-  - On order confirmation page
-  - Highlighted prominently for jet ski orders
+**Florida Boating License Requirement (Critical):**
+- Anyone born AFTER January 1, 1988 MUST complete boating license to operate jet ski
+- Takes 10 minutes online: https://checkinmyc.com/PWCLicense
+- **State law:** Anyone else in group who drives jet ski MUST also meet birthday requirement or have license
+- Booking NOT complete until license requirement addressed
 
 **Fields (all checkboxes, all required):**
 
@@ -240,17 +255,37 @@
 - First Name (text input, required)
 - Last Name (text input, required)
 
+**Birthday Check (NEW):**
+- Radio buttons (required):
+  - "I was born BEFORE January 1, 1988" (no license needed)
+  - "I was born AFTER January 1, 1988" (license required)
+
 **Flow:**
-1. Customer clicks "Add to Cart" on jet ski product
-2. Waiver modal opens (MUST complete before adding to cart)
-3. Customer checks all boxes
-4. Customer types name (electronic signature)
-5. THEN item adds to cart
-6. At checkout, waiver data is emailed to support@miamiyachting.com
-7. **After payment, show boating license link prominently:**
-   - "⚠️ IMPORTANT: Born after Jan 1, 1988? You need a boating license!"
-   - "Complete your required course here: https://checkinmyc.com/PWCLicense"
-8. Include same message in confirmation email
+1. Customer adds jet ski to cart
+2. Brief disclaimer shown: "Jet skis require waiver signature and possible boating license after checkout"
+3. Proceed through checkout → Payment
+4. **AFTER payment successful** → Waiver screen appears
+5. Customer checks all 7 boxes
+6. Customer types full name (electronic signature)
+7. **Customer selects birthday radio button**
+8. Click "Complete Booking"
+
+**IF born AFTER Jan 1, 1988:**
+9. **NEW SCREEN APPEARS** (blocking):
+   - "⚠️ Your booking is not complete!"
+   - "Florida state law requires a boating license to operate a jet ski if you were born after January 1, 1988."
+   - "Complete your FREE online course now (takes 10 minutes):"
+   - **LINK:** https://checkinmyc.com/PWCLicense
+   - **IMPORTANT:** If anyone else in your group will drive the jet ski, they must also:
+     - Be born before Jan 1, 1988, OR
+     - Complete the boating license course
+   - Button: "I've completed my license" → Final confirmation
+
+**IF born BEFORE Jan 1, 1988:**
+9. Skip license screen → Go directly to final confirmation
+
+10. Waiver + birthday data emailed to support@miamiyachting.com
+11. Show final confirmation: "Congratulations! Your booking has been processed."
 
 ---
 

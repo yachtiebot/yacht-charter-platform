@@ -117,7 +117,12 @@ Build standalone e-commerce for add-ons (catering, water toys, flowers, bachelor
 
 ## 📋 Phase 1B: Waiver Systems (Days 2-3)
 
-**Goal:** Legal waivers with e-signature required BEFORE adding certain products to cart
+**Goal:** Legal waivers with e-signature required AFTER payment (reduce checkout friction)
+
+**⚠️ NEW FLOW: Waivers AFTER payment, not before**
+- Reduces checkout friction
+- Higher conversion rate
+- Waivers appear post-payment as "finalize your booking" step
 
 ### 1B.0 Waiver Infrastructure
 - [ ] Reusable waiver modal component
