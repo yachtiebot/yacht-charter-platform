@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: '**.googleusercontent.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'wojjcivzlxsbinbmblhy.supabase.co',
+      },
     ],
     // High quality optimization - no visible degradation
     formats: ['image/avif', 'image/webp'],
