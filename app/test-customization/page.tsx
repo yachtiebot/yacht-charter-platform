@@ -25,7 +25,7 @@ export default function TestCustomizationPage() {
     <div className="min-h-screen bg-[#faf9f7] flex items-center justify-center p-8">
       <div className="text-center max-w-xl">
         <p className="editorial-label text-[#c4a265] mb-3">CUSTOMIZATION TEST</p>
-        <h1 className="font-serif text-5xl font-light italic text-[#0f0f0f] mb-6" style={{ fontFamily: 'var(--font-cormorant)' }}>
+        <h1 className="font-serif text-3xl md:text-5xl font-light italic text-[#0f0f0f] mb-6 px-4" style={{ fontFamily: 'var(--font-cormorant)' }}>
           Build Your Charcuterie
         </h1>
         <ul className="flex flex-col items-center gap-2 mb-10">
