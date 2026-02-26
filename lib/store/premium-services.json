@@ -1,0 +1,102 @@
+{
+  "premiumServices": [
+    {
+      "id": "rare-vintage-alcohol",
+      "name": "Rare Vintage & Premium Tier Alcohol",
+      "category": "luxury-services",
+      "description": "Exclusive, ultra high-end alcohol bottle delivery service with custom bottle engraving. Savor the finest spirits, each bottle custom engraved with a name or message of your choice.",
+      "features": [
+        "Custom bottle engraving",
+        "Ultra premium selections",
+        "Personalized service",
+        "Perfect for special occasions"
+      ],
+      "image": "/images/premium-addons/Miami_Yachting_Company_premium_alcohol.jpg",
+      "inquiryOnly": true
+    },
+    {
+      "id": "luxury-transportation",
+      "name": "Luxury Transportation Options",
+      "category": "luxury-services",
+      "description": "Arrive in style with luxury transportation options. Choose from high-end vehicles, luxury sedans, or limo buses to transport you and your guests to and from the yacht.",
+      "features": [
+        "Luxury sedans",
+        "Limo buses",
+        "Professional chauffeurs",
+        "Seamless travel experience"
+      ],
+      "image": "/images/premium-addons/Miami_Yachting_Company_luxury_transport.jpg",
+      "inquiryOnly": true
+    },
+    {
+      "id": "chef-services",
+      "name": "Chef Services for Onboard Dining",
+      "category": "culinary",
+      "description": "Transform your yacht charter into a gourmet journey. Elite chefs craft exquisite, custom menus tailored to your preferences and dietary needs.",
+      "features": [
+        "Custom menu creation",
+        "Multi-course dinners",
+        "Dietary accommodations",
+        "Hand-selected chefs"
+      ],
+      "image": "/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
+      "inquiryOnly": true
+    },
+    {
+      "id": "bespoke-catering",
+      "name": "Bespoke Catering Delivery",
+      "category": "culinary",
+      "description": "Gourmet dishes from Miami's top restaurants, delivered fresh and ready to delight your palate. Each bite is a testament to culinary artistry.",
+      "features": [
+        "Top Miami restaurants",
+        "Fresh delivery",
+        "Gourmet dishes",
+        "No onboard chef needed"
+      ],
+      "image": "/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
+      "inquiryOnly": true
+    },
+    {
+      "id": "high-end-sushi",
+      "name": "High-End Sushi Delivery",
+      "category": "culinary",
+      "description": "Meticulously crafted rolls and sashimi, made from the freshest ingredients and delivered directly to your yacht. The art of Japanese cuisine on the open sea.",
+      "features": [
+        "Freshest ingredients",
+        "Expert sushi chefs",
+        "Direct yacht delivery",
+        "Premium presentation"
+      ],
+      "image": "/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
+      "inquiryOnly": true
+    },
+    {
+      "id": "onboard-masseuse",
+      "name": "Onboard Masseuse",
+      "category": "wellness",
+      "description": "Professional onboard masseuse service designed to melt away your stresses. Bespoke massage treatments tailored to your needs while you drift across Miami's tropical waters.",
+      "features": [
+        "Professional masseuse",
+        "Tailored treatments",
+        "Onboard service",
+        "Ultimate relaxation"
+      ],
+      "image": "/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
+      "inquiryOnly": true
+    },
+    {
+      "id": "drone-video",
+      "name": "Drone Video Pilot Services",
+      "category": "media",
+      "description": "Professional drone video pilot services capture stunning aerial footage of your yacht surrounded by Miami's iconic skyline and pristine waters.",
+      "features": [
+        "Professional pilots",
+        "Cinematic footage",
+        "Aerial perspectives",
+        "Lasting memories"
+      ],
+      "image": "/images/premium-addons/Miami_Yachting_Company_premium_watersports.jpg",
+      "inquiryOnly": true
+    }
+  ]
+}
