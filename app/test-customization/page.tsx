@@ -25,11 +25,27 @@ export default function TestCustomizationPage() {
     <div className="min-h-screen bg-[#faf9f7] flex items-center justify-center p-8">
       <div className="text-center max-w-xl">
         <p className="editorial-label text-[#c4a265] mb-3">CUSTOMIZATION TEST</p>
-        <h1 className="text-4xl font-light tracking-wide text-[#0f0f0f] mb-4">Build Your Charcuterie</h1>
-        <p className="text-base font-light text-[#6b6b6b] mb-10 max-w-md mx-auto leading-relaxed">
-          Select 2 meats, 2 cheeses, 2 fruits, and 2 accompaniments.
-          Curated for the sophisticated palate.
-        </p>
+        <h1 className="font-serif text-5xl font-light italic text-[#0f0f0f] mb-6" style={{ fontFamily: 'var(--font-cormorant)' }}>
+          Build Your Charcuterie
+        </h1>
+        <div className="flex items-center justify-center gap-6 mb-10 text-sm text-[#6b6b6b]">
+          <div className="flex items-center gap-2">
+            <span className="text-[#c4a265]">✓</span>
+            <span>2 meats</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-[#c4a265]">✓</span>
+            <span>2 cheeses</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-[#c4a265]">✓</span>
+            <span>2 fruits</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-[#c4a265]">✓</span>
+            <span>2 accompaniments</span>
+          </div>
+        </div>
         
         <button
           onClick={() => setIsModalOpen(true)}
