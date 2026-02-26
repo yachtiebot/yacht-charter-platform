@@ -11,7 +11,7 @@
         "Personalized service",
         "Perfect for special occasions"
       ],
-      "image": "/images/premium-addons/Miami_Yachting_Company_premium_alcohol.jpg",
+      "image": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/premium-addons/Miami_Yachting_Company_premium_alcohol.jpg",
       "inquiryOnly": true
     },
     {
@@ -25,7 +25,7 @@
         "Professional chauffeurs",
         "Seamless travel experience"
       ],
-      "image": "/images/premium-addons/Miami_Yachting_Company_luxury_transport.jpg",
+      "image": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/premium-addons/Miami_Yachting_Company_luxury_transport.jpg",
       "inquiryOnly": true
     },
     {
@@ -39,7 +39,7 @@
         "Dietary accommodations",
         "Hand-selected chefs"
       ],
-      "image": "/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
+      "image": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
       "inquiryOnly": true
     },
     {
@@ -53,7 +53,7 @@
         "Gourmet dishes",
         "No onboard chef needed"
       ],
-      "image": "/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
+      "image": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
       "inquiryOnly": true
     },
     {
@@ -67,7 +67,7 @@
         "Direct yacht delivery",
         "Premium presentation"
       ],
-      "image": "/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
+      "image": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
       "inquiryOnly": true
     },
     {
@@ -81,7 +81,7 @@
         "Onboard service",
         "Ultimate relaxation"
       ],
-      "image": "/images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
+      "image": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/premium-addons/Miami_Yachting_Company_premium_hero.jpg",
       "inquiryOnly": true
     },
     {
@@ -95,7 +95,7 @@
         "Aerial perspectives",
         "Lasting memories"
       ],
-      "image": "/images/premium-addons/Miami_Yachting_Company_premium_watersports.jpg",
+      "image": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/premium-addons/Miami_Yachting_Company_premium_watersports.jpg",
       "inquiryOnly": true
     }
   ]

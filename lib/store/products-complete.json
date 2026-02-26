@@ -24,7 +24,7 @@
       ],
       "category": "water-toys",
       "requiresWaiver": true,
-      "imageUrl": "/images/products/water-toys/Miami_Yachting_Company_seabob.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/products/Miami_Yachting_Company_seabob.jpg"
     },
     {
       "id": "flitescooter",
@@ -38,7 +38,7 @@
       "maxQuantity": 1,
       "category": "water-toys",
       "requiresWaiver": true,
-      "imageUrl": "/images/products/water-toys/Miami_Yachting_Company_flitescooter.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/products/Miami_Yachting_Company_flitescooter.jpg"
     },
     {
       "id": "water-sports-boat",
@@ -89,7 +89,7 @@
       ],
       "category": "water-toys",
       "requiresWaiver": true,
-      "imageUrl": "/images/products/water-toys/Miami_Yachting_Company_watersports_boat.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/products/Miami_Yachting_Company_watersports_boat.jpg"
     },
     {
       "id": "floating-cabana",
@@ -114,7 +114,7 @@
       ],
       "category": "water-toys",
       "requiresWaiver": false,
-      "imageUrl": "/images/products/water-toys/Miami_Yachting_Company_floating_cabana.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/products/Miami_Yachting_Company_floating_cabana.jpg"
     },
     {
       "id": "floating-lounge-chair",
@@ -145,7 +145,7 @@
       ],
       "category": "water-toys",
       "requiresWaiver": false,
-      "imageUrl": "/images/products/water-toys/Miami_Yachting_Company_floating_lounge_chair.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/products/Miami_Yachting_Company_floating_lounge_chair.jpg"
     }
   ],
   "flowers": [
@@ -173,7 +173,7 @@
         }
       ],
       "category": "flowers",
-      "imageUrl": "/images/products/flowers/Miami_Yachting_Company_rose-pave.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_rose_pave.jpg"
     },
     {
       "id": "blooming-orchid",
@@ -199,7 +199,7 @@
         }
       ],
       "category": "flowers",
-      "imageUrl": "/images/products/flowers/Miami_Yachting_Company_blooming-orchid.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_blooming_orchid.jpg"
     },
     {
       "id": "tropical-paradise",
@@ -225,7 +225,7 @@
         }
       ],
       "category": "flowers",
-      "imageUrl": "/images/products/flowers/Miami_Yachting_Company_tropical-paradise.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_tropical_paradise.jpg"
     },
     {
       "id": "dancing-roses",
@@ -251,7 +251,7 @@
         }
       ],
       "category": "flowers",
-      "imageUrl": "/images/products/flowers/Miami_Yachting_Company_dancing-roses.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/flowers/Miami_Yachting_Company_dancing_roses.jpg"
     }
   ],
   "bachelorette": [
@@ -270,7 +270,7 @@
         "Team bride bracelets"
       ],
       "category": "bachelorette",
-      "imageUrl": "/images/products/bachelorette/Miami_Yachting_Company_last-toast.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/bachelorette/Miami_Yachting_Company_last_toast.jpg"
     },
     {
       "id": "last-sail-before-the-veil",
@@ -279,7 +279,7 @@
       "price": 249.99,
       "description": "Mid-tier bachelorette package with additional party essentials.",
       "category": "bachelorette",
-      "imageUrl": "/images/products/bachelorette/Miami_Yachting_Company_last-sail.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/bachelorette/Miami_Yachting_Company_last_sail.jpg"
     },
     {
       "id": "something-blue-before-i-do",
@@ -288,7 +288,7 @@
       "price": 299.99,
       "description": "Premium bachelorette package for an unforgettable celebration.",
       "category": "bachelorette",
-      "imageUrl": "/images/products/bachelorette/Miami_Yachting_Company_something-blue.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/bachelorette/Miami_Yachting_Company_something_blue.jpg"
     },
     {
       "id": "drone-video",
@@ -297,7 +297,7 @@
       "price": 399,
       "description": "Professional drone video of your bachelorette yacht experience. Perfect add-on to any package.",
       "category": "bachelorette",
-      "imageUrl": "/images/products/bachelorette/Miami_Yachting_Company_drone-video.jpg"
+      "imageUrl": "https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/product-images/bachelorette/Miami_Yachting_Company_drone_video.jpg"
     }
   ],
   "catering": [

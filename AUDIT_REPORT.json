@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-02-26T21:36:01.661Z",
+  "summary": {
+    "totalProducts": 81,
+    "totalComplete": 81,
+    "totalIssueCount": 0,
+    "percentComplete": "100.0"
+  },
+  "details": {
+    "catering": {
+      "total": 68,
+      "complete": 68,
+      "issues": []
+    },
+    "waterToys": {
+      "total": 5,
+      "complete": 5,
+      "issues": []
+    },
+    "flowers": {
+      "total": 4,
+      "complete": 4,
+      "issues": []
+    },
+    "bachelorette": {
+      "total": 4,
+      "complete": 4,
+      "issues": []
+    }
+  }
+}
