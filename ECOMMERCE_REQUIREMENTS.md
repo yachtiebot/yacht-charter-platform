@@ -124,17 +124,27 @@
 
 ---
 
+## 🛒 **UPDATED FLOW: Customizations BEFORE cart, Waivers BEFORE payment**
+
+**DECISION: Keep friction minimal but collect info when needed**
+
+### **Customization Forms (BEFORE adding to cart):**
+- Modal appears when clicking "Add to Cart" on customizable items
+- Customer fills out customization
+- THEN item + customization added to cart
+- Clean, editorial luxury modal design
+
+### **Waiver Forms (BEFORE payment, during checkout):**
+- Customer proceeds to checkout
+- Sees order summary
+- **IF order contains waiver items** → Waiver section appears inline on checkout page
+- Complete waiver acknowledgements
+- THEN proceed to payment
+- **Exception: Jet ski license check happens AFTER payment** (to reduce friction)
+
+---
+
 ## 📝 **Waiver Forms Required**
-
-**⚠️ IMPORTANT: All waivers now appear AFTER payment to reduce checkout friction**
-
-**New Flow:**
-1. Customer adds items to cart (with brief disclaimer about waivers)
-2. Checkout → Contact info → Payment
-3. **AFTER payment successful** → Waiver screen appears
-4. "Your booking is not complete. Please acknowledge the following to finalize your reservation."
-5. Complete waiver(s)
-6. Final confirmation: "Congratulations! Your booking has been processed."
 
 ---
 
