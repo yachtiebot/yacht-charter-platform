@@ -83,17 +83,26 @@ export default function CheckoutPage() {
         {/* Header */}
         <div className="mb-12">
           <p className="editorial-label text-[#c4a265] mb-3">CHECKOUT</p>
-          <h1 className="font-serif text-5xl md:text-6xl font-light italic text-[#0f0f0f] mb-4" style={{ fontFamily: 'var(--font-cormorant)' }}>
+          <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-light italic text-[#0f0f0f] mb-4" style={{ fontFamily: 'var(--font-cormorant)' }}>
             Complete Your Order
           </h1>
           <p className="text-[#6b6b6b] font-light">Review your items and enter charter details</p>
           
           {/* 2 Platter Minimum Warning */}
           {platterCount < 2 && (
-            <div className="mt-4 bg-[#c4a265]/10 border border-[#c4a265]/30 px-6 py-4">
-              <p className="text-sm text-[#c4a265] font-medium">
-                ⚠️ Minimum 2 platters required • You have {platterCount}
+            <div className="mt-6 bg-[#c4a265]/5 px-6 py-4 flex items-center justify-between">
+              <p className="text-sm text-[#c4a265] font-light">
+                Minimum 2 platters required • You have {platterCount}
               </p>
+              <Link 
+                href="/Miami-Yacht-Charter-Catering"
+                className="text-[#c4a265] hover:text-[#0f0f0f] transition-colors"
+                aria-label="Add more items"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+              </Link>
             </div>
           )}
         </div>
