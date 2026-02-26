@@ -20,48 +20,49 @@ const platterImages = [
   '/images/products/catering/cookieplatter.jpeg'
 ];
 
-// Map product images logically
+// Map product images logically based on available photos
 const imageMapping: { [key: string]: string } = {
-  // Sandwiches & Wraps - use early sandwich-looking images
-  'gourmet-wraps': platterImages[0],
-  'gourmet-spirals': platterImages[1],
-  'slider-trio': platterImages[2],
-  'cuban-platter': platterImages[3],
+  // Sandwiches & Wraps - use generic platter images
+  'gourmet-wraps': platterImages[0],        // MYC+platter
+  'gourmet-spirals': platterImages[1],      // large_platter
+  'slider-trio': platterImages[7],          // MYC_small_platter
+  'cuban-platter': platterImages[4],        // relish_platter
   
   // Platters - use various platter images
-  'shrimp-platter': platterImages[4],
-  'chicken-tenders': platterImages[5],
-  'chicken-wings': platterImages[6],
-  'large-charcuterie': platterImages[7],
-  'med-charcuterie': platterImages[0],
-  'antipasti': platterImages[1],
-  'cheese-taster': platterImages[2],
-  'pretzel-bagel': platterImages[3],
+  'shrimp-platter': platterImages[1],       // large_platter
+  'chicken-tenders': platterImages[0],      // MYC+platter
+  'chicken-wings': platterImages[7],        // MYC_small_platter
+  'large-charcuterie': platterImages[6],    // cubesplatter (cheese)
+  'med-charcuterie': platterImages[6],      // cubesplatter (cheese)
+  'antipasti': platterImages[5],            // wheel+platter
+  'cheese-taster': platterImages[6],        // cubesplatter (cheese)
+  'pretzel-bagel': platterImages[0],        // MYC+platter
   
   // Bowls & Salads - use chef salad images
-  'caesar-salad': platterImages[2],
-  'greek-salad': platterImages[3],
-  'chef-salad': platterImages[2],
-  'wild-salmon-salad': platterImages[4],
-  'caesar-pasta': platterImages[5],
-  'greek-pasta': platterImages[6],
-  'italian-caprese': platterImages[7],
-  'tabouli': platterImages[0],
+  'caesar-salad': platterImages[2],         // chef+salad+platter1
+  'greek-salad': platterImages[3],          // chef+salad+platter2
+  'chef-salad': platterImages[2],           // chef+salad+platter1
+  'wild-salmon-salad': platterImages[3],    // chef+salad+platter2
+  'caesar-pasta': platterImages[2],         // chef+salad+platter1
+  'greek-pasta': platterImages[3],          // chef+salad+platter2
+  'italian-caprese': platterImages[4],      // relish_platter
+  'tabouli': platterImages[3],              // chef+salad+platter2
   
   // Vegetarian - use fresh/colorful images
-  'fresh-fruit': platterImages[1],
-  'garden-vegetable': platterImages[4],
-  'hummus-platter': platterImages[5],
-  'med-naan': platterImages[6],
-  'savory-naan': platterImages[7],
+  'fresh-fruit': platterImages[5],          // wheel+platter
+  'garden-vegetable': platterImages[4],     // relish_platter
+  'hummus-platter': platterImages[5],       // wheel+platter
+  'med-naan': platterImages[0],             // MYC+platter
+  'savory-naan': platterImages[1],          // large_platter
   
-  // Desserts - use dessert images
-  'gourmet-brownies': platterImages[9],
-  'gourmet-cookies': platterImages[9],
-  'dessert-tarts': platterImages[8],
-  'macarons': platterImages[8],
-  'muffin-platter': platterImages[8],
-  'croissant-platter': platterImages[9],
+  // Desserts - use ACTUAL dessert images
+  'gourmet-brownies': platterImages[9],     // cookieplatter (closest)
+  'gourmet-cookies': platterImages[9],      // cookieplatter (CORRECT)
+  'dessert-tarts': platterImages[8],        // muffin_platter
+  'macarons': platterImages[9],             // cookieplatter
+  'muffin-platter': platterImages[8],       // muffin_platter (CORRECT)
+  'croissant-platter': platterImages[8],    // muffin_platter (closest)
+  'chocolate-platter': platterImages[9]     // cookieplatter
 };
 
 // Extract catering products from products-complete.json
@@ -199,7 +200,7 @@ export default function CateringPage() {
 
                   {/* Price Display */}
                   <div className="flex items-baseline gap-2 mb-4">
-                    <span className="text-2xl text-[#0f0f0f] font-medium">
+                    <span className="text-3xl text-[#0f0f0f]" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 300 }}>
                       ${selectedOption.price}
                     </span>
                     <span className="text-sm text-[#6b6b6b]">{selectedOption.label}</span>
