@@ -11,7 +11,7 @@ export default function AddOnsPage() {
       subtitle: 'Culinary Excellence',
       description: 'Artisanal platters and gourmet cuisine, curated for discerning palates',
       href: '/Miami-Yacht-Charter-Catering',
-      image: '/images/products/catering/hero.jpg',
+      image: '/images/products/catering/large_platter.jpg',
       accent: 'Savor',
       number: '01'
     },
@@ -21,7 +21,7 @@ export default function AddOnsPage() {
       subtitle: 'Aquatic Adventures',
       description: 'Premium water sports equipment and floating luxury for the ultimate ocean experience',
       href: '/Miami-Yacht-Charter-Water-Toys',
-      image: '/images/products/water-toys/hero.jpg',
+      image: '/images/Miami_Yachting_Company_yacht-rental-miami.jpg',
       accent: 'Explore',
       number: '02'
     },
@@ -41,7 +41,7 @@ export default function AddOnsPage() {
       subtitle: 'Celebration Suites',
       description: 'Curated packages for unforgettable moments before the veil',
       href: '/Miami-Yacht-Charter-Bachelorette-Packages',
-      image: '/images/products/bachelorette/hero.jpg',
+      image: '/images/products/bachelorette/lasttoastonthecoast.jpg',
       accent: 'Celebrate',
       number: '04'
     }
