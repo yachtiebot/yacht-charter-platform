@@ -400,12 +400,12 @@ export default function AddOnsPage() {
               <div className="w-16 h-px bg-[#c4a265]" />
             </div>
             
-            <p className="text-[#6b6b6b] text-lg leading-relaxed" style={{ fontWeight: 300 }}>
+            <p className="text-[#6b6b6b] text-xs leading-relaxed" style={{ fontWeight: 300 }}>
               Each addition is thoughtfully curated and provided by select partners who share our commitment to excellence. 
               Advance reservations ensure every detail is perfected for your experience.
             </p>
             
-            <p className="text-[#6b6b6b]/60 text-sm" style={{ fontWeight: 300 }}>
+            <p className="text-[#6b6b6b]/60 text-xs" style={{ fontWeight: 300 }}>
               A valid yacht charter reservation is required for all add-on services.
             </p>
 
