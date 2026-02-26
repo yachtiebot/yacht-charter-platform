@@ -130,7 +130,7 @@ export default function HomePage() {
                 <h3 className="editorial-card-name text-white mb-3">Day Boats</h3>
                 <p className="editorial-small text-white/60 mb-3">Casual elegance for sandbar days and sunset cruises.</p>
                 <div className="flex justify-between items-center">
-                  <div className="editorial-label text-white/70 text-[10px] border border-white/30 px-2 py-0.5">From $700</div>
+                  <div className="text-white/70 text-[9px] border border-white/30 px-1.5 py-0.5 tracking-wider">FROM $700</div>
                   <div className="editorial-label text-white flex items-center gap-2">
                     <span>View Collection</span>
                     <span>→</span>
@@ -152,7 +152,7 @@ export default function HomePage() {
                 <h3 className="editorial-card-name text-white mb-3">Luxury Yachts</h3>
                 <p className="editorial-small text-white/60 mb-3">Premium amenities for celebrations and corporate occasions.</p>
                 <div className="flex justify-between items-center">
-                  <div className="editorial-label text-white/70 text-[10px] border border-white/30 px-2 py-0.5">From $1,250</div>
+                  <div className="text-white/70 text-[9px] border border-white/30 px-1.5 py-0.5 tracking-wider">FROM $1,250</div>
                   <div className="editorial-label text-white flex items-center gap-2">
                     <span>View Collection</span>
                     <span>→</span>
@@ -174,7 +174,7 @@ export default function HomePage() {
                 <h3 className="editorial-card-name text-white mb-3">Superyachts</h3>
                 <p className="editorial-small text-white/60 mb-3">Expansive layouts with private staterooms and luxury features.</p>
                 <div className="flex justify-between items-center">
-                  <div className="editorial-label text-white/70 text-[10px] border border-white/30 px-2 py-0.5">From $3,200</div>
+                  <div className="text-white/70 text-[9px] border border-white/30 px-1.5 py-0.5 tracking-wider">FROM $3,200</div>
                   <div className="editorial-label text-white flex items-center gap-2">
                     <span>View Collection</span>
                     <span>→</span>
