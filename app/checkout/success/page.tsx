@@ -30,14 +30,14 @@ export default function CheckoutSuccessPage() {
 
         {/* Message */}
         <div className="space-y-4 text-[#6b6b6b] mb-12">
-          <p className="text-lg">
+          <p className="text-base font-light leading-relaxed">
             Your catering order has been received and will be prepared fresh for your yacht charter.
           </p>
-          <p>
+          <p className="text-base font-light leading-relaxed">
             A confirmation email has been sent to you with order details. 
-            Our team will contact you within 24 hours to confirm delivery arrangements.
+            Our team will only reach out if there's an issue with your order. Otherwise, it will be on your yacht at the time of departure.
           </p>
-          <p className="text-sm">
+          <p className="text-sm font-light leading-relaxed">
             All orders require a minimum of 36 hours advance notice and must be linked to a valid yacht charter reservation.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function CheckoutSuccessPage() {
               <svg className="w-4 h-4 text-[#c4a265] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-              <span style={{ fontWeight: 300 }}>Our team will contact you to confirm charter details</span>
+              <span style={{ fontWeight: 300 }}>Our team will reach out only if there's an issue</span>
             </li>
             <li className="flex items-start gap-3 text-sm text-[#6b6b6b]">
               <svg className="w-4 h-4 text-[#c4a265] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
