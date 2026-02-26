@@ -62,7 +62,7 @@ export default function Navigation() {
           </Link>
           <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
-            href="/Miami-Yacht-Charter-Add Ons"
+            href="/Miami-Yacht-Charter-Add-Ons"
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/70 hover:text-white' 
@@ -125,7 +125,7 @@ export default function Navigation() {
           
           {/* Cart Icon with drop shadow when transparent */}
           <div style={isTransparent ? { filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.6)) drop-shadow(0 1px 3px rgba(0,0,0,0.5))' } : {}}>
-            <CartIcon />
+            <CartIcon isTransparent={isTransparent} />
           </div>
           
           <div className="hidden xl:flex items-center gap-6">

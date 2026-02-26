@@ -2,13 +2,21 @@
 
 import { useCart } from '@/lib/store/CartContext';
 
-export default function CartIcon() {
+interface CartIconProps {
+  isTransparent?: boolean;
+}
+
+export default function CartIcon({ isTransparent = false }: CartIconProps) {
   const { totalItems, openCart } = useCart();
 
   return (
     <button
       onClick={openCart}
-      className="relative flex items-center gap-2 text-sm uppercase tracking-wider transition-colors duration-300 hover:text-[#c4a265]"
+      className={`relative flex items-center gap-2 text-sm uppercase tracking-wider transition-all duration-700 ${
+        isTransparent 
+          ? 'text-white/70 hover:text-white' 
+          : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
+      }`}
       aria-label="Shopping cart"
     >
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
