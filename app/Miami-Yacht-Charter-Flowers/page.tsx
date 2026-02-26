@@ -11,85 +11,85 @@ const flowerProducts = [
     name: 'Rose Pavé',
     description: 'Luxurious roses artfully arranged in an elegant vase, adding timeless beauty to your onboard experience.',
     image: '/images/products/flowers/rose-pave.png',
-    prices: { small: 89, medium: 129, large: 189 }
+    sizes: { small: { size: '5" Round', price: 89 }, medium: { size: '8" Round', price: 129 }, large: { size: '10" Round', price: 189 } }
   },
   {
     id: 'blooming-orchid',
     name: 'Blooming Orchid',
     description: 'Stunning display of fresh exotic orchids meticulously arranged, perfectly curated for luxury yacht settings.',
     image: '/images/products/flowers/blooming-orchid.png',
-    prices: { small: 95, medium: 135, large: 195 }
+    sizes: { small: { size: '5" Round', price: 95 }, medium: { size: '8" Round', price: 135 }, large: { size: '10" Round', price: 195 } }
   },
   {
     id: 'tropical-paradise',
     name: 'Tropical Paradise',
     description: 'Vibrant tropical arrangement bringing the essence of Miami\'s natural splendor aboard your yacht.',
     image: '/images/products/flowers/tropical+paradise.png',
-    prices: { small: 89, medium: 129, large: 189 }
+    sizes: { small: { size: '8"', price: 89 }, medium: { size: '15"', price: 129 }, large: { size: '20"', price: 189 } }
   },
   {
     id: 'dancing-roses',
     name: 'Dancing Roses',
     description: 'Elegant arrangement of roses that brings movement and grace to your yacht\'s interior.',
     image: '/images/products/flowers/dancingroses.png',
-    prices: { small: 99, medium: 139, large: 199 }
+    sizes: { small: { size: '6"', price: 99 }, medium: { size: '8"', price: 139 }, large: { size: '10"', price: 199 } }
   },
   {
     id: 'tropical-rose',
     name: 'Tropical Rose',
     description: 'Sophisticated fusion of tropical blooms and classic roses for a distinctive aesthetic.',
-    image: '/images/products/flowers/rose+pave.png',
-    prices: { small: 89, medium: 129, large: 189 }
+    image: '/images/products/flowers/tropical-paradise.png',
+    sizes: { small: { size: '10"', price: 89 }, medium: { size: '15"', price: 129 }, large: { size: '20"', price: 189 } }
   },
   {
     id: 'tropical-orchid',
     name: 'Tropical Orchid',
     description: 'Exotic orchids paired with tropical accents for a refined, contemporary look.',
     image: '/images/products/flowers/tropical+Orchid.png',
-    prices: { small: 95, medium: 135, large: 195 }
+    sizes: { small: { size: '10"', price: 95 }, medium: { size: '15"', price: 135 }, large: { size: '20"', price: 195 } }
   },
   {
     id: 'floating-orchid',
     name: 'Floating Orchid',
     description: 'Delicate orchids in a unique floating arrangement, perfect for modern yacht interiors.',
     image: '/images/products/flowers/floatingorchid.png',
-    prices: { small: 95, medium: 135, large: 195 }
+    sizes: { medium: { size: '18" Rectangle', price: 135 }, large: { size: '25" Rectangle', price: 195 } }
   },
   {
     id: 'blooming-garden',
     name: 'Blooming Garden',
     description: 'Mixed seasonal blooms creating a lush garden atmosphere aboard your vessel.',
-    image: '/images/products/flowers/rose-pave.png',
-    prices: { small: 89, medium: 129, large: 189 }
+    image: '/images/products/flowers/blooming-orchid.png',
+    sizes: { small: { size: '12"', price: 89 }, medium: { size: '18"', price: 129 }, large: { size: '25"', price: 189 } }
   },
   {
     id: 'modern-simplicity',
     name: 'Modern Simplicity',
     description: 'Clean, contemporary arrangement emphasizing form and elegant restraint.',
-    image: '/images/products/flowers/rose-pave.png',
-    prices: { small: 89, medium: 129, large: 189 }
+    image: '/images/products/flowers/dancingroses.png',
+    sizes: { medium: { size: '10"', price: 129 }, large: { size: '18"', price: 189 } }
   },
   {
     id: 'pretty-in-white',
     name: 'Pretty in White',
     description: 'Pristine white blooms creating a serene, sophisticated atmosphere.',
-    image: '/images/products/flowers/rose-pave.png',
-    prices: { small: 99, medium: 139, large: 199 }
+    image: '/images/products/flowers/floatingorchid.png',
+    sizes: { small: { size: '12"', price: 99 }, medium: { size: '18"', price: 139 }, large: { size: '22"', price: 199 } }
   },
   {
     id: 'victoria-london',
     name: 'Victoria & London',
     description: 'Classic English garden-inspired arrangement with timeless appeal.',
-    image: '/images/products/flowers/rose-pave.png',
-    prices: { small: 99, medium: 139, large: 199 }
+    image: '/images/products/flowers/tropical+Orchid.png',
+    sizes: { large: { size: '20" Rectangle', price: 199 } }
   }
 ];
 
 export default function FlowersPage() {
   const { addItem } = useCart();
-  const [selectedSizes, setSelectedSizes] = useState<{[key: string]: 'small' | 'medium' | 'large'}>({});
+  const [selectedSizes, setSelectedSizes] = useState<{[key: string]: string}>({});
 
-  const handleSizeSelect = (productId: string, size: 'small' | 'medium' | 'large') => {
+  const handleSizeSelect = (productId: string, size: string) => {
     setSelectedSizes(prev => ({ ...prev, [productId]: size }));
   };
 
@@ -121,30 +121,24 @@ export default function FlowersPage() {
             Each arrangement hand-selected for beauty, fragrance, and lasting elegance.
           </p>
 
-          {/* Size Guide */}
-          <div className="inline-flex items-center gap-8 bg-white border border-[#c4a265]/20 px-8 py-4">
-            <div className="text-center">
-              <div className="text-sm text-[#6b6b6b] mb-1">Small</div>
-              <div className="text-xs text-[#6b6b6b]/60">5" Round</div>
-            </div>
-            <div className="w-px h-8 bg-[#c4a265]/20" />
-            <div className="text-center">
-              <div className="text-sm text-[#6b6b6b] mb-1">Medium</div>
-              <div className="text-xs text-[#6b6b6b]/60">8" Round</div>
-            </div>
-            <div className="w-px h-8 bg-[#c4a265]/20" />
-            <div className="text-center">
-              <div className="text-sm text-[#6b6b6b] mb-1">Large</div>
-              <div className="text-xs text-[#6b6b6b]/60">10" Round</div>
-            </div>
+          {/* Info Note */}
+          <div className="inline-flex items-center gap-3 bg-white border border-[#c4a265]/20 px-6 py-3">
+            <svg className="w-5 h-5 text-[#c4a265]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="text-xs text-[#6b6b6b]">Each arrangement has unique sizing - sizes shown per arrangement below</span>
           </div>
         </div>
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-32">
           {flowerProducts.map((product) => {
-            const selectedSize = selectedSizes[product.id] || 'medium';
-            const price = product.prices[selectedSize];
+            const availableSizes = Object.keys(product.sizes);
+            const defaultSize = availableSizes.includes('medium') ? 'medium' : availableSizes[0];
+            const selectedSize = selectedSizes[product.id] || defaultSize;
+            const sizeInfo = product.sizes[selectedSize as keyof typeof product.sizes];
+            
+            if (!sizeInfo) return null;
 
             return (
               <div 
@@ -176,18 +170,19 @@ export default function FlowersPage() {
                   {/* Size Selector */}
                   <div className="space-y-3">
                     <label className="text-xs uppercase tracking-wider text-[#6b6b6b]">Select Size</label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {(['small', 'medium', 'large'] as const).map((size) => (
+                    <div className={`grid gap-2 ${availableSizes.length === 3 ? 'grid-cols-3' : availableSizes.length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+                      {availableSizes.map((size) => (
                         <button
                           key={size}
                           onClick={() => handleSizeSelect(product.id, size)}
-                          className={`py-2 text-xs uppercase tracking-wider border transition-all ${
+                          className={`py-3 px-2 text-xs border transition-all ${
                             selectedSize === size
                               ? 'bg-[#c4a265] text-white border-[#c4a265]'
                               : 'bg-white text-[#6b6b6b] border-[#6b6b6b]/20 hover:border-[#c4a265]'
                           }`}
                         >
-                          {size}
+                          <div className="capitalize font-medium mb-1">{size}</div>
+                          <div className="text-[10px] opacity-80">{(product.sizes as any)[size].size}</div>
                         </button>
                       ))}
                     </div>
@@ -197,20 +192,20 @@ export default function FlowersPage() {
                   <div className="pt-4 space-y-3">
                     <div className="flex items-baseline gap-2">
                       <span className="text-3xl text-[#0f0f0f]" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 300 }}>
-                        ${price}
+                        ${sizeInfo.price}
                       </span>
-                      <span className="text-sm text-[#6b6b6b] capitalize">{selectedSize}</span>
+                      <span className="text-sm text-[#6b6b6b]">{sizeInfo.size}</span>
                     </div>
                     
                     <button
                       onClick={() => addItem({
                         id: `${product.id}-${selectedSize}`,
-                        name: `${product.name} (${selectedSize})`,
-                        price: price,
+                        name: `${product.name} (${sizeInfo.size})`,
+                        price: sizeInfo.price,
                         category: 'flowers',
                         image: product.image
                       })}
-                      className="w-full bg-[#0f0f0f] text-white py-4 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] transition-all duration-300"
+                      className="w-full bg-white border border-[#0f0f0f]/20 text-[#0f0f0f] py-4 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300"
                     >
                       Add to Cart
                     </button>

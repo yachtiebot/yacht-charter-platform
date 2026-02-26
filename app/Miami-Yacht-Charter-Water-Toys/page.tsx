@@ -12,10 +12,9 @@ const waterToysProducts = [
     price: 499,
     depositPrice: 99,
     description: 'Ride on the surface or emerge under water with these luxury underwater jet skis. Easy to ride for young and old. Recommended age is 12+.',
-    details: 'Comes fully charged, batteries last 1-2 hours. Charger included. 48 hours notice required. Vendor collects remaining $400 balance prior to rental date.',
+    details: 'Comes fully charged, batteries last 1-2 hours. Charger included. 48 hours notice required.',
     image: '/images/products/water-toys/seabob.jpg',
     maxQuantity: 2,
-    requiresWaiver: true,
     features: ['Age 12+', 'Fully charged', '1-2 hour battery', 'Max 2 per charter']
   },
   {
@@ -27,7 +26,6 @@ const waterToysProducts = [
     details: 'Instructor available upon request for additional charge. Comes fully charged, batteries last 1-2 hours. Max load 225lbs. 48 hours notice required.',
     image: '/images/products/water-toys/flitescooter.jpg',
     maxQuantity: 1,
-    requiresWaiver: true,
     features: ['Max load 225lbs', 'Instructor available', '1-2 hour battery', 'Max 1 per charter']
   },
   {
@@ -53,7 +51,7 @@ const waterToysProducts = [
   {
     id: 'floating-lounge-chair',
     name: 'Floating Lounge Chair',
-    price: 198,
+    price: 199,
     pricePerChair: 99,
     description: 'Luxurious floating lounge chairs designed for ultimate relaxation on the water.',
     details: 'Each chair is $99. Two chair minimum for delivery and setup. 48 hours notice required.',
@@ -62,25 +60,41 @@ const waterToysProducts = [
     features: ['$99 per chair', '2 chair minimum', 'Premium comfort', 'Perfect for groups']
   },
   {
-    id: 'jet-ski',
-    name: 'Jet Ski Rental',
-    price: 399,
-    description: 'High-performance jet ski for thrilling water adventures.',
-    details: 'Professional instruction available. Must be 18+ to operate. Valid ID required. 48 hours notice.',
+    id: 'jet-ski-1x2',
+    name: 'Jet Ski - 1 Ski / 2 Hours',
+    price: 320,
+    description: 'Premium jet ski rental for extended water exploration.',
+    details: 'One jet ski for two hours. Must be 18+ to operate. Valid ID required. 48 hours notice.',
     image: '/images/products/water-toys/jet-ski.jpg',
-    maxQuantity: 2,
-    requiresWaiver: true,
-    features: ['Age 18+ to operate', 'Instruction available', 'High performance', 'Max 2 per charter']
+    features: ['$160/hour', '2 hour package', 'Age 18+ to operate', 'Instruction available']
+  },
+  {
+    id: 'jet-ski-2x1',
+    name: 'Jet Ski - 2 Skis / 1 Hour',
+    price: 320,
+    description: 'Dual jet ski rental perfect for couples or friends.',
+    details: 'Two jet skis for one hour. Must be 18+ to operate. Valid ID required. 48 hours notice.',
+    image: '/images/products/water-toys/jet-ski.jpg',
+    features: ['$160/hour per ski', '1 hour package', 'Age 18+ to operate', 'Instruction available']
+  },
+  {
+    id: 'jet-ski-2x2',
+    name: 'Jet Ski - 2 Skis / 2 Hours',
+    price: 640,
+    description: 'Maximum jet ski experience with extended rental time.',
+    details: 'Two jet skis for two hours. Must be 18+ to operate. Valid ID required. 48 hours notice.',
+    image: '/images/products/water-toys/jet-ski.jpg',
+    features: ['$160/hour per ski', '2 hour package', 'Age 18+ to operate', 'Instruction available']
   },
   {
     id: 'flyboard',
     name: 'Flyboard Experience',
-    price: 499,
+    price: 900,
+    pricePerHour: 450,
     description: 'Fly above the water with this incredible water-powered jetpack experience.',
-    details: 'Includes instructor and all equipment. Session duration 30-45 minutes. Prior experience not required.',
+    details: 'Includes instructor and all equipment. $450 per hour with 2 hour minimum. Prior experience not required.',
     image: '/images/products/water-toys/flyboard.jpg',
-    requiresWaiver: true,
-    features: ['Instructor included', '30-45 min session', 'No experience needed', 'All equipment provided']
+    features: ['Instructor included', '$450/hour', '2 hour minimum', 'All equipment provided']
   }
 ];
 
@@ -118,10 +132,7 @@ export default function WaterToysPage() {
         </div>
 
         {/* Disclaimer */}
-        <div className="bg-white border-l-2 border-[#c4a265] p-6 mb-16">
-          <p className="text-[#6b6b6b] text-sm mb-3" style={{ fontWeight: 300 }}>
-            <strong className="text-[#0f0f0f] font-medium">Liability waiver required:</strong> Water sports equipment (Seabob, Flitescooter, Jet Ski, Flyboard, Water Sports Boat) requires a signed waiver before checkout.
-          </p>
+        <div className="bg-white border border-[#0f0f0f]/10 p-6 mb-16">
           <p className="text-[#6b6b6b] text-sm" style={{ fontWeight: 300 }}>
             <strong className="text-[#0f0f0f] font-medium">Advance notice:</strong> All water toys require 48 hours advance reservation. 
             Items provided by independent vendors and subject to availability.
@@ -147,18 +158,13 @@ export default function WaterToysPage() {
                 />
                 
                 {/* Badges */}
-                <div className="absolute top-4 left-4 space-y-2">
-                  {product.requiresWaiver && (
-                    <span className="bg-[#0f0f0f] text-white px-3 py-1 text-xs uppercase tracking-wider">
-                      Waiver Required
+                {product.depositPrice && (
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-[#c4a265] text-white px-3 py-1 text-xs uppercase tracking-wider">
+                      ${product.depositPrice} Down
                     </span>
-                  )}
-                  {product.depositPrice && (
-                    <span className="bg-[#c4a265] text-white px-3 py-1 text-xs uppercase tracking-wider block">
-                      ${product.depositPrice} Deposit
-                    </span>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
               
               {/* Content */}
@@ -189,15 +195,15 @@ export default function WaterToysPage() {
                 <div className="pt-4 space-y-3">
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl text-[#0f0f0f]" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 300 }}>
-                      ${product.price}
+                      ${product.depositPrice || product.price}
                     </span>
                     {product.pricePerHour && (
                       <span className="text-sm text-[#6b6b6b]">/ ${product.pricePerHour} per hour</span>
                     )}
-                    {product.depositPrice && (
-                      <span className="text-sm text-[#6b6b6b]">+ ${product.price - product.depositPrice} at pickup</span>
-                    )}
                   </div>
+                  {product.depositPrice && (
+                    <p className="text-xs text-[#6b6b6b]">+${product.price - product.depositPrice} at pickup</p>
+                  )}
                   
                   <button
                     onClick={() => addItem({
@@ -209,7 +215,7 @@ export default function WaterToysPage() {
                       minQuantity: product.minQuantity,
                       image: product.image
                     })}
-                    className="w-full bg-[#0f0f0f] text-white py-4 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] transition-all duration-300"
+                    className="w-full bg-white border border-[#0f0f0f]/20 text-[#0f0f0f] py-4 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300"
                   >
                     {product.depositPrice ? 'Reserve Now' : 'Add to Cart'}
                   </button>
@@ -221,9 +227,19 @@ export default function WaterToysPage() {
 
         {/* Bottom Note */}
         <div className="border-t border-[#c4a265]/20 pt-16 pb-32 text-center">
-          <p className="text-[#6b6b6b] text-sm max-w-2xl mx-auto" style={{ fontWeight: 300 }}>
+          <p className="text-[#6b6b6b] text-sm max-w-2xl mx-auto mb-12" style={{ fontWeight: 300 }}>
             All water toys are provided by licensed, insured third-party vendors. 
             A valid yacht charter reservation is required for all bookings.
+          </p>
+          
+          <p className="text-[#6b6b6b]/60 text-xs max-w-4xl mx-auto leading-relaxed" style={{ fontWeight: 300 }}>
+            Yacht charter add-ons in Miami provide additional options for guests seeking water-based activities during their time on board. 
+            Available add-ons may include inflatable water toys, floating platforms, or other recreational equipment depending on the vessel and location. 
+            Listings shown on this page represent optional features offered by independent third-party providers or made available in connection with specific vessels. 
+            Availability is subject to vessel compatibility, operating conditions, and charter duration. 
+            Add-ons are selected and arranged separately and may vary by provider. 
+            This page presents add-on options associated with yacht rentals operating throughout Miami and Miami Beach. 
+            Specific details should be reviewed on each vessel listing to understand what may be available for a given charter.
           </p>
         </div>
       </div>

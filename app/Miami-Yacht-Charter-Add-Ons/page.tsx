@@ -82,9 +82,9 @@ export default function AddOnsPage() {
               lineHeight: 1.6,
               letterSpacing: '0.01em'
             }}>
-              Exceptional additions for those who appreciate
+              Exceptional additions for those seeking to
               <br className="hidden md:block" />
-              the finer details of luxury yachting.
+              transform their yachting experience.
             </p>
 
             {/* Stats */}

@@ -212,7 +212,7 @@ export default function BachelorettePackagesPage() {
                         category: 'bachelorette',
                         image: pkg.image
                       })}
-                      className="flex-1 bg-[#0f0f0f] text-white py-4 px-8 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] transition-all duration-300"
+                      className="flex-1 bg-white border border-[#0f0f0f]/20 text-[#0f0f0f] py-4 px-8 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300"
                     >
                       Add to Cart
                     </button>
