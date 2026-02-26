@@ -12,10 +12,10 @@ export default function CartIcon({ isTransparent = false }: CartIconProps) {
   return (
     <button
       onClick={openCart}
-      className={`relative flex items-center gap-2 text-sm uppercase tracking-wider transition-all duration-700 ${
+      className={`relative flex items-center gap-2 text-sm uppercase tracking-wider transition-all duration-700 hover:text-[#c4a265] ${
         isTransparent 
-          ? 'text-white/70 hover:text-white' 
-          : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
+          ? 'text-white' 
+          : 'text-[#6b6b6b]'
       }`}
       aria-label="Shopping cart"
     >
