@@ -24,18 +24,23 @@ export default function TestCustomizationPage() {
 
   return (
     <div className="min-h-screen bg-[#faf9f7] flex items-center justify-center p-8">
-      <div className="text-center">
-        <h1 className="text-4xl font-light mb-8">Test Cake Customization</h1>
+      <div className="text-center max-w-2xl">
+        <p className="editorial-label text-[#c4a265] mb-4">CUSTOMIZATION TEST</p>
+        <h1 className="editorial-display text-[#0f0f0f] mb-6">Cake Personalization</h1>
+        <p className="editorial-body text-[#6b6b6b] mb-12 max-w-md mx-auto">
+          Experience our editorial luxury customization interface. 
+          Designed for the discerning client.
+        </p>
         
         <button
           onClick={() => setIsModalOpen(true)}
-          className="bg-[#0f0f0f] text-white px-8 py-4 uppercase tracking-wider text-sm hover:bg-[#c4a265] transition-colors"
+          className="editorial-label bg-[#0f0f0f] text-white px-12 py-5 hover:bg-[#c4a265] transition-all duration-500 inline-block"
         >
-          Customize Cake
+          Customize Your Cake
         </button>
 
-        <p className="mt-8 text-gray-600">
-          Click the button to open the cake customization modal
+        <p className="editorial-small text-[#9ca3af] mt-8">
+          Click to open the customization modal
         </p>
       </div>
 
