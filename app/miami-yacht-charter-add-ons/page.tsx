@@ -174,7 +174,6 @@ export default function AddOnsPage() {
               </div>
               <div>
                 <div className="text-2xl md:text-3xl text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 300 }}>Made For Miami</div>
-                <div className="text-xs uppercase tracking-wider text-[#6b6b6b]">Short Advance Notice</div>
               </div>
               <div>
                 <div className="text-3xl md:text-4xl text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 300 }}>100%</div>
