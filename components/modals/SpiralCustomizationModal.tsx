@@ -74,13 +74,13 @@ export default function SpiralCustomizationModal({
 
   return (
     <>
-      <div className="fixed inset-0 bg-black/60 z-50" onClick={handleClose} />
+      <div className="fixed inset-0 bg-black/60 z-50 touch-none" onClick={handleClose} />
       
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div className="bg-[#faf9f7] w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-y-auto relative">
-          {/* Scroll Indicator */}
-          <div className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-[#c4a265] opacity-50 pointer-events-none z-20">
-            <div className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-light" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 touch-none overflow-hidden">
+        <div className="bg-[#faf9f7] w-full max-w-2xl shadow-2xl h-[90vh] flex flex-col relative touch-auto">
+          {/* Scroll Indicator - visible on scrollable content */}
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[#c4a265] opacity-60 pointer-events-none z-30">
+            <div className="text-[11px] uppercase tracking-[0.3em] font-light" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
               SCROLL
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function SpiralCustomizationModal({
             </div>
           </div>
 
-          <div className="px-10 py-8 space-y-4">
+          <div className="flex-1 overflow-y-auto px-10 py-8 space-y-4">
             {SPIRAL_TYPES.map((type) => (
               <label
                 key={type.value}
@@ -123,7 +123,7 @@ export default function SpiralCustomizationModal({
             {error && <p className="editorial-small text-[#c4a265] mt-3">{error}</p>}
           </div>
 
-          <div className="sticky bottom-0 bg-[#faf9f7] border-t border-[#e5e5e5]/30 px-10 py-8">
+          <div className="flex-shrink-0 bg-[#faf9f7] border-t border-[#e5e5e5]/30 px-10 py-8">
             <button
               onClick={handleSubmit}
               disabled={!spiralType}
