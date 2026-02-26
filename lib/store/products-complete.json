@@ -11,12 +11,20 @@
       "minQuantity": 1,
       "maxQuantity": 2,
       "options": [
-        { "label": "1 Seabob Reservation", "value": 1, "price": 499 },
-        { "label": "2 Seabob Reservations", "value": 2, "price": 998 }
+        {
+          "label": "1 Seabob Reservation",
+          "value": 1,
+          "price": 499
+        },
+        {
+          "label": "2 Seabob Reservations",
+          "value": 2,
+          "price": 998
+        }
       ],
       "category": "water-toys",
       "requiresWaiver": true,
-      "imageUrl": "/images/products/water-toys/seabob.jpg"
+      "imageUrl": "/images/products/water-toys/Miami_Yachting_Company_seabob.jpg"
     },
     {
       "id": "flitescooter",
@@ -30,7 +38,7 @@
       "maxQuantity": 1,
       "category": "water-toys",
       "requiresWaiver": true,
-      "imageUrl": "/images/products/water-toys/flitescooter.jpg"
+      "imageUrl": "/images/products/water-toys/Miami_Yachting_Company_flitescooter.jpg"
     },
     {
       "id": "water-sports-boat",
@@ -43,17 +51,45 @@
       "minQuantity": 2,
       "maxQuantity": 8,
       "options": [
-        { "label": "2 Hours", "value": 2, "price": 600 },
-        { "label": "3 Hours", "value": 3, "price": 900 },
-        { "label": "4 Hours", "value": 4, "price": 1200 },
-        { "label": "5 Hours", "value": 5, "price": 1500 },
-        { "label": "6 Hours", "value": 6, "price": 1800 },
-        { "label": "7 Hours", "value": 7, "price": 2100 },
-        { "label": "8 Hours", "value": 8, "price": 2400 }
+        {
+          "label": "2 Hours",
+          "value": 2,
+          "price": 600
+        },
+        {
+          "label": "3 Hours",
+          "value": 3,
+          "price": 900
+        },
+        {
+          "label": "4 Hours",
+          "value": 4,
+          "price": 1200
+        },
+        {
+          "label": "5 Hours",
+          "value": 5,
+          "price": 1500
+        },
+        {
+          "label": "6 Hours",
+          "value": 6,
+          "price": 1800
+        },
+        {
+          "label": "7 Hours",
+          "value": 7,
+          "price": 2100
+        },
+        {
+          "label": "8 Hours",
+          "value": 8,
+          "price": 2400
+        }
       ],
       "category": "water-toys",
       "requiresWaiver": true,
-      "imageUrl": "/images/products/water-toys/watersports-boat.jpg"
+      "imageUrl": "/images/products/water-toys/Miami_Yachting_Company_watersports_boat.jpg"
     },
     {
       "id": "floating-cabana",
@@ -65,12 +101,20 @@
       "minQuantity": 1,
       "maxQuantity": 10,
       "options": [
-        { "label": "1 Cabana", "value": 1, "price": 349 },
-        { "label": "2 Cabanas", "value": 2, "price": 698 }
+        {
+          "label": "1 Cabana",
+          "value": 1,
+          "price": 349
+        },
+        {
+          "label": "2 Cabanas",
+          "value": 2,
+          "price": 698
+        }
       ],
       "category": "water-toys",
       "requiresWaiver": false,
-      "imageUrl": "/images/products/water-toys/floating-cabana.jpg"
+      "imageUrl": "/images/products/water-toys/Miami_Yachting_Company_floating_cabana.jpg"
     },
     {
       "id": "floating-lounge-chair",
@@ -83,13 +127,25 @@
       "minQuantity": 2,
       "maxQuantity": 10,
       "options": [
-        { "label": "2 Chairs", "value": 2, "price": 198 },
-        { "label": "3 Chairs", "value": 3, "price": 297 },
-        { "label": "4 Chairs", "value": 4, "price": 396 }
+        {
+          "label": "2 Chairs",
+          "value": 2,
+          "price": 198
+        },
+        {
+          "label": "3 Chairs",
+          "value": 3,
+          "price": 297
+        },
+        {
+          "label": "4 Chairs",
+          "value": 4,
+          "price": 396
+        }
       ],
       "category": "water-toys",
       "requiresWaiver": false,
-      "imageUrl": "/images/products/water-toys/lounge-chair.jpg"
+      "imageUrl": "/images/products/water-toys/Miami_Yachting_Company_floating_lounge_chair.jpg"
     }
   ],
   "flowers": [
@@ -100,9 +156,21 @@
       "price": 89,
       "description": "Enhance your yacht's ambiance with our exquisite floral arrangement featuring luxurious roses. This special package showcases a selection of premium roses artfully arranged in a vase, adding a touch of timeless beauty to your onboard experience.",
       "options": [
-        { "label": "Small (5\" Round)", "value": "small", "price": 89 },
-        { "label": "Medium (8\" Round)", "value": "medium", "price": 129 },
-        { "label": "Large (10\" Round)", "value": "large", "price": 189 }
+        {
+          "label": "Small (5\" Round)",
+          "value": "small",
+          "price": 89
+        },
+        {
+          "label": "Medium (8\" Round)",
+          "value": "medium",
+          "price": 129
+        },
+        {
+          "label": "Large (10\" Round)",
+          "value": "large",
+          "price": 189
+        }
       ],
       "category": "flowers",
       "imageUrl": "/images/products/flowers/rose-pave.png"
@@ -114,9 +182,21 @@
       "price": 95,
       "description": "Exclusive floral arrangement featuring exotic orchids. This bespoke package includes a stunning display of fresh orchids meticulously arranged in an elegant vase, perfectly curated to complement the luxury of your yacht setting.",
       "options": [
-        { "label": "Small (5\" Round)", "value": "small", "price": 95 },
-        { "label": "Medium (8\" Round)", "value": "medium", "price": 135 },
-        { "label": "Large (10\" Round)", "value": "large", "price": 195 }
+        {
+          "label": "Small (5\" Round)",
+          "value": "small",
+          "price": 95
+        },
+        {
+          "label": "Medium (8\" Round)",
+          "value": "medium",
+          "price": 135
+        },
+        {
+          "label": "Large (10\" Round)",
+          "value": "large",
+          "price": 195
+        }
       ],
       "category": "flowers",
       "imageUrl": "/images/products/flowers/blooming-orchid.png"
@@ -128,9 +208,21 @@
       "price": 89,
       "description": "Bring the tropics onboard with this vibrant tropical flower arrangement.",
       "options": [
-        { "label": "Small (5\" Round)", "value": "small", "price": 89 },
-        { "label": "Medium (8\" Round)", "value": "medium", "price": 129 },
-        { "label": "Large (10\" Round)", "value": "large", "price": 189 }
+        {
+          "label": "Small (5\" Round)",
+          "value": "small",
+          "price": 89
+        },
+        {
+          "label": "Medium (8\" Round)",
+          "value": "medium",
+          "price": 129
+        },
+        {
+          "label": "Large (10\" Round)",
+          "value": "large",
+          "price": 189
+        }
       ],
       "category": "flowers",
       "imageUrl": "/images/products/flowers/tropical-paradise.png"
@@ -142,9 +234,21 @@
       "price": 99,
       "description": "Elegant arrangement of dancing roses that brings movement and grace to your yacht.",
       "options": [
-        { "label": "Small (5\" Round)", "value": "small", "price": 99 },
-        { "label": "Medium (8\" Round)", "value": "medium", "price": 139 },
-        { "label": "Large (10\" Round)", "value": "large", "price": 199 }
+        {
+          "label": "Small (5\" Round)",
+          "value": "small",
+          "price": 99
+        },
+        {
+          "label": "Medium (8\" Round)",
+          "value": "medium",
+          "price": 139
+        },
+        {
+          "label": "Large (10\" Round)",
+          "value": "large",
+          "price": 199
+        }
       ],
       "category": "flowers",
       "imageUrl": "/images/products/flowers/dancing-roses.png"
@@ -205,11 +309,31 @@
       "description": "Made fresh to order, includes lettuce and tomato",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 69.99 },
-        { "label": "Serves 10", "value": 10, "price": 79.99 },
-        { "label": "Serves 15", "value": 15, "price": 99.99 },
-        { "label": "Serves 20", "value": 20, "price": 129.99 },
-        { "label": "Serves 25", "value": 25, "price": 159.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 69.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 99.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 129.99
+        },
+        {
+          "label": "Serves 25",
+          "value": 25,
+          "price": 159.99
+        }
       ],
       "category": "sandwiches"
     },
@@ -221,11 +345,31 @@
       "description": "Assorted gourmet spiral wraps",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 69.99 },
-        { "label": "Serves 10", "value": 10, "price": 79.99 },
-        { "label": "Serves 15", "value": 15, "price": 99.99 },
-        { "label": "Serves 20", "value": 20, "price": 129.99 },
-        { "label": "Serves 25", "value": 25, "price": 159.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 69.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 99.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 129.99
+        },
+        {
+          "label": "Serves 25",
+          "value": 25,
+          "price": 159.99
+        }
       ],
       "category": "sandwiches"
     },
@@ -237,10 +381,26 @@
       "description": "Three varieties of gourmet sliders",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 89.99 },
-        { "label": "Serves 10", "value": 10, "price": 99.99 },
-        { "label": "Serves 15", "value": 15, "price": 119.99 },
-        { "label": "Serves 20", "value": 20, "price": 149.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 99.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 119.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 149.99
+        }
       ],
       "category": "sandwiches"
     },
@@ -252,10 +412,26 @@
       "description": "Authentic Cuban sandwiches",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 79.99 },
-        { "label": "Serves 10", "value": 10, "price": 89.99 },
-        { "label": "Serves 15", "value": 15, "price": 109.99 },
-        { "label": "Serves 20", "value": 20, "price": 139.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 109.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 139.99
+        }
       ],
       "category": "sandwiches"
     },
@@ -267,10 +443,26 @@
       "description": "Fresh jumbo shrimp with cocktail sauce",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 129.99 },
-        { "label": "Serves 10", "value": 10, "price": 149.99 },
-        { "label": "Serves 15", "value": 15, "price": 189.99 },
-        { "label": "Serves 20", "value": 20, "price": 239.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 129.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 149.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 189.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 239.99
+        }
       ],
       "category": "platters"
     },
@@ -282,10 +474,26 @@
       "description": "Crispy chicken tenders",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 10", "value": 10, "price": 79.99 },
-        { "label": "Serves 15", "value": 15, "price": 99.99 },
-        { "label": "Serves 20", "value": 20, "price": 129.99 },
-        { "label": "Serves 25", "value": 25, "price": 159.99 }
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 99.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 129.99
+        },
+        {
+          "label": "Serves 25",
+          "value": 25,
+          "price": 159.99
+        }
       ],
       "category": "platters"
     },
@@ -297,10 +505,26 @@
       "description": "Buffalo or BBQ chicken wings",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 10", "value": 10, "price": 89.99 },
-        { "label": "Serves 15", "value": 15, "price": 109.99 },
-        { "label": "Serves 20", "value": 20, "price": 139.99 },
-        { "label": "Serves 25", "value": 25, "price": 169.99 }
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 109.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 139.99
+        },
+        {
+          "label": "Serves 25",
+          "value": 25,
+          "price": 169.99
+        }
       ],
       "category": "platters"
     },
@@ -312,9 +536,21 @@
       "description": "Premium meats, cheeses, fruits, and nuts",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 15", "value": 15, "price": 149.99 },
-        { "label": "Serves 20", "value": 20, "price": 189.99 },
-        { "label": "Serves 25", "value": 25, "price": 229.99 }
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 149.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 189.99
+        },
+        {
+          "label": "Serves 25",
+          "value": 25,
+          "price": 229.99
+        }
       ],
       "category": "platters"
     },
@@ -326,9 +562,21 @@
       "description": "Curated selection of meats and cheeses",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 99.99 },
-        { "label": "Serves 10", "value": 10, "price": 119.99 },
-        { "label": "Serves 12", "value": 12, "price": 139.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 99.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 119.99
+        },
+        {
+          "label": "Serves 12",
+          "value": 12,
+          "price": 139.99
+        }
       ],
       "category": "platters"
     },
@@ -340,9 +588,21 @@
       "description": "Italian cured meats, cheeses, olives, and vegetables",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 89.99 },
-        { "label": "Serves 10", "value": 10, "price": 109.99 },
-        { "label": "Serves 15", "value": 15, "price": 139.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 109.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 139.99
+        }
       ],
       "category": "platters"
     },
@@ -354,9 +614,21 @@
       "description": "Artisan cheese selection with accompaniments",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 79.99 },
-        { "label": "Serves 10", "value": 10, "price": 99.99 },
-        { "label": "Serves 12", "value": 12, "price": 119.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 99.99
+        },
+        {
+          "label": "Serves 12",
+          "value": 12,
+          "price": 119.99
+        }
       ],
       "category": "platters"
     },
@@ -368,9 +640,21 @@
       "description": "Soft pretzels and mini bagels with dips",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 10", "value": 10, "price": 69.99 },
-        { "label": "Serves 15", "value": 15, "price": 89.99 },
-        { "label": "Serves 20", "value": 20, "price": 109.99 }
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 69.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 109.99
+        }
       ],
       "category": "platters"
     },
@@ -382,10 +666,26 @@
       "description": "Classic Caesar with parmesan and croutons",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 79.99 },
-        { "label": "Serves 10", "value": 10, "price": 89.99 },
-        { "label": "Serves 15", "value": 15, "price": 109.99 },
-        { "label": "Serves 20", "value": 20, "price": 139.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 109.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 139.99
+        }
       ],
       "category": "bowls"
     },
@@ -397,10 +697,26 @@
       "description": "Fresh Greek salad with feta and olives",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 79.99 },
-        { "label": "Serves 10", "value": 10, "price": 89.99 },
-        { "label": "Serves 15", "value": 15, "price": 109.99 },
-        { "label": "Serves 20", "value": 20, "price": 139.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 109.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 139.99
+        }
       ],
       "category": "bowls"
     },
@@ -412,10 +728,26 @@
       "description": "Garden salad with turkey, ham, and cheese",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 89.99 },
-        { "label": "Serves 10", "value": 10, "price": 99.99 },
-        { "label": "Serves 15", "value": 15, "price": 119.99 },
-        { "label": "Serves 20", "value": 20, "price": 149.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 99.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 119.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 149.99
+        }
       ],
       "category": "bowls"
     },
@@ -427,9 +759,21 @@
       "description": "Grilled wild salmon over mixed greens",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 119.99 },
-        { "label": "Serves 10", "value": 10, "price": 139.99 },
-        { "label": "Serves 15", "value": 15, "price": 179.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 119.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 139.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 179.99
+        }
       ],
       "category": "bowls"
     },
@@ -441,10 +785,26 @@
       "description": "Pasta with Caesar dressing and parmesan",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 89.99 },
-        { "label": "Serves 10", "value": 10, "price": 99.99 },
-        { "label": "Serves 15", "value": 15, "price": 119.99 },
-        { "label": "Serves 20", "value": 20, "price": 149.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 99.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 119.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 149.99
+        }
       ],
       "category": "bowls"
     },
@@ -456,10 +816,26 @@
       "description": "Mediterranean pasta salad",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 79.99 },
-        { "label": "Serves 10", "value": 10, "price": 89.99 },
-        { "label": "Serves 15", "value": 15, "price": 109.99 },
-        { "label": "Serves 20", "value": 20, "price": 139.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 109.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 139.99
+        }
       ],
       "category": "bowls"
     },
@@ -471,9 +847,21 @@
       "description": "Fresh mozzarella, tomatoes, and basil",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 89.99 },
-        { "label": "Serves 10", "value": 10, "price": 99.99 },
-        { "label": "Serves 15", "value": 15, "price": 119.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 99.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 119.99
+        }
       ],
       "category": "bowls"
     },
@@ -485,9 +873,21 @@
       "description": "Traditional Lebanese tabouli",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 69.99 },
-        { "label": "Serves 10", "value": 10, "price": 79.99 },
-        { "label": "Serves 15", "value": 15, "price": 99.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 69.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 99.99
+        }
       ],
       "category": "bowls"
     },
@@ -499,10 +899,26 @@
       "description": "Seasonal fresh fruit selection",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 79.99 },
-        { "label": "Serves 10", "value": 10, "price": 89.99 },
-        { "label": "Serves 15", "value": 15, "price": 109.99 },
-        { "label": "Serves 20", "value": 20, "price": 139.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 109.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 139.99
+        }
       ],
       "category": "vegetarian"
     },
@@ -514,10 +930,26 @@
       "description": "Fresh vegetables with dips",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 69.99 },
-        { "label": "Serves 10", "value": 10, "price": 79.99 },
-        { "label": "Serves 15", "value": 15, "price": 99.99 },
-        { "label": "Serves 20", "value": 20, "price": 129.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 69.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 99.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 129.99
+        }
       ],
       "category": "vegetarian"
     },
@@ -529,9 +961,21 @@
       "description": "Assorted hummus with pita and vegetables",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 59.99 },
-        { "label": "Serves 10", "value": 10, "price": 69.99 },
-        { "label": "Serves 15", "value": 15, "price": 89.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 59.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 69.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 89.99
+        }
       ],
       "category": "vegetarian"
     },
@@ -543,9 +987,21 @@
       "description": "Warm naan with Mediterranean spreads",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 69.99 },
-        { "label": "Serves 10", "value": 10, "price": 79.99 },
-        { "label": "Serves 15", "value": 15, "price": 99.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 69.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 99.99
+        }
       ],
       "category": "vegetarian"
     },
@@ -557,9 +1013,21 @@
       "description": "Assorted savory naan breads",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 64.99 },
-        { "label": "Serves 10", "value": 10, "price": 74.99 },
-        { "label": "Serves 15", "value": 15, "price": 94.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 64.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 74.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 94.99
+        }
       ],
       "category": "vegetarian"
     },
@@ -571,10 +1039,26 @@
       "description": "Assorted gourmet brownies",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 10", "value": 10, "price": 69.99 },
-        { "label": "Serves 15", "value": 15, "price": 89.99 },
-        { "label": "Serves 20", "value": 20, "price": 109.99 },
-        { "label": "Serves 25", "value": 25, "price": 129.99 }
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 69.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 109.99
+        },
+        {
+          "label": "Serves 25",
+          "value": 25,
+          "price": 129.99
+        }
       ],
       "category": "desserts"
     },
@@ -586,10 +1070,26 @@
       "description": "Freshly baked artisan cookies",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 10", "value": 10, "price": 64.99 },
-        { "label": "Serves 15", "value": 15, "price": 84.99 },
-        { "label": "Serves 20", "value": 20, "price": 104.99 },
-        { "label": "Serves 25", "value": 25, "price": 124.99 }
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 64.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 84.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 104.99
+        },
+        {
+          "label": "Serves 25",
+          "value": 25,
+          "price": 124.99
+        }
       ],
       "category": "desserts"
     },
@@ -601,9 +1101,21 @@
       "description": "Assorted French-style tarts",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 8", "value": 8, "price": 89.99 },
-        { "label": "Serves 10", "value": 10, "price": 109.99 },
-        { "label": "Serves 15", "value": 15, "price": 139.99 }
+        {
+          "label": "Serves 8",
+          "value": 8,
+          "price": 89.99
+        },
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 109.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 139.99
+        }
       ],
       "category": "desserts"
     },
@@ -615,9 +1127,21 @@
       "description": "French macarons with chocolate-covered strawberries",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 10", "value": 10, "price": 79.99 },
-        { "label": "Serves 15", "value": 15, "price": 99.99 },
-        { "label": "Serves 20", "value": 20, "price": 119.99 }
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 99.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 119.99
+        }
       ],
       "category": "desserts"
     },
@@ -629,9 +1153,21 @@
       "description": "Assorted fresh-baked muffins",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 10", "value": 10, "price": 59.99 },
-        { "label": "Serves 15", "value": 15, "price": 79.99 },
-        { "label": "Serves 20", "value": 20, "price": 99.99 }
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 59.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 79.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 99.99
+        }
       ],
       "category": "desserts"
     },
@@ -643,9 +1179,21 @@
       "description": "Butter croissants and pastries",
       "minQuantity": 2,
       "options": [
-        { "label": "Serves 10", "value": 10, "price": 64.99 },
-        { "label": "Serves 15", "value": 15, "price": 84.99 },
-        { "label": "Serves 20", "value": 20, "price": 104.99 }
+        {
+          "label": "Serves 10",
+          "value": 10,
+          "price": 64.99
+        },
+        {
+          "label": "Serves 15",
+          "value": 15,
+          "price": 84.99
+        },
+        {
+          "label": "Serves 20",
+          "value": 20,
+          "price": 104.99
+        }
       ],
       "category": "desserts"
     }

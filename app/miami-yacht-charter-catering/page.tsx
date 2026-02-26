@@ -12,16 +12,16 @@ import DippingSauceModal, { DippingSauceCustomization } from '@/components/modal
 
 // Available platter images (rotating through these 10 images for all products)
 const platterImages = [
-  '/images/products/catering/MYC+platter.jpg',
-  '/images/products/catering/large_platter.jpg',
-  '/images/products/catering/chef+salad+platter1.jpg',
-  '/images/products/catering/chef+salad+platter2.jpg',
-  '/images/products/catering/relish_platter.jpg',
-  '/images/products/catering/wheel+platter.jpg',
-  '/images/products/catering/cubesplatter.jpg',
-  '/images/products/catering/MYC_small_platter.jpg',
+  '/images/products/catering/Miami_Yachting_Company_platter.jpg',
+  '/images/products/catering/Miami_Yachting_Company_large_platter.jpg',
+  '/images/products/catering/Miami_Yachting_Company_chef_salad_platter_1.jpg',
+  '/images/products/catering/Miami_Yachting_Company_chef_salad_platter_2.jpg',
+  '/images/products/catering/Miami_Yachting_Company_relish_platter.jpg',
+  '/images/products/catering/Miami_Yachting_Company_wheel_platter.jpg',
+  '/images/products/catering/Miami_Yachting_Company_cubes_platter.jpg',
+  '/images/products/catering/Miami_Yachting_Company_small_platter.jpg',
   '/images/products/catering/miami_yachting_company_muffin_platter.jpg',
-  '/images/products/catering/cookieplatter.jpeg'
+  '/images/products/catering/Miami_Yachting_Company_cookie_platter.jpg'
 ];
 
 // Map product images logically based on available photos
