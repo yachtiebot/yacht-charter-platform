@@ -71,7 +71,7 @@ export default function FlowersPage() {
       <div className="max-w-[1600px] mx-auto px-6 md:px-20">
         {/* Breadcrumb */}
         <div className="py-6 text-sm text-[#6b6b6b]">
-          <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
+          <Link href="/miami-yacht-charter-addons" className="hover:text-[#c4a265]">Add Ons</Link>
           <span className="mx-2">/</span>
           <span>Flowers</span>
         </div>

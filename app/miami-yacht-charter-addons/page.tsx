@@ -289,7 +289,7 @@ export default function AddOnsPage() {
           </h2>
           
           <p className="text-[#6b6b6b] text-lg max-w-2xl" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-            Elevated offerings available upon request. Each service is individually quoted based on your specific requirements and preferences.
+            Exclusive offerings available upon request. Each service is individually quoted based on your specific requirements and preferences.
           </p>
         </div>
 
