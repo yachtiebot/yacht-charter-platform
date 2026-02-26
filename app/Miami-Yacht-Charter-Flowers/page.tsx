@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
-import ProductImageGallery from '@/components/ProductImageGallery';
 import DarkFooter from '@/components/DarkFooter';
 
 // Flower products from scraped data
@@ -12,78 +11,50 @@ const flowerProducts = [
     id: 'rose-pave',
     name: 'Rose Pavé',
     description: 'Luxurious roses artfully arranged in an elegant vase, adding timeless beauty to your onboard experience.',
-    images: ['/images/products/flowers/rose-pave.png', '/images/products/flowers/rose+pave.png'],
+    image: '/images/products/flowers/rose-pave.png',
     sizes: { small: { size: '5" Round', price: 89 }, medium: { size: '8" Round', price: 129 }, large: { size: '10" Round', price: 189 } }
   },
   {
     id: 'blooming-orchid',
     name: 'Blooming Orchid',
     description: 'Stunning display of fresh exotic orchids meticulously arranged, perfectly curated for luxury yacht settings.',
-    images: ['/images/products/flowers/blooming-orchid.png', '/images/products/flowers/bloomingorchid.png'],
+    image: '/images/products/flowers/blooming-orchid.png',
     sizes: { small: { size: '5" Round', price: 95 }, medium: { size: '8" Round', price: 135 }, large: { size: '10" Round', price: 195 } }
   },
   {
     id: 'tropical-paradise',
     name: 'Tropical Paradise',
     description: 'Vibrant tropical arrangement bringing the essence of Miami\'s natural splendor aboard your yacht.',
-    images: ['/images/products/flowers/tropical+paradise.png', '/images/products/flowers/tropical-paradise.png'],
+    image: '/images/products/flowers/tropical+paradise.png',
     sizes: { small: { size: '8"', price: 89 }, medium: { size: '15"', price: 129 }, large: { size: '20"', price: 189 } }
   },
   {
     id: 'dancing-roses',
     name: 'Dancing Roses',
     description: 'Elegant arrangement of roses that brings movement and grace to your yacht\'s interior.',
-    images: ['/images/products/flowers/dancingroses.png', '/images/products/flowers/dancing-roses.png'],
+    image: '/images/products/flowers/dancing-roses.png',
     sizes: { small: { size: '6"', price: 99 }, medium: { size: '8"', price: 139 }, large: { size: '10"', price: 199 } }
   },
   {
     id: 'tropical-rose',
     name: 'Tropical Rose',
     description: 'Sophisticated fusion of tropical blooms and classic roses for a distinctive aesthetic.',
-    images: ['/images/products/flowers/tropical+roses.png', '/images/products/flowers/tropical-paradise.png'],
+    image: '/images/products/flowers/tropical+roses.png',
     sizes: { small: { size: '10"', price: 89 }, medium: { size: '15"', price: 129 }, large: { size: '20"', price: 189 } }
   },
   {
     id: 'tropical-orchid',
     name: 'Tropical Orchid',
     description: 'Exotic orchids paired with tropical accents for a refined, contemporary look.',
-    images: ['/images/products/flowers/tropical+Orchid.png'],
+    image: '/images/products/flowers/tropical+Orchid.png',
     sizes: { small: { size: '10"', price: 95 }, medium: { size: '15"', price: 135 }, large: { size: '20"', price: 195 } }
   },
   {
     id: 'floating-orchid',
     name: 'Floating Orchid',
     description: 'Delicate orchids in a unique floating arrangement, perfect for modern yacht interiors.',
-    images: ['/images/products/flowers/floatingorchid.png'],
+    image: '/images/products/flowers/floatingorchid.png',
     sizes: { medium: { size: '18" Rectangle', price: 135 }, large: { size: '25" Rectangle', price: 195 } }
-  },
-  {
-    id: 'blooming-garden',
-    name: 'Blooming Garden',
-    description: 'Mixed seasonal blooms creating a lush garden atmosphere aboard your vessel.',
-    images: ['/images/products/flowers/blooming-orchid.png'],
-    sizes: { small: { size: '12"', price: 89 }, medium: { size: '18"', price: 129 }, large: { size: '25"', price: 189 } }
-  },
-  {
-    id: 'modern-simplicity',
-    name: 'Modern Simplicity',
-    description: 'Clean, contemporary arrangement emphasizing form and elegant restraint.',
-    images: ['/images/products/flowers/dancingroses.png'],
-    sizes: { medium: { size: '10"', price: 129 }, large: { size: '18"', price: 189 } }
-  },
-  {
-    id: 'pretty-in-white',
-    name: 'Pretty in White',
-    description: 'Pristine white blooms creating a serene, sophisticated atmosphere.',
-    images: ['/images/products/flowers/floatingorchid.png'],
-    sizes: { small: { size: '12"', price: 99 }, medium: { size: '18"', price: 139 }, large: { size: '22"', price: 199 } }
-  },
-  {
-    id: 'victoria-london',
-    name: 'Victoria & London',
-    description: 'Classic English garden-inspired arrangement with timeless appeal.',
-    images: ['/images/products/flowers/tropical+Orchid.png'],
-    sizes: { large: { size: '20" Rectangle', price: 199 } }
   }
 ];
 
@@ -147,13 +118,17 @@ export default function FlowersPage() {
                 key={product.id} 
                 className="bg-white group hover:shadow-2xl transition-all duration-500"
               >
-                {/* Image Gallery */}
-                <ProductImageGallery 
-                  images={product.images} 
-                  productName={product.name}
-                  aspectRatio="square"
-                  objectFit="contain"
-                />
+                {/* Image */}
+                <div className="aspect-square bg-[#f0ece6] overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                    onError={(e) => {
+                      e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"%3E%3Crect fill="%23f0ece6" width="400" height="400"/%3E%3C/svg%3E';
+                    }}
+                  />
+                </div>
                 
                 {/* Content */}
                 <div className="p-6 space-y-4">
@@ -201,7 +176,7 @@ export default function FlowersPage() {
                         name: `${product.name} (${sizeInfo.size})`,
                         price: sizeInfo.price,
                         category: 'flowers',
-                        image: product.images[0]
+                        image: product.image
                       })}
                       className="w-full bg-white border border-[#0f0f0f]/20 text-[#0f0f0f] py-4 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300"
                     >
