@@ -13,6 +13,9 @@ export default function CateringCartSidebar() {
   const hasCateringItems = cateringItems.length > 0;
   const totalPlatters = cateringItems.reduce((sum, item) => sum + item.quantity, 0);
   const needsMorePlatters = hasCateringItems && totalPlatters < 2;
+  
+  // Determine which checkout to use
+  const checkoutUrl = hasCateringItems ? '/checkout' : '/checkout-water-toys';
 
   if (!isOpen) return null;
 
@@ -153,7 +156,7 @@ export default function CateringCartSidebar() {
             )}
             
             <a
-              href="/checkout"
+              href={checkoutUrl}
               className={`block w-full text-white py-4 text-sm uppercase tracking-wider transition-all duration-300 text-center ${
                 needsMorePlatters 
                   ? 'bg-gray-400 cursor-not-allowed pointer-events-none' 
