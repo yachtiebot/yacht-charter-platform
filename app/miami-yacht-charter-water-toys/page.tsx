@@ -223,7 +223,7 @@ export default function WaterToysPage() {
                           id: `${product.id}-${selectedSize}`,
                           name: `${product.name} (${(sizeInfo as any).duration || (sizeInfo as any).option})`,
                           price: sizeInfo.price,
-                          category: 'water-toys',
+                          category: product.id === 'jet-ski' ? 'jet-ski' : 'water-toys',
                           image: product.images[0]
                         })}
                         className="w-full bg-white border border-[#0f0f0f]/20 text-[#0f0f0f] py-4 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300"
@@ -312,7 +312,7 @@ export default function WaterToysPage() {
                         id: product.id,
                         name: product.name,
                         price: product.depositPrice || product.price,
-                        category: 'water-toys',
+                        category: product.id === 'jet-ski' ? 'jet-ski' : 'water-toys',
                         maxQuantity: product.maxQuantity,
                         minQuantity: product.minQuantity,
                         image: product.images[0]
