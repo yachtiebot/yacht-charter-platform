@@ -40,6 +40,17 @@ export async function POST(request: NextRequest) {
       success_url: `${request.headers.get('origin')}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${request.headers.get('origin')}/checkout?canceled=true`,
       customer_email: customerInfo?.email,
+      // Require 3D Secure for all transactions
+      payment_intent_data: {
+        setup_future_usage: undefined,
+        capture_method: 'automatic',
+      },
+      // Request 3DS authentication
+      payment_method_options: {
+        card: {
+          request_three_d_secure: 'any', // Always request 3DS
+        },
+      },
       metadata: {
         firstName: customerInfo?.firstName || '',
         lastName: customerInfo?.lastName || '',
