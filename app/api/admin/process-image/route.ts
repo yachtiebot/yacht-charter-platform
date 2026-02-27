@@ -96,9 +96,9 @@ export async function POST(request: NextRequest) {
     const supabaseUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/yacht-photos/${supabasePath}`;
     console.log(`✅ Uploaded: ${supabaseUrl}`);
 
-    // Step 4: Update Airtable with Supabase URL (skip for hero-images - they don't have Airtable records)
+    // Step 4: Update Airtable with Supabase URL (skip for hero-images and banners - they don't have Airtable records)
     const tableName = CATEGORY_TABLES[category];
-    if (tableName && category !== 'hero-images') {
+    if (tableName && category !== 'hero-images' && category !== 'banners') {
       console.log(`📝 Updating Airtable ${tableName}...`);
       
       // Find record by Product ID

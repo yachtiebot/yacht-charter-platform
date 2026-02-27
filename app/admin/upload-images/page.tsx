@@ -23,20 +23,27 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
   const [result, setResult] = useState<{ success: boolean; message: string } | null>(null);
 
   useEffect(() => {
-    // Hero images have a static list instead of fetching from Airtable
+    // Banners - Large full-width hero images
+    if (category === 'banners') {
+      setProducts([
+        // Homepage Banners
+        { id: 'hero-main', name: 'Homepage - Main Hero Banner', category },
+        { id: 'cta-background', name: 'Homepage - CTA Background Banner', category },
+        { id: 'philosophy-yacht', name: 'Homepage - Philosophy Section Banner', category },
+        
+        // Page Hero Banners
+        { id: 'catering-hero', name: 'Catering Page - Hero Banner', category },
+        { id: 'water-toys-hero', name: 'Water Toys Page - Hero Banner', category },
+        { id: 'flowers-hero', name: 'Flowers Page - Hero Banner', category },
+        { id: 'bachelorette-hero', name: 'Bachelorette Page - Hero Banner', category },
+        { id: 'contact-hero', name: 'Contact Page - Hero Banner', category },
+      ]);
+      return;
+    }
+
+    // Hero images/thumbnails - Cards, badges, logos, smaller images
     if (category === 'hero-images') {
       setProducts([
-        // Main Heroes & Banners
-        { id: 'hero-main', name: 'Homepage - Main Hero Banner', category },
-        { id: 'cta-background', name: 'Homepage - CTA Background', category },
-        { id: 'philosophy-yacht', name: 'Homepage - Philosophy Section', category },
-        
-        // Page Heroes
-        { id: 'catering-hero', name: 'Catering Page - Hero', category },
-        { id: 'water-toys-hero', name: 'Water Toys Page - Hero', category },
-        { id: 'flowers-hero', name: 'Flowers Page - Hero', category },
-        { id: 'bachelorette-hero', name: 'Bachelorette Page - Hero', category },
-        { id: 'contact-hero', name: 'Contact Page - Hero', category },
         
         // Fleet Cards
         { id: 'fleet-dayboats', name: 'Fleet - Dayboats Card', category },
@@ -297,11 +304,25 @@ export default function UploadImagesPage() {
           </p>
         </div>
 
+        {/* Banners Section */}
+        <div className="mb-12">
+          <div className="mb-6">
+            <h2 className="editorial-card-name text-[#0f0f0f] mb-2">Banners & Hero Images</h2>
+            <p className="text-[#6b6b6b] font-light">Upload large banner images and page hero images (full-width sections)</p>
+          </div>
+          
+          <UploadZone
+            category="banners"
+            title="Banners"
+            color="#c4a265"
+          />
+        </div>
+
         {/* Hero Thumbnails Section */}
         <div className="mb-12">
           <div className="mb-6">
-            <h2 className="editorial-card-name text-[#0f0f0f] mb-2">Marketing & Hero Thumbnails</h2>
-            <p className="text-[#6b6b6b] font-light">Upload hero thumbnails, category thumbnails, and site-wide marketing images</p>
+            <h2 className="editorial-card-name text-[#0f0f0f] mb-2">Thumbnails & Icons</h2>
+            <p className="text-[#6b6b6b] font-light">Upload thumbnails, cards, badges, logos, and smaller marketing images</p>
           </div>
           
           <UploadZone
@@ -351,7 +372,8 @@ export default function UploadImagesPage() {
             How to Use
           </h3>
           <ol className="space-y-3 text-[#6b6b6b] font-light">
-            <li><strong>Hero Thumbnails:</strong> Select from predefined list (homepage hero, page headers, etc.)</li>
+            <li><strong>Banners:</strong> Large full-width hero images (homepage hero, page headers)</li>
+            <li><strong>Hero Thumbnails:</strong> Cards, badges, logos, smaller marketing images</li>
             <li><strong>Product Images:</strong> Product must exist in Airtable with a Product ID first</li>
             <li>Select the image from the dropdown</li>
             <li>Drag and drop an image or click to browse</li>
@@ -366,8 +388,8 @@ export default function UploadImagesPage() {
               optimized version goes on the CDN.
             </p>
             <p className="text-sm text-[#6b6b6b] font-light">
-              <strong>Hero Thumbnails:</strong> See HERO_THUMBNAILS_INVENTORY.md for a complete list of 
-              all marketing images (heroes, banners, thumbnails, badges) and where they appear on the site.
+              <strong>Complete Inventory:</strong> See HERO_THUMBNAILS_INVENTORY.md for a full list of 
+              all banners, thumbnails, badges, and logos, plus where they appear on the site.
             </p>
           </div>
         </div>

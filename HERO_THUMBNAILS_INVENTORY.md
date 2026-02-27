@@ -1,18 +1,36 @@
-# Hero Thumbnails Inventory
+# Marketing Images Inventory
 
-**These are site-wide marketing images NOT controlled by Airtable products.**  
-Includes: hero images, banners, thumbnails, category cards, badges, and icons.
+**Site-wide marketing images NOT controlled by Airtable products.**
 
-Use the **Hero Thumbnails upload zone** in `/admin/upload-images` to replace these.
+## 🎯 Two Upload Zones:
+
+### 1️⃣ **Banners** (Large full-width images)
+Use for: Page heroes, header banners, full-width backgrounds  
+**Upload zone:** "Banners & Hero Images"
+
+### 2️⃣ **Hero Thumbnails** (Cards, badges, logos)
+Use for: Fleet cards, experience cards, badges, sponsor logos, category thumbnails  
+**Upload zone:** "Thumbnails & Icons"
 
 ---
 
-## Homepage (`/`)
+## 📸 BANNERS (Large Images)
 
-### Heroes & Banners:
-- `hero-main` → Main header yacht banner
-- `cta-background` → CTA section background
-- `philosophy-yacht` → Philosophy section image
+### Homepage Banners:
+- `hero-main` → Main header yacht banner (full-width hero)
+- `cta-background` → CTA section background banner
+- `philosophy-yacht` → Philosophy section banner
+
+### Page Hero Banners:
+- `catering-hero` → Catering page header banner
+- `water-toys-hero` → Water toys page header banner
+- `flowers-hero` → Flowers page header banner
+- `bachelorette-hero` → Bachelorette page header banner
+- `contact-hero` → Contact page header banner
+
+---
+
+## 🎴 HERO THUMBNAILS (Cards, Badges, Logos)
 
 ### Fleet Cards:
 - `fleet-dayboats` → VanDutch 40 fleet card
@@ -29,112 +47,73 @@ Use the **Hero Thumbnails upload zone** in `/admin/upload-images` to replace the
 - `experiences-large-groups` → Large groups card
 
 ### Departure Locations:
-- `departures-miami` → Miami
-- `departures-miami-beach` → Miami Beach
-- `departures-coconut-grove` → Coconut Grove
-- `departures-key-biscayne` → Key Biscayne
-- `departures-fort-lauderdale` → Fort Lauderdale
-- `departures-hollywood` → Hollywood
+- `departures-miami` → Miami location thumbnail
+- `departures-miami-beach` → Miami Beach thumbnail
+- `departures-coconut-grove` → Coconut Grove thumbnail
+- `departures-key-biscayne` → Key Biscayne thumbnail
+- `departures-fort-lauderdale` → Fort Lauderdale thumbnail
+- `departures-hollywood` → Hollywood thumbnail
 
 ### Review Badges:
 - `reviews-yelp` → Yelp 5-star badge
 - `reviews-tripadvisor` → TripAdvisor badge
 - `reviews-google` → Google Reviews badge
 - `reviews-iyba` → IYBA badge
-- `reviews-best-of-miami` → Best of Miami 2025
+- `reviews-best-of-miami` → Best of Miami 2025 badge
 
 ### Sponsor Logos:
-- `sponsors-adidas` → Adidas
-- `sponsors-amex` → American Express
-- `sponsors-chanel` → Chanel
-- `sponsors-cisco` → Cisco
-- `sponsors-nike` → Nike
-- `sponsors-redbull` → Red Bull
-- `sponsors-sony` → Sony
-- `sponsors-spotify` → Spotify
-- `sponsors-starbucks` → Starbucks
-- `sponsors-tiffany` → Tiffany & Co
+- `sponsors-adidas` → Adidas logo
+- `sponsors-amex` → American Express logo
+- `sponsors-chanel` → Chanel logo
+- `sponsors-cisco` → Cisco logo
+- `sponsors-nike` → Nike logo
+- `sponsors-redbull` → Red Bull logo
+- `sponsors-sony` → Sony logo
+- `sponsors-spotify` → Spotify logo
+- `sponsors-starbucks` → Starbucks logo
+- `sponsors-tiffany` → Tiffany & Co logo
 
----
-
-## Contact Page (`/contact`)
-
-- `contact-hero` → Contact page header image
-
----
-
-## Add-Ons Page (`/miami-yacht-charter-add-ons`)
-
-### Category Thumbnails:
+### Add-Ons Page - Category Thumbnails:
 - `addons-catering-thumb` → Catering category card
 - `addons-water-toys-thumb` → Water toys category card
 - `addons-flowers-thumb` → Flowers category card
 - `addons-bachelorette-thumb` → Bachelorette category card
 
 ### Premium Add-Ons:
-- `premium-alcohol` → Premium alcohol package
-- `premium-transport` → Luxury transport
-- `premium-hero` → Premium services hero (used multiple times)
-- `premium-watersports` → Premium watersports
+- `premium-alcohol` → Premium alcohol package thumbnail
+- `premium-transport` → Luxury transport thumbnail
+- `premium-hero` → Premium services hero image
+- `premium-watersports` → Premium watersports thumbnail
 
 ---
 
-## Catering Page (`/miami-yacht-charter-catering`)
+## 🎯 Priority Upload Order:
 
-**Hero/Header:**
-- `catering-hero` → Main catering page header
+### 1. Banners (Most Visible):
+1. `hero-main` - Homepage main banner
+2. `catering-hero` - Catering page
+3. `water-toys-hero` - Water toys page
+4. `flowers-hero` - Flowers page
+5. `bachelorette-hero` - Bachelorette page
 
-**Fallback Images** (used when products don't have Airtable images):
-- Already using hardcoded array - these will be phased out as products get uploaded via admin panel
+### 2. Homepage Thumbnails:
+1. Fleet cards (4 images)
+2. Experience cards (6 images)
+3. Departure locations (6 images)
 
----
-
-## Water Toys Page (`/miami-yacht-charter-water-toys`)
-
-**Hero/Header:**
-- `water-toys-hero` → Main water toys page header
-
-**Product Fallbacks:**
-- Seabob, Flitescooter, Watersports Boat, Floating Cabana, Floating Lounge Chair
-- *(These should move to Airtable + upload via admin panel)*
-
----
-
-## Flowers Page (`/miami-yacht-charter-flowers`)
-
-**Hero/Header:**
-- `flowers-hero` → Main flowers page header
-
-**Product Images:**
-- Rose Pavé, Blooming Orchid, Tropical Paradise, Dancing Roses, Tropical Roses
-- *(These should be in Airtable + uploadable via admin)*
+### 3. Badges & Logos:
+1. Review badges (5 images)
+2. Sponsor logos (10 images)
 
 ---
 
-## Bachelorette Packages Page (`/miami-yacht-charter-bachelorette-packages`)
+## 📝 Upload Instructions:
 
-**Hero/Header:**
-- `bachelorette-hero` → Main bachelorette page header
+1. Go to: `/admin/upload-images`
+2. Choose **"Banners"** or **"Hero Thumbnails"** section
+3. Select image from dropdown (use exact ID above)
+4. Drag/drop or browse for image
+5. Wait for optimization (~10-30 seconds)
+6. Image automatically appears on website!
 
-**Product Images:**
-- Last Toast on the Coast, Bride Cups, Bride Straws, Bride Crown & Veil
-- *(These should be in Airtable + uploadable via admin)*
-
----
-
-## Upload Format:
-
-When uploading via admin interface, use these IDs exactly:
-- Format: `hero-main`, `fleet-dayboats`, `catering-hero`, etc.
-- They'll be stored as: `hero-images/{id}.webp` on Supabase
-- Automatically optimized to WebP
-
----
-
-## Priority Images to Replace First:
-
-1. **Homepage hero** (`hero-main`) - Most visible
-2. **Catering page hero** (`catering-hero`)
-3. **Water Toys page hero** (`water-toys-hero`)
-4. **Flowers page hero** (`flowers-hero`)
-5. **Bachelorette page hero** (`bachelorette-hero`)
+**Note:** All images auto-optimized to WebP, 1200px max, 85% quality.
