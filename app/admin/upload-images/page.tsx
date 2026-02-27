@@ -26,28 +26,66 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
     // Hero images have a static list instead of fetching from Airtable
     if (category === 'hero-images') {
       setProducts([
-        { id: 'hero-main', name: 'Homepage - Main Hero', category },
+        // Main Heroes & Banners
+        { id: 'hero-main', name: 'Homepage - Main Hero Banner', category },
+        { id: 'cta-background', name: 'Homepage - CTA Background', category },
+        { id: 'philosophy-yacht', name: 'Homepage - Philosophy Section', category },
+        
+        // Page Heroes
         { id: 'catering-hero', name: 'Catering Page - Hero', category },
         { id: 'water-toys-hero', name: 'Water Toys Page - Hero', category },
         { id: 'flowers-hero', name: 'Flowers Page - Hero', category },
         { id: 'bachelorette-hero', name: 'Bachelorette Page - Hero', category },
-        { id: 'fleet-dayboats', name: 'Homepage - Fleet Dayboats', category },
-        { id: 'fleet-luxury', name: 'Homepage - Fleet Luxury', category },
-        { id: 'fleet-superyacht', name: 'Homepage - Fleet Superyacht', category },
-        { id: 'fleet-complete', name: 'Homepage - Fleet Complete', category },
-        { id: 'experiences-sightseeing', name: 'Homepage - Sightseeing', category },
-        { id: 'experiences-celebrations', name: 'Homepage - Celebrations', category },
-        { id: 'experiences-corporate', name: 'Homepage - Corporate', category },
-        { id: 'experiences-sandbars', name: 'Homepage - Sandbars', category },
-        { id: 'experiences-bachelorette', name: 'Homepage - Bachelorette', category },
-        { id: 'experiences-large-groups', name: 'Homepage - Large Groups', category },
-        { id: 'departures-miami', name: 'Homepage - Miami Departure', category },
-        { id: 'departures-miami-beach', name: 'Homepage - Miami Beach Departure', category },
         { id: 'contact-hero', name: 'Contact Page - Hero', category },
+        
+        // Fleet Cards
+        { id: 'fleet-dayboats', name: 'Fleet - Dayboats Card', category },
+        { id: 'fleet-luxury', name: 'Fleet - Luxury Yachts Card', category },
+        { id: 'fleet-superyacht', name: 'Fleet - Superyacht Card', category },
+        { id: 'fleet-complete', name: 'Fleet - Complete Fleet Card', category },
+        
+        // Experience Cards
+        { id: 'experiences-sightseeing', name: 'Experiences - Sightseeing', category },
+        { id: 'experiences-celebrations', name: 'Experiences - Celebrations', category },
+        { id: 'experiences-corporate', name: 'Experiences - Corporate Events', category },
+        { id: 'experiences-sandbars', name: 'Experiences - Sandbars & Beyond', category },
+        { id: 'experiences-bachelorette', name: 'Experiences - Bachelorette', category },
+        { id: 'experiences-large-groups', name: 'Experiences - Large Groups', category },
+        
+        // Departure Locations
+        { id: 'departures-miami', name: 'Departures - Miami', category },
+        { id: 'departures-miami-beach', name: 'Departures - Miami Beach', category },
+        { id: 'departures-coconut-grove', name: 'Departures - Coconut Grove', category },
+        { id: 'departures-key-biscayne', name: 'Departures - Key Biscayne', category },
+        { id: 'departures-fort-lauderdale', name: 'Departures - Fort Lauderdale', category },
+        { id: 'departures-hollywood', name: 'Departures - Hollywood', category },
+        
+        // Review Badges
+        { id: 'reviews-yelp', name: 'Reviews - Yelp 5 Star Badge', category },
+        { id: 'reviews-tripadvisor', name: 'Reviews - TripAdvisor Badge', category },
+        { id: 'reviews-google', name: 'Reviews - Google Reviews Badge', category },
+        { id: 'reviews-iyba', name: 'Reviews - IYBA Badge', category },
+        { id: 'reviews-best-of-miami', name: 'Reviews - Best of Miami 2025', category },
+        
+        // Sponsor Logos
+        { id: 'sponsors-adidas', name: 'Sponsors - Adidas', category },
+        { id: 'sponsors-amex', name: 'Sponsors - American Express', category },
+        { id: 'sponsors-chanel', name: 'Sponsors - Chanel', category },
+        { id: 'sponsors-cisco', name: 'Sponsors - Cisco', category },
+        { id: 'sponsors-nike', name: 'Sponsors - Nike', category },
+        { id: 'sponsors-redbull', name: 'Sponsors - Red Bull', category },
+        { id: 'sponsors-sony', name: 'Sponsors - Sony', category },
+        { id: 'sponsors-spotify', name: 'Sponsors - Spotify', category },
+        { id: 'sponsors-starbucks', name: 'Sponsors - Starbucks', category },
+        { id: 'sponsors-tiffany', name: 'Sponsors - Tiffany & Co', category },
+        
+        // Add-Ons Thumbnails
         { id: 'addons-catering-thumb', name: 'Add-Ons - Catering Thumbnail', category },
         { id: 'addons-water-toys-thumb', name: 'Add-Ons - Water Toys Thumbnail', category },
         { id: 'addons-flowers-thumb', name: 'Add-Ons - Flowers Thumbnail', category },
         { id: 'addons-bachelorette-thumb', name: 'Add-Ons - Bachelorette Thumbnail', category },
+        
+        // Premium Add-Ons
         { id: 'premium-alcohol', name: 'Premium - Alcohol Package', category },
         { id: 'premium-transport', name: 'Premium - Luxury Transport', category },
         { id: 'premium-hero', name: 'Premium - Hero Image', category },
@@ -328,8 +366,8 @@ export default function UploadImagesPage() {
               optimized version goes on the CDN.
             </p>
             <p className="text-sm text-[#6b6b6b] font-light">
-              <strong>Hero Thumbnails:</strong> See HERO_IMAGES_INVENTORY.md for a complete list of 
-              all hero thumbnails and where they appear on the site.
+              <strong>Hero Thumbnails:</strong> See HERO_THUMBNAILS_INVENTORY.md for a complete list of 
+              all marketing images (heroes, banners, thumbnails, badges) and where they appear on the site.
             </p>
           </div>
         </div>
