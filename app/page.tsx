@@ -34,7 +34,7 @@ export default function HomePage() {
                 }}>
                   Private Yacht<br />
                   Charters in<br />
-                  <span className="text-[#c4a265]" style={{fontStyle: 'italic', textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)'}}>Miami</span>
+                  <span className="text-[#c4a265]" style={{textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)'}}>Miami</span>
                 </h1>
                 <p className="text-white/70 text-lg max-w-2xl" style={{ 
                   fontWeight: 300,
