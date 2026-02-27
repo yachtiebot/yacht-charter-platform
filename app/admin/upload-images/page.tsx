@@ -28,7 +28,7 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
       const banners = [
         // Homepage Banners
         { id: 'hero-main', name: 'Homepage - Main Hero Banner', category },
-        { id: 'cta-background', name: 'Homepage - CTA Background Banner', category },
+        { id: 'cta-background', name: 'Homepage - Bottom Page Banner', category },
         { id: 'philosophy-yacht', name: 'Homepage - Philosophy Section Banner', category },
         
         // Page Hero Banners

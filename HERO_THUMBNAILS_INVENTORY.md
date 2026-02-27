@@ -18,7 +18,7 @@ Use for: Fleet cards, experience cards, badges, sponsor logos, category thumbnai
 
 ### Homepage Banners:
 - `hero-main` → Main header yacht banner (full-width hero)
-- `cta-background` → CTA section background banner
+- `cta-background` → Bottom page banner (Call to Action section)
 - `philosophy-yacht` → Philosophy section banner
 
 ### Page Hero Banners:
