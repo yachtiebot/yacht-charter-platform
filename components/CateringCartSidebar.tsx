@@ -9,9 +9,10 @@ export default function CateringCartSidebar() {
   const { items, isOpen, closeCart, removeItem, updateQuantity, totalPrice } = useCart();
 
   // Calculate total platter count across all items
-  const totalPlatters = items
-    .filter(item => item.category === 'catering')
-    .reduce((sum, item) => sum + item.quantity, 0);
+  const cateringItems = items.filter(item => item.category === 'catering');
+  const hasCateringItems = cateringItems.length > 0;
+  const totalPlatters = cateringItems.reduce((sum, item) => sum + item.quantity, 0);
+  const needsMorePlatters = hasCateringItems && totalPlatters < 2;
 
   if (!isOpen) return null;
 
@@ -144,7 +145,7 @@ export default function CateringCartSidebar() {
             </div>
             
             {/* Minimum order warning */}
-            {totalPlatters < 2 && (
+            {needsMorePlatters && (
               <div className="p-3 bg-yellow-50 border border-yellow-200 rounded text-sm text-yellow-800 text-center flex items-center justify-center gap-2">
                 <InfoIcon className="w-4 h-4 flex-shrink-0" />
                 <span>Minimum 2 platters required for checkout</span>
@@ -154,7 +155,7 @@ export default function CateringCartSidebar() {
             <a
               href="/checkout"
               className={`block w-full text-white py-4 text-sm uppercase tracking-wider transition-all duration-300 text-center ${
-                totalPlatters < 2 
+                needsMorePlatters 
                   ? 'bg-gray-400 cursor-not-allowed pointer-events-none' 
                   : 'bg-[#0f0f0f] hover:bg-[#c4a265]'
               }`}
