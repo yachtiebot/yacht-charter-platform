@@ -253,30 +253,56 @@ export default function CateringPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#faf9f7] pt-24">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 relative">
-        {/* Mobile-only Scroll Indicator */}
-        <div className="md:hidden fixed bottom-16 left-1/2 -translate-x-1/2 z-20">
-          <ScrollIndicator dark />
-        </div>
+    <main className="min-h-screen bg-[#faf9f7]">
+      {/* Mobile hero wrapper for scroll indicator */}
+      <div className="md:hidden relative h-screen min-h-[600px] flex items-start pt-24">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full">
+          {/* Breadcrumb */}
+          <div className="py-6 text-sm text-[#6b6b6b]">
+            <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
+            <span className="mx-2">/</span>
+            <span>Catering</span>
+          </div>
 
-        {/* Breadcrumb */}
-        <div className="py-6 text-sm text-[#6b6b6b]">
-          <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
-          <span className="mx-2">/</span>
-          <span>Catering</span>
+          {/* Header */}
+          <div className="mb-12">
+            <div className="rule-gold mb-6" />
+            <h1 className="editorial-display text-5xl md:text-6xl text-[#0f0f0f] mb-6" style={{ fontWeight: 300 }}>
+              Yacht Charter <span className="text-[#c4a265]">Catering</span>
+            </h1>
+            <p className="text-[#6b6b6b] text-lg max-w-3xl" style={{ fontWeight: 300 }}>
+              Gourmet catering delivered fresh to your yacht. From elegant platters to fresh salads and decadent desserts.
+            </p>
+          </div>
         </div>
+        
+        <ScrollIndicator dark />
+      </div>
 
-        {/* Header */}
-        <div className="mb-12">
-          <div className="rule-gold mb-6" />
-          <h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl text-[#0f0f0f] mb-6" style={{ fontWeight: 300 }}>
-            Yacht Charter <span className="text-[#c4a265]">Catering</span>
-          </h1>
-          <p className="text-[#6b6b6b] text-lg max-w-3xl" style={{ fontWeight: 300 }}>
-            Gourmet catering delivered fresh to your yacht. From elegant platters to fresh salads and decadent desserts.
-          </p>
+      {/* Desktop header (non-hero) */}
+      <div className="hidden md:block pt-24">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          {/* Breadcrumb */}
+          <div className="py-6 text-sm text-[#6b6b6b]">
+            <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
+            <span className="mx-2">/</span>
+            <span>Catering</span>
+          </div>
+
+          {/* Header */}
+          <div className="mb-12">
+            <div className="rule-gold mb-6" />
+            <h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl text-[#0f0f0f] mb-6" style={{ fontWeight: 300 }}>
+              Yacht Charter <span className="text-[#c4a265]">Catering</span>
+            </h1>
+            <p className="text-[#6b6b6b] text-lg max-w-3xl" style={{ fontWeight: 300 }}>
+              Gourmet catering delivered fresh to your yacht. From elegant platters to fresh salads and decadent desserts.
+            </p>
+          </div>
         </div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
 
         {/* Disclaimers */}
         <div className="bg-white border border-black/5 p-6 mb-12">
