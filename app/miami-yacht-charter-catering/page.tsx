@@ -309,11 +309,11 @@ export default function CateringPage() {
                   <div className="space-y-3 mb-4">
                     <label className="text-xs uppercase tracking-wider text-[#6b6b6b]">Select Serving Size</label>
                     <div className={`grid gap-2 ${
-                      product.options.length <= 3 ? 'grid-cols-3' : 
-                      product.options.length === 4 ? 'grid-cols-4' : 
+                      (product.options?.length || 0) <= 3 ? 'grid-cols-3' : 
+                      (product.options?.length || 0) === 4 ? 'grid-cols-4' : 
                       'grid-cols-5'
                     }`}>
-                      {product.options.map((option, idx) => (
+                      {product.options?.map((option: any, idx: number) => (
                         <button
                           key={idx}
                           onClick={() => handleSizeSelect(product.id, idx)}
