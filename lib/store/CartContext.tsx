@@ -93,8 +93,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
       currentItems.map(item => {
         if (item.id === id) {
           const maxAllowed = item.maxQuantity || Infinity;
-          const minRequired = item.minQuantity || 1;
-          const finalQuantity = Math.max(minRequired, Math.min(quantity, maxAllowed));
+          // Always allow down to 1, minQuantity is only checked at checkout
+          const finalQuantity = Math.max(1, Math.min(quantity, maxAllowed));
           return { ...item, quantity: finalQuantity };
         }
         return item;
