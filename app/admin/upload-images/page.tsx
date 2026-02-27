@@ -25,7 +25,7 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
   useEffect(() => {
     // Banners - Large full-width hero images
     if (category === 'banners') {
-      setProducts([
+      const banners = [
         // Homepage Banners
         { id: 'hero-main', name: 'Homepage - Main Hero Banner', category },
         { id: 'cta-background', name: 'Homepage - CTA Background Banner', category },
@@ -37,14 +37,14 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
         { id: 'flowers-hero', name: 'Flowers Page - Hero Banner', category },
         { id: 'bachelorette-hero', name: 'Bachelorette Page - Hero Banner', category },
         { id: 'contact-hero', name: 'Contact Page - Hero Banner', category },
-      ]);
+      ];
+      setProducts(banners.sort((a, b) => a.name.localeCompare(b.name)));
       return;
     }
 
     // Hero images/thumbnails - Cards, badges, logos, smaller images
     if (category === 'hero-images') {
-      setProducts([
-        
+      const thumbnails = [
         // Fleet Cards
         { id: 'fleet-dayboats', name: 'Fleet - Dayboats Card', category },
         { id: 'fleet-luxury', name: 'Fleet - Luxury Yachts Card', category },
@@ -97,7 +97,8 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
         { id: 'premium-transport', name: 'Premium - Luxury Transport', category },
         { id: 'premium-hero', name: 'Premium - Hero Image', category },
         { id: 'premium-watersports', name: 'Premium - Watersports', category },
-      ]);
+      ];
+      setProducts(thumbnails.sort((a, b) => a.name.localeCompare(b.name)));
       return;
     }
 
@@ -114,11 +115,13 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
           const response = await fetch(endpoint);
           const data = await response.json();
           const productList = Array.isArray(data) ? data : data.products || data.catering || [];
-          setProducts(productList.map((p: any) => ({
+          const mappedProducts = productList.map((p: any) => ({
             id: p.id,
             name: p.name,
             category
-          })));
+          }));
+          // Alphabetize by name
+          setProducts(mappedProducts.sort((a, b) => a.name.localeCompare(b.name)));
         }
       } catch (error) {
         console.error('Error fetching products:', error);
