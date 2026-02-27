@@ -64,14 +64,14 @@ export async function POST(request: NextRequest) {
     console.log('📥 Dropbox webhook received');
     
     // Dropbox sends notification, we need to fetch the actual changes
-    const changesResponse = await fetch('https://api.dropboxapi.com/2/files/list_folder/continue', {
+    const changesResponse = await fetch('https://api.dropboxapi.com/2/files/list_folder', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${DROPBOX_ACCESS_TOKEN}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        path: '/catering-images',
+        path: '/Catering Photos',
         recursive: false,
         include_deleted: false
       })
