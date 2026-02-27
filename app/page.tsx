@@ -21,7 +21,7 @@ export default function HomePage() {
         
         {/* Content - Anchored to Bottom */}
         <div className="relative z-10 flex-1 flex flex-col justify-end">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full pb-20">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full pb-32">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-end">
               {/* Left Column - 60% */}
               <div className="lg:col-span-7">
