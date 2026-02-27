@@ -1,16 +1,46 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import DarkFooter from '@/components/DarkFooter';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import InquiryModal from '@/components/InquiryModal';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 export default function AddOnsPage() {
+  const [heroImage, setHeroImage] = useState<string | null>(null);
   const [inquiryModal, setInquiryModal] = useState<{ isOpen: boolean; serviceName: string }>({
     isOpen: false,
     serviceName: ''
   });
+
+  useEffect(() => {
+    // Fetch hero banner from Supabase
+    const fetchHeroImage = async () => {
+      try {
+        const { data } = supabase.storage
+          .from('product-images')
+          .getPublicUrl('banners/addons-hero.webp');
+        
+        if (data?.publicUrl) {
+          // Check if image exists
+          const response = await fetch(data.publicUrl, { method: 'HEAD' });
+          if (response.ok) {
+            setHeroImage(data.publicUrl);
+          }
+        }
+      } catch (error) {
+        console.log('No hero image set yet');
+      }
+    };
+
+    fetchHeroImage();
+  }, []);
 
   const openInquiry = (serviceName: string) => {
     setInquiryModal({ isOpen: true, serviceName });
@@ -133,7 +163,14 @@ export default function AddOnsPage() {
       {/* Hero Section - Editorial Style */}
       <section className="relative h-screen min-h-[600px] flex items-center">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#faf9f7] via-transparent to-[#faf9f7]" />
+          {heroImage && (
+            <img 
+              src={heroImage} 
+              alt="Add Ons Hero" 
+              className="w-full h-full object-cover"
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#faf9f7]/80 via-[#faf9f7]/50 to-[#faf9f7]" />
         </div>
         
         <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-20 py-32 w-full">

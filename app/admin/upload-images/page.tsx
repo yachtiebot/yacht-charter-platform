@@ -35,6 +35,9 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
         { id: 'yacht-listings-header', name: 'Yacht Listings - Header Banner', category },
         { id: 'yacht-listings-footer', name: 'Yacht Listings - Footer Banner', category },
         
+        // Add-Ons Page
+        { id: 'addons-hero', name: 'Add-Ons Page - Hero Banner', category },
+        
         // Contact Page
         { id: 'contact-hero', name: 'Contact Page - Hero Banner', category },
       ];
