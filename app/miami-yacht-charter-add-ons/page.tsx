@@ -211,8 +211,8 @@ export default function AddOnsPage() {
                 <div className="text-xs uppercase tracking-wider text-[#6b6b6b]">Curated Selections</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)' }}>Made</div>
-                <div className="text-xs uppercase tracking-wider text-[#6b6b6b]">For Miami</div>
+                <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)' }}>36-48</div>
+                <div className="text-xs uppercase tracking-wider text-[#6b6b6b]">Advance Notice</div>
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)' }}>100%</div>
