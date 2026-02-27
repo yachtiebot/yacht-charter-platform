@@ -3,6 +3,7 @@
 import { useCart } from '@/lib/store/CartContext';
 import { X, Trash2, Plus, Minus } from 'lucide-react';
 import Image from 'next/image';
+import InfoIcon from './InfoIcon';
 
 export default function CateringCartSidebar() {
   const { items, isOpen, closeCart, removeItem, updateQuantity, totalPrice } = useCart();
@@ -104,8 +105,8 @@ export default function CateringCartSidebar() {
                       {/* Quantity Controls */}
                       <div className="flex items-center gap-2">
                         <button
-                          onClick={() => updateQuantity(item.id, Math.max((item.minQuantity || 1), item.quantity - 1))}
-                          disabled={item.quantity <= (item.minQuantity || 1)}
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          disabled={item.quantity <= 1}
                           className="p-1 border border-gray-300 rounded hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed"
                         >
                           <Minus className="w-3 h-3" />
@@ -136,9 +137,22 @@ export default function CateringCartSidebar() {
                 ${totalPrice.toFixed(2)}
               </span>
             </div>
+            
+            {/* Minimum order warning */}
+            {items.length === 1 && (
+              <div className="p-3 bg-yellow-50 border border-yellow-200 rounded text-sm text-yellow-800 text-center flex items-center justify-center gap-2">
+                <InfoIcon className="w-4 h-4 flex-shrink-0" />
+                <span>Minimum 2 items required for checkout</span>
+              </div>
+            )}
+            
             <a
               href="/checkout"
-              className="block w-full bg-[#0f0f0f] text-white py-4 text-sm uppercase tracking-wider hover:bg-[#c4a265] transition-all duration-300 text-center"
+              className={`block w-full text-white py-4 text-sm uppercase tracking-wider transition-all duration-300 text-center ${
+                items.length < 2 
+                  ? 'bg-gray-400 cursor-not-allowed pointer-events-none' 
+                  : 'bg-[#0f0f0f] hover:bg-[#c4a265]'
+              }`}
             >
               Proceed to Checkout
             </a>
