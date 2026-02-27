@@ -54,9 +54,11 @@ export default function Navigation() {
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/90 hover:text-[#c4a265]' 
-                : 'text-white hover:text-[#c4a265]'
+                : 'text-[#6b6b6b] hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
+            onMouseEnter={(e) => e.currentTarget.style.textShadow = 'none'}
+            onMouseLeave={(e) => { if (isTransparent) e.currentTarget.style.textShadow = '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' }}
           >
             RENT A YACHT IN MIAMI
           </Link>
@@ -66,9 +68,11 @@ export default function Navigation() {
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/90 hover:text-[#c4a265]' 
-                : 'text-white hover:text-[#c4a265]'
+                : 'text-[#6b6b6b] hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
+            onMouseEnter={(e) => e.currentTarget.style.textShadow = 'none'}
+            onMouseLeave={(e) => { if (isTransparent) e.currentTarget.style.textShadow = '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' }}
           >
             ADD ONS
           </Link>
@@ -78,9 +82,11 @@ export default function Navigation() {
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/90 hover:text-[#c4a265]' 
-                : 'text-white hover:text-[#c4a265]'
+                : 'text-[#6b6b6b] hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
+            onMouseEnter={(e) => e.currentTarget.style.textShadow = 'none'}
+            onMouseLeave={(e) => { if (isTransparent) e.currentTarget.style.textShadow = '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' }}
           >
             LARGE GROUP CHARTERS
           </Link>
@@ -90,9 +96,11 @@ export default function Navigation() {
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/90 hover:text-[#c4a265]' 
-                : 'text-white hover:text-[#c4a265]'
+                : 'text-[#6b6b6b] hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
+            onMouseEnter={(e) => e.currentTarget.style.textShadow = 'none'}
+            onMouseLeave={(e) => { if (isTransparent) e.currentTarget.style.textShadow = '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' }}
           >
             CLIENT TESTIMONIALS
           </Link>
@@ -102,9 +110,11 @@ export default function Navigation() {
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/90 hover:text-[#c4a265]' 
-                : 'text-white hover:text-[#c4a265]'
+                : 'text-[#6b6b6b] hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
+            onMouseEnter={(e) => e.currentTarget.style.textShadow = 'none'}
+            onMouseLeave={(e) => { if (isTransparent) e.currentTarget.style.textShadow = '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' }}
           >
             CONTACT US
           </Link>
@@ -114,9 +124,11 @@ export default function Navigation() {
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/90 hover:text-[#c4a265]' 
-                : 'text-white hover:text-[#c4a265]'
+                : 'text-[#6b6b6b] hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
+            onMouseEnter={(e) => e.currentTarget.style.textShadow = 'none'}
+            onMouseLeave={(e) => { if (isTransparent) e.currentTarget.style.textShadow = '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' }}
           >
             ABOUT US
           </Link>
@@ -134,9 +146,11 @@ export default function Navigation() {
               target="_blank"
               rel="noopener noreferrer"
               className={`text-xl transition-all duration-700 ${
-                isTransparent ? 'text-white hover:text-[#c4a265]' : 'text-[#0f0f0f] hover:text-[#25D366]'
+                isTransparent ? 'text-white hover:text-[#c4a265]' : 'text-[#0f0f0f] hover:text-[#c4a265]'
               }`}
               style={isTransparent ? { filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.6)) drop-shadow(0 1px 3px rgba(0,0,0,0.5))' } : {}}
+              onMouseEnter={(e) => e.currentTarget.style.filter = 'none'}
+              onMouseLeave={(e) => { if (isTransparent) e.currentTarget.style.filter = 'drop-shadow(0 2px 8px rgba(0,0,0,0.6)) drop-shadow(0 1px 3px rgba(0,0,0,0.5))' }}
               aria-label="WhatsApp"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -149,6 +163,8 @@ export default function Navigation() {
                 isTransparent ? 'text-white' : 'text-[#6b6b6b]'
               }`}
               style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
+              onMouseEnter={(e) => e.currentTarget.style.textShadow = 'none'}
+              onMouseLeave={(e) => { if (isTransparent) e.currentTarget.style.textShadow = '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' }}
             >
               1 800 747 9585
             </a>
