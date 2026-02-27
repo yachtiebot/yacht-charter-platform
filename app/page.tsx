@@ -8,7 +8,7 @@ export default function HomePage() {
         {/* Background Yacht Photo */}
         <div className="absolute inset-0">
           <img
-            src="/images/Miami_Yachting_Company_header-yacht-image.jpg"
+            src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/banners/Miami_Yachting_Company_hero_main.webp"
             alt="Miami Yachting Company luxury yacht charter in Miami"
             className="w-full h-full object-cover"
             width="2158"
@@ -120,7 +120,7 @@ export default function HomePage() {
             {/* Day Boats */}
             <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_fleet-dayboats-vandutch40.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_fleet_dayboats.webp"
                 alt="Day Boats"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -142,7 +142,7 @@ export default function HomePage() {
             {/* Luxury Yachts */}
             <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_fleet-luxury-azimut55.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_fleet_luxury.webp"
                 alt="Luxury Yachts"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -164,7 +164,7 @@ export default function HomePage() {
             {/* Superyachts */}
             <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_fleet-superyacht.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_fleet_superyacht.webp"
                 alt="Superyachts"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -186,7 +186,7 @@ export default function HomePage() {
             {/* View Complete Fleet */}
             <Link href="/yacht-rental-miami" className="group relative aspect-square overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_fleet-complete-fleet.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_fleet_complete.webp"
                 alt="Complete Fleet"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -317,7 +317,7 @@ export default function HomePage() {
             {/* Sightseeing */}
             <Link href="/experiences/sightseeing" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_experiences-sightseeing.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_experiences_sightseeing.webp"
                 alt="Sightseeing"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -334,7 +334,7 @@ export default function HomePage() {
             {/* Celebrations */}
             <Link href="/experiences/celebrations" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_experiences-celebrations.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_experiences_celebrations.webp"
                 alt="Celebrations"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -351,7 +351,7 @@ export default function HomePage() {
             {/* Corporate */}
             <Link href="/experiences/corporate" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_experiences-corporate.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_experiences_corporate.webp"
                 alt="Corporate"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -368,7 +368,7 @@ export default function HomePage() {
             {/* Sandbars & Beyond */}
             <Link href="/experiences/sandbars" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_experiences-sandbars-beyond.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_experiences_sandbars.webp"
                 alt="Sandbars & Beyond"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -385,7 +385,7 @@ export default function HomePage() {
             {/* Bachelorette Party */}
             <Link href="/experiences/bachelorette" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_bachelorette.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_experiences_bachelorette.webp"
                 alt="Miami Yachting Company bachelorette party yacht charter in Miami"
                 className="img-zoom w-full h-full object-cover"
                 width="1200"
@@ -404,7 +404,7 @@ export default function HomePage() {
             {/* Large Group Charters */}
             <Link href="/experiences/large-groups" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_experiences-large-groups.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_experiences_large_groups.webp"
                 alt="Large Group Charters"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -439,7 +439,7 @@ export default function HomePage() {
             {/* Miami */}
             <Link href="/locations/miami" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_departures-miami.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_departures_miami.webp"
                 alt="Miami"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -453,7 +453,7 @@ export default function HomePage() {
             {/* Miami Beach */}
             <Link href="/locations/miami-beach" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_departures-miami-beach.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_departures_miami_beach.webp"
                 alt="Miami Beach"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -467,7 +467,7 @@ export default function HomePage() {
             {/* Key Biscayne */}
             <Link href="/locations/key-biscayne" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_departures-key-biscayne.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_departures_key_biscayne.webp"
                 alt="Key Biscayne"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -481,7 +481,7 @@ export default function HomePage() {
             {/* Coconut Grove */}
             <Link href="/locations/coconut-grove" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_departures-coconut-grove.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_departures_coconut_grove.webp"
                 alt="Coconut Grove"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -495,7 +495,7 @@ export default function HomePage() {
             {/* Hollywood */}
             <Link href="/locations/hollywood" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_departures-hollywood.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_departures_hollywood.webp"
                 alt="Hollywood"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -509,7 +509,7 @@ export default function HomePage() {
             {/* Fort Lauderdale */}
             <Link href="/locations/fort-lauderdale" className="group relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/Miami_Yachting_Company_departures-fort-lauderdale.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_departures_fort_lauderdale.webp"
                 alt="Fort Lauderdale"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -530,7 +530,7 @@ export default function HomePage() {
             {/* Left: Photo */}
             <div className="relative aspect-[4/3] overflow-hidden group">
               <img
-                src="/images/Miami_Yachting_Company_philosophy-yacht.jpg"
+                src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/banners/Miami_Yachting_Company_philosophy_yacht.webp"
                 alt="Our Philosophy"
                 className="img-zoom w-full h-full object-cover"
               />
@@ -667,7 +667,7 @@ export default function HomePage() {
       <section className="relative h-screen min-h-[600px] flex items-center">
         <div className="absolute inset-0">
           <img
-            src="/images/Miami_Yachting_Company_cta-background.jpg"
+            src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/banners/Miami_Yachting_Company_cta_background.webp"
             alt="Get on the water"
             className="w-full h-full object-cover"
           />

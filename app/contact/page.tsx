@@ -64,7 +64,7 @@ export default function ContactPage() {
       <section className="h-screen min-h-[700px] relative flex items-end pt-24">
         <div className="absolute inset-0">
           <img
-            src="/images/Miami_Yachting_Company_contact.jpeg"
+            src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/banners/Miami_Yachting_Company_contact_hero.webp"
             alt="Miami Yachting Company contact - luxury yacht charter"
             className="w-full h-full object-cover"
             width="2400"
