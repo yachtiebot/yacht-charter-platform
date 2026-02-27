@@ -116,7 +116,7 @@ export default function AddOnsPage() {
       title: 'Private Chef Services',
       subtitle: 'Culinary Artistry',
       description: 'Elite chefs crafting custom menus tailored to your preferences. From multicourse dinners to delightful brunches aboard your yacht.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_hero.webp',
+      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_private_chef.webp',
       accent: 'Inquire',
       number: '07'
     },
@@ -125,7 +125,7 @@ export default function AddOnsPage() {
       title: 'Bespoke Catering Delivery',
       subtitle: 'Restaurant Quality',
       description: 'Gourmet dishes from Miami\'s top restaurants, delivered fresh to your yacht. Culinary excellence without an onboard chef.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_addons_catering_thumb.webp',
+      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_bespoke_catering.webp',
       accent: 'Inquire',
       number: '08'
     },
@@ -134,7 +134,7 @@ export default function AddOnsPage() {
       title: 'Premium Sushi Delivery',
       subtitle: 'Japanese Excellence',
       description: 'Meticulously crafted rolls and sashimi from the freshest ingredients. The art of Japanese cuisine delivered to open seas.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_hero.webp',
+      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_sushi_delivery.webp',
       accent: 'Inquire',
       number: '09'
     },
@@ -143,7 +143,7 @@ export default function AddOnsPage() {
       title: 'Onboard Masseuse',
       subtitle: 'Floating Spa',
       description: 'Professional massage treatments tailored to your needs. Melt away stress while drifting across Miami\'s tropical waters.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_hero.webp',
+      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_masseuse.webp',
       accent: 'Inquire',
       number: '10'
     },
