@@ -169,10 +169,27 @@ export default function CartSidebar() {
                 ${getCartTotal().toLocaleString()}
               </span>
             </div>
+            
+            {/* Minimum order warning */}
+            {items.length === 1 && (
+              <div className="mb-3 p-3 bg-yellow-50 border border-yellow-200 rounded text-sm text-yellow-800 text-center">
+                ⚠️ Minimum 2 items required for checkout
+              </div>
+            )}
+            
             <Link
               href="/checkout"
               onClick={closeCart}
-              className="block w-full bg-[#0f0f0f] text-white text-center py-4 hover:bg-[#c4a265] transition-colors duration-300"
+              className={`block w-full text-white text-center py-4 transition-colors duration-300 ${
+                items.length < 2 
+                  ? 'bg-gray-400 cursor-not-allowed' 
+                  : 'bg-[#0f0f0f] hover:bg-[#c4a265]'
+              }`}
+              {...(items.length < 2 && {
+                onClick: (e) => {
+                  e.preventDefault();
+                }
+              })}
             >
               Proceed to Checkout
             </Link>
