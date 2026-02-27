@@ -133,7 +133,7 @@ export default function WaterToysPage() {
         {/* Disclaimer */}
         <div className="bg-white border border-[#0f0f0f]/10 p-6 mb-16">
           <p className="text-[#6b6b6b] text-sm" style={{ fontWeight: 300 }}>
-            <strong className="text-[#0f0f0f] font-medium">Advance notice:</strong> All water toys require 48 hours advance reservation. 
+            <strong className="text-[#0f0f0f] font-medium">Note:</strong> Some water toys may require 48 hours advance notice. 
             Items provided by independent vendors and subject to availability.
           </p>
         </div>
@@ -304,7 +304,7 @@ export default function WaterToysPage() {
                       </span>
                     </div>
                     {product.depositPrice && (
-                      <p className="text-xs text-[#6b6b6b]">+${product.price - product.depositPrice} at pickup</p>
+                      <p className="text-xs text-[#6b6b6b]">+${product.price - product.depositPrice} due to vendor</p>
                     )}
                     
                     <button
