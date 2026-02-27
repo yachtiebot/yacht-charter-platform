@@ -349,7 +349,14 @@ export default function CateringPage() {
                               : 'bg-white text-[#6b6b6b] border-[#6b6b6b]/20 hover:border-[#c4a265]'
                           }`}
                         >
-                          <div className="font-medium mb-1">{option.label}</div>
+                          <div className="font-medium mb-1">
+                            {option.label.includes('Serves') ? (
+                              <>
+                                <div>Serves</div>
+                                <div>{option.label.replace('Serves ', '')}</div>
+                              </>
+                            ) : option.label}
+                          </div>
                           <div className="text-[10px] opacity-80">${option.price}</div>
                         </button>
                       ))}
