@@ -185,7 +185,7 @@ export default function AddOnsPage() {
           </div>
         </div>
         
-        <ScrollIndicator />
+        <ScrollIndicator dark />
       </section>
 
       {/* Categories - Magazine Layout */}
