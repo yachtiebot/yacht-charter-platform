@@ -215,6 +215,16 @@ export default function CateringPage() {
     setPendingProduct(null);
   };
 
+  if (loading) {
+    return (
+      <main className="min-h-screen bg-[#faf9f7] pt-24">
+        <div className="max-w-7xl mx-auto px-4 py-16 text-center">
+          <p>Loading catering menu...</p>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-[#faf9f7] pt-24">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
