@@ -284,39 +284,11 @@ export default function UploadImagesPage() {
           </p>
         </div>
 
-        {/* Banners Section */}
-        <div className="mb-12">
-          <div className="mb-6">
-            <h2 className="editorial-card-name text-[#0f0f0f] mb-2">Banners & Hero Images</h2>
-            <p className="text-[#6b6b6b] font-light">Upload large banner images and page hero images (full-width sections)</p>
-          </div>
-          
-          <UploadZone
-            category="banners"
-            title="Banners"
-            color="#c4a265"
-          />
-        </div>
-
-        {/* Hero Thumbnails Section */}
-        <div className="mb-12">
-          <div className="mb-6">
-            <h2 className="editorial-card-name text-[#0f0f0f] mb-2">Thumbnails & Icons</h2>
-            <p className="text-[#6b6b6b] font-light">Upload thumbnails, cards, badges, logos, and smaller marketing images</p>
-          </div>
-          
-          <UploadZone
-            category="hero-images"
-            title="Hero Thumbnails"
-            color="#c4a265"
-          />
-        </div>
-
-        {/* Product Images Section */}
-        <div>
+        {/* Product Images Section - MOST USED */}
+        <div className="mb-16">
           <div className="mb-6">
             <h2 className="editorial-card-name text-[#0f0f0f] mb-2">Product Images</h2>
-            <p className="text-[#6b6b6b] font-light">Upload images for products managed in Airtable</p>
+            <p className="text-[#6b6b6b] font-light">Upload images for products managed in Airtable (most frequently updated)</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -343,6 +315,42 @@ export default function UploadImagesPage() {
               title="Bachelorette Packages"
               color="#c4a265"
             />
+          </div>
+        </div>
+
+        {/* Marketing Images Section - LESS FREQUENT */}
+        <div className="border-t border-[#0f0f0f]/10 pt-16">
+          <div className="mb-12">
+            <h2 className="editorial-card-name text-[#0f0f0f] mb-2">Marketing Images</h2>
+            <p className="text-[#6b6b6b] font-light mb-8">Banners, thumbnails, and icons (updated less frequently)</p>
+            
+            {/* Banners */}
+            <div className="mb-12">
+              <div className="mb-6">
+                <h3 className="editorial-label text-[#0f0f0f] mb-2">Banners & Hero Images</h3>
+                <p className="text-[#6b6b6b] font-light text-sm">Large banner images and page hero images (full-width sections)</p>
+              </div>
+              
+              <UploadZone
+                category="banners"
+                title="Banners"
+                color="#c4a265"
+              />
+            </div>
+
+            {/* Hero Thumbnails */}
+            <div>
+              <div className="mb-6">
+                <h3 className="editorial-label text-[#0f0f0f] mb-2">Thumbnails & Icons</h3>
+                <p className="text-[#6b6b6b] font-light text-sm">Thumbnails, cards, badges, logos, and smaller marketing images</p>
+              </div>
+              
+              <UploadZone
+                category="hero-images"
+                title="Hero Thumbnails"
+                color="#c4a265"
+              />
+            </div>
           </div>
         </div>
 
