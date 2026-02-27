@@ -7,6 +7,7 @@ import DarkFooter from '@/components/DarkFooter';
 import CharcuterieCustomizationModal, { CharcuterieCustomization } from '@/components/modals/CharcuterieCustomizationModal';
 import WrapCustomizationModal, { WrapCustomization } from '@/components/modals/WrapCustomizationModal';
 import SpiralCustomizationModal, { SpiralCustomization } from '@/components/modals/SpiralCustomizationModal';
+import DeliSandwichCustomizationModal, { DeliSandwichCustomization } from '@/components/modals/DeliSandwichCustomizationModal';
 import DippingSauceModal, { DippingSauceCustomization } from '@/components/modals/DippingSauceModal';
 
 // Available platter images (rotating through these 10 images for all products)
@@ -129,7 +130,7 @@ export default function CateringPage() {
 
   // Check if product needs customization
   const needsCustomization = (productId: string) => {
-    return ['gourmet-wraps', 'gourmet-spirals', 'large-charcuterie', 'med-charcuterie', 'chicken-wings', 'chicken-tenders'].includes(productId);
+    return ['gourmet-wraps', 'gourmet-spirals', 'large-charcuterie', 'med-charcuterie', 'chicken-wings', 'chicken-tenders', 'deli-sandwich'].includes(productId);
   };
 
   // Handle add to cart - open modal if needed
@@ -145,6 +146,9 @@ export default function CateringPage() {
     } else if (product.id.includes('charcuterie')) {
       setPendingProduct({ ...product, selectedOption });
       setActiveModal('charcuterie');
+    } else if (product.id === 'deli-sandwich') {
+      setPendingProduct({ ...product, selectedOption });
+      setActiveModal('deli-sandwich');
     } else if (product.id === 'chicken-wings' || product.id === 'chicken-tenders') {
       setPendingProduct({ ...product, selectedOption });
       setActiveModal('sauce');
@@ -193,6 +197,21 @@ export default function CateringPage() {
   };
 
   const handleSpiralSubmit = (customization: SpiralCustomization) => {
+    if (!pendingProduct) return;
+    addItem({
+      id: `${pendingProduct.id}-${pendingProduct.selectedOption.value}`,
+      name: `${pendingProduct.name} (${pendingProduct.selectedOption.label})`,
+      price: pendingProduct.selectedOption.price,
+      category: 'catering',
+      minQuantity: pendingProduct.minQuantity || 1,
+      image: pendingProduct.image,
+      customization
+    });
+    setActiveModal(null);
+    setPendingProduct(null);
+  };
+
+  const handleDeliSandwichSubmit = (customization: DeliSandwichCustomization) => {
     if (!pendingProduct) return;
     addItem({
       id: `${pendingProduct.id}-${pendingProduct.selectedOption.value}`,
@@ -407,6 +426,15 @@ export default function CateringPage() {
             onSubmit={handleSpiralSubmit}
             productName={pendingProduct.name}
             productPrice={pendingProduct.selectedOption?.price || 0}
+          />
+
+          <DeliSandwichCustomizationModal
+            isOpen={activeModal === 'deli-sandwich'}
+            onClose={() => { setActiveModal(null); setPendingProduct(null); }}
+            onSubmit={handleDeliSandwichSubmit}
+            productName={pendingProduct.name}
+            productPrice={pendingProduct.selectedOption?.price || 0}
+            servingSize={pendingProduct.selectedOption?.value || 10}
           />
           
           <DippingSauceModal
