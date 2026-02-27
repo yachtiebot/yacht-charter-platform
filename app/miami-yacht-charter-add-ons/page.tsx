@@ -170,15 +170,15 @@ export default function AddOnsPage() {
               className="w-full h-full object-cover"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#faf9f7]/80 via-[#faf9f7]/50 to-[#faf9f7]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f]/40 via-[#0f0f0f]/30 to-[#faf9f7]" />
         </div>
         
         <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-20 py-32 w-full">
           <div className="max-w-4xl">
             {/* Overline */}
             <div className="flex items-center gap-6 mb-8">
-              <div className="rule-gold w-16" />
-              <span className="text-[#c4a265] text-xs uppercase tracking-[0.3em] font-medium">
+              <div className="rule-gold w-16" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.3)' }} />
+              <span className="text-[#c4a265] text-xs uppercase tracking-[0.3em] font-medium" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.4)' }}>
                 The Art of Options
               </span>
             </div>
@@ -188,7 +188,8 @@ export default function AddOnsPage() {
               fontSize: 'clamp(3rem, 8vw, 7rem)', 
               fontWeight: 300,
               lineHeight: 1.1,
-              letterSpacing: '-0.02em'
+              letterSpacing: '-0.02em',
+              textShadow: '0 2px 8px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.2)'
             }}>
               Yacht Charter
               <br />
@@ -199,7 +200,8 @@ export default function AddOnsPage() {
             <p className="text-[#6b6b6b] text-xl md:text-2xl max-w-2xl mb-12" style={{ 
               fontWeight: 300,
               lineHeight: 1.6,
-              letterSpacing: '0.01em'
+              letterSpacing: '0.01em',
+              textShadow: '0 1px 4px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.3)'
             }}>
               Exceptional additions for those seeking to upgrade their yacht charter experience.
             </p>
@@ -207,16 +209,16 @@ export default function AddOnsPage() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 max-w-xl">
               <div>
-                <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)' }}>90+</div>
-                <div className="text-xs uppercase tracking-wider text-[#6b6b6b]">Curated Selections</div>
+                <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)', textShadow: '0 2px 6px rgba(0,0,0,0.4)' }}>90+</div>
+                <div className="text-xs uppercase tracking-wider text-[#6b6b6b]" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>Curated Selections</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)' }}>36-48</div>
-                <div className="text-xs uppercase tracking-wider text-[#6b6b6b]">Advance Notice</div>
+                <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)', textShadow: '0 2px 6px rgba(0,0,0,0.4)' }}>36-48</div>
+                <div className="text-xs uppercase tracking-wider text-[#6b6b6b]" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>Advance Notice</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)' }}>100%</div>
-                <div className="text-xs uppercase tracking-wider text-[#6b6b6b]">Vibe Amplified</div>
+                <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)', textShadow: '0 2px 6px rgba(0,0,0,0.4)' }}>100%</div>
+                <div className="text-xs uppercase tracking-wider text-[#6b6b6b]" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>Vibe Amplified</div>
               </div>
             </div>
           </div>
