@@ -38,7 +38,8 @@ export default function DarkFooter() {
               </a>
               <a href="#" className="text-white/40 hover:text-white transition-colors" aria-label="TripAdvisor">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M21.375 14.625c0 2.484-1.992 4.5-4.5 4.5s-4.5-2.016-4.5-4.5 2.016-4.5 4.5-4.5 4.5 2.016 4.5 4.5zm-1.5 0c0-1.641-1.359-3-3-3s-3 1.359-3 3 1.359 3 3 3 3-1.359 3-3zm-6.75-4.5c-.375 0-.75-.375-.75-.75s.375-.75.75-.75.75.375.75.75-.375.75-.75.75zm-6.75 7.5c-2.484 0-4.5-2.016-4.5-4.5s2.016-4.5 4.5-4.5 4.5 2.016 4.5 4.5-2.016 4.5-4.5 4.5zm0-7.5c-1.641 0-3 1.359-3 3s1.359 3 3 3 3-1.359 3-3-1.359-3-3-3zm10.125 3.375c0 .621-.504 1.125-1.125 1.125s-1.125-.504-1.125-1.125.504-1.125 1.125-1.125 1.125.504 1.125 1.125zm-10.125 0c0 .621-.504 1.125-1.125 1.125s-1.125-.504-1.125-1.125.504-1.125 1.125-1.125 1.125.504 1.125 1.125z"/>
+                  <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                  <text x="12" y="15" fontSize="10" fontWeight="bold" textAnchor="middle" fill="currentColor" fontFamily="sans-serif">TA</text>
                 </svg>
               </a>
               <a href="#" className="text-white/40 hover:text-white transition-colors" aria-label="Google">
@@ -85,8 +86,9 @@ export default function DarkFooter() {
           <div className="text-white/40 text-sm">
             © 2026 Miami Yachting Company®. All rights reserved.
           </div>
-          <div className="editorial-label text-[#c4a265] text-[6px] sm:text-[10px] whitespace-nowrap">
-            Best Boat Charter · Readers' Choice Award
+          <div className="editorial-label text-[#c4a265] text-[6px] sm:text-[10px]">
+            <div className="whitespace-nowrap">Best Boat Charter</div>
+            <div className="whitespace-nowrap">Readers' Choice Award</div>
           </div>
         </div>
       </div>
