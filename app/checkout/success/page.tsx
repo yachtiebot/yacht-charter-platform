@@ -69,12 +69,12 @@ export default function CheckoutSuccessPage() {
 
         {/* CTA */}
         <div className="space-y-6">
-          <Link
+          <a
             href="/miami-yacht-charter-catering"
             className="inline-block editorial-label bg-white border border-[#e5e5e5] text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:border-[#c4a265] hover:text-white transition-all duration-300"
           >
             Browse More Catering
-          </Link>
+          </a>
           
           <div className="text-sm text-[#6b6b6b] font-light space-y-2">
             <p>Need help? Contact us:</p>
