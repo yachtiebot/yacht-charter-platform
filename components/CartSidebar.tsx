@@ -18,6 +18,8 @@ export default function CartSidebar() {
     getCartTotal,
   } = useCartStore();
 
+  // This is yacht cart - no minimum required (different from catering)
+  
   if (!isOpen) return null;
 
   return (
@@ -171,27 +173,10 @@ export default function CartSidebar() {
               </span>
             </div>
             
-            {/* Minimum order warning */}
-            {items.length === 1 && (
-              <div className="mb-3 p-3 bg-yellow-50 border border-yellow-200 rounded text-sm text-yellow-800 text-center flex items-center justify-center gap-2">
-                <InfoIcon className="w-4 h-4 flex-shrink-0" />
-                <span>Minimum 2 items required for checkout</span>
-              </div>
-            )}
-            
             <Link
               href="/checkout"
               onClick={closeCart}
-              className={`block w-full text-white text-center py-4 transition-colors duration-300 ${
-                items.length < 2 
-                  ? 'bg-gray-400 cursor-not-allowed' 
-                  : 'bg-[#0f0f0f] hover:bg-[#c4a265]'
-              }`}
-              {...(items.length < 2 && {
-                onClick: (e) => {
-                  e.preventDefault();
-                }
-              })}
+              className="block w-full text-white text-center py-4 transition-colors duration-300 bg-[#0f0f0f] hover:bg-[#c4a265]"
             >
               Proceed to Checkout
             </Link>
