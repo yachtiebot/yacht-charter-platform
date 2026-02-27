@@ -112,8 +112,15 @@ export default function CateringPage() {
     fetchCatering();
   }, []);
 
+  // Define category order
+  const categoryOrder = ['sandwiches & wraps', 'platters', 'bowls & salads', 'vegetarian', 'desserts'];
+  
   const filteredProducts = selectedCategory === 'all' 
-    ? cateringProducts 
+    ? cateringProducts.sort((a, b) => {
+        const aIndex = categoryOrder.indexOf(a.category);
+        const bIndex = categoryOrder.indexOf(b.category);
+        return aIndex - bIndex;
+      })
     : cateringProducts.filter(p => p.category === selectedCategory);
 
   const handleSizeSelect = (productId: string, sizeIndex: number) => {
