@@ -14,8 +14,8 @@ export default function CateringCartSidebar() {
   const totalPlatters = cateringItems.reduce((sum, item) => sum + item.quantity, 0);
   const needsMorePlatters = hasCateringItems && totalPlatters < 2;
   
-  // Determine which checkout to use
-  const checkoutUrl = hasCateringItems ? '/checkout' : '/checkout-water-toys';
+  // Always use main checkout - it handles all categories intelligently
+  const checkoutUrl = '/checkout';
 
   if (!isOpen) return null;
 
