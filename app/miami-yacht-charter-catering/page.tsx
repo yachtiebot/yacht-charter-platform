@@ -117,13 +117,19 @@ export default function CateringPage() {
   // Define category order
   const categoryOrder = ['sandwiches & wraps', 'platters', 'bowls & salads', 'vegetarian', 'desserts'];
   
+  // Map tab ID to actual category name (case-insensitive)
+  const getCategoryName = (tabId: string) => {
+    const category = categories.find(c => c.id === tabId);
+    return category?.name.toLowerCase() || tabId;
+  };
+  
   const filteredProducts = selectedCategory === 'all' 
     ? cateringProducts.sort((a, b) => {
-        const aIndex = categoryOrder.indexOf(a.category);
-        const bIndex = categoryOrder.indexOf(b.category);
+        const aIndex = categoryOrder.indexOf(a.category.toLowerCase());
+        const bIndex = categoryOrder.indexOf(b.category.toLowerCase());
         return aIndex - bIndex;
       })
-    : cateringProducts.filter(p => p.category === selectedCategory);
+    : cateringProducts.filter(p => p.category.toLowerCase() === getCategoryName(selectedCategory));
 
   const handleSizeSelect = (productId: string, sizeIndex: number) => {
     setSelectedSizes(prev => ({ ...prev, [productId]: sizeIndex }));
