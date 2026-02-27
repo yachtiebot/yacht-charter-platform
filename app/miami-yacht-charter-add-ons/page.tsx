@@ -131,7 +131,7 @@ export default function AddOnsPage() {
   return (
     <main className="min-h-screen bg-[#faf9f7]">
       {/* Hero Section - Editorial Style */}
-      <section className="relative min-h-[75vh] flex items-center">
+      <section className="relative h-screen min-h-[600px] flex items-center">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-[#faf9f7] via-transparent to-[#faf9f7]" />
         </div>
