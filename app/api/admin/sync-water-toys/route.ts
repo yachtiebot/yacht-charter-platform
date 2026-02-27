@@ -90,7 +90,11 @@ export async function GET() {
     );
   }
 
-  const results = {
+  const results: {
+    created: string[];
+    updated: string[];
+    errors: { name: string; error: any }[];
+  } = {
     created: [],
     updated: [],
     errors: []
