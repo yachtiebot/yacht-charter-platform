@@ -1,16 +1,14 @@
 import { NextResponse } from 'next/server';
-import { getCateringWithCache } from '@/lib/catering-cache';
+import { getCateringWithCache } from '@/lib/catering-cache-direct';
 
-export const revalidate = 0; // No cache - instant updates for development
+export const revalidate = 0; // No cache
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  try {
-    const data = await getCateringWithCache();
-    return NextResponse.json(data.catering);
-  } catch (error: any) {
-    return NextResponse.json(
-      { error: error.message },
-      { status: 500 }
-    );
-  }
+  const data = await getCateringWithCache();
+  return NextResponse.json(data.catering, {
+    headers: {
+      'Cache-Control': 'no-store, no-cache, must-revalidate',
+    },
+  });
 }
