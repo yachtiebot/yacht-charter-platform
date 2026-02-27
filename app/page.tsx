@@ -712,8 +712,8 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0f0f0f]" style={{ paddingTop: '56px', paddingBottom: '32px' }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+      <footer className="bg-[#0f0f0f] overflow-x-hidden" style={{ paddingTop: '56px', paddingBottom: '32px' }}>
+        <div className="max-w-[1400px] mx-auto px-4 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             {/* Brand */}
             <div>
@@ -748,9 +748,7 @@ export default function HomePage() {
                 </a>
                 <a href="#" className="text-white/40 hover:text-white transition-colors" aria-label="TripAdvisor">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-4.5 12.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5S10 10.62 10 12s-1.12 2.5-2.5 2.5zm4.5-6c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm4.5 6c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    <circle cx="7.5" cy="12" r="1" fill="#0f0f0f"/>
-                    <circle cx="16.5" cy="12" r="1" fill="#0f0f0f"/>
+                    <path d="M21.375 14.625c0 2.484-1.992 4.5-4.5 4.5s-4.5-2.016-4.5-4.5 2.016-4.5 4.5-4.5 4.5 2.016 4.5 4.5zm-1.5 0c0-1.641-1.359-3-3-3s-3 1.359-3 3 1.359 3 3 3 3-1.359 3-3zm-6.75-4.5c-.375 0-.75-.375-.75-.75s.375-.75.75-.75.75.375.75.75-.375.75-.75.75zm-6.75 7.5c-2.484 0-4.5-2.016-4.5-4.5s2.016-4.5 4.5-4.5 4.5 2.016 4.5 4.5-2.016 4.5-4.5 4.5zm0-7.5c-1.641 0-3 1.359-3 3s1.359 3 3 3 3-1.359 3-3-1.359-3-3-3zm10.125 3.375c0 .621-.504 1.125-1.125 1.125s-1.125-.504-1.125-1.125.504-1.125 1.125-1.125 1.125.504 1.125 1.125zm-10.125 0c0 .621-.504 1.125-1.125 1.125s-1.125-.504-1.125-1.125.504-1.125 1.125-1.125 1.125.504 1.125 1.125z"/>
                   </svg>
                 </a>
                 <a href="#" className="text-white/40 hover:text-white transition-colors" aria-label="Google">
