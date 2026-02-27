@@ -95,10 +95,10 @@ export default function CateringPage() {
         const response = await fetch('/api/catering');
         const data = await response.json();
         
-        // Map images to products
+        // Map images to products - Use Airtable image first, fallback to hardcoded mapping
         const productsWithImages = data.map((product: any, index: number) => ({
           ...product,
-          image: imageMapping[product.id] || platterImages[index % platterImages.length]
+          image: product.image || imageMapping[product.id] || platterImages[index % platterImages.length]
         }));
         
         setCateringProducts(productsWithImages);
