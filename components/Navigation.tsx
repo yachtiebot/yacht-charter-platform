@@ -200,11 +200,6 @@ export default function Navigation() {
         isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
       } bg-[#faf9f7]`}>
         <div className="px-4 py-6 space-y-3 text-center">
-          {/* Cart Icon in Mobile Menu */}
-          <div className="pb-4 border-b border-black/10">
-            <CartIcon isTransparent={false} />
-          </div>
-          
           <Link
             href="/yacht-rental-miami"
             onClick={() => setIsMobileMenuOpen(false)}
