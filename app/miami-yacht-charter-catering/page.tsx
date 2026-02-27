@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import DarkFooter from '@/components/DarkFooter';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import CharcuterieCustomizationModal, { CharcuterieCustomization } from '@/components/modals/CharcuterieCustomizationModal';
 import WrapCustomizationModal, { WrapCustomization } from '@/components/modals/WrapCustomizationModal';
 import SpiralCustomizationModal, { SpiralCustomization } from '@/components/modals/SpiralCustomizationModal';
@@ -252,25 +253,33 @@ export default function CateringPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#faf9f7] pt-24">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        {/* Breadcrumb */}
-        <div className="py-6 text-sm text-[#6b6b6b]">
-          <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
-          <span className="mx-2">/</span>
-          <span>Catering</span>
-        </div>
+    <main className="min-h-screen bg-[#faf9f7]">
+      {/* Hero Section */}
+      <section className="relative h-screen min-h-[600px] flex items-center pt-24">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 w-full">
+          {/* Breadcrumb */}
+          <div className="py-6 text-sm text-[#6b6b6b]">
+            <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
+            <span className="mx-2">/</span>
+            <span>Catering</span>
+          </div>
 
-        {/* Header */}
-        <div className="mb-12">
-          <div className="rule-gold mb-6" />
-          <h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl text-[#0f0f0f] mb-6" style={{ fontWeight: 300 }}>
-            Yacht Charter <span className="text-[#c4a265]">Catering</span>
-          </h1>
-          <p className="text-[#6b6b6b] text-lg max-w-3xl" style={{ fontWeight: 300 }}>
-            Gourmet catering delivered fresh to your yacht. From elegant platters to fresh salads and decadent desserts.
-          </p>
+          {/* Header */}
+          <div className="mb-12">
+            <div className="rule-gold mb-6" />
+            <h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl text-[#0f0f0f] mb-6" style={{ fontWeight: 300 }}>
+              Yacht Charter <span className="text-[#c4a265]">Catering</span>
+            </h1>
+            <p className="text-[#6b6b6b] text-lg max-w-3xl" style={{ fontWeight: 300 }}>
+              Gourmet catering delivered fresh to your yacht. From elegant platters to fresh salads and decadent desserts.
+            </p>
+          </div>
         </div>
+        
+        <ScrollIndicator dark />
+      </section>
+
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
 
         {/* Disclaimers */}
         <div className="bg-white border border-black/5 p-6 mb-12">
