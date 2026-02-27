@@ -71,7 +71,7 @@ export default function CheckoutSuccessPage() {
         <div className="space-y-6">
           <a
             href="/miami-yacht-charter-catering"
-            className="inline-block editorial-label bg-white border border-[#e5e5e5] text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:border-[#c4a265] hover:text-white transition-all duration-300"
+            className="inline-block editorial-label bg-white border border-[#e5e5e5] text-[#0f0f0f] px-8 py-4 hover:bg-[#c4a265] hover:border-[#c4a265] hover:text-white transition-all duration-300 relative z-50 pointer-events-auto cursor-pointer"
           >
             Browse More Catering
           </a>
