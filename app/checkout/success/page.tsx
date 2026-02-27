@@ -5,16 +5,17 @@ import { useCart } from '@/lib/store/CartContext';
 import Link from 'next/link';
 
 export default function CheckoutSuccessPage() {
-  const { clearCart } = useCart();
+  const { clearCart, closeCart } = useCart();
 
   useEffect(() => {
-    // Clear cart on success
+    // Clear cart and close sidebar on success
     clearCart();
-  }, [clearCart]);
+    closeCart();
+  }, [clearCart, closeCart]);
 
   return (
-    <main className="min-h-screen bg-[#faf9f7] pt-24 pb-32">
-      <div className="max-w-2xl mx-auto px-6 text-center">
+    <main className="min-h-screen bg-[#faf9f7] pt-24 pb-32 relative z-0">
+      <div className="max-w-2xl mx-auto px-6 text-center relative z-0">
         {/* Success Icon */}
         <div className="mb-8">
           <svg className="w-16 h-16 text-green-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
