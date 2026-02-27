@@ -137,7 +137,7 @@ export default function HomePage() {
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-1.5 backdrop-blur-sm bg-black/20 px-2 py-0.5 rounded inline-block" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>20–40 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Day Boats</h3>
-                <p className="editorial-small text-white/60 mb-6 min-h-[48px]">Casual elegance for sandbar days and sunset cruises.</p>
+                <p className="editorial-small text-white/60 mb-6 min-h-[48px]" style={{ lineHeight: '1.7' }}>Casual elegance for sandbar days and sunset cruises.</p>
                 <div className="flex justify-between items-center">
                   <div className="editorial-label text-white/50">From $700</div>
                   <div className="editorial-label text-white flex items-center gap-2">
@@ -159,7 +159,7 @@ export default function HomePage() {
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-1.5 backdrop-blur-sm bg-black/20 px-2 py-0.5 rounded inline-block" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>40–80 FT</div>
                 <h3 className="editorial-card-name text-white mb-3">Luxury Yachts</h3>
-                <p className="editorial-small text-white/60 mb-6 min-h-[48px]">Premium amenities for celebrations and corporate occasions.</p>
+                <p className="editorial-small text-white/60 mb-6 min-h-[48px]" style={{ lineHeight: '1.7' }}>Premium amenities for celebrations and corporate occasions.</p>
                 <div className="flex justify-between items-center">
                   <div className="editorial-label text-white/50">From $1,250</div>
                   <div className="editorial-label text-white flex items-center gap-2">
@@ -181,7 +181,7 @@ export default function HomePage() {
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-1.5 backdrop-blur-sm bg-black/20 px-2 py-0.5 rounded inline-block" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>80 FT+</div>
                 <h3 className="editorial-card-name text-white mb-3">Superyachts</h3>
-                <p className="editorial-small text-white/60 mb-6 min-h-[48px]">Expansive layouts, unmatched amenities and unparalleled luxury.</p>
+                <p className="editorial-small text-white/60 mb-6 min-h-[48px]" style={{ lineHeight: '1.7' }}>Expansive layouts, unmatched amenities and unparalleled luxury.</p>
                 <div className="flex justify-between items-center">
                   <div className="editorial-label text-white/50">From $3,200</div>
                   <div className="editorial-label text-white flex items-center gap-2">
@@ -203,7 +203,7 @@ export default function HomePage() {
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="editorial-label text-[#c4a265] mb-1.5 backdrop-blur-sm bg-black/20 px-2 py-0.5 rounded inline-block" style={{textShadow: '0 4px 16px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>ALL SIZES</div>
                 <h3 className="editorial-card-name text-white mb-3">View Full Fleet</h3>
-                <p className="editorial-small text-white/60 mb-6 min-h-[48px]">Explore the full range of vessel inventory from all locations</p>
+                <p className="editorial-small text-white/60 mb-6 min-h-[48px]" style={{ lineHeight: '1.7' }}>Explore the full range of vessel inventory from all locations</p>
                 <div className="flex justify-between items-center">
                   <div className="editorial-label text-white/50"></div>
                   <div className="editorial-label text-white flex items-center gap-2">
