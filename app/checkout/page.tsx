@@ -52,11 +52,40 @@ export default function CheckoutPage() {
     
     setIsProcessing(true);
     
-    // TODO: Send to Stripe/payment processor
-    // For now, just mock success
-    setTimeout(() => {
-      router.push('/checkout/success');
-    }, 1500);
+    try {
+      // Create Stripe checkout session
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: items.map(item => ({
+            name: item.name,
+            price: item.price,
+            quantity: item.quantity,
+            image: item.image,
+            customization: item.customization,
+          })),
+          customerInfo: formData,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to create checkout session');
+      }
+
+      // Redirect to Stripe Checkout
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error('No checkout URL returned');
+      }
+    } catch (error: any) {
+      console.error('Checkout error:', error);
+      setErrors({ submit: error.message || 'Failed to process checkout' });
+      setIsProcessing(false);
+    }
   };
 
   // Check platter count
@@ -231,6 +260,7 @@ export default function CheckoutPage() {
                 {isProcessing ? 'Processing...' : platterCount < 2 ? 'Minimum 2 Platters Required' : 'Proceed to Payment'}
               </button>
               {errors.cart && <p className="text-xs text-[#c4a265] mt-2 text-center">{errors.cart}</p>}
+              {errors.submit && <p className="text-xs text-red-600 mt-2 text-center">{errors.submit}</p>}
             </form>
           </div>
 
