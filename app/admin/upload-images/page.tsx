@@ -67,25 +67,6 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
         { id: 'departures-fort-lauderdale', name: 'Departures - Fort Lauderdale', category },
         { id: 'departures-hollywood', name: 'Departures - Hollywood', category },
         
-        // Review Badges
-        { id: 'reviews-yelp', name: 'Reviews - Yelp 5 Star Badge', category },
-        { id: 'reviews-tripadvisor', name: 'Reviews - TripAdvisor Badge', category },
-        { id: 'reviews-google', name: 'Reviews - Google Reviews Badge', category },
-        { id: 'reviews-iyba', name: 'Reviews - IYBA Badge', category },
-        { id: 'reviews-best-of-miami', name: 'Reviews - Best of Miami 2025', category },
-        
-        // Sponsor Logos
-        { id: 'sponsors-adidas', name: 'Sponsors - Adidas', category },
-        { id: 'sponsors-amex', name: 'Sponsors - American Express', category },
-        { id: 'sponsors-chanel', name: 'Sponsors - Chanel', category },
-        { id: 'sponsors-cisco', name: 'Sponsors - Cisco', category },
-        { id: 'sponsors-nike', name: 'Sponsors - Nike', category },
-        { id: 'sponsors-redbull', name: 'Sponsors - Red Bull', category },
-        { id: 'sponsors-sony', name: 'Sponsors - Sony', category },
-        { id: 'sponsors-spotify', name: 'Sponsors - Spotify', category },
-        { id: 'sponsors-starbucks', name: 'Sponsors - Starbucks', category },
-        { id: 'sponsors-tiffany', name: 'Sponsors - Tiffany & Co', category },
-        
         // Add-Ons Thumbnails
         { id: 'addons-catering-thumb', name: 'Add-Ons - Catering Thumbnail', category },
         { id: 'addons-water-toys-thumb', name: 'Add-Ons - Water Toys Thumbnail', category },

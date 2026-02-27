@@ -54,25 +54,6 @@ Use for: Fleet cards, experience cards, badges, sponsor logos, category thumbnai
 - `departures-fort-lauderdale` → Fort Lauderdale thumbnail
 - `departures-hollywood` → Hollywood thumbnail
 
-### Review Badges:
-- `reviews-yelp` → Yelp 5-star badge
-- `reviews-tripadvisor` → TripAdvisor badge
-- `reviews-google` → Google Reviews badge
-- `reviews-iyba` → IYBA badge
-- `reviews-best-of-miami` → Best of Miami 2025 badge
-
-### Sponsor Logos:
-- `sponsors-adidas` → Adidas logo
-- `sponsors-amex` → American Express logo
-- `sponsors-chanel` → Chanel logo
-- `sponsors-cisco` → Cisco logo
-- `sponsors-nike` → Nike logo
-- `sponsors-redbull` → Red Bull logo
-- `sponsors-sony` → Sony logo
-- `sponsors-spotify` → Spotify logo
-- `sponsors-starbucks` → Starbucks logo
-- `sponsors-tiffany` → Tiffany & Co logo
-
 ### Add-Ons Page - Category Thumbnails:
 - `addons-catering-thumb` → Catering category card
 - `addons-water-toys-thumb` → Water toys category card
@@ -101,9 +82,9 @@ Use for: Fleet cards, experience cards, badges, sponsor logos, category thumbnai
 2. Experience cards (6 images)
 3. Departure locations (6 images)
 
-### 3. Badges & Logos:
-1. Review badges (5 images)
-2. Sponsor logos (10 images)
+### 3. Add-Ons & Premium:
+1. Category thumbnails (4 images)
+2. Premium add-ons (4 images)
 
 ---
 
