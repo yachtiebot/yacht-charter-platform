@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getYachtsWithCache } from '@/lib/yacht-cache-direct';
+import { getYachtsWithCache } from '@/lib/yacht-cache';
 
 /**
  * DIRECT Airtable fetch - NO CACHE
