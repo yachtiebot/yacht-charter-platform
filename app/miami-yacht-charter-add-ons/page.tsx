@@ -169,15 +169,15 @@ export default function AddOnsPage() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 max-w-xl">
               <div>
-                <div className="text-3xl md:text-4xl text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 300 }}>90+</div>
+                <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)' }}>90+</div>
                 <div className="text-xs uppercase tracking-wider text-[#6b6b6b]">Curated Selections</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 300 }}>Made</div>
+                <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)' }}>Made</div>
                 <div className="text-xs uppercase tracking-wider text-[#6b6b6b]">For Miami</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 300 }}>100%</div>
+                <div className="text-3xl md:text-4xl font-light text-[#c4a265] mb-2" style={{ fontFamily: 'var(--font-cormorant)' }}>100%</div>
                 <div className="text-xs uppercase tracking-wider text-[#6b6b6b]">Vibe Amplified</div>
               </div>
             </div>
