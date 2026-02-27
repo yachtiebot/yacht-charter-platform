@@ -31,6 +31,10 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
         { id: 'cta-background', name: 'Homepage - Bottom Page Banner', category },
         { id: 'philosophy-yacht', name: 'Homepage - Philosophy Section Banner', category },
         
+        // Yacht Listings Page
+        { id: 'yacht-listings-header', name: 'Yacht Listings - Header Banner', category },
+        { id: 'yacht-listings-footer', name: 'Yacht Listings - Footer Banner', category },
+        
         // Contact Page
         { id: 'contact-hero', name: 'Contact Page - Hero Banner', category },
       ];

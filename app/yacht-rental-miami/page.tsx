@@ -191,7 +191,7 @@ function FleetContent() {
       <section className="h-screen min-h-[700px] relative flex items-end pt-24">
         <div className="absolute inset-0">
           <img
-            src="/images/Miami_Yachting_Company_yacht-rental-miami.jpg"
+            src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/banners/Miami_Yachting_Company_yacht_listings_header.webp"
             alt="Miami Yachting Company yacht rentals in Miami"
             className="w-full h-full object-cover"
             width="2400"
@@ -336,7 +336,7 @@ function FleetContent() {
       <section className="relative h-screen min-h-[600px] flex items-center">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=2400&q=90"
+            src="https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/banners/Miami_Yachting_Company_yacht_listings_footer.webp"
             alt="Get on the water"
             className="w-full h-full object-cover"
           />

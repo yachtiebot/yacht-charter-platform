@@ -21,6 +21,10 @@ Use for: Fleet cards, experience cards, badges, sponsor logos, category thumbnai
 - `cta-background` → Bottom page banner (Call to Action section)
 - `philosophy-yacht` → Philosophy section banner
 
+### Yacht Listings Page Banners:
+- `yacht-listings-header` → Header banner (top of page)
+- `yacht-listings-footer` → Footer CTA banner (bottom of page)
+
 ### Contact Page Banner:
 - `contact-hero` → Contact page header banner
 
