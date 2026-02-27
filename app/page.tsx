@@ -26,7 +26,7 @@ export default function HomePage() {
               {/* Left Column - 60% */}
               <div className="lg:col-span-7">
                 <div className="rule-gold mb-6" />
-                <h1 className="editorial-display text-white mb-8" style={{
+                <h1 className="editorial-display text-white mb-4" style={{
                   fontSize: 'clamp(3rem, 7vw, 5rem)',
                   fontWeight: 300,
                   lineHeight: 1.1,
