@@ -167,22 +167,32 @@ export default function Navigation() {
         </div>
         
         {/* Mobile Menu Button */}
-        <button 
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`lg:hidden flex flex-col gap-2 p-2 rounded transition-all duration-700 ${
-            isTransparent 
-              ? 'bg-white/10 backdrop-blur-sm hover:bg-white/20' 
-              : 'bg-black/5 hover:bg-black/10'
-          }`}
-          aria-label="Menu"
-        >
-          <span className={`w-7 h-[2.5px] rounded-full transition-all duration-300 ${
-            isMobileMenuOpen ? 'rotate-45 translate-y-[10px]' : ''
-          } ${isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'}`} />
-          <span className={`w-7 h-[2.5px] rounded-full transition-all duration-300 ${
-            isMobileMenuOpen ? '-rotate-45' : ''
-          } ${isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'}`} />
-        </button>
+        <div className="lg:hidden flex items-center gap-2">
+          <span className={`text-xs font-medium tracking-wider uppercase animate-bounce ${
+            isTransparent ? 'text-white' : 'text-[#0f0f0f]'
+          }`}>
+            Menu
+          </span>
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`flex flex-col gap-1.5 p-2 rounded transition-all duration-700 ${
+              isTransparent 
+                ? 'bg-white/10 backdrop-blur-sm hover:bg-white/20' 
+                : 'bg-black/5 hover:bg-black/10'
+            }`}
+            aria-label="Menu"
+          >
+            <span className={`w-7 h-[2.5px] rounded-full transition-all duration-300 ${
+              isMobileMenuOpen ? 'rotate-45 translate-y-[8.5px]' : ''
+            } ${isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'}`} />
+            <span className={`w-7 h-[2.5px] rounded-full transition-all duration-300 ${
+              isMobileMenuOpen ? 'opacity-0' : ''
+            } ${isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'}`} />
+            <span className={`w-7 h-[2.5px] rounded-full transition-all duration-300 ${
+              isMobileMenuOpen ? '-rotate-45 -translate-y-[8.5px]' : ''
+            } ${isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'}`} />
+          </button>
+        </div>
       </div>
       
       {/* Mobile Menu Dropdown - Synced with Desktop Menu */}
