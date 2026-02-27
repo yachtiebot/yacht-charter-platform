@@ -12,8 +12,8 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-// Cache busting helper - update this version when you upload new images
-const IMAGE_VERSION = '20260227'; // Update date when uploading new images
+// Automatic cache busting - uses build time to force fresh images
+const IMAGE_VERSION = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA?.slice(0, 7) || Date.now().toString();
 
 export default function AddOnsPage() {
   const [heroImage, setHeroImage] = useState<string | null>(null);
