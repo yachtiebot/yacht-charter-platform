@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getCateringWithCache } from '@/lib/catering-cache';
 
-export const revalidate = 900; // 15 minutes
+export const revalidate = 60; // 1 minute (temporary for development)
 
 export async function GET() {
   try {

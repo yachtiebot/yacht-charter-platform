@@ -81,7 +81,7 @@ const FALLBACK_YACHTS = [
 // In-memory cache (survives between requests in same process)
 let cachedData: any = null;
 let cacheTimestamp: number = 0;
-const CACHE_DURATION = 15 * 60 * 1000; // 15 minutes
+const CACHE_DURATION = 1 * 60 * 1000; // 1 minute (temporary for development)
 
 export async function getYachtsWithCache() {
   const now = Date.now();
@@ -101,7 +101,7 @@ export async function getYachtsWithCache() {
         headers: {
           'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
         },
-        next: { revalidate: 900 } // 15 minutes
+        next: { revalidate: 60 } // 1 minute (temporary for development)
       }
     );
     
