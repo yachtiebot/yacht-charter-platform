@@ -169,13 +169,17 @@ export default function Navigation() {
         {/* Mobile Menu Button */}
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`lg:hidden flex flex-col gap-1.5 transition-colors duration-700`}
+          className={`lg:hidden flex flex-col gap-2 p-2 rounded transition-all duration-700 ${
+            isTransparent 
+              ? 'bg-white/10 backdrop-blur-sm hover:bg-white/20' 
+              : 'bg-black/5 hover:bg-black/10'
+          }`}
           aria-label="Menu"
         >
-          <span className={`w-6 h-[1.5px] transition-all duration-300 ${
-            isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+          <span className={`w-7 h-[2.5px] rounded-full transition-all duration-300 ${
+            isMobileMenuOpen ? 'rotate-45 translate-y-[10px]' : ''
           } ${isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'}`} />
-          <span className={`w-6 h-[1.5px] transition-all duration-300 ${
+          <span className={`w-7 h-[2.5px] rounded-full transition-all duration-300 ${
             isMobileMenuOpen ? '-rotate-45' : ''
           } ${isTransparent ? 'bg-white' : 'bg-[#0f0f0f]'}`} />
         </button>
