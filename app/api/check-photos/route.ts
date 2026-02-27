@@ -42,8 +42,8 @@ export async function GET() {
     return NextResponse.json({
       timestamp: new Date().toISOString(),
       totalYachts: yachts.length,
-      yachtsWithPhotos: diagnostics.filter(y => y.hasPhotosInMapping).length,
-      yachtsWithoutPhotos: diagnostics.filter(y => !y.hasPhotosInMapping).length,
+      yachtsWithPhotos: diagnostics.filter((y: any) => y.hasPhotosInMapping).length,
+      yachtsWithoutPhotos: diagnostics.filter((y: any) => !y.hasPhotosInMapping).length,
       details: diagnostics,
       recommendation: 'Yachts without photos need to be added to photoMapping in lib/yacht-cache.ts'
     }, {
