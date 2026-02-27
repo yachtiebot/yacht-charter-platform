@@ -38,8 +38,8 @@ export default function DarkFooter() {
               </a>
               <a href="#" className="text-white/40 hover:text-white transition-colors" aria-label="TripAdvisor">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                  <text x="12" y="15.5" fontSize="11" fontWeight="bold" textAnchor="middle" fill="currentColor" fontFamily="sans-serif">TA</text>
+                  <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                  <path d="M7 10h3v1H8.5v4H7.5v-4H7v-1zm5.5 0h1.2l1.3 5h-1.1l-.2-1h-1.4l-.2 1h-1.1l1.3-5zm.6 1l-.5 2h1l-.5-2z"/>
                 </svg>
               </a>
               <a href="#" className="text-white/40 hover:text-white transition-colors" aria-label="Google">
