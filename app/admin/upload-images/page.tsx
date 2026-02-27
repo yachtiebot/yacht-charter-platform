@@ -259,16 +259,16 @@ export default function UploadImagesPage() {
           </p>
         </div>
 
-        {/* Hero Images Section */}
+        {/* Hero Thumbnails Section */}
         <div className="mb-12">
           <div className="mb-6">
-            <h2 className="editorial-card-name text-[#0f0f0f] mb-2">Marketing & Hero Images</h2>
-            <p className="text-[#6b6b6b] font-light">Upload hero images, category thumbnails, and site-wide marketing images</p>
+            <h2 className="editorial-card-name text-[#0f0f0f] mb-2">Marketing & Hero Thumbnails</h2>
+            <p className="text-[#6b6b6b] font-light">Upload hero thumbnails, category thumbnails, and site-wide marketing images</p>
           </div>
           
           <UploadZone
             category="hero-images"
-            title="Hero Images"
+            title="Hero Thumbnails"
             color="#c4a265"
           />
         </div>
@@ -313,7 +313,7 @@ export default function UploadImagesPage() {
             How to Use
           </h3>
           <ol className="space-y-3 text-[#6b6b6b] font-light">
-            <li><strong>Hero Images:</strong> Select from predefined list (homepage hero, page headers, etc.)</li>
+            <li><strong>Hero Thumbnails:</strong> Select from predefined list (homepage hero, page headers, etc.)</li>
             <li><strong>Product Images:</strong> Product must exist in Airtable with a Product ID first</li>
             <li>Select the image from the dropdown</li>
             <li>Drag and drop an image or click to browse</li>
@@ -328,8 +328,8 @@ export default function UploadImagesPage() {
               optimized version goes on the CDN.
             </p>
             <p className="text-sm text-[#6b6b6b] font-light">
-              <strong>Hero Images:</strong> See HERO_IMAGES_INVENTORY.md for a complete list of 
-              all hero images and where they appear on the site.
+              <strong>Hero Thumbnails:</strong> See HERO_IMAGES_INVENTORY.md for a complete list of 
+              all hero thumbnails and where they appear on the site.
             </p>
           </div>
         </div>
