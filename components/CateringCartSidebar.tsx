@@ -9,7 +9,9 @@ export default function CateringCartSidebar() {
   const { items, isOpen, closeCart, removeItem, updateQuantity, totalPrice } = useCart();
 
   // Calculate total platter count across all items
-  const totalPlatters = items.reduce((sum, item) => sum + item.quantity, 0);
+  const totalPlatters = items
+    .filter(item => item.category === 'catering')
+    .reduce((sum, item) => sum + item.quantity, 0);
 
   if (!isOpen) return null;
 
