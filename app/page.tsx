@@ -25,13 +25,22 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-end">
               {/* Left Column - 60% */}
               <div className="lg:col-span-7">
-                <div className="rule-gold" />
-                <h1 className="editorial-display text-white mb-6" style={{fontSize: '3.5rem'}}>
+                <div className="rule-gold mb-6" />
+                <h1 className="editorial-display text-white mb-8" style={{
+                  fontSize: 'clamp(3.5rem, 8vw, 7rem)',
+                  fontWeight: 300,
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.02em'
+                }}>
                   Private Yacht<br />
                   Charters in<br />
-                  <span className="text-[#c4a265]" style={{textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)'}}>Miami</span>
+                  <span className="text-[#c4a265]" style={{fontStyle: 'italic', textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)'}}>Miami</span>
                 </h1>
-                <p className="text-white/70 text-lg max-w-lg" style={{ fontWeight: 300 }}>
+                <p className="text-white/80 text-xl md:text-2xl max-w-2xl" style={{ 
+                  fontWeight: 300,
+                  lineHeight: 1.6,
+                  letterSpacing: '0.01em'
+                }}>
                   A curated fleet of privately owned vessels, hand selected for comfort, style, and exceptional guest experiences.
                 </p>
               </div>
