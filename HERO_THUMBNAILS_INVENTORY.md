@@ -21,11 +21,7 @@ Use for: Fleet cards, experience cards, badges, sponsor logos, category thumbnai
 - `cta-background` → Bottom page banner (Call to Action section)
 - `philosophy-yacht` → Philosophy section banner
 
-### Page Hero Banners:
-- `catering-hero` → Catering page header banner
-- `water-toys-hero` → Water toys page header banner
-- `flowers-hero` → Flowers page header banner
-- `bachelorette-hero` → Bachelorette page header banner
+### Contact Page Banner:
 - `contact-hero` → Contact page header banner
 
 ---
@@ -72,10 +68,9 @@ Use for: Fleet cards, experience cards, badges, sponsor logos, category thumbnai
 
 ### 1. Banners (Most Visible):
 1. `hero-main` - Homepage main banner
-2. `catering-hero` - Catering page
-3. `water-toys-hero` - Water toys page
-4. `flowers-hero` - Flowers page
-5. `bachelorette-hero` - Bachelorette page
+2. `cta-background` - Homepage bottom banner
+3. `philosophy-yacht` - Homepage philosophy section
+4. `contact-hero` - Contact page banner
 
 ### 2. Homepage Thumbnails:
 1. Fleet cards (4 images)

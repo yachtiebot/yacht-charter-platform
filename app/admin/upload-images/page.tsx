@@ -31,11 +31,7 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
         { id: 'cta-background', name: 'Homepage - Bottom Page Banner', category },
         { id: 'philosophy-yacht', name: 'Homepage - Philosophy Section Banner', category },
         
-        // Page Hero Banners
-        { id: 'catering-hero', name: 'Catering Page - Hero Banner', category },
-        { id: 'water-toys-hero', name: 'Water Toys Page - Hero Banner', category },
-        { id: 'flowers-hero', name: 'Flowers Page - Hero Banner', category },
-        { id: 'bachelorette-hero', name: 'Bachelorette Page - Hero Banner', category },
+        // Contact Page
         { id: 'contact-hero', name: 'Contact Page - Hero Banner', category },
       ];
       setProducts(banners.sort((a: Product, b: Product) => a.name.localeCompare(b.name)));
