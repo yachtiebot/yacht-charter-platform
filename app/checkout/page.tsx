@@ -26,9 +26,10 @@ export default function CheckoutPage() {
   const validate = () => {
     const newErrors: Record<string, string> = {};
     
-    // Check 2 platter minimum
-    const platterCount = items.reduce((sum, item) => sum + item.quantity, 0);
-    if (platterCount < 2) {
+    // Check 2 platter minimum (only for catering items)
+    const cateringItems = items.filter(item => item.category === 'catering');
+    const platterCount = cateringItems.reduce((sum, item) => sum + item.quantity, 0);
+    if (cateringItems.length > 0 && platterCount < 2) {
       newErrors.cart = 'Minimum 2 platters required';
     }
     
@@ -88,8 +89,10 @@ export default function CheckoutPage() {
     }
   };
 
-  // Check platter count
-  const platterCount = items.reduce((sum, item) => sum + item.quantity, 0);
+  // Check platter count (only catering items)
+  const cateringItemsForCount = items.filter(item => item.category === 'catering');
+  const platterCount = cateringItemsForCount.reduce((sum, item) => sum + item.quantity, 0);
+  const hasCateringItems = cateringItemsForCount.length > 0;
 
   if (items.length === 0) {
     return (
@@ -129,9 +132,11 @@ export default function CheckoutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
               </Link>
-              <p className="text-sm text-[#c4a265] font-light">
-                Minimum 2 platters required • You have {platterCount}
-              </p>
+              {hasCateringItems && platterCount < 2 && (
+                <p className="text-sm text-[#c4a265] font-light">
+                  Minimum 2 platters required • You have {platterCount}
+                </p>
+              )}
             </div>
           )}
         </div>
@@ -254,10 +259,10 @@ export default function CheckoutPage() {
 
               <button
                 type="submit"
-                disabled={isProcessing || platterCount < 2}
+                disabled={isProcessing || (hasCateringItems && platterCount < 2)}
                 className="w-full bg-[#0f0f0f] text-white py-4 editorial-label hover:bg-[#c4a265] transition-all duration-300 disabled:bg-[#e5e5e5] disabled:text-[#9ca3af] disabled:cursor-not-allowed"
               >
-                {isProcessing ? 'Processing...' : platterCount < 2 ? 'Minimum 2 Platters Required' : 'Proceed to Payment'}
+                {isProcessing ? 'Processing...' : (hasCateringItems && platterCount < 2) ? 'Minimum 2 Platters Required' : 'Proceed to Payment'}
               </button>
               {errors.cart && <p className="text-xs text-[#c4a265] mt-2 text-center">{errors.cart}</p>}
               {errors.submit && <p className="text-xs text-red-600 mt-2 text-center">{errors.submit}</p>}
