@@ -78,9 +78,11 @@ export async function POST(request: NextRequest) {
     const optimizedBuffer = await fs.readFile(tempOutputPath);
     console.log(`✅ Optimized: ${(optimizedBuffer.length / 1024).toFixed(1)} KB`);
 
-    // Step 3: Upload to Supabase
+    // Step 3: Upload to Supabase with SEO-friendly naming
     console.log('☁️ Uploading to Supabase...');
-    const supabasePath = `${category}/${productId}.webp`;
+    // SEO naming: Miami_Yachting_Company_[description]
+    const seoFileName = `Miami_Yachting_Company_${productId.replace(/-/g, '_')}.webp`;
+    const supabasePath = `${category}/${seoFileName}`;
     
     const { error: uploadError } = await supabase.storage
       .from('yacht-photos')
