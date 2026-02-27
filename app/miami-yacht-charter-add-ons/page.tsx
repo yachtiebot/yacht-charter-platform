@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import DarkFooter from '@/components/DarkFooter';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import InquiryModal from '@/components/InquiryModal';
 
 export default function AddOnsPage() {
@@ -183,6 +184,8 @@ export default function AddOnsPage() {
             </div>
           </div>
         </div>
+        
+        <ScrollIndicator />
       </section>
 
       {/* Categories - Magazine Layout */}

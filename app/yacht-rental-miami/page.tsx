@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
 import { formatCurrency } from '@/lib/utils';
 import CollapsibleFleetFilters from '@/components/CollapsibleFleetFilters';
+import ScrollIndicator from '@/components/ScrollIndicator';
 
 interface YachtData {
   id: string;
