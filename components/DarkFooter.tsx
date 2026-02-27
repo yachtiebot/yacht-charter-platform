@@ -70,7 +70,7 @@ export default function DarkFooter() {
           <div className="text-white/40 text-sm">
             © 2026 Miami Yachting Company®. All rights reserved.
           </div>
-          <div className="editorial-label text-[#c4a265] text-[10px]">
+          <div className="editorial-label text-[#c4a265] text-[9px] sm:text-[10px] whitespace-nowrap">
             Best Boat Charter · Readers' Choice Award
           </div>
         </div>
