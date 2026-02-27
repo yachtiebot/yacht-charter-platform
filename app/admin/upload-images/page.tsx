@@ -38,7 +38,7 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
         { id: 'bachelorette-hero', name: 'Bachelorette Page - Hero Banner', category },
         { id: 'contact-hero', name: 'Contact Page - Hero Banner', category },
       ];
-      setProducts(banners.sort((a, b) => a.name.localeCompare(b.name)));
+      setProducts(banners.sort((a: Product, b: Product) => a.name.localeCompare(b.name)));
       return;
     }
 
@@ -98,7 +98,7 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
         { id: 'premium-hero', name: 'Premium - Hero Image', category },
         { id: 'premium-watersports', name: 'Premium - Watersports', category },
       ];
-      setProducts(thumbnails.sort((a, b) => a.name.localeCompare(b.name)));
+      setProducts(thumbnails.sort((a: Product, b: Product) => a.name.localeCompare(b.name)));
       return;
     }
 
@@ -121,7 +121,7 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
             category
           }));
           // Alphabetize by name
-          setProducts(mappedProducts.sort((a, b) => a.name.localeCompare(b.name)));
+          setProducts(mappedProducts.sort((a: Product, b: Product) => a.name.localeCompare(b.name)));
         }
       } catch (error) {
         console.error('Error fetching products:', error);
