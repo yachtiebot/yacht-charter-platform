@@ -4,6 +4,7 @@ import { useCartStore } from '@/lib/cart-store';
 import { X, Trash2, Plus, Minus } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import InfoIcon from './InfoIcon';
 
 export default function CartSidebar() {
   const {
@@ -172,8 +173,9 @@ export default function CartSidebar() {
             
             {/* Minimum order warning */}
             {items.length === 1 && (
-              <div className="mb-3 p-3 bg-yellow-50 border border-yellow-200 rounded text-sm text-yellow-800 text-center">
-                ⚠️ Minimum 2 items required for checkout
+              <div className="mb-3 p-3 bg-yellow-50 border border-yellow-200 rounded text-sm text-yellow-800 text-center flex items-center justify-center gap-2">
+                <InfoIcon className="w-4 h-4 flex-shrink-0" />
+                <span>Minimum 2 items required for checkout</span>
               </div>
             )}
             
