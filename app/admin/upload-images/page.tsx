@@ -79,7 +79,6 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
         // Premium Add-Ons
         { id: 'premium-alcohol', name: 'Premium - Alcohol Package', category },
         { id: 'premium-transport', name: 'Premium - Luxury Transport', category },
-        { id: 'premium-watersports', name: 'Premium - Watersports', category },
         { id: 'premium-private-chef', name: 'Premium - Private Chef Services', category },
         { id: 'premium-bespoke-catering', name: 'Premium - Bespoke Catering Delivery', category },
         { id: 'premium-sushi-delivery', name: 'Premium - Sushi Delivery', category },

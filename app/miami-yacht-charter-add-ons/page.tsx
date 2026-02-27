@@ -152,7 +152,7 @@ export default function AddOnsPage() {
       title: 'Drone Video Services',
       subtitle: 'Aerial Cinematography',
       description: 'Professional drone pilots creating cinematic masterpieces. Stunning aerial footage of your yacht surrounded by Miami\'s iconic skyline.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_watersports.webp',
+      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_drone_videos.webp',
       accent: 'Inquire',
       number: '11'
     }
