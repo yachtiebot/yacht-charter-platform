@@ -254,7 +254,12 @@ export default function CateringPage() {
 
   return (
     <main className="min-h-screen bg-[#faf9f7] pt-24">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 relative">
+        {/* Mobile-only Scroll Indicator */}
+        <div className="md:hidden fixed bottom-16 left-1/2 -translate-x-1/2 z-20">
+          <ScrollIndicator dark />
+        </div>
+
         {/* Breadcrumb */}
         <div className="py-6 text-sm text-[#6b6b6b]">
           <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
