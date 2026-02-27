@@ -120,9 +120,6 @@ export default function CheckoutPage() {
           {/* 2 Platter Minimum Warning */}
           {platterCount < 2 && (
             <div className="mt-6 bg-[#c4a265]/5 px-6 py-4 flex items-center justify-between">
-              <p className="text-sm text-[#c4a265] font-light">
-                Minimum 2 platters required • You have {platterCount}
-              </p>
               <Link 
                 href="/miami-yacht-charter-catering"
                 className="text-[#c4a265] hover:text-[#0f0f0f] transition-colors"
@@ -132,6 +129,9 @@ export default function CheckoutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
               </Link>
+              <p className="text-sm text-[#c4a265] font-light">
+                Minimum 2 platters required • You have {platterCount}
+              </p>
             </div>
           )}
         </div>
