@@ -21,15 +21,21 @@ export async function GET() {
       const supabaseHeroUrl = yacht.fields['Supabase Hero URL'];
       const galleryCount = yacht.fields['Supabase Gallery URLs']?.length || 0;
 
+      // Debug: Show all field names to diagnose mismatch
+      const allFieldNames = Object.keys(yacht.fields);
+
       return {
         yachtId,
+        yachtIdType: typeof yachtId,
+        yachtIdValue: JSON.stringify(yachtId),
         boatName: yacht.fields['Boat Name'],
         hasPhotosInMapping: hasPhotos,
         photosInMapping: photoMapping[yachtId] || 0,
         supabaseHeroUrlGenerated: !!supabaseHeroUrl,
         supabaseHeroUrl: supabaseHeroUrl || 'NOT GENERATED',
         galleryImagesGenerated: galleryCount,
-        showOnWebsite: yacht.fields['Show on Website?']
+        showOnWebsite: yacht.fields['Show on Website?'],
+        allAirtableFields: allFieldNames // NEW: Show all field names
       };
     });
 
