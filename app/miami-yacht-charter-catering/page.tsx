@@ -1,10 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import DarkFooter from '@/components/DarkFooter';
-import productsData from '@/lib/store/products-complete.json';
 import CharcuterieCustomizationModal, { CharcuterieCustomization } from '@/components/modals/CharcuterieCustomizationModal';
 import WrapCustomizationModal, { WrapCustomization } from '@/components/modals/WrapCustomizationModal';
 import SpiralCustomizationModal, { SpiralCustomization } from '@/components/modals/SpiralCustomizationModal';
@@ -69,12 +68,6 @@ const imageMapping: { [key: string]: string } = {
   'chocolate-platter': platterImages[9]     // cookieplatter
 };
 
-// Extract catering products from products-complete.json
-const cateringProducts = productsData.catering.map((product, index) => ({
-  ...product,
-  image: imageMapping[product.id] || platterImages[index % platterImages.length]
-}));
-
 const categories = [
   { id: 'all', name: 'All Items' },
   { id: 'sandwiches', name: 'Sandwiches & Wraps' },
@@ -85,6 +78,8 @@ const categories = [
 ];
 
 export default function CateringPage() {
+  const [cateringProducts, setCateringProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: number}>({});
   const { addItem } = useCart();
@@ -92,6 +87,30 @@ export default function CateringPage() {
   // Modal states
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [pendingProduct, setPendingProduct] = useState<any>(null);
+
+  // Fetch catering from Airtable API
+  useEffect(() => {
+    const fetchCatering = async () => {
+      try {
+        const response = await fetch('/api/catering');
+        const data = await response.json();
+        
+        // Map images to products
+        const productsWithImages = data.map((product: any, index: number) => ({
+          ...product,
+          image: imageMapping[product.id] || platterImages[index % platterImages.length]
+        }));
+        
+        setCateringProducts(productsWithImages);
+      } catch (error) {
+        console.error('Failed to fetch catering:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchCatering();
+  }, []);
 
   const filteredProducts = selectedCategory === 'all' 
     ? cateringProducts 
