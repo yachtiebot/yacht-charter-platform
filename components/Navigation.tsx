@@ -53,8 +53,8 @@ export default function Navigation() {
             href="/yacht-rental-miami"
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
-                ? 'text-white/70 hover:text-white' 
-                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
+                ? 'text-white/90 hover:text-[#c4a265]' 
+                : 'text-white hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
@@ -65,8 +65,8 @@ export default function Navigation() {
             href="/miami-yacht-charter-add-ons"
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
-                ? 'text-white/70 hover:text-white' 
-                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
+                ? 'text-white/90 hover:text-[#c4a265]' 
+                : 'text-white hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
@@ -77,8 +77,8 @@ export default function Navigation() {
             href="/large-groups"
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
-                ? 'text-white/70 hover:text-white' 
-                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
+                ? 'text-white/90 hover:text-[#c4a265]' 
+                : 'text-white hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
@@ -89,8 +89,8 @@ export default function Navigation() {
             href="/testimonials"
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
-                ? 'text-white/70 hover:text-white' 
-                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
+                ? 'text-white/90 hover:text-[#c4a265]' 
+                : 'text-white hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
@@ -101,8 +101,8 @@ export default function Navigation() {
             href="/contact"
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
-                ? 'text-white/70 hover:text-white' 
-                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
+                ? 'text-white/90 hover:text-[#c4a265]' 
+                : 'text-white hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
@@ -113,8 +113,8 @@ export default function Navigation() {
             href="/about"
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
-                ? 'text-white/70 hover:text-white' 
-                : 'text-[#6b6b6b] hover:text-[#0f0f0f]'
+                ? 'text-white/90 hover:text-[#c4a265]' 
+                : 'text-white hover:text-[#c4a265]'
             }`}
             style={isTransparent ? { textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5)' } : {}}
           >
