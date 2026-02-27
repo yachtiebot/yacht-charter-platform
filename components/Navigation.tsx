@@ -272,6 +272,11 @@ export default function Navigation() {
               </svg>
               WHATSAPP
             </a>
+            
+            {/* Language Switcher */}
+            <div className="flex justify-center">
+              <LanguageSwitcher isTransparent={false} />
+            </div>
           </div>
           
           <div className="pt-4">
