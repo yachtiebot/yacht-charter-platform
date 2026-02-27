@@ -12,6 +12,9 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
+// Cache busting helper - update this version when you upload new images
+const IMAGE_VERSION = '20260227'; // Update date when uploading new images
+
 export default function AddOnsPage() {
   const [heroImage, setHeroImage] = useState<string | null>(null);
   const [inquiryModal, setInquiryModal] = useState<{ isOpen: boolean; serviceName: string }>({
@@ -56,7 +59,7 @@ export default function AddOnsPage() {
       subtitle: 'Culinary Excellence',
       description: 'Artisanal platters and gourmet cuisine, curated for discerning palates',
       href: '/miami-yacht-charter-catering',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_addons_catering_thumb.webp',
+      image: `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_addons_catering_thumb.webp?v=${IMAGE_VERSION}`,
       accent: 'Savor',
       number: '01'
     },
@@ -66,7 +69,7 @@ export default function AddOnsPage() {
       subtitle: 'Aquatic Adventures',
       description: 'Premium water sports equipment and floating luxury for the ultimate ocean experience',
       href: '/miami-yacht-charter-water-toys',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_addons_water_toys_thumb.webp',
+      image: `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_addons_water_toys_thumb.webp?v=${IMAGE_VERSION}`,
       accent: 'Explore',
       number: '02'
     },
@@ -76,7 +79,7 @@ export default function AddOnsPage() {
       subtitle: 'Botanical Elegance',
       description: 'Bespoke floral arrangements that transform your yacht into a floating garden',
       href: '/miami-yacht-charter-flowers',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_addons_flowers_thumb.webp',
+      image: `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_addons_flowers_thumb.webp?v=${IMAGE_VERSION}`,
       accent: 'Adorn',
       number: '03'
     },
@@ -86,7 +89,7 @@ export default function AddOnsPage() {
       subtitle: 'Celebration Suites',
       description: 'Curated packages for unforgettable moments before the veil',
       href: '/miami-yacht-charter-bachelorette-packages',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_addons_bachelorette_thumb.webp',
+      image: `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_addons_bachelorette_thumb.webp?v=${IMAGE_VERSION}`,
       accent: 'Celebrate',
       number: '04'
     }
@@ -98,7 +101,7 @@ export default function AddOnsPage() {
       title: 'Rare Vintage & Premium Alcohol',
       subtitle: 'Spirits & Engraving',
       description: 'Exclusive premium alcohol delivery with custom bottle engraving. Savor the finest spirits, each bottle personalized with your message.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_alcohol.webp',
+      image: `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_alcohol.webp?v=${IMAGE_VERSION}`,
       accent: 'Inquire',
       number: '05'
     },
@@ -107,7 +110,7 @@ export default function AddOnsPage() {
       title: 'Luxury Transportation',
       subtitle: 'Arrive in Style',
       description: 'Premium vehicles including luxury sedans and limo buses. Every detail arranged for a seamless, stress free travel experience.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_transport.webp',
+      image: `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_transport.webp?v=${IMAGE_VERSION}`,
       accent: 'Inquire',
       number: '06'
     },
@@ -116,7 +119,7 @@ export default function AddOnsPage() {
       title: 'Private Chef Services',
       subtitle: 'Culinary Artistry',
       description: 'Elite chefs crafting custom menus tailored to your preferences. From multicourse dinners to delightful brunches aboard your yacht.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_private_chef.webp',
+      image: `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_private_chef.webp?v=${IMAGE_VERSION}`,
       accent: 'Inquire',
       number: '07'
     },
@@ -125,7 +128,7 @@ export default function AddOnsPage() {
       title: 'Bespoke Catering Delivery',
       subtitle: 'Restaurant Quality',
       description: 'Gourmet dishes from Miami\'s top restaurants, delivered fresh to your yacht. Culinary excellence without an onboard chef.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_bespoke_catering.webp',
+      image: `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_bespoke_catering.webp?v=${IMAGE_VERSION}`,
       accent: 'Inquire',
       number: '08'
     },
@@ -134,7 +137,7 @@ export default function AddOnsPage() {
       title: 'Premium Sushi Delivery',
       subtitle: 'Japanese Excellence',
       description: 'Meticulously crafted rolls and sashimi from the freshest ingredients. The art of Japanese cuisine delivered to open seas.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_sushi_delivery.webp',
+      image: `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_sushi_delivery.webp?v=${IMAGE_VERSION}`,
       accent: 'Inquire',
       number: '09'
     },
@@ -143,7 +146,7 @@ export default function AddOnsPage() {
       title: 'Onboard Masseuse',
       subtitle: 'Floating Spa',
       description: 'Professional massage treatments tailored to your needs. Melt away stress while drifting across Miami\'s tropical waters.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_masseuse.webp',
+      image: `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_masseuse.webp?v=${IMAGE_VERSION}`,
       accent: 'Inquire',
       number: '10'
     },
@@ -152,7 +155,7 @@ export default function AddOnsPage() {
       title: 'Drone Video Services',
       subtitle: 'Aerial Cinematography',
       description: 'Professional drone pilots creating cinematic masterpieces. Stunning aerial footage of your yacht surrounded by Miami\'s iconic skyline.',
-      image: 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_drone_videos.webp',
+      image: `https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos/hero-images/Miami_Yachting_Company_premium_drone_videos.webp?v=${IMAGE_VERSION}`,
       accent: 'Inquire',
       number: '11'
     }
