@@ -200,9 +200,10 @@ export default function Navigation() {
         isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
       } bg-[#faf9f7]`}>
         <div className="px-4 py-6 space-y-3 text-center">
-          {/* Cart Icon for Mobile */}
-          <div className="pb-4 mb-4 border-b border-black/10 flex justify-center">
+          {/* Cart Icon and Language Switcher for Mobile */}
+          <div className="pb-4 mb-4 border-b border-black/10 flex justify-center items-center gap-6">
             <CartIcon isTransparent={false} />
+            <LanguageSwitcher isTransparent={false} />
           </div>
           
           <Link
@@ -272,11 +273,6 @@ export default function Navigation() {
               </svg>
               WHATSAPP
             </a>
-            
-            {/* Language Switcher */}
-            <div className="flex justify-center">
-              <LanguageSwitcher isTransparent={false} />
-            </div>
           </div>
           
           <div className="pt-4">
