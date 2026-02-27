@@ -23,6 +23,39 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
   const [result, setResult] = useState<{ success: boolean; message: string } | null>(null);
 
   useEffect(() => {
+    // Hero images have a static list instead of fetching from Airtable
+    if (category === 'hero-images') {
+      setProducts([
+        { id: 'hero-main', name: 'Homepage - Main Hero', category },
+        { id: 'catering-hero', name: 'Catering Page - Hero', category },
+        { id: 'water-toys-hero', name: 'Water Toys Page - Hero', category },
+        { id: 'flowers-hero', name: 'Flowers Page - Hero', category },
+        { id: 'bachelorette-hero', name: 'Bachelorette Page - Hero', category },
+        { id: 'fleet-dayboats', name: 'Homepage - Fleet Dayboats', category },
+        { id: 'fleet-luxury', name: 'Homepage - Fleet Luxury', category },
+        { id: 'fleet-superyacht', name: 'Homepage - Fleet Superyacht', category },
+        { id: 'fleet-complete', name: 'Homepage - Fleet Complete', category },
+        { id: 'experiences-sightseeing', name: 'Homepage - Sightseeing', category },
+        { id: 'experiences-celebrations', name: 'Homepage - Celebrations', category },
+        { id: 'experiences-corporate', name: 'Homepage - Corporate', category },
+        { id: 'experiences-sandbars', name: 'Homepage - Sandbars', category },
+        { id: 'experiences-bachelorette', name: 'Homepage - Bachelorette', category },
+        { id: 'experiences-large-groups', name: 'Homepage - Large Groups', category },
+        { id: 'departures-miami', name: 'Homepage - Miami Departure', category },
+        { id: 'departures-miami-beach', name: 'Homepage - Miami Beach Departure', category },
+        { id: 'contact-hero', name: 'Contact Page - Hero', category },
+        { id: 'addons-catering-thumb', name: 'Add-Ons - Catering Thumbnail', category },
+        { id: 'addons-water-toys-thumb', name: 'Add-Ons - Water Toys Thumbnail', category },
+        { id: 'addons-flowers-thumb', name: 'Add-Ons - Flowers Thumbnail', category },
+        { id: 'addons-bachelorette-thumb', name: 'Add-Ons - Bachelorette Thumbnail', category },
+        { id: 'premium-alcohol', name: 'Premium - Alcohol Package', category },
+        { id: 'premium-transport', name: 'Premium - Luxury Transport', category },
+        { id: 'premium-hero', name: 'Premium - Hero Image', category },
+        { id: 'premium-watersports', name: 'Premium - Watersports', category },
+      ]);
+      return;
+    }
+
     // Fetch products for this category
     const fetchProducts = async () => {
       try {
@@ -226,31 +259,52 @@ export default function UploadImagesPage() {
           </p>
         </div>
 
-        {/* Upload Zones Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <UploadZone
-            category="catering"
-            title="Catering"
-            color="#c4a265"
-          />
+        {/* Hero Images Section */}
+        <div className="mb-12">
+          <div className="mb-6">
+            <h2 className="editorial-card-name text-[#0f0f0f] mb-2">Marketing & Hero Images</h2>
+            <p className="text-[#6b6b6b] font-light">Upload hero images, category thumbnails, and site-wide marketing images</p>
+          </div>
           
           <UploadZone
-            category="water-toys"
-            title="Water Toys"
+            category="hero-images"
+            title="Hero Images"
             color="#c4a265"
           />
-          
-          <UploadZone
-            category="flowers"
-            title="Flowers"
-            color="#c4a265"
-          />
-          
-          <UploadZone
-            category="bachelorette"
-            title="Bachelorette Packages"
-            color="#c4a265"
-          />
+        </div>
+
+        {/* Product Images Section */}
+        <div>
+          <div className="mb-6">
+            <h2 className="editorial-card-name text-[#0f0f0f] mb-2">Product Images</h2>
+            <p className="text-[#6b6b6b] font-light">Upload images for products managed in Airtable</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <UploadZone
+              category="catering"
+              title="Catering"
+              color="#c4a265"
+            />
+            
+            <UploadZone
+              category="water-toys"
+              title="Water Toys"
+              color="#c4a265"
+            />
+            
+            <UploadZone
+              category="flowers"
+              title="Flowers"
+              color="#c4a265"
+            />
+            
+            <UploadZone
+              category="bachelorette"
+              title="Bachelorette Packages"
+              color="#c4a265"
+            />
+          </div>
         </div>
 
         {/* Instructions */}
@@ -259,18 +313,23 @@ export default function UploadImagesPage() {
             How to Use
           </h3>
           <ol className="space-y-3 text-[#6b6b6b] font-light">
-            <li>1. Product must already exist in Airtable with a Product ID</li>
-            <li>2. Select the product from the dropdown</li>
-            <li>3. Drag and drop an image or click to browse</li>
-            <li>4. Wait 10-30 seconds for processing</li>
-            <li>5. Image automatically appears on website</li>
+            <li><strong>Hero Images:</strong> Select from predefined list (homepage hero, page headers, etc.)</li>
+            <li><strong>Product Images:</strong> Product must exist in Airtable with a Product ID first</li>
+            <li>Select the image from the dropdown</li>
+            <li>Drag and drop an image or click to browse</li>
+            <li>Wait 10-30 seconds for processing</li>
+            <li>Image automatically appears on website</li>
           </ol>
           
           <div className="mt-6 p-6 bg-[#faf9f7] border border-[#0f0f0f]/5">
-            <p className="text-sm text-[#6b6b6b] font-light">
-              Images are automatically optimized to WebP format
+            <p className="text-sm text-[#6b6b6b] font-light mb-3">
+              <strong>Automatic Optimization:</strong> Images are converted to WebP format
               and resized to 1200px max. Original files are never stored — only the
               optimized version goes on the CDN.
+            </p>
+            <p className="text-sm text-[#6b6b6b] font-light">
+              <strong>Hero Images:</strong> See HERO_IMAGES_INVENTORY.md for a complete list of 
+              all hero images and where they appear on the site.
             </p>
           </div>
         </div>
