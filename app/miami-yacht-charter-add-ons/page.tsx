@@ -24,8 +24,8 @@ export default function AddOnsPage() {
     const fetchHeroImage = async () => {
       try {
         const { data } = supabase.storage
-          .from('product-images')
-          .getPublicUrl('banners/addons-hero.webp');
+          .from('yacht-photos')
+          .getPublicUrl('banners/Miami_Yachting_Company_addons_hero.webp');
         
         if (data?.publicUrl) {
           // Check if image exists
