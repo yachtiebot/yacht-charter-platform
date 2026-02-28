@@ -451,12 +451,7 @@ export default function WaterToysPage() {
 
         {/* Bottom Note */}
         <div className="border-t border-[#c4a265]/20 pt-16 pb-32">
-          <div className="max-w-6xl mx-auto px-6 md:px-12 text-center space-y-6">
-            <p className="text-[#6b6b6b] text-xs leading-relaxed" style={{ fontWeight: 300 }}>
-              All water toys are provided by licensed, insured third-party vendors. 
-              A valid yacht charter reservation is required for all bookings.
-            </p>
-            
+          <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
             <p className="text-[#6b6b6b]/60 text-xs leading-relaxed" style={{ fontWeight: 300 }}>
               Yacht charter add ons in Miami offer guests water based activities such as inflatables, floating platforms, and other recreational equipment, depending on the vessel and location. These options are provided by independent third parties or associated with specific vessels and are subject to compatibility, operating conditions, and charter duration. Availability varies by provider. Review each vessel listing for exact details related to your charter in Miami or Miami Beach.
             </p>
