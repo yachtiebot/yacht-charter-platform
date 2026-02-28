@@ -1,13 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import DarkFooter from '@/components/DarkFooter';
 import ScrollIndicator from '@/components/ScrollIndicator';
 
-// Flower products from scraped data
-const flowerProducts = [
+// Hardcoded flower products as FALLBACK (if Airtable fails)
+const hardcodedFlowerProducts = [
   {
     id: 'rose-pave',
     name: 'Rose Pavé',
@@ -62,6 +62,57 @@ const flowerProducts = [
 export default function FlowersPage() {
   const { addItem } = useCart();
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: string}>({});
+  const [flowerProducts, setFlowerProducts] = useState(hardcodedFlowerProducts);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch from Airtable on mount
+  useEffect(() => {
+    const fetchFlowers = async () => {
+      try {
+        const response = await fetch('/api/flowers');
+        const airtableData = await response.json();
+        
+        if (Array.isArray(airtableData) && airtableData.length > 0) {
+          // Transform Airtable data to match page format
+          const transformedProducts = airtableData.map((product: any) => {
+            // Convert sizes object from API format to page format
+            const sizes: any = {};
+            if (product.sizes) {
+              Object.keys(product.sizes).forEach(key => {
+                const sizeData = product.sizes[key];
+                // Extract size category (small, medium, large) from option name
+                const sizeName = sizeData.option.toLowerCase();
+                if (sizeName.includes('small')) {
+                  sizes.small = { size: sizeData.option, price: sizeData.price };
+                } else if (sizeName.includes('medium') || sizeName.includes('med')) {
+                  sizes.medium = { size: sizeData.option, price: sizeData.price };
+                } else if (sizeName.includes('large')) {
+                  sizes.large = { size: sizeData.option, price: sizeData.price };
+                }
+              });
+            }
+            
+            return {
+              id: product.id,
+              name: product.name,
+              description: product.description || '',
+              image: product.images && product.images.length > 0 ? product.images[0] : '/images/products/flowers/placeholder.jpg',
+              sizes: Object.keys(sizes).length > 0 ? sizes : {}
+            };
+          });
+          
+          setFlowerProducts(transformedProducts);
+        }
+      } catch (error) {
+        console.error('Failed to fetch flowers from Airtable:', error);
+        // Keep hardcoded fallback on error
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFlowers();
+  }, []);
 
   const handleSizeSelect = (productId: string, size: string) => {
     setSelectedSizes(prev => ({ ...prev, [productId]: size }));
