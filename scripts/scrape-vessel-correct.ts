@@ -83,8 +83,10 @@ function parseVesselData(html: string): VesselData {
     ? parts[1] 
     : '';
   
-  // Generate IDs
-  const yachtId = `${length}-${brand}`;
+  // Generate IDs (include model/color if present to avoid duplicates)
+  const yachtId = model 
+    ? `${length}-${brand}-${model}`
+    : `${length}-${brand}`;
   const boatName = model 
     ? `${length} ft ${brand} ${model}`
     : `${length} ft ${brand}`;
@@ -194,12 +196,12 @@ function parseVesselData(html: string): VesselData {
     const fullUrl = match[1];
     const baseUrl = fullUrl.split('?')[0];
     
-    // Extract the actual filename (PRINT-47.jpg, etc.)
-    // Format: .../1616100514054-V7BOWGJMUKS3FE1HTYJZ/PRINT-47.jpg
-    const filenameMatch = baseUrl.match(/\/([A-Z]+-\d+)\.(jpg|jpeg|png)$/i);
-    if (!filenameMatch) continue;  // Skip if not a PRINT/gallery image
+    // Extract the actual filename (PRINT-47.jpg, PHOTO-2021-05-27-12-18-29.jpg, etc.)
+    // Format: .../HASH/FILENAME.jpg
+    const filenameMatch = baseUrl.match(/\/([^\/]+)\.(jpg|jpeg|png)$/i);
+    if (!filenameMatch) continue;  // Skip if no filename
     
-    const baseFilename = filenameMatch[1];  // e.g., "PRINT-47"
+    const baseFilename = filenameMatch[1];  // e.g., "PRINT-47" or "PHOTO-2021-05-27-12-18-29+6"
     
     // De-duplicate by base filename
     if (seenBaseFilenames.has(baseFilename)) continue;
@@ -226,7 +228,7 @@ function parseVesselData(html: string): VesselData {
         continue;
       }
       
-      const filenameMatch = baseUrl.match(/\/([A-Z]+-\d+)\.(jpg|jpeg|png)$/i);
+      const filenameMatch = baseUrl.match(/\/([^\/]+)\.(jpg|jpeg|png)$/i);
       if (!filenameMatch) continue;
       
       const baseFilename = filenameMatch[1];
