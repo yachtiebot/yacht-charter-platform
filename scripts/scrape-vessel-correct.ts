@@ -57,7 +57,7 @@ async function fetchPage(url: string): Promise<string> {
   return response.data;
 }
 
-function parseVesselData(html: string): VesselData {
+function parseVesselData(html: string, url: string): VesselData {
   const $ = cheerio.load(html);
   const text = $.text();
   
@@ -65,6 +65,10 @@ function parseVesselData(html: string): VesselData {
   const title = $('title').text();
   const titleMatch = title.match(/^(.+?)\s+—/);
   const fullName = titleMatch ? titleMatch[1].trim() : 'Unknown Vessel';
+  
+  // Extract slug from URL for model/color (e.g., "monterey-blue" or "27-monterey-blue")
+  const urlSlug = url.split('/').pop() || '';
+  const slugParts = urlSlug.split('-');
   
   // Parse: "27 ft Monterey Boat Charter in Miami Beach"
   // Extract: length, brand, model/color
@@ -79,9 +83,18 @@ function parseVesselData(html: string): VesselData {
   
   // Model is the second word if it's not "Boat", "Charter", "Rental"
   const skipWords = ['boat', 'charter', 'rental', 'in', 'miami', 'beach'];
-  const model = parts[1] && !skipWords.includes(parts[1].toLowerCase()) 
+  let model = parts[1] && !skipWords.includes(parts[1].toLowerCase()) 
     ? parts[1] 
     : '';
+  
+  // If no model found in title, check URL slug for color/model
+  // e.g., "27-monterey-blue" → model = "Blue"
+  if (!model && slugParts.length > 2) {
+    // Get the last part of slug (after brand name)
+    const lastSlugPart = slugParts[slugParts.length - 1];
+    // Capitalize first letter
+    model = lastSlugPart.charAt(0).toUpperCase() + lastSlugPart.slice(1);
+  }
   
   // Generate IDs (include model/color if present to avoid duplicates)
   const yachtId = model 
@@ -446,7 +459,7 @@ async function main() {
   try {
     // Step 1: Parse vessel data
     const html = await fetchPage(url);
-    const vessel = parseVesselData(html);
+    const vessel = parseVesselData(html, url);
     
     console.log(`\n✅ Scraped vessel data:`);
     console.log(`   Yacht ID: ${vessel.yachtId}`);
