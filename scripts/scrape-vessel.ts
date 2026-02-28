@@ -77,7 +77,7 @@ function parseVesselData(html: string, url: string): VesselData {
   const length = lengthMatch ? parseInt(lengthMatch[1]) : undefined;
   
   // Extract description
-  const descMatch = text.match(/Climb aboard.*?(?=Location:|Passenger|$)/s);
+  const descMatch = text.match(/Climb aboard[\s\S]*?(?=Location:|Passenger|$)/);
   const description = descMatch ? descMatch[0].trim() : '';
   
   // Extract passenger capacity
