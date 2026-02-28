@@ -124,6 +124,13 @@ function parseVesselData(html: string, url: string): VesselData {
     .replace(/accomodations?/gi, 'accommodations')
     .replace(/seperate/gi, 'separate')
     .replace(/definately/gi, 'definitely')
+    // Fix common capitalization typos
+    .replace(/\bPLease\b/g, 'Please')
+    .replace(/\bNOte\b/g, 'Note')
+    .replace(/\bTHis\b/g, 'This')
+    .replace(/\bTHat\b/g, 'That')
+    .replace(/\bYOur\b/g, 'Your')
+    .replace(/\bOUr\b/g, 'Our')
     // Fix spacing issues
     .replace(/\s+/g, ' ')
     .replace(/\s+\./g, '.')
