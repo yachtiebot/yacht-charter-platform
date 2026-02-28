@@ -98,22 +98,49 @@ export default function WaterToysPage() {
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: string}>({});
   const [waterToysProducts, setWaterToysProducts] = useState(baseWaterToysProducts);
 
-  // Fetch Airtable data ONLY for images (everything else stays hardcoded)
+  // Fetch Airtable data and merge with hardcoded fallbacks
   useEffect(() => {
     fetch('/api/water-toys')
       .then(res => res.json())
       .then((airtableData: any[]) => {
-        // Update products with Supabase images from Airtable
+        // Smart merge: Use Airtable when fields are filled, fallback to hardcoded
         const updated = baseWaterToysProducts.map(product => {
           const airtableProduct = airtableData.find(p => p.id === product.id);
-          if (airtableProduct?.images?.length > 0 && airtableProduct.images[0] !== '/images/products/water-toys/placeholder.jpg') {
-            return { ...product, images: airtableProduct.images };
-          }
-          return product;
+          if (!airtableProduct) return product;  // No Airtable data, use hardcoded
+          
+          return {
+            ...product,  // Start with hardcoded (complete data)
+            // Override with Airtable ONLY if fields are actually filled
+            name: airtableProduct.name || product.name,
+            description: airtableProduct.description || product.description,
+            details: airtableProduct.details || product.details,
+            // Price/deposit: Use Airtable if not null, otherwise hardcoded
+            price: airtableProduct.price !== null ? airtableProduct.price : product.price,
+            depositPrice: airtableProduct.depositPrice !== null ? airtableProduct.depositPrice : product.depositPrice,
+            pricePerChair: airtableProduct.pricePerChair !== null ? airtableProduct.pricePerChair : product.pricePerChair,
+            // Features: Use Airtable if has items, otherwise hardcoded
+            features: (airtableProduct.features && airtableProduct.features.length > 0) 
+              ? airtableProduct.features 
+              : product.features,
+            // Sizes/options: Use Airtable if exists, otherwise hardcoded
+            sizes: airtableProduct.sizes || product.sizes,
+            // Images: Prioritize Supabase URLs from Airtable
+            images: (airtableProduct.images?.length > 0 && airtableProduct.images[0] !== '/images/products/water-toys/placeholder.jpg')
+              ? airtableProduct.images
+              : product.images,
+            // Other fields
+            maxQuantity: airtableProduct.maxQuantity || product.maxQuantity,
+            minQuantity: airtableProduct.minQuantity || product.minQuantity,
+            requiresWaiver: airtableProduct.requiresWaiver ?? product.requiresWaiver,
+            licenseLink: airtableProduct.licenseLink || product.licenseLink
+          };
         });
         setWaterToysProducts(updated);
       })
-      .catch(err => console.error('Failed to load images from Airtable:', err));
+      .catch(err => {
+        console.error('Failed to load from Airtable:', err);
+        // Keep hardcoded data on error
+      });
   }, []);
 
   const handleSizeSelect = (productId: string, size: string) => {
