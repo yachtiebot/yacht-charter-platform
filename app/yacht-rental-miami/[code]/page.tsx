@@ -556,17 +556,6 @@ export default function VesselDetailPage({
                 </div>
               </div>
 
-              {/* Toys */}
-              {toys.length > 0 && (
-                <div className="mb-12">
-                  <div className="border-t border-[#e5e5e5] pt-6 mb-4"></div>
-                  <h2 className="editorial-label text-[#6b6b6b] mb-4">TOYS</h2>
-                  <p className="editorial-spec-value text-[#0f0f0f]">
-                    {toys.join(' • ')}
-                  </p>
-                </div>
-              )}
-
               {/* Amenities */}
               {amenities.length > 0 && (
                 <div className="mb-12">
@@ -574,6 +563,17 @@ export default function VesselDetailPage({
                   <h2 className="editorial-label text-[#6b6b6b] mb-4">AMENITIES</h2>
                   <p className="editorial-spec-value text-[#0f0f0f]">
                     {amenities.join(' • ')}
+                  </p>
+                </div>
+              )}
+
+              {/* Toys */}
+              {toys.length > 0 && (
+                <div className="mb-12">
+                  <div className="border-t border-[#e5e5e5] pt-6 mb-4"></div>
+                  <h2 className="editorial-label text-[#6b6b6b] mb-4">TOYS</h2>
+                  <p className="editorial-spec-value text-[#0f0f0f]">
+                    {toys.join(' • ')}
                   </p>
                 </div>
               )}
