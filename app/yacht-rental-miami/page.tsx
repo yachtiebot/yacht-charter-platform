@@ -359,9 +359,11 @@ function FleetContent() {
                   
                   {/* Content - Bottom Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
-                    {/* Gold Passenger Count Label - very tight spacing on mobile */}
-                    <div className="text-[#c4a265] mb-1 uppercase text-xs tracking-wide md:tracking-wider font-medium">
-                      Up to {yacht.fields['Maximum Passengers']} Guests
+                    {/* Gold Passenger Count Label - subtle blur backdrop */}
+                    <div className="inline-block mb-1">
+                      <div className="text-[#c4a265] uppercase text-xs tracking-wide md:tracking-wider font-medium bg-black/20 backdrop-blur-[2px] px-2 py-0.5 rounded">
+                        Up to {yacht.fields['Maximum Passengers']} Guests
+                      </div>
                     </div>
                     
                     {/* Yacht Name */}
