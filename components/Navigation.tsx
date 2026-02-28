@@ -92,7 +92,7 @@ export default function Navigation() {
           </Link>
           <span className={isTransparent ? 'text-white/40' : 'text-[#6b6b6b]/40'}>/</span>
           <Link
-            href="/testimonials"
+            href="/miami-yachting-company-reviews"
             className={`text-xs font-medium tracking-wider uppercase transition-all duration-700 ${
               isTransparent 
                 ? 'text-white/90 hover:text-[#c4a265]' 
@@ -247,7 +247,7 @@ export default function Navigation() {
             Large Group Charters
           </Link>
           <Link
-            href="/testimonials"
+            href="/miami-yachting-company-reviews"
             onClick={() => setIsMobileMenuOpen(false)}
             className="block text-2xl text-[#0f0f0f] hover:text-[#4e7483] transition-colors"
             style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 400 }}
