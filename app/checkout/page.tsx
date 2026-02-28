@@ -84,7 +84,9 @@ export default function CheckoutPage() {
       }
     } catch (error: any) {
       console.error('Checkout error:', error);
-      setErrors({ submit: error.message || 'Failed to process checkout' });
+      const errorMessage = error.message || 'Failed to process checkout';
+      setErrors({ submit: errorMessage });
+      alert(errorMessage); // Show error prominently
       setIsProcessing(false);
     }
   };
