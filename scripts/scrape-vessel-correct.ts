@@ -37,6 +37,11 @@ interface VesselData {
   description: string;
   pricing: { hours: number; price: number }[];
   imageUrls: string[];
+  // Optional fields for larger boats
+  crew?: number;
+  jetSkis?: number;
+  paddleboards?: number;
+  tender?: string;
 }
 
 async function fetchPage(url: string): Promise<string> {
@@ -77,14 +82,36 @@ function parseVesselData(html: string): VesselData {
     ? `${length} ft ${brand} ${model}`
     : `${length} ft ${brand}`;
   
-  // Extract description (clean it)
+  // Extract description (clean it thoroughly)
   const descMatch = text.match(/Climb aboard[\s\S]*?(?=Location:|Passenger|$)/);
   let description = descMatch ? descMatch[0].trim() : '';
-  // Clean: capitalize "South Florida", remove extra spaces
+  
+  // Clean description: fix spelling, grammar, capitalization, remove dashes
   description = description
+    // Remove all dashes (-, –, —)
+    .replace(/[-–—]/g, ' ')
+    // Fix capitalization for proper nouns
     .replace(/south florida/gi, 'South Florida')
     .replace(/miami beach/gi, 'Miami Beach')
+    .replace(/miami/gi, 'Miami')
+    .replace(/biscayne bay/gi, 'Biscayne Bay')
+    .replace(/atlantic ocean/gi, 'Atlantic Ocean')
+    .replace(/\busa\b/gi, 'USA')
+    .replace(/\bus\b/g, 'US')
+    // Fix common spelling errors
+    .replace(/accomodations?/gi, 'accommodations')
+    .replace(/seperate/gi, 'separate')
+    .replace(/definately/gi, 'definitely')
+    // Fix spacing issues
     .replace(/\s+/g, ' ')
+    .replace(/\s+\./g, '.')
+    .replace(/\s+,/g, ',')
+    // Ensure sentences start with capital letters
+    .replace(/\.\s+([a-z])/g, (match, letter) => '. ' + letter.toUpperCase())
+    // Capitalize first letter
+    .replace(/^([a-z])/, (match, letter) => letter.toUpperCase())
+    // Fix double spaces
+    .replace(/  +/g, ' ')
     .trim();
   
   // Extract passenger capacity
@@ -119,6 +146,20 @@ function parseVesselData(html: string): VesselData {
       stereo = 'Bluetooth/Aux';
     }
   }
+  
+  // Extract additional features for larger boats (optional)
+  // These will be added to Airtable if present
+  const crewMatch = text.match(/Crew:\s*(\d+)/i);
+  const crew = crewMatch ? parseInt(crewMatch[1]) : undefined;
+  
+  const jetSkiMatch = text.match(/Jet Ski[s]?:\s*(\d+)/i);
+  const jetSkis = jetSkiMatch ? parseInt(jetSkiMatch[1]) : undefined;
+  
+  const paddleboardMatch = text.match(/Paddle\s*board[s]?:\s*(\d+)/i);
+  const paddleboards = paddleboardMatch ? parseInt(paddleboardMatch[1]) : undefined;
+  
+  const tenderMatch = text.match(/Tender:\s*([^\n]+)/i);
+  const tender = tenderMatch ? tenderMatch[1].trim() : undefined;
   
   // Extract pricing
   const pricing: { hours: number; price: number }[] = [];
@@ -175,7 +216,11 @@ function parseVesselData(html: string): VesselData {
     stereo,
     description,
     pricing,
-    imageUrls
+    imageUrls,
+    crew,
+    jetSkis,
+    paddleboards,
+    tender
   };
 }
 
@@ -264,24 +309,39 @@ async function createAirtableRecord(vessel: VesselData): Promise<void> {
     pricingFields[`${p.hours}-Hour Price`] = p.price;
   });
   
-  const record = {
-    fields: {
-      'Yacht ID': vessel.yachtId,
-      'Boat Name': vessel.boatName,
-      'Brand': vessel.brand,
-      'Model': vessel.model || 'Unknown',
-      'Length in Feet': vessel.length,
-      'Maximum Passengers': vessel.passengerCapacity,
-      'Main Departure Location': vessel.location,
-      'Full Description': vessel.description,
-      'Features: Number of Staterooms': vessel.staterooms,
-      'Features: Number of Bathrooms': vessel.bathrooms,
-      'Sound System Type': vessel.stereo,
-      'Show on Website?': true,
-      'Boat Type': 'Day Boat',
-      ...pricingFields
-    }
+  // Build fields object with optional fields
+  const fields: any = {
+    'Yacht ID': vessel.yachtId,
+    'Boat Name': vessel.boatName,
+    'Brand': vessel.brand,
+    'Model': vessel.model || 'Unknown',
+    'Length in Feet': vessel.length,
+    'Maximum Passengers': vessel.passengerCapacity,
+    'Main Departure Location': vessel.location,
+    'Full Description': vessel.description,
+    'Features: Number of Staterooms': vessel.staterooms,
+    'Features: Number of Bathrooms': vessel.bathrooms,
+    'Sound System Type': vessel.stereo,
+    'Show on Website?': true,
+    'Boat Type': vessel.length >= 80 ? 'Superyacht' : 'Day Boat',
+    ...pricingFields
   };
+  
+  // Add optional fields if present (for larger boats)
+  if (vessel.crew !== undefined) {
+    fields['Crew Members'] = vessel.crew;
+  }
+  if (vessel.jetSkis !== undefined) {
+    fields['Jet Skis'] = vessel.jetSkis;
+  }
+  if (vessel.paddleboards !== undefined) {
+    fields['Paddleboards'] = vessel.paddleboards;
+  }
+  if (vessel.tender !== undefined) {
+    fields['Tender'] = vessel.tender;
+  }
+  
+  const record = { fields };
   
   const response = await axios.post(
     `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Yachts`,
