@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import DarkFooter from '@/components/DarkFooter';
+import ScrollIndicator from '@/components/ScrollIndicator';
 
 // Flower products from scraped data
 const flowerProducts = [
@@ -67,41 +68,89 @@ export default function FlowersPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#faf9f7] pt-24">
+    <main className="min-h-screen bg-[#faf9f7]">
+      {/* Mobile hero wrapper for scroll indicator */}
+      <div className="md:hidden relative h-screen min-h-[600px] flex items-start pt-24">
+        <div className="max-w-[1600px] mx-auto px-6 w-full">
+          {/* Breadcrumb */}
+          <div className="py-6 text-sm text-[#6b6b6b]">
+            <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
+            <span className="mx-2">/</span>
+            <span>Flowers</span>
+          </div>
+
+          {/* Header */}
+          <div className="mb-12">
+            <div className="flex items-center gap-6 mb-8">
+              <div className="rule-gold w-16" />
+              <span className="text-[#c4a265] text-xs uppercase tracking-[0.3em] font-medium">
+                Botanical Elegance
+              </span>
+            </div>
+            
+            <h1 className="editorial-display text-5xl text-[#0f0f0f] mb-6" style={{ fontWeight: 300 }}>
+              Floral <span className="text-[#c4a265]" style={{ fontStyle: 'italic' }}>Arrangements</span>
+            </h1>
+            
+            <p className="text-[#6b6b6b] text-lg max-w-3xl mb-8" style={{ fontWeight: 300, lineHeight: 1.6 }}>
+              Bespoke floral designs that transform your yacht into a floating garden. 
+              Each arrangement hand selected for beauty, fragrance, and lasting elegance.
+            </p>
+
+            {/* Info Note */}
+            <div className="inline-flex items-center gap-3 bg-white border border-[#c4a265]/20 px-6 py-3">
+              <svg className="w-5 h-5 text-[#c4a265]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-xs text-[#6b6b6b]">Each arrangement has unique sizing - sizes shown per arrangement below</span>
+            </div>
+          </div>
+        </div>
+        
+        <ScrollIndicator dark />
+      </div>
+
+      {/* Desktop header (non-hero) */}
+      <div className="hidden md:block pt-24">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-20">
+          {/* Breadcrumb */}
+          <div className="py-6 text-sm text-[#6b6b6b]">
+            <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
+            <span className="mx-2">/</span>
+            <span>Flowers</span>
+          </div>
+
+          {/* Header */}
+          <div className="mb-16">
+            <div className="flex items-center gap-6 mb-8">
+              <div className="rule-gold w-16" />
+              <span className="text-[#c4a265] text-xs uppercase tracking-[0.3em] font-medium">
+                Botanical Elegance
+              </span>
+            </div>
+            
+            <h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl text-[#0f0f0f] mb-6" style={{ fontWeight: 300 }}>
+              Floral <span className="text-[#c4a265]" style={{ fontStyle: 'italic' }}>Arrangements</span>
+            </h1>
+            
+            <p className="text-[#6b6b6b] text-lg md:text-xl max-w-3xl mb-8" style={{ fontWeight: 300, lineHeight: 1.6 }}>
+              Bespoke floral designs that transform your yacht into a floating garden. 
+              Each arrangement hand selected for beauty, fragrance, and lasting elegance.
+            </p>
+
+            {/* Info Note */}
+            <div className="inline-flex items-center gap-3 bg-white border border-[#c4a265]/20 px-6 py-3">
+              <svg className="w-5 h-5 text-[#c4a265]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-xs text-[#6b6b6b]">Each arrangement has unique sizing - sizes shown per arrangement below</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main content wrapper */}
       <div className="max-w-[1600px] mx-auto px-6 md:px-20">
-        {/* Breadcrumb */}
-        <div className="py-6 text-sm text-[#6b6b6b]">
-          <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
-          <span className="mx-2">/</span>
-          <span>Flowers</span>
-        </div>
-
-        {/* Header */}
-        <div className="mb-16">
-          <div className="flex items-center gap-6 mb-8">
-            <div className="rule-gold w-16" />
-            <span className="text-[#c4a265] text-xs uppercase tracking-[0.3em] font-medium">
-              Botanical Elegance
-            </span>
-          </div>
-          
-          <h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl text-[#0f0f0f] mb-6" style={{ fontWeight: 300 }}>
-            Floral <span className="text-[#c4a265]" style={{ fontStyle: 'italic' }}>Arrangements</span>
-          </h1>
-          
-          <p className="text-[#6b6b6b] text-lg md:text-xl max-w-3xl mb-8" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-            Bespoke floral designs that transform your yacht into a floating garden. 
-            Each arrangement hand selected for beauty, fragrance, and lasting elegance.
-          </p>
-
-          {/* Info Note */}
-          <div className="inline-flex items-center gap-3 bg-white border border-[#c4a265]/20 px-6 py-3">
-            <svg className="w-5 h-5 text-[#c4a265]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span className="text-xs text-[#6b6b6b]">Each arrangement has unique sizing - sizes shown per arrangement below</span>
-          </div>
-        </div>
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-32">

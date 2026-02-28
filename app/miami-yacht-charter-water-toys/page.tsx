@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import ProductImageGallery from '@/components/ProductImageGallery';
 import DarkFooter from '@/components/DarkFooter';
+import ScrollIndicator from '@/components/ScrollIndicator';
 
 // Water toys products - hardcoded data with dynamic image loading from Airtable
 const baseWaterToysProducts = [
@@ -148,33 +149,73 @@ export default function WaterToysPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#faf9f7] pt-24">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-20">
-        {/* Breadcrumb */}
-        <div className="py-6 text-sm text-[#6b6b6b]">
-          <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
-          <span className="mx-2">/</span>
-          <span>Water Toys</span>
-        </div>
-
-        {/* Header */}
-        <div className="mb-16">
-          <div className="flex items-center gap-6 mb-8">
-            <div className="rule-gold w-16" />
-            <span className="text-[#c4a265] text-xs uppercase tracking-[0.3em] font-medium">
-              Aquatic Adventures
-            </span>
+    <main className="min-h-screen bg-[#faf9f7]">
+      {/* Mobile hero wrapper for scroll indicator */}
+      <div className="md:hidden relative h-screen min-h-[600px] flex items-start pt-24">
+        <div className="max-w-[1600px] mx-auto px-6 w-full">
+          {/* Breadcrumb */}
+          <div className="py-6 text-sm text-[#6b6b6b]">
+            <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
+            <span className="mx-2">/</span>
+            <span>Water Toys</span>
           </div>
-          
-          <h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl text-[#0f0f0f] mb-6" style={{ fontWeight: 300 }}>
-            Water <span className="text-[#c4a265]" style={{ fontStyle: 'italic' }}>Toys</span>
-          </h1>
-          
-          <p className="text-[#6b6b6b] text-lg md:text-xl max-w-3xl" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-            Premium water sports equipment and floating luxury for the ultimate ocean experience. 
-            From thrilling jet skis to serene floating lounges.
-          </p>
+
+          {/* Header */}
+          <div className="mb-16">
+            <div className="flex items-center gap-6 mb-8">
+              <div className="rule-gold w-16" />
+              <span className="text-[#c4a265] text-xs uppercase tracking-[0.3em] font-medium">
+                Aquatic Adventures
+              </span>
+            </div>
+            
+            <h1 className="editorial-display text-5xl text-[#0f0f0f] mb-6" style={{ fontWeight: 300 }}>
+              Water <span className="text-[#c4a265]" style={{ fontStyle: 'italic' }}>Toys</span>
+            </h1>
+            
+            <p className="text-[#6b6b6b] text-lg max-w-3xl" style={{ fontWeight: 300, lineHeight: 1.6 }}>
+              Premium water sports equipment and floating luxury for the ultimate ocean experience. 
+              From thrilling jet skis to serene floating lounges.
+            </p>
+          </div>
         </div>
+        
+        <ScrollIndicator dark />
+      </div>
+
+      {/* Desktop header (non-hero) */}
+      <div className="hidden md:block pt-24">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-20">
+          {/* Breadcrumb */}
+          <div className="py-6 text-sm text-[#6b6b6b]">
+            <Link href="/miami-yacht-charter-add-ons" className="hover:text-[#c4a265]">Add Ons</Link>
+            <span className="mx-2">/</span>
+            <span>Water Toys</span>
+          </div>
+
+          {/* Header */}
+          <div className="mb-16">
+            <div className="flex items-center gap-6 mb-8">
+              <div className="rule-gold w-16" />
+              <span className="text-[#c4a265] text-xs uppercase tracking-[0.3em] font-medium">
+                Aquatic Adventures
+              </span>
+            </div>
+            
+            <h1 className="editorial-display text-5xl md:text-6xl lg:text-7xl text-[#0f0f0f] mb-6" style={{ fontWeight: 300 }}>
+              Water <span className="text-[#c4a265]" style={{ fontStyle: 'italic' }}>Toys</span>
+            </h1>
+            
+            <p className="text-[#6b6b6b] text-lg md:text-xl max-w-3xl" style={{ fontWeight: 300, lineHeight: 1.6 }}>
+              Premium water sports equipment and floating luxury for the ultimate ocean experience. 
+              From thrilling jet skis to serene floating lounges.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Main content wrapper */}
+      <div className="max-w-[1600px] mx-auto px-6 md:px-20">
 
         {/* Disclaimer */}
         <div className="bg-white border border-[#0f0f0f]/10 p-6 mb-16">
