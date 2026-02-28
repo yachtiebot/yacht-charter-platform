@@ -519,16 +519,6 @@ export default function VesselDetailPage({
                 {fields['Full Description']}
               </div>
 
-              {/* Features (above grey line) */}
-              {features.length > 0 && (
-                <div className="mb-4">
-                  <h2 className="editorial-label text-[#6b6b6b] mb-4">FEATURES</h2>
-                  <p className="editorial-spec-value text-[#0f0f0f]">
-                    {features.join(' • ')}
-                  </p>
-                </div>
-              )}
-
               {/* Specifications */}
               <div className="mb-12">
                 <h2 className="editorial-label text-[#6b6b6b] mb-6">SPECIFICATIONS</h2>
@@ -555,6 +545,17 @@ export default function VesselDetailPage({
                   </div>
                 </div>
               </div>
+
+              {/* Features */}
+              {features.length > 0 && (
+                <div className="mb-12">
+                  <div className="border-t border-[#e5e5e5] pt-6 mb-4"></div>
+                  <h2 className="editorial-label text-[#6b6b6b] mb-4">FEATURES</h2>
+                  <p className="editorial-spec-value text-[#0f0f0f]">
+                    {features.join(' • ')}
+                  </p>
+                </div>
+              )}
 
               {/* Amenities */}
               {amenities.length > 0 && (
