@@ -475,7 +475,7 @@ export default function VesselDetailPage({
                       </button>
                     ) : (
                       <div key={rate.hours} className="flex justify-between items-center border-b border-[#e5e5e5] pb-5 mb-4">
-                        <span className="text-[12px] text-[#2a2a2a]" style={{fontWeight: 300, letterSpacing: '0.02em'}}>{rate.hours} Hours</span>
+                        <span className="text-[13px] text-[#2a2a2a]" style={{fontWeight: 300, letterSpacing: '0.02em'}}>{rate.hours} Hours</span>
                         <span className="text-[#0f0f0f]" style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price.toLocaleString()}</span>
                       </div>
                     );
@@ -681,7 +681,7 @@ export default function VesselDetailPage({
                       </button>
                     ) : (
                       <div key={rate.hours} className="flex justify-between items-center border-b border-[#e5e5e5] pb-5 mb-4">
-                        <span className="text-[12px] text-[#2a2a2a]" style={{fontWeight: 300, letterSpacing: '0.02em'}}>{rate.hours} Hours</span>
+                        <span className="text-[13px] text-[#2a2a2a]" style={{fontWeight: 300, letterSpacing: '0.02em'}}>{rate.hours} Hours</span>
                         <span className="text-[#0f0f0f]" style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price.toLocaleString()}</span>
                       </div>
                     );
