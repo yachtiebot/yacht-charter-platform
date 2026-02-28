@@ -214,7 +214,7 @@ export default function WaterToysPage() {
 
                     {/* Features */}
                     <div className="flex flex-wrap gap-2">
-                      {product.features.map((feature, idx) => (
+                      {product.features.map((feature: string, idx: number) => (
                         <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
                           {feature}
                         </span>
@@ -312,7 +312,7 @@ export default function WaterToysPage() {
 
                   {/* Features */}
                   <div className="flex flex-wrap gap-2">
-                    {product.features.map((feature, idx) => (
+                    {product.features.map((feature: string, idx: number) => (
                       <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
                         {feature}
                       </span>
