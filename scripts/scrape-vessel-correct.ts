@@ -182,28 +182,22 @@ function parseVesselData(html: string): VesselData {
     });
   }
   
-  // Extract images (only vessel gallery photos, skip banners/backgrounds)
+  // Extract images (ONLY from gallery-block to avoid banner/header images)
   const imageUrls: string[] = [];
-  const imageMatches = html.matchAll(/https:\/\/images\.squarespace-cdn\.com\/[^"'\s)]+\.(jpg|jpeg|png)/gi);
   const seenBaseFilenames = new Set<string>();
   
-  for (const match of imageMatches) {
-    const fullUrl = match[0];
+  // Look for gallery-block images specifically (these have elementtiming="system-gallery-block-grid")
+  const galleryBlockRegex = /elementtiming="system-gallery-block-grid"[^>]*data-src="(https:\/\/images\.squarespace-cdn\.com\/[^"]+\.(jpg|jpeg|png))"/gi;
+  const galleryMatches = html.matchAll(galleryBlockRegex);
+  
+  for (const match of galleryMatches) {
+    const fullUrl = match[1];
     const baseUrl = fullUrl.split('?')[0];
-    
-    // Skip unwanted images
-    if (baseUrl.includes('favicon') || 
-        baseUrl.includes('logo') || 
-        baseUrl.includes('MYC_LOGO') ||
-        baseUrl.includes('unsplash-image') ||  // Skip Unsplash banner/background images
-        baseUrl.includes('stock-photo')) {
-      continue;
-    }
     
     // Extract the actual filename (PRINT-47.jpg, etc.)
     // Format: .../1616100514054-V7BOWGJMUKS3FE1HTYJZ/PRINT-47.jpg
     const filenameMatch = baseUrl.match(/\/([A-Z]+-\d+)\.(jpg|jpeg|png)$/i);
-    if (!filenameMatch) continue;  // Skip if not a gallery image
+    if (!filenameMatch) continue;  // Skip if not a PRINT/gallery image
     
     const baseFilename = filenameMatch[1];  // e.g., "PRINT-47"
     
@@ -212,6 +206,35 @@ function parseVesselData(html: string): VesselData {
     seenBaseFilenames.add(baseFilename);
     
     imageUrls.push(fullUrl);
+  }
+  
+  // Fallback: if no gallery-block images found, use old method (but still skip unsplash/logos)
+  if (imageUrls.length === 0) {
+    console.log('⚠️  No gallery-block images found, using fallback method...');
+    const imageMatches = html.matchAll(/https:\/\/images\.squarespace-cdn\.com\/[^"'\s)]+\.(jpg|jpeg|png)/gi);
+    
+    for (const match of imageMatches) {
+      const fullUrl = match[0];
+      const baseUrl = fullUrl.split('?')[0];
+      
+      // Skip unwanted images
+      if (baseUrl.includes('favicon') || 
+          baseUrl.includes('logo') || 
+          baseUrl.includes('MYC_LOGO') ||
+          baseUrl.includes('unsplash-image') ||
+          baseUrl.includes('stock-photo')) {
+        continue;
+      }
+      
+      const filenameMatch = baseUrl.match(/\/([A-Z]+-\d+)\.(jpg|jpeg|png)$/i);
+      if (!filenameMatch) continue;
+      
+      const baseFilename = filenameMatch[1];
+      if (seenBaseFilenames.has(baseFilename)) continue;
+      seenBaseFilenames.add(baseFilename);
+      
+      imageUrls.push(fullUrl);
+    }
   }
   
   return {
