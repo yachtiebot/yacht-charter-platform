@@ -17,8 +17,13 @@ interface YachtData {
     'Maximum Passengers': number;
     'Main Departure Location': string;
     'Short Description': string;
-    '2-Hour Price': number;
-    '4-Hour Price': number;
+    '2-Hour Price'?: number;
+    '3-Hour Price'?: number;
+    '4-Hour Price'?: number;
+    '5-Hour Price'?: number;
+    '6-Hour Price'?: number;
+    '7-Hour Price'?: number;
+    '8-Hour Price'?: number;
     'toys'?: string[];  // New: Inflatables, Floating Island Mat, Waterslide, Jet Ski, SeaBob
     'amenities'?: string[];  // New: Tender, Air-conditioning, Jacuzzi, Wi-Fi, Barbecue Grill, Wet Bar, Kitchen
     'features'?: string[];  // New: To be populated
@@ -64,7 +69,7 @@ function FleetContent() {
               y.fields['6-Hour Price'],
               y.fields['7-Hour Price'],
               y.fields['8-Hour Price']
-            ].filter(p => p && p > 0);
+            ].filter((p): p is number => typeof p === 'number' && p > 0);
             return prices.length > 0 ? [Math.min(...prices)] : [];
           });
           
@@ -119,7 +124,7 @@ function FleetContent() {
           y.fields['6-Hour Price'],
           y.fields['7-Hour Price'],
           y.fields['8-Hour Price']
-        ].filter(p => p && p > 0);
+        ].filter((p): p is number => typeof p === 'number' && p > 0);
         return prices.length > 0 ? [Math.min(...prices)] : [];
       });
       
@@ -140,7 +145,7 @@ function FleetContent() {
       yacht.fields['6-Hour Price'],
       yacht.fields['7-Hour Price'],
       yacht.fields['8-Hour Price']
-    ].filter(p => p && p > 0);
+    ].filter((p): p is number => typeof p === 'number' && p > 0);
     return prices.length > 0 ? Math.min(...prices) : 0;
   };
   
@@ -181,7 +186,7 @@ function FleetContent() {
       yacht.fields['6-Hour Price'],
       yacht.fields['7-Hour Price'],
       yacht.fields['8-Hour Price']
-    ].filter(p => p && p > 0);
+    ].filter((p): p is number => typeof p === 'number' && p > 0);
     
     const lowestPrice = prices.length > 0 ? Math.min(...prices) : 0;
     if (lowestPrice === 0 || lowestPrice > maxPriceFilter) return false;

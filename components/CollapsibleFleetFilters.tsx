@@ -115,12 +115,11 @@ export default function CollapsibleFleetFilters({
       selectedToys.length > 0 ||
       selectedAmenities.length > 0 ||
       selectedYachtType !== '' ||
-      selectedPriceRange[0] !== minPrice ||
-      selectedPriceRange[1] !== maxPrice ||
+      maxPriceFilter !== maxPrice ||
       instantBookableOnly ||
       weekdayDiscountOnly
     );
-  }, [selectedCategory, selectedSize, selectedLocation, selectedToys, selectedAmenities, selectedYachtType, selectedPriceRange, instantBookableOnly, weekdayDiscountOnly, minPrice, maxPrice]);
+  }, [selectedCategory, selectedSize, selectedLocation, selectedToys, selectedAmenities, selectedYachtType, maxPriceFilter, instantBookableOnly, weekdayDiscountOnly, maxPrice]);
 
   // Count active filters
   const activeFilterCount = useMemo(() => {
@@ -131,11 +130,11 @@ export default function CollapsibleFleetFilters({
     if (selectedToys.length > 0) count += selectedToys.length;
     if (selectedAmenities.length > 0) count += selectedAmenities.length;
     if (selectedYachtType !== '') count++;
-    if (selectedPriceRange[0] !== minPrice || selectedPriceRange[1] !== maxPrice) count++;
+    if (maxPriceFilter !== maxPrice) count++;
     if (instantBookableOnly) count++;
     if (weekdayDiscountOnly) count++;
     return count;
-  }, [selectedCategory, selectedSize, selectedLocation, selectedToys, selectedAmenities, selectedYachtType, selectedPriceRange, instantBookableOnly, weekdayDiscountOnly, minPrice, maxPrice]);
+  }, [selectedCategory, selectedSize, selectedLocation, selectedToys, selectedAmenities, selectedYachtType, maxPriceFilter, instantBookableOnly, weekdayDiscountOnly, maxPrice]);
 
   const FilterButton = ({ 
     isActive, 
