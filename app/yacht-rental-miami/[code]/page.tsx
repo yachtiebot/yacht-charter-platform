@@ -469,9 +469,9 @@ export default function VesselDetailPage({
                       <button
                         key={rate.hours}
                         onClick={() => window.open('https://book.miamiyachting.com', '_blank')}
-                        className="w-full bg-white text-[#0f0f0f] text-sm uppercase tracking-[0.2em] font-normal py-4 hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300 border border-[#0f0f0f]/20"
+                        className="w-full bg-white text-[#0f0f0f] py-4 hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300 border border-[#0f0f0f]/20"
                       >
-                        {rate.hours} HOURS ${rate.price.toLocaleString()}
+                        <span className="text-[13px] uppercase tracking-[0.2em]" style={{fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 300}}>{rate.hours} HOURS</span>{' '}<span style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price.toLocaleString()}</span>
                       </button>
                     ) : (
                       <div key={rate.hours} className="flex justify-between items-center border-b border-[#e5e5e5] pb-5 mb-4">
@@ -675,9 +675,9 @@ export default function VesselDetailPage({
                       <button
                         key={rate.hours}
                         onClick={() => window.open('https://book.miamiyachting.com', '_blank')}
-                        className="w-full bg-white text-[#0f0f0f] text-sm uppercase tracking-[0.2em] font-normal py-4 hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300 border border-[#0f0f0f]/20"
+                        className="w-full bg-white text-[#0f0f0f] py-4 hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300 border border-[#0f0f0f]/20"
                       >
-                        {rate.hours} HOURS ${rate.price.toLocaleString()}
+                        <span className="text-[13px] uppercase tracking-[0.2em]" style={{fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 300}}>{rate.hours} HOURS</span>{' '}<span style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price.toLocaleString()}</span>
                       </button>
                     ) : (
                       <div key={rate.hours} className="flex justify-between items-center border-b border-[#e5e5e5] pb-5 mb-4">
