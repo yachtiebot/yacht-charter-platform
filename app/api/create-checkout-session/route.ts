@@ -26,31 +26,43 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create line items for Stripe with full product tracking
-    const lineItems = items.map((item: any) => ({
-      price_data: {
-        currency: 'usd',
-        product_data: {
-          name: item.name,
-          description: item.customization ? 
-            `Customization: ${JSON.stringify(item.customization)}` : 
-            undefined,
-          images: item.image ? [item.image] : undefined,
-          metadata: {
-            product_id: item.id || '',
-            category: item.category || 'unknown',
-            selected_size: item.selectedSize || '',
-          },
-        },
-        unit_amount: Math.round(item.price * 100), // Convert to cents
-      },
-      quantity: item.quantity || 1,
-    }));
-
-    // Get the origin for redirect URLs
+    // Get origin for absolute URLs
     const origin = request.headers.get('origin') || 
                    request.headers.get('referer')?.replace(/\/$/, '') ||
                    'https://yacht-charter-platform-ten.vercel.app';
+    
+    // Create line items for Stripe with full product tracking
+    const lineItems = items.map((item: any) => {
+      // Convert relative image URLs to absolute for Stripe
+      let imageUrl = undefined;
+      if (item.image) {
+        if (item.image.startsWith('http://') || item.image.startsWith('https://')) {
+          imageUrl = item.image;
+        } else if (item.image.startsWith('/')) {
+          imageUrl = `${origin}${item.image}`;
+        }
+      }
+      
+      return {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: item.name,
+            description: item.customization ? 
+              `Customization: ${JSON.stringify(item.customization)}` : 
+              undefined,
+            images: imageUrl ? [imageUrl] : undefined,
+            metadata: {
+              product_id: item.id || '',
+              category: item.category || 'unknown',
+              selected_size: item.selectedSize || '',
+            },
+          },
+          unit_amount: Math.round(item.price * 100), // Convert to cents
+        },
+        quantity: item.quantity || 1,
+      };
+    });
     
     // Create Stripe checkout session
     const session = await stripe.checkout.sessions.create({
