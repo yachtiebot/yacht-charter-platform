@@ -73,7 +73,7 @@ const baseWaterToysProducts = [
     images: ['/images/products/water-toys/Miami_Yachting_Company_jet_ski.jpg'],
     features: ['Born on/after 1/1/88 or Boating safety course required', 'Valid ID required', '$160 per hour per Jet Ski'],
     requiresWaiver: true,
-    licenseLink: 'https://myfwc.com/boating/safety-education/requirements/',
+    licenseLink: 'https://checkinmyc.com/PWCLicense',
     sizes: {
       '1ski-2hours': { option: '1 Ski / 2 Hours', price: 320 },
       '2skis-1hour': { option: '2 Skis / 1 Hour', price: 320 },
