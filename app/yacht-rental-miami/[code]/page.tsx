@@ -440,7 +440,7 @@ export default function VesselDetailPage({
                 {fields['Boat Name']}
               </h1>
               <div className="editorial-label text-[#c4a265] mb-8">
-                {fields['Boat Style']?.toUpperCase() || 'CRUISER'} · {fields['Maximum Passengers']} GUESTS · {fields['Main Departure Location'].toUpperCase()}
+                {fields['Boat Style']?.toUpperCase() || 'CRUISER'} · {fields['Maximum Passengers']} GUESTS · {((fields['Departure Locations'] && fields['Departure Locations'].length > 0) ? fields['Departure Locations'][0] : fields['Main Departure Location'] || 'MIAMI').toUpperCase()}
               </div>
 
               {/* MOBILE ONLY: Pricing Section */}
@@ -474,12 +474,12 @@ export default function VesselDetailPage({
                         className="w-full bg-white text-[#0f0f0f] py-4 hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300 border border-[#0f0f0f]/20 flex justify-between items-center px-6"
                       >
                         <span className="text-[13px] uppercase tracking-[0.2em]" style={{fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 300}}>{rate.hours} Hours</span>
-                        <span style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price.toLocaleString()}</span>
+                        <span style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price?.toLocaleString() || 0}</span>
                       </button>
                     ) : (
                       <div key={rate.hours} className="flex justify-between items-center border-b border-[#e5e5e5] pb-5 mb-4">
                         <span className="text-[13px] text-[#0f0f0f] uppercase tracking-[0.2em]" style={{fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 300}}>{rate.hours} Hours</span>
-                        <span className="text-[#0f0f0f]" style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price.toLocaleString()}</span>
+                        <span className="text-[#0f0f0f]" style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price?.toLocaleString() || 0}</span>
                       </div>
                     );
                   })}
@@ -685,12 +685,12 @@ export default function VesselDetailPage({
                         className="w-full bg-white text-[#0f0f0f] py-4 hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300 border border-[#0f0f0f]/20 flex justify-between items-center px-6"
                       >
                         <span className="text-[13px] uppercase tracking-[0.2em]" style={{fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 300}}>{rate.hours} Hours</span>
-                        <span style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price.toLocaleString()}</span>
+                        <span style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price?.toLocaleString() || 0}</span>
                       </button>
                     ) : (
                       <div key={rate.hours} className="flex justify-between items-center border-b border-[#e5e5e5] pb-5 mb-4">
                         <span className="text-[13px] text-[#0f0f0f] uppercase tracking-[0.2em]" style={{fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 300}}>{rate.hours} Hours</span>
-                        <span className="text-[#0f0f0f]" style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price.toLocaleString()}</span>
+                        <span className="text-[#0f0f0f]" style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price?.toLocaleString() || 0}</span>
                       </div>
                     );
                   })}
