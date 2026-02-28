@@ -67,12 +67,20 @@ export async function POST(request: NextRequest) {
         },
       },
       metadata: {
+        // Charter identification
+        charter_id: `${customerInfo?.lastName || ''}-${customerInfo?.firstName || ''}-${customerInfo?.bookingNumber || ''}`,
+        
+        // Customer details
         firstName: customerInfo?.firstName || '',
         lastName: customerInfo?.lastName || '',
+        email: customerInfo?.email || '',
         phone: customerInfo?.phone || '',
+        
+        // Charter details
         charterDate: customerInfo?.charterDate || '',
         bookingNumber: customerInfo?.bookingNumber || '',
         notes: customerInfo?.notes || '',
+        
         // Product summary for QuickBooks tracking
         order_summary: items.map((item: any) => 
           `${item.id}|${item.name}|${item.category}|${item.quantity}|$${item.price}`
