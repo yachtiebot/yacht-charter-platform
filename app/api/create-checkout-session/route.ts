@@ -7,6 +7,9 @@ const stripe = process.env.STRIPE_SECRET_KEY
 
 export async function POST(request: NextRequest) {
   try {
+    console.log('Stripe key exists:', !!process.env.STRIPE_SECRET_KEY);
+    console.log('Stripe key prefix:', process.env.STRIPE_SECRET_KEY?.substring(0, 15));
+    
     if (!stripe) {
       return NextResponse.json(
         { error: 'Stripe is not configured' },
