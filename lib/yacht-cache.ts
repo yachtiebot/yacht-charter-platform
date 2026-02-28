@@ -148,7 +148,7 @@ function enhanceWithPhotos(yachts: any[]) {
     '116-Pershing': 46,
     '37-Axopar': 13,
     '27-Regal': 15,
-    '27-Monterey': 16,  // Black - 16 gallery images + hero (17 total files in yacht-photos/27-Monterey/)
+    '27-Monterey-Black': 16,  // Black - 16 gallery images + hero (17 total files)
     '27-Monterey-Blue': 12  // Blue - 12 gallery images + hero (13 total files)
   };
   
