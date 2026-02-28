@@ -292,10 +292,10 @@ export default function HomePage() {
                 </svg>
               ))}
             </div>
-            <p className="text-center text-[#d4d4d4] mb-6 italic leading-relaxed text-xl md:text-2xl" style={{fontFamily: 'Cormorant Garamond, serif', fontWeight: 300}}>
+            <p className="text-center text-[#0f0f0f]/70 mb-6 italic leading-relaxed text-xl md:text-2xl" style={{fontFamily: 'Cormorant Garamond, serif', fontWeight: 300}}>
               "From the moment we stepped on the boat our expectations were exceeded!!!"
             </p>
-            <p className="text-base text-[#b8b8b8]/60">
+            <p className="text-center text-[#6b6b6b] text-sm opacity-60" style={{fontWeight: 300, letterSpacing: '0.05em'}}>
               — Nicole N. • TripAdvisor
             </p>
           </div>
