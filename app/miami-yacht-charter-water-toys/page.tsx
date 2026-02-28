@@ -120,19 +120,23 @@ export default function WaterToysPage() {
         // Merge Airtable data with fallback data
         const productsWithImages = data.map((product: any) => {
           // Find matching fallback product
-          const fallback = fallbackWaterToysProducts.find(f => f.id === product.id) || {};
+          const fallback = fallbackWaterToysProducts.find((f: any) => f.id === product.id) || {};
+          
+          // Determine which image to use
+          let images = fallback.images || ['/images/products/water-toys/Miami_Yachting_Company_water_toy.jpg'];
+          if (product.images && product.images.length > 0 && product.images[0] !== '/images/products/water-toys/placeholder.jpg') {
+            images = product.images;  // Use Airtable/Supabase images
+          }
           
           return {
-            ...fallback,  // Start with fallback data
+            ...fallback,  // Start with fallback data (has all features, sizes, etc.)
             ...product,   // Override with Airtable data
-            // Image priority: Airtable > fallback > default
-            images: (product.images && product.images.length > 0 && product.images[0] !== '/images/products/water-toys/placeholder.jpg') 
-              ? product.images 
-              : (fallback.images || [fallbackImages[product.id] || '/images/products/water-toys/Miami_Yachting_Company_water_toy.jpg']),
-            // Only use Airtable features if they exist, otherwise use fallback
-            features: (product.features && product.features.length > 0) ? product.features : fallback.features,
-            // Only use Airtable sizes if they exist, otherwise use fallback
-            sizes: product.sizes || fallback.sizes
+            images,       // Use determined images
+            // Keep fallback data if Airtable is empty
+            features: (product.features && product.features.length > 0) ? product.features : (fallback.features || []),
+            sizes: product.sizes || fallback.sizes,
+            price: product.price !== null ? product.price : fallback.price,
+            depositPrice: product.depositPrice !== null ? product.depositPrice : fallback.depositPrice
           };
         });
         
