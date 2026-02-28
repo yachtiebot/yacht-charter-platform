@@ -246,7 +246,9 @@ export default function CheckoutPage() {
                 </div>
                 
                 <p className="text-xs text-[#6b6b6b] font-light">
-                  Orders require 36 hours advance notice and must be linked to a valid yacht charter.
+                  {hasCateringItems 
+                    ? 'Orders require 36 hours advance notice and must be linked to a valid yacht charter.'
+                    : 'Orders must be linked to a valid yacht charter.'}
                 </p>
               </div>
 
@@ -343,9 +345,11 @@ export default function CheckoutPage() {
                 <p className="text-xs text-[#6b6b6b] font-light leading-relaxed">
                   Delivery to yacht included
                 </p>
-                <p className="text-xs text-[#6b6b6b] font-light leading-relaxed">
-                  36 hour advance notice required
-                </p>
+                {hasCateringItems && (
+                  <p className="text-xs text-[#6b6b6b] font-light leading-relaxed">
+                    36 hour advance notice required
+                  </p>
+                )}
               </div>
             </div>
           </div>
