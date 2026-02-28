@@ -192,11 +192,15 @@ function enhanceWithPhotos(yachts: any[]) {
       );
     }
     
-    // Convert checkbox amenities to array
+    // Convert checkbox amenities to array AND mirror to Features: fields for detail page
     const amenities: string[] = [];
     Object.keys(amenityMapping).forEach(field => {
       if (yacht.fields[field] === true) {
         amenities.push(amenityMapping[field]);
+        
+        // Also set Features: field for detail page compatibility
+        const featureField = field.replace('Amenities:', 'Features:');
+        yacht.fields[featureField] = true;
       }
     });
     if (amenities.length > 0) {
