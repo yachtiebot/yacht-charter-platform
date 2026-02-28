@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useCart } from '@/lib/store/CartContext';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,6 +9,11 @@ import { useRouter } from 'next/navigation';
 export default function CheckoutPage() {
   const { items, totalPrice } = useCart();
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   
   const [formData, setFormData] = useState({
     firstName: '',
@@ -99,6 +104,17 @@ export default function CheckoutPage() {
   const platterCount = cateringItemsForCount.reduce((sum, item) => sum + item.quantity, 0);
   const hasCateringItems = cateringItemsForCount.length > 0;
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
+
+  // Wait for client-side mount to avoid hydration errors
+  if (!mounted) {
+    return (
+      <main className="min-h-screen bg-[#faf9f7] pt-24 pb-32">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-[#6b6b6b]">Loading...</p>
+        </div>
+      </main>
+    );
+  }
 
   if (items.length === 0) {
     return (
