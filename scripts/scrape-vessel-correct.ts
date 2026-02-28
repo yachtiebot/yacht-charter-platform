@@ -325,6 +325,14 @@ async function createAirtableRecord(vessel: VesselData): Promise<void> {
     pricingFields[`${p.hours}-Hour Price`] = p.price;
   });
   
+  // Determine boat type by length
+  let boatType = 'Day Boat';  // 20-40ft
+  if (vessel.length >= 80) {
+    boatType = 'Superyacht';  // 80ft+
+  } else if (vessel.length >= 40) {
+    boatType = 'Luxury Yacht';  // 40-80ft
+  }
+  
   // Build fields object with optional fields
   const fields: any = {
     'Yacht ID': vessel.yachtId,
@@ -339,7 +347,7 @@ async function createAirtableRecord(vessel: VesselData): Promise<void> {
     'Features: Number of Bathrooms': vessel.bathrooms,
     'Sound System Type': vessel.stereo,
     'Show on Website?': true,
-    'Boat Type': vessel.length >= 80 ? 'Superyacht' : 'Day Boat',
+    'Boat Type': boatType,
     ...pricingFields
   };
   
