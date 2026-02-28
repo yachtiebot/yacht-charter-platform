@@ -198,14 +198,8 @@ export default function VesselDetailPage({
   if (fields['Toys: Jet Ski']) toys.push('Jet Ski');
   if (fields['Toys: Seabob']) toys.push('SeaBob');
   
-  // Build amenities array from boolean fields
-  const amenities: string[] = [];
-  if (fields['Features: Tender']) amenities.push('Tender');
-  if (fields['Features: Air Conditioning']) amenities.push('Air-conditioning');
-  if (fields['Features: Jacuzzi']) amenities.push('Jacuzzi');
-  if (fields['Features: BBQ Grill']) amenities.push('Barbecue Grill');
-  if (fields['Features: Wet Bar']) amenities.push('Wet Bar');
-  if (fields['Features: Kitchen']) amenities.push('Kitchen');
+  // Use amenities array from API (built from Amenities: checkboxes in yacht-cache)
+  const amenities: string[] = fields['amenities'] || [];
   
   // Use features array from API (built from Features: checkboxes in yacht-cache)
   const features: string[] = fields['features'] || [];
