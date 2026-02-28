@@ -48,6 +48,8 @@ interface YachtData {
     '8-Hour Price': number;
     'Short Description': string;
     'Full Description': string;
+    'Quote'?: string;
+    'From'?: string;
     'Supabase Hero URL'?: string;
     'Supabase Gallery URLs'?: string[];
   };
@@ -603,7 +605,7 @@ export default function VesselDetailPage({
                 </div>
               </div>
 
-              {/* Google Review - Editorial Quote Style */}
+              {/* Customer Quote from Airtable */}
               <div className="mb-12 py-8 -ml-1">
                 <div className="flex items-center gap-1 mb-6 justify-center opacity-60">
                   {[...Array(5)].map((_, i) => (
@@ -613,7 +615,8 @@ export default function VesselDetailPage({
                   ))}
                 </div>
                 <p className="text-center text-[#0f0f0f]/70 mb-6 italic leading-relaxed text-xl md:text-2xl" style={{fontFamily: 'Cormorant Garamond, serif', fontWeight: 300}}>
-                  "{(() => {
+                  "{fields['Quote'] || (() => {
+                    // Fallback generic reviews if no Quote in Airtable
                     const reviews = [
                       { author: "Sarah M.", text: "Absolutely incredible experience! The booking process was seamless and the boat was even better than the photos. Highly recommend!" },
                       { author: "Michael T.", text: "Best day on the water we've ever had! Professional service from start to finish. Will definitely be booking again." },
@@ -629,7 +632,8 @@ export default function VesselDetailPage({
                   })()}"
                 </p>
                 <p className="text-center text-[#6b6b6b] text-sm opacity-60" style={{fontWeight: 300, letterSpacing: '0.05em'}}>
-                  — {(() => {
+                  — {fields['From'] || (() => {
+                    // Fallback generic author if no From in Airtable
                     const reviews = [
                       { author: "Sarah M.", text: "Absolutely incredible experience! The booking process was seamless and the boat was even better than the photos. Highly recommend!" },
                       { author: "Michael T.", text: "Best day on the water we've ever had! Professional service from start to finish. Will definitely be booking again." },
@@ -641,8 +645,8 @@ export default function VesselDetailPage({
                     const yachtId = yacht.fields['Yacht ID'] || '';
                     const hash = yachtId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
                     const review = reviews[hash % reviews.length];
-                    return review.author;
-                  })()} • Google Review
+                    return `${review.author} • Google Review`;
+                  })()}
                 </p>
               </div>
             </div>
