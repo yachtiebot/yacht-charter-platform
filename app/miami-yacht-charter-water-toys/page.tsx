@@ -1,13 +1,39 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import ProductImageGallery from '@/components/ProductImageGallery';
 import DarkFooter from '@/components/DarkFooter';
 
-// Water toys products from scraped data
-const waterToysProducts = [
+export default function WaterToysPage() {
+  const [waterToysProducts, setWaterToysProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  
+  // Fetch products from Airtable via API
+  useEffect(() => {
+    fetch('/api/water-toys')
+      .then(res => res.json())
+      .then(data => {
+        setWaterToysProducts(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Failed to load water toys:', err);
+        setLoading(false);
+      });
+  }, []);
+  
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <p className="text-[#0f0f0f]">Loading water toys...</p>
+      </div>
+    );
+  }
+
+// REMOVED: Hardcoded data - now using Airtable
+const REMOVED_waterToysProducts = [
   {
     id: 'seabob',
     name: 'Seabob',
@@ -93,7 +119,7 @@ const waterToysProducts = [
   }
 ];
 
-export default function WaterToysPage() {
+// Main component rendering
   const { addItem } = useCart();
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: string}>({});
 
