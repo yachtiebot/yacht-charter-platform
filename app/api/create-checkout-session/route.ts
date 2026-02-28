@@ -47,13 +47,18 @@ export async function POST(request: NextRequest) {
       quantity: item.quantity || 1,
     }));
 
+    // Get the origin for redirect URLs
+    const origin = request.headers.get('origin') || 
+                   request.headers.get('referer')?.replace(/\/$/, '') ||
+                   'https://yacht-charter-platform-ten.vercel.app';
+    
     // Create Stripe checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: `${request.headers.get('origin')}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${request.headers.get('origin')}/checkout?canceled=true`,
+      success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/checkout?canceled=true`,
       customer_email: customerInfo?.email,
       // Require 3D Secure for all transactions
       payment_intent_data: {
