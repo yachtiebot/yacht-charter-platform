@@ -107,7 +107,9 @@ export async function POST(request: NextRequest) {
     // Step 3: Upload to Supabase with SEO-friendly naming
     console.log('☁️ Uploading to Supabase...');
     // SEO naming: Miami_Yachting_Company_[description]_[index]
-    const indexSuffix = imageIndex ? `_${imageIndex}` : '';
+    // Only add index suffix for multi-image categories (water-toys, flowers, bachelorette)
+    const isMultiImageCategory = ['water-toys', 'flowers', 'bachelorette'].includes(category);
+    const indexSuffix = (isMultiImageCategory && imageIndex) ? `_${imageIndex}` : '';
     const seoFileName = `Miami_Yachting_Company_${productId.replace(/-/g, '_')}${indexSuffix}.webp`;
     const supabasePath = `${category}/${seoFileName}`;
     
