@@ -1,58 +1,99 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import ProductImageGallery from '@/components/ProductImageGallery';
 import DarkFooter from '@/components/DarkFooter';
 
-export default function WaterToysPage() {
-  const [waterToysProducts, setWaterToysProducts] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  
-  // Fetch products from Airtable via API
-  useEffect(() => {
-    fetch('/api/water-toys')
-      .then(res => {
-        if (!res.ok) throw new Error('Failed to fetch');
-        return res.json();
-      })
-      .then(data => {
-        console.log('Loaded water toys:', data);
-        if (Array.isArray(data) && data.length > 0) {
-          setWaterToysProducts(data);
-        } else {
-          setError('No products available');
-        }
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Failed to load water toys:', err);
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-  
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <p className="text-[#0f0f0f]">Loading water toys...</p>
-      </div>
-    );
+// Water toys products from scraped data
+const waterToysProducts = [
+  {
+    id: 'seabob',
+    name: 'Seabob',
+    price: 499,
+    depositPrice: 99,
+    description: 'Ride on the surface or emerge under water with these luxury underwater jet skis. Easy to ride for young and old. Recommended age is 12+.',
+    details: 'Comes fully charged, batteries last 1-2 hours. Charger included. Yours for the duration of your charter.',
+    images: ['/images/products/water-toys/Miami_Yachting_Company_seabob.jpg'],
+    maxQuantity: 2,
+    features: ['Age 12+', 'Fully charged', '1-2 hour battery', 'Max 2 per charter', 'Yours for the duration of charter']
+  },
+  {
+    id: 'flitescooter',
+    name: 'Flitescooter',
+    price: 499,
+    depositPrice: 99,
+    description: 'Enhance your yacht charter experience with a Flitescooter board! Electric hydrofoil surfboard for an unforgettable water experience.',
+    details: 'Instructor available upon request for additional charge. Comes fully charged, batteries last 1-2 hours. Max load 225lbs. Yours for the duration of your charter.',
+    images: ['/images/products/water-toys/Miami_Yachting_Company_flitescooter.jpg'],
+    maxQuantity: 1,
+    features: ['Max load 225lbs', 'Instructor available', '1-2 hour battery', 'Max 1 per charter', 'Yours for the duration of charter']
+  },
+  {
+    id: 'water-sports-boat',
+    name: 'Water Sports Boat',
+    description: 'Dedicated watersports boat with wakeboarding, water skiing, and tubing. Accommodates up to six guests.',
+    details: '$300 per hour. Operated independently by professional vendor. Activities subject to provider requirements.',
+    images: ['/images/products/water-toys/Miami_Yachting_Company_watersports_boat.jpg'],
+    requiresWaiver: true,
+    features: ['Up to 6 guests', 'Wakeboarding', 'Water skiing', 'Tubing'],
+    sizes: {
+      '2-hours': { duration: '2 Hours', price: 600 },
+      '3-hours': { duration: '3 Hours', price: 900 },
+      '4-hours': { duration: '4 Hours', price: 1200 }
+    }
+  },
+  {
+    id: 'floating-cabana',
+    name: 'Floating Cabana',
+    price: 349,
+    description: 'Spacious floating oasis with plush seating and ample space for sunbathing, drinks, and dining.',
+    details: 'Perfect for groups. Anchored behind your yacht. Stable and safe design. Yours for the duration of your charter.',
+    images: ['/images/products/water-toys/Miami_Yachting_Company_floating_cabana.jpg'],
+    features: ['Plush seating', 'Sunbathing space', 'Stable design', 'Multiple available', 'Yours for the duration of charter']
+  },
+  {
+    id: 'floating-lounge-chair',
+    name: 'Floating Lounge Chair',
+    price: 199,
+    pricePerChair: 99,
+    description: 'Luxurious floating lounge chairs designed for ultimate relaxation on the water.',
+    details: 'Each chair is $99. Two chair minimum for delivery and setup. Yours for the duration of your charter.',
+    images: ['/images/products/water-toys/Miami_Yachting_Company_floating_lounge_chair.jpg'],
+    minQuantity: 2,
+    features: ['$99 per chair', '2 chair minimum', 'Premium comfort', 'Perfect for groups', 'Yours for the duration of charter']
+  },
+  {
+    id: 'jet-ski',
+    name: 'Jet Ski',
+    description: 'Premium jet ski rental for thrilling water exploration.',
+    details: 'Must be born on or after January 1, 1988. Must have successfully completed a National Association of State Boating Law Administrators approved boating safety course. Valid ID required. Instruction available. 48 hours notice required.',
+    images: ['/images/products/water-toys/Miami_Yachting_Company_jet_ski.jpg'],
+    features: ['Born on/after 1/1/88', 'Boating safety course required', 'Valid ID required'],
+    licenseLink: 'https://checkinmyc.com/PWCLicense',
+    sizes: {
+      '1ski-2hours': { option: '1 Ski / 2 Hours', price: 320 },
+      '2skis-1hour': { option: '2 Skis / 1 Hour', price: 320 },
+      '2skis-2hours': { option: '2 Skis / 2 Hours', price: 640 }
+    }
+  },
+  {
+    id: 'flyboard',
+    name: 'Flyboard Experience',
+    description: 'Fly above the water with this incredible water-powered jetpack experience. Includes instructor and all equipment.',
+    details: '$450 per hour. Prior experience not required.',
+    images: ['/images/products/water-toys/flyboard.jpg'],
+    features: ['Instructor included', 'All equipment provided', 'No experience required'],
+    sizes: {
+      '2-hours': { duration: '2 Hours', price: 900 },
+      '3-hours': { duration: '3 Hours', price: 1350 },
+      '4-hours': { duration: '4 Hours', price: 1800 }
+    }
   }
-  
-  if (error || waterToysProducts.length === 0) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center flex-col gap-4">
-        <p className="text-[#0f0f0f]">Unable to load water toys</p>
-        {error && <p className="text-red-500 text-sm">{error}</p>}
-        <Link href="/" className="text-[#c4a265] hover:underline">Return home</Link>
-      </div>
-    );
-  }
+];
 
-// Main component rendering - using data from Airtable
+export default function WaterToysPage() {
   const { addItem } = useCart();
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: string}>({});
 
@@ -132,15 +173,13 @@ export default function WaterToysPage() {
                     </p>
 
                     {/* Features */}
-                    {product.features && product.features.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
-                        {product.features.map((feature: string, idx: number) => (
-                          <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-                    )}
+                    <div className="flex flex-wrap gap-2">
+                      {product.features.map((feature, idx) => (
+                        <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
 
                     {/* Size Selector */}
                     <div className="space-y-3">
@@ -232,15 +271,13 @@ export default function WaterToysPage() {
                   </p>
 
                   {/* Features */}
-                  {product.features && product.features.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.map((feature: string, idx: number) => (
-                        <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  <div className="flex flex-wrap gap-2">
+                    {product.features.map((feature, idx) => (
+                      <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
 
                   {/* Details */}
                   <p className="text-xs text-[#6b6b6b]/80" style={{ fontWeight: 300 }}>
