@@ -405,8 +405,24 @@ async function uploadToSupabase(localPath: string, supabasePath: string): Promis
   return publicUrl;
 }
 
-async function createAirtableRecord(vessel: VesselData): Promise<void> {
-  console.log(`\n📝 Creating Airtable record...`);
+async function createOrUpdateAirtableRecord(vessel: VesselData): Promise<void> {
+  // Check if record already exists
+  const existingResponse = await axios.get(
+    `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Yachts`,
+    {
+      headers: {
+        'Authorization': `Bearer ${AIRTABLE_API_KEY}`
+      },
+      params: {
+        filterByFormula: `{Yacht ID} = "${vessel.yachtId}"`,
+        maxRecords: 1
+      }
+    }
+  );
+  
+  const existingRecord = existingResponse.data.records[0];
+  const action = existingRecord ? 'Updating' : 'Creating';
+  console.log(`\n📝 ${action} Airtable record...`);
   
   // Map pricing to fields
   const pricingFields: any = {};
@@ -465,18 +481,33 @@ async function createAirtableRecord(vessel: VesselData): Promise<void> {
   
   const record = { fields };
   
-  const response = await axios.post(
-    `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Yachts`,
-    { records: [record] },
-    {
-      headers: {
-        'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
-        'Content-Type': 'application/json'
+  if (existingRecord) {
+    // Update existing record
+    await axios.patch(
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Yachts/${existingRecord.id}`,
+      { fields },
+      {
+        headers: {
+          'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
+          'Content-Type': 'application/json'
+        }
       }
-    }
-  );
-  
-  console.log(`✅ Created Airtable record: ${response.data.records[0].id}`);
+    );
+    console.log(`✅ Updated Airtable record: ${existingRecord.id}`);
+  } else {
+    // Create new record
+    const response = await axios.post(
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Yachts`,
+      { records: [record] },
+      {
+        headers: {
+          'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+    console.log(`✅ Created Airtable record: ${response.data.records[0].id}`);
+  }
 }
 
 async function updateYachtCacheFile(yachtId: string, photoCount: number): Promise<void> {
@@ -549,7 +580,7 @@ async function main() {
     console.log(`\n✅ Uploaded ${vessel.imageUrls.length} images to yacht-photos/${vessel.yachtId}/`);
     
     // Step 3: Create Airtable record
-    await createAirtableRecord(vessel);
+    await createOrUpdateAirtableRecord(vessel);
     
     // Step 4: Update yacht-cache.ts (gallery count = total - 1 for hero)
     const galleryCount = vessel.imageUrls.length - 1;
