@@ -456,8 +456,8 @@ export default function VesselDetailPage({
                     </p>
                   </>
                 ) : (
-                  <h3 className="editorial-label text-[#0f0f0f] mb-8" style={{fontWeight: 300, fontSize: '16px', letterSpacing: '0.05em'}}>
-                    Charter Rates
+                  <h3 className="editorial-label text-[#0f0f0f] mb-8 text-center" style={{fontWeight: 300, fontSize: '14px', letterSpacing: '0.05em'}}>
+                    CHARTER RATES
                   </h3>
                 )}
                 
@@ -476,7 +476,7 @@ export default function VesselDetailPage({
                       </button>
                     ) : (
                       <div key={rate.hours} className="flex justify-between items-center border-b border-[#e5e5e5] pb-5 mb-4">
-                        <span className="text-[13px] text-[#2a2a2a]" style={{fontWeight: 300, letterSpacing: '0.02em'}}>{rate.hours} Hours</span>
+                        <span className="text-[13px] text-[#0f0f0f] uppercase tracking-[0.2em]" style={{fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 300}}>{rate.hours} Hours</span>
                         <span className="text-[#0f0f0f]" style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price.toLocaleString()}</span>
                       </div>
                     );
@@ -663,8 +663,8 @@ export default function VesselDetailPage({
                     </p>
                   </>
                 ) : (
-                  <h3 className="editorial-label text-[#0f0f0f] mb-8" style={{fontWeight: 300, fontSize: '16px', letterSpacing: '0.05em'}}>
-                    Charter Rates
+                  <h3 className="editorial-label text-[#0f0f0f] mb-8 text-center" style={{fontWeight: 300, fontSize: '14px', letterSpacing: '0.05em'}}>
+                    CHARTER RATES
                   </h3>
                 )}
                 
@@ -683,7 +683,7 @@ export default function VesselDetailPage({
                       </button>
                     ) : (
                       <div key={rate.hours} className="flex justify-between items-center border-b border-[#e5e5e5] pb-5 mb-4">
-                        <span className="text-[13px] text-[#2a2a2a]" style={{fontWeight: 300, letterSpacing: '0.02em'}}>{rate.hours} Hours</span>
+                        <span className="text-[13px] text-[#0f0f0f] uppercase tracking-[0.2em]" style={{fontFamily: 'var(--font-inter), Inter, sans-serif', fontWeight: 300}}>{rate.hours} Hours</span>
                         <span className="text-[#0f0f0f]" style={{fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 400}}>${rate.price.toLocaleString()}</span>
                       </div>
                     );
