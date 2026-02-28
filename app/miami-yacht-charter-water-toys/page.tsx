@@ -9,17 +9,27 @@ import DarkFooter from '@/components/DarkFooter';
 export default function WaterToysPage() {
   const [waterToysProducts, setWaterToysProducts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   
   // Fetch products from Airtable via API
   useEffect(() => {
     fetch('/api/water-toys')
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch');
+        return res.json();
+      })
       .then(data => {
-        setWaterToysProducts(data);
+        console.log('Loaded water toys:', data);
+        if (Array.isArray(data) && data.length > 0) {
+          setWaterToysProducts(data);
+        } else {
+          setError('No products available');
+        }
         setLoading(false);
       })
       .catch(err => {
         console.error('Failed to load water toys:', err);
+        setError(err.message);
         setLoading(false);
       });
   }, []);
@@ -28,6 +38,16 @@ export default function WaterToysPage() {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <p className="text-[#0f0f0f]">Loading water toys...</p>
+      </div>
+    );
+  }
+  
+  if (error || waterToysProducts.length === 0) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center flex-col gap-4">
+        <p className="text-[#0f0f0f]">Unable to load water toys</p>
+        {error && <p className="text-red-500 text-sm">{error}</p>}
+        <Link href="/" className="text-[#c4a265] hover:underline">Return home</Link>
       </div>
     );
   }
