@@ -117,13 +117,24 @@ export default function WaterToysPage() {
         const response = await fetch('/api/water-toys');
         const data = await response.json();
         
-        // Map images to products - Use Airtable image first, fallback to hardcoded mapping
-        const productsWithImages = data.map((product: any) => ({
-          ...product,
-          images: (product.images && product.images.length > 0 && product.images[0] !== '/images/products/water-toys/placeholder.jpg') 
-            ? product.images 
-            : [fallbackImages[product.id] || '/images/products/water-toys/Miami_Yachting_Company_water_toy.jpg']
-        }));
+        // Merge Airtable data with fallback data
+        const productsWithImages = data.map((product: any) => {
+          // Find matching fallback product
+          const fallback = fallbackWaterToysProducts.find(f => f.id === product.id) || {};
+          
+          return {
+            ...fallback,  // Start with fallback data
+            ...product,   // Override with Airtable data
+            // Image priority: Airtable > fallback > default
+            images: (product.images && product.images.length > 0 && product.images[0] !== '/images/products/water-toys/placeholder.jpg') 
+              ? product.images 
+              : (fallback.images || [fallbackImages[product.id] || '/images/products/water-toys/Miami_Yachting_Company_water_toy.jpg']),
+            // Only use Airtable features if they exist, otherwise use fallback
+            features: (product.features && product.features.length > 0) ? product.features : fallback.features,
+            // Only use Airtable sizes if they exist, otherwise use fallback
+            sizes: product.sizes || fallback.sizes
+          };
+        });
         
         setWaterToysProducts(productsWithImages);
       } catch (error) {
