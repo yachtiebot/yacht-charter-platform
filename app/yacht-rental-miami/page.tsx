@@ -300,7 +300,19 @@ function FleetContent() {
             {sortedYachts.map((yacht) => {
               const yachtSlug = yacht.fields['Yacht ID'].toLowerCase();
               const heroImage = yacht.fields['Supabase Hero URL'] || yacht.fields['Supabase Gallery URLs']?.[0] || '/images/placeholder-yacht.jpg';
-              const lowestPrice = yacht.fields['2-Hour Price'];
+              
+              // Get lowest available price across all durations
+              const prices = [
+                yacht.fields['2-Hour Price'],
+                yacht.fields['3-Hour Price'],
+                yacht.fields['4-Hour Price'],
+                yacht.fields['5-Hour Price'],
+                yacht.fields['6-Hour Price'],
+                yacht.fields['7-Hour Price'],
+                yacht.fields['8-Hour Price']
+              ].filter((p): p is number => typeof p === 'number' && p > 0);
+              const lowestPrice = prices.length > 0 ? Math.min(...prices) : 0;
+              
               const isNew = yacht.fields['New To Fleet Badge'];
               const hasWeekdayDeal = yacht.fields['Offers Weekday Discount'];
               
@@ -337,11 +349,13 @@ function FleetContent() {
                   )}
                   
                   {/* Price Badge - Top Right */}
-                  <div className="absolute top-4 right-4 bg-white/50 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2">
-                    <div className="text-[#0f0f0f] text-[10px] md:text-[12px] uppercase tracking-wider font-medium">
-                      From ${lowestPrice}
+                  {lowestPrice > 0 && (
+                    <div className="absolute top-4 right-4 bg-white/50 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2">
+                      <div className="text-[#0f0f0f] text-[10px] md:text-[12px] uppercase tracking-wider font-medium">
+                        From ${lowestPrice.toLocaleString()}
+                      </div>
                     </div>
-                  </div>
+                  )}
                   
                   {/* Content - Bottom Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
