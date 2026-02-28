@@ -66,18 +66,43 @@ export async function POST(request: NextRequest) {
     await fs.writeFile(tempInputPath, buffer);
     console.log(`✅ Uploaded: ${(buffer.length / 1024).toFixed(1)} KB`);
 
-    // Step 2: Optimize with Sharp
+    // Step 2: Optimize with Sharp - enforce 500KB max per CLS_RULES.md
     console.log('🔧 Optimizing image...');
-    await sharp(tempInputPath)
-      .resize(1200, 1200, {
-        fit: 'inside',
-        withoutEnlargement: true
-      })
-      .webp({ quality: 85 })
-      .toFile(tempOutputPath);
+    let quality = 85;
+    let optimizedBuffer: Buffer;
+    const MAX_SIZE_KB = 500;
+    
+    // Progressive quality reduction to meet 500KB limit
+    while (quality >= 50) {
+      await sharp(tempInputPath)
+        .resize(1200, 1200, {
+          fit: 'inside',
+          withoutEnlargement: true
+        })
+        .webp({ quality })
+        .toFile(tempOutputPath);
 
-    const optimizedBuffer = await fs.readFile(tempOutputPath);
-    console.log(`✅ Optimized: ${(optimizedBuffer.length / 1024).toFixed(1)} KB`);
+      optimizedBuffer = await fs.readFile(tempOutputPath);
+      const sizeKB = optimizedBuffer.length / 1024;
+      
+      console.log(`📊 Quality ${quality}: ${sizeKB.toFixed(1)} KB`);
+      
+      if (sizeKB <= MAX_SIZE_KB) {
+        console.log(`✅ Optimized: ${sizeKB.toFixed(1)} KB (quality: ${quality})`);
+        break;
+      }
+      
+      quality -= 5;
+    }
+    
+    if (!optimizedBuffer!) {
+      throw new Error('Could not optimize image to meet 500KB requirement');
+    }
+    
+    // Enforce hard limit
+    if (optimizedBuffer.length / 1024 > MAX_SIZE_KB) {
+      throw new Error(`Image too large: ${(optimizedBuffer.length / 1024).toFixed(1)}KB. Max ${MAX_SIZE_KB}KB per CLS_RULES.md`);
+    }
 
     // Step 3: Upload to Supabase with SEO-friendly naming
     console.log('☁️ Uploading to Supabase...');
@@ -99,6 +124,18 @@ export async function POST(request: NextRequest) {
 
     const supabaseUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/yacht-photos/${supabasePath}`;
     console.log(`✅ Uploaded: ${supabaseUrl}`);
+    
+    // Step 3.5: Delete original from GitHub repo per CLS_RULES.md (save space)
+    // Check if there's a matching file in public/images/ and delete it
+    const publicImagePath = path.join(process.cwd(), 'public', 'images', category, seoFileName);
+    try {
+      await fs.access(publicImagePath);
+      await fs.unlink(publicImagePath);
+      console.log(`🗑️ Deleted original from GitHub: ${publicImagePath}`);
+    } catch {
+      // File doesn't exist in repo, that's fine
+      console.log(`ℹ️ No matching file in GitHub repo to clean up`);
+    }
 
     // Step 4: Update Airtable with Supabase URL (skip for hero-images and banners - they don't have Airtable records)
     const tableName = CATEGORY_TABLES[category];
