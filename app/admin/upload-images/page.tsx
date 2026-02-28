@@ -126,41 +126,59 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
 
     if (acceptedFiles.length === 0) return;
 
-    const file = acceptedFiles[0];
+    // For water toys, allow multiple images. For others, single image only.
+    const isMultiImageCategory = ['water-toys', 'flowers', 'bachelorette'].includes(category);
+    const filesToUpload = isMultiImageCategory ? acceptedFiles : [acceptedFiles[0]];
+
     setUploading(true);
-    setProgress('Uploading...');
+    setProgress(`Uploading ${filesToUpload.length} image(s)...`);
     setResult(null);
 
     try {
-      // Create FormData
-      const formData = new FormData();
-      formData.append('file', file);
-      formData.append('productId', selectedProduct);
-      formData.append('category', category);
+      const uploadedUrls: string[] = [];
+      let totalSavings = '';
 
-      // Upload to our API
-      setProgress('Optimizing image...');
-      const response = await fetch('/api/admin/process-image', {
-        method: 'POST',
-        body: formData
+      // Sort files: ones with "1" in filename come first (hero image)
+      const sortedFiles = [...filesToUpload].sort((a, b) => {
+        const aHas1 = a.name.includes('1');
+        const bHas1 = b.name.includes('1');
+        if (aHas1 && !bHas1) return -1;
+        if (!aHas1 && bHas1) return 1;
+        return a.name.localeCompare(b.name);
       });
 
-      const result = await response.json();
+      // Upload each file
+      for (let i = 0; i < sortedFiles.length; i++) {
+        const file = sortedFiles[i];
+        setProgress(`Uploading ${i + 1}/${sortedFiles.length}: ${file.name}...`);
 
-      if (response.ok && result.success) {
-        setProgress('');
-        setResult({
-          success: true,
-          message: `✅ Success! Image live on website. Saved ${result.savings}`
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('productId', selectedProduct);
+        formData.append('category', category);
+        formData.append('imageIndex', i.toString());
+
+        const response = await fetch('/api/admin/process-image', {
+          method: 'POST',
+          body: formData
         });
-        setSelectedProduct(''); // Reset for next upload
-      } else {
-        setProgress('');
-        setResult({
-          success: false,
-          message: `❌ Error: ${result.error || 'Upload failed'}`
-        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          uploadedUrls.push(result.url);
+          totalSavings = result.savings;
+        } else {
+          throw new Error(result.error || 'Upload failed');
+        }
       }
+
+      setProgress('');
+      setResult({
+        success: true,
+        message: `✅ Success! ${uploadedUrls.length} image(s) uploaded. ${totalSavings ? `Saved ${totalSavings}` : ''}\nHero image: ${sortedFiles[0].name}`
+      });
+      setSelectedProduct(''); // Reset for next upload
     } catch (error: any) {
       setProgress('');
       setResult({
@@ -172,6 +190,8 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
     }
   };
 
+  const isMultiImageCategory = ['water-toys', 'flowers', 'bachelorette'].includes(category);
+  
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
@@ -179,7 +199,8 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
       'image/png': ['.png'],
       'image/webp': ['.webp']
     },
-    maxFiles: 1,
+    maxFiles: isMultiImageCategory ? 10 : 1,
+    multiple: isMultiImageCategory,
     disabled: !selectedProduct || uploading
   });
 
@@ -248,15 +269,20 @@ function UploadZone({ category, title, color }: UploadZoneProps) {
             {!selectedProduct ? (
               <p className="text-[#6b6b6b] font-light">Select a product first</p>
             ) : isDragActive ? (
-              <p className="text-[#c4a265] font-light">Drop the image here</p>
+              <p className="text-[#c4a265] font-light">Drop the image{isMultiImageCategory ? 's' : ''} here</p>
             ) : (
               <div>
                 <p className="text-[#0f0f0f] font-light mb-2">
-                  Drag image here or click to browse
+                  Drag image{isMultiImageCategory ? 's' : ''} here or click to browse
                 </p>
                 <p className="text-[#6b6b6b] text-sm font-light">
-                  JPG, PNG, or WebP
+                  JPG, PNG, or WebP {isMultiImageCategory ? '(up to 10 files)' : ''}
                 </p>
+                {isMultiImageCategory && (
+                  <p className="text-[#c4a265] text-xs font-light mt-2">
+                    💡 Tip: Images with "1" in filename will be the hero image
+                  </p>
+                )}
               </div>
             )}
           </>

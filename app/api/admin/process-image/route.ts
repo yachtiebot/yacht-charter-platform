@@ -45,6 +45,7 @@ export async function POST(request: NextRequest) {
     const file = formData.get('file') as File;
     const productId = formData.get('productId') as string;
     const category = formData.get('category') as string;
+    const imageIndex = formData.get('imageIndex') as string;
 
     if (!file || !productId || !category) {
       return NextResponse.json(
@@ -80,8 +81,9 @@ export async function POST(request: NextRequest) {
 
     // Step 3: Upload to Supabase with SEO-friendly naming
     console.log('☁️ Uploading to Supabase...');
-    // SEO naming: Miami_Yachting_Company_[description]
-    const seoFileName = `Miami_Yachting_Company_${productId.replace(/-/g, '_')}.webp`;
+    // SEO naming: Miami_Yachting_Company_[description]_[index]
+    const indexSuffix = imageIndex ? `_${imageIndex}` : '';
+    const seoFileName = `Miami_Yachting_Company_${productId.replace(/-/g, '_')}${indexSuffix}.webp`;
     const supabasePath = `${category}/${seoFileName}`;
     
     const { error: uploadError } = await supabase.storage
@@ -116,6 +118,28 @@ export async function POST(request: NextRequest) {
         
         if (searchData.records && searchData.records.length > 0) {
           const recordId = searchData.records[0].id;
+          const existingRecord = searchData.records[0].fields;
+          
+          // For multi-image categories, append to array. For others, replace.
+          const isMultiImageCategory = ['water-toys', 'flowers', 'bachelorette'].includes(category);
+          let imageUrls = supabaseUrl;
+          
+          if (isMultiImageCategory) {
+            const existingUrls = existingRecord['Image URL'];
+            let urlsArray: string[] = [];
+            
+            if (typeof existingUrls === 'string') {
+              // Single URL or comma-separated string
+              urlsArray = existingUrls.split(',').map((u: string) => u.trim()).filter((u: string) => u);
+            }
+            
+            // Add new URL if not already present
+            if (!urlsArray.includes(supabaseUrl)) {
+              urlsArray.push(supabaseUrl);
+            }
+            
+            imageUrls = urlsArray.join(', ');
+          }
           
           const updateResponse = await fetch(
             `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${tableName}/${recordId}`,
@@ -126,7 +150,7 @@ export async function POST(request: NextRequest) {
                 'Content-Type': 'application/json'
               },
               body: JSON.stringify({
-                fields: { 'Image URL': supabaseUrl }
+                fields: { 'Image URL': imageUrls }
               })
             }
           );
@@ -150,6 +174,7 @@ export async function POST(request: NextRequest) {
       success: true,
       productId,
       category,
+      url: supabaseUrl,
       supabaseUrl,
       originalSize: buffer.length,
       optimizedSize: optimizedBuffer.length,
