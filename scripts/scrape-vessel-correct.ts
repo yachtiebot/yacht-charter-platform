@@ -37,6 +37,10 @@ interface VesselData {
   description: string;
   pricing: { hours: number; price: number }[];
   imageUrls: string[];
+  // Customer Quote
+  customerQuote: string;
+  quoteAuthor: string;
+  quoteSource: string;
   // Toys (boolean fields in Airtable)
   hasJetSki: boolean;
   hasFloatingRaft: boolean;
@@ -142,6 +146,45 @@ function parseVesselData(html: string, url: string): VesselData {
     // Fix double spaces
     .replace(/  +/g, ' ')
     .trim();
+  
+  // Extract customer quote using cheerio (more reliable than regex)
+  let customerQuote = '';
+  let quoteAuthor = '';
+  let quoteSource = '';
+  
+  const $blockquote = $('blockquote[data-animation-role="quote"]');
+  if ($blockquote.length > 0) {
+    // Extract quote text (between the quote span markers)
+    customerQuote = $blockquote.text()
+      .replace(/^[""\"\s]+/, '') // Remove leading quotes and whitespace
+      .replace(/[""\"\s]+$/, '') // Remove trailing quotes and whitespace
+      .trim();
+    
+    // Extract author/source from figcaption (sibling of blockquote within figure)
+    const $figure = $blockquote.parent('figure');
+    const $figcaption = $figure.find('figcaption.source');
+    
+    if ($figcaption.length > 0) {
+      const authorText = $figcaption.text().trim();
+      
+      // Parse "— America S. "Google Reviews""
+      const authorMatch = authorText.match(/—\s*(.+?)\s+[""](.+?)[""]/ );
+      if (authorMatch) {
+        quoteAuthor = authorMatch[1].trim(); // "America S."
+        quoteSource = authorMatch[2].trim(); // "Google Reviews"
+      } else {
+        // Fallback: just use the whole text minus the dash
+        quoteAuthor = authorText.replace(/^—\s*/, '').trim();
+        quoteSource = 'Google Reviews'; // Default
+      }
+    }
+    
+    if (customerQuote) {
+      console.log(`\n📝 Found customer quote:`);
+      console.log(`   "${customerQuote}"`);
+      console.log(`   — ${quoteAuthor}, ${quoteSource}`);
+    }
+  }
   
   // Extract passenger capacity
   const passengerMatch = text.match(/Passenger Capacity:\s*(\d+)/i);
@@ -273,6 +316,9 @@ function parseVesselData(html: string, url: string): VesselData {
     description,
     pricing,
     imageUrls,
+    customerQuote,
+    quoteAuthor,
+    quoteSource,
     hasJetSki,
     hasFloatingRaft,
     hasFloatingRing,
@@ -410,6 +456,17 @@ async function createAirtableRecord(vessel: VesselData): Promise<void> {
   
   // Add features if detected (boolean fields)
   if (vessel.hasKitchen) fields['Features: Kitchen'] = true;
+  
+  // Add customer quote if exists
+  if (vessel.customerQuote) {
+    fields['Customer Quote'] = vessel.customerQuote;
+  }
+  if (vessel.quoteAuthor) {
+    fields['Quote Author'] = vessel.quoteAuthor;
+  }
+  if (vessel.quoteSource) {
+    fields['Quote Source'] = vessel.quoteSource;
+  }
   
   const record = { fields };
   
