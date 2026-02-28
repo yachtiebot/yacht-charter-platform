@@ -8,6 +8,7 @@ export interface CartItem {
   price: number;
   quantity: number;
   category: 'catering' | 'jet-ski' | 'water-toys' | 'flowers' | 'bachelorette';
+  selectedSize?: string;
   image?: string;
   customization?: any;
   maxQuantity?: number;
