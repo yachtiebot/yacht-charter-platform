@@ -3,6 +3,10 @@ import { NextResponse } from 'next/server';
 const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY!;
 const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID!;
 
+// No cache - instant updates like catering
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const response = await fetch(
@@ -11,7 +15,7 @@ export async function GET() {
         headers: {
           'Authorization': `Bearer ${AIRTABLE_API_KEY}`
         },
-        next: { revalidate: 60 } // Cache for 60 seconds
+        cache: 'no-store' // No cache - always fetch fresh
       }
     );
 
@@ -75,7 +79,11 @@ export async function GET() {
       };
     });
 
-    return NextResponse.json(waterToys);
+    return NextResponse.json(waterToys, {
+      headers: {
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+      },
+    });
   } catch (error: any) {
     console.error('Water toys API error:', error);
     return NextResponse.json(
