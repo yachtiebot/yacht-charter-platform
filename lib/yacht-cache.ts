@@ -148,7 +148,7 @@ function enhanceWithPhotos(yachts: any[]) {
     '116-Pershing': 46,
     '37-Axopar': 13,
     '27-Regal': 15,
-    '27-Monterey': 16  // 16 gallery images (hero is separate)
+    '27-Monterey': 16  // 16 gallery images + hero (17 total files)
   };
   
   return yachts.map((yacht: any) => {
