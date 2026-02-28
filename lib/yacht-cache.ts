@@ -154,16 +154,64 @@ function enhanceWithPhotos(yachts: any[]) {
     '29-Sea-Ray': 16
   };
   
+  // Amenity checkbox field mapping (Airtable checkboxes → website array)
+  const amenityMapping: { [key: string]: string } = {
+    'Amenities: Air Conditioning': 'Air-conditioning',
+    'Amenities: BBQ Grill': 'Barbecue Grill',
+    'Amenities: Satellite TV': 'Satellite TV',
+    'Amenities: StarLink': 'Starlink',
+    'Amenities: WiFi': 'Wi-Fi',
+    'Amenities: Tender': 'Tender',
+    'Amenities: Jacuzzi': 'Jacuzzi',
+    'Amenities: Wet Bar': 'Wet Bar',
+    'Amenities: Kitchen': 'Kitchen'
+  };
+  
+  // Toy checkbox field mapping (Airtable checkboxes → website array)
+  const toyMapping: { [key: string]: string } = {
+    'Water Toys: Inflatables': 'Inflatables',
+    'Water Toys: Floating Island Mat': 'Floating Island Mat',
+    'Water Toys: Waterslide': 'Waterslide',
+    'Water Toys: Jet Ski': 'Jet Ski',
+    'Water Toys: SeaBob': 'SeaBob',
+    'Water Toys: Paddleboard': 'Paddleboard',
+    'Water Toys: Kayak': 'Kayak',
+    'Water Toys: Snorkel Gear': 'Snorkel Gear'
+  };
+  
   return yachts.map((yacht: any) => {
     const yachtId = yacht.fields['Yacht ID'];
     const photoCount = photoMapping[yachtId] || 0;
     
+    // Add Supabase photo URLs
     if (photoCount > 0) {
       yacht.fields['Supabase Hero URL'] = `${supabaseBaseUrl}/${yachtId}/Miami_Yachting_Company_${yachtId}_hero.webp`;
       yacht.fields['Supabase Gallery URLs'] = Array.from(
         { length: photoCount },
         (_, i) => `${supabaseBaseUrl}/${yachtId}/Miami_Yachting_Company_${yachtId}_${String(i + 1).padStart(2, '0')}.webp`
       );
+    }
+    
+    // Convert checkbox amenities to array
+    const amenities: string[] = [];
+    Object.keys(amenityMapping).forEach(field => {
+      if (yacht.fields[field] === true) {
+        amenities.push(amenityMapping[field]);
+      }
+    });
+    if (amenities.length > 0) {
+      yacht.fields['amenities'] = amenities;
+    }
+    
+    // Convert checkbox toys to array
+    const toys: string[] = [];
+    Object.keys(toyMapping).forEach(field => {
+      if (yacht.fields[field] === true) {
+        toys.push(toyMapping[field]);
+      }
+    });
+    if (toys.length > 0) {
+      yacht.fields['toys'] = toys;
     }
     
     return yacht;
