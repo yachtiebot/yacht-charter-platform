@@ -146,11 +146,12 @@ function enhanceWithPhotos(yachts: any[]) {
   const supabaseBaseUrl = 'https://wojjcivzlxsbinbmblhy.supabase.co/storage/v1/object/public/yacht-photos';
   const photoMapping: { [key: string]: number } = {
     '116-Pershing': 46,
+    '100-Skipperliner': 15,  // 15 gallery images + hero (16 total) - from PDF
     '37-Axopar': 13,
     '27-Regal': 15,
     '27-Monterey-Black': 16,
     '27-Monterey-Blue': 12,
-    '29-Sea-Ray': 16  // 16 gallery images + hero (17 total files)
+    '29-Sea-Ray': 16
   };
   
   return yachts.map((yacht: any) => {
