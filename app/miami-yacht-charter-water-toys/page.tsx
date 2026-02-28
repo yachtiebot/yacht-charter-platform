@@ -304,7 +304,7 @@ export default function WaterToysPage() {
                         href={(product as any).licenseLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block mt-3 text-xs text-[#c4a265] hover:text-[#0f0f0f] underline transition-colors"
+                        className="inline-block mt-1 text-xs text-[#c4a265] hover:text-[#0f0f0f] underline transition-colors"
                       >
                         Get your license to drive here →
                       </a>
@@ -390,7 +390,7 @@ export default function WaterToysPage() {
                       href={(product as any).licenseLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block mt-3 text-xs text-[#c4a265] hover:text-[#0f0f0f] underline transition-colors"
+                      className="inline-block mt-1 text-xs text-[#c4a265] hover:text-[#0f0f0f] underline transition-colors"
                     >
                       Get your license to drive here →
                     </a>
