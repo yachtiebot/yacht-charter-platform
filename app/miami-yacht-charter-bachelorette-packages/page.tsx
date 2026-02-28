@@ -1,14 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import ProductImageGallery from '@/components/ProductImageGallery';
 import DarkFooter from '@/components/DarkFooter';
 import ScrollIndicator from '@/components/ScrollIndicator';
 
-// Hardcoded bachelorette packages as FALLBACK (if Airtable fails)
-const hardcodedPackages = [
+// Bachelorette packages from scraped data
+const packages = [
   {
     id: 'last-toast',
     name: 'Last Toast On The Coast',
@@ -99,29 +98,6 @@ const hardcodedPackages = [
 
 export default function BachelorettePackagesPage() {
   const { addItem } = useCart();
-  const [packages, setPackages] = useState(hardcodedPackages);
-  const [loading, setLoading] = useState(true);
-
-  // Fetch from Airtable on mount
-  useEffect(() => {
-    const fetchPackages = async () => {
-      try {
-        const response = await fetch('/api/bachelorette-packages');
-        const airtableData = await response.json();
-        
-        if (Array.isArray(airtableData) && airtableData.length > 0) {
-          setPackages(airtableData);
-        }
-      } catch (error) {
-        console.error('Failed to fetch bachelorette packages from Airtable:', error);
-        // Keep hardcoded fallback on error
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchPackages();
-  }, []);
 
   return (
     <main className="min-h-screen bg-[#faf9f7]">
