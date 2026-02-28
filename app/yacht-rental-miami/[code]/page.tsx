@@ -445,7 +445,7 @@ export default function VesselDetailPage({
               <div className="lg:hidden mb-12 bg-white border border-[#0f0f0f]/10 p-10 shadow-sm">
                 {fields['Instant Booking Enabled'] ? (
                   <>
-                    <h3 className="editorial-label text-[#0f0f0f] mb-3 text-center" style={{fontWeight: 300, fontSize: '14px', letterSpacing: '0.05em'}}>
+                    <h3 className="editorial-label text-[#0f0f0f] mb-3 text-center" style={{fontWeight: 400, fontSize: '18px', letterSpacing: '0.05em'}}>
                       BOOK INSTANTLY ONLINE
                     </h3>
                     <p className="text-[11px] text-[#6b6b6b] mb-2 text-center" style={{fontWeight: 300, letterSpacing: '0.02em'}}>
@@ -456,7 +456,7 @@ export default function VesselDetailPage({
                     </p>
                   </>
                 ) : (
-                  <h3 className="editorial-label text-[#0f0f0f] mb-8 text-center" style={{fontWeight: 300, fontSize: '14px', letterSpacing: '0.05em'}}>
+                  <h3 className="editorial-label text-[#0f0f0f] mb-8 text-center" style={{fontWeight: 400, fontSize: '18px', letterSpacing: '0.05em'}}>
                     CHARTER RATES
                   </h3>
                 )}
@@ -663,7 +663,7 @@ export default function VesselDetailPage({
                     </p>
                   </>
                 ) : (
-                  <h3 className="editorial-label text-[#0f0f0f] mb-8 text-center" style={{fontWeight: 300, fontSize: '14px', letterSpacing: '0.05em'}}>
+                  <h3 className="editorial-label text-[#0f0f0f] mb-8 text-center" style={{fontWeight: 400, fontSize: '18px', letterSpacing: '0.05em'}}>
                     CHARTER RATES
                   </h3>
                 )}
