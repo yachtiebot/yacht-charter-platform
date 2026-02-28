@@ -53,14 +53,24 @@ function FleetContent() {
         const yachtData = data.yachts || [];
         setYachts(yachtData);
         
-        // Calculate min/max prices from yacht data (using 2-Hour Price as starting price)
+        // Calculate min/max prices from yacht data (using lowest available price across all durations)
         if (yachtData.length > 0) {
-          const prices = yachtData
-            .map((y: YachtData) => y.fields['2-Hour Price'] || 0)
-            .filter((p: number) => p > 0);
-          if (prices.length > 0) {
-            const min = Math.floor(Math.min(...prices) / 100) * 100;
-            const max = Math.ceil(Math.max(...prices) / 100) * 100;
+          const allPrices = yachtData.flatMap((y: YachtData) => {
+            const prices = [
+              y.fields['2-Hour Price'],
+              y.fields['3-Hour Price'],
+              y.fields['4-Hour Price'],
+              y.fields['5-Hour Price'],
+              y.fields['6-Hour Price'],
+              y.fields['7-Hour Price'],
+              y.fields['8-Hour Price']
+            ].filter(p => p && p > 0);
+            return prices.length > 0 ? [Math.min(...prices)] : [];
+          });
+          
+          if (allPrices.length > 0) {
+            const min = Math.floor(Math.min(...allPrices) / 100) * 100;
+            const max = Math.ceil(Math.max(...allPrices) / 100) * 100;
             setSelectedPriceRange([min, max]);
           }
         }
@@ -99,26 +109,49 @@ function FleetContent() {
     setSelectedYachtType('');
     setInstantBookableOnly(false);
     setWeekdayDiscountOnly(false);
-    // Reset price range to full range (using 2-Hour Price)
+    // Reset price range to full range (using lowest available price)
     if (yachts.length > 0) {
-      const prices = yachts
-        .map((y) => y.fields['2-Hour Price'] || 0)
-        .filter((p) => p > 0);
-      if (prices.length > 0) {
-        const min = Math.floor(Math.min(...prices) / 100) * 100;
-        const max = Math.ceil(Math.max(...prices) / 100) * 100;
+      const allPrices = yachts.flatMap((y) => {
+        const prices = [
+          y.fields['2-Hour Price'],
+          y.fields['3-Hour Price'],
+          y.fields['4-Hour Price'],
+          y.fields['5-Hour Price'],
+          y.fields['6-Hour Price'],
+          y.fields['7-Hour Price'],
+          y.fields['8-Hour Price']
+        ].filter(p => p && p > 0);
+        return prices.length > 0 ? [Math.min(...prices)] : [];
+      });
+      
+      if (allPrices.length > 0) {
+        const min = Math.floor(Math.min(...allPrices) / 100) * 100;
+        const max = Math.ceil(Math.max(...allPrices) / 100) * 100;
         setSelectedPriceRange([min, max]);
       }
     }
   };
 
-  // Calculate min/max prices from all yachts (using 2-Hour Price as starting price)
+  // Calculate min/max prices from all yachts (using lowest available price across all durations)
+  const getAllPrices = (yacht: YachtData) => {
+    const prices = [
+      yacht.fields['2-Hour Price'],
+      yacht.fields['3-Hour Price'],
+      yacht.fields['4-Hour Price'],
+      yacht.fields['5-Hour Price'],
+      yacht.fields['6-Hour Price'],
+      yacht.fields['7-Hour Price'],
+      yacht.fields['8-Hour Price']
+    ].filter(p => p && p > 0);
+    return prices.length > 0 ? Math.min(...prices) : 0;
+  };
+  
   const minPrice = yachts.length > 0 
-    ? Math.floor(Math.min(...yachts.map(y => y.fields['2-Hour Price'] || 0).filter(p => p > 0)) / 100) * 100
+    ? Math.floor(Math.min(...yachts.map(getAllPrices).filter(p => p > 0)) / 100) * 100
     : 0;
   const maxPrice = yachts.length > 0
-    ? Math.ceil(Math.max(...yachts.map(y => y.fields['2-Hour Price'] || 0).filter(p => p > 0)) / 100) * 100
-    : 2000;
+    ? Math.ceil(Math.max(...yachts.map(getAllPrices).filter(p => p > 0)) / 100) * 100
+    : 10000;
 
   // Filter yachts
   const filteredYachts = yachts.filter(yacht => {
@@ -144,9 +177,19 @@ function FleetContent() {
       if (!boatStyle.includes(selectedYachtType.toLowerCase())) return false;
     }
     
-    // Price filter (using 2-Hour Price as starting price)
-    const price = yacht.fields['2-Hour Price'] || 0;
-    if (price < selectedPriceRange[0] || price > selectedPriceRange[1]) return false;
+    // Price filter (use lowest available price across all durations)
+    const prices = [
+      yacht.fields['2-Hour Price'],
+      yacht.fields['3-Hour Price'],
+      yacht.fields['4-Hour Price'],
+      yacht.fields['5-Hour Price'],
+      yacht.fields['6-Hour Price'],
+      yacht.fields['7-Hour Price'],
+      yacht.fields['8-Hour Price']
+    ].filter(p => p && p > 0);
+    
+    const lowestPrice = prices.length > 0 ? Math.min(...prices) : 0;
+    if (lowestPrice === 0 || lowestPrice < selectedPriceRange[0] || lowestPrice > selectedPriceRange[1]) return false;
     
     // Water Toys filter (uses toys: array field)
     if (selectedToys.length > 0) {
