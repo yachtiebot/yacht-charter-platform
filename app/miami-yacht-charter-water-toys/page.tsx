@@ -437,13 +437,7 @@ export default function WaterToysPage() {
             </p>
             
             <p className="text-[#6b6b6b]/60 text-xs leading-relaxed" style={{ fontWeight: 300 }}>
-              Yacht charter add-ons in Miami provide additional options for guests seeking water-based activities during their time on board. 
-              Available add-ons may include inflatable water toys, floating platforms, or other recreational equipment depending on the vessel and location. 
-              Listings shown on this page represent optional features offered by independent third-party providers or made available in connection with specific vessels. 
-              Availability is subject to vessel compatibility, operating conditions, and charter duration. 
-              Add-ons are selected and arranged separately and may vary by provider. 
-              This page presents add-on options associated with yacht rentals operating throughout Miami and Miami Beach. 
-              Specific details should be reviewed on each vessel listing to understand what may be available for a given charter.
+              Yacht charter add ons in Miami offer guests water based activities such as inflatables, floating platforms, and other recreational equipment, depending on the vessel and location. These options are provided by independent third parties or associated with specific vessels and are subject to compatibility, operating conditions, and charter duration. Availability varies by provider. Review each vessel listing for exact details related to your charter in Miami or Miami Beach.
             </p>
           </div>
         </div>
