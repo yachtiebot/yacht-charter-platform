@@ -206,9 +206,8 @@ export default function VesselDetailPage({
   if (fields['Features: Wet Bar']) amenities.push('Wet Bar');
   if (fields['Features: Kitchen']) amenities.push('Kitchen');
   
-  // Build features array (optional - for above-the-line features)
-  const features: string[] = [];
-  // Add any boat-level features here if needed
+  // Use features array from API (built from Features: checkboxes in yacht-cache)
+  const features: string[] = fields['features'] || [];
   
   // Optional upgrades from existing field
   const optionalUpgrades: string[] = fields['Optional Experience Upgrades'] || [];

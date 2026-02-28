@@ -218,6 +218,41 @@ function enhanceWithPhotos(yachts: any[]) {
       yacht.fields['toys'] = toys;
     }
     
+    // Build features array from Features: boolean fields (for above-the-line display)
+    const features: string[] = [];
+    
+    // Bars
+    if (yacht.fields['Features: Bar']) {
+      const numBars = yacht.fields['Features: Number of Bars'];
+      if (numBars && numBars > 0) {
+        features.push(numBars === 1 ? '1 Bar' : `${numBars} Bars`);
+      } else {
+        features.push('Bar');
+      }
+    }
+    
+    // Kitchen
+    if (yacht.fields['Features: Kitchen']) {
+      const isCommercial = yacht.fields['Features: Commercial Kitchen'];
+      features.push(isCommercial ? 'Commercial Kitchen' : 'Kitchen');
+    }
+    
+    // TVs
+    const numTVs = yacht.fields['Features: Number of TVs'];
+    if (numTVs && numTVs > 0) {
+      features.push(numTVs === 1 ? '1 TV' : `${numTVs} TVs`);
+    }
+    
+    // Staterooms
+    const numStaterooms = yacht.fields['Features: Number of Staterooms'];
+    if (numStaterooms && numStaterooms > 0) {
+      features.push(numStaterooms === 1 ? '1 Stateroom' : `${numStaterooms} Staterooms`);
+    }
+    
+    if (features.length > 0) {
+      yacht.fields['features'] = features;
+    }
+    
     return yacht;
   });
 }
