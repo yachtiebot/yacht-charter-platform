@@ -14,10 +14,9 @@ interface CollapsibleFleetFiltersProps {
   selectedToys: string[];
   selectedAmenities: string[];
   selectedYachtType: string;
-  selectedPriceRange: [number, number];
+  maxPriceFilter: number;
   instantBookableOnly: boolean;
   weekdayDiscountOnly: boolean;
-  minPrice: number;
   maxPrice: number;
   onCategoryChange: (value: string) => void;
   onSizeChange: (value: string) => void;
@@ -25,7 +24,7 @@ interface CollapsibleFleetFiltersProps {
   onToyToggle: (value: string) => void;
   onAmenityToggle: (value: string) => void;
   onYachtTypeChange: (value: string) => void;
-  onPriceRangeChange: (range: [number, number]) => void;
+  onMaxPriceChange: (value: number) => void;
   onInstantBookableToggle: () => void;
   onWeekdayDiscountToggle: () => void;
   onClearAll: () => void;
@@ -38,10 +37,9 @@ export default function CollapsibleFleetFilters({
   selectedToys,
   selectedAmenities,
   selectedYachtType,
-  selectedPriceRange,
+  maxPriceFilter,
   instantBookableOnly,
   weekdayDiscountOnly,
-  minPrice,
   maxPrice,
   onCategoryChange,
   onSizeChange,
@@ -49,7 +47,7 @@ export default function CollapsibleFleetFilters({
   onToyToggle,
   onAmenityToggle,
   onYachtTypeChange,
-  onPriceRangeChange,
+  onMaxPriceChange,
   onInstantBookableToggle,
   onWeekdayDiscountToggle,
   onClearAll,
@@ -253,43 +251,26 @@ export default function CollapsibleFleetFilters({
               onClick={() => toggleSection('price')}
               className="w-full flex justify-between items-center editorial-label text-[#6b6b6b] hover:text-[#0f0f0f] transition-colors"
             >
-              <span>PRICE RANGE {(selectedPriceRange[0] !== minPrice || selectedPriceRange[1] !== maxPrice) && <span className="text-[#c4a265] ml-2">✓</span>}</span>
+              <span>MAX PRICE {maxPriceFilter !== maxPrice && <span className="text-[#c4a265] ml-2">✓</span>}</span>
               <span className="text-lg">{expandedSection === 'price' ? '−' : '+'}</span>
             </button>
             {expandedSection === 'price' && (
               <div className="mt-4 px-2">
-                <div className="flex justify-between text-sm text-[#6b6b6b] mb-3">
-                  <span>${selectedPriceRange[0]}</span>
-                  <span>${selectedPriceRange[1]}</span>
+                <div className="text-sm text-[#6b6b6b] mb-2">
+                  Show boats starting at <span className="font-medium text-[#0f0f0f]">${maxPriceFilter.toLocaleString()}</span> or less
                 </div>
-                <div className="relative">
-                  {/* Dual Range Slider */}
-                  <input
-                    type="range"
-                    min={minPrice}
-                    max={maxPrice}
-                    value={selectedPriceRange[0]}
-                    onChange={(e) => {
-                      const newMin = parseInt(e.target.value);
-                      if (newMin <= selectedPriceRange[1]) {
-                        onPriceRangeChange([newMin, selectedPriceRange[1]]);
-                      }
-                    }}
-                    className="w-full h-2 bg-[#e5e5e5] rounded-lg appearance-none cursor-pointer accent-[#0f0f0f]"
-                  />
-                  <input
-                    type="range"
-                    min={minPrice}
-                    max={maxPrice}
-                    value={selectedPriceRange[1]}
-                    onChange={(e) => {
-                      const newMax = parseInt(e.target.value);
-                      if (newMax >= selectedPriceRange[0]) {
-                        onPriceRangeChange([selectedPriceRange[0], newMax]);
-                      }
-                    }}
-                    className="w-full h-2 bg-transparent rounded-lg appearance-none cursor-pointer accent-[#0f0f0f] -mt-2"
-                  />
+                <input
+                  type="range"
+                  min={0}
+                  max={maxPrice}
+                  step={100}
+                  value={maxPriceFilter}
+                  onChange={(e) => onMaxPriceChange(parseInt(e.target.value))}
+                  className="w-full h-2 bg-[#e5e5e5] rounded-lg appearance-none cursor-pointer accent-[#0f0f0f]"
+                />
+                <div className="flex justify-between text-xs text-[#6b6b6b] mt-2">
+                  <span>$0</span>
+                  <span>${maxPrice.toLocaleString()}</span>
                 </div>
               </div>
             )}
