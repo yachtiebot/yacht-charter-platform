@@ -93,6 +93,7 @@ export default function CheckoutPage() {
   const cateringItemsForCount = items.filter(item => item.category === 'catering');
   const platterCount = cateringItemsForCount.reduce((sum, item) => sum + item.quantity, 0);
   const hasCateringItems = cateringItemsForCount.length > 0;
+  const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
   if (items.length === 0) {
     return (
@@ -329,7 +330,7 @@ export default function CheckoutPage() {
               {/* Total */}
               <div className="pt-4">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="editorial-label text-[#0f0f0f]">Total ({platterCount} platter{platterCount !== 1 ? 's' : ''})</span>
+                  <span className="editorial-label text-[#0f0f0f]">Total ({totalItems} item{totalItems !== 1 ? 's' : ''})</span>
                   <span className="font-serif text-2xl font-light text-[#c4a265]" style={{ fontFamily: 'var(--font-cormorant)' }}>
                     ${totalPrice.toFixed(2)}
                   </span>

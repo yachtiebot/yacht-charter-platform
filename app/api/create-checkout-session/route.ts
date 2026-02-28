@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-const stripe = process.env.stripe_secret_key 
-  ? new Stripe(process.env.stripe_secret_key, {
-      apiVersion: '2026-02-25.clover',
+const stripe = process.env.STRIPE_SECRET_KEY 
+  ? new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: '2024-11-20.acacia',
     })
   : null;
 
