@@ -91,10 +91,15 @@ function parseVesselData(html: string): VesselData {
   const passengerMatch = text.match(/Passenger Capacity:\s*(\d+)/i);
   const passengerCapacity = passengerMatch ? parseInt(passengerMatch[1]) : 0;
   
-  // Extract location
-  const locationMatch = text.match(/Location:\s*([^\n]+)/i);
+  // Extract location (only capture until next field or newline)
+  const locationMatch = text.match(/Location:\s*([^A-Z\n]+?)(?=\s*(?:Passenger|Stereo|Staterooms|Bathrooms|$))/i);
   let location = locationMatch ? locationMatch[1].trim() : 'Miami Beach';
-  location = location.replace(/\s+/g, ' ').trim();
+  // Clean up
+  location = location
+    .replace(/\s+/g, ' ')
+    .replace(/miami beach/gi, 'Miami Beach')
+    .replace(/miami/gi, 'Miami')
+    .trim();
   
   // Extract staterooms
   const stateroomsMatch = text.match(/Staterooms:\s*(\d+)/i);
