@@ -6,19 +6,8 @@ import { useCart } from '@/lib/store/CartContext';
 import ProductImageGallery from '@/components/ProductImageGallery';
 import DarkFooter from '@/components/DarkFooter';
 
-// Fallback images for water toys
-const fallbackImages: { [key: string]: string } = {
-  'seabob': '/images/products/water-toys/Miami_Yachting_Company_seabob.jpg',
-  'flitescooter': '/images/products/water-toys/Miami_Yachting_Company_flitescooter.jpg',
-  'water-sports-boat': '/images/products/water-toys/Miami_Yachting_Company_watersports_boat.jpg',
-  'floating-cabana': '/images/products/water-toys/Miami_Yachting_Company_floating_cabana.jpg',
-  'floating-lounge-chair': '/images/products/water-toys/Miami_Yachting_Company_floating_lounge.jpg',
-  'jet-ski': '/images/products/water-toys/Miami_Yachting_Company_jet_ski.jpg',
-  'flyboard': '/images/products/water-toys/Miami_Yachting_Company_flyboard.jpg'
-};
-
-// FALLBACK: Hardcoded data (used if API fails)
-const fallbackWaterToysProducts = [
+// Water toys products - hardcoded data with dynamic image loading from Airtable
+const baseWaterToysProducts = [
   {
     id: 'seabob',
     name: 'Seabob',
@@ -107,49 +96,24 @@ const fallbackWaterToysProducts = [
 export default function WaterToysPage() {
   const { addItem } = useCart();
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: string}>({});
-  const [waterToysProducts, setWaterToysProducts] = useState<any[]>(fallbackWaterToysProducts);
-  const [loading, setLoading] = useState(true);
-  
-  // Fetch water toys from Airtable API (same pattern as catering)
+  const [waterToysProducts, setWaterToysProducts] = useState(baseWaterToysProducts);
+
+  // Fetch Airtable data ONLY for images (everything else stays hardcoded)
   useEffect(() => {
-    const fetchWaterToys = async () => {
-      try {
-        const response = await fetch('/api/water-toys');
-        const data = await response.json();
-        
-        // Merge Airtable data with fallback data
-        const productsWithImages = data.map((product: any) => {
-          // Find matching fallback product
-          const fallback = fallbackWaterToysProducts.find((f: any) => f.id === product.id) || {};
-          
-          // Determine which image to use
-          let images = fallback.images || ['/images/products/water-toys/Miami_Yachting_Company_water_toy.jpg'];
-          if (product.images && product.images.length > 0 && product.images[0] !== '/images/products/water-toys/placeholder.jpg') {
-            images = product.images;  // Use Airtable/Supabase images
+    fetch('/api/water-toys')
+      .then(res => res.json())
+      .then((airtableData: any[]) => {
+        // Update products with Supabase images from Airtable
+        const updated = baseWaterToysProducts.map(product => {
+          const airtableProduct = airtableData.find(p => p.id === product.id);
+          if (airtableProduct?.images?.length > 0 && airtableProduct.images[0] !== '/images/products/water-toys/placeholder.jpg') {
+            return { ...product, images: airtableProduct.images };
           }
-          
-          return {
-            ...fallback,  // Start with fallback data (has all features, sizes, etc.)
-            ...product,   // Override with Airtable data
-            images,       // Use determined images
-            // Keep fallback data if Airtable is empty
-            features: (product.features && product.features.length > 0) ? product.features : (fallback.features || []),
-            sizes: product.sizes || fallback.sizes,
-            price: product.price !== null ? product.price : fallback.price,
-            depositPrice: product.depositPrice !== null ? product.depositPrice : fallback.depositPrice
-          };
+          return product;
         });
-        
-        setWaterToysProducts(productsWithImages);
-      } catch (error) {
-        console.error('Failed to fetch water toys:', error);
-        // Keep fallback data on error
-      } finally {
-        setLoading(false);
-      }
-    };
-    
-    fetchWaterToys();
+        setWaterToysProducts(updated);
+      })
+      .catch(err => console.error('Failed to load images from Airtable:', err));
   }, []);
 
   const handleSizeSelect = (productId: string, size: string) => {
@@ -229,7 +193,7 @@ export default function WaterToysPage() {
 
                     {/* Features */}
                     <div className="flex flex-wrap gap-2">
-                      {product.features.map((feature: string, idx: number) => (
+                      {product.features.map((feature, idx) => (
                         <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
                           {feature}
                         </span>
@@ -327,7 +291,7 @@ export default function WaterToysPage() {
 
                   {/* Features */}
                   <div className="flex flex-wrap gap-2">
-                    {product.features.map((feature: string, idx: number) => (
+                    {product.features.map((feature, idx) => (
                       <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
                         {feature}
                       </span>
