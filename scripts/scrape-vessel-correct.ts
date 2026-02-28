@@ -37,10 +37,9 @@ interface VesselData {
   description: string;
   pricing: { hours: number; price: number }[];
   imageUrls: string[];
-  // Customer Quote
-  customerQuote: string;
-  quoteAuthor: string;
-  quoteSource: string;
+  // Customer Quote (Airtable: "Quote" and "From")
+  quote: string;            // Quote text only (no quote marks)
+  from: string;             // "Author Name • Source" format
   // Toys (boolean fields in Airtable)
   hasJetSki: boolean;
   hasFloatingRaft: boolean;
@@ -148,17 +147,16 @@ function parseVesselData(html: string, url: string): VesselData {
     .trim();
   
   // Extract customer quote using cheerio (more reliable than regex)
-  let customerQuote = '';
-  let quoteAuthor = '';
-  let quoteSource = '';
+  let quote = '';
+  let from = '';
   
   const $blockquote = $('blockquote[data-animation-role="quote"]');
   if ($blockquote.length > 0) {
-    // Extract quote text (between the quote span markers)
-    customerQuote = $blockquote.text()
-      .replace(/^[""\"\s]+/, '') // Remove leading quotes and whitespace
-      .replace(/[""\"\s]+$/, '') // Remove trailing quotes and whitespace
-      .trim();
+    // Extract quote text - the quote marks are in <span> tags, we want the text between them
+    // Remove all span elements first, then get text
+    const blockquoteClone = $blockquote.clone();
+    blockquoteClone.find('span').remove();
+    quote = blockquoteClone.text().trim();
     
     // Extract author/source from figcaption (sibling of blockquote within figure)
     const $figure = $blockquote.parent('figure');
@@ -170,19 +168,20 @@ function parseVesselData(html: string, url: string): VesselData {
       // Parse "— America S. "Google Reviews""
       const authorMatch = authorText.match(/—\s*(.+?)\s+[""](.+?)[""]/ );
       if (authorMatch) {
-        quoteAuthor = authorMatch[1].trim(); // "America S."
-        quoteSource = authorMatch[2].trim(); // "Google Reviews"
+        const author = authorMatch[1].trim(); // "America S."
+        const source = authorMatch[2].trim(); // "Google Reviews"
+        // Format: "Author Name • Source"
+        from = `${author} • ${source}`;
       } else {
         // Fallback: just use the whole text minus the dash
-        quoteAuthor = authorText.replace(/^—\s*/, '').trim();
-        quoteSource = 'Google Reviews'; // Default
+        from = authorText.replace(/^—\s*/, '').trim();
       }
     }
     
-    if (customerQuote) {
+    if (quote) {
       console.log(`\n📝 Found customer quote:`);
-      console.log(`   "${customerQuote}"`);
-      console.log(`   — ${quoteAuthor}, ${quoteSource}`);
+      console.log(`   Quote: "${quote}"`);
+      console.log(`   From: ${from}`);
     }
   }
   
@@ -316,9 +315,8 @@ function parseVesselData(html: string, url: string): VesselData {
     description,
     pricing,
     imageUrls,
-    customerQuote,
-    quoteAuthor,
-    quoteSource,
+    quote,
+    from,
     hasJetSki,
     hasFloatingRaft,
     hasFloatingRing,
@@ -457,15 +455,12 @@ async function createAirtableRecord(vessel: VesselData): Promise<void> {
   // Add features if detected (boolean fields)
   if (vessel.hasKitchen) fields['Features: Kitchen'] = true;
   
-  // Add customer quote if exists
-  if (vessel.customerQuote) {
-    fields['Customer Quote'] = vessel.customerQuote;
+  // Add customer quote if exists (Airtable fields: "Quote" and "From")
+  if (vessel.quote) {
+    fields['Quote'] = vessel.quote;
   }
-  if (vessel.quoteAuthor) {
-    fields['Quote Author'] = vessel.quoteAuthor;
-  }
-  if (vessel.quoteSource) {
-    fields['Quote Source'] = vessel.quoteSource;
+  if (vessel.from) {
+    fields['From'] = vessel.from;
   }
   
   const record = { fields };
