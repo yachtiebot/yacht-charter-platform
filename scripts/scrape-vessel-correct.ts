@@ -282,7 +282,7 @@ async function updateYachtCacheFile(yachtId: string, photoCount: number): Promis
   let content = require('fs').readFileSync(cachePath, 'utf-8');
   
   // Find photoMapping object
-  const mappingMatch = content.match(/(const photoMapping[^=]*=\s*\{[^}]+\})/s);
+  const mappingMatch = content.match(/(const photoMapping[^=]*=\s*\{[^}]+\})/);
   if (!mappingMatch) {
     console.error('❌ Could not find photoMapping in yacht-cache.ts');
     return;
