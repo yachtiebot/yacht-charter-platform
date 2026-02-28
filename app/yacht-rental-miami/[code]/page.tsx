@@ -13,8 +13,8 @@ interface YachtData {
     'Length in Feet': number;
     'Boat Style': string;
     'Maximum Passengers': number;
-    'Features: Number of Staterooms'?: number;  // Airtable field
-    'Features: Number of Bathrooms'?: number;   // Airtable field
+    'Number of Staterooms'?: number;  // Airtable field (renamed from Features: ...)
+    'Number of Bathrooms'?: number;   // Airtable field (renamed from Features: ...)
     'Sound System Type': string;
     'Toys Available On Request'?: string[];  // Airtable field (plural)
     'toys'?: string[];  // New: Array of toy names
@@ -546,12 +546,12 @@ export default function VesselDetailPage({
                   <div>
                     <div className="border-t border-[#e5e5e5] pt-4 mb-2"></div>
                     <div className="editorial-label text-[#6b6b6b] mb-2">STATEROOMS</div>
-                    <div className="editorial-spec-value text-[#0f0f0f]">{fields['Features: Number of Staterooms'] ?? 0}</div>
+                    <div className="editorial-spec-value text-[#0f0f0f]">{fields['Number of Staterooms'] ?? 0}</div>
                   </div>
                   <div>
                     <div className="border-t border-[#e5e5e5] pt-4 mb-2"></div>
                     <div className="editorial-label text-[#6b6b6b] mb-2">BATHROOMS</div>
-                    <div className="editorial-spec-value text-[#0f0f0f]">{fields['Features: Number of Bathrooms'] ?? 0}</div>
+                    <div className="editorial-spec-value text-[#0f0f0f]">{fields['Number of Bathrooms'] ?? 0}</div>
                   </div>
                 </div>
               </div>
