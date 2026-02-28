@@ -38,8 +38,9 @@ interface YachtData {
     'Features: Wet Bar'?: boolean;
     'Features: Kitchen'?: boolean;
     'Instant Booking Enabled'?: boolean;
-    'Main Departure Location': string;
-    '2-Hour Price': number;
+    'Main Departure Location'?: string;
+    'Departure Locations'?: string[];  // New multi-select field
+    '2-Hour Price'?: number;
     '3-Hour Price': number;
     '4-Hour Price': number;
     '5-Hour Price': number;
@@ -594,12 +595,14 @@ export default function VesselDetailPage({
                 </div>
               )}
 
-              {/* Departure Location */}
+              {/* Departure Locations */}
               <div className="mb-12">
-                <h2 className="editorial-label text-[#6b6b6b] mb-2 pb-2 border-b border-[#e5e5e5]">DEPARTURE LOCATION</h2>
+                <h2 className="editorial-label text-[#6b6b6b] mb-2 pb-2 border-b border-[#e5e5e5]">DEPARTURE LOCATIONS</h2>
                 <div className="mt-6">
                   <p className="editorial-spec-value text-[#0f0f0f]">
-                    {fields['Main Departure Location']}
+                    {(fields['Departure Locations'] && fields['Departure Locations'].length > 0)
+                      ? fields['Departure Locations'].join(', ')
+                      : fields['Main Departure Location'] || 'Miami'}
                   </p>
                 </div>
               </div>
