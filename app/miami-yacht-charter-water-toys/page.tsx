@@ -298,6 +298,18 @@ export default function WaterToysPage() {
                       {product.details}
                     </p>
 
+                    {/* License Link for Jet Ski */}
+                    {(product as any).licenseLink && (
+                      <a 
+                        href={(product as any).licenseLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-3 text-xs text-[#c4a265] hover:text-[#0f0f0f] underline transition-colors"
+                      >
+                        Get your license to drive here →
+                      </a>
+                    )}
+
                     {/* Price & CTA */}
                     <div className="pt-4 space-y-3">
                       <div className="flex items-baseline gap-2">
