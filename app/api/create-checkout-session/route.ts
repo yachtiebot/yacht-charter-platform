@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create line items for Stripe
+    // Create line items for Stripe with full product tracking
     const lineItems = items.map((item: any) => ({
       price_data: {
         currency: 'usd',
@@ -36,6 +36,11 @@ export async function POST(request: NextRequest) {
             `Customization: ${JSON.stringify(item.customization)}` : 
             undefined,
           images: item.image ? [item.image] : undefined,
+          metadata: {
+            product_id: item.id || '',
+            category: item.category || 'unknown',
+            selected_size: item.selectedSize || '',
+          },
         },
         unit_amount: Math.round(item.price * 100), // Convert to cents
       },
@@ -68,6 +73,12 @@ export async function POST(request: NextRequest) {
         charterDate: customerInfo?.charterDate || '',
         bookingNumber: customerInfo?.bookingNumber || '',
         notes: customerInfo?.notes || '',
+        // Product summary for QuickBooks tracking
+        order_summary: items.map((item: any) => 
+          `${item.id}|${item.name}|${item.category}|${item.quantity}|$${item.price}`
+        ).join('; '),
+        total_items: items.reduce((sum: number, item: any) => sum + (item.quantity || 1), 0).toString(),
+        categories: [...new Set(items.map((item: any) => item.category))].join(', '),
       },
       // Shipping for catering delivery (optional)
       ...(customerInfo?.address && {
