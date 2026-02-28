@@ -112,13 +112,15 @@ export default function WaterToysPage() {
                     </p>
 
                     {/* Features */}
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.map((feature, idx) => (
-                        <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
+                    {product.features && product.features.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {product.features.map((feature: string, idx: number) => (
+                          <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
                     {/* Size Selector */}
                     <div className="space-y-3">
@@ -210,13 +212,15 @@ export default function WaterToysPage() {
                   </p>
 
                   {/* Features */}
-                  <div className="flex flex-wrap gap-2">
-                    {product.features.map((feature, idx) => (
-                      <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
+                  {product.features && product.features.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {product.features.map((feature: string, idx: number) => (
+                        <span key={idx} className="text-xs text-[#6b6b6b] border border-[#6b6b6b]/20 px-3 py-1">
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
                   {/* Details */}
                   <p className="text-xs text-[#6b6b6b]/80" style={{ fontWeight: 300 }}>
