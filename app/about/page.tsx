@@ -114,7 +114,7 @@ export default function AboutPage() {
           <div className="space-y-6">
             {[
               {
-                title: 'No Commission Markups',
+                title: 'No Price Gouging Policy',
                 description: 'Transparent pricing with no hidden fees or inflated costs.'
               },
               {
