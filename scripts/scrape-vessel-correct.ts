@@ -369,14 +369,15 @@ async function main() {
     // Step 3: Create Airtable record
     await createAirtableRecord(vessel);
     
-    // Step 4: Update yacht-cache.ts
-    await updateYachtCacheFile(vessel.yachtId, vessel.imageUrls.length);
+    // Step 4: Update yacht-cache.ts (gallery count = total - 1 for hero)
+    const galleryCount = vessel.imageUrls.length - 1;
+    await updateYachtCacheFile(vessel.yachtId, galleryCount);
     
     console.log('\n' + '═'.repeat(60));
     console.log('✅ COMPLETE! Next steps:\n');
     console.log('1. Commit yacht-cache.ts changes:');
     console.log(`   git add lib/yacht-cache.ts`);
-    console.log(`   git commit -m "Add ${vessel.yachtId} to yacht photo mapping (${vessel.imageUrls.length} photos)"`);
+    console.log(`   git commit -m "Add ${vessel.yachtId} to yacht photo mapping (${galleryCount} gallery images)"`);
     console.log('   git push origin main');
     console.log('');
     console.log('2. View in Airtable: https://airtable.com/' + AIRTABLE_BASE_ID);
