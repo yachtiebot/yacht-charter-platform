@@ -243,8 +243,7 @@ export default function WaterToysPage() {
         {/* Disclaimer */}
         <div className="bg-white border border-[#0f0f0f]/10 p-6 mb-16">
           <p className="text-[#6b6b6b] text-sm" style={{ fontWeight: 300 }}>
-            <strong className="text-[#0f0f0f] font-medium">Note:</strong> Some water toys may require 48 hours advance notice. 
-            Items provided by independent vendors and subject to availability.
+            <strong className="text-[#0f0f0f] font-medium">Note:</strong> Some water toys may require 48 hours advance notice. An active yacht charter reservation is required for all water toy bookings. All items provided by licensed independent vendors and subject to availability.
           </p>
         </div>
 
