@@ -361,7 +361,7 @@ function FleetContent() {
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
                     {/* Gold Passenger Count Label - subtle blur backdrop */}
                     <div className="inline-block mb-1">
-                      <div className="text-[#c4a265] uppercase text-xs tracking-wide md:tracking-wider font-medium bg-black/20 backdrop-blur-[2px] px-2 py-0.5 rounded">
+                      <div className="text-[#c4a265] uppercase text-xs tracking-wide md:tracking-wider font-medium bg-black/10 backdrop-blur-[1px] px-2 py-0.5 rounded">
                         Up to {yacht.fields['Maximum Passengers']} Guests
                       </div>
                     </div>
@@ -373,7 +373,7 @@ function FleetContent() {
                     
                     {/* View Details / Book Instantly Link */}
                     {yacht.fields['Instant Booking Enabled'] ? (
-                      <div className="inline-flex items-center gap-2 editorial-label bg-white/10 backdrop-blur-sm px-4 py-2 text-white group-hover:bg-white/20 transition-all duration-300">
+                      <div className="inline-flex items-center gap-2 editorial-label bg-white/5 backdrop-blur-[1px] px-4 py-2 text-white group-hover:bg-white/10 transition-all duration-300">
                         <span>Book Instantly</span>
                         <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                       </div>
