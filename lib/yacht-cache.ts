@@ -244,11 +244,8 @@ function enhanceWithPhotos(yachts: any[]) {
       features.push(numTVs === 1 ? '1 TV' : `${numTVs} TVs`);
     }
     
-    // Staterooms
-    const numStaterooms = yacht.fields['Features: Number of Staterooms'];
-    if (numStaterooms && numStaterooms > 0) {
-      features.push(numStaterooms === 1 ? '1 Stateroom' : `${numStaterooms} Staterooms`);
-    }
+    // Note: Staterooms and Bathrooms are NOT included in features array
+    // They have dedicated spots in SPECIFICATIONS section
     
     if (features.length > 0) {
       yacht.fields['features'] = features;
