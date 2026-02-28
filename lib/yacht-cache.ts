@@ -159,6 +159,7 @@ function enhanceWithPhotos(yachts: any[]) {
     'Amenities: Air Conditioning': 'Air-conditioning',
     'Amenities: BBQ Grill': 'Barbecue Grill',
     'Amenities: Satellite TV': 'Satellite TV',
+    'Amenities: Smart TV': 'Smart TV',
     'Amenities: StarLink': 'Starlink',
     'Amenities: WiFi': 'Wi-Fi',
     'Amenities: Tender': 'Tender',
