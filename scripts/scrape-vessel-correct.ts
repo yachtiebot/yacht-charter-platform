@@ -37,11 +37,18 @@ interface VesselData {
   description: string;
   pricing: { hours: number; price: number }[];
   imageUrls: string[];
-  // Optional fields for larger boats
-  crew?: number;
-  jetSkis?: number;
-  paddleboards?: number;
-  tender?: string;
+  // Toys (boolean fields in Airtable)
+  hasJetSki: boolean;
+  hasFloatingRaft: boolean;
+  hasFloatingRing: boolean;
+  hasInflatables: boolean;
+  hasTubing: boolean;
+  // Amenities (boolean fields in Airtable)
+  hasTender: boolean;
+  hasJacuzzi: boolean;
+  hasBBQ: boolean;
+  // Features (boolean fields in Airtable)
+  hasKitchen: boolean;
 }
 
 async function fetchPage(url: string): Promise<string> {
@@ -147,19 +154,23 @@ function parseVesselData(html: string): VesselData {
     }
   }
   
-  // Extract additional features for larger boats (optional)
-  // These will be added to Airtable if present
-  const crewMatch = text.match(/Crew:\s*(\d+)/i);
-  const crew = crewMatch ? parseInt(crewMatch[1]) : undefined;
+  // Extract toys and amenities for larger boats (match Airtable fields)
+  // These are boolean/text fields in Airtable
   
-  const jetSkiMatch = text.match(/Jet Ski[s]?:\s*(\d+)/i);
-  const jetSkis = jetSkiMatch ? parseInt(jetSkiMatch[1]) : undefined;
+  // TOYS (Airtable: Toys: field names)
+  const hasJetSki = /Jet Ski[s]?[:\s]/i.test(text);
+  const hasFloatingRaft = /Floating Raft|Raft Island/i.test(text);
+  const hasFloatingRing = /Floating Ring|Ring Island/i.test(text);
+  const hasInflatables = /Inflatables?/i.test(text);
+  const hasTubing = /Tubing/i.test(text);
   
-  const paddleboardMatch = text.match(/Paddle\s*board[s]?:\s*(\d+)/i);
-  const paddleboards = paddleboardMatch ? parseInt(paddleboardMatch[1]) : undefined;
+  // AMENITIES (Airtable: Amenities: field names)
+  const hasTender = /Tender/i.test(text);
+  const hasJacuzzi = /Jacuzzi|Hot Tub/i.test(text);
+  const hasBBQ = /BBQ|Barbecue|Grill/i.test(text);
   
-  const tenderMatch = text.match(/Tender:\s*([^\n]+)/i);
-  const tender = tenderMatch ? tenderMatch[1].trim() : undefined;
+  // FEATURES (Airtable: Features: field names)
+  const hasKitchen = /Kitchen|Galley/i.test(text);
   
   // Extract pricing
   const pricing: { hours: number; price: number }[] = [];
@@ -217,10 +228,15 @@ function parseVesselData(html: string): VesselData {
     description,
     pricing,
     imageUrls,
-    crew,
-    jetSkis,
-    paddleboards,
-    tender
+    hasJetSki,
+    hasFloatingRaft,
+    hasFloatingRing,
+    hasInflatables,
+    hasTubing,
+    hasTender,
+    hasJacuzzi,
+    hasBBQ,
+    hasKitchen
   };
 }
 
@@ -327,19 +343,20 @@ async function createAirtableRecord(vessel: VesselData): Promise<void> {
     ...pricingFields
   };
   
-  // Add optional fields if present (for larger boats)
-  if (vessel.crew !== undefined) {
-    fields['Crew Members'] = vessel.crew;
-  }
-  if (vessel.jetSkis !== undefined) {
-    fields['Jet Skis'] = vessel.jetSkis;
-  }
-  if (vessel.paddleboards !== undefined) {
-    fields['Paddleboards'] = vessel.paddleboards;
-  }
-  if (vessel.tender !== undefined) {
-    fields['Tender'] = vessel.tender;
-  }
+  // Add toys if detected (boolean fields)
+  if (vessel.hasJetSki) fields['Toys: Jet Ski'] = true;
+  if (vessel.hasFloatingRaft) fields['Toys: Floating Raft Island'] = true;
+  if (vessel.hasFloatingRing) fields['Toys: Floating Ring Island'] = true;
+  if (vessel.hasInflatables) fields['Toys: Inflatables'] = true;
+  if (vessel.hasTubing) fields['Toys: Tubing'] = true;
+  
+  // Add amenities if detected (boolean fields)
+  if (vessel.hasTender) fields['Amenities: Tender Boat'] = true;
+  if (vessel.hasJacuzzi) fields['Amenities: Jacuzzi'] = true;
+  if (vessel.hasBBQ) fields['Amenities: BBQ Grill'] = true;
+  
+  // Add features if detected (boolean fields)
+  if (vessel.hasKitchen) fields['Features: Kitchen'] = true;
   
   const record = { fields };
   
