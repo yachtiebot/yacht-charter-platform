@@ -15,6 +15,7 @@ export interface CartItem {
   minQuantity?: number;
   waiverData?: any; // Stores waiver/acknowledgment data for water toys
   requiresWaiver?: boolean; // Flag to indicate if waiver is required
+  vendorEmail?: string; // Vendor email from Airtable for CC on waiver confirmations
 }
 
 interface CartContextType {

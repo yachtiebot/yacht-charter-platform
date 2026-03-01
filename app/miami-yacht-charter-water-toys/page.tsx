@@ -167,7 +167,8 @@ export default function WaterToysPage() {
               maxQuantity: airtableProduct.maxQuantity || 1,
               minQuantity: airtableProduct.minQuantity || 1,
               requiresWaiver: airtableProduct.requiresWaiver || false,
-              licenseLink: airtableProduct.licenseLink || null
+              licenseLink: airtableProduct.licenseLink || null,
+              vendorEmail: airtableProduct.vendorEmail || null
             };
           }
         });
@@ -227,7 +228,8 @@ export default function WaterToysPage() {
       category: product.id === 'jet-ski' ? 'jet-ski' : 'water-toys',
       image: product.images[0],
       requiresWaiver: true,
-      waiverData
+      waiverData,
+      vendorEmail: product.vendorEmail || null
     });
     
     // Close modal and clear pending product
@@ -248,7 +250,8 @@ export default function WaterToysPage() {
       category: 'water-toys',
       image: product.images[0],
       requiresWaiver: true,
-      waiverData
+      waiverData,
+      vendorEmail: product.vendorEmail || null
     });
     
     // Close modal and clear pending product
@@ -269,7 +272,8 @@ export default function WaterToysPage() {
       category: 'water-toys',
       image: product.images[0],
       requiresWaiver: true,
-      waiverData
+      waiverData,
+      vendorEmail: product.vendorEmail || null
     });
     
     // Close modal and clear pending product

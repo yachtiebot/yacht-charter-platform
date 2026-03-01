@@ -39,8 +39,8 @@ export async function POST(request: NextRequest) {
         productType = 'Water Sports Equipment';
       }
 
-      // Get vendor email from config (if applicable)
-      const vendorEmail = getVendorEmail(item.id || '');
+      // Get vendor email from cart item (from Airtable field)
+      const vendorEmail = item.vendorEmail || null;
 
       // Build recipient list: customer + sales team + vendor (if applicable)
       const recipients = {

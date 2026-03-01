@@ -80,6 +80,7 @@ export async function GET() {
         features,
         requiresWaiver: fields['Requires Waiver'] || false,
         licenseLink: fields['License Link'] || null,
+        vendorEmail: fields['Vendor Email'] || null,
         sizes: Object.keys(sizes).length > 0 ? sizes : null
       };
     });

@@ -22,7 +22,7 @@ export const VENDOR_EMAILS = {
 /**
  * Sales team email (receives all waiver confirmations)
  */
-export const SALES_EMAIL = 'hello@miamiyachtingcompany.com';
+export const SALES_EMAIL = 'support@miamiyachting.com';
 
 /**
  * Get vendor email for a specific product

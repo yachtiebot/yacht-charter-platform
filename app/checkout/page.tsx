@@ -79,6 +79,7 @@ export default function CheckoutPage() {
             customization: item.customization,
             waiverData: item.waiverData,
             requiresWaiver: item.requiresWaiver,
+            vendorEmail: item.vendorEmail,
           })),
           customerInfo: formData,
         }),
