@@ -26,9 +26,9 @@ export async function getYachtsWithCache() {
   
   const data = await response.json();
   
-  // Filter to active yachts
+  // Filter to active yachts (Status = "Active")
   const activeYachts = data.records.filter((record: any) => 
-    record.fields['Show on Website?'] === true
+    record.fields['Status']?.toLowerCase() === 'active'
   );
   
   console.log(`✓ Fetched ${activeYachts.length} yachts directly from Airtable`);

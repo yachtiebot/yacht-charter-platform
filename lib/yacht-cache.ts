@@ -24,7 +24,7 @@ const FALLBACK_YACHTS = [
       'Length in Feet': 37,
       'Maximum Passengers': 12,
       'Main Departure Location': 'Miami Beach',
-      'Show on Website?': true,
+      'Status': 'Active',
       '2-Hour Price': 900,
       '3-Hour Price': 1200,
       '4-Hour Price': 1500,
@@ -45,7 +45,7 @@ const FALLBACK_YACHTS = [
       'Length in Feet': 27,
       'Maximum Passengers': 10,
       'Main Departure Location': 'Miami Beach',
-      'Show on Website?': true,
+      'Status': 'Active',
       '2-Hour Price': 600,
       '3-Hour Price': 800,
       '4-Hour Price': 1000,
@@ -66,7 +66,7 @@ const FALLBACK_YACHTS = [
       'Length in Feet': 116,
       'Maximum Passengers': 12,
       'Main Departure Location': 'Miami',
-      'Show on Website?': true,
+      'Status': 'Active',
       '2-Hour Price': 16700,
       '3-Hour Price': 16700,
       '4-Hour Price': 16700,
@@ -111,9 +111,9 @@ export async function getYachtsWithCache() {
     
     const data = await response.json();
     
-    // Filter to active yachts only
+    // Filter to active yachts only (Status = "Active")
     const activeYachts = data.records.filter((record: any) => 
-      record.fields['Show on Website?'] === true
+      record.fields['Status']?.toLowerCase() === 'active'
     );
     
     // Enhance with Supabase photo URLs
