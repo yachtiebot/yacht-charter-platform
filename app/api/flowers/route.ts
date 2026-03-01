@@ -25,8 +25,13 @@ export async function GET() {
 
     const data = await response.json();
     
+    // Filter to active products only (Status = "Active")
+    const activeRecords = data.records.filter((record: any) => 
+      record.fields['Status']?.toLowerCase() === 'active'
+    );
+    
     // Transform Airtable records to website format
-    const flowers = data.records.map((record: any) => {
+    const flowers = activeRecords.map((record: any) => {
       const fields = record.fields;
       
       // Build sizes object from Option fields
