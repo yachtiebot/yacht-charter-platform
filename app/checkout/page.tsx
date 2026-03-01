@@ -79,7 +79,7 @@ export default function CheckoutPage() {
             customization: item.customization,
             waiverData: item.waiverData,
             requiresWaiver: item.requiresWaiver,
-            vendorEmail: item.vendorEmail,
+            vendorEmail: item.vendorEmail,  // Only used for email CC, not stored in Stripe
           })),
           customerInfo: formData,
         }),
