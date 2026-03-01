@@ -347,6 +347,11 @@ export default function CateringPage() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-20">
           {filteredProducts.map((product) => {
+            // Skip products without pricing options
+            if (!product.options || product.options.length === 0) {
+              return null;
+            }
+            
             // Get selected size or default to first option
             const selectedIndex = selectedSizes[product.id] ?? 0;
             const selectedOption = product.options[selectedIndex];
