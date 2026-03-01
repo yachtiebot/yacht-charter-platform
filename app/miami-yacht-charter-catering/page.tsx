@@ -163,30 +163,48 @@ export default function CateringPage() {
 
   // Check if product needs customization
   const needsCustomization = (productId: string) => {
-    return ['gourmet-wraps', 'gourmet-spirals', 'large-charcuterie', 'med-charcuterie', 'chicken-wings', 'chicken-tenders', 'deli-sandwich'].includes(productId);
+    return [
+      'gourmet-wraps', 
+      'gourmet-spirals', 
+      'large-charcuterie-platter',
+      'med-charcuterie-box',
+      'custom-charcuterie-box',
+      'chicken-wings', 
+      'chicken-tenders',
+      'chilled-tenders',
+      'deli-sandwich-combo-platter'
+    ].includes(productId);
   };
 
   // Handle add to cart - open modal if needed
   const handleAddToCart = (product: any, selectedOption: any) => {
-    const productBase = product.id.split('-')[0]; // e.g., 'gourmet' from 'gourmet-wraps'
-    
-    if (productBase === 'gourmet' && product.id === 'gourmet-wraps') {
+    // Gourmet Wraps
+    if (product.id === 'gourmet-wraps') {
       setPendingProduct({ ...product, selectedOption });
       setActiveModal('wraps');
-    } else if (productBase === 'gourmet' && product.id === 'gourmet-spirals') {
+    } 
+    // Gourmet Spirals
+    else if (product.id === 'gourmet-spirals') {
       setPendingProduct({ ...product, selectedOption });
       setActiveModal('spirals');
-    } else if (product.id.includes('charcuterie')) {
+    } 
+    // All charcuterie products
+    else if (product.id.includes('charcuterie')) {
       setPendingProduct({ ...product, selectedOption });
       setActiveModal('charcuterie');
-    } else if (product.id === 'deli-sandwich') {
+    } 
+    // Deli Sandwich Combo
+    else if (product.id === 'deli-sandwich-combo-platter') {
       setPendingProduct({ ...product, selectedOption });
       setActiveModal('deli-sandwich');
-    } else if (product.id === 'chicken-wings' || product.id === 'chicken-tenders') {
+    } 
+    // Chicken Wings & Tenders (sauce selection)
+    else if (product.id === 'chicken-wings' || product.id === 'chicken-tenders' || product.id === 'chilled-tenders') {
       setPendingProduct({ ...product, selectedOption });
       setActiveModal('sauce');
-    } else {
-      // No customization needed - add directly
+    } 
+    // No customization needed - add directly
+    else {
       addItem({
         id: `${product.id}-${selectedOption.value}`,
         name: `${product.name} (${selectedOption.label})`,
