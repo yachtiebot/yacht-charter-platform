@@ -61,10 +61,10 @@ export default function JetSkiWaiverModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-      <div className="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+      <div className="bg-[#faf9f7] max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
         {/* Header */}
-        <div className="sticky top-0 bg-white border-b border-black/10 p-6">
+        <div className="sticky top-0 bg-[#faf9f7] border-b border-[#e5e5e5]/30 p-6">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl text-[#0f0f0f]" style={{ fontWeight: 300 }}>
               Jet Ski Acknowledgements
@@ -212,7 +212,7 @@ export default function JetSkiWaiverModal({
         </div>
 
         {/* Footer */}
-        <div className="sticky bottom-0 bg-white border-t border-black/10 p-6">
+        <div className="sticky bottom-0 bg-[#faf9f7] border-t border-[#e5e5e5]/30 p-6">
           <div className="flex items-center justify-between gap-4">
             <button
               onClick={onClose}
