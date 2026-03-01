@@ -388,7 +388,7 @@ export default function WaterToysPage() {
                         onClick={() => handleAddToCart(product, sizeInfo)}
                         className="w-full bg-white border border-[#0f0f0f]/20 text-[#0f0f0f] py-4 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300"
                       >
-                        {product.requiresWaiver ? 'Review Waiver & Add' : 'Add to Cart'}
+                        Add to Cart
                       </button>
                     </div>
                   </div>
@@ -474,7 +474,7 @@ export default function WaterToysPage() {
                       })}
                       className="w-full bg-white border border-[#0f0f0f]/20 text-[#0f0f0f] py-4 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300"
                     >
-                      {product.requiresWaiver ? 'Review Waiver & Add' : product.depositPrice ? 'Reserve Now' : 'Add to Cart'}
+                      {product.depositPrice ? 'Reserve Now' : 'Add to Cart'}
                     </button>
                   </div>
                 </div>
