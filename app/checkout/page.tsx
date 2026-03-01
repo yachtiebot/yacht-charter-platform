@@ -25,6 +25,7 @@ export default function CheckoutPage() {
     notes: ''
   });
   
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -45,6 +46,9 @@ export default function CheckoutPage() {
     if (!formData.phone.trim()) newErrors.phone = 'Required';
     if (!formData.charterDate.trim()) newErrors.charterDate = 'Required';
     if (!formData.bookingNumber.trim()) newErrors.bookingNumber = 'Required';
+    
+    // Terms and conditions must be accepted
+    if (!termsAccepted) newErrors.terms = 'You must accept the terms and conditions';
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -283,12 +287,47 @@ export default function CheckoutPage() {
                 />
               </div>
 
+              {/* Terms and Conditions */}
+              <div className="border-t border-[#e5e5e5] pt-6">
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    checked={termsAccepted}
+                    onChange={(e) => setTermsAccepted(e.target.checked)}
+                    className="mt-1 w-5 h-5 border-2 border-[#d0d0d0] cursor-pointer flex-shrink-0"
+                  />
+                  <span className="text-sm text-[#0f0f0f] leading-relaxed" style={{ fontWeight: 300 }}>
+                    I agree to the{' '}
+                    <a 
+                      href="/terms-and-conditions" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[#c4a265] hover:underline"
+                    >
+                      Terms and Conditions
+                    </a>{' '}
+                    and{' '}
+                    <a 
+                      href="/privacy-policy" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[#c4a265] hover:underline"
+                    >
+                      Privacy Policy
+                    </a>. I understand that all sales are final and orders require 36 hours advance notice for catering items.
+                  </span>
+                </label>
+                {errors.terms && (
+                  <p className="text-xs text-red-600 mt-2">{errors.terms}</p>
+                )}
+              </div>
+
               <button
                 type="submit"
-                disabled={isProcessing || (hasCateringItems && platterCount < 2)}
+                disabled={isProcessing || (hasCateringItems && platterCount < 2) || !termsAccepted}
                 className="w-full bg-[#0f0f0f] text-white py-4 editorial-label hover:bg-[#c4a265] transition-all duration-300 disabled:bg-[#e5e5e5] disabled:text-[#9ca3af] disabled:cursor-not-allowed"
               >
-                {isProcessing ? 'Processing...' : (hasCateringItems && platterCount < 2) ? 'Minimum 2 Platters Required' : 'Proceed to Payment'}
+                {isProcessing ? 'Processing...' : !termsAccepted ? 'Accept Terms to Continue' : (hasCateringItems && platterCount < 2) ? 'Minimum 2 Platters Required' : 'Proceed to Payment'}
               </button>
               {errors.cart && <p className="text-xs text-[#c4a265] mt-2 text-center">{errors.cart}</p>}
               {errors.submit && <p className="text-xs text-red-600 mt-2 text-center">{errors.submit}</p>}

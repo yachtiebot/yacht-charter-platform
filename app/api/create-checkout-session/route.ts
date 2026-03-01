@@ -141,6 +141,11 @@ export async function POST(request: NextRequest) {
         bookingNumber: customerInfo?.bookingNumber || '',
         notes: customerInfo?.notes || '',
         
+        // TERMS AND CONDITIONS ACCEPTANCE (Critical for disputes)
+        terms_and_conditions_accepted: 'YES',
+        terms_accepted_at: new Date().toISOString(),
+        terms_acceptance_ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown',
+        
         // Product summary for QuickBooks tracking
         order_summary: items.map((item: any) => 
           `${item.id}|${item.name}|${item.category}|${item.quantity}|$${item.price}`
