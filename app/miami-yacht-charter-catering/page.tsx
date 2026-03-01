@@ -84,11 +84,16 @@ export default function CateringPage() {
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: number}>({});
-  const { addItem } = useCart();
+  const { addItem, setLastVisitedStore } = useCart();
   
   // Modal states
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [pendingProduct, setPendingProduct] = useState<any>(null);
+
+  // Set this page as the last visited store
+  useEffect(() => {
+    setLastVisitedStore('/miami-yacht-charter-catering');
+  }, [setLastVisitedStore]);
 
   // Fetch catering from Airtable API
   useEffect(() => {

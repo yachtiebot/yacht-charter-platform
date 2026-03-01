@@ -96,9 +96,14 @@ const baseWaterToysProducts = [
 ];
 
 export default function WaterToysPage() {
-  const { addItem } = useCart();
+  const { addItem, setLastVisitedStore } = useCart();
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: string}>({});
   const [waterToysProducts, setWaterToysProducts] = useState(baseWaterToysProducts);
+
+  // Set this page as the last visited store
+  useEffect(() => {
+    setLastVisitedStore('/miami-yacht-charter-water-toys');
+  }, [setLastVisitedStore]);
 
   // Fetch Airtable data and merge with hardcoded fallbacks
   useEffect(() => {

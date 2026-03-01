@@ -26,6 +26,8 @@ interface CartContextType {
   isOpen: boolean;
   openCart: () => void;
   closeCart: () => void;
+  lastVisitedStore: string;
+  setLastVisitedStore: (store: string) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -34,6 +36,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [lastVisitedStore, setLastVisitedStore] = useState<string>('/miami-yacht-charter-catering');
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -46,6 +49,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
         console.error('Error loading cart:', e);
       }
     }
+    const savedStore = localStorage.getItem('yachtLastVisitedStore');
+    if (savedStore) {
+      setLastVisitedStore(savedStore);
+    }
   }, []);
 
   // Save cart to localStorage whenever it changes
@@ -54,6 +61,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
       localStorage.setItem('yachtCartItems', JSON.stringify(items));
     }
   }, [items, mounted]);
+
+  // Save lastVisitedStore to localStorage whenever it changes
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem('yachtLastVisitedStore', lastVisitedStore);
+    }
+  }, [lastVisitedStore, mounted]);
 
   const addItem = (newItem: Omit<CartItem, 'quantity'> & { quantity?: number }) => {
     setItems(currentItems => {
@@ -126,6 +140,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
         isOpen,
         openCart,
         closeCart,
+        lastVisitedStore,
+        setLastVisitedStore,
       }}
     >
       {children}

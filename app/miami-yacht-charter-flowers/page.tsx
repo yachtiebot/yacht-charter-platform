@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import DarkFooter from '@/components/DarkFooter';
@@ -60,8 +60,13 @@ const flowerProducts = [
 ];
 
 export default function FlowersPage() {
-  const { addItem } = useCart();
+  const { addItem, setLastVisitedStore } = useCart();
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: string}>({});
+
+  // Set this page as the last visited store
+  useEffect(() => {
+    setLastVisitedStore('/miami-yacht-charter-flowers');
+  }, [setLastVisitedStore]);
 
   const handleSizeSelect = (productId: string, size: string) => {
     setSelectedSizes(prev => ({ ...prev, [productId]: size }));

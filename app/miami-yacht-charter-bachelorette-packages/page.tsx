@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import ProductImageGallery from '@/components/ProductImageGallery';
@@ -97,7 +98,12 @@ const packages = [
 ];
 
 export default function BachelorettePackagesPage() {
-  const { addItem } = useCart();
+  const { addItem, setLastVisitedStore } = useCart();
+
+  // Set this page as the last visited store
+  useEffect(() => {
+    setLastVisitedStore('/miami-yacht-charter-bachelorette-packages');
+  }, [setLastVisitedStore]);
 
   return (
     <main className="min-h-screen bg-[#faf9f7]">

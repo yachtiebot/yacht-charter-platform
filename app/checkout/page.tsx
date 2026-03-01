@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export default function CheckoutPage() {
-  const { items, totalPrice } = useCart();
+  const { items, totalPrice, lastVisitedStore } = useCart();
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
   
@@ -146,7 +146,7 @@ export default function CheckoutPage() {
           {platterCount < 2 && (
             <div className="mt-6 bg-[#c4a265]/5 px-6 py-4 flex items-center justify-between">
               <Link 
-                href="/miami-yacht-charter-catering"
+                href={lastVisitedStore}
                 className="text-[#c4a265] hover:text-[#0f0f0f] transition-colors"
                 aria-label="Add more items"
               >
