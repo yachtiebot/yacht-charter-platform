@@ -282,7 +282,7 @@ function generateWaterSportsWaiverHTML(item: any, waiver: any, customerInfo: any
 
       <div class="waiver-item">
         <div class="waiver-title"><span class="checkmark">✓</span>Liability Acknowledgement</div>
-        <p class="waiver-text">I understand that if myself or one of my guests cause damage to the charter vessel with the rental item, I will be charged for the repairs to the charter vessel. Furthermore, I understand that the yacht crew is not responsible for the safekeeping of this item or for the instructions on how to use the item. I am renting this item from a 3rd party vendor that is unrelated to my charter vessel or its crew.</p>
+        <p class="waiver-text">I understand that if myself or one of my guests cause damage to the rental item, I will be charged for the repairs to the item. Furthermore, I understand that the yacht crew is not responsible for the safekeeping of this item or for the instructions on how to use the item. I am renting this item from a 3rd party vendor that is unrelated to my charter vessel or its crew.</p>
       </div>
 
       <div class="waiver-item">
@@ -389,16 +389,6 @@ function generateFloatingEquipmentWaiverHTML(item: any, waiver: any, customerInf
       <div class="waiver-item">
         <div class="waiver-title"><span class="checkmark">✓</span>Damage Deposit</div>
         <p class="waiver-text">I understand this rental item is provided by a 3rd party independent vendor who may charge a damage security deposit to rent this item. Damage security deposits are refunded at the end of the rental if myself or my guests do not damage the rental item. Normal wear and minor scratches do not constitute damage. Refusal to pay the vendor's required damage security deposit prior to usage may result in forfeiture of rental time and cancellation of the rental without refund.</p>
-      </div>
-
-      <div class="waiver-item">
-        <div class="waiver-title"><span class="checkmark">✓</span>Proper Use and Safety</div>
-        <p class="waiver-text">I understand that floating equipment must be properly secured and supervised at all times. I acknowledge that this equipment is designed for calm water use only and must be retrieved or secured in the event of changing weather conditions. I am responsible for the safety of all persons using this equipment and agree to follow all manufacturer guidelines and vendor instructions.</p>
-      </div>
-
-      <div class="waiver-item">
-        <div class="waiver-title"><span class="checkmark">✓</span>Liability Acknowledgement</div>
-        <p class="waiver-text">I understand that if myself or one of my guests cause damage to the charter vessel with the rental item, I will be charged for the repairs to the charter vessel. Furthermore, I understand that the yacht crew is not responsible for the safekeeping of this item or for the instructions on how to use the item. I am renting this item from a 3rd party vendor that is unrelated to my charter vessel or its crew.</p>
       </div>
 
       <div class="waiver-item">

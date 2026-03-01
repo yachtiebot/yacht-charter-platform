@@ -36,14 +36,12 @@ function generateWaiverMetadata(items: any[]) {
       metadata[`${prefix}protection`] = 'Customer electronically accepted all 7 Jet Ski waiver acknowledgements including third-party vendor liability release, damage responsibility, and electronic signature consent.';
     } else if (isFloatingEquipment) {
       metadata[`${prefix}type`] = 'floating_equipment';
-      // Floating equipment acknowledgements (6) - Cabana, Lounge Chairs, Rafts
+      // Floating equipment acknowledgements (4) - Cabana, Lounge Chairs, Rafts
       metadata[`${prefix}cancellation_policy`] = waiver.cancellationPolicy ? 'ACCEPTED' : 'NOT_ACCEPTED';
       metadata[`${prefix}damage_deposit`] = waiver.damageDeposit ? 'ACCEPTED' : 'NOT_ACCEPTED';
-      metadata[`${prefix}proper_use`] = waiver.properUse ? 'ACCEPTED' : 'NOT_ACCEPTED';
       metadata[`${prefix}liability_ack`] = waiver.liabilityAcknowledgement ? 'ACCEPTED' : 'NOT_ACCEPTED';
       metadata[`${prefix}card_authorization`] = waiver.cardAuthorization ? 'ACCEPTED' : 'NOT_ACCEPTED';
-      metadata[`${prefix}rental_price`] = waiver.rentalPrice ? 'ACCEPTED' : 'NOT_ACCEPTED';
-      metadata[`${prefix}protection`] = 'Customer electronically accepted all 6 floating equipment waiver acknowledgements including third-party vendor liability release, damage responsibility, and proper use requirements.';
+      metadata[`${prefix}protection`] = 'Customer electronically accepted all 4 floating equipment waiver acknowledgements including third-party vendor liability release and damage responsibility.';
     } else {
       metadata[`${prefix}type`] = 'water_sports';
       // Water sports equipment acknowledgements (6) - Seabob, Flitescooter
