@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getVendorEmail, SALES_EMAIL } from '@/config/vendor-emails';
 
-// Email sending API for Jet Ski waivers
-// This will be called after successful payment
+// Email sending API for waivers
+// This will be called after successful payment via webhook
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,8 +15,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true, message: 'No waivers to send' });
     }
 
-    // Sales team email
-    const salesEmail = 'hello@miamiyachtingcompany.com';
+    // Sales team email (from config)
+    const salesEmail = SALES_EMAIL;
 
     // Build waiver email content for each item
     for (const item of itemsWithWaivers) {
@@ -26,22 +27,40 @@ export async function POST(request: NextRequest) {
       const isFloatingEquipment = item.id?.includes('floating') || item.id?.includes('raft') || item.id?.includes('cabana') || item.id?.includes('lounge');
       
       let waiverHTML;
+      let productType = '';
       if (isJetSki) {
         waiverHTML = generateJetSkiWaiverHTML(item, waiver, customerInfo);
+        productType = 'Jet Ski';
       } else if (isFloatingEquipment) {
         waiverHTML = generateFloatingEquipmentWaiverHTML(item, waiver, customerInfo);
+        productType = 'Floating Equipment';
       } else {
         waiverHTML = generateWaterSportsWaiverHTML(item, waiver, customerInfo);
+        productType = 'Water Sports Equipment';
+      }
+
+      // Get vendor email from config (if applicable)
+      const vendorEmail = getVendorEmail(item.id || '');
+
+      // Build recipient list: customer + sales team + vendor (if applicable)
+      const recipients = {
+        to: customerInfo.email,
+        cc: [salesEmail],
+      };
+      
+      if (vendorEmail) {
+        recipients.cc.push(vendorEmail);
       }
 
       // TODO: Integrate with your email service (SendGrid, Resend, AWS SES, etc.)
       // For now, we'll log it. You'll need to add your email service here.
       
-      console.log('=== JET SKI WAIVER EMAIL ===');
-      console.log('To Customer:', customerInfo.email);
-      console.log('To Sales:', salesEmail);
-      console.log('Subject:', `Jet Ski Waiver - ${customerInfo.firstName} ${customerInfo.lastName}`);
-      console.log('HTML Content:', waiverHTML);
+      console.log(`=== ${productType.toUpperCase()} WAIVER EMAIL ===`);
+      console.log('To Customer:', recipients.to);
+      console.log('CC Sales:', salesEmail);
+      if (vendorEmail) console.log('CC Vendor:', vendorEmail);
+      console.log('Subject:', `${productType} Waiver - ${customerInfo.firstName} ${customerInfo.lastName} - Booking #${customerInfo.bookingNumber}`);
+      console.log('HTML Content:', waiverHTML.substring(0, 200) + '...');
       console.log('===========================');
 
       // Example integration with Resend (commented out - add your API key):
@@ -54,9 +73,9 @@ export async function POST(request: NextRequest) {
         },
         body: JSON.stringify({
           from: 'Miami Yachting Company <noreply@miamiyachtingcompany.com>',
-          to: [customerInfo.email],
-          bcc: [salesEmail],
-          subject: `Jet Ski Waiver Confirmation - Booking #${customerInfo.bookingNumber}`,
+          to: [recipients.to],
+          cc: recipients.cc,  // Sends to sales team + vendor
+          subject: `${productType} Waiver Confirmation - Booking #${customerInfo.bookingNumber}`,
           html: waiverHTML,
         }),
       });
