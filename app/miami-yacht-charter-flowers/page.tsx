@@ -22,7 +22,13 @@ export default function FlowersPage() {
     fetch('/api/flowers')
       .then(res => res.json())
       .then(data => {
-        setFlowers(data);
+        // Sort by lowest price (ascending)
+        const sorted = data.sort((a: any, b: any) => {
+          const aMinPrice = a.sizes ? Math.min(...Object.values(a.sizes).map((s: any) => s.price)) : 999999;
+          const bMinPrice = b.sizes ? Math.min(...Object.values(b.sizes).map((s: any) => s.price)) : 999999;
+          return aMinPrice - bMinPrice;
+        });
+        setFlowers(sorted);
         setLoading(false);
       })
       .catch(err => {
