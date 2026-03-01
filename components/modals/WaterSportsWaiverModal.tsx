@@ -4,13 +4,12 @@ import { useState } from 'react';
 
 export interface WaterSportsWaiverData {
   // Acknowledgments
-  equipmentSafety: boolean;
+  cancellationPolicy: boolean;
   damageDeposit: boolean;
-  damageToVessel: boolean;
-  properUse: boolean;
-  appointments: boolean;
-  creditCardID: boolean;
-  thirdPartyVendor: boolean;
+  experienceAcknowledgement: boolean;
+  liabilityAcknowledgement: boolean;
+  cardAuthorization: boolean;
+  rentalPrice: boolean;
   
   // Timestamp
   acceptedAt: string;
@@ -32,13 +31,12 @@ export default function WaterSportsWaiverModal({
   onAccept,
 }: WaterSportsWaiverModalProps) {
   const [formData, setFormData] = useState({
-    equipmentSafety: false,
+    cancellationPolicy: false,
     damageDeposit: false,
-    damageToVessel: false,
-    properUse: false,
-    appointments: false,
-    creditCardID: false,
-    thirdPartyVendor: false,
+    experienceAcknowledgement: false,
+    liabilityAcknowledgement: false,
+    cardAuthorization: false,
+    rentalPrice: false,
   });
 
   if (!isOpen) return null;
@@ -67,7 +65,7 @@ export default function WaterSportsWaiverModal({
         <div className="sticky top-0 bg-[#faf9f7] border-b border-[#e5e5e5]/30 p-6">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl text-[#0f0f0f]" style={{ fontWeight: 300 }}>
-              Water Sports Equipment Acknowledgements
+              {productName} Acknowledgements
             </h2>
             <button
               onClick={onClose}
@@ -80,32 +78,28 @@ export default function WaterSportsWaiverModal({
 
         {/* Content */}
         <div className="p-6 space-y-8">
-          {/* Intro Text */}
-          <div>
-            <p className="text-sm text-[#6b6b6b]" style={{ fontWeight: 300 }}>
-              Please certify the following statement <span className="italic">(required)</span>
+          {/* 1. Cancellation Policy */}
+          <div className="space-y-2">
+            <p className="text-sm text-[#0f0f0f]" style={{ fontWeight: 300 }}>
+              Cancellation Policy <span className="italic text-[#6b6b6b]">(required)</span>
             </p>
-          </div>
-
-          {/* 1. Equipment Safety */}
-          <div className="space-y-3">
             <label className="flex items-start gap-4 cursor-pointer group">
               <input
                 type="checkbox"
-                checked={formData.equipmentSafety}
-                onChange={() => handleCheckbox('equipmentSafety')}
+                checked={formData.cancellationPolicy}
+                onChange={() => handleCheckbox('cancellationPolicy')}
                 className="mt-0.5 w-5 h-5 border border-[#d0d0d0] cursor-pointer flex-shrink-0"
               />
               <p className="text-sm text-[#0f0f0f] leading-relaxed" style={{ fontWeight: 300 }}>
-                I confirm that I have reviewed the safety instructions and operational guidelines for {productName} equipment. I understand the proper use of this equipment and acknowledge that I am responsible for ensuring all members of my group who use the equipment are properly instructed. Miami Yachting Group LLC is not responsible for any lost rental time if safety requirements are not followed.
+                I understand this item is special ordered and delivered to my rental yacht, because of the custom nature of this delivery, 48 hours cancellation notice prior to my rental date is required for a refund. If I cancel less than 48 hours from my rental date, the rental vendor may charge a $100.00 cancellation fee per item.
               </p>
             </label>
           </div>
 
-          {/* 2. Damage Security Deposit */}
+          {/* 2. Damage Deposit */}
           <div className="space-y-2">
             <p className="text-sm text-[#0f0f0f]" style={{ fontWeight: 300 }}>
-              Damage security deposit <span className="italic text-[#6b6b6b]">(required)</span>
+              Damage Deposit <span className="italic text-[#6b6b6b]">(required)</span>
             </p>
             <label className="flex items-start gap-4 cursor-pointer group">
               <input
@@ -115,97 +109,79 @@ export default function WaterSportsWaiverModal({
                 className="mt-0.5 w-5 h-5 border border-[#d0d0d0] cursor-pointer flex-shrink-0"
               />
               <p className="text-sm text-[#0f0f0f] leading-relaxed" style={{ fontWeight: 300 }}>
-                I understand that water sports equipment is provided by an independent third party vendor who requires a damage security deposit at the time of delivery. The vendor will refund the deposit at the end of the rental if no damage occurs. Failure or refusal to pay the vendor's required deposit, as determined by the vendor, may result in cancellation of equipment usage and forfeiture of rental time without refund.
+                I understand this rental item is provided by a 3rd party independent vendor who may charge a damage security deposit to rent this item. Damage security deposits are refunded at the end of the rental if myself or my guests do not damage the rental item. Normal wear and minor scratches do not constitute damage. Refusal to pay the vendor's required damage security deposit prior to usage may result in forfeiture of rental time and cancellation of the rental without refund.
               </p>
             </label>
           </div>
 
-          {/* 3. Damage to the Vessel */}
+          {/* 3. Experience Acknowledgement */}
           <div className="space-y-2">
             <p className="text-sm text-[#0f0f0f]" style={{ fontWeight: 300 }}>
-              Damage to the vessel by water sports equipment <span className="italic text-[#6b6b6b]">(required)</span>
+              Experience Acknowledgement <span className="italic text-[#6b6b6b]">(required)</span>
             </p>
             <label className="flex items-start gap-4 cursor-pointer group">
               <input
                 type="checkbox"
-                checked={formData.damageToVessel}
-                onChange={() => handleCheckbox('damageToVessel')}
+                checked={formData.experienceAcknowledgement}
+                onChange={() => handleCheckbox('experienceAcknowledgement')}
                 className="mt-0.5 w-5 h-5 border border-[#d0d0d0] cursor-pointer flex-shrink-0"
               />
               <p className="text-sm text-[#0f0f0f] leading-relaxed" style={{ fontWeight: 300 }}>
-                I understand that I am responsible for any damage caused by myself or my guests to the charter vessel or any related equipment or accessories resulting from water sports equipment use, and I agree to cover the cost of repairs.
+                I understand that the usage of this item requires some limited knowledge. I understand there may be a level of physicality required on my part when using this rental item. Not being able to "stay on" the rental item does not constitute grounds for a refund.
               </p>
             </label>
           </div>
 
-          {/* 4. Proper Use */}
+          {/* 4. Liability Acknowledgement */}
           <div className="space-y-2">
             <p className="text-sm text-[#0f0f0f]" style={{ fontWeight: 300 }}>
-              Proper use and care <span className="italic text-[#6b6b6b]">(required)</span>
+              Liability Acknowledgement <span className="italic text-[#6b6b6b]">(required)</span>
             </p>
             <label className="flex items-start gap-4 cursor-pointer group">
               <input
                 type="checkbox"
-                checked={formData.properUse}
-                onChange={() => handleCheckbox('properUse')}
+                checked={formData.liabilityAcknowledgement}
+                onChange={() => handleCheckbox('liabilityAcknowledgement')}
                 className="mt-0.5 w-5 h-5 border border-[#d0d0d0] cursor-pointer flex-shrink-0"
               />
               <p className="text-sm text-[#0f0f0f] leading-relaxed" style={{ fontWeight: 300 }}>
-                I understand that I must use the equipment only as intended and demonstrated by the vendor. I agree to follow all safety guidelines, operational limits, and care instructions provided. Misuse of equipment may result in injury, equipment damage, and loss of deposit without refund.
+                I understand that if myself or one of my guests cause damage to the charter vessel with the rental item, I will be charged for the repairs to the charter vessel. Furthermore, I understand that the yacht crew is not responsible for the safekeeping of this item or for the instructions on how to use the item. I am renting this item from a 3rd party vendor that is unrelated to my charter vessel or its crew.
               </p>
             </label>
           </div>
 
-          {/* 5. Appointments */}
+          {/* 5. Card and Charge Authorization */}
           <div className="space-y-2">
             <p className="text-sm text-[#0f0f0f]" style={{ fontWeight: 300 }}>
-              Equipment delivery appointments <span className="italic text-[#6b6b6b]">(required)</span>
+              Card and Charge Authorization <span className="italic text-[#6b6b6b]">(required)</span>
             </p>
             <label className="flex items-start gap-4 cursor-pointer group">
               <input
                 type="checkbox"
-                checked={formData.appointments}
-                onChange={() => handleCheckbox('appointments')}
+                checked={formData.cardAuthorization}
+                onChange={() => handleCheckbox('cardAuthorization')}
                 className="mt-0.5 w-5 h-5 border border-[#d0d0d0] cursor-pointer flex-shrink-0"
               />
               <p className="text-sm text-[#0f0f0f] leading-relaxed" style={{ fontWeight: 300 }}>
-                I understand that water sports equipment is delivered through an independent third party vendor on an appointment only basis. If I or any member of my group arrives late to the charter vessel's scheduled departure time, equipment usage time may be reduced or forfeited. Equipment time cannot be rescheduled and any lost time due to late arrival will not be refunded.
+                I authorize Miami Yachting Group LLC to charge my credit/debit card in the amount shown for this booking. I will bring this card with me in person the day of my rental for verification as well as my matching ID. I understand that if I do not bring this card with me in person and my matching ID for verification purposes, my rental may be canceled by the vendor.
               </p>
             </label>
           </div>
 
-          {/* 6. Credit Card and ID */}
+          {/* 6. Rental Price */}
           <div className="space-y-2">
             <p className="text-sm text-[#0f0f0f]" style={{ fontWeight: 300 }}>
-              Credit card and ID acknowledgement <span className="italic text-[#6b6b6b]">(required)</span>
+              Rental Price <span className="italic text-[#6b6b6b]">(required)</span>
             </p>
             <label className="flex items-start gap-4 cursor-pointer group">
               <input
                 type="checkbox"
-                checked={formData.creditCardID}
-                onChange={() => handleCheckbox('creditCardID')}
+                checked={formData.rentalPrice}
+                onChange={() => handleCheckbox('rentalPrice')}
                 className="mt-0.5 w-5 h-5 border border-[#d0d0d0] cursor-pointer flex-shrink-0"
               />
               <p className="text-sm text-[#0f0f0f] leading-relaxed" style={{ fontWeight: 300 }}>
-                I authorize Miami Yachting Group LLC to charge my credit or debit card for the amount shown for this booking. I understand that I must present this card in person on the day of the rental along with matching government issued identification for verification. Failure to present the required card and identification may result in cancellation of equipment usage by the vendor without refund.
-              </p>
-            </label>
-          </div>
-
-          {/* 7. Third Party Vendor Disclosure */}
-          <div className="space-y-2">
-            <p className="text-sm text-[#0f0f0f]" style={{ fontWeight: 300 }}>
-              Third Party Vendor Disclosure and Liability Acknowledgment <span className="italic text-[#6b6b6b]">(required)</span>
-            </p>
-            <label className="flex items-start gap-4 cursor-pointer group">
-              <input
-                type="checkbox"
-                checked={formData.thirdPartyVendor}
-                onChange={() => handleCheckbox('thirdPartyVendor')}
-                className="mt-0.5 w-5 h-5 border border-[#d0d0d0] cursor-pointer flex-shrink-0"
-              />
-              <p className="text-sm text-[#0f0f0f] leading-relaxed" style={{ fontWeight: 300 }}>
-                Water sports equipment is provided, operated, and supervised by an independent third party vendor, not by the yacht owner or the yacht charter brokerage. The equipment rental is a separate service subject to the vendor's own rules, licenses, permits, and requirements. The yacht owner and charter brokerage do not operate, supervise, or control equipment use. I acknowledge that water sports activities involve inherent risks and I choose to use the vendor's services at my own discretion and responsibility. I agree to release and hold harmless the yacht owner, the yacht charter brokerage, and Miami Yachting Group LLC from any claims arising out of or related to equipment use. By submitting this form, I agree that this acknowledgment is legally binding and constitutes my electronic signature.
+                I understand the price of the rental is $499.99 per item and that my initial payment of $99.00 per item will be deducted from my final balance, leaving me with a total due of $400.00 per item which is payable directly to the water toy vendor.
               </p>
             </label>
           </div>
@@ -231,7 +207,7 @@ export default function WaterSportsWaiverModal({
               }`}
               style={{ fontWeight: 300 }}
             >
-              {allAcknowledged ? 'Accept & Add to Cart' : `Check All Boxes (${Object.values(formData).filter(v => v).length}/7)`}
+              {allAcknowledged ? 'Accept & Add to Cart' : `Check All Boxes (${Object.values(formData).filter(v => v).length}/6)`}
             </button>
           </div>
         </div>
