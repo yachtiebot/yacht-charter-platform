@@ -6,6 +6,7 @@ import { useCart } from '@/lib/store/CartContext';
 import ProductImageGallery from '@/components/ProductImageGallery';
 import DarkFooter from '@/components/DarkFooter';
 import ScrollIndicator from '@/components/ScrollIndicator';
+import JetSkiWaiverModal, { JetSkiWaiverData } from '@/components/modals/JetSkiWaiverModal';
 
 // Water toys products - hardcoded data with dynamic image loading from Airtable
 const baseWaterToysProducts = [
@@ -99,6 +100,8 @@ export default function WaterToysPage() {
   const { addItem, setLastVisitedStore } = useCart();
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: string}>({});
   const [waterToysProducts, setWaterToysProducts] = useState(baseWaterToysProducts);
+  const [waiverModalOpen, setWaiverModalOpen] = useState(false);
+  const [pendingProduct, setPendingProduct] = useState<any>(null);
 
   // Set this page as the last visited store
   useEffect(() => {
@@ -172,6 +175,45 @@ export default function WaterToysPage() {
 
   const handleSizeSelect = (productId: string, size: string) => {
     setSelectedSizes(prev => ({ ...prev, [productId]: size }));
+  };
+
+  const handleAddToCart = (product: any, sizeInfo: any) => {
+    // Check if product requires waiver (e.g., Jet Ski)
+    if (product.requiresWaiver && product.id === 'jet-ski') {
+      setPendingProduct({ product, sizeInfo });
+      setWaiverModalOpen(true);
+    } else {
+      // Add directly to cart (no waiver needed)
+      addItem({
+        id: `${product.id}-${sizeInfo.option || sizeInfo.duration || 'standard'}`,
+        name: `${product.name} (${sizeInfo.duration || sizeInfo.option || ''})`,
+        price: sizeInfo.price,
+        category: product.id === 'jet-ski' ? 'jet-ski' : 'water-toys',
+        image: product.images[0],
+        requiresWaiver: product.requiresWaiver || false
+      });
+    }
+  };
+
+  const handleWaiverAccept = (waiverData: JetSkiWaiverData) => {
+    if (!pendingProduct) return;
+    
+    const { product, sizeInfo } = pendingProduct;
+    
+    // Add to cart with waiver data attached
+    addItem({
+      id: `${product.id}-${sizeInfo.option || sizeInfo.duration || 'standard'}`,
+      name: `${product.name} (${sizeInfo.duration || sizeInfo.option || ''})`,
+      price: sizeInfo.price,
+      category: product.id === 'jet-ski' ? 'jet-ski' : 'water-toys',
+      image: product.images[0],
+      requiresWaiver: true,
+      waiverData
+    });
+    
+    // Close modal and clear pending product
+    setWaiverModalOpen(false);
+    setPendingProduct(null);
   };
 
   return (
@@ -343,16 +385,10 @@ export default function WaterToysPage() {
                       </div>
                       
                       <button
-                        onClick={() => addItem({
-                          id: `${product.id}-${selectedSize}`,
-                          name: `${product.name} (${(sizeInfo as any).duration || (sizeInfo as any).option})`,
-                          price: sizeInfo.price,
-                          category: product.id === 'jet-ski' ? 'jet-ski' : 'water-toys',
-                          image: product.images[0]
-                        })}
+                        onClick={() => handleAddToCart(product, sizeInfo)}
                         className="w-full bg-white border border-[#0f0f0f]/20 text-[#0f0f0f] py-4 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300"
                       >
-                        Add to Cart
+                        {product.requiresWaiver ? 'Review Waiver & Add' : 'Add to Cart'}
                       </button>
                     </div>
                   </div>
@@ -432,18 +468,13 @@ export default function WaterToysPage() {
                     )}
                     
                     <button
-                      onClick={() => addItem({
-                        id: product.id,
-                        name: product.name,
+                      onClick={() => handleAddToCart(product, {
                         price: product.depositPrice || product.price,
-                        category: product.id === 'jet-ski' ? 'jet-ski' : 'water-toys',
-                        maxQuantity: product.maxQuantity,
-                        minQuantity: product.minQuantity,
-                        image: product.images[0]
+                        option: 'standard'
                       })}
                       className="w-full bg-white border border-[#0f0f0f]/20 text-[#0f0f0f] py-4 text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c4a265] hover:text-white hover:border-[#c4a265] transition-all duration-300"
                     >
-                      {product.depositPrice ? 'Reserve Now' : 'Add to Cart'}
+                      {product.requiresWaiver ? 'Review Waiver & Add' : product.depositPrice ? 'Reserve Now' : 'Add to Cart'}
                     </button>
                   </div>
                 </div>
@@ -463,6 +494,20 @@ export default function WaterToysPage() {
       </div>
 
       <DarkFooter />
+
+      {/* Jet Ski Waiver Modal */}
+      {pendingProduct && (
+        <JetSkiWaiverModal
+          isOpen={waiverModalOpen}
+          productName={pendingProduct.product.name}
+          productPrice={pendingProduct.sizeInfo.price}
+          onClose={() => {
+            setWaiverModalOpen(false);
+            setPendingProduct(null);
+          }}
+          onAccept={handleWaiverAccept}
+        />
+      )}
     </main>
   );
 }

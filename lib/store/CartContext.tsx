@@ -13,6 +13,8 @@ export interface CartItem {
   customization?: any;
   maxQuantity?: number;
   minQuantity?: number;
+  waiverData?: any; // Stores waiver/acknowledgment data for water toys
+  requiresWaiver?: boolean; // Flag to indicate if waiver is required
 }
 
 interface CartContextType {
