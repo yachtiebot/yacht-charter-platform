@@ -145,7 +145,17 @@ export default function CateringPage() {
 
   const filteredProducts = selectedCategory === 'all' 
     ? sortedProducts
-    : sortedProducts.filter(p => p.category.toLowerCase() === getCategoryName(selectedCategory));
+    : sortedProducts.filter(p => {
+        const categoryName = getCategoryName(selectedCategory);
+        
+        // Check if filtering by tags (e.g., "vegetarian")
+        if (selectedCategory === 'vegetarian') {
+          return p.tags?.some((tag: string) => tag.toLowerCase() === 'vegetarian');
+        }
+        
+        // Otherwise filter by primary category
+        return p.category.toLowerCase() === categoryName;
+      });
 
   const handleSizeSelect = (productId: string, sizeIndex: number) => {
     setSelectedSizes(prev => ({ ...prev, [productId]: sizeIndex }));

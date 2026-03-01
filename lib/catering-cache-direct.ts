@@ -62,6 +62,7 @@ export async function getCateringWithCache() {
       name: fields['Name'],
       description: fields['Description'] || '',
       category: fields['Category'] || 'platters',
+      tags: fields['Tags'] || [],
       price: fields['Base Price'] || (options[0]?.price),
       image: fields['Image URL'] || '',
       options: options,
