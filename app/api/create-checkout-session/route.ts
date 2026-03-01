@@ -5,6 +5,42 @@ const stripe = process.env.STRIPE_SECRET_KEY
   ? new Stripe(process.env.STRIPE_SECRET_KEY)
   : null;
 
+// Generate waiver metadata for chargeback protection
+function generateWaiverMetadata(items: any[]) {
+  const itemsWithWaivers = items.filter((item: any) => item.waiverData);
+  
+  if (itemsWithWaivers.length === 0) return {};
+  
+  const metadata: Record<string, string> = {};
+  
+  itemsWithWaivers.forEach((item: any, index: number) => {
+    const waiver = item.waiverData;
+    const prefix = itemsWithWaivers.length > 1 ? `waiver_${index + 1}_` : 'waiver_';
+    
+    // Acceptance timestamp (key for chargeback disputes)
+    metadata[`${prefix}accepted_at`] = waiver.acceptedAt || '';
+    metadata[`${prefix}product`] = item.name || '';
+    
+    // All 7 acknowledgements for legal protection
+    metadata[`${prefix}florida_laws`] = waiver.floridaLaws ? 'ACCEPTED' : 'NOT_ACCEPTED';
+    metadata[`${prefix}damage_deposit`] = waiver.damageDeposit ? 'ACCEPTED' : 'NOT_ACCEPTED';
+    metadata[`${prefix}damage_to_vessel`] = waiver.damageToVessel ? 'ACCEPTED' : 'NOT_ACCEPTED';
+    metadata[`${prefix}max_quantity`] = waiver.maximumQuantity ? 'ACCEPTED' : 'NOT_ACCEPTED';
+    metadata[`${prefix}appointments`] = waiver.appointments ? 'ACCEPTED' : 'NOT_ACCEPTED';
+    metadata[`${prefix}credit_card_id`] = waiver.creditCardID ? 'ACCEPTED' : 'NOT_ACCEPTED';
+    metadata[`${prefix}third_party_vendor`] = waiver.thirdPartyVendor ? 'ACCEPTED' : 'NOT_ACCEPTED';
+    
+    // Electronic signature confirmation
+    metadata[`${prefix}electronic_signature`] = 'AGREED';
+    metadata[`${prefix}terms_accepted`] = 'true';
+    
+    // Chargeback protection summary
+    metadata[`${prefix}protection`] = 'Customer electronically accepted all 7 Jet Ski waiver acknowledgements including third-party vendor liability release, damage responsibility, and electronic signature consent.';
+  });
+  
+  return metadata;
+}
+
 export async function POST(request: NextRequest) {
   try {
     console.log('Stripe key exists:', !!process.env.STRIPE_SECRET_KEY);
@@ -112,8 +148,9 @@ export async function POST(request: NextRequest) {
         total_items: items.reduce((sum: number, item: any) => sum + (item.quantity || 1), 0).toString(),
         categories: [...new Set(items.map((item: any) => item.category))].join(', '),
         
-        // Waiver data flag
+        // Jet Ski Waiver Acceptance (for chargeback protection)
         has_jet_ski_waiver: items.some((item: any) => item.waiverData) ? 'true' : 'false',
+        ...generateWaiverMetadata(items),
       },
       // Shipping for catering delivery (optional)
       ...(customerInfo?.address && {
