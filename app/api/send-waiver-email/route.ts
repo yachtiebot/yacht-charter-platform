@@ -23,9 +23,16 @@ export async function POST(request: NextRequest) {
       
       // Detect waiver type and generate appropriate HTML
       const isJetSki = item.id?.includes('jet-ski');
-      const waiverHTML = isJetSki 
-        ? generateJetSkiWaiverHTML(item, waiver, customerInfo)
-        : generateWaterSportsWaiverHTML(item, waiver, customerInfo);
+      const isFloatingEquipment = item.id?.includes('floating') || item.id?.includes('raft') || item.id?.includes('cabana') || item.id?.includes('lounge');
+      
+      let waiverHTML;
+      if (isJetSki) {
+        waiverHTML = generateJetSkiWaiverHTML(item, waiver, customerInfo);
+      } else if (isFloatingEquipment) {
+        waiverHTML = generateFloatingEquipmentWaiverHTML(item, waiver, customerInfo);
+      } else {
+        waiverHTML = generateWaterSportsWaiverHTML(item, waiver, customerInfo);
+      }
 
       // TODO: Integrate with your email service (SendGrid, Resend, AWS SES, etc.)
       // For now, we'll log it. You'll need to add your email service here.
@@ -286,6 +293,122 @@ function generateWaterSportsWaiverHTML(item: any, waiver: any, customerInfo: any
       <div class="waiver-item">
         <div class="waiver-title"><span class="checkmark">✓</span>Rental Price</div>
         <p class="waiver-text">I understand the price of the rental is $499.99 per item and that my initial payment of $99.00 per item will be deducted from my final balance, leaving me with a total due of $400.00 per item which is payable directly to the water toy vendor.</p>
+      </div>
+    </div>
+
+    <div class="signature">
+      <strong>Electronic Signature:</strong><br>
+      By completing the online waiver form, ${customerInfo.firstName} ${customerInfo.lastName} has electronically signed this waiver on ${acceptedDate}.
+    </div>
+
+    <div class="footer">
+      <p>This is a legally binding document. Please keep this email for your records.</p>
+      <p style="margin-top: 15px;">
+        <strong>Miami Yachting Company</strong><br>
+        Phone: 1-800-747-9585 | Email: hello@miamiyachtingcompany.com
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+  `.trim();
+}
+
+function generateFloatingEquipmentWaiverHTML(item: any, waiver: any, customerInfo: any): string {
+  const acceptedDate = new Date(waiver.acceptedAt).toLocaleString('en-US', {
+    dateStyle: 'full',
+    timeStyle: 'long',
+    timeZone: 'America/New_York'
+  });
+
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #0f0f0f; background: #faf9f7; margin: 0; padding: 20px; }
+    .container { max-width: 700px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #e5e5e5; }
+    .header { border-bottom: 2px solid #c4a265; padding-bottom: 20px; margin-bottom: 30px; }
+    .logo { font-size: 24px; font-weight: 300; color: #0f0f0f; margin-bottom: 10px; }
+    .title { font-size: 28px; font-weight: 300; color: #0f0f0f; margin: 0 0 10px 0; }
+    .subtitle { font-size: 14px; color: #6b6b6b; margin: 0; }
+    .section { margin: 30px 0; }
+    .section-title { font-size: 14px; font-weight: 600; color: #0f0f0f; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 15px; }
+    .info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+    .info-label { font-size: 13px; color: #6b6b6b; font-weight: 500; }
+    .info-value { font-size: 13px; color: #0f0f0f; }
+    .waiver-item { padding: 15px; background: #f9f9f9; margin: 10px 0; border-left: 3px solid #c4a265; }
+    .waiver-title { font-size: 13px; font-weight: 600; color: #0f0f0f; margin-bottom: 8px; }
+    .waiver-text { font-size: 13px; color: #6b6b6b; line-height: 1.6; margin: 0; }
+    .checkmark { color: #10b981; font-weight: bold; margin-right: 8px; }
+    .signature { margin-top: 30px; padding: 20px; background: #f0ece6; border-left: 4px solid #c4a265; }
+    .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e5e5; text-align: center; font-size: 12px; color: #6b6b6b; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Miami Yachting Company</div>
+      <h1 class="title">Floating Equipment Waiver Acknowledgement</h1>
+      <p class="subtitle">Booking #${customerInfo.bookingNumber} • Charter Date: ${customerInfo.charterDate}</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Customer Information</div>
+      <div class="info-row">
+        <span class="info-label">Name</span>
+        <span class="info-value">${customerInfo.firstName} ${customerInfo.lastName}</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Email</span>
+        <span class="info-value">${customerInfo.email}</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Phone</span>
+        <span class="info-value">${customerInfo.phone}</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Product</span>
+        <span class="info-value">${item.name}</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Accepted</span>
+        <span class="info-value">${acceptedDate}</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Acknowledgements (All Accepted)</div>
+      
+      <div class="waiver-item">
+        <div class="waiver-title"><span class="checkmark">✓</span>Cancellation Policy</div>
+        <p class="waiver-text">I understand this item is special ordered and delivered to my rental yacht, because of the custom nature of this delivery, 48 hours cancellation notice prior to my rental date is required for a refund. If I cancel less than 48 hours from my rental date, the rental vendor may charge a $100.00 cancellation fee per item.</p>
+      </div>
+
+      <div class="waiver-item">
+        <div class="waiver-title"><span class="checkmark">✓</span>Damage Deposit</div>
+        <p class="waiver-text">I understand this rental item is provided by a 3rd party independent vendor who may charge a damage security deposit to rent this item. Damage security deposits are refunded at the end of the rental if myself or my guests do not damage the rental item. Normal wear and minor scratches do not constitute damage. Refusal to pay the vendor's required damage security deposit prior to usage may result in forfeiture of rental time and cancellation of the rental without refund.</p>
+      </div>
+
+      <div class="waiver-item">
+        <div class="waiver-title"><span class="checkmark">✓</span>Proper Use and Safety</div>
+        <p class="waiver-text">I understand that floating equipment must be properly secured and supervised at all times. I acknowledge that this equipment is designed for calm water use only and must be retrieved or secured in the event of changing weather conditions. I am responsible for the safety of all persons using this equipment and agree to follow all manufacturer guidelines and vendor instructions.</p>
+      </div>
+
+      <div class="waiver-item">
+        <div class="waiver-title"><span class="checkmark">✓</span>Liability Acknowledgement</div>
+        <p class="waiver-text">I understand that if myself or one of my guests cause damage to the charter vessel with the rental item, I will be charged for the repairs to the charter vessel. Furthermore, I understand that the yacht crew is not responsible for the safekeeping of this item or for the instructions on how to use the item. I am renting this item from a 3rd party vendor that is unrelated to my charter vessel or its crew.</p>
+      </div>
+
+      <div class="waiver-item">
+        <div class="waiver-title"><span class="checkmark">✓</span>Card and Charge Authorization</div>
+        <p class="waiver-text">I authorize Miami Yachting Group LLC to charge my credit/debit card in the amount shown for this booking. I will bring this card with me in person the day of my rental for verification as well as my matching ID. I understand that if I do not bring this card with me in person and my matching ID for verification purposes, my rental may be canceled by the vendor.</p>
+      </div>
+
+      <div class="waiver-item">
+        <div class="waiver-title"><span class="checkmark">✓</span>Rental Terms</div>
+        <p class="waiver-text">I understand and acknowledge the rental price and terms for this item. I agree to return the equipment in the same condition as received, normal wear and tear excepted. Any loss or damage beyond normal use will be charged to the card on file.</p>
       </div>
     </div>
 

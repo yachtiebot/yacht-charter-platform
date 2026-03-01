@@ -8,6 +8,7 @@ import DarkFooter from '@/components/DarkFooter';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import JetSkiWaiverModal, { JetSkiWaiverData } from '@/components/modals/JetSkiWaiverModal';
 import WaterSportsWaiverModal, { WaterSportsWaiverData } from '@/components/modals/WaterSportsWaiverModal';
+import FloatingEquipmentWaiverModal, { FloatingEquipmentWaiverData } from '@/components/modals/FloatingEquipmentWaiverModal';
 
 // Water toys products - hardcoded data with dynamic image loading from Airtable
 const baseWaterToysProducts = [
@@ -56,6 +57,7 @@ const baseWaterToysProducts = [
     description: 'Spacious floating oasis with plush seating and ample space for sunbathing, drinks, and dining.',
     details: 'Perfect for groups. Anchored behind your yacht. Stable and safe design. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_floating_cabana.jpg'],
+    requiresWaiver: true,
     features: ['Plush seating', 'Sunbathing space', 'Stable design', 'Multiple available', 'Yours for the duration of charter']
   },
   {
@@ -67,6 +69,7 @@ const baseWaterToysProducts = [
     details: 'Each chair is $99. Two chair minimum for delivery and setup. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_floating_lounge_chair.jpg'],
     minQuantity: 2,
+    requiresWaiver: true,
     features: ['$99 per chair', '2 chair minimum', 'Premium comfort', 'Perfect for groups', 'Yours for the duration of charter']
   },
   {
@@ -105,6 +108,7 @@ export default function WaterToysPage() {
   const [waterToysProducts, setWaterToysProducts] = useState(baseWaterToysProducts);
   const [jetSkiWaiverModalOpen, setJetSkiWaiverModalOpen] = useState(false);
   const [waterSportsWaiverModalOpen, setWaterSportsWaiverModalOpen] = useState(false);
+  const [floatingEquipmentWaiverModalOpen, setFloatingEquipmentWaiverModalOpen] = useState(false);
   const [pendingProduct, setPendingProduct] = useState<any>(null);
 
   // Set this page as the last visited store
@@ -191,6 +195,8 @@ export default function WaterToysPage() {
         setJetSkiWaiverModalOpen(true);
       } else if (product.id === 'seabob' || product.id === 'flitescooter') {
         setWaterSportsWaiverModalOpen(true);
+      } else if (product.id === 'floating-cabana' || product.id === 'floating-lounge-chair' || product.id.includes('raft')) {
+        setFloatingEquipmentWaiverModalOpen(true);
       } else {
         // Generic water sports waiver for other products
         setWaterSportsWaiverModalOpen(true);
@@ -247,6 +253,27 @@ export default function WaterToysPage() {
     
     // Close modal and clear pending product
     setWaterSportsWaiverModalOpen(false);
+    setPendingProduct(null);
+  };
+
+  const handleFloatingEquipmentWaiverAccept = (waiverData: FloatingEquipmentWaiverData) => {
+    if (!pendingProduct) return;
+    
+    const { product, sizeInfo } = pendingProduct;
+    
+    // Add to cart with waiver data attached
+    addItem({
+      id: `${product.id}-${sizeInfo.option || sizeInfo.duration || 'standard'}`,
+      name: `${product.name} (${sizeInfo.duration || sizeInfo.option || ''})`,
+      price: sizeInfo.price,
+      category: 'water-toys',
+      image: product.images[0],
+      requiresWaiver: true,
+      waiverData
+    });
+    
+    // Close modal and clear pending product
+    setFloatingEquipmentWaiverModalOpen(false);
     setPendingProduct(null);
   };
 
@@ -554,6 +581,20 @@ export default function WaterToysPage() {
             setPendingProduct(null);
           }}
           onAccept={handleWaterSportsWaiverAccept}
+        />
+      )}
+
+      {/* Floating Equipment Waiver Modal (Cabana, Lounge Chairs, Rafts) */}
+      {pendingProduct && (
+        <FloatingEquipmentWaiverModal
+          isOpen={floatingEquipmentWaiverModalOpen}
+          productName={pendingProduct.product.name}
+          productPrice={pendingProduct.sizeInfo.price}
+          onClose={() => {
+            setFloatingEquipmentWaiverModalOpen(false);
+            setPendingProduct(null);
+          }}
+          onAccept={handleFloatingEquipmentWaiverAccept}
         />
       )}
     </main>
