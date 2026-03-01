@@ -16,26 +16,37 @@ function generateWaiverMetadata(items: any[]) {
   itemsWithWaivers.forEach((item: any, index: number) => {
     const waiver = item.waiverData;
     const prefix = itemsWithWaivers.length > 1 ? `waiver_${index + 1}_` : 'waiver_';
+    const isJetSki = item.id?.includes('jet-ski');
     
     // Acceptance timestamp (key for chargeback disputes)
     metadata[`${prefix}accepted_at`] = waiver.acceptedAt || '';
     metadata[`${prefix}product`] = item.name || '';
+    metadata[`${prefix}type`] = isJetSki ? 'jet_ski' : 'water_sports';
     
-    // All 7 acknowledgements for legal protection
-    metadata[`${prefix}florida_laws`] = waiver.floridaLaws ? 'ACCEPTED' : 'NOT_ACCEPTED';
-    metadata[`${prefix}damage_deposit`] = waiver.damageDeposit ? 'ACCEPTED' : 'NOT_ACCEPTED';
-    metadata[`${prefix}damage_to_vessel`] = waiver.damageToVessel ? 'ACCEPTED' : 'NOT_ACCEPTED';
-    metadata[`${prefix}max_quantity`] = waiver.maximumQuantity ? 'ACCEPTED' : 'NOT_ACCEPTED';
-    metadata[`${prefix}appointments`] = waiver.appointments ? 'ACCEPTED' : 'NOT_ACCEPTED';
-    metadata[`${prefix}credit_card_id`] = waiver.creditCardID ? 'ACCEPTED' : 'NOT_ACCEPTED';
-    metadata[`${prefix}third_party_vendor`] = waiver.thirdPartyVendor ? 'ACCEPTED' : 'NOT_ACCEPTED';
+    if (isJetSki) {
+      // Jet Ski specific acknowledgements (7)
+      metadata[`${prefix}florida_laws`] = waiver.floridaLaws ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}damage_deposit`] = waiver.damageDeposit ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}damage_to_vessel`] = waiver.damageToVessel ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}max_quantity`] = waiver.maximumQuantity ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}appointments`] = waiver.appointments ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}credit_card_id`] = waiver.creditCardID ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}third_party_vendor`] = waiver.thirdPartyVendor ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}protection`] = 'Customer electronically accepted all 7 Jet Ski waiver acknowledgements including third-party vendor liability release, damage responsibility, and electronic signature consent.';
+    } else {
+      // Water sports equipment acknowledgements (6) - Seabob, Flitescooter
+      metadata[`${prefix}cancellation_policy`] = waiver.cancellationPolicy ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}damage_deposit`] = waiver.damageDeposit ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}experience_ack`] = waiver.experienceAcknowledgement ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}liability_ack`] = waiver.liabilityAcknowledgement ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}card_authorization`] = waiver.cardAuthorization ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}rental_price`] = waiver.rentalPrice ? 'ACCEPTED' : 'NOT_ACCEPTED';
+      metadata[`${prefix}protection`] = 'Customer electronically accepted all 6 water sports equipment waiver acknowledgements including third-party vendor liability release, damage responsibility, and rental terms.';
+    }
     
-    // Electronic signature confirmation
+    // Electronic signature confirmation (both types)
     metadata[`${prefix}electronic_signature`] = 'AGREED';
     metadata[`${prefix}terms_accepted`] = 'true';
-    
-    // Chargeback protection summary
-    metadata[`${prefix}protection`] = 'Customer electronically accepted all 7 Jet Ski waiver acknowledgements including third-party vendor liability release, damage responsibility, and electronic signature consent.';
   });
   
   return metadata;
