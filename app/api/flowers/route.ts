@@ -34,11 +34,13 @@ export async function GET() {
       for (let i = 1; i <= 5; i++) {
         const optionName = fields[`Option ${i} Name`];
         const optionPrice = fields[`Option ${i} Price`];
+        const optionSize = fields[`Option ${i} Size`];
         
         if (optionName && optionPrice) {
-          const key = `option-${i}`;
+          // Map to lowercase size name (small, medium, large, etc.)
+          const key = optionName.toLowerCase();
           sizes[key] = {
-            option: optionName,
+            option: optionSize || optionName,
             price: optionPrice
           };
         }
