@@ -150,18 +150,16 @@ export default function CateringPage() {
     : sortedProducts.filter(p => {
         const categoryName = getCategoryName(selectedCategory);
         
-        // Check if filtering by secondary category (Vegetarian or Seafood)
-        if (selectedCategory === 'vegetarian' || selectedCategory === 'seafood') {
-          // Check secondary category first
-          if (p.secondaryCategory?.toLowerCase() === selectedCategory) {
-            return true;
-          }
-          // Fall back to main category match
-          return p.category?.toLowerCase() === categoryName;
-        }
+        // Check main category match
+        const mainCategoryMatch = p.category?.toLowerCase() === categoryName;
         
-        // Filter by main category
-        return p.category?.toLowerCase() === categoryName;
+        // Check secondary category match
+        // Secondary category can be: Vegetarian, Seafood, Desserts, or Platters
+        const secondaryCategoryMatch = p.secondaryCategory?.toLowerCase() === selectedCategory ||
+                                      p.secondaryCategory?.toLowerCase() === categoryName;
+        
+        // Product shows if it matches either main or secondary category
+        return mainCategoryMatch || secondaryCategoryMatch;
       });
 
   const handleSizeSelect = (productId: string, sizeIndex: number) => {
