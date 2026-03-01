@@ -7,6 +7,7 @@ import ProductImageGallery from '@/components/ProductImageGallery';
 import DarkFooter from '@/components/DarkFooter';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import JetSkiWaiverModal, { JetSkiWaiverData } from '@/components/modals/JetSkiWaiverModal';
+import WaterSportsWaiverModal, { WaterSportsWaiverData } from '@/components/modals/WaterSportsWaiverModal';
 
 // Water toys products - hardcoded data with dynamic image loading from Airtable
 const baseWaterToysProducts = [
@@ -19,6 +20,7 @@ const baseWaterToysProducts = [
     details: 'Comes fully charged, batteries last 1-2 hours. Charger included. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_seabob.jpg'],
     maxQuantity: 2,
+    requiresWaiver: true,
     features: ['Age 12+', 'Fully charged', '1-2 hour battery', 'Max 2 per charter', 'Yours for the duration of charter']
   },
   {
@@ -30,6 +32,7 @@ const baseWaterToysProducts = [
     details: 'Instructor available upon request for additional charge. Comes fully charged, batteries last 1-2 hours. Max load 225lbs. Yours for the duration of your charter.',
     images: ['/images/products/water-toys/Miami_Yachting_Company_flitescooter.jpg'],
     maxQuantity: 1,
+    requiresWaiver: true,
     features: ['Max load 225lbs', 'Instructor available', '1-2 hour battery', 'Max 1 per charter', 'Yours for the duration of charter']
   },
   {
@@ -100,7 +103,8 @@ export default function WaterToysPage() {
   const { addItem, setLastVisitedStore } = useCart();
   const [selectedSizes, setSelectedSizes] = useState<{[key: string]: string}>({});
   const [waterToysProducts, setWaterToysProducts] = useState(baseWaterToysProducts);
-  const [waiverModalOpen, setWaiverModalOpen] = useState(false);
+  const [jetSkiWaiverModalOpen, setJetSkiWaiverModalOpen] = useState(false);
+  const [waterSportsWaiverModalOpen, setWaterSportsWaiverModalOpen] = useState(false);
   const [pendingProduct, setPendingProduct] = useState<any>(null);
 
   // Set this page as the last visited store
@@ -178,10 +182,19 @@ export default function WaterToysPage() {
   };
 
   const handleAddToCart = (product: any, sizeInfo: any) => {
-    // Check if product requires waiver (e.g., Jet Ski)
-    if (product.requiresWaiver && product.id === 'jet-ski') {
+    // Check if product requires waiver
+    if (product.requiresWaiver) {
       setPendingProduct({ product, sizeInfo });
-      setWaiverModalOpen(true);
+      
+      // Determine which waiver modal to show
+      if (product.id === 'jet-ski') {
+        setJetSkiWaiverModalOpen(true);
+      } else if (product.id === 'seabob' || product.id === 'flitescooter') {
+        setWaterSportsWaiverModalOpen(true);
+      } else {
+        // Generic water sports waiver for other products
+        setWaterSportsWaiverModalOpen(true);
+      }
     } else {
       // Add directly to cart (no waiver needed)
       addItem({
@@ -195,7 +208,7 @@ export default function WaterToysPage() {
     }
   };
 
-  const handleWaiverAccept = (waiverData: JetSkiWaiverData) => {
+  const handleJetSkiWaiverAccept = (waiverData: JetSkiWaiverData) => {
     if (!pendingProduct) return;
     
     const { product, sizeInfo } = pendingProduct;
@@ -212,7 +225,28 @@ export default function WaterToysPage() {
     });
     
     // Close modal and clear pending product
-    setWaiverModalOpen(false);
+    setJetSkiWaiverModalOpen(false);
+    setPendingProduct(null);
+  };
+
+  const handleWaterSportsWaiverAccept = (waiverData: WaterSportsWaiverData) => {
+    if (!pendingProduct) return;
+    
+    const { product, sizeInfo } = pendingProduct;
+    
+    // Add to cart with waiver data attached
+    addItem({
+      id: `${product.id}-${sizeInfo.option || sizeInfo.duration || 'standard'}`,
+      name: `${product.name} (${sizeInfo.duration || sizeInfo.option || ''})`,
+      price: sizeInfo.price,
+      category: 'water-toys',
+      image: product.images[0],
+      requiresWaiver: true,
+      waiverData
+    });
+    
+    // Close modal and clear pending product
+    setWaterSportsWaiverModalOpen(false);
     setPendingProduct(null);
   };
 
@@ -498,14 +532,28 @@ export default function WaterToysPage() {
       {/* Jet Ski Waiver Modal */}
       {pendingProduct && (
         <JetSkiWaiverModal
-          isOpen={waiverModalOpen}
+          isOpen={jetSkiWaiverModalOpen}
           productName={pendingProduct.product.name}
           productPrice={pendingProduct.sizeInfo.price}
           onClose={() => {
-            setWaiverModalOpen(false);
+            setJetSkiWaiverModalOpen(false);
             setPendingProduct(null);
           }}
-          onAccept={handleWaiverAccept}
+          onAccept={handleJetSkiWaiverAccept}
+        />
+      )}
+
+      {/* Water Sports Equipment Waiver Modal (Seabob, Flitescooter, etc.) */}
+      {pendingProduct && (
+        <WaterSportsWaiverModal
+          isOpen={waterSportsWaiverModalOpen}
+          productName={pendingProduct.product.name}
+          productPrice={pendingProduct.sizeInfo.price}
+          onClose={() => {
+            setWaterSportsWaiverModalOpen(false);
+            setPendingProduct(null);
+          }}
+          onAccept={handleWaterSportsWaiverAccept}
         />
       )}
     </main>
