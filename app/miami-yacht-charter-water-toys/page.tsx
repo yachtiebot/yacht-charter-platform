@@ -173,8 +173,26 @@ export default function WaterToysPage() {
           }
         });
         
-        // Display in AIRTABLE order
-        setWaterToysProducts(mergedProducts);
+        // Custom sort order: Jet Ski, Flyboard, Water Sports Boat, then rest
+        const sortOrder = ['jet-ski', 'flyboard', 'water-sports-boat'];
+        
+        const sortedProducts = mergedProducts.sort((a, b) => {
+          const aIndex = sortOrder.indexOf(a.id);
+          const bIndex = sortOrder.indexOf(b.id);
+          
+          // If both are in sortOrder, use that order
+          if (aIndex !== -1 && bIndex !== -1) {
+            return aIndex - bIndex;
+          }
+          // If only a is in sortOrder, it comes first
+          if (aIndex !== -1) return -1;
+          // If only b is in sortOrder, it comes first
+          if (bIndex !== -1) return 1;
+          // Otherwise keep original order
+          return 0;
+        });
+        
+        setWaterToysProducts(sortedProducts);
       })
       .catch(err => {
         console.error('Failed to load from Airtable:', err);
@@ -187,22 +205,37 @@ export default function WaterToysPage() {
   };
 
   const handleAddToCart = (product: any, sizeInfo: any) => {
+    // Debug logging
+    console.log('🛟 Adding to cart:', {
+      id: product.id,
+      name: product.name,
+      requiresWaiver: product.requiresWaiver,
+      sizeInfo
+    });
+    
     // Check if product requires waiver
     if (product.requiresWaiver) {
       setPendingProduct({ product, sizeInfo });
       
       // Determine which waiver modal to show
+      console.log('🔍 Checking waiver type for:', product.id);
+      
       if (product.id === 'jet-ski') {
+        console.log('✅ Opening Jet Ski waiver');
         setJetSkiWaiverModalOpen(true);
       } else if (product.id === 'seabob' || product.id === 'flitescooter') {
+        console.log('✅ Opening Water Sports waiver');
         setWaterSportsWaiverModalOpen(true);
-      } else if (product.id === 'floating-cabana' || product.id === 'floating-lounge-chair' || product.id.includes('raft')) {
+      } else if (product.id === 'floating-cabana' || product.id === 'floating-lounge-chair' || product.id.toLowerCase().includes('raft') || product.id.toLowerCase().includes('chill')) {
+        console.log('✅ Opening Floating Equipment waiver');
         setFloatingEquipmentWaiverModalOpen(true);
       } else {
+        console.log('✅ Opening generic Water Sports waiver (fallback)');
         // Generic water sports waiver for other products
         setWaterSportsWaiverModalOpen(true);
       }
     } else {
+      console.log('⚠️ No waiver required, adding directly to cart');
       // Add directly to cart (no waiver needed)
       addItem({
         id: `${product.id}-${sizeInfo.option || sizeInfo.duration || 'standard'}`,
