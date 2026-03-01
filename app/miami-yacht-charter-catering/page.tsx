@@ -373,20 +373,39 @@ export default function CateringPage() {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap gap-3 mb-12 border-b border-black/10 pb-6">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setSelectedCategory(cat.id)}
-              className={`px-6 py-2 text-sm uppercase tracking-wider transition-all duration-300 ${
-                selectedCategory === cat.id
-                  ? 'bg-[#c4a265] text-white'
-                  : 'bg-white text-[#6b6b6b] hover:bg-[#c4a265]/10 hover:text-[#c4a265] border border-black/10'
-              }`}
-            >
-              {cat.name}
-            </button>
-          ))}
+        <div className="mb-12 border-b border-black/10 pb-6">
+          {/* Filter Active Indicator */}
+          {selectedCategory !== 'all' && (
+            <div className="mb-4 flex items-center gap-2 text-sm">
+              <div className="w-2 h-2 rounded-full bg-[#c4a265]"></div>
+              <span className="text-[#6b6b6b]">
+                Filter active: <span className="text-[#0f0f0f] font-medium">{categories.find(c => c.id === selectedCategory)?.name}</span>
+              </span>
+              <button 
+                onClick={() => setSelectedCategory('all')}
+                className="ml-2 text-xs text-[#c4a265] hover:underline"
+              >
+                Clear filter
+              </button>
+            </div>
+          )}
+          
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap gap-3">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setSelectedCategory(cat.id)}
+                className={`px-6 py-2 text-sm uppercase tracking-wider transition-all duration-300 ${
+                  selectedCategory === cat.id
+                    ? 'bg-[#c4a265] text-white'
+                    : 'bg-white text-[#6b6b6b] hover:bg-[#c4a265]/10 hover:text-[#c4a265] border border-black/10'
+                }`}
+              >
+                {cat.name}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Product Grid */}
