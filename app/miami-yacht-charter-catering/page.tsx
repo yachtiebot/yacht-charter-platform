@@ -74,6 +74,7 @@ const categories = [
   { id: 'all', name: 'All Items' },
   { id: 'sandwiches', name: 'Sandwiches & Wraps' },
   { id: 'platters', name: 'Platters' },
+  { id: 'seafood', name: 'Seafood' },
   { id: 'bowls', name: 'Bowls & Salads' },
   { id: 'vegetarian', name: 'Vegetarian' },
   { id: 'desserts', name: 'Desserts' }
@@ -119,8 +120,8 @@ export default function CateringPage() {
     fetchCatering();
   }, []);
 
-  // Define category order
-  const categoryOrder = ['sandwiches & wraps', 'platters', 'bowls & salads', 'vegetarian', 'desserts'];
+  // Define category order (natural display order)
+  const categoryOrder = ['sandwiches & wraps', 'platters', 'seafood', 'bowls & salads', 'vegetarian', 'desserts'];
   
   // Map tab ID to actual category name (case-insensitive)
   const getCategoryName = (tabId: string) => {
@@ -148,13 +149,18 @@ export default function CateringPage() {
     : sortedProducts.filter(p => {
         const categoryName = getCategoryName(selectedCategory);
         
-        // Check if filtering by tags (e.g., "vegetarian")
-        if (selectedCategory === 'vegetarian') {
-          return p.tags?.some((tag: string) => tag.toLowerCase() === 'vegetarian');
+        // Check if filtering by secondary category (Vegetarian or Seafood)
+        if (selectedCategory === 'vegetarian' || selectedCategory === 'seafood') {
+          // Check secondary category first
+          if (p.secondaryCategory?.toLowerCase() === selectedCategory) {
+            return true;
+          }
+          // Fall back to main category match
+          return p.category?.toLowerCase() === categoryName;
         }
         
-        // Otherwise filter by primary category
-        return p.category.toLowerCase() === categoryName;
+        // Filter by main category
+        return p.category?.toLowerCase() === categoryName;
       });
 
   const handleSizeSelect = (productId: string, sizeIndex: number) => {
