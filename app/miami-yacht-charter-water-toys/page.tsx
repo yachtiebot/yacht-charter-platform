@@ -173,26 +173,8 @@ export default function WaterToysPage() {
           }
         });
         
-        // Custom sort order: Jet Ski, Flyboard, Water Sports Boat, then rest
-        const sortOrder = ['jet-ski', 'flyboard', 'water-sports-boat'];
-        
-        const sortedProducts = mergedProducts.sort((a, b) => {
-          const aIndex = sortOrder.indexOf(a.id);
-          const bIndex = sortOrder.indexOf(b.id);
-          
-          // If both are in sortOrder, use that order
-          if (aIndex !== -1 && bIndex !== -1) {
-            return aIndex - bIndex;
-          }
-          // If only a is in sortOrder, it comes first
-          if (aIndex !== -1) return -1;
-          // If only b is in sortOrder, it comes first
-          if (bIndex !== -1) return 1;
-          // Otherwise keep original order
-          return 0;
-        });
-        
-        setWaterToysProducts(sortedProducts);
+        // Use Airtable order (order is already set correctly in Airtable)
+        setWaterToysProducts(mergedProducts);
       })
       .catch(err => {
         console.error('Failed to load from Airtable:', err);
