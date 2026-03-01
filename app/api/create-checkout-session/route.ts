@@ -43,19 +43,26 @@ export async function POST(request: NextRequest) {
         }
       }
       
+      // Build description with customization or waiver info
+      let description = undefined;
+      if (item.customization) {
+        description = `Customization: ${JSON.stringify(item.customization)}`;
+      } else if (item.waiverData) {
+        description = `Jet Ski Waiver Accepted: ${item.waiverData.acceptedAt}`;
+      }
+      
       return {
         price_data: {
           currency: 'usd',
           product_data: {
             name: item.name,
-            description: item.customization ? 
-              `Customization: ${JSON.stringify(item.customization)}` : 
-              undefined,
+            description,
             images: imageUrl ? [imageUrl] : undefined,
             metadata: {
               product_id: item.id || '',
               category: item.category || 'unknown',
               selected_size: item.selectedSize || '',
+              has_waiver: item.waiverData ? 'true' : 'false',
             },
           },
           unit_amount: Math.round(item.price * 100), // Convert to cents
@@ -104,6 +111,9 @@ export async function POST(request: NextRequest) {
         ).join('; '),
         total_items: items.reduce((sum: number, item: any) => sum + (item.quantity || 1), 0).toString(),
         categories: [...new Set(items.map((item: any) => item.category))].join(', '),
+        
+        // Waiver data flag
+        has_jet_ski_waiver: items.some((item: any) => item.waiverData) ? 'true' : 'false',
       },
       // Shipping for catering delivery (optional)
       ...(customerInfo?.address && {

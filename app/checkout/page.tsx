@@ -73,6 +73,8 @@ export default function CheckoutPage() {
             selectedSize: item.selectedSize,
             image: item.image,
             customization: item.customization,
+            waiverData: item.waiverData,
+            requiresWaiver: item.requiresWaiver,
           })),
           customerInfo: formData,
         }),

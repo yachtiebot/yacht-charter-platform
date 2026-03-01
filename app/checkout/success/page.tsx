@@ -1,17 +1,36 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useCart } from '@/lib/store/CartContext';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
 export default function CheckoutSuccessPage() {
-  const { clearCart, closeCart } = useCart();
+  const { items, clearCart, closeCart } = useCart();
+  const searchParams = useSearchParams();
+  const [emailSent, setEmailSent] = useState(false);
 
   useEffect(() => {
+    const sessionId = searchParams.get('session_id');
+    
+    // Check if any items have waiver data before clearing cart
+    const itemsWithWaivers = items.filter(item => item.waiverData);
+    
+    if (sessionId && itemsWithWaivers.length > 0 && !emailSent) {
+      // Send waiver emails
+      // Note: In production, this should be done server-side via webhook
+      // For now, we'll attempt client-side (may need customer info from session)
+      setEmailSent(true);
+      
+      console.log('Waiver items found:', itemsWithWaivers);
+      console.log('Session ID:', sessionId);
+      // TODO: Trigger waiver email API with session data
+    }
+    
     // Clear cart and close sidebar on success
     clearCart();
     closeCart();
-  }, [clearCart, closeCart]);
+  }, [items, clearCart, closeCart, searchParams, emailSent]);
 
   return (
     <main className="min-h-screen bg-[#faf9f7] pt-24 pb-32 relative z-0">
