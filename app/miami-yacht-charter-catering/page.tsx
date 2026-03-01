@@ -128,13 +128,16 @@ export default function CateringPage() {
     return category?.name.toLowerCase() || tabId;
   };
   
+  // Sort products by category order
+  const sortedProducts = [...cateringProducts].sort((a, b) => {
+    const aIndex = categoryOrder.indexOf(a.category.toLowerCase());
+    const bIndex = categoryOrder.indexOf(b.category.toLowerCase());
+    return aIndex - bIndex;
+  });
+
   const filteredProducts = selectedCategory === 'all' 
-    ? cateringProducts.sort((a, b) => {
-        const aIndex = categoryOrder.indexOf(a.category.toLowerCase());
-        const bIndex = categoryOrder.indexOf(b.category.toLowerCase());
-        return aIndex - bIndex;
-      })
-    : cateringProducts.filter(p => p.category.toLowerCase() === getCategoryName(selectedCategory));
+    ? sortedProducts
+    : sortedProducts.filter(p => p.category.toLowerCase() === getCategoryName(selectedCategory));
 
   const handleSizeSelect = (productId: string, sizeIndex: number) => {
     setSelectedSizes(prev => ({ ...prev, [productId]: sizeIndex }));
