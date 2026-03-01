@@ -130,8 +130,16 @@ export default function CateringPage() {
   
   // Sort products by category order
   const sortedProducts = [...cateringProducts].sort((a, b) => {
-    const aIndex = categoryOrder.indexOf(a.category.toLowerCase());
-    const bIndex = categoryOrder.indexOf(b.category.toLowerCase());
+    const aCat = a.category?.toLowerCase() || '';
+    const bCat = b.category?.toLowerCase() || '';
+    const aIndex = categoryOrder.indexOf(aCat);
+    const bIndex = categoryOrder.indexOf(bCat);
+    
+    // Handle products not in category order (put at end)
+    if (aIndex === -1 && bIndex === -1) return 0;
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+    
     return aIndex - bIndex;
   });
 
