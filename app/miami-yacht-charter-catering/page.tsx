@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useCart } from '@/lib/store/CartContext';
 import DarkFooter from '@/components/DarkFooter';
 import ScrollIndicator from '@/components/ScrollIndicator';
+import CollapsibleCateringFilters from '@/components/CollapsibleCateringFilters';
 import CharcuterieCustomizationModal, { CharcuterieCustomization } from '@/components/modals/CharcuterieCustomizationModal';
 import WrapCustomizationModal, { WrapCustomization } from '@/components/modals/WrapCustomizationModal';
 import SpiralCustomizationModal, { SpiralCustomization } from '@/components/modals/SpiralCustomizationModal';
@@ -372,40 +373,13 @@ export default function CateringPage() {
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="mb-12 border-b border-black/10 pb-6">
-          {/* Filter Active Indicator */}
-          {selectedCategory !== 'all' && (
-            <div className="mb-4 flex items-center gap-2 text-sm">
-              <div className="w-2 h-2 rounded-full bg-[#c4a265]"></div>
-              <span className="text-[#6b6b6b]">
-                Filter active: <span className="text-[#0f0f0f] font-medium">{categories.find(c => c.id === selectedCategory)?.name}</span>
-              </span>
-              <button 
-                onClick={() => setSelectedCategory('all')}
-                className="ml-2 text-xs text-[#c4a265] hover:underline"
-              >
-                Clear filter
-              </button>
-            </div>
-          )}
-          
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap gap-3">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-6 py-2 text-sm uppercase tracking-wider transition-all duration-300 ${
-                  selectedCategory === cat.id
-                    ? 'bg-[#c4a265] text-white'
-                    : 'bg-white text-[#6b6b6b] hover:bg-[#c4a265]/10 hover:text-[#c4a265] border border-black/10'
-                }`}
-              >
-                {cat.name}
-              </button>
-            ))}
-          </div>
+        {/* Category Filter - Collapsible */}
+        <div className="mb-12">
+          <CollapsibleCateringFilters
+            selectedCategory={selectedCategory}
+            onCategoryChange={setSelectedCategory}
+            onClearAll={() => setSelectedCategory('all')}
+          />
         </div>
 
         {/* Product Grid */}
